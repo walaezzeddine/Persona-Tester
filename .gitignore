@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Environnement virtuel
+.venv/
+venv/
+env/
+ENV/
+
+# Variables d'environnement
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+
+# Outputs temporaires
+*.log
+mcp_test_output.txt
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db

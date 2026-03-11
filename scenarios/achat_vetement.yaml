@@ -1,0 +1,41 @@
+# Scénario de test : Achat de vêtement
+# Ce fichier décrit le contexte du test (l'objectif vient du persona)
+
+name: "achat_vetement"
+description: "Parcours d'achat sur un site de vêtements (automationexercise.com)"
+
+# NOTE: L'objectif spécifique est défini dans le fichier persona
+# Ex: "Trouver un t-shirt pour femme et l'ajouter au panier"
+
+# Étapes attendues du funnel (pour le tracking)
+funnel_steps:
+  - name: "homepage"
+    description: "Page d'accueil"
+  - name: "search"
+    description: "Recherche de produit"
+  - name: "product_list"
+    description: "Liste des produits"
+  - name: "product_detail"
+    description: "Détail du produit"
+  - name: "add_to_cart"
+    description: "Ajout au panier"
+  - name: "cart"
+    description: "Panier"
+
+# Critères de succès
+success_criteria:
+  - "Produit ajouté au panier"
+  - "Panier contient au moins 1 article"
+
+# Critères d'abandon
+abandon_criteria:
+  - "Erreur 404 ou 500"
+  - "Page bloquée plus de 30 secondes"
+  - "Prix hors budget"
+  - "Produit indisponible"
+
+# Contraintes spécifiques au scénario
+constraints:
+  max_price: 500
+  currency: "Rs"
+  category: "clothing"

@@ -1,0 +1,26 @@
+llm:
+  provider: "groq"
+  model: "llama-3.1-8b-instant"
+  temperature: 0.7
+  max_tokens: 1024
+  base_url: "https://api.groq.com/openai/v1"
+navigation:
+  max_steps: 20
+  action_delay: 2
+  action_timeout: 5000
+  page_timeout: 30000
+  page_content_limit: 1500
+browser:
+  headless: false
+  viewport:
+    width: 1280
+    height: 800
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+logging:
+  verbosity: "normal"
+  opentelemetry_enabled: false
+  screenshots_enabled: false
+  screenshots_dir: "screenshots"
+personas:
+  parallel_count: 1
+  history_limit: 10

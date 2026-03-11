@@ -1,0 +1,136 @@
+{
+  "url": "https://automationexercise.com/",
+  "title": "Automation Exercise",
+  "clickables": [
+    {
+      "type": "button",
+      "text": "Test Cases"
+    },
+    {
+      "type": "button",
+      "text": "APIs list for practice"
+    },
+    {
+      "type": "link",
+      "text": "Home",
+      "href": "/"
+    },
+    {
+      "type": "link",
+      "text": " Products",
+      "href": "/products"
+    },
+    {
+      "type": "link",
+      "text": "Cart",
+      "href": "/view_cart"
+    },
+    {
+      "type": "link",
+      "text": "Signup / Login",
+      "href": "/login"
+    },
+    {
+      "type": "link",
+      "text": "Test Cases",
+      "href": "/test_cases"
+    },
+    {
+      "type": "link",
+      "text": "API Testing",
+      "href": "/api_list"
+    },
+    {
+      "type": "link",
+      "text": "Video Tutorials",
+      "href": "https://www.youtube.com/c/AutomationExercise"
+    },
+    {
+      "type": "link",
+      "text": "Contact us",
+      "href": "/contact_us"
+    },
+    {
+      "type": "link",
+      "text": "Test Cases",
+      "href": "/test_cases"
+    }
+  ],
+  "inputs": [
+    {
+      "type": "email",
+      "name": "",
+      "placeholder": "Your email address"
+    }
+  ],
+  "text_content": "Home\n Products\nCart\nSignup / Login\nTest Cases\nAPI Testing\nVideo Tutorials\nContact us\nAutomationExercise\nFull-Fledged practice website for Automation Engineers\nAll QA engineers can use this website for automation practice and API testing either they are at beginner or advance level. This is for everybody to help them brush up their automation skills.\nTest Cases APIs list for practice\nCATEGORY\nWOMEN\nMEN\nKIDS\nBRANDS\n(6)\nPOLO\n(5)\nH&M\n(5)\nMADAME\n(3)\nMAST & HARBOUR\n(4)\nBABYHUG\n(3)\nALLEN SOLLY JUNIOR\n(3)\nKOOKIE KIDS\n(5)\nBIBA\nFEATURES ITEMS\nRs. 500\nBlue Top\nAdd to cart\nRs. 500\nBlue Top\nAdd to cart\nView Product\nRs. 400\nMen Tshirt\nAdd to cart\nRs. 400\nMen Tshirt\nAdd to cart\nView Product\nRs. 1000\nSleeveless Dress\nAdd to cart\nRs. 1000\nSleeveless Dress\nAdd to cart\nView Product\nRs. 1500\nStylish Dress\nAdd to cart\nRs. 1500\nStylish Dress\nAdd to cart\nView Product\nRs. 600\nWinter Top\nAdd to cart\nRs. 600\nWinter Top\nAdd to cart\nView Product\nRs. 400\nSummer White Top\nAdd to cart\nRs. 400\nSummer White Top\nAdd to cart\nView Product\nRs. 1000\nMadame Top For Women\nAdd to cart\nRs. 1000\nMadame Top For Women\nAdd to cart\nView Product\nRs. 700\nFancy Green Top\nAdd to cart\nRs. 700\nFancy Green Top\nAdd to cart\nView Product\nRs. 499\nSleeves Printed Top - White\nAdd to cart\nRs. 499\nSleeves Printed Top - White\nAdd to cart\nView Product\nRs. 359\nHalf Sleeves Top Schiffli Detailing - Pink\nAdd to cart\nRs. 359\nHalf Sleeves Top Schiffli Detailing - Pink\nAdd to cart\nView Product\nRs. 278\nFrozen Tops For Kids\nAdd to cart\nRs. 278\nF",
+  "errors": [],
+  "products": [
+    {
+      "name": "Blue Top",
+      "price": "Rs. 500",
+      "btn_id": "add-to-cart-1",
+      "detail": "/product_details/1"
+    },
+    {
+      "name": "Men Tshirt",
+      "price": "Rs. 400",
+      "btn_id": "add-to-cart-2",
+      "detail": "/product_details/2"
+    },
+    {
+      "name": "Sleeveless Dress",
+      "price": "Rs. 1000",
+      "btn_id": "add-to-cart-3",
+      "detail": "/product_details/3"
+    },
+    {
+      "name": "Stylish Dress",
+      "price": "Rs. 1500",
+      "btn_id": "add-to-cart-4",
+      "detail": "/product_details/4"
+    },
+    {
+      "name": "Winter Top",
+      "price": "Rs. 600",
+      "btn_id": "add-to-cart-5",
+      "detail": "/product_details/5"
+    },
+    {
+      "name": "Summer White Top",
+      "price": "Rs. 400",
+      "btn_id": "add-to-cart-6",
+      "detail": "/product_details/6"
+    },
+    {
+      "name": "Madame Top For Women",
+      "price": "Rs. 1000",
+      "btn_id": "add-to-cart-7",
+      "detail": "/product_details/7"
+    },
+    {
+      "name": "Fancy Green Top",
+      "price": "Rs. 700",
+      "btn_id": "add-to-cart-8",
+      "detail": "/product_details/8"
+    },
+    {
+      "name": "Sleeves Printed Top - White",
+      "price": "Rs. 499",
+      "btn_id": "add-to-cart-9",
+      "detail": "/product_details/11"
+    },
+    {
+      "name": "Half Sleeves Top Schiffli Detailing - Pink",
+      "price": "Rs. 359",
+      "btn_id": "add-to-cart-10",
+      "detail": "/product_details/12"
+    }
+  ],
+  "scroll_position": "top",
+  "nav_state": {
+    "back_available": true,
+    "forward_available": false
+  },
+  "category": ""
+}
