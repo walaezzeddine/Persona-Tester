@@ -1,0 +1,101 @@
+{
+  "test_type": "MCP Integration Test",
+  "timestamp": "2026-03-23T15:11:56.416070",
+  "persona": {
+    "id": "acheteur_impatient",
+    "objectif": "Trouver et acheter l'article le moins cher disponible",
+    "vitesse_navigation": "rapide",
+    "sensibilite_prix": "faible",
+    "tolerance_erreurs": "haute",
+    "patience_attente_sec": 5,
+    "device": "mobile"
+  },
+  "scenario": {
+    "name": "virement_bancaire",
+    "objectif": "Se connecter sur ParaBank et effectuer un virement entre deux comptes",
+    "target_url": "https://parabank.parasoft.com/parabank/index.htm",
+    "success_criteria": [
+      "Connexion réussie avec username john / password demo",
+      "Page accounts overview affichée",
+      "Virement initié ou solde consulté"
+    ],
+    "abandon_criteria": [
+      "Impossible de se connecter après 3 tentatives",
+      "Page d'erreur bloquante"
+    ],
+    "context": {
+      "username": "john",
+      "password": "demo"
+    },
+    "critere_succes": "Objective completed successfully"
+  },
+  "target_url": "https://parabank.parasoft.com/parabank/index.htm",
+  "config": {
+    "llm_provider": "google",
+    "llm_model": "gemini-2.0-flash",
+    "headless": false
+  },
+  "result": {
+    "status": "completed",
+    "steps": 6,
+    "duration_sec": 58.1,
+    "response": "THOUGHT: I have successfully logged in, and the accounts overview page is now visible.  \nDONE",
+    "steps_detail": [
+      {
+        "step": 1,
+        "thought": "THOUGHT: Navigate to the ParaBank homepage to access the login form.  \nACTION: browser_navigate  \nACTION_INPUT: {\"url\": \"https://parabank.parasoft.com/parabank/index.htm\"}",
+        "action": "browser_navigate",
+        "input": {
+          "url": "https://parabank.parasoft.com/parabank/index.htm"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.goto('https://parabank.parasoft.com/parabank/index.htm');\n```\n### Page\n- Page URL: https://parabank.parasoft.com/parabank/index.htm\n- Page Title: ParaBank | Welcome | Online Banking\n### Snapshot\n```yaml\n- generic [ref=e1]:\n  - generic [ref=e2]:\n    - generic [ref=e3]:\n      - link:\n        - /url: admin.htm;jsessionid=FADE03D8A0E81622C1232CBC21663910\n        - img [ref=e4] [cursor=pointer]\n      - link \"ParaBank\":\n        - /url: index.htm;jsessionid=FADE03D8A0E81622C1232CBC21663910\n        - img \"ParaBank\" [ref=e5] [cursor=pointer]\n      - paragraph [ref=e6]: Experience the difference\n    - generic [ref=e7]:\n      - list [ref=e8]:\n        - listitem [ref=e9]: Solutions\n        - listitem [ref=e10]:\n          - link \"About Us\" [ref=e11] [cursor=pointer]:\n            - /url: about.htm;jsessionid=FADE03D8A0E81622C1232CBC21663910\n        - listitem [ref=e12]:\n          - link \"Services\" [ref=e13] [cursor=pointer]:\n            - /url: services.htm;j"
+      },
+      {
+        "step": 2,
+        "thought": "THOUGHT: I need to capture the login form to get fresh references for the username and password fields.  \nACTION: browser_snapshot  \nACTION_INPUT: {}",
+        "action": "browser_snapshot",
+        "input": {},
+        "result_preview": "### Page\n- Page URL: https://parabank.parasoft.com/parabank/index.htm\n- Page Title: ParaBank | Welcome | Online Banking\n### Snapshot\n```yaml\n- generic [ref=e1]:\n  - generic [ref=e2]:\n    - generic [ref=e3]:\n      - link:\n        - /url: admin.htm;jsessionid=FADE03D8A0E81622C1232CBC21663910\n        - img [ref=e4] [cursor=pointer]\n      - link \"ParaBank\":\n        - /url: index.htm;jsessionid=FADE03D8A0E81622C1232CBC21663910\n        - img \"ParaBank\" [ref=e5] [cursor=pointer]\n      - paragraph [ref=e6]: Experience the difference\n    - generic [ref=e7]:\n      - list [ref=e8]:\n        - listitem [ref=e9]: Solutions\n        - listitem [ref=e10]:\n          - link \"About Us\" [ref=e11] [cursor=pointer]:\n            - /url: about.htm;jsessionid=FADE03D8A0E81622C1232CBC21663910\n        - listitem [ref=e12]:\n          - link \"Services\" [ref=e13] [cursor=pointer]:\n            - /url: services.htm;jsessionid=FADE03D8A0E81622C1232CBC21663910\n        - listitem [ref=e14]:\n          - link \"Products\" [r"
+      },
+      {
+        "step": 3,
+        "thought": "THOUGHT: I have the fresh reference for the username field. I will enter 'john' in the username field.  \nACTION: browser_type  \nACTION_INPUT: {\"ref\": \"e34\", \"text\": \"john\"}",
+        "action": "browser_type",
+        "input": {
+          "ref": "e34",
+          "text": "john"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.locator('input[name=\"username\"]').fill('john');\n```"
+      },
+      {
+        "step": 4,
+        "thought": "THOUGHT: Now I will enter 'demo' in the password field using the fresh reference obtained earlier.  \nACTION: browser_type  \nACTION_INPUT: {\"ref\": \"e37\", \"text\": \"demo\"}",
+        "action": "browser_type",
+        "input": {
+          "ref": "e37",
+          "text": "demo"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.locator('input[name=\"password\"]').fill('demo');\n```"
+      },
+      {
+        "step": 5,
+        "thought": "THOUGHT: I will click the \"Log In\" button to submit the login form.  \nACTION: browser_click  \nACTION_INPUT: {\"ref\": \"e39\"}",
+        "action": "browser_click",
+        "input": {
+          "ref": "e39"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.getByRole('button', { name: 'Log In' }).click();\n```\n### Page\n- Page URL: https://parabank.parasoft.com/parabank/overview.htm\n- Page Title: ParaBank | Accounts Overview\n### Snapshot\n```yaml\n- generic [active] [ref=e1]:\n  - generic [ref=e2]:\n    - generic [ref=e3]:\n      - link:\n        - /url: admin.htm\n        - img [ref=e4] [cursor=pointer]\n      - link \"ParaBank\":\n        - /url: index.htm\n        - img \"ParaBank\" [ref=e5] [cursor=pointer]\n      - paragraph [ref=e6]: Experience the difference\n    - generic [ref=e7]:\n      - list [ref=e8]:\n        - listitem [ref=e9]: Solutions\n        - listitem [ref=e10]:\n          - link \"About Us\" [ref=e11] [cursor=pointer]:\n            - /url: about.htm\n        - listitem [ref=e12]:\n          - link \"Services\" [ref=e13] [cursor=pointer]:\n            - /url: services.htm\n        - listitem [ref=e14]:\n          - link \"Products\" [ref=e15] [cursor=pointer]:\n            - /url: http://www.parasoft.com/jsp/pro"
+      },
+      {
+        "step": 6,
+        "thought": "THOUGHT: I have successfully logged in, and the accounts overview page is now visible.  \nDONE",
+        "action": "DONE",
+        "strict_validation": {
+          "added_to_cart_seen": false,
+          "cart_page_seen": false,
+          "cart_item_seen": false
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "test_type": "MCP Integration Test",
+  "timestamp": "2026-03-23T11:22:11.877372",
+  "persona": {
+    "id": "acheteur_impatient",
+    "objectif": "Trouver et acheter l'article le moins cher disponible",
+    "vitesse_navigation": "rapide",
+    "sensibilite_prix": "faible",
+    "tolerance_erreurs": "haute",
+    "patience_attente_sec": 5,
+    "device": "mobile"
+  },
+  "scenario": {
+    "name": "virement_bancaire",
+    "objectif": "Se connecter sur ParaBank et effectuer un virement entre deux comptes",
+    "target_url": "https://parabank.parasoft.com/parabank/index.htm",
+    "success_criteria": [
+      "Connexion réussie avec username john / password demo",
+      "Page accounts overview affichée",
+      "Virement initié ou solde consulté"
+    ],
+    "abandon_criteria": [
+      "Impossible de se connecter après 3 tentatives",
+      "Page d'erreur bloquante"
+    ],
+    "context": {
+      "username": "john",
+      "password": "demo"
+    },
+    "critere_succes": "Objective completed successfully"
+  },
+  "target_url": "https://parabank.parasoft.com/parabank/index.htm",
+  "config": {
+    "llm_provider": "google",
+    "llm_model": "gemini-2.0-flash",
+    "headless": false
+  },
+  "result": {
+    "status": "error",
+    "steps": 1,
+    "duration_sec": 216.5,
+    "response": "MCP session timed out during rate limit wait",
+    "steps_detail": []
+  }
+}

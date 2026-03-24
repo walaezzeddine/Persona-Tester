@@ -122,6 +122,41 @@ class Config:
     @property
     def user_agent(self) -> str:
         return self._config.get("browser", {}).get("user_agent", "Mozilla/5.0")
+
+    # BROWSER USE INTEGRATION — START
+    @property
+    def vision_enabled(self) -> bool:
+        return self._config.get("browser", {}).get("vision_enabled", False)
+
+    @property
+    def sandbox(self) -> bool:
+        return self._config.get("browser", {}).get("sandbox", True)
+
+    @property
+    def vision_provider(self) -> str:
+        return self._config.get("llm", {}).get(
+            "vision_provider", self.llm_provider)
+
+    @property
+    def vision_model(self) -> str:
+        return self._config.get("llm", {}).get(
+            "vision_model", self.llm_model)
+
+    @property
+    def vision_max_tokens(self) -> int:
+        return self._config.get("llm", {}).get(
+            "vision_max_tokens", 512)
+
+    @property
+    def screenshot_quality(self) -> int:
+        return self._config.get("browser", {}).get(
+            "screenshot_quality", 60)
+
+    @property
+    def screenshot_width(self) -> int:
+        return self._config.get("browser", {}).get(
+            "screenshot_width", 1024)
+    # BROWSER USE INTEGRATION — END
     
     # ═══════════════════════════════════════════════════════════════
     # Logging Configuration

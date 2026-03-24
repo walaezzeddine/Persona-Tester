@@ -1,0 +1,16 @@
+name: "virement_bancaire"
+objectif: "Se connecter sur ParaBank et effectuer un virement entre deux comptes"
+target_url: "https://parabank.parasoft.com/parabank/index.htm"
+
+success_criteria:
+  - "Connexion réussie avec username john / password demo"
+  - "Page accounts overview affichée"
+  - "Virement initié ou solde consulté"
+
+abandon_criteria:
+  - "Impossible de se connecter après 3 tentatives"
+  - "Page d'erreur bloquante"
+
+context:
+  username: "john"
+  password: "demo"

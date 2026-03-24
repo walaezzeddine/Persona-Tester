@@ -1,207 +1,319 @@
 # Persona Tester 🎭
 
-**Outil de simulation comportementale IA** - PFE ENSI / TALAN Tunisie (Fév–Juin 2026)
+**Outil de simulation comportementale IA** — PFE ENSI / TALAN Tunisie (Fév–Juin 2026)
+
+---
+
+## Table des matières
+
+- [Description](#-description)
+- [Architecture MCP](#-architecture-mcp)
+- [Pipeline d'exécution](#-pipeline-dexécution)
+- [Boucle ReAct MCP en détail](#-boucle-react-mcp-en-détail)
+- [Stratégies par persona](#-stratégies-par-persona)
+- [Structure des fichiers](#-structure-des-fichiers)
+- [Personas](#-personas)
+- [Scénarios](#-scénarios)
+- [Configuration](#-configuration)
+- [Installation](#-installation)
+- [Utilisation](#-utilisation)
+- [Rapports](#-rapports)
+- [LLM Providers supportés](#-llm-providers-supportés)
+- [Outils MCP disponibles](#-outils-mcp-disponibles)
+- [Limitations & Roadmap](#-limitations--roadmap)
+
+---
 
 ## 📋 Description
 
-Persona Tester simule des utilisateurs virtuels avec des comportements différents qui naviguent sur un vrai site web en production. Un LLM (GPT-4o) incarne chaque persona et prend les décisions de navigation en temps réel basées sur le contenu de la page.
+Persona Tester simule des **utilisateurs virtuels** avec des comportements différents qui naviguent
+sur un vrai site web en production. Un LLM incarne chaque persona et **prend toutes les décisions
+de navigation en temps réel** via le protocole MCP (Model Context Protocol).
+
+L'outil implémente le paradigme **ReAct** (Yao et al., ICLR 2023) où :
+- le LLM **observe** un snapshot de la page (arbre d'accessibilité)
+- **raisonne** selon le profil comportemental de la persona
+- **agit** directement sur le browser via les outils MCP Playwright
+
+**Stack technique :** Python 3 · Playwright MCP · LangChain · Groq / GitHub Models / OpenAI / Ollama
+
+**Site cible de test :** [automationexercise.com](https://automationexercise.com)
 
 ---
 
-## 🔄 Pipeline de Fonctionnement
-
-Le pipeline se déroule en **3 phases successives** :
+## 🏗️ Architecture MCP
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                     PERSONA TESTER PIPELINE                     │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  ┌──────────────┐   ┌──────────────┐   ┌──────────────┐        │
-│  │   PHASE 1    │   │   PHASE 2    │   │   PHASE 3    │        │
-│  │   INPUTS     │──▶│   PERSONA    │──▶│  REACT LOOP  │        │
-│  └──────────────┘   └──────────────┘   └──────────────┘        │
-│                                                                 │
-│  • URL cible        • Profil JSON      • OBSERVE (DOM)         │
-│  • Scénario YAML    • Comportement     • REASON (LLM)          │
-│  • Config globale   • System prompt    • ACT (Playwright)      │
-│                                        • TRACE (logs)          │
-└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          PERSONA TESTER — MCP ARCHITECTURE                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│   test_mcp.py                                                               │
+│       │                                                                     │
+│       ▼                                                                     │
+│   PersonaAgent.run_with_mcp()                                               │
+│       │                                                                     │
+│       ├── 1. Charge persona + scénario → construit system prompt            │
+│       │                                                                     │
+│       ├── 2. Connexion stdio → @playwright/mcp (serveur MCP)                │
+│       │         ↕  stdio (JSON-RPC)                                         │
+│       │   Playwright MCP Server (Node.js) ←→ Chromium                       │
+│       │                                                                     │
+│       └── 3. BOUCLE ReAct (max 20 steps)                                    │
+│                                                                             │
+│             ┌──────────────────────────────────────────────────┐            │
+│             │  LLM (Groq / GitHub / OpenAI / Ollama)           │            │
+│             │                                                  │            │
+│             │  THOUGHT: je vois Blue Top Rs.500, je clique...  │            │
+│             │  ACTION: browser_click                           │            │
+│             │  ACTION_INPUT: {"ref": "e116"}                   │            │
+│             └──────────────────┬───────────────────────────────┘            │
+│                                │ appel outil MCP                            │
+│                                ▼                                            │
+│             ┌──────────────────────────────────────────────────┐            │
+│             │  Playwright MCP Server                           │            │
+│             │  exécute : browser_click(ref=e116)               │            │
+│             │  retourne : OBSERVATION (nouveau snapshot)        │            │
+│             └──────────────────┬───────────────────────────────┘            │
+│                                │ résultat compressé                         │
+│                                ▼                                            │
+│                         Prochain THOUGHT...                                 │
+│                                                                             │
+│             Jusqu'à : DONE / max_steps atteint                              │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Phase 1 : INPUTS
+### Rôle de chaque composant
 
-| Entrée | Description | Fichier |
-|--------|-------------|---------|
-| **URL cible** | Le vrai site en production à tester | `.env` |
-| **Scénario** | Objectif du test, critères de succès/abandon | `scenarios/*.yaml` |
-| **Configuration** | Paramètres LLM, timeouts, verbosité | `config/config.yaml` |
-
-### Phase 2 : PERSONA
-
-Chaque persona est un profil comportemental défini en JSON :
-
-```json
-{
-  "vitesse_navigation": "lente",      // Comment il navigue
-  "sensibilite_prix": "haute",        // Sensibilité au budget
-  "tolerance_erreurs": "faible",      // Patience face aux erreurs
-  "device": "desktop",                // Type d'appareil
-  "heure_connexion": "21:00"          // Contexte temporel
-}
-```
-
-Ces attributs sont **traduits en instructions comportementales** et injectés dans le system prompt du LLM.
-
-### Phase 3 : BOUCLE ReAct
-
-Inspirée du paradigme ReAct (Yao et al., ICLR 2023) :
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    BOUCLE REACT                             │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│   1. OBSERVE    →  Extraire le DOM structuré de la page    │
-│       ↓            (boutons, liens, inputs, produits)      │
-│                                                             │
-│   2. REASON     →  LLM analyse avec le profil persona      │
-│       ↓            "Je vois un bouton Products, je clique" │
-│                                                             │
-│   3. ACT        →  Playwright exécute l'action             │
-│       ↓            click / scroll / type                   │
-│                                                             │
-│   4. TRACE      →  Logger l'action et son résultat         │
-│       ↓            (OpenTelemetry prévu)                   │
-│                                                             │
-│   REPEAT        →  Jusqu'à FINISH / ABANDON / max steps    │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+| Composant | Rôle |
+|-----------|------|
+| `test_mcp.py` | Point d'entrée — charge config, persona, lance la session |
+| `PersonaAgent` | Construit le system prompt persona + orchestre la boucle ReAct |
+| `@playwright/mcp` | Serveur MCP Node.js — expose les outils browser au LLM |
+| **LLM** | Lit le snapshot, raisonne selon la persona, choisit l'action suivante |
+| `_compress_snapshot()` | Réduit le snapshot Playwright en table de produits lisible par le LLM |
+| `reports/` | Rapport JSON complet généré après chaque session |
 
 ---
 
-## 🏗️ Architecture du Projet
+## 🔄 Pipeline d'exécution
+
+```
+┌──────────────────────────────────────────────────────────────────────────┐
+│                       PIPELINE D'EXÉCUTION                               │
+├──────────────────────────────────────────────────────────────────────────┤
+│                                                                          │
+│  PHASE 1          PHASE 2              PHASE 3                           │
+│  INPUTS    ──▶    PERSONA     ──▶      BOUCLE ReAct MCP                  │
+│                                                                          │
+│  config.yaml      personas/*.json      LLM décide chaque action          │
+│  scenarios/*.yaml  system prompt       MCP exécute dans le browser       │
+│  .env (API keys)   stratégie persona   snapshot → observation → thought  │
+│                                        → jusqu'à DONE / max_steps        │
+│                                                                          │
+│                                        ▼                                 │
+│                                        reports/*.json                    │
+└──────────────────────────────────────────────────────────────────────────┘
+```
+
+### Phase 1 — INPUTS
+
+| Source | Rôle |
+|--------|------|
+| `config/config.yaml` | Paramètres LLM, browser, navigation |
+| `scenarios/*.yaml` | Objectif, critères succès/abandon |
+| `.env` | Clés API (`GROQ_API_KEY`, etc.) |
+
+### Phase 2 — PERSONA → System Prompt
+
+Les attributs de la persona sont traduits en **stratégie de navigation** injectée dans le system prompt du LLM :
+
+| Attribut | `acheteur_impatient` | `acheteur_prudent` |
+|----------|---------------------|-------------------|
+| `vitesse_navigation` | `rapide` → pas de scroll, 1er écran seulement | `lente` → scroll complet obligatoire |
+| `sensibilite_prix` | `faible` → prend le 1er produit visible | `haute` → compare TOUS les prix |
+| `tolerance_erreurs` | `haute` → ignore les erreurs | `faible` → retry soigneusement |
+| `patience_attente_sec` | `5s` → abandonne vite | `20s` → attend le chargement |
+| `device` | `mobile` | `desktop` |
+
+### Phase 3 — BOUCLE ReAct MCP
+
+À chaque step, le LLM reçoit le snapshot compressé de la page et produit :
+
+```
+THOUGHT: <raisonnement persona>
+ACTION: <nom_outil_mcp>
+ACTION_INPUT: {"param": "valeur"}
+```
+
+Python extrait l'action, appelle l'outil MCP, reçoit l'observation, et renvoie au LLM.
+
+---
+
+## 🔍 Boucle ReAct MCP en détail
+
+```
+Step 1 ──▶ THOUGHT: Navigate to /products
+           ACTION: browser_navigate
+           ACTION_INPUT: {"url": "https://automationexercise.com/products"}
+           OBSERVATION: PRODUCTS:
+                        - Blue Top | Rs. 500 | View ref=e116
+                        - Men Tshirt | Rs. 400 | View ref=e130
+                        - ...
+
+Step 2 ──▶ THOUGHT: Men Tshirt at Rs. 400 is cheapest. Clicking View Product.
+           ACTION: browser_click
+           ACTION_INPUT: {"ref": "e130"}
+           OBSERVATION: Product detail page loaded.
+
+Step 3 ──▶ THOUGHT: I see Add to Cart button ref=e50.
+           ACTION: browser_click
+           ACTION_INPUT: {"ref": "e50"}
+           OBSERVATION: Product added to cart.
+
+Step 4 ──▶ THOUGHT: Task complete.
+           DONE
+```
+
+Le snapshot brut Playwright (arbre d'accessibilité) est **compressé** par `_compress_snapshot()` avant d'être envoyé au LLM. Cela réduit ~15 000 caractères en une table de produits de ~500 caractères.
+
+---
+
+## 🧠 Stratégies par persona
+
+### `acheteur_impatient` (vitesse=rapide)
+
+- Navigue sur **mobile**, pas de patience
+- **Interdit de scroller** — n'agit que sur le 1er écran visible
+- Prend le produit le moins cher **parmi ceux visibles immédiatement**
+- Ignore les erreurs (tolérance haute) et passe au produit suivant
+- Se termine dès que le produit est ajouté au panier (`DONE` immédiat)
+
+### `acheteur_prudent` (vitesse=lente)
+
+- Navigue sur **desktop**, patient et méthodique
+- **Scroll obligatoire** : `browser_evaluate → browser_snapshot` en boucle jusqu'au bas de page
+- Accumule la liste de **tous les produits** et leurs prix sur tous les snapshots
+- Compare **uniquement après avoir atteint le bas** de la page
+- Choisit le produit avec le **prix absolu le plus bas**
+- Retry soigneux en cas d'erreur (tolérance faible)
+
+---
+
+## 🗂️ Structure des fichiers
 
 ```
 part1 pfe/
-├── .env                              # Variables d'environnement
-├── requirements.txt                  # Dépendances Python
-├── main.py                           # Point d'entrée - Pipeline complet
+├── app.py                      # Mode ReAct manuel (sans MCP)
+├── test_mcp.py                 # Point d'entrée — mode MCP (LLM aux commandes)
+├── requirements.txt            # Dépendances Python
 │
 ├── config/
-│   └── config.yaml                   # Configuration globale
-│
-├── scenarios/
-│   └── achat_smartphone.yaml         # Scénario de test
+│   └── config.yaml             # Configuration globale (LLM, browser, navigation)
 │
 ├── personas/
-│   └── acheteur_prudent.json         # Profil comportemental
+│   ├── acheteur_impatient.json # Persona rapide, mobile, peu sensible au prix
+│   └── acheteur_prudent.json   # Persona lente, desktop, très sensible au prix
 │
-└── src/
-    ├── __init__.py
-    ├── config_loader.py              # Chargement config/scénario/persona
-    ├── prompt_builder.py             # Génération du system prompt
-    ├── parser.py                     # Parsing des réponses LLM
-    ├── dom_extractor.py              # Extraction structurée du DOM
-    └── agent.py                      # Agent LLM (PersonaAgent)
+├── scenarios/
+│   ├── achat_vetement.yaml     # Scénario achat de vêtement
+│   ├── comparaison_produits.yaml
+│   └── trouver_moins_cher.yaml
+│
+├── src/
+│   ├── config_loader.py        # Chargement YAML / JSON
+│   ├── prompt_builder.py       # Génération du system prompt persona
+│   ├── agent.py                # PersonaAgent — boucle ReAct MCP + _compress_snapshot
+│   ├── dom_extractor.py        # Extraction DOM (mode ReAct manuel)
+│   └── parser.py               # Parsing réponses LLM (mode ReAct manuel)
+│
+├── reports/                    # Rapports JSON générés automatiquement
+└── dom_output/                 # Dumps DOM pour debug (mode ReAct manuel)
 ```
 
 ---
 
-## 📁 Fichiers en Détail
+## 👤 Personas
 
-### `config/config.yaml`
+### `acheteur_impatient`
 
-Configuration centrale du système :
-
-```yaml
-llm:
-  provider: "github"          # github | openai | ollama
-  model: "gpt-4o"
-  temperature: 0.2
-
-navigation:
-  max_steps: 15               # Maximum d'étapes par session
-  action_delay: 2             # Délai entre actions (sec)
-  page_content_limit: 1500    # Limite de caractères pour le LLM
-
-browser:
-  headless: false             # true = invisible
-  viewport: {width: 1280, height: 800}
+```json
+{
+  "id": "acheteur_impatient",
+  "objectif": "Trouver et acheter l'article le moins cher disponible",
+  "vitesse_navigation": "rapide",
+  "sensibilite_prix": "faible",
+  "tolerance_erreurs": "haute",
+  "patience_attente_sec": 5,
+  "device": "mobile",
+  "heure_connexion": "23:00"
+}
 ```
 
-### `scenarios/achat_smartphone.yaml`
-
-Définit l'objectif et les critères :
-
-```yaml
-name: "achat_smartphone"
-objective: "Trouver un produit intéressant et l'ajouter au panier"
-
-success_criteria:
-  - "Produit ajouté au panier"
-
-abandon_criteria:
-  - "Erreur 404 ou 500"
-  - "Prix hors budget"
-
-constraints:
-  max_price: 500
-  currency: "TND"
-```
-
-### `personas/acheteur_prudent.json`
-
-Profil comportemental complet :
+### `acheteur_prudent`
 
 ```json
 {
   "id": "acheteur_prudent",
+  "objectif": "Trouver un produit de bonne qualité au meilleur prix",
   "vitesse_navigation": "lente",
   "sensibilite_prix": "haute",
   "tolerance_erreurs": "faible",
   "patience_attente_sec": 20,
   "device": "desktop",
-  "heure_connexion": "21:00",
-  "objectif": "Trouver un smartphone sous 500 TND"
+  "heure_connexion": "21:00"
 }
 ```
 
-### `src/prompt_builder.py`
+---
 
-Traduit les attributs JSON en instructions via des dictionnaires de mapping :
+## 📄 Scénarios
 
-| Attribut | Valeurs | Comportement généré |
-|----------|---------|---------------------|
-| `vitesse_navigation` | lente/rapide/normale | Rythme de navigation |
-| `sensibilite_prix` | haute/faible/normale | Attention au budget |
-| `tolerance_erreurs` | faible/haute/normale | Patience face aux bugs |
-| `device` | mobile/desktop/tablet | Contexte d'utilisation |
-| `heure_connexion` | HH:MM → période | Contexte temporel |
+Chaque fichier `scenarios/*.yaml` définit :
 
-### `src/dom_extractor.py`
+- **`funnel_steps`** : étapes attendues (homepage → products → detail → cart)
+- **`success_criteria`** : conditions de `DONE`
+- **`abandon_criteria`** : conditions d'arrêt anticipé
+- **`constraints`** : budget max, devise
 
-Extraction structurée du DOM (pas juste inner_text) :
+---
 
-- **Clickables** : Boutons et liens visibles
-- **Inputs** : Champs de formulaire
-- **Products** : Informations produits (nom, prix)
-- **Errors** : Messages d'erreur détectés
+## ⚙️ Configuration
 
-### `src/agent.py`
+`config/config.yaml` :
 
-Classe `PersonaAgent` :
+```yaml
+llm:
+  provider: "groq"                   # groq | github | openai | ollama
+  model: "llama-3.1-8b-instant"
+  temperature: 0.7
+  max_tokens: 1024
 
-```python
-agent = PersonaAgent(
-    user=persona,       # Profil JSON
-    scenario=scenario,  # Scénario YAML
-    config=config       # Configuration
-)
+navigation:
+  max_steps: 20                      # Maximum d'étapes par session ReAct
+  action_delay: 2                    # Délai entre actions (secondes)
+  page_content_limit: 1500
 
-decision = agent.decide(page_content, page_url, step)
-# → {"thought": "...", "action": "click", "target": "Products"}
+browser:
+  headless: false                    # true = browser invisible
+  viewport:
+    width: 1280
+    height: 800
+
+logging:
+  verbosity: "normal"
+  opentelemetry_enabled: false
+  screenshots_enabled: false
+```
+
+Variables d'environnement (`.env`) :
+
+```env
+GROQ_API_KEY=...
+GITHUB_TOKEN=...
+OPENAI_API_KEY=...
+TARGET_URL=https://automationexercise.com
 ```
 
 ---
@@ -209,148 +321,199 @@ decision = agent.decide(page_content, page_url, step)
 ## 🛠️ Installation
 
 ```bash
-# 1. Cloner et accéder au projet
-cd "c:\Users\Lenovo\part1 pfe"
+# 1. Créer et activer un environnement virtuel
+python -m venv .venv
+.venv\Scripts\activate        # Windows
+# source .venv/bin/activate   # Linux / macOS
 
-# 2. Installer les dépendances
-pip install playwright langchain langchain-openai langchain-core python-dotenv openai pyyaml
+# 2. Installer les dépendances Python
+pip install -r requirements.txt
 
-# 3. Installer Chromium
-python -m playwright install chromium
+# 3. Installer les navigateurs Playwright
+playwright install chromium
+
+# 4. Installer le serveur MCP Playwright (Node.js requis)
+npm install -g @playwright/mcp
+
+# 5. Créer le fichier .env et remplir avec vos clés API
 ```
-
----
-
-## ⚙️ Configuration
-
-### Fichier `.env`
-
-```env
-# Token GitHub pour GitHub Models (gratuit)
-GITHUB_TOKEN=github_pat_VOTRE_TOKEN
-
-# URL du site à tester
-TARGET_URL=https://automationexercise.com/
-```
-
-### Obtenir un token GitHub Models
-
-1. https://github.com/settings/tokens
-2. "Generate new token (classic)"
-3. Cocher les permissions nécessaires
-4. Copier dans `.env`
 
 ---
 
 ## 🚀 Utilisation
 
 ```bash
-python main.py
+# Un seul persona (défaut : acheteur_impatient)
+python test_mcp.py
+
+# Persona spécifique
+python test_mcp.py acheteur_prudent
+
+# Les deux personas en comparaison côte-à-côte
+python test_mcp.py both
 ```
 
-### Sortie attendue :
+### Exemple de sortie
 
 ```
 ════════════════════════════════════════════════════════════
-           PERSONA TESTER - Navigation Session
+           MCP INTEGRATION TEST
 ════════════════════════════════════════════════════════════
 
-────────────────────────────────────────────────────────────
-  PHASE 1: INPUTS
-  Chargement de la configuration, scénario et URL cible
-────────────────────────────────────────────────────────────
-  ✓ Config loaded: github/gpt-4o
-  ✓ Scenario loaded: achat_smartphone
-    Objective: Trouver un produit intéressant et l'ajouter au panier
-  ✓ Target URL: https://automationexercise.com/
+[1] Loading configuration...
+  ✓ LLM: groq/llama-3.1-8b-instant
+  ✓ Headless: False
 
-────────────────────────────────────────────────────────────
-  PHASE 2: PERSONA
-  Génération du profil comportemental
-────────────────────────────────────────────────────────────
-  ✓ Persona loaded: acheteur_prudent
-    - Vitesse: lente
-    - Sensibilité prix: haute
-    - Tolérance erreurs: faible
-    - Device: desktop
-  ✓ Agent initialized with gpt-4o
+[2] Running persona: acheteur_impatient...
+  ✓ Persona     : acheteur_impatient
+  ✓ Objectif    : Trouver et acheter l'article le moins cher
+  ✓ Vitesse     : rapide
+  ✓ Prix sens.  : faible
+  ✓ Tolérance   : haute
+  ✓ Patience    : 5s
+  ✓ Device      : mobile
 
-────────────────────────────────────────────────────────────
-  PHASE 3: REACT LOOP
-  Boucle Observe → Reason → Act → Trace
-────────────────────────────────────────────────────────────
+════════════════════════════════════════════════════════════
+🚀 MCP ReAct SESSION STARTING
+════════════════════════════════════════════════════════════
+📍 Target URL: https://automationexercise.com
+👤 Persona: acheteur_impatient
+🎯 Scenario: Find the cheapest t-shirt and add it to cart
 
-  🚀 Opening browser: https://automationexercise.com/
+🔌 Connecting to Playwright MCP Server...
+✓ Connected! 24 tools available
 
-──────────────────── Step 1/15 ────────────────────
-💭 Thought : Je vois un lien Products, je vais cliquer dessus
-🎯 Action  : click
-📍 Target  : Products
-  ✓ Action executed
+─── Step 1/20 ────────────────────────────────────────────
+THOUGHT: I need to navigate to the products page.
+ACTION: browser_navigate
+ACTION_INPUT: {"url": "https://automationexercise.com/products"}
+OBSERVATION: PRODUCTS:
+  - Blue Top | Rs. 500 | View ref=e116
+  - Men Tshirt | Rs. 400 | View ref=e130
 
-──────────────────── Step 2/15 ────────────────────
-💭 Thought : Je suis sur la page produits, je vais chercher
-🎯 Action  : type
-📍 Target  : smartphone
-  ✓ Action executed
+─── Step 2/20 ────────────────────────────────────────────
+THOUGHT: Men Tshirt at Rs. 400 is the cheapest. Clicking View Product.
+ACTION: browser_click
+ACTION_INPUT: {"ref": "e130"}
+
 ...
 
+  Status   : completed
+  Steps    : 5
+  Duration : 38.2s
+  Report   : reports/mcp_test_acheteur_impatient_20260312_121054.json
+
 ════════════════════════════════════════════════════════════
-                    SESSION SUMMARY
-════════════════════════════════════════════════════════════
-✅ Status  : SUCCESS (FINISH)
-📝 Reason  : Produit ajouté au panier
-📊 Steps   : 8
-⏱️  Duration: 45.2s
-🌐 URL     : https://automationexercise.com/view_cart
+  ✅ MCP TEST PASSED
 ════════════════════════════════════════════════════════════
 ```
 
 ---
 
-## 🧠 Choix Techniques
+## 📊 Rapports
 
-| Choix | Raison |
-|-------|--------|
-| **GitHub Models** | Gratuit, accès GPT-4o sans carte bancaire |
-| **Playwright** | Navigation web robuste, support async |
-| **LangChain** | Abstraction LLM, gestion historique |
-| **YAML configs** | Lisible, facile à modifier |
-| **DOM structuré** | Meilleure compréhension pour le LLM |
+Chaque session génère automatiquement un fichier JSON dans `reports/` :
+
+```
+reports/mcp_test_acheteur_impatient_20260312_121054.json
+```
+
+Structure :
+
+```json
+{
+  "test_type": "MCP Integration Test",
+  "timestamp": "2026-03-12T12:10:54",
+  "persona": {
+    "id": "acheteur_impatient",
+    "vitesse_navigation": "rapide",
+    "sensibilite_prix": "faible",
+    "tolerance_erreurs": "haute",
+    "patience_attente_sec": 5,
+    "device": "mobile"
+  },
+  "scenario": { "name": "...", "objectif": "..." },
+  "target_url": "https://automationexercise.com",
+  "config": { "llm_provider": "groq", "llm_model": "llama-3.1-8b-instant", "headless": false },
+  "result": {
+    "status": "completed",
+    "steps": 5,
+    "duration_sec": 38.2,
+    "response": "Task completed successfully.",
+    "steps_detail": [
+      {
+        "step": 1,
+        "thought": "Navigate to products page.",
+        "action": "browser_navigate",
+        "input": {"url": "https://automationexercise.com/products"},
+        "result_preview": "PRODUCTS: - Blue Top | Rs. 500 ..."
+      }
+    ]
+  }
+}
+```
+
+**Statuts possibles :** `completed` · `max_steps_reached` · `error`
 
 ---
 
-## 📝 Actions Supportées
+## 🤖 LLM Providers supportés
 
-| Action | Description | Target |
-|--------|-------------|--------|
-| `click` | Cliquer sur un élément | Sélecteur CSS ou texte |
-| `scroll` | Défiler la page | `up` ou `down` |
-| `type` | Saisir du texte | Texte à taper |
-| `FINISH` | Objectif atteint | Raison du succès |
-| `ABANDON` | Abandon | Raison de l'échec |
-
----
-
-## ⚠️ Limitations Actuelles
-
-- Pas de multi-personas en parallèle (prévu)
-- Pas d'OpenTelemetry (prévu)
-- Limite tokens GitHub Models (8000)
-- Pas de Docker/Kubernetes
+| Provider | Variable `.env` | `provider` dans config |
+|----------|-----------------|------------------------|
+| **Groq** (défaut) | `GROQ_API_KEY` | `groq` |
+| **GitHub Models** | `GITHUB_TOKEN` | `github` |
+| **OpenAI** | `OPENAI_API_KEY` | `openai` |
+| **Ollama** (local) | *(aucune)* | `ollama` |
 
 ---
 
-## 🔜 Prochaines Étapes
+## 🛠️ Outils MCP disponibles
 
-- [ ] OpenTelemetry pour les traces
+Le LLM dispose des outils Playwright suivants pour naviguer :
+
+| Outil MCP | Description |
+|-----------|-------------|
+| `browser_navigate` | Naviguer vers une URL |
+| `browser_snapshot` | Capturer l'arbre d'accessibilité de la page courante |
+| `browser_click` | Cliquer sur un élément par son `ref` |
+| `browser_type` | Saisir du texte dans un champ |
+| `browser_press_key` | Appuyer sur une touche clavier |
+| `browser_evaluate` | Exécuter du JavaScript (scroll uniquement) |
+| `browser_select_option` | Sélectionner une option dans un `<select>` |
+| `browser_wait_for` | Attendre N millisecondes |
+
+---
+
+## ⚠️ Limitations & Roadmap
+
+**Limitations actuelles :**
+
+- Exécution séquentielle uniquement (pas de multi-personas en parallèle)
+- OpenTelemetry non activé
+- Pas de screenshots automatiques
+- Pas de conteneurisation
+
+**Prochaines étapes :**
+
+- [ ] OpenTelemetry pour les traces distribuées
 - [ ] Multi-personas en parallèle
-- [ ] Screenshots automatiques
+- [ ] Screenshots automatiques à chaque step MCP
 - [ ] Conteneurisation Docker
-- [ ] Interface web de visualisation
-- [ ] Métriques et dashboards
+- [ ] Interface web de visualisation des rapports
+- [ ] Métriques et dashboards comparatifs
+
+---
+
+## 🔬 Références
+
+- ReAct: Yao et al., *ReAct: Synergizing Reasoning and Acting in Language Models*, ICLR 2023
+- [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
+- [Playwright MCP Server](https://github.com/microsoft/playwright-mcp)
+- [LangChain MCP Adapters](https://github.com/langchain-ai/langchain-mcp-adapters)
+- [Playwright Python](https://playwright.dev/python/)
 
 ---
 
 **Auteur** : PFE ENSI / TALAN Tunisie  
-**Date** : Février - Juin 2026
+**Période** : Février – Juin 2026

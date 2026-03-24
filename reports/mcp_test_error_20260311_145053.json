@@ -1,9 +1,0 @@
-{
-  "test_type": "MCP Integration Test",
-  "timestamp": "2026-03-11T14:50:53.169897",
-  "persona": "acheteur_impatient",
-  "target_url": "https://automationexercise.com",
-  "status": "error",
-  "error": "No module named 'mcp'",
-  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Lenovo\\part1 pfe\\test_mcp.py\", line 80, in main\n    result = await agent.run_with_mcp(start_url=target_url)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Lenovo\\part1 pfe\\src\\agent.py\", line 354, in run_with_mcp\n    from mcp import ClientSession, StdioServerParameters\nModuleNotFoundError: No module named 'mcp'\n"
-}

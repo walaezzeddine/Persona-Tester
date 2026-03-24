@@ -1,0 +1,121 @@
+{
+  "test_type": "MCP Integration Test",
+  "timestamp": "2026-03-21T21:51:22.075099",
+  "persona": {
+    "id": "acheteur_prudent",
+    "objectif": "Trouver et acheter l'article le moins cher disponible",
+    "vitesse_navigation": "lente",
+    "sensibilite_prix": "haute",
+    "tolerance_erreurs": "faible",
+    "patience_attente_sec": 30,
+    "device": "desktop"
+  },
+  "scenario": {
+    "name": "Test MCP - Generic objective",
+    "objectif": "Navigate the target site and complete the persona objective",
+    "critere_succes": "Objective completed successfully"
+  },
+  "target_url": "https://automationexercise.com",
+  "config": {
+    "llm_provider": "github",
+    "llm_model": "openai/gpt-4o-mini",
+    "headless": false
+  },
+  "result": {
+    "status": "completed",
+    "steps": 10,
+    "duration_sec": 68.5,
+    "response": "THOUGHT: I have successfully navigated to the cart page and can confirm that the product \"Frozen Tops For Kids\" has been added to the cart. \nDONE",
+    "steps_detail": [
+      {
+        "step": 1,
+        "thought": "THOUGHT: Navigate to the target catalog page.\nACTION: browser_navigate\nACTION_INPUT: {\"url\": \"https://automationexercise.com\"}",
+        "action": "browser_navigate",
+        "input": {
+          "url": "https://automationexercise.com"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.goto('https://automationexercise.com');\n```\n### Page\n- Page URL: https://automationexercise.com/\n- Page Title: Automation Exercise\n- Console: 3 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [active] [ref=e1]:\n  - banner [ref=e2]:\n    - generic [ref=e5]:\n      - link \"Website for automation practice\" [ref=e8] [cursor=pointer]:\n        - /url: /\n        - img \"Website for automation practice\" [ref=e9]\n      - list [ref=e12]:\n        - listitem [ref=e13]:\n          - link \" Home\" [ref=e14] [cursor=pointer]:\n            - /url: /\n            - generic [ref=e15]: \n            - text: Home\n        - listitem [ref=e16]:\n          - link \" Products\" [ref=e17] [cursor=pointer]:\n            - /url: /products\n            - generic [ref=e18]: \n            - text: Products\n        - listitem [ref=e19]:\n          - link \" Cart\" [ref=e20] [cursor=pointer]:\n            - /url: /view_cart\n            - generic [ref=e21]: \n            - text: Cart\n     "
+      },
+      {
+        "step": 2,
+        "thought": "THOUGHT: I need to scroll down to load more product options, as there might be cheaper products available.\nACTION: browser_evaluate\nACTION_INPUT: {\"function\": \"() => window.scrollBy(0, 3000)\"}",
+        "action": "browser_snapshot",
+        "input": {
+          "function": "() => window.scrollBy(0, 3000)"
+        },
+        "result_preview": "### Result\nundefined\n### Ran Playwright code\n```js\nawait page.evaluate('() => window.scrollBy(0, 3000)');\n```\n### Page\n- Page URL: https://automationexercise.com/\n- Page Title: Automation Exercise\n- Console: 9 errors, 0 warnings\n### Events\n- New console entries: ..\\AppData\\Local\\Temp\\playwright-mcp-output\\1774126290986\\console-2026-03-21T20-51-31-073Z.log#L4-L9\n- [ERROR] Attestation check for Attribution Reportin...click.net failed. @ https://automationexercise.com/:0\n- [ERROR] Attestation check for Attribution Reportin...click.net failed. @ https://automationexercise.com/:0\n- [ERROR] Attestation check for Shared Storage on ht...ad/managed/js/activeview/current/reach_worklet.html:0\n- [ERROR] Attestation check for Shared Storage on ht...ad/managed/js/activeview/current/reach_worklet.html:0\n- [ERROR] Attestation check for Shared Storage on ht...ad/managed/js/activeview/current/reach_worklet.html:0\n- [ERROR] Attestation check for Shared Storage on ht...ad/managed/js/activeview/current/rea"
+      },
+      {
+        "step": 3,
+        "thought": "THOUGHT: I will scroll down again to load more product options and see if there are any cheaper products available.\nACTION: browser_evaluate\nACTION_INPUT: {\"function\": \"() => window.scrollBy(0, 3000)\"}",
+        "action": "browser_snapshot",
+        "input": {
+          "function": "() => window.scrollBy(0, 3000)"
+        },
+        "result_preview": "### Result\nundefined\n### Ran Playwright code\n```js\nawait page.evaluate('() => window.scrollBy(0, 3000)');\n```\n### Page\n- Page URL: https://automationexercise.com/\n- Page Title: Automation Exercise\n- Console: 0 errors, 2 warnings\n### Events\n- New console entries: ..\\AppData\\Local\\Temp\\playwright-mcp-output\\1774126290986\\console-2026-03-21T20-51-31-073Z.log#L10-L11\n- [WARNING] The powerPreference option is currently ...tps://js.ad-score.com/score.min.js?pid=1000941&tt=g:1\n- [WARNING] The powerPreference option is currently ...tps://js.ad-score.com/score.min.js?pid=1000941&tt=g:1"
+      },
+      {
+        "step": 4,
+        "thought": "THOUGHT: I have reached the bottom of the product list as the same products were loaded again. Now, I will compare the prices and select the cheapest product.\nCHEAPEST PRODUCT: Frozen Tops For Kids | Rs. 278 | View ref=e327\nACTION: browser_click\nACTION_INPUT: {\"ref\": \"e327\"}",
+        "action": "browser_click",
+        "input": {
+          "ref": "e327"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.locator('div:nth-child(13) > .product-image-wrapper > .choose > .nav > li > a').click();\n```\n### Page\n- Page URL: https://automationexercise.com/#google_vignette\n- Page Title: Automation Exercise\n- Console: 0 errors, 2 warnings\n### Snapshot\n```yaml\n- <changed> generic [ref=e1]:\n  - banner [ref=e2]:\n    - generic [ref=e5]:\n      - link [ref=e875] [cursor=pointer]:\n        - /url: /\n        - img [ref=e876]\n      - list [ref=e12]:\n        - listitem [ref=e13]:\n          - link [ref=e877] [cursor=pointer]:\n            - /url: /\n            - ref=e15 [unchanged]\n            - text: Home\n        - listitem [ref=e16]:\n          - link [ref=e878] [cursor=pointer]:\n            - /url: /products\n            - ref=e18 [unchanged]\n            - text: Products\n        - listitem [ref=e19]:\n          - link [ref=e879] [cursor=pointer]:\n            - /url: /view_cart\n            - ref=e21 [unchanged]\n            - text: Cart\n        - listitem [ref=e22]:\n    "
+      },
+      {
+        "step": 5,
+        "thought": "THOUGHT: A Google ad has appeared, which is blocking my actions. I need to navigate directly back to the target site.\nACTION: browser_navigate\nACTION_INPUT: {\"url\": \"https://automationexercise.com\"}",
+        "action": "browser_navigate",
+        "input": {
+          "url": "https://automationexercise.com"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.goto('https://automationexercise.com');\n```\n### Page\n- Page URL: https://automationexercise.com/\n- Page Title: Automation Exercise\n- Console: 3 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [active] [ref=e1]:\n  - banner [ref=e2]:\n    - generic [ref=e5]:\n      - link \"Website for automation practice\" [ref=e8] [cursor=pointer]:\n        - /url: /\n        - img \"Website for automation practice\" [ref=e9]\n      - list [ref=e12]:\n        - listitem [ref=e13]:\n          - link \" Home\" [ref=e14] [cursor=pointer]:\n            - /url: /\n            - generic [ref=e15]: \n            - text: Home\n        - listitem [ref=e16]:\n          - link \" Products\" [ref=e17] [cursor=pointer]:\n            - /url: /products\n            - generic [ref=e18]: \n            - text: Products\n        - listitem [ref=e19]:\n          - link \" Cart\" [ref=e20] [cursor=pointer]:\n            - /url: /view_cart\n            - generic [ref=e21]: \n            - text: Cart\n     "
+      },
+      {
+        "step": 6,
+        "thought": "THOUGHT: I have returned to the product list and can see the previous products including the cheapest one, \"Frozen Tops For Kids\" for Rs. 278, which I will select again.\nACTION: browser_click\nACTION_INPUT: {\"ref\": \"e324\"}",
+        "action": "browser_click",
+        "input": {
+          "ref": "e324"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.locator('div:nth-child(13) > .product-image-wrapper > .choose > .nav > li > a').click();\n```\n### Page\n- Page URL: https://automationexercise.com/product_details/13\n- Page Title: Automation Exercise - Product Details\n- Console: 6 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [active] [ref=e1]:\n  - banner [ref=e2]:\n    - generic [ref=e5]:\n      - link \"Website for automation practice\" [ref=e8] [cursor=pointer]:\n        - /url: /\n        - img \"Website for automation practice\" [ref=e9]\n      - list [ref=e12]:\n        - listitem [ref=e13]:\n          - link \" Home\" [ref=e14] [cursor=pointer]:\n            - /url: /\n            - generic [ref=e15]: \n            - text: Home\n        - listitem [ref=e16]:\n          - link \" Products\" [ref=e17] [cursor=pointer]:\n            - /url: /products\n            - generic [ref=e18]: \n            - text: Products\n        - listitem [ref=e19]:\n          - link \" Cart\" [ref=e20] [cursor=pointer]:\n           "
+      },
+      {
+        "step": 7,
+        "thought": "THOUGHT: I am on the product details page for \"Frozen Tops For Kids\" and need to capture the latest snapshot to get the current add-to-cart reference.\nACTION: browser_snapshot\nACTION_INPUT: {}",
+        "action": "browser_snapshot",
+        "input": {},
+        "result_preview": "### Page\n- Page URL: https://automationexercise.com/product_details/13\n- Page Title: Automation Exercise - Product Details\n- Console: 6 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [active] [ref=e1]:\n  - banner [ref=e2]:\n    - generic [ref=e5]:\n      - link \"Website for automation practice\" [ref=e8] [cursor=pointer]:\n        - /url: /\n        - img \"Website for automation practice\" [ref=e9]\n      - list [ref=e12]:\n        - listitem [ref=e13]:\n          - link \" Home\" [ref=e14] [cursor=pointer]:\n            - /url: /\n            - generic [ref=e15]: \n            - text: Home\n        - listitem [ref=e16]:\n          - link \" Products\" [ref=e17] [cursor=pointer]:\n            - /url: /products\n            - generic [ref=e18]: \n            - text: Products\n        - listitem [ref=e19]:\n          - link \" Cart\" [ref=e20] [cursor=pointer]:\n            - /url: /view_cart\n            - generic [ref=e21]: \n            - text: Cart\n        - listitem [ref=e22]:\n          - link \" Sign"
+      },
+      {
+        "step": 8,
+        "thought": "THOUGHT: I have captured the latest snapshot and can see the add-to-cart button for \"Frozen Tops For Kids.\" I will now click the add-to-cart button.\nACTION: browser_click\nACTION_INPUT: {\"ref\": \"e105\"}",
+        "action": "browser_click",
+        "input": {
+          "ref": "e105"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.getByRole('button', { name: ' Add to cart' }).click();\n```\n### Page\n- Page URL: https://automationexercise.com/product_details/13\n- Page Title: Automation Exercise - Product Details\n- Console: 6 errors, 0 warnings\n### Snapshot\n```yaml\n- <changed> generic [ref=e1]:\n  - ref=e2 [unchanged]\n  - generic [ref=e39]:\n    - ref=e41 [unchanged]\n    - generic [ref=e90]:\n      - generic [ref=e141]:\n        - generic [ref=e142]:\n          - generic [ref=e144]: \n          - heading \"Added!\" [level=4] [ref=e145]\n        - generic [ref=e146]:\n          - paragraph [ref=e147]: Your product has been added to cart.\n          - paragraph [ref=e148]:\n            - link \"View Cart\" [ref=e149] [cursor=pointer]:\n              - /url: /view_cart\n        - button \"Continue Shopping\" [ref=e151] [cursor=pointer]\n      - generic [ref=e91]:\n        - ref=e94 [unchanged]\n        - generic [ref=e96]:\n          - ref=e97 [unchanged]\n          - ref=e98 [unchanged]\n          -"
+      },
+      {
+        "step": 9,
+        "thought": "THOUGHT: The product \"Frozen Tops For Kids\" has been successfully added to the cart. Now, I will navigate to the cart page to verify the added item.\nACTION: browser_click\nACTION_INPUT: {\"ref\": \"e149\"}",
+        "action": "browser_click",
+        "input": {
+          "ref": "e149"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.getByRole('link', { name: 'View Cart' }).click();\n```\n### Page\n- Page URL: https://automationexercise.com/view_cart\n- Page Title: Automation Exercise - Checkout\n- Console: 9 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [active] [ref=e1]:\n  - banner [ref=e2]:\n    - generic [ref=e5]:\n      - link \"Website for automation practice\" [ref=e8] [cursor=pointer]:\n        - /url: /\n        - img \"Website for automation practice\" [ref=e9]\n      - list [ref=e12]:\n        - listitem [ref=e13]:\n          - link \" Home\" [ref=e14] [cursor=pointer]:\n            - /url: /\n            - generic [ref=e15]: \n            - text: Home\n        - listitem [ref=e16]:\n          - link \" Products\" [ref=e17] [cursor=pointer]:\n            - /url: /products\n            - generic [ref=e18]: \n            - text: Products\n        - listitem [ref=e19]:\n          - link \" Cart\" [ref=e20] [cursor=pointer]:\n            - /url: /view_cart\n            - generic [ref=e21]: \n"
+      },
+      {
+        "step": 10,
+        "thought": "THOUGHT: I have successfully navigated to the cart page and can confirm that the product \"Frozen Tops For Kids\" has been added to the cart. \nDONE",
+        "action": "DONE",
+        "strict_validation": {
+          "added_to_cart_seen": true,
+          "cart_page_seen": true,
+          "cart_item_seen": true
+        }
+      }
+    ]
+  }
+}

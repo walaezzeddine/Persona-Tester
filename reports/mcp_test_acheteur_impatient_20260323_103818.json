@@ -1,0 +1,31 @@
+{
+  "test_type": "MCP Integration Test",
+  "timestamp": "2026-03-23T10:38:18.932794",
+  "persona": {
+    "id": "acheteur_impatient",
+    "objectif": "Trouver et acheter l'article le moins cher disponible",
+    "vitesse_navigation": "rapide",
+    "sensibilite_prix": "faible",
+    "tolerance_erreurs": "haute",
+    "patience_attente_sec": 5,
+    "device": "mobile"
+  },
+  "scenario": {
+    "name": "Test MCP - Generic objective",
+    "objectif": "Navigate the target site and complete the persona objective",
+    "critere_succes": "Objective completed successfully"
+  },
+  "target_url": "https://www.booking.com",
+  "config": {
+    "llm_provider": "google",
+    "llm_model": "gemini-2.0-flash",
+    "headless": false
+  },
+  "result": {
+    "status": "error",
+    "steps": 1,
+    "duration_sec": 388.9,
+    "response": "MCP session timed out during rate limit wait",
+    "steps_detail": []
+  }
+}

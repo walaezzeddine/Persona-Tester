@@ -1,0 +1,114 @@
+{
+  "test_type": "MCP Integration Test",
+  "timestamp": "2026-03-21T20:51:54.238056",
+  "persona": {
+    "id": "acheteur_impatient",
+    "objectif": "Trouver et acheter l'article le moins cher disponible",
+    "vitesse_navigation": "rapide",
+    "sensibilite_prix": "faible",
+    "tolerance_erreurs": "haute",
+    "patience_attente_sec": 5,
+    "device": "mobile"
+  },
+  "scenario": {
+    "name": "Test MCP - Generic objective",
+    "objectif": "Navigate the target site and complete the persona objective",
+    "critere_succes": "Objective completed successfully"
+  },
+  "target_url": "https://automationexercise.com",
+  "config": {
+    "llm_provider": "github",
+    "llm_model": "openai/gpt-4o-mini",
+    "headless": false
+  },
+  "result": {
+    "status": "completed",
+    "steps": 9,
+    "duration_sec": 49.2,
+    "response": "THOUGHT: The cart page has been successfully verified, and the item is present in the cart.\nDONE",
+    "steps_detail": [
+      {
+        "step": 1,
+        "thought": "THOUGHT: Navigate to the target catalog page.\nACTION: browser_navigate\nACTION_INPUT: {\"url\": \"https://automationexercise.com\"}",
+        "action": "browser_navigate",
+        "input": {
+          "url": "https://automationexercise.com"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.goto('https://automationexercise.com');\n```\n### Page\n- Page URL: https://automationexercise.com/\n- Page Title: Automation Exercise\n- Console: 3 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [active] [ref=e1]:\n  - banner [ref=e2]:\n    - generic [ref=e5]:\n      - link \"Website for automation practice\" [ref=e8] [cursor=pointer]:\n        - /url: /\n        - img \"Website for automation practice\" [ref=e9]\n      - list [ref=e12]:\n        - listitem [ref=e13]:\n          - link \" Home\" [ref=e14] [cursor=pointer]:\n            - /url: /\n            - generic [ref=e15]: \n            - text: Home\n        - listitem [ref=e16]:\n          - link \" Products\" [ref=e17] [cursor=pointer]:\n            - /url: /products\n            - generic [ref=e18]: \n            - text: Products\n        - listitem [ref=e19]:\n          - link \" Cart\" [ref=e20] [cursor=pointer]:\n            - /url: /view_cart\n            - generic [ref=e21]: \n            - text: Cart\n     "
+      },
+      {
+        "step": 2,
+        "thought": "THOUGHT: I identified the cheapest visible product with a valid details ref, which is the Men Tshirt at Rs. 400.\nACTION: browser_click\nACTION_INPUT: {\"ref\": \"e157\"}",
+        "action": "browser_click",
+        "input": {
+          "ref": "e157"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.getByRole('link', { name: ' View Product' }).nth(1).click();\n```\n### Page\n- Page URL: https://automationexercise.com/#google_vignette\n- Page Title: Automation Exercise\n- Console: 4 errors, 0 warnings\n### Snapshot\n```yaml\n- <changed> generic [ref=e1]:\n  - banner [ref=e2]:\n    - generic [ref=e5]:\n      - link [ref=e821] [cursor=pointer]:\n        - /url: /\n        - img [ref=e822]\n      - list [ref=e12]:\n        - listitem [ref=e13]:\n          - link [ref=e823] [cursor=pointer]:\n            - /url: /\n            - ref=e15 [unchanged]\n            - text: Home\n        - listitem [ref=e16]:\n          - link [ref=e824] [cursor=pointer]:\n            - /url: /products\n            - ref=e18 [unchanged]\n            - text: Products\n        - listitem [ref=e19]:\n          - link [ref=e825] [cursor=pointer]:\n            - /url: /view_cart\n            - ref=e21 [unchanged]\n            - text: Cart\n        - listitem [ref=e22]:\n          - link [ref=e826] [cu"
+      },
+      {
+        "step": 3,
+        "thought": "THOUGHT: A Google ad appeared, so I need to navigate back to the main site.\nACTION: browser_navigate\nACTION_INPUT: {\"url\": \"https://automationexercise.com\"}",
+        "action": "browser_navigate",
+        "input": {
+          "url": "https://automationexercise.com"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.goto('https://automationexercise.com');\n```\n### Page\n- Page URL: https://automationexercise.com/\n- Page Title: Automation Exercise\n- Console: 3 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [active] [ref=e1]:\n  - banner [ref=e2]:\n    - generic [ref=e5]:\n      - link \"Website for automation practice\" [ref=e8] [cursor=pointer]:\n        - /url: /\n        - img \"Website for automation practice\" [ref=e9]\n      - list [ref=e12]:\n        - listitem [ref=e13]:\n          - link \" Home\" [ref=e14] [cursor=pointer]:\n            - /url: /\n            - generic [ref=e15]: \n            - text: Home\n        - listitem [ref=e16]:\n          - link \" Products\" [ref=e17] [cursor=pointer]:\n            - /url: /products\n            - generic [ref=e18]: \n            - text: Products\n        - listitem [ref=e19]:\n          - link \" Cart\" [ref=e20] [cursor=pointer]:\n            - /url: /view_cart\n            - generic [ref=e21]: \n            - text: Cart\n     "
+      },
+      {
+        "step": 4,
+        "thought": "THOUGHT: I identified the Men Tshirt again as the cheapest visible product with a valid details ref.\nACTION: browser_click\nACTION_INPUT: {\"ref\": \"e153\"}",
+        "action": "browser_click",
+        "input": {
+          "ref": "e153"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.getByRole('link', { name: ' View Product' }).nth(1).click();\n```\n### Page\n- Page URL: https://automationexercise.com/product_details/2\n- Page Title: Automation Exercise - Product Details\n- Console: 6 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [active] [ref=e1]:\n  - banner [ref=e2]:\n    - generic [ref=e5]:\n      - link \"Website for automation practice\" [ref=e8] [cursor=pointer]:\n        - /url: /\n        - img \"Website for automation practice\" [ref=e9]\n      - list [ref=e12]:\n        - listitem [ref=e13]:\n          - link \" Home\" [ref=e14] [cursor=pointer]:\n            - /url: /\n            - generic [ref=e15]: \n            - text: Home\n        - listitem [ref=e16]:\n          - link \" Products\" [ref=e17] [cursor=pointer]:\n            - /url: /products\n            - generic [ref=e18]: \n            - text: Products\n        - listitem [ref=e19]:\n          - link \" Cart\" [ref=e20] [cursor=pointer]:\n            - /url: /view_cart\n        "
+      },
+      {
+        "step": 5,
+        "thought": "THOUGHT: I am on the product details page for the Men Tshirt, and I need to get the current add-to-cart ref.\nACTION: browser_snapshot\nACTION_INPUT: {}",
+        "action": "browser_snapshot",
+        "input": {},
+        "result_preview": "### Page\n- Page URL: https://automationexercise.com/product_details/2\n- Page Title: Automation Exercise - Product Details\n- Console: 6 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [active] [ref=e1]:\n  - banner [ref=e2]:\n    - generic [ref=e5]:\n      - link \"Website for automation practice\" [ref=e8] [cursor=pointer]:\n        - /url: /\n        - img \"Website for automation practice\" [ref=e9]\n      - list [ref=e12]:\n        - listitem [ref=e13]:\n          - link \" Home\" [ref=e14] [cursor=pointer]:\n            - /url: /\n            - generic [ref=e15]: \n            - text: Home\n        - listitem [ref=e16]:\n          - link \" Products\" [ref=e17] [cursor=pointer]:\n            - /url: /products\n            - generic [ref=e18]: \n            - text: Products\n        - listitem [ref=e19]:\n          - link \" Cart\" [ref=e20] [cursor=pointer]:\n            - /url: /view_cart\n            - generic [ref=e21]: \n            - text: Cart\n        - listitem [ref=e22]:\n          - link \" Signu"
+      },
+      {
+        "step": 6,
+        "thought": "THOUGHT: I found the current add-to-cart ref for the Men Tshirt.\nACTION: browser_click\nACTION_INPUT: {\"ref\": \"e105\"}",
+        "action": "browser_click",
+        "input": {
+          "ref": "e105"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.getByRole('button', { name: ' Add to cart' }).click();\n```\n### Page\n- Page URL: https://automationexercise.com/product_details/2\n- Page Title: Automation Exercise - Product Details\n- Console: 6 errors, 0 warnings\n### Snapshot\n```yaml\n- <changed> generic [ref=e1]:\n  - ref=e2 [unchanged]\n  - generic [ref=e39]:\n    - ref=e41 [unchanged]\n    - generic [ref=e90]:\n      - generic [ref=e141]:\n        - generic [ref=e142]:\n          - generic [ref=e144]: \n          - heading \"Added!\" [level=4] [ref=e145]\n        - generic [ref=e146]:\n          - paragraph [ref=e147]: Your product has been added to cart.\n          - paragraph [ref=e148]:\n            - link \"View Cart\" [ref=e149] [cursor=pointer]:\n              - /url: /view_cart\n        - button \"Continue Shopping\" [ref=e151] [cursor=pointer]\n      - generic [ref=e91]:\n        - ref=e94 [unchanged]\n        - generic [ref=e96]:\n          - ref=e97 [unchanged]\n          - ref=e98 [unchanged]\n          - "
+      },
+      {
+        "step": 7,
+        "thought": "THOUGHT: The Men Tshirt has been successfully added to the cart.\nDONE",
+        "action": "DONE_REJECTED",
+        "strict_validation": {
+          "added_to_cart_seen": true,
+          "cart_page_seen": false,
+          "cart_item_seen": false
+        },
+        "reason": "DONE rejected by strict validation. Missing: visit cart page. Continue with tools: navigate/click to cart and verify item presence before DONE."
+      },
+      {
+        "step": 8,
+        "thought": "THOUGHT: I need to navigate to the cart page to verify the item presence.\nACTION: browser_click\nACTION_INPUT: {\"ref\": \"e149\"}",
+        "action": "browser_click",
+        "input": {
+          "ref": "e149"
+        },
+        "result_preview": "### Ran Playwright code\n```js\nawait page.getByRole('link', { name: 'View Cart' }).click();\n```\n### Page\n- Page URL: https://automationexercise.com/view_cart\n- Page Title: Automation Exercise - Checkout\n- Console: 9 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [active] [ref=e1]:\n  - banner [ref=e2]:\n    - generic [ref=e5]:\n      - link \"Website for automation practice\" [ref=e8] [cursor=pointer]:\n        - /url: /\n        - img \"Website for automation practice\" [ref=e9]\n      - list [ref=e12]:\n        - listitem [ref=e13]:\n          - link \" Home\" [ref=e14] [cursor=pointer]:\n            - /url: /\n            - generic [ref=e15]: \n            - text: Home\n        - listitem [ref=e16]:\n          - link \" Products\" [ref=e17] [cursor=pointer]:\n            - /url: /products\n            - generic [ref=e18]: \n            - text: Products\n        - listitem [ref=e19]:\n          - link \" Cart\" [ref=e20] [cursor=pointer]:\n            - /url: /view_cart\n            - generic [ref=e21]: \n"
+      },
+      {
+        "step": 9,
+        "thought": "THOUGHT: The cart page has been successfully verified, and the item is present in the cart.\nDONE",
+        "action": "DONE",
+        "strict_validation": {
+          "added_to_cart_seen": true,
+          "cart_page_seen": true,
+          "cart_item_seen": true
+        }
+      }
+    ]
+  }
+}

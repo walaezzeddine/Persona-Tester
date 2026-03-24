@@ -1,0 +1,15 @@
+# Scénario de test : Achat du produit le moins cher sur Demoblaze
+# Ce scénario cible demoblaze.com (électronique en USD)
+
+# DEMOBLAZE SUPPORT — START
+name: "achat_moins_cher_demoblaze"
+objectif: "find the cheapest product across all categories and add it to cart"
+target_url: "https://www.demoblaze.com"
+
+success_criteria:
+  - "cheapest product found and added to cart"
+
+abandon_criteria:
+  - "cannot navigate"
+  - "cannot find products"
+# DEMOBLAZE SUPPORT — END

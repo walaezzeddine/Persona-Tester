@@ -1,0 +1,112 @@
+{
+  "test_type": "MCP Integration Test",
+  "timestamp": "2026-03-23T09:48:17.589117",
+  "persona": {
+    "id": "acheteur_impatient",
+    "objectif": "Trouver et acheter l'article le moins cher disponible",
+    "vitesse_navigation": "rapide",
+    "sensibilite_prix": "faible",
+    "tolerance_erreurs": "haute",
+    "patience_attente_sec": 5,
+    "device": "mobile"
+  },
+  "scenario": {
+    "name": "Test MCP - Generic objective",
+    "objectif": "Navigate the target site and complete the persona objective",
+    "critere_succes": "Objective completed successfully"
+  },
+  "target_url": "https://www.booking.com",
+  "config": {
+    "llm_provider": "google",
+    "llm_model": "gemini-2.0-flash",
+    "headless": false
+  },
+  "result": {
+    "status": "max_steps_reached",
+    "steps": 20,
+    "duration_sec": 388.9,
+    "response": "Max steps reached",
+    "steps_detail": [
+      {
+        "step": 1,
+        "error": "Server disconnected without sending a response."
+      },
+      {
+        "step": 2,
+        "error": "[WinError 10054] Une connexion existante a dû être fermée par l’hôte distant"
+      },
+      {
+        "step": 3,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 4,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 5,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 6,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 7,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 8,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 9,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 10,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 11,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 12,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 13,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 14,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 15,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 16,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 17,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 18,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 19,
+        "error": "[Errno 11001] getaddrinfo failed"
+      },
+      {
+        "step": 20,
+        "error": "[Errno 11001] getaddrinfo failed"
+      }
+    ]
+  }
+}
