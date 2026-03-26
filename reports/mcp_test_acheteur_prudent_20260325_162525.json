@@ -1,0 +1,31 @@
+{
+  "test_type": "MCP Integration Test",
+  "timestamp": "2026-03-25T16:25:25.585327",
+  "persona": {
+    "id": "acheteur_prudent",
+    "objectif": "Trouver et acheter l'article le moins cher disponible",
+    "vitesse_navigation": "lente",
+    "sensibilite_prix": "haute",
+    "tolerance_erreurs": "faible",
+    "patience_attente_sec": 30,
+    "device": "desktop"
+  },
+  "scenario": {
+    "name": "Test MCP - Generic objective",
+    "objectif": "Navigate the target site and complete the persona objective",
+    "critere_succes": "Objective completed successfully"
+  },
+  "target_url": "https://www.booking.com",
+  "config": {
+    "llm_provider": "ollama",
+    "llm_model": "qwen3.5:cloud",
+    "headless": false
+  },
+  "result": {
+    "status": "error",
+    "steps": 1,
+    "duration_sec": 114.8,
+    "response": "Rate limit exhausted: Error code: 429 - {'error': 'you (walaezzeddine) have reached your session usage limit, upgrade for higher limits: https://ollama.com/upgrade'}",
+    "steps_detail": []
+  }
+}

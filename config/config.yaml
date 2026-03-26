@@ -1,14 +1,14 @@
 llm:
   provider: "ollama"
-  model: "qwen3-vl:8b"
+  model: "qwen3.5:cloud"
   temperature: 0.1
-  max_tokens: 1024
+  max_tokens: 512
   vision_provider: "ollama"
-  vision_model: "qwen3-vl:8b"
-  vision_max_tokens: 1024
+  vision_model: "qwen3.5:cloud"
+  vision_max_tokens: 512
 navigation:
   max_steps: 20
-  action_delay: 2
+  action_delay: 0.5
   action_timeout: 5000
   page_timeout: 30000
   page_content_limit: 1500

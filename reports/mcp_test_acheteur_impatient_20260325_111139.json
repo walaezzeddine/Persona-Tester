@@ -1,0 +1,72 @@
+{
+  "test_type": "MCP Integration Test",
+  "timestamp": "2026-03-25T11:11:39.973918",
+  "persona": {
+    "id": "acheteur_impatient",
+    "objectif": "Trouver et acheter l'article le moins cher disponible",
+    "vitesse_navigation": "rapide",
+    "sensibilite_prix": "faible",
+    "tolerance_erreurs": "haute",
+    "patience_attente_sec": 5,
+    "device": "mobile"
+  },
+  "scenario": {
+    "name": "Test MCP - Generic objective",
+    "objectif": "Navigate the target site and complete the persona objective",
+    "critere_succes": "Objective completed successfully"
+  },
+  "target_url": "https://automationexercise.com",
+  "config": {
+    "llm_provider": "ollama",
+    "llm_model": "qwen3.5:cloud",
+    "headless": false
+  },
+  "result": {
+    "status": "error",
+    "steps": 0,
+    "duration_sec": 27.8,
+    "response": "Too many invalid ReAct responses from model",
+    "steps_detail": [
+      {
+        "step": 1,
+        "error": "Invalid or unknown action 'None'. Available tools: ['browser_close', 'browser_resize', 'browser_console_messages', 'browser_handle_dialog', 'browser_evaluate', 'browser_file_upload', 'browser_fill_form', 'browser_install', 'browser_press_key', 'browser_type', 'browser_navigate', 'browser_navigate_back', 'browser_network_requests', 'browser_run_code', 'browser_take_screenshot', 'browser_snapshot', 'browser_click', 'browser_drag', 'browser_hover', 'browser_select_option', 'browser_tabs', 'browser_wait_for']. Remember: to scroll use browser_evaluate with function () => window.scrollBy(0, 3000).",
+        "raw": ""
+      },
+      {
+        "step": 1,
+        "error": "Invalid or unknown action 'None'. Available tools: ['browser_close', 'browser_resize', 'browser_console_messages', 'browser_handle_dialog', 'browser_evaluate', 'browser_file_upload', 'browser_fill_form', 'browser_install', 'browser_press_key', 'browser_type', 'browser_navigate', 'browser_navigate_back', 'browser_network_requests', 'browser_run_code', 'browser_take_screenshot', 'browser_snapshot', 'browser_click', 'browser_drag', 'browser_hover', 'browser_select_option', 'browser_tabs', 'browser_wait_for']. Remember: to scroll use browser_evaluate with function () => window.scrollBy(0, 3000).",
+        "raw": ""
+      },
+      {
+        "step": 1,
+        "error": "Invalid or unknown action 'None'. Available tools: ['browser_close', 'browser_resize', 'browser_console_messages', 'browser_handle_dialog', 'browser_evaluate', 'browser_file_upload', 'browser_fill_form', 'browser_install', 'browser_press_key', 'browser_type', 'browser_navigate', 'browser_navigate_back', 'browser_network_requests', 'browser_run_code', 'browser_take_screenshot', 'browser_snapshot', 'browser_click', 'browser_drag', 'browser_hover', 'browser_select_option', 'browser_tabs', 'browser_wait_for']. Remember: to scroll use browser_evaluate with function () => window.scrollBy(0, 3000).",
+        "raw": ""
+      },
+      {
+        "step": 1,
+        "error": "Invalid or unknown action 'None'. Available tools: ['browser_close', 'browser_resize', 'browser_console_messages', 'browser_handle_dialog', 'browser_evaluate', 'browser_file_upload', 'browser_fill_form', 'browser_install', 'browser_press_key', 'browser_type', 'browser_navigate', 'browser_navigate_back', 'browser_network_requests', 'browser_run_code', 'browser_take_screenshot', 'browser_snapshot', 'browser_click', 'browser_drag', 'browser_hover', 'browser_select_option', 'browser_tabs', 'browser_wait_for']. Remember: to scroll use browser_evaluate with function () => window.scrollBy(0, 3000).",
+        "raw": ""
+      },
+      {
+        "step": 1,
+        "error": "Invalid or unknown action 'None'. Available tools: ['browser_close', 'browser_resize', 'browser_console_messages', 'browser_handle_dialog', 'browser_evaluate', 'browser_file_upload', 'browser_fill_form', 'browser_install', 'browser_press_key', 'browser_type', 'browser_navigate', 'browser_navigate_back', 'browser_network_requests', 'browser_run_code', 'browser_take_screenshot', 'browser_snapshot', 'browser_click', 'browser_drag', 'browser_hover', 'browser_select_option', 'browser_tabs', 'browser_wait_for']. Remember: to scroll use browser_evaluate with function () => window.scrollBy(0, 3000).",
+        "raw": ""
+      },
+      {
+        "step": 1,
+        "error": "Invalid or unknown action 'None'. Available tools: ['browser_close', 'browser_resize', 'browser_console_messages', 'browser_handle_dialog', 'browser_evaluate', 'browser_file_upload', 'browser_fill_form', 'browser_install', 'browser_press_key', 'browser_type', 'browser_navigate', 'browser_navigate_back', 'browser_network_requests', 'browser_run_code', 'browser_take_screenshot', 'browser_snapshot', 'browser_click', 'browser_drag', 'browser_hover', 'browser_select_option', 'browser_tabs', 'browser_wait_for']. Remember: to scroll use browser_evaluate with function () => window.scrollBy(0, 3000).",
+        "raw": ""
+      },
+      {
+        "step": 1,
+        "error": "Invalid or unknown action 'None'. Available tools: ['browser_close', 'browser_resize', 'browser_console_messages', 'browser_handle_dialog', 'browser_evaluate', 'browser_file_upload', 'browser_fill_form', 'browser_install', 'browser_press_key', 'browser_type', 'browser_navigate', 'browser_navigate_back', 'browser_network_requests', 'browser_run_code', 'browser_take_screenshot', 'browser_snapshot', 'browser_click', 'browser_drag', 'browser_hover', 'browser_select_option', 'browser_tabs', 'browser_wait_for']. Remember: to scroll use browser_evaluate with function () => window.scrollBy(0, 3000).",
+        "raw": ""
+      },
+      {
+        "step": 1,
+        "error": "Invalid or unknown action 'None'. Available tools: ['browser_close', 'browser_resize', 'browser_console_messages', 'browser_handle_dialog', 'browser_evaluate', 'browser_file_upload', 'browser_fill_form', 'browser_install', 'browser_press_key', 'browser_type', 'browser_navigate', 'browser_navigate_back', 'browser_network_requests', 'browser_run_code', 'browser_take_screenshot', 'browser_snapshot', 'browser_click', 'browser_drag', 'browser_hover', 'browser_select_option', 'browser_tabs', 'browser_wait_for']. Remember: to scroll use browser_evaluate with function () => window.scrollBy(0, 3000).",
+        "raw": ""
+      }
+    ]
+  }
+}

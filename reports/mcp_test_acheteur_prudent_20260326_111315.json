@@ -1,0 +1,150 @@
+{
+  "test_type": "MCP Integration Test",
+  "timestamp": "2026-03-26T11:13:15.532967",
+  "persona": {
+    "id": "acheteur_prudent",
+    "objectif": "Trouver et acheter l'article le moins cher disponible",
+    "vitesse_navigation": "lente",
+    "sensibilite_prix": "haute",
+    "tolerance_erreurs": "faible",
+    "patience_attente_sec": 30,
+    "device": "desktop"
+  },
+  "scenario": {
+    "name": "Test MCP - Generic objective",
+    "objectif": "Navigate the target site and complete the persona objective",
+    "critere_succes": "Objective completed successfully"
+  },
+  "target_url": "https://www.booking.com",
+  "config": {
+    "llm_provider": "ollama",
+    "llm_model": "qwen3.5:cloud",
+    "headless": false
+  },
+  "result": {
+    "status": "completed",
+    "steps": 13,
+    "duration_sec": 146.8,
+    "response": "Objective reached",
+    "steps_detail": [
+      {
+        "step": 1,
+        "thought": "THOUGHT: Starting the task by navigating to booking.com as per Step 1 of the strategy. This is the first action needed to begin the hotel search process.\nACTION: browser_navigate\nACTION_INPUT: {\"url\": \"https://www.booking.com\"}",
+        "action": "browser_navigate",
+        "input": {
+          "url": "https://www.booking.com"
+        },
+        "vision_image_attached": true,
+        "result_preview": "### Ran Playwright code\n```js\nawait page.goto('https://www.booking.com');\n```\n### Page\n- Page URL: https://www.booking.com/\n### Snapshot\n```yaml\n\n```"
+      },
+      {
+        "step": 2,
+        "thought": "THOUGHT: The page appears to be loading or blank. I need to take a snapshot to see the current state of the page and identify the search form elements. This is Step 2 of the strategy.\nACTION: browser_snapshot\nACTION_INPUT: {}",
+        "action": "browser_snapshot",
+        "input": {},
+        "vision_image_attached": true,
+        "result_preview": "### Page\n- Page URL: https://www.booking.com/index.fr.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&chal_t=1774520004927&force_referer=\n- Page Title: Booking.com | Site officiel | Hôtels, vols, voitures de location et hébergements\n- Console: 1 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [ref=e1]:\n  - generic [ref=e3]:\n    - link [ref=e5] [cursor=pointer]:\n      - /url: \"#main\"\n      - text: Accéder au contenu principal\n    - generic [ref=e7]:\n      - banner [ref=e19]:\n        - generic [ref=e20]:\n          - navigation [ref=e21]:\n            - link [ref=e25] [cursor=pointer]:\n              - /url: https://www.booking.com/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&aid=304142&sid=ee84d27e880e5be0b204fafe3dafc87a\n              - img [ref=e26]\n       "
+      },
+      {
+        "step": 3,
+        "thought": "THOUGHT: There's a login popup overlay blocking the search form. According to the rules, I need to dismiss this overlay first by pressing Escape, then take a fresh snapshot to access the search form elements.\nACTION: browser_press_key\nACTION_INPUT: {\"key\": \"Escape\"}",
+        "action": "browser_press_key",
+        "input": {
+          "key": "Escape"
+        },
+        "vision_image_attached": false,
+        "result_preview": "### Ran Playwright code\n```js\n// Press Escape\nawait page.keyboard.press('Escape');\n```"
+      },
+      {
+        "step": 4,
+        "thought": "THOUGHT: The Escape key was pressed to dismiss the login popup. Now I need to take a fresh snapshot to see the current state of the page and identify the search form elements, particularly the destination textbox labeled 'Destination' or 'Ou allez-vous ?'.\nACTION: browser_snapshot\nACTION_INPUT: {}",
+        "action": "browser_snapshot",
+        "input": {},
+        "vision_image_attached": true,
+        "result_preview": "### Page\n- Page URL: https://www.booking.com/index.fr.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&chal_t=1774520004927&force_referer=\n- Page Title: Booking.com | Site officiel | Hôtels, vols, voitures de location et hébergements\n- Console: 1 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [ref=e3]:\n  - link \"Accéder au contenu principal\" [ref=e1248] [cursor=pointer]:\n    - /url: \"#main\"\n  - generic [ref=e7]:\n    - banner [ref=e19]:\n      - generic [ref=e20]:\n        - navigation [ref=e21]:\n          - link \"Booking.com\" [ref=e1249] [cursor=pointer]:\n            - /url: https://www.booking.com/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&aid=304142&sid=ee84d27e880e5be0b204fafe3dafc87a\n            - img [ref=e26]\n          - generic [ref=e28]:\n         "
+      },
+      {
+        "step": 5,
+        "thought": "THOUGHT: The snapshot shows the Booking.com homepage with the search form visible. I can see the search form with \"Où allez-vous ?\" (destination), date picker [ref=e1265], guests selector [ref=e1266], and search button [ref=e1267]. However, I don't see a specific ref for the destination textbox in the snapshot. I need to find the destination input field to type \"Paris\". Let me look for an input element or try to interact with the destination area. The destination field should be an editable textbox.\nACTION: browser_snapshot\nACTION_INPUT: {}",
+        "action": "browser_snapshot",
+        "input": {},
+        "vision_image_attached": true,
+        "result_preview": "### Page\n- Page URL: https://www.booking.com/index.fr.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&chal_t=1774520004927&force_referer=\n- Page Title: Booking.com | Site officiel | Hôtels, vols, voitures de location et hébergements\n- Console: 1 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [ref=e3]:\n  - link \"Accéder au contenu principal\" [ref=e1248] [cursor=pointer]:\n    - /url: \"#main\"\n  - generic [ref=e7]:\n    - banner [ref=e19]:\n      - generic [ref=e20]:\n        - navigation [ref=e21]:\n          - link \"Booking.com\" [ref=e1249] [cursor=pointer]:\n            - /url: https://www.booking.com/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&aid=304142&sid=ee84d27e880e5be0b204fafe3dafc87a\n            - img [ref=e26]\n          - generic [ref=e28]:\n         "
+      },
+      {
+        "step": 6,
+        "thought": "THOUGHT: The snapshot doesn't show a specific ref for the destination input textbox. I can see the search form with the \"Où allez-vous ?\" field visible in the screenshot, but it's not listed with a ref in the snapshot. I'll use browser_evaluate to find and click on the destination input field by its placeholder text, then I can type \"Paris\" into it.\nACTION: browser_evaluate\nACTION_INPUT: {\"function\": \"() => { const input = document.querySelector('input[placeholder*=\\\"Où allez-vous\\\"], input[placeholder*=\\\"destination\\\"], input[name=\\\"dest\\\"]'); if (input) { input.click(); input.focus(); return 'clicked'; } return 'not found'; }\"}",
+        "action": "browser_evaluate",
+        "input": {
+          "function": "() => { const input = document.querySelector('input[placeholder*=\"Où allez-vous\"], input[placeholder*=\"destination\"], input[name=\"dest\"]'); if (input) { input.click(); input.focus(); return 'clicked'; } return 'not found'; }"
+        },
+        "vision_image_attached": false,
+        "result_preview": "### Result\n\"clicked\"\n### Ran Playwright code\n```js\nawait page.evaluate('() => { const input = document.querySelector(\\'input[placeholder*=\"Où allez-vous\"], input[placeholder*=\"destination\"], input[name=\"dest\"]\\'); if (input) { input.click(); input.focus(); return \\'clicked\\'; } return \\'not found\\'; }');\n```"
+      },
+      {
+        "step": 7,
+        "thought": "THOUGHT: The destination input was clicked and focused successfully. Now I need to take a snapshot to see if the input field has a ref so I can use browser_type to enter \"Paris\".\nACTION: browser_snapshot\nACTION_INPUT: {}",
+        "action": "browser_snapshot",
+        "input": {},
+        "vision_image_attached": true,
+        "result_preview": "### Page\n- Page URL: https://www.booking.com/index.fr.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&chal_t=1774520004927&force_referer=\n- Page Title: Booking.com | Site officiel | Hôtels, vols, voitures de location et hébergements\n- Console: 1 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [ref=e3]:\n  - link \"Accéder au contenu principal\" [ref=e1248] [cursor=pointer]:\n    - /url: \"#main\"\n  - generic [ref=e7]:\n    - banner [ref=e19]:\n      - generic [ref=e20]:\n        - navigation [ref=e21]:\n          - link \"Booking.com\" [ref=e1249] [cursor=pointer]:\n            - /url: https://www.booking.com/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&aid=304142&sid=ee84d27e880e5be0b204fafe3dafc87a\n            - img [ref=e26]\n          - generic [ref=e28]:\n         "
+      },
+      {
+        "step": 8,
+        "thought": "THOUGHT: The destination input is focused and showing autocomplete suggestions. I can see \"Paris France\" button with ref=e3308 in the dropdown. Since the input is already active and the Paris suggestion is visible, I'll click directly on the \"Paris France\" suggestion to select it as the destination.\nACTION: browser_click\nACTION_INPUT: {\"ref\": \"e3308\"}",
+        "action": "browser_click",
+        "input": {
+          "ref": "e3308"
+        },
+        "vision_image_attached": true,
+        "result_preview": "### Ran Playwright code\n```js\nawait page.getByRole('button', { name: 'Paris France' }).click();\n```\n### Page\n- Page URL: https://www.booking.com/index.fr.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&chal_t=1774520004927&force_referer=\n- Page Title: Booking.com | Site officiel | Hôtels, vols, voitures de location et hébergements\n- Console: 1 errors, 0 warnings\n### Snapshot\n```yaml\n- <changed> region \"Rechercher des hébergements\" [ref=e1263]:\n  - generic [ref=e106]:\n    - generic [ref=e112]:\n      - ref=e115 [unchanged]\n      - combobox \"Où allez-vous ?\" [ref=e1264]: Paris, France\n      - button \"Effacer\" [ref=e3344] [cursor=pointer]:\n        - img \"Effacer\" [ref=e3345]:\n          - img [ref=e3346]\n    - generic [ref=e120]:\n      - ref=e1265 [unchanged]\n      - navigation [ref=e3349]:\n        - tablist [ref=e3351]:\n          - tab \"Calendrier\" [selected] [ref=e3352] [cur"
+      },
+      {
+        "step": 9,
+        "thought": "THOUGHT: Paris has been selected as the destination and the calendar is now open. I can see March 2026 and April 2026 calendars. I need to identify the next Saturday and Sunday dates to select for check-in and check-out. Let me take a snapshot to see the date cells more clearly.\nACTION: browser_snapshot\nACTION_INPUT: {}",
+        "action": "browser_snapshot",
+        "input": {},
+        "vision_image_attached": true,
+        "result_preview": "### Page\n- Page URL: https://www.booking.com/index.fr.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&chal_t=1774520004927&force_referer=\n- Page Title: Booking.com | Site officiel | Hôtels, vols, voitures de location et hébergements\n- Console: 1 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [ref=e3]:\n  - link \"Accéder au contenu principal\" [ref=e1248] [cursor=pointer]:\n    - /url: \"#main\"\n  - generic [ref=e7]:\n    - banner [ref=e19]:\n      - generic [ref=e20]:\n        - navigation [ref=e21]:\n          - link \"Booking.com\" [ref=e1249] [cursor=pointer]:\n            - /url: https://www.booking.com/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&aid=304142&sid=ee84d27e880e5be0b204fafe3dafc87a\n            - img [ref=e26]\n          - generic [ref=e28]:\n         "
+      },
+      {
+        "step": 10,
+        "thought": "THOUGHT: The calendar shows March 2026 and April 2026. I can see that March 28, 2026 is a Saturday (sa 28 Mars 2026) with ref=e3479 for the gridcell and ref=e3480 for the checkbox. March 29, 2026 is a Sunday (di 29 Mars 2026) with ref=e3482 for the gridcell and ref=e3483 for the checkbox. These dates are not disabled and are available for selection. I'll click on Saturday March 28 first for check-in.\nACTION: browser_click\nACTION_INPUT: {\"ref\": \"e3480\"}",
+        "action": "browser_click",
+        "input": {
+          "ref": "e3480"
+        },
+        "vision_image_attached": true,
+        "result_preview": "### Ran Playwright code\n```js\nawait page.getByRole('checkbox', { name: 'sa 28 Mars' }).click();\n```\n### Page\n- Page URL: https://www.booking.com/index.fr.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&chal_t=1774520004927&force_referer=\n- Page Title: Booking.com | Site officiel | Hôtels, vols, voitures de location et hébergements\n- Console: 1 errors, 0 warnings\n### Snapshot\n```yaml\n- <changed> generic [ref=e120]:\n  - button \"sam. 28 mars — Date de départ\" [ref=e3673] [cursor=pointer]:\n    - generic [ref=e122]:\n      - ref=e124 [unchanged]\n      - generic [ref=e126]: sam. 28 mars\n      - ref=e127 [unchanged]\n      - ref=e128 [unchanged]\n  - navigation [ref=e3349]:\n    - ref=e3351 [unchanged]\n    - tabpanel \"Calendrier\" [ref=e3358]:\n      - generic [ref=e3359]:\n        - generic [ref=e3360]:\n          - ref=e3361 [unchanged]\n          - generic [ref=e3366]:\n            - g"
+      },
+      {
+        "step": 11,
+        "thought": "THOUGHT: The check-in date (Saturday March 28) has been selected successfully. The calendar is still open and now I need to select Sunday March 29 as the check-out date. Let me take a snapshot to see the current state and get the fresh ref for Sunday March 29.\nACTION: browser_snapshot\nACTION_INPUT: {}",
+        "action": "browser_snapshot",
+        "input": {},
+        "vision_image_attached": true,
+        "result_preview": "### Page\n- Page URL: https://www.booking.com/index.fr.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&chal_t=1774520004927&force_referer=\n- Page Title: Booking.com | Site officiel | Hôtels, vols, voitures de location et hébergements\n- Console: 1 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [ref=e3]:\n  - link \"Accéder au contenu principal\" [ref=e1248] [cursor=pointer]:\n    - /url: \"#main\"\n  - generic [ref=e7]:\n    - banner [ref=e19]:\n      - generic [ref=e20]:\n        - navigation [ref=e21]:\n          - link \"Booking.com\" [ref=e1249] [cursor=pointer]:\n            - /url: https://www.booking.com/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&aid=304142&sid=ee84d27e880e5be0b204fafe3dafc87a\n            - img [ref=e26]\n          - generic [ref=e28]:\n         "
+      },
+      {
+        "step": 12,
+        "thought": "THOUGHT: The check-in date (Saturday March 28) is selected. Now I need to select Sunday March 29 as the check-out date. The snapshot shows the checkbox for Sunday March 29 with ref=e3483.\nACTION: browser_click\nACTION_INPUT: {\"ref\": \"e3483\"}",
+        "action": "browser_click",
+        "input": {
+          "ref": "e3483"
+        },
+        "vision_image_attached": true,
+        "result_preview": "### Ran Playwright code\n```js\nawait page.getByRole('checkbox', { name: 'di 29 Mars' }).click();\n```\n### Page\n- Page URL: https://www.booking.com/index.fr.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&chal_t=1774520004927&force_referer=\n- Page Title: Booking.com | Site officiel | Hôtels, vols, voitures de location et hébergements\n- Console: 1 errors, 0 warnings\n### Snapshot\n```yaml\n- <changed> generic [ref=e106]:\n  - ref=e112 [unchanged]\n  - button \"sam. 28 mars — dim. 29 mars\" [ref=e3674] [cursor=pointer]:\n    - generic [ref=e122]:\n      - ref=e124 [unchanged]\n      - ref=e126 [unchanged]\n      - ref=e127 [unchanged]\n      - generic [ref=e128]: dim. 29 mars\n  - ref=e1266 [unchanged]\n  - ref=e1267 [unchanged]\n```"
+      },
+      {
+        "step": 13,
+        "thought": "THOUGHT: Both dates are now selected (Saturday March 28 to Sunday March 29). The calendar has closed. Now I need to click the Search button to get the hotel results. From the previous snapshot, the Search button \"Rechercher\" has ref=e1267.\nACTION: browser_click\nACTION_INPUT: {\"ref\": \"e1267\"}",
+        "action": "browser_click",
+        "input": {
+          "ref": "e1267"
+        },
+        "vision_image_attached": true,
+        "result_preview": "### Ran Playwright code\n```js\nawait page.getByRole('button', { name: 'Rechercher' }).click();\n```\n### Page\n- Page URL: https://www.booking.com/searchresults.fr.html?ss=Paris%2C+France&efdco=1&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALFjZTOBsACAdICJDk3YTZhOGY2LTAzZjYtNDJmYy04M2ViLTAzZjFjYTI3ZTQxNNgCAeACAQ&aid=304142&lang=fr&sb=1&src_elem=sb&src=index&dest_id=-1456928&dest_type=city&checkin=2026-03-28&checkout=2026-03-29&group_adults=2&no_rooms=1&group_children=0\n- Page Title: Booking.com: Hôtels : Paris. Réservez votre hôtel dès maintenant !\n- Console: 3 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [active] [ref=e1]:\n  - link \"Accéder au contenu principal\" [ref=e3] [cursor=pointer]:\n    - /url: \"#basiclayout\"\n    - generic [ref=e5]: Accéder au contenu principal\n  - banner [ref=e9]:\n    - generic [ref=e10]:\n      - navigation [ref=e11]:\n        - link \"Booking.com\" [ref=e15] [cursor=pointer]:\n          - /url: https://www.booking.com/index.fr.html?l"
+      }
+    ]
+  }
+}

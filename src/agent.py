@@ -5,6 +5,7 @@ import time
 import asyncio
 import json
 import base64
+import re
 from typing import Dict, List, Optional, Any
 from urllib.parse import urlparse
 from langchain_openai import ChatOpenAI
@@ -299,6 +300,62 @@ Remember to respond in the exact format: Thought / Action / Target
 
         sanitized = "\n".join(cleaned_lines).strip()
         return sanitized if sanitized else text.strip()
+
+    @staticmethod
+    def _extract_first_action(
+        ai_text: str,
+        tool_names: List[str],
+    ) -> tuple[Optional[str], Dict[str, Any]]:
+        """Extract and normalize the first ACTION/ACTION_INPUT block."""
+        action_name: Optional[str] = None
+        action_input: Dict[str, Any] = {}
+
+        # Handle empty or whitespace-only responses
+        if not ai_text or not ai_text.strip():
+            return None, {}
+
+        for line in ai_text.split("\n"):
+            stripped = line.strip()
+            upper = stripped.upper()
+
+            if upper.startswith("ACTION:") and not upper.startswith("ACTION_INPUT:"):
+                if action_name is None:
+                    raw_action = stripped.split(":", 1)[1].strip().strip("`\"' ")
+                    # Normalize punctuation noise such as "browser_click."
+                    normalized = re.sub(r"[^a-zA-Z0-9_]+$", "", raw_action)
+                    # Filter out common junk values from model outputs
+                    if normalized and normalized.lower() not in ("none", "nnone", "", "nan", "null"):
+                        action_name = normalized
+            elif upper.startswith("ACTION_INPUT:"):
+                if action_name and not action_input:
+                    raw_input = stripped.split(":", 1)[1].strip()
+                    json_match = re.search(r"\{.*\}", raw_input)
+                    if json_match:
+                        raw_input = json_match.group(0)
+                    try:
+                        parsed = json.loads(raw_input)
+                        if isinstance(parsed, dict):
+                            action_input = parsed
+                        elif isinstance(parsed, str):
+                            action_input = {"url": parsed}
+                    except Exception:
+                        if raw_input.startswith(('"', "'")):
+                            action_input = {"url": raw_input.strip('"\' ')}
+
+        if not action_name:
+            for tool_name in tool_names:
+                if re.search(rf"\b{re.escape(tool_name)}\b", ai_text or "", re.IGNORECASE):
+                    action_name = tool_name
+                    break
+
+        if action_name:
+            lowered = action_name.lower()
+            for tool_name in tool_names:
+                if tool_name.lower() == lowered:
+                    action_name = tool_name
+                    break
+
+        return action_name, action_input
     
     def decide(self, page_content: str, page_url: str, step: int) -> Dict[str, str]:
         
@@ -776,6 +833,9 @@ Remember to respond in the exact format: Thought / Action / Target
             device         = self.user.get("device", "desktop")
             persona_id     = self.user.get("id", "unknown")
 
+            # Define max_prod for snapshot compression
+            max_prod = 3 if vitesse == "rapide" else None
+
             if vitesse == "rapide":
                 # DEMOBLAZE SUPPORT — START
                 if is_demoblaze:
@@ -959,6 +1019,8 @@ Remember to respond in the exact format: Thought / Action / Target
                         "    1) browser_evaluate {\"function\": \"() => window.scrollBy(0, 3000)\"}\n"
                         "    2) browser_snapshot\n"
                         "    3) Repeat until no new product options appear (same list twice) → bottom reached.\n"
+                        "- CRITICAL: browser_evaluate ONLY accepts {\"function\": \"...\"} parameter. NEVER use \"script\", \"expr\", \"expression\", or any other parameter name.\n"
+                        "- CRITICAL: browser_evaluate is ONLY for scrolling. NEVER use it for DOM queries, typing, or element inspection.\n"
                         "- ALWAYS take a browser_snapshot immediately after each browser_evaluate scroll.\n"
                         "- Keep a running list of product names and prices seen across snapshots.\n"
                         "- Only AFTER reaching the bottom, compare ALL prices and pick the absolute cheapest.\n"
@@ -1046,6 +1108,8 @@ Remember to respond in the exact format: Thought / Action / Target
                 site_rules = (
                     "4. The ONLY valid use of browser_evaluate is scrolling: "
                     "browser_evaluate {\"function\": \"() => window.scrollBy(0, 3000)\"}. "
+                    "CRITICAL: browser_evaluate ONLY accepts {\"function\": \"...\"} parameter. "
+                    "NEVER use \"script\", \"expr\", \"expression\", or any other parameter name. "
                     "NEVER use browser_evaluate to query the DOM, extract data, or inspect elements.\n"
                     "5. To scroll down and load more products: "
                     "browser_evaluate {\"function\": \"() => window.scrollBy(0, 3000)\"}, "
@@ -1090,15 +1154,22 @@ Remember to respond in the exact format: Thought / Action / Target
                 "ACTION_INPUT: {\"param\": \"value\"}\n\n"
                 "IMPORTANT: Output ONLY ONE action per response. Wait for the OBSERVATION before your next action.\n\n"
                 "When done: THOUGHT: <summary>\nDONE"
+                "ALWAYS use browser_type to fill inputs DO NOT use browser_evaluate for typing. "
+                "CRITICAL: browser_evaluate ONLY accepts {\"function\": \"...\"} parameter for scrolling only. "
+                "NEVER use \"script\", \"expr\", \"expression\", or any other parameter name."
             ))
 
             # ── ReAct loop ─────────────────────────────────────
-            max_steps = 20
+            # Steps are no longer hard-coded in code. Use config as safety cap.
+            max_steps = int(self.config.max_steps) if self.config.max_steps else 100
+            if max_steps <= 0:
+                max_steps = 100
             messages: List = [system_msg]
             steps_detail: List[Dict[str, Any]] = []
             _current_llm = self.llm
             _github_fallback_activated = False
             _use_observation_images = self._attach_observation_images
+            invalid_format_streak = 0
 
             goal_text = f"{objectif} {self.user.get('objectif', '')}".lower()
             purchase_keywords = (
@@ -1130,7 +1201,8 @@ Remember to respond in the exact format: Thought / Action / Target
             # Running cheapest tracker for prudent buyer (updated after each scroll)
             cheapest_product: dict = {}  # {"name": ..., "price_value": float, "price_label": str, "ref": ...}
 
-            for step in range(max_steps):
+            step = 0
+            while step < max_steps:
                 print(f"\n{'=' * 80}")
                 print(f"STEP {step + 1}/{max_steps}")
                 print("=" * 80)
@@ -1289,35 +1361,7 @@ Remember to respond in the exact format: Thought / Action / Target
                 messages.append(AIMessage(content=ai_text))
 
                 # ── Parse ACTION and ACTION_INPUT ──────────────
-                # Parse FIRST action only (LLM sometimes plans multiple)
-                action_name = None
-                action_input = {}
-
-                for line in ai_text.split("\n"):
-                    stripped = line.strip()
-                    upper = stripped.upper()
-                    if upper.startswith("ACTION:") and not upper.startswith("ACTION_INPUT:"):
-                        if action_name is None:  # Only take first ACTION
-                            action_name = stripped.split(":", 1)[1].strip()
-                    elif upper.startswith("ACTION_INPUT:"):
-                        if action_name and not action_input:  # Only first INPUT
-                            raw_input = stripped.split(":", 1)[1].strip()
-                            # Strip trailing comments the LLM sometimes adds
-                            json_match = _re.search(r'\{.*\}', raw_input)
-                            if json_match:
-                                raw_input = json_match.group(0)
-                            try:
-                                action_input = json.loads(raw_input)
-                                # If LLM sent a plain string, wrap for browser_navigate
-                                if isinstance(action_input, str):
-                                    action_input = {"url": action_input}
-                            except Exception:
-                                # Try treating as a bare URL
-                                if raw_input.startswith(('"', "'")):
-                                    url = raw_input.strip('"\' ')
-                                    action_input = {"url": url}
-                                else:
-                                    print(f"⚠️ Could not parse ACTION_INPUT: {raw_input}")
+                action_name, action_input = self._extract_first_action(ai_text, tool_names)
 
                 # ── Check for DONE ─────────────────────────────
                 # Only if no valid action was parsed (otherwise LLM is planning ahead)
@@ -1378,14 +1422,75 @@ Remember to respond in the exact format: Thought / Action / Target
                     msg = (
                         f"Invalid or unknown action '{action_name}'. "
                         f"Available tools: {tool_names}. "
-                        "Remember: to scroll use browser_evaluate with function () => window.scrollBy(0, 3000)."
+                        "Remember: to scroll use browser_evaluate with function () => window.scrollBy(0, 3000). "
+                        "CRITICAL: browser_evaluate ONLY accepts {\"function\": \"...\"} parameter. "
+                        "NEVER use \"script\", \"expr\", \"expression\", or any other parameter name."
                     )
                     print(f"⚠️ {msg}")
+                    invalid_format_streak += 1
                     messages.append(HumanMessage(content=msg))
+                    messages.append(HumanMessage(content=(
+                        "FORMAT ENFORCEMENT: Reply with exactly:\n"
+                        "THOUGHT: <short reasoning>\n"
+                        "ACTION: <one tool name exactly from the list>\n"
+                        "ACTION_INPUT: <valid JSON object>\n"
+                        "Do not add extra tags or punctuation after tool names."
+                    )))
                     steps_detail.append({
                         "step": step + 1, "error": msg, "raw": ai_text
                     })
+
+                    # Auto-refresh context after 2 invalid responses
+                    if invalid_format_streak == 2:
+                        print("🔄 Auto-refreshing context with browser_snapshot after 2 invalid responses...")
+                        try:
+                            snap_result = await session.call_tool("browser_snapshot", {})
+                            snap_str = str(snap_result)
+                            compressed = self._compress_snapshot(snap_str, max_products=max_prod)
+                            observation_text = f"OBSERVATION (auto browser_snapshot):\n{compressed}\n\nNext?"
+                            # Disable vision after invalid responses to avoid model confusion
+                            messages.append(HumanMessage(content=observation_text))
+                            _current_llm = self.llm  # Switch to text-only LLM
+                            _use_observation_images = False
+                            self._last_screenshot = None
+                            steps_detail.append({
+                                "step": step + 1,
+                                "action": "auto_browser_snapshot",
+                                "reason": "Context refresh after invalid responses - vision disabled",
+                            })
+                        except Exception as e:
+                            print(f"⚠ Auto-snapshot failed: {e}")
+
+                    if invalid_format_streak >= 8:
+                        print("❌ Too many invalid ReAct outputs in a row — aborting")
+                        await _close_sandbox_if_needed()
+                        return {
+                            "status": "error",
+                            "response": "Too many invalid ReAct responses from model",
+                            "steps": step,
+                            "steps_detail": steps_detail,
+                        }
                     continue
+
+                invalid_format_streak = 0
+
+                # ── Validate browser_evaluate parameters ───────
+                if action_name == "browser_evaluate":
+                    invalid_params = {"script", "expr", "expression", "code"}
+                    if isinstance(action_input, dict):
+                        invalid_used = [p for p in invalid_params if p in action_input]
+                        if invalid_used or "function" not in action_input:
+                            error_msg = (
+                                f"❌ INVALID browser_evaluate parameters: {action_input}\n"
+                                f"CRITICAL: browser_evaluate ONLY accepts {{\"function\": \"() => ...\"}}\n"
+                                f"Invalid parameters used: {invalid_used}\n"
+                                f"NEVER use: 'script', 'expr', 'expression', 'code'\n"
+                                f"CORRECT FORMAT: browser_evaluate {{\"function\": \"() => window.scrollBy(0, 3000)\"}}"
+                            )
+                            print(f"⚠️ {error_msg}")
+                            messages.append(HumanMessage(content=error_msg))
+                            invalid_format_streak += 1
+                            continue
 
                 # ── Execute MCP tool ───────────────────────────
                 # Normalize common schema mismatches from model outputs.
@@ -1393,6 +1498,7 @@ Remember to respond in the exact format: Thought / Action / Target
                     if "text" not in action_input and "value" in action_input:
                         action_input["text"] = action_input.pop("value")
                 print(f"🎬 Executing: {action_name}({action_input})")
+                objective_reached = False
                 try:
                     tool_result = await tools_dict[action_name].ainvoke(action_input)
 
@@ -1437,7 +1543,6 @@ Remember to respond in the exact format: Thought / Action / Target
                                     '\\n', '\n').replace("\\'", "'")
 
                     # Compress snapshots to keep only actionable content
-                    max_prod = 3 if vitesse == "rapide" else None
                     if action_name in ("browser_navigate", "browser_snapshot"):
                         result_for_llm = self._compress_snapshot(result_str, max_products=max_prod)
                     else:
@@ -1500,6 +1605,7 @@ Remember to respond in the exact format: Thought / Action / Target
                     print(f"📤 Tool result ({len(result_str)} chars → {len(result_for_llm)} compressed):")
                     print(result_for_llm[:500] + "...\n")
 
+                    objective_reached = False
                     if strict_done:
                         observed = f"{result_str}\n{result_for_llm}".lower()
                         if _re.search(r"added to cart|product has been added|successfully added", observed):
@@ -1521,6 +1627,14 @@ Remember to respond in the exact format: Thought / Action / Target
                             )
                             if has_price and has_cart_terms:
                                 verification_state["cart_item_seen"] = True
+
+                        objective_reached = (
+                            verification_state["cart_page_seen"]
+                            and (
+                                verification_state["added_to_cart_seen"]
+                                or verification_state["cart_item_seen"]
+                            )
+                        )
 
                 except Exception as e:
                     error_text = str(e)
@@ -1570,16 +1684,34 @@ Remember to respond in the exact format: Thought / Action / Target
                     "browser_click",
                     "browser_type",
                 )
-                if (_use_observation_images
-                        and bu_browser is not None
-                        and action_name in visual_steps):
+                if _use_observation_images and action_name in visual_steps:
                     try:
-                        self._last_screenshot = await self._capture_sandbox_screenshot(
-                            bu_browser)
-                        if self._last_screenshot:
-                            print(f"👁️  Vision: screenshot attached to next LLM call")
+                        # Try Browser Use first (preferred for screenshots)
+                        if bu_browser is not None:
+                            try:
+                                self._last_screenshot = await self._capture_sandbox_screenshot(bu_browser)
+                                if self._last_screenshot:
+                                    print(f"👁️  Vision: screenshot captured (Browser Use)")
+                            except Exception as e:
+                                print(f"⚠ Browser Use screenshot failed: {e}")
+                                self._last_screenshot = None
+                        # Fallback to MCP Playwright if Browser Use unavailable
+                        elif "browser_take_screenshot" in tools_dict:
+                            try:
+                                screenshot_result = await session.call_tool("browser_take_screenshot", {})
+                                screenshot_str = str(screenshot_result)
+                                # Extract base64 from common return formats
+                                if "base64," in screenshot_str:
+                                    self._last_screenshot = screenshot_str.split("base64,")[-1].strip("'\"")
+                                elif len(screenshot_str) > 100 and not screenshot_str.startswith("["):
+                                    self._last_screenshot = screenshot_str.strip("'\"")
+                                if self._last_screenshot:
+                                    print(f"👁️  Vision: screenshot captured (MCP)")
+                            except Exception as e:
+                                print(f"⚠ MCP screenshot failed: {e}")
+                                self._last_screenshot = None
                     except Exception as e:
-                        print(f"⚠ Screenshot failed silently: {e}")
+                        print(f"⚠ Screenshot capture error: {e}")
                         self._last_screenshot = None
                 else:
                     self._last_screenshot = None
@@ -1643,6 +1775,18 @@ Remember to respond in the exact format: Thought / Action / Target
                     "vision_image_attached": vision_image_attached,
                     "result_preview": result_str[:1000],
                 })
+
+                if strict_done and objective_reached:
+                    print("✅ Objective reached from observations — stopping run")
+                    await _close_sandbox_if_needed()
+                    return {
+                        "status": "completed",
+                        "response": "Objective reached",
+                        "steps": step + 1,
+                        "steps_detail": steps_detail,
+                    }
+
+                step += 1
 
             # Max steps reached
             print(f"\n⏱️ Reached maximum steps ({max_steps})")
