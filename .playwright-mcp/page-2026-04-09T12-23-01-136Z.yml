@@ -1,0 +1,1383 @@
+- generic [ref=e2]:
+  - navigation "Menu des raccourcis" [ref=e31]:
+    - heading "Passer à" [level=2] [ref=e32]
+    - list "Passer à" [ref=e33]:
+      - listitem [ref=e34]:
+        - link "contenu principal" [ref=e35] [cursor=pointer]:
+          - /url: "#skippedLink"
+          - text: Contenu principal
+    - separator [ref=e36]
+    - heading "Raccourcis clavier" [level=2] [ref=e37]
+    - list "Raccourcis clavier" [ref=e38]:
+      - listitem [ref=e39]:
+        - link "Rechercher, alt, barre oblique" [ref=e40] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e41]:
+            - generic [ref=e42]: Rechercher
+            - generic [ref=e43]:
+              - generic [ref=e44]: alt
+              - generic [ref=e45]: +
+              - generic [ref=e46]: /
+      - listitem [ref=e47]:
+        - link "Panier, shift, alt, c" [ref=e48] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e49]:
+            - generic [ref=e50]: Panier
+            - generic [ref=e51]:
+              - generic [ref=e52]: shift
+              - generic [ref=e53]: +
+              - generic [ref=e54]: alt
+              - generic [ref=e55]: +
+              - generic [ref=e56]: C
+      - listitem [ref=e57]:
+        - link "Accueil, shift, alt, h" [ref=e58] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e59]:
+            - generic [ref=e60]: Accueil
+            - generic [ref=e61]:
+              - generic [ref=e62]: shift
+              - generic [ref=e63]: +
+              - generic [ref=e64]: alt
+              - generic [ref=e65]: +
+              - generic [ref=e66]: H
+      - listitem [ref=e67]:
+        - link "Vos commandes, shift, alt, o" [ref=e68] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e69]:
+            - generic [ref=e70]: Commandes
+            - generic [ref=e71]:
+              - generic [ref=e72]: shift
+              - generic [ref=e73]: +
+              - generic [ref=e74]: alt
+              - generic [ref=e75]: +
+              - generic [ref=e76]: O
+      - listitem [ref=e77]:
+        - button "Afficher/masquer les raccourcis, shift, alt, z" [ref=e78] [cursor=pointer]:
+          - generic [ref=e79]:
+            - generic [ref=e80]: Afficher/masquer les raccourcis
+            - generic [ref=e81]:
+              - generic [ref=e82]: shift
+              - generic [ref=e83]: +
+              - generic [ref=e84]: alt
+              - generic [ref=e85]: +
+              - generic [ref=e86]: Z
+    - generic [ref=e92]: Pour vous déplacer entre les articles, utilisez les flèches vers le haut ou vers le bas de votre clavier.
+  - banner [ref=e93]:
+    - navigation "Principal" [ref=e94]:
+      - generic [ref=e95]:
+        - generic [ref=e96]:
+          - link "Amazon.fr" [ref=e98] [cursor=pointer]:
+            - /url: /ref=nav_logo
+            - generic: .fr
+          - 'button "Votre adresse de livraison: Tunisie" [ref=e101] [cursor=pointer]':
+            - generic [ref=e103]:
+              - generic [ref=e104]: "Votre adresse de livraison:"
+              - generic [ref=e105]: Tunisie
+        - search [ref=e108]:
+          - generic [ref=e111]:
+            - generic [ref=e113]: Toutes nos catégories
+            - combobox "Sélectionnez la section dans laquelle vous souhaitez faire votre recherche." [ref=e115] [cursor=pointer]:
+              - option "Toutes nos catégories" [selected]
+              - option "Alexa Skills"
+              - option "Amazon Global Store"
+              - option "Amazon Haul"
+              - option "Amazon Seconde main"
+              - option "Animalerie"
+              - option "Appareils Amazon"
+              - option "Applis & Jeux"
+              - option "Auto et Moto"
+              - option "Bagages et accessoires de voyage"
+              - option "Beauté et Parfum"
+              - option "Beauté Premium"
+              - option "Boutique chèques-cadeaux"
+              - option "Boutique Kindle"
+              - option "Bricolage"
+              - option "Bébés & Puériculture"
+              - option "Cuisine & Maison"
+              - option "DVD & Blu-ray"
+              - option "Epicerie"
+              - option "Fournitures de bureau"
+              - option "Gros électroménager"
+              - option "Handmade"
+              - option "High-Tech"
+              - option "Hygiène et Santé"
+              - option "Informatique"
+              - option "Instruments de musique & Sono"
+              - option "Jardin"
+              - option "Jeux et Jouets"
+              - option "Jeux vidéo"
+              - option "Livres"
+              - option "Livres audio Audible"
+              - option "Logiciels"
+              - option "Luminaires et Eclairage"
+              - option "Luxury Stores"
+              - option "Mode"
+              - option "Vêtements, chaussures et bijoux pour femmes"
+              - option "Vêtements, chaussures et bijoux pour hommes"
+              - option "Vêtements, chaussures et bijoux pour filles"
+              - option "Vêtements, chaussures et bijoux pour garçons"
+              - option "Vêtements, chaussures et bijoux pour bébés"
+              - option "Moins de 10€"
+              - 'option "Musique : CD & Vinyles"'
+              - option "Musique classique"
+              - option "Prime Video"
+              - option "Prévoyez et Économisez"
+              - option "Secteur industriel et scientifique"
+              - option "Sports et loisirs"
+              - option "Téléchargement de musique"
+              - option "Ventes Flash"
+          - searchbox "Rechercher Amazon.fr" [ref=e118]
+          - generic "Go" [ref=e121] [cursor=pointer]:
+            - button "Go" [ref=e122]
+        - generic [ref=e124]:
+          - generic [ref=e125]:
+            - link "Choisissez une langue pour vos achats sur Amazon France. La sélection actuelle est Français (FR)." [ref=e126] [cursor=pointer]:
+              - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=topnav_lang
+              - generic [ref=e129]:
+                - img "France" [ref=e130]
+                - generic [ref=e131]: FR
+            - button "Développer pour changer de langue ou de pays" [ref=e1471] [cursor=pointer]
+          - generic [ref=e132]:
+            - link "Bonjour, Identifiez-vous Compte et listes" [ref=e133] [cursor=pointer]:
+              - /url: https://www.amazon.fr/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.fr%2F%3Fref_%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=frflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0
+              - generic [ref=e135]: Bonjour, Identifiez-vous
+              - generic [ref=e136]: Compte et listes
+            - button "Élargissez le compte et les listes" [ref=e137] [cursor=pointer]
+          - link "Retours et commandes" [ref=e138] [cursor=pointer]:
+            - /url: /gp/css/order-history?ref_=nav_orders_first
+            - generic [ref=e139]: Retours
+            - generic [ref=e140]: et commandes
+          - link "0 articles dans le panier" [ref=e141] [cursor=pointer]:
+            - /url: /gp/cart/view.html?ref_=nav_cart
+            - generic [ref=e143]: "0"
+            - generic [ref=e146]: Panier
+      - generic [ref=e147]:
+        - button "Ouvrir le menu Toutes les catégories" [ref=e149] [cursor=pointer]:
+          - generic [ref=e151]: Toutes
+        - list [ref=e155]:
+          - listitem [ref=e156]:
+            - link "Amazon Haul" [ref=e158] [cursor=pointer]:
+              - /url: /haul/store?ref_=nav_cs_hul_disb
+          - listitem [ref=e159]:
+            - link "Meilleures ventes" [ref=e161] [cursor=pointer]:
+              - /url: /gp/bestsellers/?ref_=nav_cs_bestsellers
+          - listitem [ref=e162]:
+            - link "Ventes Flash" [ref=e164] [cursor=pointer]:
+              - /url: /deals?ref_=nav_cs_gb
+          - listitem [ref=e165]:
+            - link "Dernières Nouveautés" [ref=e167] [cursor=pointer]:
+              - /url: /gp/new-releases/?ref_=nav_cs_newreleases
+          - listitem [ref=e168]:
+            - link "Amazon Basics" [ref=e170] [cursor=pointer]:
+              - /url: /amazonbasics/?field-lbr_brands_browse-bin=AmazonBasics&ref_=nav_cs_amazonbasics
+          - listitem [ref=e171]:
+            - link "Vendre sur Amazon" [ref=e173] [cursor=pointer]:
+              - /url: /b/?node=2383619031&ld=AZFRGNOSellC&ref_=nav_cs_sell
+          - listitem [ref=e174]:
+            - link "Livres" [ref=e176] [cursor=pointer]:
+              - /url: /livre-achat-occasion-litterature-roman/b/?ie=UTF8&node=301061&ref_=nav_cs_books
+          - listitem [ref=e177]:
+            - link "Guide de l’acheteur" [ref=e179] [cursor=pointer]:
+              - /url: /b/?node=14839058031&ref_=nav_cs_shoppertoolkit
+          - listitem [ref=e180]:
+            - generic [ref=e181]:
+              - link "Cartes cadeaux" [ref=e182] [cursor=pointer]:
+                - /url: /cheques-cartes-cadeaux/b/?ie=UTF8&node=2524127031&ref_=nav_cs_gc
+              - button "Détails Cartes cadeaux" [ref=e183] [cursor=pointer]
+          - listitem [ref=e184]:
+            - link "Cuisine et maison" [ref=e186] [cursor=pointer]:
+              - /url: /cuisine-maison-%C3%A9lectrom%C3%A9nager/b/?ie=UTF8&node=57004031&ref_=nav_cs_home
+          - listitem [ref=e187]:
+            - link "High-Tech" [ref=e189] [cursor=pointer]:
+              - /url: /photo-TV-mp3-Hifi-GPS/b/?ie=UTF8&node=13921051&ref_=nav_cs_electronics
+          - listitem [ref=e190]:
+            - link "Jeux et Jouets" [ref=e192] [cursor=pointer]:
+              - /url: /jeux-jouets/b/?ie=UTF8&node=322086011&ref_=nav_cs_toys
+          - listitem [ref=e193]:
+            - link "Jeux vidéo" [ref=e195] [cursor=pointer]:
+              - /url: /jeux-video-consoles-portables-accessoires-pc/b/?ie=UTF8&node=530490&ref_=nav_cs_video_games
+          - listitem [ref=e196]:
+            - link "Bébé" [ref=e198] [cursor=pointer]:
+              - /url: /bebe-puericulture/b/?ie=UTF8&node=206617031&ref_=nav_cs_baby
+          - listitem [ref=e199]:
+            - link "Ebooks Kindle" [ref=e201] [cursor=pointer]:
+              - /url: /ebooks-kindle/b/?ie=UTF8&node=695398031&ref_=nav_cs_kindle_books
+          - listitem [ref=e202]:
+            - generic [ref=e203]:
+              - link "Prime" [ref=e204] [cursor=pointer]:
+                - /url: /prime?ref_=nav_cs_primelink_nonmember
+              - button "Détails Prime" [ref=e205] [cursor=pointer]
+          - listitem [ref=e206]:
+            - link "Informatique" [ref=e208] [cursor=pointer]:
+              - /url: /informatique-ordinateurs-imprimantes-r%C3%A9seaux-composants/b/?ie=UTF8&node=340858031&ref_=nav_cs_pc
+          - listitem [ref=e209]:
+            - link "Santé et produits d’hygiène" [ref=e211] [cursor=pointer]:
+              - /url: /hygi%C3%A8ne-sant%C3%A9-soins-du-corps/b/?ie=UTF8&node=197861031&ref_=nav_cs_hpc
+          - listitem [ref=e212]:
+            - link "Auto et moto" [ref=e214] [cursor=pointer]:
+              - /url: /Voiture-et-moto/b/?ie=UTF8&node=1571265031&ref_=nav_cs_automotive
+          - listitem [ref=e215]:
+            - link "Produits personnalisés" [ref=e217] [cursor=pointer]:
+              - /url: /Amazon-Custom/b/?ie=UTF8&node=14578059031&ref_=nav_cs_custom
+          - listitem [ref=e218]:
+            - link "Beauté" [ref=e220] [cursor=pointer]:
+              - /url: /Parfums-cosm%C3%A9tiques/b/?ie=UTF8&node=197858031&ref_=nav_cs_beauty
+          - listitem [ref=e221]:
+            - link "Sports & Activités en plein-air" [ref=e223] [cursor=pointer]:
+              - /url: /sports-loisirs-fitness/b/?ie=UTF8&node=325614031&ref_=nav_cs_sports
+          - listitem [ref=e224]:
+            - link "Mode" [ref=e226] [cursor=pointer]:
+              - /url: /gp/browse.html?node=11961521031&ref_=nav_cs_fashion
+          - listitem [ref=e227]:
+            - link "Prime Video" [ref=e229] [cursor=pointer]:
+              - /url: /gp/browse.html?node=98209018031&ref_=nav_cs_sadFR1
+          - listitem [ref=e230]:
+            - link "Produits du Quotidien" [ref=e232] [cursor=pointer]:
+              - /url: /fmc/everyday-essentials?ref_=nav_cs_ee
+          - listitem [ref=e233]:
+            - link "Prévoyez et Économisez" [ref=e235] [cursor=pointer]:
+              - /url: /auto-deliveries/landing?ref_=nav_cs_sns
+          - listitem [ref=e236]:
+            - link "Livraison gratuite" [ref=e238] [cursor=pointer]:
+              - /url: /gp/browse.html/?node=27173183031&ref_=nav_cs_freeshipping
+          - listitem [ref=e239]:
+            - link "Service Client" [ref=e241] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=508510&ref_=nav_cs_help
+        - link "Prime" [ref=e245] [cursor=pointer]:
+          - /url: /gp/video/ssoredirect/?ie=UTF8&pvp=%2Fdetail%2Famzn1.dv.gti.88de2837-bb3f-4f7b-b41a-9c1ce670ee9a%2Fref%3Ddvm_crs_nav_fr_s_dt_swm_l_al_thby5_tp&ref_=nav_swm_dvm_crs_nav_fr_s_dt_swm_l_al_thby5_tp&pf_rd_p=33d9125d-758d-49b4-8e75-822c265a3fba&pf_rd_s=nav-sitewide-msg&pf_rd_t=4201&pf_rd_i=navbar-4201&pf_rd_m=A13V1IB3VIYZZH&pf_rd_r=PQEXJGB3PX6JE8A0P62A
+          - img "Prime" [ref=e246]
+  - main [ref=e248]:
+    - banner [ref=e250]:
+      - group "Contenu en vedette" [ref=e251]:
+        - generic [ref=e253] [cursor=pointer]:
+          - 'button "Rotation : Activée" [ref=e254]'
+          - generic [ref=e255]: "Rotation : Activée"
+        - generic [ref=e256]: "Rotation : Activée"
+        - generic [ref=e258]:
+          - button "Previous slide" [ref=e260] [cursor=pointer]:
+            - generic [ref=e262]: Previous slide
+          - group [ref=e264]:
+            - list [ref=e265]:
+              - listitem [ref=e1476]:
+                - generic [ref=e1480]:
+                  - img "Appareils de sécurité à domicile Ring et Blink sur surface orange avec boîte Amazon. À partir de 26,99€." [ref=e1482]
+                  - link "Appareils de sécurité à domicile Ring et Blink sur surface orange avec boîte Amazon. À partir de 26,99€." [ref=e1483] [cursor=pointer]:
+                    - /url: /b/?ie=UTF8&node=206533267031&ref_=ods_gw_GW_FR_FR_VICC_VICC_APRIL26_PROMO_H4_FC&pd_rd_w=lUd6B&content-id=amzn1.sym.0a62e987-cc51-4e68-9a3b-56fff59d8fce&pf_rd_p=0a62e987-cc51-4e68-9a3b-56fff59d8fce&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=5fccl&pd_rd_r=9ffdd8a0-2d98-4023-8ba2-5c0e0bddabaf
+              - text: 
+          - button "Next slide" [ref=e283] [cursor=pointer]:
+            - generic [ref=e285]: Next slide
+    - generic [ref=e286]:
+      - generic [ref=e287]:
+        - generic [ref=e289]:
+          - heading "Aménagez votre maison" [level=2] [ref=e291]
+          - generic [ref=e292]:
+            - generic [ref=e293]:
+              - link "Literie" [ref=e295] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&_encoding=UTF8&node=68991031&ref_=sv_top_ap_arrow_4&pd_rd_w=S8rmN&content-id=amzn1.sym.a8b60fc6-6612-48c4-ab51-c6aed4b8f041&pf_rd_p=a8b60fc6-6612-48c4-ab51-c6aed4b8f041&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef
+                - img "Literie" [ref=e297]
+                - generic [ref=e299]: Literie
+              - link "Luminaires" [ref=e301] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&_encoding=UTF8&node=213080031&ref_=sv_top_ap_arrow_6&pd_rd_w=S8rmN&content-id=amzn1.sym.a8b60fc6-6612-48c4-ab51-c6aed4b8f041&pf_rd_p=a8b60fc6-6612-48c4-ab51-c6aed4b8f041&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef
+                - img "Luminaires" [ref=e303]
+                - generic [ref=e305]: Luminaires
+            - generic [ref=e306]:
+              - link "Décoration" [ref=e308] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&_encoding=UTF8&node=57927031&pd_rd_w=S8rmN&content-id=amzn1.sym.a8b60fc6-6612-48c4-ab51-c6aed4b8f041&pf_rd_p=a8b60fc6-6612-48c4-ab51-c6aed4b8f041&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Décoration" [ref=e310]
+                - generic [ref=e312]: Décoration
+              - link "Rangements" [ref=e314] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&_encoding=UTF8&node=2916060031&ref_=sv_top_ap_arrow_8&pd_rd_w=S8rmN&content-id=amzn1.sym.a8b60fc6-6612-48c4-ab51-c6aed4b8f041&pf_rd_p=a8b60fc6-6612-48c4-ab51-c6aed4b8f041&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef
+                - img "Rangements" [ref=e316]
+                - generic [ref=e318]: Rangements
+          - link "Aménagez votre maison - Voir plus" [ref=e320] [cursor=pointer]:
+            - /url: /b/?_encoding=UTF8&_encoding=UTF8&node=194641031&ref_=sv_top_ap_arrow_3&pd_rd_w=S8rmN&content-id=amzn1.sym.a8b60fc6-6612-48c4-ab51-c6aed4b8f041&pf_rd_p=a8b60fc6-6612-48c4-ab51-c6aed4b8f041&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef
+            - generic [ref=e321]:
+              - generic [ref=e322]: Voir plus
+              - generic [ref=e323]: Voir plus
+        - generic [ref=e325]:
+          - heading "Maison et cuisine" [level=2] [ref=e327]
+          - generic [ref=e328]:
+            - generic [ref=e329]:
+              - link "Petit électroménager" [ref=e331] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=57696031&pd_rd_w=3KJZl&content-id=amzn1.sym.137855d4-699d-4132-b9e3-acab90700de9&pf_rd_p=137855d4-699d-4132-b9e3-acab90700de9&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Petit électroménager" [ref=e333]
+                - generic [ref=e335]: Petit électroménager
+              - link "Cuisine" [ref=e337] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=59451031&pd_rd_w=3KJZl&content-id=amzn1.sym.137855d4-699d-4132-b9e3-acab90700de9&pf_rd_p=137855d4-699d-4132-b9e3-acab90700de9&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Cuisine" [ref=e339]
+                - generic [ref=e341]: Cuisine
+            - generic [ref=e342]:
+              - link "Décoration" [ref=e344] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&_encoding=UTF8&node=57927031&pd_rd_w=3KJZl&content-id=amzn1.sym.137855d4-699d-4132-b9e3-acab90700de9&pf_rd_p=137855d4-699d-4132-b9e3-acab90700de9&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Décoration" [ref=e346]
+                - generic [ref=e348]: Décoration
+              - link "Rangement" [ref=e350] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=2916060031&pd_rd_w=3KJZl&content-id=amzn1.sym.137855d4-699d-4132-b9e3-acab90700de9&pf_rd_p=137855d4-699d-4132-b9e3-acab90700de9&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Rangement" [ref=e352]
+                - generic [ref=e354]: Rangement
+          - link "Maison et cuisine - Voir plus" [ref=e356] [cursor=pointer]:
+            - /url: /b/?_encoding=UTF8&node=57004031&pd_rd_w=3KJZl&content-id=amzn1.sym.137855d4-699d-4132-b9e3-acab90700de9&pf_rd_p=137855d4-699d-4132-b9e3-acab90700de9&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+            - generic [ref=e357]:
+              - generic [ref=e358]: Voir plus
+              - generic [ref=e359]: Voir plus
+        - generic [ref=e361]:
+          - heading "Entretien de la maison" [level=2] [ref=e363]
+          - generic [ref=e364]:
+            - generic [ref=e365]:
+              - link "Quincaillerie" [ref=e367] [cursor=pointer]:
+                - /url: /b/?ie=UTF8&node=1716191031&ref_=nav_em_hilg_flyout_shopall_hardware_0_2_16_9&pd_rd_w=zjvtQ&content-id=amzn1.sym.33957d56-225d-49a6-b3de-db5c83fb8f7f&pf_rd_p=33957d56-225d-49a6-b3de-db5c83fb8f7f&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef
+                - img "Quincaillerie" [ref=e369]
+                - generic [ref=e371]: Quincaillerie
+              - link "Électricité" [ref=e373] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=1716192031&pd_rd_w=zjvtQ&content-id=amzn1.sym.33957d56-225d-49a6-b3de-db5c83fb8f7f&pf_rd_p=33957d56-225d-49a6-b3de-db5c83fb8f7f&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Électricité" [ref=e375]
+                - generic [ref=e377]: Électricité
+            - generic [ref=e378]:
+              - link "Outils" [ref=e380] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=1716189031&pd_rd_w=zjvtQ&content-id=amzn1.sym.33957d56-225d-49a6-b3de-db5c83fb8f7f&pf_rd_p=33957d56-225d-49a6-b3de-db5c83fb8f7f&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Outils" [ref=e382]
+                - generic [ref=e384]: Outils
+              - link "Jardin" [ref=e386] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=3557027031&pd_rd_w=zjvtQ&content-id=amzn1.sym.33957d56-225d-49a6-b3de-db5c83fb8f7f&pf_rd_p=33957d56-225d-49a6-b3de-db5c83fb8f7f&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Jardin" [ref=e388]
+                - generic [ref=e390]: Jardin
+          - link "Entretien de la maison - Voir plus" [ref=e392] [cursor=pointer]:
+            - /url: /b/?ie=UTF8&node=590748031&ref_=nav_em_hilg_flyout_shopall_allhi_0_2_16_1&pd_rd_w=zjvtQ&content-id=amzn1.sym.33957d56-225d-49a6-b3de-db5c83fb8f7f&pf_rd_p=33957d56-225d-49a6-b3de-db5c83fb8f7f&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef
+            - generic [ref=e393]:
+              - generic [ref=e394]: Voir plus
+              - generic [ref=e395]: Voir plus
+        - generic [ref=e397]:
+          - heading "Bureau" [level=2] [ref=e399]
+          - generic [ref=e400]:
+            - generic [ref=e401]:
+              - link "Ordinateurs de bureau" [ref=e403] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=514848031&pd_rd_w=1WKar&content-id=amzn1.sym.af483b14-e947-46a3-9ac7-daf5f55e732b&pf_rd_p=af483b14-e947-46a3-9ac7-daf5f55e732b&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Ordinateurs de bureau" [ref=e405]
+                - generic [ref=e407]: Ordinateurs de bureau
+              - link "Ordinateurs portables" [ref=e409] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=429879031&pd_rd_w=1WKar&content-id=amzn1.sym.af483b14-e947-46a3-9ac7-daf5f55e732b&pf_rd_p=af483b14-e947-46a3-9ac7-daf5f55e732b&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Ordinateurs portables" [ref=e411]
+                - generic [ref=e413]: Ordinateurs portables
+            - generic [ref=e414]:
+              - link "Tablettes tactiles" [ref=e416] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=429882031&pd_rd_w=1WKar&content-id=amzn1.sym.af483b14-e947-46a3-9ac7-daf5f55e732b&pf_rd_p=af483b14-e947-46a3-9ac7-daf5f55e732b&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Tablettes tactiles" [ref=e418]
+                - generic [ref=e420]: Tablettes tactiles
+              - link "Fournitures de bureau" [ref=e422] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=192419031&pd_rd_w=1WKar&content-id=amzn1.sym.af483b14-e947-46a3-9ac7-daf5f55e732b&pf_rd_p=af483b14-e947-46a3-9ac7-daf5f55e732b&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Fournitures de bureau" [ref=e424]
+                - generic [ref=e426]: Fournitures de bureau
+          - link "Bureau - Voir plus" [ref=e428] [cursor=pointer]:
+            - /url: /b/?_encoding=UTF8&node=340858031&pd_rd_w=1WKar&content-id=amzn1.sym.af483b14-e947-46a3-9ac7-daf5f55e732b&pf_rd_p=af483b14-e947-46a3-9ac7-daf5f55e732b&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+            - generic [ref=e429]:
+              - generic [ref=e430]: Voir plus
+              - generic [ref=e431]: Voir plus
+        - separator [ref=e432]
+        - generic [ref=e434]:
+          - heading "Jeux vidéos" [level=2] [ref=e436]
+          - generic [ref=e437]:
+            - generic [ref=e438]:
+              - link "Moniteurs" [ref=e440] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=21734133031&pd_rd_w=aWdZh&content-id=amzn1.sym.d543cf6e-f819-406b-9304-02afada761f2&pf_rd_p=d543cf6e-f819-406b-9304-02afada761f2&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Moniteurs" [ref=e442]
+                - generic [ref=e444]: Moniteurs
+              - link "Bureaux" [ref=e446] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=92566380031&pd_rd_w=aWdZh&content-id=amzn1.sym.d543cf6e-f819-406b-9304-02afada761f2&pf_rd_p=d543cf6e-f819-406b-9304-02afada761f2&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Bureaux" [ref=e448]
+                - generic [ref=e450]: Bureaux
+            - generic [ref=e451]:
+              - link "Accessoires gaming" [ref=e453] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=92555569031&pd_rd_w=aWdZh&content-id=amzn1.sym.d543cf6e-f819-406b-9304-02afada761f2&pf_rd_p=d543cf6e-f819-406b-9304-02afada761f2&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Accessoires gaming" [ref=e455]
+                - generic [ref=e457]: Accessoires gaming
+              - link "Produits dérivés" [ref=e459] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&k=gaming%20merchandise&pf_rd_i=21734155031&pf_rd_m=A1X6FK5RDHNB96&pf_rd_s=merchandised-search-6&ref=GSMoreGaming_4&pd_rd_w=aWdZh&content-id=amzn1.sym.d543cf6e-f819-406b-9304-02afada761f2&pf_rd_p=d543cf6e-f819-406b-9304-02afada761f2&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Produits dérivés" [ref=e461]
+                - generic [ref=e463]: Produits dérivés
+          - link "Jeux vidéos - Voir plus" [ref=e465] [cursor=pointer]:
+            - /url: /b/?_encoding=UTF8&node=530490&pd_rd_w=aWdZh&content-id=amzn1.sym.d543cf6e-f819-406b-9304-02afada761f2&pf_rd_p=d543cf6e-f819-406b-9304-02afada761f2&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+            - generic [ref=e466]:
+              - generic [ref=e467]: Voir plus
+              - generic [ref=e468]: Voir plus
+        - generic [ref=e470]:
+          - heading "Nos catégories à moins de 20€" [level=2] [ref=e472]
+          - generic [ref=e473]:
+            - generic [ref=e474]:
+              - link "High-Tech" [ref=e476] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&bbn=13921051&rh=n%3A13921051%2Cp_36%3A680943011&dc=&qid=1728038354&rnid=389179011&ref=lp_13910671_nr_p_36_0&pd_rd_w=UmILj&content-id=amzn1.sym.cca9b2df-3c16-4696-88e0-17f335280505&pf_rd_p=cca9b2df-3c16-4696-88e0-17f335280505&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "High-Tech" [ref=e478]
+                - generic [ref=e480]: High-Tech
+              - link "Cuisine et maison" [ref=e482] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&rh=n%3A57004031%2Cp_36%3A84664031&ref=Oct_d_oup_S&pd_rd_w=UmILj&content-id=amzn1.sym.cca9b2df-3c16-4696-88e0-17f335280505&pf_rd_p=cca9b2df-3c16-4696-88e0-17f335280505&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Cuisine et maison" [ref=e484]
+                - generic [ref=e486]: Cuisine et maison
+            - generic [ref=e487]:
+              - link "Jeux vidéo" [ref=e489] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&rh=n%3A530490%2Cp_36%3A-2000&pd_rd_w=UmILj&content-id=amzn1.sym.cca9b2df-3c16-4696-88e0-17f335280505&pf_rd_p=cca9b2df-3c16-4696-88e0-17f335280505&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Jeux vidéo" [ref=e491]
+                - generic [ref=e493]: Jeux vidéo
+              - link "Beauté" [ref=e495] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&bbn=197858031&rh=n%3A197858031%2Cp_36%3A-2000&pd_rd_w=UmILj&content-id=amzn1.sym.cca9b2df-3c16-4696-88e0-17f335280505&pf_rd_p=cca9b2df-3c16-4696-88e0-17f335280505&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Beauté" [ref=e497]
+                - generic [ref=e499]: Beauté
+          - link "Nos catégories à moins de 20€ - Voir plus" [ref=e501] [cursor=pointer]:
+            - /url: /gp/bestsellers/?ie=UTF8&ref_=nav_cs_bestsellers&pd_rd_w=UmILj&content-id=amzn1.sym.cca9b2df-3c16-4696-88e0-17f335280505&pf_rd_p=cca9b2df-3c16-4696-88e0-17f335280505&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef
+            - generic [ref=e502]:
+              - generic [ref=e503]: Voir plus
+              - generic [ref=e504]: Voir plus
+        - generic [ref=e506]:
+          - 'heading "Maison: -25% à partir de 2 articles." [level=2] [ref=e508]'
+          - 'link "Maison: -25% à partir de 2 articles." [ref=e510] [cursor=pointer]':
+            - /url: /b/?_encoding=UTF8&node=216997596031&ref_=hul_cgw_atf_d_fr_cc_0426_off20_hp_id&ishaul=1_fr&pd_rd_w=VpdPJ&content-id=amzn1.sym.e93ea94a-2b7c-42dd-8b21-1af576f87ceb&pf_rd_p=e93ea94a-2b7c-42dd-8b21-1af576f87ceb&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef
+            - 'img "Maison: -25% à partir de 2 articles." [ref=e512]'
+          - 'link "Maison: -25% à partir de 2 articles. - Découvrir les offres Haul" [ref=e514] [cursor=pointer]':
+            - /url: /b/?_encoding=UTF8&node=216997596031&ref_=hul_cgw_atf_d_fr_cc_0426_off20_hp_cta&ishaul=1_fr&pd_rd_w=VpdPJ&content-id=amzn1.sym.e93ea94a-2b7c-42dd-8b21-1af576f87ceb&pf_rd_p=e93ea94a-2b7c-42dd-8b21-1af576f87ceb&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef
+            - generic [ref=e515]:
+              - generic [ref=e516]: Découvrir les offres Haul
+              - generic [ref=e517]: Découvrir les offres Haul
+        - generic [ref=e519]:
+          - heading "Beauté à moins de 20€" [level=2] [ref=e521]
+          - generic [ref=e522]:
+            - generic [ref=e523]:
+              - link "Parfums" [ref=e525] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&rh=n%3A210965031%2Cp_36%3A-2000&pd_rd_w=Cczpa&content-id=amzn1.sym.82017469-ad3c-4ea6-a243-43595e739ef5&pf_rd_p=82017469-ad3c-4ea6-a243-43595e739ef5&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Parfums" [ref=e527]
+                - generic [ref=e529]: Parfums
+              - link "Soins des cheveux" [ref=e531] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&rh=n%3A211038031%2Cp_36%3A-2000&pd_rd_w=Cczpa&content-id=amzn1.sym.82017469-ad3c-4ea6-a243-43595e739ef5&pf_rd_p=82017469-ad3c-4ea6-a243-43595e739ef5&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Soins des cheveux" [ref=e533]
+                - generic [ref=e535]: Soins des cheveux
+            - generic [ref=e536]:
+              - link "Soins de la peau" [ref=e538] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&rh=n%3A211020031%2Cp_36%3A-2000&pd_rd_w=Cczpa&content-id=amzn1.sym.82017469-ad3c-4ea6-a243-43595e739ef5&pf_rd_p=82017469-ad3c-4ea6-a243-43595e739ef5&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Soins de la peau" [ref=e540]
+                - generic [ref=e542]: Soins de la peau
+              - link "Maquillage" [ref=e544] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&rh=n%3A210972031%2Cp_36%3A-2000&pd_rd_w=Cczpa&content-id=amzn1.sym.82017469-ad3c-4ea6-a243-43595e739ef5&pf_rd_p=82017469-ad3c-4ea6-a243-43595e739ef5&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+                - img "Maquillage" [ref=e546]
+                - generic [ref=e548]: Maquillage
+          - link "Beauté à moins de 20€ - Voir plus" [ref=e550] [cursor=pointer]:
+            - /url: /s/?_encoding=UTF8&bbn=197858031&rh=n%3A197858031%2Cp_36%3A-2000&pd_rd_w=Cczpa&content-id=amzn1.sym.82017469-ad3c-4ea6-a243-43595e739ef5&pf_rd_p=82017469-ad3c-4ea6-a243-43595e739ef5&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=tWPxN&pd_rd_r=45f5e471-b2af-4fd2-a665-3a66704230ef&ref_=pd_hp_d_atf_unk
+            - generic [ref=e551]:
+              - generic [ref=e552]: Voir plus
+              - generic [ref=e553]: Voir plus
+      - generic [ref=e555]:
+        - generic [ref=e558]:
+          - heading "Meilleures ventes dans Sports et Loisirs" [level=2] [ref=e560]
+          - generic [ref=e561]:
+            - list [ref=e563]:
+              - listitem [ref=e564]:
+                - link "GRIFEMA GA1201-12, Chaîne Antivol Vélo 120 CM, Chaîne Cadenas Vélo pour Vélos, Motos, trotinette electrique, Portails, Noir" [ref=e566] [cursor=pointer]:
+                  - /url: /GRIFEMA-GA1201-12-trotinette-electrique-Portails/dp/B0C3YMHJ3R/?_encoding=UTF8&pd_rd_w=iw3hg&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_325614031
+                  - img "GRIFEMA GA1201-12, Chaîne Antivol Vélo 120 CM, Chaîne Cadenas Vélo pour Vélos, Motos, trotinette electrique, Portails, Noir" [ref=e567]
+              - listitem [ref=e568]:
+                - link "Xiaomi Smart Band 10, Montre Connectée, Boîtier alu, Suivi d'Activité, Écran AMOLED 1.72'', Autonomie 21 Jours, Charge..." [ref=e570] [cursor=pointer]:
+                  - /url: /Connect%C3%A9e-Bo%C3%AEtier-dActivit%C3%A9-Autonomie-Boussole/dp/B0DYF82545/?_encoding=UTF8&pd_rd_w=iw3hg&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_325614031
+                  - img "Xiaomi Smart Band 10, Montre Connectée, Boîtier alu, Suivi d'Activité, Écran AMOLED 1.72'', Autonomie 21 Jours, Charge..." [ref=e571]
+              - listitem [ref=e572]:
+                - link "Hutchinson - Lot de 2 Chambre À Air - VTT - Standard - Résistance Et Anti-Crevaison - Valve Presta ou Schräder -..." [ref=e574] [cursor=pointer]:
+                  - /url: /HUTCHINSON-Standard-R%C3%A9sistance-Anti-Crevaison-%C3%89paisseur/dp/B07DTPZ399/?_encoding=UTF8&pd_rd_w=iw3hg&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_325614031
+                  - img "Hutchinson - Lot de 2 Chambre À Air - VTT - Standard - Résistance Et Anti-Crevaison - Valve Presta ou Schräder -..." [ref=e575]
+              - listitem [ref=e576]:
+                - link "Super Sparrow Bouteille d'eau - Gourde - 350ml/500ml/750ml/1000ml - sans BPA - Convient pour Le Sport, la randonnée,..." [ref=e578] [cursor=pointer]:
+                  - /url: /Super-Sparrow-Bouteille-deau-1000ml-32oz/dp/B073YQLK2G/?_encoding=UTF8&pd_rd_w=iw3hg&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_325614031
+                  - img "Super Sparrow Bouteille d'eau - Gourde - 350ml/500ml/750ml/1000ml - sans BPA - Convient pour Le Sport, la randonnée,..." [ref=e579]
+              - listitem [ref=e580]:
+                - link "Amazon Basics Paire d'haltères en néoprène" [ref=e582] [cursor=pointer]:
+                  - /url: /AmazonBasics-Paire-dhalt%C3%A8res-N%C3%A9opr%C3%A8ne-Bleu/dp/B078XXP3RH/?_encoding=UTF8&pd_rd_w=iw3hg&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_325614031
+                  - img "Amazon Basics Paire d'haltères en néoprène" [ref=e583]
+              - listitem [ref=e584]:
+                - link "Super Sparrow Gourde avec Paille - TouchSip Bouteille d'eau - 500ml/750ml/1L - Tritan Sans BPA - Idéale pour le Sport,..." [ref=e586] [cursor=pointer]:
+                  - /url: /Super-Sparrow-Gourde-Sport-Bouteille/dp/B0D8778FMH/?_encoding=UTF8&pd_rd_w=iw3hg&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_325614031
+                  - img "Super Sparrow Gourde avec Paille - TouchSip Bouteille d'eau - 500ml/750ml/1L - Tritan Sans BPA - Idéale pour le Sport,..." [ref=e587]
+              - listitem [ref=e588]:
+                - link "uhlsport Player Football Ballon de Football pour Adultes - Taille 5" [ref=e590] [cursor=pointer]:
+                  - /url: /uhlsport-Player-Football-Jeunes-Adultes/dp/B0DT9YPNK4/?_encoding=UTF8&pd_rd_w=iw3hg&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_325614031
+                  - img "uhlsport Player Football Ballon de Football pour Adultes - Taille 5" [ref=e591]
+              - listitem [ref=e592]:
+                - link "Edifit, Elastique Musculation, Bandes avec 3 Niveaux de Résistance, Fitness, Antidérapantes, Pack de 3, pour Gym, Yoga,..." [ref=e594] [cursor=pointer]:
+                  - /url: /Elastique-Musculation-R%C3%A9sistance-Antid%C3%A9rapantes-Exercices/dp/B0CTR171B7/?_encoding=UTF8&pd_rd_w=iw3hg&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_325614031
+                  - img "Edifit, Elastique Musculation, Bandes avec 3 Niveaux de Résistance, Fitness, Antidérapantes, Pack de 3, pour Gym, Yoga,..." [ref=e595]
+              - listitem [ref=e596]:
+                - link "Panini Coupe du Monde DE LA FIFA 2026 Trading Cards Game Pack de démarrage (1 classeur + 1 Terrain de Jeu + 1 Magazine +..." [ref=e598] [cursor=pointer]:
+                  - /url: /Panini-Pack-d%C3%A9marrage-classeur-Pochettes/dp/B0G5Q6TQHM/?_encoding=UTF8&pd_rd_w=iw3hg&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_325614031
+                  - img "Panini Coupe du Monde DE LA FIFA 2026 Trading Cards Game Pack de démarrage (1 classeur + 1 Terrain de Jeu + 1 Magazine +..." [ref=e599]
+              - listitem [ref=e600]:
+                - link "New Era Herren Cap League Essential 940 Neyyan, 80337644" [ref=e602] [cursor=pointer]:
+                  - /url: /New-Era-10531941-Casquette-fabricant/dp/B00803ZBCQ/?_encoding=UTF8&pd_rd_w=iw3hg&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_325614031
+                  - img "New Era Herren Cap League Essential 940 Neyyan, 80337644" [ref=e603]
+              - listitem [ref=e604]:
+                - link "Super Sparrow Gourde Isotherme - Bouteille Isotherme - 350ml/500ml/ 620ml/750ml/1L - Étanche Sport Gourde INOX Bouche..." [ref=e606] [cursor=pointer]:
+                  - /url: /Super-Sparrow-Bouteille-Double-Inoxydable/dp/B07KFXXWF7/?_encoding=UTF8&pd_rd_w=iw3hg&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_325614031
+                  - img "Super Sparrow Gourde Isotherme - Bouteille Isotherme - 350ml/500ml/ 620ml/750ml/1L - Étanche Sport Gourde INOX Bouche..." [ref=e607]
+              - listitem [ref=e608]:
+                - link "Edifit, Ballon Grossesse, 55, 65 et 75, Swiss Ball, Gym, Pilates, Gonfleur Inclus, Fitness Materiel, Gymnastique, Yoga..." [ref=e610] [cursor=pointer]:
+                  - /url: /EDIFIT-Ballon-Accessoires-Fitness-Pilates/dp/B09MKSQ7JM/?_encoding=UTF8&pd_rd_w=iw3hg&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_325614031
+                  - img "Edifit, Ballon Grossesse, 55, 65 et 75, Swiss Ball, Gym, Pilates, Gonfleur Inclus, Fitness Materiel, Gymnastique, Yoga..." [ref=e611]
+              - listitem [ref=e612]:
+                - link "GRIFEMA GA5003, Hand Grip, Grip Musculation avec Compteur, Résistance Réglable 5-60kg, pour Athlètes et Exercices de..." [ref=e614] [cursor=pointer]:
+                  - /url: /GRIFEMA-GA5003-Musculation-R%C3%A9sistance-R%C3%A9cup%C3%A9ration/dp/B0CPSG7CZX/?_encoding=UTF8&pd_rd_w=iw3hg&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_325614031
+                  - img "GRIFEMA GA5003, Hand Grip, Grip Musculation avec Compteur, Résistance Réglable 5-60kg, pour Athlètes et Exercices de..." [ref=e615]
+            - link [ref=e616] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=e618] [cursor=pointer]:
+              - /url: "#"
+        - separator [ref=e622]
+        - generic [ref=e624]:
+          - heading "Animalerie" [level=2] [ref=e626]
+          - generic [ref=e627]:
+            - generic [ref=e628]:
+              - link "Chiens" [ref=e630] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=1981901031&pd_rd_w=LN4ej&content-id=amzn1.sym.56d57d17-deaa-4167-b8d0-c407f774fa79&pf_rd_p=56d57d17-deaa-4167-b8d0-c407f774fa79&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Chiens" [ref=e632]
+                - generic [ref=e634]: Chiens
+              - link "Chats" [ref=e636] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=1981902031&pd_rd_w=LN4ej&content-id=amzn1.sym.56d57d17-deaa-4167-b8d0-c407f774fa79&pf_rd_p=56d57d17-deaa-4167-b8d0-c407f774fa79&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Chats" [ref=e638]
+                - generic [ref=e640]: Chats
+            - generic [ref=e641]:
+              - link "Rongeurs et lapins" [ref=e643] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=1981904031&pd_rd_w=LN4ej&content-id=amzn1.sym.56d57d17-deaa-4167-b8d0-c407f774fa79&pf_rd_p=56d57d17-deaa-4167-b8d0-c407f774fa79&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Rongeurs et lapins" [ref=e645]
+                - generic [ref=e647]: Rongeurs et lapins
+              - link "Poissons" [ref=e649] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=1981900031&pd_rd_w=LN4ej&content-id=amzn1.sym.56d57d17-deaa-4167-b8d0-c407f774fa79&pf_rd_p=56d57d17-deaa-4167-b8d0-c407f774fa79&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Poissons" [ref=e651]
+                - generic [ref=e653]: Poissons
+          - link "Animalerie - Voir plus" [ref=e655] [cursor=pointer]:
+            - /url: /b/?_encoding=UTF8&node=1571268031&pd_rd_w=LN4ej&content-id=amzn1.sym.56d57d17-deaa-4167-b8d0-c407f774fa79&pf_rd_p=56d57d17-deaa-4167-b8d0-c407f774fa79&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+            - generic [ref=e656]:
+              - generic [ref=e657]: Voir plus
+              - generic [ref=e658]: Voir plus
+        - iframe [ref=e661]:
+          - generic [ref=f2e2]:
+            - generic [ref=f2e3]: Publicité sponsorisée. Image du produit. Paire de Poignées de porte KLOSE besser sur plaque Aluminium "Mini" - Bec de cane 6.25 En savoir plus
+            - link "Cliquez pour accéder à la page produit" [ref=f2e6] [cursor=pointer]:
+              - /url: https://www.amazon.fr/dp/B07XTM7WTZ?aref=b103pgYxMh&aaxitk=4d46ec30ca96e73ff86589b82696f0b7&language=fr_FR&pf_rd_p=e6c18d32-5eda-4075-84c1-49b4b1c86681&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_w=bLEkc&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref=dacx_dp_584611743895276661_591938882496051066
+            - generic [ref=f2e7]:
+              - generic [ref=f2e8]:
+                - generic [ref=f2e9]: En vedette dans Amélioration de la maison
+                - button "Leave feedback on Sponsored ad" [ref=f2e11] [cursor=pointer]:
+                  - text: Sponsorisé
+                  - img [ref=f2e12]
+              - img "Paire de Poignées de porte KLOSE besser sur plaque Aluminium \"Mini\" - Bec de cane" [ref=f2e15]
+              - generic [ref=f2e17]:
+                - generic [ref=f2e18]:
+                  - generic [ref=f2e19]: Paire de Poignées de porte KLOSE besser sur plaque Aluminium "Mini" - Bec de cane
+                  - generic [ref=f2e21]:
+                    - generic [ref=f2e22]: 6,25 €
+                    - generic [ref=f2e23]:
+                      - generic [ref=f2e24]: "6"
+                      - generic [ref=f2e25]: ","
+                      - generic [ref=f2e26]: "25"
+                      - generic [ref=f2e27]: €
+                - link "Cliquez pour accéder à la page produit Publicité sponsorisée. Image du produit. Paire de Poignées de porte KLOSE besser sur plaque Aluminium \"Mini\" - Bec de cane 6.25 En savoir plus" [ref=f2e28] [cursor=pointer]:
+                  - /url: https://www.amazon.fr/dp/B07XTM7WTZ?aref=b103pgYxMh&aaxitk=4d46ec30ca96e73ff86589b82696f0b7&language=fr_FR&pf_rd_p=e6c18d32-5eda-4075-84c1-49b4b1c86681&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_w=bLEkc&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref=dacx_dp_584611743895276661_591938882496051066
+                  - generic [ref=f2e29]: En savoir plus
+        - generic [ref=e663]:
+          - heading "Parapharmacie" [level=2] [ref=e665]
+          - generic [ref=e666]:
+            - generic [ref=e667]:
+              - link "Beauté" [ref=e669] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=66319563031&pd_rd_w=x37tc&content-id=amzn1.sym.ad1078b1-f6a0-4032-9ea7-abdf00484620&pf_rd_p=ad1078b1-f6a0-4032-9ea7-abdf00484620&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Beauté" [ref=e671]
+                - generic [ref=e673]: Beauté
+              - link "Hygiène" [ref=e675] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=14072679031&pd_rd_w=x37tc&content-id=amzn1.sym.ad1078b1-f6a0-4032-9ea7-abdf00484620&pf_rd_p=ad1078b1-f6a0-4032-9ea7-abdf00484620&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Hygiène" [ref=e677]
+                - generic [ref=e679]: Hygiène
+            - generic [ref=e680]:
+              - link "Nutrition" [ref=e682] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=14072678031&pd_rd_w=x37tc&content-id=amzn1.sym.ad1078b1-f6a0-4032-9ea7-abdf00484620&pf_rd_p=ad1078b1-f6a0-4032-9ea7-abdf00484620&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Nutrition" [ref=e684]
+                - generic [ref=e686]: Nutrition
+              - link "Sport" [ref=e688] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=14072682031&pd_rd_w=x37tc&content-id=amzn1.sym.ad1078b1-f6a0-4032-9ea7-abdf00484620&pf_rd_p=ad1078b1-f6a0-4032-9ea7-abdf00484620&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Sport" [ref=e690]
+                - generic [ref=e692]: Sport
+          - link "Parapharmacie - Voir plus" [ref=e694] [cursor=pointer]:
+            - /url: /b/?_encoding=UTF8&node=4455970031&pd_rd_w=x37tc&content-id=amzn1.sym.ad1078b1-f6a0-4032-9ea7-abdf00484620&pf_rd_p=ad1078b1-f6a0-4032-9ea7-abdf00484620&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+            - generic [ref=e695]:
+              - generic [ref=e696]: Voir plus
+              - generic [ref=e697]: Voir plus
+        - generic [ref=e699]:
+          - heading "Haul Printemps sous 20€" [level=2] [ref=e701]
+          - generic [ref=e702]:
+            - generic [ref=e703]:
+              - link "Beauté" [ref=e705] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=206903114031&ref_=hul_cgw_btf_d_de_qc_0326_ssh_beauty&pd_rd_w=4iRiN&content-id=amzn1.sym.f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_p=f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Beauté" [ref=e707]
+                - generic [ref=e709]: Beauté
+              - link "Indispensables" [ref=e711] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=206903125031&ref_=hul_cgw_btf_d_fr_qc_0326_ssh_staples&pd_rd_w=4iRiN&content-id=amzn1.sym.f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_p=f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Indispensables" [ref=e713]
+                - generic [ref=e715]: Indispensables
+            - generic [ref=e716]:
+              - link "Nouveautés" [ref=e718] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=206903078031&ref_=hul_cgw_btf_d_fr_qc_0326_ssh_newin&pd_rd_w=4iRiN&content-id=amzn1.sym.f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_p=f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Nouveautés" [ref=e720]
+                - generic [ref=e722]: Nouveautés
+              - link "Tendance" [ref=e724] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=206903083031&ref_=hul_cgw_btf_d_fr_qc_0326_ssh_trend&pd_rd_w=4iRiN&content-id=amzn1.sym.f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_p=f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Tendance" [ref=e726]
+                - generic [ref=e728]: Tendance
+          - link "Haul Printemps sous 20€ - Voir plus sur Amazon Haul" [ref=e730] [cursor=pointer]:
+            - /url: /haul/store/?_encoding=UTF8&ref_=hul_cgw_btf_d_fr_qc_0326_ssh_cta&pd_rd_w=4iRiN&content-id=amzn1.sym.f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_p=f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+            - generic [ref=e731]:
+              - generic [ref=e732]: Voir plus sur Amazon Haul
+              - generic [ref=e733]: Voir plus sur Amazon Haul
+        - separator [ref=e734]
+        - generic [ref=e737]:
+          - generic [ref=e738]:
+            - heading "Découvrez la Vitrine Française" [level=2] [ref=e739]
+            - link "Voir plus" [ref=e741] [cursor=pointer]:
+              - /url: /b/?_encoding=UTF8&node=96141311031&pd_rd_w=9AG8n&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+          - list [ref=e744]:
+            - listitem [ref=e745]:
+              - link "Cuisine et Maison" [ref=e747] [cursor=pointer]:
+                - /url: /b?node=96141309031&pd_rd_w=9AG8n&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Cuisine et Maison" [ref=e748]
+            - listitem [ref=e749]:
+              - link "Mode" [ref=e751] [cursor=pointer]:
+                - /url: /b?node=96141307031&pd_rd_w=9AG8n&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Mode" [ref=e752]
+            - listitem [ref=e753]:
+              - link "Épicerie" [ref=e755] [cursor=pointer]:
+                - /url: /b?node=96141296031&pd_rd_w=9AG8n&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Épicerie" [ref=e756]
+            - listitem [ref=e757]:
+              - link "Bébé" [ref=e759] [cursor=pointer]:
+                - /url: /b?node=96141303031&pd_rd_w=9AG8n&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Bébé" [ref=e760]
+            - listitem [ref=e761]:
+              - link "Fournitures de bureau" [ref=e763] [cursor=pointer]:
+                - /url: /b?node=96141318031&pd_rd_w=9AG8n&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Fournitures de bureau" [ref=e764]
+            - listitem [ref=e765]:
+              - link "Jeux et jouets" [ref=e767] [cursor=pointer]:
+                - /url: /b?node=96141294031&pd_rd_w=9AG8n&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Jeux et jouets" [ref=e768]
+            - listitem [ref=e769]:
+              - link "Beauté et santé" [ref=e771] [cursor=pointer]:
+                - /url: /b?node=96141299031&pd_rd_w=9AG8n&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Beauté et santé" [ref=e772]
+            - listitem [ref=e773]:
+              - link "Sports et Loisirs" [ref=e775] [cursor=pointer]:
+                - /url: /b?node=96141308031&pd_rd_w=9AG8n&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Sports et Loisirs" [ref=e776]
+            - listitem [ref=e777]:
+              - link "High-Tech" [ref=e779] [cursor=pointer]:
+                - /url: /b?node=96141315031&pd_rd_w=9AG8n&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "High-Tech" [ref=e780]
+            - listitem [ref=e781]:
+              - link "Livres et Médias" [ref=e783] [cursor=pointer]:
+                - /url: /b?node=96141297031&pd_rd_w=9AG8n&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Livres et Médias" [ref=e784]
+            - listitem [ref=e785]:
+              - link "Jardin et Bricolage" [ref=e787] [cursor=pointer]:
+                - /url: /b?node=96141312031&pd_rd_w=9AG8n&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Jardin et Bricolage" [ref=e788]
+        - separator [ref=e790]
+        - generic [ref=e793]:
+          - heading "Meilleures ventes dans Jeux et Jouets" [level=2] [ref=e795]
+          - list [ref=e798]:
+            - listitem [ref=e799]:
+              - link "LEGO Speed Champions Voiture F1 Ferrari SF-24 - Jeu de Construction avec véhicule de Course - Inclut minifigurine..." [ref=e801] [cursor=pointer]:
+                - /url: /LEGO-Speed-Champions-Voiture-Ferrari/dp/B0DHSBBV6R/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "LEGO Speed Champions Voiture F1 Ferrari SF-24 - Jeu de Construction avec véhicule de Course - Inclut minifigurine..." [ref=e802]
+            - listitem [ref=e803]:
+              - 'link "Pokémon : Collection Illustration Premiers Partenaires – Série 1 (3 Cartes Promo, 2 boosters et 1 Page d’Autocollants)..." [ref=e805] [cursor=pointer]':
+                - /url: /Pok%C3%A9mon-S%C3%A9rie-Cartes-boosters-Page/dp/B0GMQRYY31/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - 'img "Pokémon : Collection Illustration Premiers Partenaires – Série 1 (3 Cartes Promo, 2 boosters et 1 Page d’Autocollants)..." [ref=e806]'
+            - listitem [ref=e807]:
+              - link "LEGO Botanicals L’Orchidée Miniature - Fleurs Artificielles pour Adulte Passionné.e de Nature - Plante avec Pot Style..." [ref=e809] [cursor=pointer]:
+                - /url: /LEGO-10343-tbd-10343/dp/B01N6CJ1QW/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "LEGO Botanicals L’Orchidée Miniature - Fleurs Artificielles pour Adulte Passionné.e de Nature - Plante avec Pot Style..." [ref=e810]
+            - listitem [ref=e811]:
+              - 'link "Pokémon : Collection Poster Premium Méga-Évolution – Héros Transcendants – Méga-Gardevoir (1 Carte Promo Brillante, 1..." [ref=e813] [cursor=pointer]':
+                - /url: /Pok%C3%A9mon-Collection-M%C3%A9ga-%C3%89volution-Transcendants-M%C3%A9ga-Gardevoir/dp/B0FX1C7CCY/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - 'img "Pokémon : Collection Poster Premium Méga-Évolution – Héros Transcendants – Méga-Gardevoir (1 Carte Promo Brillante, 1..." [ref=e814]'
+            - listitem [ref=e815]:
+              - 'link "Pokémon : Boîte Méga-Dracaufeu X-ex (4 boosters et 1 Carte Promo Brillante)" [ref=e817] [cursor=pointer]':
+                - /url: /Pok%C3%A9mon-M%C3%A9ga-Dracaufeu-boosters-Carte-Brillante/dp/B0GF91X2RG/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - 'img "Pokémon : Boîte Méga-Dracaufeu X-ex (4 boosters et 1 Carte Promo Brillante)" [ref=e818]'
+            - listitem [ref=e819]:
+              - 'link "Pokémon : Boîte Méga-Dracaufeu Y-ex (4 boosters et 1 Carte Promo Brillante)" [ref=e821] [cursor=pointer]':
+                - /url: /Pok%C3%A9mon-M%C3%A9ga-Dracaufeu-boosters-Carte-Brillante/dp/B0GF94QS1Q/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - 'img "Pokémon : Boîte Méga-Dracaufeu Y-ex (4 boosters et 1 Carte Promo Brillante)" [ref=e822]'
+            - listitem [ref=e823]:
+              - 'link "Pokémon : Collection Poster Premium Méga-Évolution – Héros Transcendants – Méga-Lucario (1 Carte Promo Brillante, 1..." [ref=e825] [cursor=pointer]':
+                - /url: /Pok%C3%A9mon-Collection-M%C3%A9ga-%C3%89volution-Transcendants-M%C3%A9ga-Lucario/dp/B0FX1F9R28/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - 'img "Pokémon : Collection Poster Premium Méga-Évolution – Héros Transcendants – Méga-Lucario (1 Carte Promo Brillante, 1..." [ref=e826]'
+            - listitem [ref=e827]:
+              - link "Catch Up Games- Flip 7 Jeu de société, CAT100FL" [ref=e829] [cursor=pointer]:
+                - /url: /Catch-Up-Games-soci%C3%A9t%C3%A9-CAT100FL/dp/B07NS9QJFN/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "Catch Up Games- Flip 7 Jeu de société, CAT100FL" [ref=e830]
+            - listitem [ref=e831]:
+              - link "ATM Gaming PILI PILI - Jeu de société - Vainqueur Grand Prix du Jouet 2025 - Jeu de Cartes Tactique et d’Ambiance - 2 à..." [ref=e833] [cursor=pointer]:
+                - /url: /ATM-Gaming-PILI-Vainqueur-dAmbiance/dp/B0FBMDZY83/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "ATM Gaming PILI PILI - Jeu de société - Vainqueur Grand Prix du Jouet 2025 - Jeu de Cartes Tactique et d’Ambiance - 2 à..." [ref=e834]
+            - listitem [ref=e835]:
+              - 'link "Pokémon : Blister de Trois boosters Méga-Évolution – Équilibre Parfait du (1 Carte Promo Brillante et 3 boosters)..." [ref=e837] [cursor=pointer]':
+                - /url: /Pok%C3%A9mon-M%C3%A9ga-%C3%89volution-Carte-boosters-JCC-Pok%C3%A9mon/dp/B0GGJ11H9Y/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - 'img "Pokémon : Blister de Trois boosters Méga-Évolution – Équilibre Parfait du (1 Carte Promo Brillante et 3 boosters)..." [ref=e838]'
+            - listitem [ref=e839]:
+              - 'link "Pokémon : Coffret Dresseur d’élite Méga-Évolution – Équilibre Parfait (1 Carte Promo entièrement illustrée, 9 boosters..." [ref=e841] [cursor=pointer]':
+                - /url: /Pok%C3%A9mon-M%C3%A9ga-%C3%89volution-Carte-enti%C3%A8rement-boosters/dp/B0GGJ29HSD/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - 'img "Pokémon : Coffret Dresseur d’élite Méga-Évolution – Équilibre Parfait (1 Carte Promo entièrement illustrée, 9 boosters..." [ref=e842]'
+            - listitem [ref=e843]:
+              - 'link "Pokémon : Lot de boosters Méga-Évolution – Équilibre Parfait (6 boosters) du JCC Pokémon" [ref=e845] [cursor=pointer]':
+                - /url: /Pok%C3%A9mon-M%C3%A9ga-%C3%89volution-%C3%89quilibre-boosters-JCC-Pok%C3%A9mon/dp/B0GGJ7JF7J/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - 'img "Pokémon : Lot de boosters Méga-Évolution – Équilibre Parfait (6 boosters) du JCC Pokémon" [ref=e846]'
+            - listitem [ref=e847]:
+              - link "Unicorn Academy - L'Ecole des Licornes - Licorne Wildstar + Poupée Sophia - Licorne, Poupée Et Accessoires À..." [ref=e849] [cursor=pointer]:
+                - /url: /Unicorn-Academy-Licornes-Accessoires-Collectionner/dp/B0DQBRV39H/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "Unicorn Academy - L'Ecole des Licornes - Licorne Wildstar + Poupée Sophia - Licorne, Poupée Et Accessoires À..." [ref=e850]
+            - listitem [ref=e851]:
+              - 'link "Pokémon : Collection Journée 2026 (1 Carte Promo Brillante, 1 pièce et 3 boosters)" [ref=e853] [cursor=pointer]':
+                - /url: /Pok%C3%A9mon-Collection-Carte-pi%C3%A8ce-boosters/dp/B0G3QLKXC5/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - 'img "Pokémon : Collection Journée 2026 (1 Carte Promo Brillante, 1 pièce et 3 boosters)" [ref=e854]'
+            - listitem [ref=e855]:
+              - link "Paw Patrol - Pat Patrouille - Véhicule Figurine Ryder - Voiture Figurine À Collectionner - Pat Patrouille Véhicule -..." [ref=e857] [cursor=pointer]:
+                - /url: /Paw-Patrol-Patrouille-Collectionner-Plastique/dp/B0DCBXNSRS/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "Paw Patrol - Pat Patrouille - Véhicule Figurine Ryder - Voiture Figurine À Collectionner - Pat Patrouille Véhicule -..." [ref=e858]
+            - listitem [ref=e859]:
+              - 'link "Pokémon : Collection spéciale Ronflex-ex et Leuphorie-ex du JCC Pokémon (2 Cartes Promo Brillantes, 1 Carte Grand Format..." [ref=e861] [cursor=pointer]':
+                - /url: /Pok%C3%A9mon-Leuphorie-ex-Cartes-Carte-boosters/dp/B0FPMVQLWZ/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - 'img "Pokémon : Collection spéciale Ronflex-ex et Leuphorie-ex du JCC Pokémon (2 Cartes Promo Brillantes, 1 Carte Grand Format..." [ref=e862]'
+            - listitem [ref=e863]:
+              - link "ATM Gaming Mouton Mouton - Jeu de Société Famille et Amis - Complétez Les Mêmes Réponses Que Vos Coéquipiers ! - Jeu..." [ref=e865] [cursor=pointer]:
+                - /url: /ATM-Gaming-Mouton-Compl%C3%A9tez-Co%C3%A9quipiers/dp/B0FJSLMQNY/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "ATM Gaming Mouton Mouton - Jeu de Société Famille et Amis - Complétez Les Mêmes Réponses Que Vos Coéquipiers ! - Jeu..." [ref=e866]
+            - listitem [ref=e867]:
+              - link "Clementoni | Idea! Fantasy Pens pour Enfants 6 Ans+ | Kit DIY 3 Stylos Personnalisables | Accessoires Inclus:..." [ref=e869] [cursor=pointer]:
+                - /url: /Clementoni-Idea-Create-Fantaisie-Jeu-Laboratoire-Personnalisables/dp/B0CTN1BNQZ/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "Clementoni | Idea! Fantasy Pens pour Enfants 6 Ans+ | Kit DIY 3 Stylos Personnalisables | Accessoires Inclus:..." [ref=e870]
+            - listitem [ref=e871]:
+              - link "Play-Doh Pack de 18 Pots Imagination, Pâte à modeler, Activité manuelle et Ludique, Activité manuelle, Dès 3 ans" [ref=e873] [cursor=pointer]:
+                - /url: /Play-Doh-Pack-18-Pots-Imagination/dp/B0DNFPHXDN/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "Play-Doh Pack de 18 Pots Imagination, Pâte à modeler, Activité manuelle et Ludique, Activité manuelle, Dès 3 ans" [ref=e874]
+            - listitem [ref=e875]:
+              - link "Janod - Magneti'Book Animaux - Jeu Educatif Magnétique 30 Pièces - Apprentissage Motricité Fine et Imagination -..." [ref=e877] [cursor=pointer]:
+                - /url: /Janod-TYJD02723-MagnetiBook-Animaux/dp/B07C8CDF7F/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "Janod - Magneti'Book Animaux - Jeu Educatif Magnétique 30 Pièces - Apprentissage Motricité Fine et Imagination -..." [ref=e878]
+            - listitem [ref=e879]:
+              - link "Bright Starts, Oball Classic, Balle Flexible et Facile à Manipuler, Jouet d'activité sensorielle pour Les Enfants de..." [ref=e881] [cursor=pointer]:
+                - /url: /Bright-Starts-manipuler-sensorielle-multicolore/dp/B00ZRD99C0/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "Bright Starts, Oball Classic, Balle Flexible et Facile à Manipuler, Jouet d'activité sensorielle pour Les Enfants de..." [ref=e882]
+            - listitem [ref=e883]:
+              - link "Ultimate Guard Couvertures de cartes à chargement par le haut 35pt" [ref=e885] [cursor=pointer]:
+                - /url: /Ultimate-Guard-Couvertures-cartes-Toploading/dp/B0BQ1J9C1P/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "Ultimate Guard Couvertures de cartes à chargement par le haut 35pt" [ref=e886]
+            - listitem [ref=e887]:
+              - link "Rubik's Cube - Rubiks Cube 3x3 - Jeu Casse-Tête Adulte Et Enfant - Puzzle Original Correspondance Couleurs - Puzzle..." [ref=e889] [cursor=pointer]:
+                - /url: /RUBIKS-CUBE-3X3-Casse-T%C3%AAte-Correspondance/dp/B09FG5L5ZX/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "Rubik's Cube - Rubiks Cube 3x3 - Jeu Casse-Tête Adulte Et Enfant - Puzzle Original Correspondance Couleurs - Puzzle..." [ref=e890]
+            - listitem [ref=e891]:
+              - link "Asmodee - Trio - Jeu de Cartes Made in France - Récompensé As d'or 2024 - Jeux de Société pour Famille et Enfants dès 7..." [ref=e893] [cursor=pointer]:
+                - /url: /Asmodee-Cocktail-Games-Soci%C3%A9t%C3%A9-fran%C3%A7aise/dp/B0C2PN2TBG/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "Asmodee - Trio - Jeu de Cartes Made in France - Récompensé As d'or 2024 - Jeux de Société pour Famille et Enfants dès 7..." [ref=e894]
+            - listitem [ref=e895]:
+              - link "Perplexus - Perplexus Epic - Labyrinthe Parcours 3D Epic Avec 125 Défis - Labyrinthe 3D - Jeu d'Action et Réflexe -..." [ref=e897] [cursor=pointer]:
+                - /url: /PERPLEXUS-Labyrinthe-Parcours-dAction-R%C3%A9flexe/dp/B07MGRNKBT/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "Perplexus - Perplexus Epic - Labyrinthe Parcours 3D Epic Avec 125 Défis - Labyrinthe 3D - Jeu d'Action et Réflexe -..." [ref=e898]
+            - listitem [ref=e899]:
+              - link "DJECO Lot de Stickers Dinosaures (160 Pièces) - Enfants de 4 à 7 Ans - Loisirs Créatifs et Artistiques - Création..." [ref=e901] [cursor=pointer]:
+                - /url: /Djeco-DJ08843-Stickers-Dinosaures/dp/B00D18Y1JY/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "DJECO Lot de Stickers Dinosaures (160 Pièces) - Enfants de 4 à 7 Ans - Loisirs Créatifs et Artistiques - Création..." [ref=e902]
+            - listitem [ref=e903]:
+              - link "GIGAMIC - 6 Qui prend ! - Jeux de société - Jeux de cartes dès 8 ans - Jeu d'ambiance pour enfant, famille et amis -..." [ref=e905] [cursor=pointer]:
+                - /url: /GIGAMIC-dambiance-interg%C3%A9n%C3%A9rationnel-nouveau-soci%C3%A9t%C3%A9/dp/B000YIDF5A/?_encoding=UTF8&pd_rd_w=mrsx3&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                - img "GIGAMIC - 6 Qui prend ! - Jeux de société - Jeux de cartes dès 8 ans - Jeu d'ambiance pour enfant, famille et amis -..." [ref=e906]
+        - separator [ref=e908]
+        - generic [ref=e910]:
+          - heading "Produits reconditionnés" [level=2] [ref=e912]:
+            - generic [ref=e913]:
+              - generic [ref=e914]: Produits reconditionnés
+              - generic [ref=e915]: Produits reconditionnés
+          - generic [ref=e916]:
+            - link "Ordinateurs" [ref=e918] [cursor=pointer]:
+              - /url: /s/?_encoding=UTF8&i=computers&srs=10675213031&bbn=340859031&rh=n%3A427937031&pd_rd_w=CgNKV&content-id=amzn1.sym.72a03c8e-d8f9-4a8f-95ca-e7e30a4b7284&pf_rd_p=72a03c8e-d8f9-4a8f-95ca-e7e30a4b7284&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+              - img "Ordinateurs" [ref=e921]
+              - generic [ref=e923]:
+                - generic [ref=e924]: Ordinateurs
+                - generic [ref=e925]: Ordinateurs
+            - generic [ref=e926]:
+              - link "Bureautique" [ref=e928] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&i=specialty-aps&srs=15806295031&rh=n%3A15806295031&pd_rd_w=CgNKV&content-id=amzn1.sym.72a03c8e-d8f9-4a8f-95ca-e7e30a4b7284&pf_rd_p=72a03c8e-d8f9-4a8f-95ca-e7e30a4b7284&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Bureautique" [ref=e931]
+                - generic [ref=e933]:
+                  - generic [ref=e934]: Bureautique
+                  - generic [ref=e935]: Bureautique
+              - link "Maison" [ref=e937] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&i=kitchen&srs=10675213031&pd_rd_w=CgNKV&content-id=amzn1.sym.72a03c8e-d8f9-4a8f-95ca-e7e30a4b7284&pf_rd_p=72a03c8e-d8f9-4a8f-95ca-e7e30a4b7284&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Maison" [ref=e940]
+                - generic [ref=e942]:
+                  - generic [ref=e943]: Maison
+                  - generic [ref=e944]: Maison
+              - link "Photo" [ref=e946] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&i=electronics&srs=10675213031&bbn=13910671&rh=n%3A13910691&pd_rd_w=CgNKV&content-id=amzn1.sym.72a03c8e-d8f9-4a8f-95ca-e7e30a4b7284&pf_rd_p=72a03c8e-d8f9-4a8f-95ca-e7e30a4b7284&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Photo" [ref=e949]
+                - generic [ref=e951]:
+                  - generic [ref=e952]: Photo
+                  - generic [ref=e953]: Photo
+          - link "Voir tout" [ref=e955] [cursor=pointer]:
+            - /url: /b/ref=tb_surl_renewed/?_encoding=UTF8&ie=UTF8&node=10675213031&pd_rd_w=CgNKV&content-id=amzn1.sym.72a03c8e-d8f9-4a8f-95ca-e7e30a4b7284&pf_rd_p=72a03c8e-d8f9-4a8f-95ca-e7e30a4b7284&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+            - generic [ref=e956]:
+              - generic [ref=e957]: Voir tout
+              - generic [ref=e958]: Voir tout
+        - generic [ref=e960]:
+          - heading "Mode et accessoires" [level=2] [ref=e962]
+          - generic [ref=e963]:
+            - generic [ref=e964]:
+              - link "Sport" [ref=e966] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&k=tenues%20de%20sport&i=fashion&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=HIE3MOQ2YHY&sprefix=tenues%20desport%2Cfashion%2C370&ref=nb_sb_noss&pd_rd_w=ch3Gp&content-id=amzn1.sym.95a184c6-4266-42e4-ad85-01f2b4db4bc5&pf_rd_p=95a184c6-4266-42e4-ad85-01f2b4db4bc5&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Sport" [ref=e968]
+                - generic [ref=e970]: Sport
+              - link "Tenue élégante" [ref=e972] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&k=tenues%20%C3%A9l%C3%A9gante&i=fashion&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3AMINHHQERRGW&sprefix=tenues%20%C3%A9l%C3%A9ga%2Cfashion%2C364&ref=nb_sb_noss&pd_rd_w=ch3Gp&content-id=amzn1.sym.95a184c6-4266-42e4-ad85-01f2b4db4bc5&pf_rd_p=95a184c6-4266-42e4-ad85-01f2b4db4bc5&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Tenue élégante" [ref=e974]
+                - generic [ref=e976]: Tenue élégante
+            - generic [ref=e977]:
+              - link "Extérieur" [ref=e979] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&k=manteaux%20et%20blousons&i=fashion&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=18YZ4RWQZA6Q3&sprefix=manteaux%20et%20blousons%2Cfashion%2C351&ref=nb_sb_noss_2&pd_rd_w=ch3Gp&content-id=amzn1.sym.95a184c6-4266-42e4-ad85-01f2b4db4bc5&pf_rd_p=95a184c6-4266-42e4-ad85-01f2b4db4bc5&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Extérieur" [ref=e981]
+                - generic [ref=e983]: Extérieur
+              - link "Intérieur" [ref=e985] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=76234029031&pd_rd_w=ch3Gp&content-id=amzn1.sym.95a184c6-4266-42e4-ad85-01f2b4db4bc5&pf_rd_p=95a184c6-4266-42e4-ad85-01f2b4db4bc5&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Intérieur" [ref=e987]
+                - generic [ref=e989]: Intérieur
+          - link "Mode et accessoires - Voir plus" [ref=e991] [cursor=pointer]:
+            - /url: /b/?ie=UTF8&node=11961521031&ref_=nav_cs_fashion&pd_rd_w=ch3Gp&content-id=amzn1.sym.95a184c6-4266-42e4-ad85-01f2b4db4bc5&pf_rd_p=95a184c6-4266-42e4-ad85-01f2b4db4bc5&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+            - generic [ref=e992]:
+              - generic [ref=e993]: Voir plus
+              - generic [ref=e994]: Voir plus
+        - iframe [ref=e997]:
+          - generic [ref=f3e2]:
+            - generic [ref=f3e3]: Publicité sponsorisée. Logo de la marque. Image du produit. Wiltec Enclos extérieur – 168 x 82 x 166,5 cm – en Bois de Sapin et avec Grillage – Parc pour Chat résistant aux intempéries – avec 6 Zones de Repos – Félins 306.99 En savoir plus
+            - link "Cliquez pour accéder à la page produit" [ref=f3e6] [cursor=pointer]:
+              - /url: https://www.amazon.fr/dp/B07LBV129G?aref=5BGF93heZE&aaxitk=37d05d3d8f4f19b621849dea5a11dfe9&language=fr_FR&pf_rd_p=ce728d9f-9c94-4d3c-8aef-a18ef5cda25d&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_w=B0arS&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref=dacx_dp_582337634569207687_593734904349602577
+            - generic [ref=f3e7]:
+              - generic [ref=f3e8]:
+                - generic [ref=f3e9]: En vedette dans Animaux de compagnie
+                - button "Leave feedback on Sponsored ad" [ref=f3e11] [cursor=pointer]:
+                  - text: Sponsorisé
+                  - img [ref=f3e12]
+              - img "Wiltec Enclos extérieur – 168 x 82 x 166,5 cm – en Bois de Sapin et avec Grillage – Parc pour Chat résistant aux intempéries – avec 6 Zones de Repos – Félins" [ref=f3e15]
+              - generic [ref=f3e17]:
+                - generic [ref=f3e18]:
+                  - generic [ref=f3e19]: Wiltec Enclos extérieur – 168 x 82 x 166,5 cm – en Bois de Sapin et avec Grillage – Parc pour Chat résistant aux intempéries – avec 6 Zones de Repos – Félins
+                  - generic [ref=f3e21]:
+                    - generic [ref=f3e22]: 306,99 €
+                    - generic [ref=f3e23]:
+                      - generic [ref=f3e24]: "306"
+                      - generic [ref=f3e25]: ","
+                      - generic [ref=f3e26]: "99"
+                      - generic [ref=f3e27]: €
+                - link "Cliquez pour accéder à la page produit Publicité sponsorisée. Logo de la marque. Image du produit. Wiltec Enclos extérieur – 168 x 82 x 166,5 cm – en Bois de Sapin et avec Grillage – Parc pour Chat résistant aux intempéries – avec 6 Zones de Repos – Félins 306.99 En savoir plus" [ref=f3e28] [cursor=pointer]:
+                  - /url: https://www.amazon.fr/dp/B07LBV129G?aref=5BGF93heZE&aaxitk=37d05d3d8f4f19b621849dea5a11dfe9&language=fr_FR&pf_rd_p=ce728d9f-9c94-4d3c-8aef-a18ef5cda25d&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_w=B0arS&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref=dacx_dp_582337634569207687_593734904349602577
+                  - generic [ref=f3e29]: En savoir plus
+        - generic [ref=e999]:
+          - heading "Offres exclusives sur produits bébé" [level=2] [ref=e1001]
+          - link "Offres exclusives sur produits bébé Cliquer ici" [ref=e1002] [cursor=pointer]:
+            - /url: /baby-reg/?_encoding=UTF8&ref_=br_dsk_tbnr_br&pd_rd_w=OUw3s&content-id=amzn1.sym.16322d53-3fd3-4926-9a8d-542e0f7f0566&pf_rd_p=16322d53-3fd3-4926-9a8d-542e0f7f0566&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+            - img "Offres exclusives sur produits bébé" [ref=e1005]
+            - generic [ref=e1007]:
+              - generic [ref=e1008]: Cliquer ici
+              - generic [ref=e1009]: Cliquer ici
+        - separator [ref=e1010]
+        - generic [ref=e1013]:
+          - heading "Meilleures ventes dans Informatique" [level=2] [ref=e1015]
+          - list [ref=e1018]:
+            - listitem [ref=e1019]:
+              - link "HP 305, Pack de 2 Cartouches d’Encre Originales, 6ZD17AE, Noir, Cyan, Jaune, Magenta, Compatible avec HP DeskJet 2700/..." [ref=e1021] [cursor=pointer]:
+                - /url: /HP-Cartouches-Couleurs-Authentiques-6ZD17AE/dp/B08T1HR5CS/?_encoding=UTF8&pd_rd_w=t9WbD&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                - img "HP 305, Pack de 2 Cartouches d’Encre Originales, 6ZD17AE, Noir, Cyan, Jaune, Magenta, Compatible avec HP DeskJet 2700/..." [ref=e1022]
+            - listitem [ref=e1023]:
+              - link "SanDisk 128 Go Ultra microSDXC, Carte micro sd + adaptateur SD (Pour Smartphone et Tablette, Video Full HDD, jusqu'à 140..." [ref=e1025] [cursor=pointer]:
+                - /url: /SanDisk-Extreme-RescuePRO-Deluxe-jusqu%C3%A0/dp/B0B7NTY2S6/?_encoding=UTF8&pd_rd_w=t9WbD&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                - img "SanDisk 128 Go Ultra microSDXC, Carte micro sd + adaptateur SD (Pour Smartphone et Tablette, Video Full HDD, jusqu'à 140..." [ref=e1026]
+            - listitem [ref=e1027]:
+              - link "SanDisk Ultra Dual Drive Go 128 Go Flash Drive, Clé USB 3.2, jusqu'à 400 Mo/s, Connecteurs USB Type-C et USB Type-A..." [ref=e1029] [cursor=pointer]:
+                - /url: /SanDisk-connecteurs-r%C3%A9versibles-smartphones-tablettes/dp/B07YYJRXQR/?_encoding=UTF8&pd_rd_w=t9WbD&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                - img "SanDisk Ultra Dual Drive Go 128 Go Flash Drive, Clé USB 3.2, jusqu'à 400 Mo/s, Connecteurs USB Type-C et USB Type-A..." [ref=e1030]
+            - listitem [ref=e1031]:
+              - link "HP 302, Pack de 2 cartouches d'Encre Originales, X4D37AE, Noir, Cyane, Jaune, Magenta, Compatible avec les imprimantes..." [ref=e1033] [cursor=pointer]:
+                - /url: /HP-X4D37AE-Original-Cartridges-Tri-color/dp/B01LXLFF6H/?_encoding=UTF8&pd_rd_w=t9WbD&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                - img "HP 302, Pack de 2 cartouches d'Encre Originales, X4D37AE, Noir, Cyane, Jaune, Magenta, Compatible avec les imprimantes..." [ref=e1034]
+            - listitem [ref=e1035]:
+              - link "SanDisk Extreme PRO Carte SDXC 256 Go (Carte SD V30, Vitesse de Transfert jusqu'à 200 Mo/s, UHS-I, 4K UHD Videos,..." [ref=e1037] [cursor=pointer]:
+                - /url: /SanDisk-Cards-Extreme-256GB-Memory/dp/B09X7CFXSX/?_encoding=UTF8&pd_rd_w=t9WbD&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                - img "SanDisk Extreme PRO Carte SDXC 256 Go (Carte SD V30, Vitesse de Transfert jusqu'à 200 Mo/s, UHS-I, 4K UHD Videos,..." [ref=e1038]
+            - listitem [ref=e1039]:
+              - link "ARCTIC MX-4 (4 g) - Pâte thermique de haute performance pour tous les processeurs (CPU, GPU - PC, PS4, XBOX),..." [ref=e1041] [cursor=pointer]:
+                - /url: /ARCTIC-MX-4-2019-Refroidisseur-Dissipateur/dp/B07L9BDY3T/?_encoding=UTF8&pd_rd_w=t9WbD&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                - img "ARCTIC MX-4 (4 g) - Pâte thermique de haute performance pour tous les processeurs (CPU, GPU - PC, PS4, XBOX),..." [ref=e1042]
+            - listitem [ref=e1043]:
+              - link "Canon Pack Encre & Papier - PG-540/CL-541 Cartouches d'encre Authentiques pour imprimante - 2 Packs (1 x Noir, 1 x..." [ref=e1045] [cursor=pointer]:
+                - /url: /Canon-Cartouches-Certifi%C3%A9-Feuilles-Emballage/dp/B0CH8H25T8/?_encoding=UTF8&pd_rd_w=t9WbD&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                - img "Canon Pack Encre & Papier - PG-540/CL-541 Cartouches d'encre Authentiques pour imprimante - 2 Packs (1 x Noir, 1 x..." [ref=e1046]
+            - listitem [ref=e1047]:
+              - link "Toshiba Canvio Partner 2TB Portable 2.5'' External Hard Drive, USB 3.2, Compatible Mac & Windows. Xbox, PS4, PS5..." [ref=e1049] [cursor=pointer]:
+                - /url: /Toshiba-Portable-External-Compatible-HDTB520EK3AB/dp/B0BGXZRKQN/?_encoding=UTF8&pd_rd_w=t9WbD&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                - img "Toshiba Canvio Partner 2TB Portable 2.5'' External Hard Drive, USB 3.2, Compatible Mac & Windows. Xbox, PS4, PS5..." [ref=e1050]
+            - listitem [ref=e1051]:
+              - link "TP-Link CPL 1000Mbps avec 1 Port Gigabit et Prise Intégrée Type F, Boitier CPL Kit de 2 - idéale pour Profiter du..." [ref=e1053] [cursor=pointer]:
+                - /url: /TP-Link-Ethernet-Gigabit-Int%C3%A9gr%C3%A9e-Boitier/dp/B0859MDSFX/?_encoding=UTF8&pd_rd_w=t9WbD&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                - img "TP-Link CPL 1000Mbps avec 1 Port Gigabit et Prise Intégrée Type F, Boitier CPL Kit de 2 - idéale pour Profiter du..." [ref=e1054]
+            - listitem [ref=e1055]:
+              - link "CORSAIR RM850e (2025) Alimentation ATX entièrement modulaire et silencieuse avec câble 12V-2x6 - Compatible ATX 3.1 et..." [ref=e1057] [cursor=pointer]:
+                - /url: /CORSAIR-Alimentation-enti%C3%A8rement-modulaire-silencieuse/dp/B0DMTN5WLB/?_encoding=UTF8&pd_rd_w=t9WbD&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                - img "CORSAIR RM850e (2025) Alimentation ATX entièrement modulaire et silencieuse avec câble 12V-2x6 - Compatible ATX 3.1 et..." [ref=e1058]
+            - listitem [ref=e1059]:
+              - link "PNY CS900 SSD Interne SATA III, 2.5 Pouces, 250Go, Vitesse de Lecture jusqu'à 535MB/s" [ref=e1061] [cursor=pointer]:
+                - /url: /PNY-Conduite-l%C3%A9tat-Solide-Interne/dp/B07XZLW68F/?_encoding=UTF8&pd_rd_w=t9WbD&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                - img "PNY CS900 SSD Interne SATA III, 2.5 Pouces, 250Go, Vitesse de Lecture jusqu'à 535MB/s" [ref=e1062]
+            - listitem [ref=e1063]:
+              - link "Epson Ink/604 Pineapple C13T10G64010 Multipack" [ref=e1065] [cursor=pointer]:
+                - /url: /Epson-Starfish-CMYK-C13T10G64010-Noir/dp/B0B8X2D5DD/?_encoding=UTF8&pd_rd_w=t9WbD&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                - img "Epson Ink/604 Pineapple C13T10G64010 Multipack" [ref=e1066]
+            - listitem [ref=e1067]:
+              - link "TP-Link RE330 WiFi Repeater, AC1200 Mbps WiFi Amplifier, Gigabit Ethernet Port, Powerful WiFi Repeater, Compatible with..." [ref=e1069] [cursor=pointer]:
+                - /url: /TP-Link-RE330-R%C3%A9p%C3%A9teur-WiFi-AC1200/dp/B08X19VZN8/?_encoding=UTF8&pd_rd_w=t9WbD&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                - img "TP-Link RE330 WiFi Repeater, AC1200 Mbps WiFi Amplifier, Gigabit Ethernet Port, Powerful WiFi Repeater, Compatible with..." [ref=e1070]
+            - listitem [ref=e1071]:
+              - link "Samsung SSD 990 Pro NVMe M.2 Pcle 4.0, SSD Interne, Capacité 1 To, Vitesse de lecture jusqu'à 7 450 Mo/s, Gestion..." [ref=e1073] [cursor=pointer]:
+                - /url: /Samsung-MZ-V9P1T0BW-Interne-Vitesses-fulgurantes/dp/B0B9C3ZVHR/?_encoding=UTF8&pd_rd_w=t9WbD&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                - img "Samsung SSD 990 Pro NVMe M.2 Pcle 4.0, SSD Interne, Capacité 1 To, Vitesse de lecture jusqu'à 7 450 Mo/s, Gestion..." [ref=e1074]
+        - separator [ref=e1076]
+        - generic [ref=e1079]:
+          - generic [ref=e1080]:
+            - heading "La boutique Made in Italy" [level=2] [ref=e1081]
+            - link "Découvrir" [ref=e1083] [cursor=pointer]:
+              - /url: /b/?_encoding=UTF8&node=9443565031&ref=miibubble&pd_rd_w=bJUuP&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+          - list [ref=e1086]:
+            - listitem [ref=e1087]:
+              - link "Idées cadeaux" [ref=e1089] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=206839166031&pd_rd_w=bJUuP&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Idées cadeaux" [ref=e1090]
+            - listitem [ref=e1091]:
+              - link "Jouets" [ref=e1093] [cursor=pointer]:
+                - /url: /s?k=Jouets&i=specialty-aps&srs=9443565031&bbn=9443565031&rh=p_n_feature_twenty-four_browse-bin%3A27009789031&dc&ds=v1%3A6TQ328Fmk2dDDaX6kD04rJL05GoDooFAAgxsidJ8Lzc&__mk_fr_FR=ÅMÅŽÕÑ&crid=249C08T6SG8CA&qid=1734621178&rnid=27009785031&sprefix=jouets%2Cspecialty-aps%2C138&ref=miibubble2&pd_rd_w=bJUuP&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Jouets" [ref=e1094]
+            - listitem [ref=e1095]:
+              - link "Alimentation" [ref=e1097] [cursor=pointer]:
+                - /url: /b?node=16750235031&ref=miibubble3&pd_rd_w=bJUuP&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Alimentation" [ref=e1098]
+            - listitem [ref=e1099]:
+              - link "Vêtements et accessoires" [ref=e1101] [cursor=pointer]:
+                - /url: /b?node=16749924031&ref=miibubble4&pd_rd_w=bJUuP&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Vêtements et accessoires" [ref=e1102]
+            - listitem [ref=e1103]:
+              - link "Décoration et mobilier" [ref=e1105] [cursor=pointer]:
+                - /url: /b?node=16750250031&ref=miibubble5&pd_rd_w=bJUuP&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Décoration et mobilier" [ref=e1106]
+            - listitem [ref=e1107]:
+              - link "Beauté et bien-être" [ref=e1109] [cursor=pointer]:
+                - /url: /b?node=16750233031&ref=miibubble6&pd_rd_w=bJUuP&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Beauté et bien-être" [ref=e1110]
+            - listitem [ref=e1111]:
+              - link "Artisanat italien" [ref=e1113] [cursor=pointer]:
+                - /url: /b?node=12440605031&ref=miibubble7&pd_rd_w=bJUuP&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Artisanat italien" [ref=e1114]
+            - listitem [ref=e1115]:
+              - link "Ustensiles de cuisine" [ref=e1117] [cursor=pointer]:
+                - /url: /b?node=16750258031&ref=miibubble8&pd_rd_w=bJUuP&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Ustensiles de cuisine" [ref=e1118]
+            - listitem [ref=e1119]:
+              - link "Décoration" [ref=e1121] [cursor=pointer]:
+                - /url: /b?node=16750256031&ref=miibubble9&pd_rd_w=bJUuP&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Décoration" [ref=e1122]
+        - separator [ref=e1124]
+        - generic [ref=e1126]:
+          - heading "Accessoires de mode" [level=2] [ref=e1128]
+          - generic [ref=e1129]:
+            - generic [ref=e1130]:
+              - link "Montres hommes" [ref=e1132] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&i=fashion-mens-watches&bbn=60937031&rh=n%3A10143456031%2Cp_n_deal_type%3A26902977031&pd_rd_w=HF25r&content-id=amzn1.sym.b9075503-b608-4928-adb5-252679c21065&pf_rd_p=b9075503-b608-4928-adb5-252679c21065&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Montres hommes" [ref=e1134]
+                - generic [ref=e1136]: Montres hommes
+              - link "Montres femmes" [ref=e1138] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&bbn=10143466031&rh=n%3A10143466031%2Cp_n_deal_type%3A26902977031&pd_rd_w=HF25r&content-id=amzn1.sym.b9075503-b608-4928-adb5-252679c21065&pf_rd_p=b9075503-b608-4928-adb5-252679c21065&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Montres femmes" [ref=e1140]
+                - generic [ref=e1142]: Montres femmes
+            - generic [ref=e1143]:
+              - link "Bijoux femmes" [ref=e1145] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&bbn=10420535031&rh=n%3A10420535031%2Cp_n_deal_type%3A26902977031&pd_rd_w=HF25r&content-id=amzn1.sym.b9075503-b608-4928-adb5-252679c21065&pf_rd_p=b9075503-b608-4928-adb5-252679c21065&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Bijoux femmes" [ref=e1147]
+                - generic [ref=e1149]: Bijoux femmes
+              - link "Bagages" [ref=e1151] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&keywords=Bagages%20cabine&i=fashion-luggage&rh=n%3A1765020031%2Cp_n_deal_type%3A26902977031&dc=&c=ts&qid=1710157989&rnid=26902974031&ts_id=1765020031&ref=sr_nr_p_n_deal_type_1&ds=v1%3A3XDKS23m7p54JUvOuDt%2BxRyUFjuGOGT8HIjgHVfxtrg&pd_rd_w=HF25r&content-id=amzn1.sym.b9075503-b608-4928-adb5-252679c21065&pf_rd_p=b9075503-b608-4928-adb5-252679c21065&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Bagages" [ref=e1153]
+                - generic [ref=e1155]: Bagages
+          - link "Accessoires de mode - Voir plus" [ref=e1157] [cursor=pointer]:
+            - /url: /b/?_encoding=UTF8&ie=UTF8&node=14136440031&pd_rd_w=HF25r&content-id=amzn1.sym.b9075503-b608-4928-adb5-252679c21065&pf_rd_p=b9075503-b608-4928-adb5-252679c21065&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+            - generic [ref=e1158]:
+              - generic [ref=e1159]: Voir plus
+              - generic [ref=e1160]: Voir plus
+        - iframe [ref=e1163]:
+          - generic [ref=f4e2]:
+            - generic [ref=f4e3]: Publicité sponsorisée. Image du produit. SHAPEHEART innovation française, Support telephone vélo magnétique, Pochette imperméable détachable. Porte téléphone vélo électrique. Support telephone vélo, trottinette, VTT... Accessoire vélo 29.95 En savoir plus
+            - link "Cliquez pour accéder à la page produit" [ref=f4e6] [cursor=pointer]:
+              - /url: https://www.amazon.fr/dp/B07P6Y4QR6?aref=SEiIJGaseJ&aaxitk=5287a974675aa488bed4f5eb8eeb802e&language=fr_FR&pf_rd_p=3d217999-6e1a-414e-abf3-6abf58a95ecf&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_w=zpw60&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref=dacx_dp_577800930600440368_591617534585670121
+            - generic [ref=f4e7]:
+              - generic [ref=f4e8]:
+                - generic [ref=f4e9]: En vedette dans Accessoires sans fil
+                - button "Leave feedback on Sponsored ad" [ref=f4e11] [cursor=pointer]:
+                  - text: Sponsorisé
+                  - img [ref=f4e12]
+              - img "SHAPEHEART innovation française, Support telephone vélo magnétique, Pochette imperméable détachable. Porte téléphone vélo électrique. Support telephone vélo, trottinette, VTT... Accessoire vélo" [ref=f4e15]
+              - generic [ref=f4e17]:
+                - generic [ref=f4e18]:
+                  - generic [ref=f4e19]: SHAPEHEART innovation française, Support telephone vélo magnétique, Pochette imperméable détachable. Porte téléphone vélo électrique. Support telephone vélo, trottinette, VTT... Accessoire vélo
+                  - generic [ref=f4e21]:
+                    - generic [ref=f4e22]: 29,95 €
+                    - generic [ref=f4e23]:
+                      - generic [ref=f4e24]: "29"
+                      - generic [ref=f4e25]: ","
+                      - generic [ref=f4e26]: "95"
+                      - generic [ref=f4e27]: €
+                - link "Cliquez pour accéder à la page produit Publicité sponsorisée. Image du produit. SHAPEHEART innovation française, Support telephone vélo magnétique, Pochette imperméable détachable. Porte téléphone vélo électrique. Support telephone vélo, trottinette, VTT... Accessoire vélo 29.95 En savoir plus" [ref=f4e28] [cursor=pointer]:
+                  - /url: https://www.amazon.fr/dp/B07P6Y4QR6?aref=SEiIJGaseJ&aaxitk=5287a974675aa488bed4f5eb8eeb802e&language=fr_FR&pf_rd_p=3d217999-6e1a-414e-abf3-6abf58a95ecf&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_w=zpw60&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref=dacx_dp_577800930600440368_591617534585670121
+                  - generic [ref=f4e29]: En savoir plus
+        - generic [ref=e1165]:
+          - heading "Livres" [level=2] [ref=e1167]
+          - generic [ref=e1168]:
+            - generic [ref=e1169]:
+              - link "Ebook" [ref=e1171] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=695398031&pd_rd_w=EsitI&content-id=amzn1.sym.5b96cb94-f8e8-494b-9eed-7e0111c0676b&pf_rd_p=5b96cb94-f8e8-494b-9eed-7e0111c0676b&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Ebook" [ref=e1173]
+                - generic [ref=e1175]: Ebook
+              - link "Livres audio" [ref=e1177] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=17941536031&pd_rd_w=EsitI&content-id=amzn1.sym.5b96cb94-f8e8-494b-9eed-7e0111c0676b&pf_rd_p=5b96cb94-f8e8-494b-9eed-7e0111c0676b&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Livres audio" [ref=e1179]
+                - generic [ref=e1181]: Livres audio
+            - generic [ref=e1182]:
+              - link "Prix littéraires" [ref=e1184] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=316172011&pd_rd_w=EsitI&content-id=amzn1.sym.5b96cb94-f8e8-494b-9eed-7e0111c0676b&pf_rd_p=5b96cb94-f8e8-494b-9eed-7e0111c0676b&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Prix littéraires" [ref=e1186]
+                - generic [ref=e1188]: Prix littéraires
+              - link "Best-sellers" [ref=e1190] [cursor=pointer]:
+                - /url: /gp/bestsellers/books/?ie=UTF8&ref_=sv_books_2&pd_rd_w=EsitI&content-id=amzn1.sym.5b96cb94-f8e8-494b-9eed-7e0111c0676b&pf_rd_p=5b96cb94-f8e8-494b-9eed-7e0111c0676b&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Best-sellers" [ref=e1192]
+                - generic [ref=e1194]: Best-sellers
+          - link "Livres - Voir plus" [ref=e1196] [cursor=pointer]:
+            - /url: /b/?_encoding=UTF8&node=301061&pd_rd_w=EsitI&content-id=amzn1.sym.5b96cb94-f8e8-494b-9eed-7e0111c0676b&pf_rd_p=5b96cb94-f8e8-494b-9eed-7e0111c0676b&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+            - generic [ref=e1197]:
+              - generic [ref=e1198]: Voir plus
+              - generic [ref=e1199]: Voir plus
+        - generic [ref=e1201]:
+          - heading "Tenues de saison à prix réduits" [level=2] [ref=e1203]
+          - generic [ref=e1204]:
+            - generic [ref=e1205]:
+              - link "Femmes" [ref=e1207] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&i=fashion&bbn=12422072031&rh=n%3A11961521031%2Cn%3A12422072031%2Cp_n_deal_type%3A26902977031&pd_rd_w=L7EyW&content-id=amzn1.sym.dbf9fec8-495e-4b0a-b533-9aa941be2e63&pf_rd_p=dbf9fec8-495e-4b0a-b533-9aa941be2e63&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Femmes" [ref=e1209]
+                - generic [ref=e1211]: Femmes
+              - link "Hommes" [ref=e1213] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&i=fashion&bbn=12422072031&rh=n%3A11961521031%2Cn%3A12422073031%2Cp_n_deal_type%3A26902977031&dc=&ds=v1%3AJ4EZ4x146s4TcVAwg7PbueLIDoq5rcfv34m6ZRH2SOk&qid=1707489421&rnid=11961521031&ref=sr_nr_n_2&pd_rd_w=L7EyW&content-id=amzn1.sym.dbf9fec8-495e-4b0a-b533-9aa941be2e63&pf_rd_p=dbf9fec8-495e-4b0a-b533-9aa941be2e63&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Hommes" [ref=e1215]
+                - generic [ref=e1217]: Hommes
+            - generic [ref=e1218]:
+              - link "Enfants" [ref=e1220] [cursor=pointer]:
+                - /url: /s/?_encoding=UTF8&i=fashion&rh=n%3A11961521031%2Cp_n_deal_type%3A26902977031%2Cp_n_feature_thirty-two_browse-bin%3A96332146031%257C96332150031%257C98215536031&pd_rd_w=L7EyW&content-id=amzn1.sym.dbf9fec8-495e-4b0a-b533-9aa941be2e63&pf_rd_p=dbf9fec8-495e-4b0a-b533-9aa941be2e63&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+                - img "Enfants" [ref=e1222]
+                - generic [ref=e1224]: Enfants
+              - link "Les plus aimés" [ref=e1226] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=205103511031&ref_=cml-shopbygender-men&enabledRefinements=%5B%7B%5C%22rid%5C%22%3A%5C%22p_n_deal_type%5C%22%2C%5C%22value%5C%22%3A%5C%2226902977031%5C%22%2C%5C%22ridType%5C%22%3A%5C%22SEARCH_SHORT_ID%5C%22%2C%5C%22type%5C%22%3A%5C%22BROWSE_NODE%5C%22%7D%5D&pd_rd_w=L7EyW&content-id=amzn1.sym.dbf9fec8-495e-4b0a-b533-9aa941be2e63&pf_rd_p=dbf9fec8-495e-4b0a-b533-9aa941be2e63&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec
+                - img "Les plus aimés" [ref=e1228]
+                - generic [ref=e1230]: Les plus aimés
+          - link "Tenues de saison à prix réduits - Voir plus" [ref=e1232] [cursor=pointer]:
+            - /url: /b/?_encoding=UTF8&ie=UTF8&node=14136440031&pd_rd_w=L7EyW&content-id=amzn1.sym.dbf9fec8-495e-4b0a-b533-9aa941be2e63&pf_rd_p=dbf9fec8-495e-4b0a-b533-9aa941be2e63&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_unk
+            - generic [ref=e1233]:
+              - generic [ref=e1234]: Voir plus
+              - generic [ref=e1235]: Voir plus
+        - separator [ref=e1236]
+        - generic [ref=e1239]:
+          - heading "Meilleures ventes dans Beauté et Parfum" [level=2] [ref=e1241]
+          - list [ref=e1244]:
+            - listitem [ref=e1245]:
+              - link "REXONA - Déodorant Femme Clean Scent - Stick Anti-transpirant - 3x plus efficace contre la transpiration - Protection..." [ref=e1247] [cursor=pointer]:
+                - /url: /REXONA-D%C3%A9odorant-Anti-transpirant-transpiration-Protection/dp/B00AI7COA4/?_encoding=UTF8&pd_rd_w=1KElW&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                - img "REXONA - Déodorant Femme Clean Scent - Stick Anti-transpirant - 3x plus efficace contre la transpiration - Protection..." [ref=e1248]
+            - listitem [ref=e1249]:
+              - 'link "Maybelline New York - Instant Effaceur - Anti-cernes/Correcteur Fluide - Teinte : Beige Rosé (01) - 6,8 ml" [ref=e1251] [cursor=pointer]':
+                - /url: /Maybelline-New-York-Correcteur-multi-usages/dp/B0BLCZX6XP/?_encoding=UTF8&pd_rd_w=1KElW&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                - 'img "Maybelline New York - Instant Effaceur - Anti-cernes/Correcteur Fluide - Teinte : Beige Rosé (01) - 6,8 ml" [ref=e1252]'
+            - listitem [ref=e1253]:
+              - link "BIONOBLE Huile de Ricin Bio Pressée à Froid, 100% Naturelle - Favorise la Pousse, Répare - Huile de Ricin pour Cheveux,..." [ref=e1255] [cursor=pointer]:
+                - /url: /Bionoble-Huile-Ricin-Bio-50ml/dp/B08D6G78W6/?_encoding=UTF8&pd_rd_w=1KElW&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                - img "BIONOBLE Huile de Ricin Bio Pressée à Froid, 100% Naturelle - Favorise la Pousse, Répare - Huile de Ricin pour Cheveux,..." [ref=e1256]
+            - listitem [ref=e1257]:
+              - link "Essence - Mascara I Love Extreme Volume Crazy" [ref=e1259] [cursor=pointer]:
+                - /url: /Essence-M%C3%A1scara-pesta%C3%B1as-Extreme-Crazy/dp/B00GSUCEJ6/?_encoding=UTF8&pd_rd_w=1KElW&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                - img "Essence - Mascara I Love Extreme Volume Crazy" [ref=e1260]
+            - listitem [ref=e1261]:
+              - link "Mixa Cica Crème Mains Réparatrice Intense" [ref=e1263] [cursor=pointer]:
+                - /url: /Mixa-Cr%C3%A8me-Mains-R%C3%A9paratrice-Intense/dp/B081QH4M68/?_encoding=UTF8&pd_rd_w=1KElW&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                - img "Mixa Cica Crème Mains Réparatrice Intense" [ref=e1264]
+            - listitem [ref=e1265]:
+              - link "L'Oréal Paris - Spray Fixateur de Maquillage - Waterproof - Sans Transfert - Formule Légère - Non Collant - Résistant à..." [ref=e1267] [cursor=pointer]:
+                - /url: /LOr%C3%A9al-Paris-Maquillage-Infaillible-R%C3%A9sistant/dp/B0CGMBM6D4/?_encoding=UTF8&pd_rd_w=1KElW&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                - img "L'Oréal Paris - Spray Fixateur de Maquillage - Waterproof - Sans Transfert - Formule Légère - Non Collant - Résistant à..." [ref=e1268]
+            - listitem [ref=e1269]:
+              - link "GARNIER - SkinActive Vitamine C - Crème Sorbet Hydratante Boost d'Eclat Fresh et Bright - Crème Hydratante et..." [ref=e1271] [cursor=pointer]:
+                - /url: /GARNIER-SkinActive-Vitamine-Hydratante-Anti-Taches/dp/B0FVG12N9N/?_encoding=UTF8&pd_rd_w=1KElW&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                - img "GARNIER - SkinActive Vitamine C - Crème Sorbet Hydratante Boost d'Eclat Fresh et Bright - Crème Hydratante et..." [ref=e1272]
+            - listitem [ref=e1273]:
+              - link "Garnier Coloration Permanente - Sans Ammoniaque - Aux Huiles Naturelles de Fleurs - Châtain Pur (4.0) - Olia" [ref=e1275] [cursor=pointer]:
+                - /url: /Garnier-Coloration-Permanente-Ammoniaque-Ch%C3%A2tain/dp/B00B7KSU5Y/?_encoding=UTF8&pd_rd_w=1KElW&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                - img "Garnier Coloration Permanente - Sans Ammoniaque - Aux Huiles Naturelles de Fleurs - Châtain Pur (4.0) - Olia" [ref=e1276]
+            - listitem [ref=e1277]:
+              - link "GRIFEMA Pulvérisateur d’Eau 200 ml Blanc – Spray Réutilisable à Brume Fine pour Cheveux, Visage, Plantes et Soins..." [ref=e1279] [cursor=pointer]:
+                - /url: /GRIFEMA-Pulv%C3%A9risateur-dEau-200-Blanc/dp/B0DXTLWVBL/?_encoding=UTF8&pd_rd_w=1KElW&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                - img "GRIFEMA Pulvérisateur d’Eau 200 ml Blanc – Spray Réutilisable à Brume Fine pour Cheveux, Visage, Plantes et Soins..." [ref=e1280]
+            - listitem [ref=e1281]:
+              - link "L'Oréal Paris - Fond de Teint Fluide - Hydratation 24H - Formule à l'Acide Hyaluronique - Tous les Types de Peaux -..." [ref=e1283] [cursor=pointer]:
+                - /url: /LOr%C3%A9al-Paris-Fluide-Accord-Parfait/dp/B00SXKWB42/?_encoding=UTF8&pd_rd_w=1KElW&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                - img "L'Oréal Paris - Fond de Teint Fluide - Hydratation 24H - Formule à l'Acide Hyaluronique - Tous les Types de Peaux -..." [ref=e1284]
+            - listitem [ref=e1285]:
+              - link "Scholl Crème Pieds Anti-Crevasses Talons Fendillés - Répare et Hydrate les Talons Crevassés en profondeur - Action 24h..." [ref=e1287] [cursor=pointer]:
+                - /url: /SCHOLL-Cr%C3%A8me-Anti-Crevasses-Talons-24/dp/B084K4BG9R/?_encoding=UTF8&pd_rd_w=1KElW&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                - img "Scholl Crème Pieds Anti-Crevasses Talons Fendillés - Répare et Hydrate les Talons Crevassés en profondeur - Action 24h..." [ref=e1288]
+            - listitem [ref=e1289]:
+              - link "L'Oréal Paris - CC Crème 5-en-1 - Crème Universelle Anti-Rougeurs - Enrichie en Vitamines B5 et E - Hydratation 24H -..." [ref=e1291] [cursor=pointer]:
+                - /url: /LOr%C3%A9al-Paris-Magique-Hydratation-Universelle/dp/B07RNH35K4/?_encoding=UTF8&pd_rd_w=1KElW&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                - img "L'Oréal Paris - CC Crème 5-en-1 - Crème Universelle Anti-Rougeurs - Enrichie en Vitamines B5 et E - Hydratation 24H -..." [ref=e1292]
+            - listitem [ref=e1293]:
+              - link "Garnier Ultra Doux Pure Huile d'Avocat & Beurre de Karité pour Cheveux Secs, Bouclés à Crépus - Crème de Soin 2-en-1..." [ref=e1295] [cursor=pointer]:
+                - /url: /Garnier-lHuile-dAvocat-Beurre-Karit%C3%A9/dp/B07YQFGNQQ/?_encoding=UTF8&pd_rd_w=1KElW&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                - img "Garnier Ultra Doux Pure Huile d'Avocat & Beurre de Karité pour Cheveux Secs, Bouclés à Crépus - Crème de Soin 2-en-1..." [ref=e1296]
+            - listitem [ref=e1297]:
+              - link "GARNIER Ambre Solaire - Natural Bronzer - Mousse Autobronzante Hydratante - Hâle Progressif & Sur-Mesure - Eau de Coco &..." [ref=e1299] [cursor=pointer]:
+                - /url: /GARNIER-Ambre-Solaire-Autobronzante-Hydratante/dp/B083YF3QZL/?_encoding=UTF8&pd_rd_w=1KElW&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                - img "GARNIER Ambre Solaire - Natural Bronzer - Mousse Autobronzante Hydratante - Hâle Progressif & Sur-Mesure - Eau de Coco &..." [ref=e1300]
+            - listitem [ref=e1301]:
+              - link "Taft - Schwarzkopf - Poudre Coiffante Cheveux - 2-En-1 - Volume - Longue Durée - Effet Matifiant - Effet Décoiffé - Ne..." [ref=e1303] [cursor=pointer]:
+                - /url: /Schwarzkopf-Coiffante-Matifiant-dingr%C3%A9dients-naturelle/dp/B0D1VX25QB/?_encoding=UTF8&pd_rd_w=1KElW&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=PQEXJGB3PX6JE8A0P62A&pd_rd_wg=8hxP2&pd_rd_r=0f234b88-e566-456c-a970-00baa0aa6cec&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                - img "Taft - Schwarzkopf - Poudre Coiffante Cheveux - 2-En-1 - Volume - Longue Durée - Effet Matifiant - Effet Décoiffé - Ne..." [ref=e1304]
+  - complementary "Vos articles vus récemment et vos recommandations en vedette"
+  - generic [ref=e1306]:
+    - button "Retour en haut" [ref=e1307] [cursor=pointer]:
+      - generic [ref=e1308]: Retour en haut
+    - generic [ref=e1309]:
+      - generic [ref=e1310]:
+        - heading "Pour mieux nous connaître" [level=6] [ref=e1311]
+        - list [ref=e1312]:
+          - listitem [ref=e1313]:
+            - link "À propos d'Amazon" [ref=e1314] [cursor=pointer]:
+              - /url: /p/feature/k6wxgxw88w7z78q?ref_=footer_cs_nav_bn_ab
+          - listitem [ref=e1315]:
+            - link "Carrières" [ref=e1316] [cursor=pointer]:
+              - /url: /gp/browse.html?node=202589011&ref_=footer_gw_m_b_careers
+          - listitem [ref=e1317]:
+            - link "Durabilité" [ref=e1318] [cursor=pointer]:
+              - /url: https://durabilite.aboutamazon.fr/?utm_source=gateway&utm_medium=footer&ref_=susty_footer
+          - listitem [ref=e1319]:
+            - link "Amazon Science" [ref=e1320] [cursor=pointer]:
+              - /url: https://www.amazon.science
+      - generic [ref=e1322]:
+        - heading "Gagnez de l'argent" [level=6] [ref=e1323]
+        - list [ref=e1324]:
+          - listitem [ref=e1325]:
+            - link "Vendez avec plus de 47.250 € d'avantages" [ref=e1326] [cursor=pointer]:
+              - /url: https://services.amazon.fr/sell.html?ld=AZFRSOAFooter&ref_=sdfr_soa
+          - listitem [ref=e1327]:
+            - link "Vendez sur Amazon Business" [ref=e1328] [cursor=pointer]:
+              - /url: https://services.amazon.fr/services/vendre-aux-professionnels/avantages.html?ref=azfrb2brf&ld=AZFRB2BRetailFooter
+          - listitem [ref=e1329]:
+            - link "Vendez sur Amazon Handmade" [ref=e1330] [cursor=pointer]:
+              - /url: https://services.amazon.fr/handmade.htm?ref=azfrsoafoo&ld=AZFRHNDFooter
+          - listitem [ref=e1331]:
+            - link "Protégez et développez votre marque" [ref=e1332] [cursor=pointer]:
+              - /url: https://sell.amazon.fr/proprietaires-de-marques/?ref_=AOFRABRLGNRFOOT&ld=AZFRBrandRegFooter#inscrivez-votre-marque
+          - listitem [ref=e1333]:
+            - link "Devenez Partenaire" [ref=e1334] [cursor=pointer]:
+              - /url: https://partenaires.amazon.fr
+          - listitem [ref=e1335]:
+            - link "Expédié par Amazon" [ref=e1336] [cursor=pointer]:
+              - /url: https://services.amazon.fr/services/expedie-par-amazon/outils-et-avantages.html/ref=az_fr_fba_ft?ld=AZFRFBAFooter
+          - listitem [ref=e1337]:
+            - link "Livrer à Amazon" [ref=e1338] [cursor=pointer]:
+              - /url: https://supply.amazon.com/?ref_=footer_sta&lang=fr-FR
+          - listitem [ref=e1339]:
+            - link "Faites la promotion de vos produits" [ref=e1340] [cursor=pointer]:
+              - /url: https://advertising.amazon.fr/products-self-serve?ref_=ext_amzn_ftr
+          - listitem [ref=e1341]:
+            - link "Auto-publiez votre livre" [ref=e1342] [cursor=pointer]:
+              - /url: https://kdp.amazon.com/?language=fr_FR
+          - listitem [ref=e1343]:
+            - link "Amazon Pay" [ref=e1344] [cursor=pointer]:
+              - /url: https://pay.amazon.com/fr?ld=AWREFRAPAFooter
+          - listitem [ref=e1345]:
+            - text: ›
+            - 'link "Voir plus : Gagner de l''argent avec nous" [ref=e1346] [cursor=pointer]':
+              - /url: https://www.amazon.fr/b/?node=17751878031
+      - generic [ref=e1348]:
+        - heading "Moyens de paiement Amazon" [level=6] [ref=e1349]
+        - list [ref=e1350]:
+          - listitem [ref=e1351]:
+            - link "Carte Amazon Business Amex" [ref=e1352] [cursor=pointer]:
+              - /url: /dp/B08HYJJ7TY?plattr=ACOMFO&ie=UTF-8&ref_=b2b_sow_sbcc_fr_acom_omp_na_footer_nca_202112
+          - listitem [ref=e1353]:
+            - link "Cartes de paiement" [ref=e1354] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=201267600&ref_=footer_payment
+          - listitem [ref=e1355]:
+            - link "Paiement en plusieurs fois" [ref=e1356] [cursor=pointer]:
+              - /url: /gp/browse.html?node=15933160031&ref_=footer_4xcb
+          - listitem [ref=e1357]:
+            - link "Convertisseur de devises Amazon" [ref=e1358] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=200233750&ref_=footer_tfx
+          - listitem [ref=e1359]:
+            - link "Cartes cadeaux" [ref=e1360] [cursor=pointer]:
+              - /url: /gp/browse.html?node=2524127031&ref_=footer_giftcards
+          - listitem [ref=e1361]:
+            - link "Recharge en ligne" [ref=e1362] [cursor=pointer]:
+              - /url: /gp/gc/create?ref_=footer_reload
+          - listitem [ref=e1363]:
+            - link "Recharge en point de vente" [ref=e1364] [cursor=pointer]:
+              - /url: /gp/browse.html?node=15420612031&ref_=footer_purchase_code
+      - generic [ref=e1366]:
+        - heading "Besoin d'aide ?" [level=6] [ref=e1367]
+        - list [ref=e1368]:
+          - listitem [ref=e1369]:
+            - link "Voir ou suivre vos commandes" [ref=e1370] [cursor=pointer]:
+              - /url: /gp/css/order-history?ref_=footer_hp_ss_comp_tmp
+          - listitem [ref=e1371]:
+            - link "Tarifs et options de livraison" [ref=e1372] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=548566&ref_=footer_shiprates
+          - listitem [ref=e1373]:
+            - link "Amazon Prime" [ref=e1374] [cursor=pointer]:
+              - /url: /gp/subs/primeclub/signup/main.html?ref_=footer_prime
+          - listitem [ref=e1375]:
+            - link "Retours et remplacements" [ref=e1376] [cursor=pointer]:
+              - /url: /gp/css/returns/homepage.html?ref_=footer_hy_f_4
+          - listitem [ref=e1377]:
+            - link "Garantie légale" [ref=e1378] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=201843130&ref_=footer_gw_legalg
+          - listitem [ref=e1379]:
+            - link "Rappels et alertes de sécurité des produits" [ref=e1380] [cursor=pointer]:
+              - /url: https://www.amazon.fr/your-product-safety-alerts?ref_=footer_bsx_ypsa
+          - listitem [ref=e1381]:
+            - link "Recyclage (y compris les équipements électriques et électroniques)" [ref=e1382] [cursor=pointer]:
+              - /url: /gp/browse.html?node=22380237031&ref_=footer_disposal
+          - listitem [ref=e1383]:
+            - link "Infos sur notre Marketplace" [ref=e1384] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=GE2WLMMQBF4T5WMN&ref_=footer_info_mkpl
+          - listitem [ref=e1385]:
+            - link "Application Amazon Mobile" [ref=e1386] [cursor=pointer]:
+              - /url: /gp/browse.html?node=541319031&ref_=footer_mobapp
+          - listitem [ref=e1387]:
+            - link "Service Client" [ref=e1388] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=559912&ref_=footer_gw_m_b_cs
+          - listitem [ref=e1389]:
+            - link "Accessibilité" [ref=e1390] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=GUUVBZ8WGVFP8R8X&ref_=footer_gw_access
+          - listitem [ref=e1391]:
+            - link "Liste de cadeaux" [ref=e1392] [cursor=pointer]:
+              - /url: /registries?ref_=nav_footer_registry_giftlist_desktop
+          - listitem [ref=e1393]:
+            - link "Signaler un contenu illégal" [ref=e1394] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=TLtMJsPGBmJPpN3hvy&ref_=footer_report_illegal_content
+    - generic [ref=e1396]:
+      - link "Amazon France Home" [ref=e1399] [cursor=pointer]:
+        - /url: /?_encoding=UTF8&ref_=footer_logo
+      - generic [ref=e1402]:
+        - generic [ref=e1403]:
+          - link "Choisissez une langue pour vos achats. La sélection actuelle est Français." [ref=e1404] [cursor=pointer]:
+            - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=footer_lang
+            - generic [ref=e1406]: Français
+          - button "Développer pour changer de langue ou de pays" [ref=e1407] [cursor=pointer]
+        - button "Choisissez un pays/région pour vos achats. La sélection actuelle est France." [ref=e1408] [cursor=pointer]:
+          - generic [ref=e1410]: France
+    - generic "Plus d'informations sur Amazon" [ref=e1411]:
+      - generic "Plus d'informations sur Amazon" [ref=e1412]:
+        - list [ref=e1413]:
+          - listitem [ref=e1414]:
+            - link "Amazon Music Écoutez des millions de chansons" [ref=e1415] [cursor=pointer]:
+              - /url: https://music.amazon.fr?ref=dm_aff_amz_fr
+              - heading "Amazon Music" [level=5] [ref=e1416]
+              - generic [ref=e1417]:
+                - text: Écoutez des millions
+                - text: de chansons
+          - listitem [ref=e1418]
+          - listitem [ref=e1419]:
+            - link "AbeBooks Livres, art & articles de collection" [ref=e1420] [cursor=pointer]:
+              - /url: https://www.abebooks.fr
+              - heading "AbeBooks" [level=5] [ref=e1421]
+              - generic [ref=e1422]:
+                - text: Livres, art
+                - text: "& articles de collection"
+          - listitem [ref=e1423]
+          - listitem [ref=e1424]:
+            - link "Amazon Web Services Services de Cloud Computing Flexibles" [ref=e1425] [cursor=pointer]:
+              - /url: https://aws.amazon.com/fr/what-is-cloud-computing/?sc_channel=EL&sc_campaign=FR_amazonfooter
+              - heading "Amazon Web Services" [level=5] [ref=e1426]
+              - generic [ref=e1427]:
+                - text: Services de Cloud
+                - text: Computing Flexibles
+          - listitem [ref=e1428]
+          - listitem [ref=e1429]:
+            - link "Audible Livres audio télécharger" [ref=e1430] [cursor=pointer]:
+              - /url: https://www.audible.fr
+              - heading "Audible" [level=5] [ref=e1431]
+              - generic [ref=e1432]:
+                - text: Livres audio
+                - text: télécharger
+          - listitem [ref=e1433]
+          - listitem [ref=e1434]:
+            - link "Kindle Direct Publishing Auto-publiez facilement vos livres au format numérique" [ref=e1435] [cursor=pointer]:
+              - /url: https://kdp.amazon.com/?language=fr_FR
+              - heading "Kindle Direct Publishing" [level=5] [ref=e1436]
+              - generic [ref=e1437]:
+                - text: Auto-publiez facilement
+                - text: vos livres au format numérique
+        - list [ref=e1438]:
+          - listitem [ref=e1439]:
+            - link "Amazon Seconde main Produits d'occasion ou emballage ouvert" [ref=e1440] [cursor=pointer]:
+              - /url: /gp/browse.html?node=3581943031&ref_=footer_wrhsdls
+              - heading "Amazon Seconde main" [level=5] [ref=e1441]
+              - generic [ref=e1442]: Produits d'occasion ou emballage ouvert
+          - listitem [ref=e1443]
+          - listitem [ref=e1444]:
+            - link "Shopbop Vêtements de Marque & Mode" [ref=e1445] [cursor=pointer]:
+              - /url: https://www.shopbop.com/fr/welcome
+              - heading "Shopbop" [level=5] [ref=e1446]
+              - generic [ref=e1447]:
+                - text: Vêtements de Marque
+                - text: "& Mode"
+          - listitem [ref=e1448]
+          - listitem [ref=e1449]:
+            - link "Amazon Advertising Ciblez, attirez et fidélisez vos clients" [ref=e1450] [cursor=pointer]:
+              - /url: https://advertising.amazon.fr/?ref=footer_advtsing_fr
+              - heading "Amazon Advertising" [level=5] [ref=e1451]
+              - generic [ref=e1452]:
+                - text: Ciblez, attirez et
+                - text: fidélisez vos clients
+          - listitem [ref=e1453]
+          - listitem [ref=e1454]:
+            - link "Amazon Business Paiement 30 jours. Hors TVA. Pour les professionnels." [ref=e1455] [cursor=pointer]:
+              - /url: /gp/browse.html?node=14310146031&ref_=nav_footer_business
+              - heading "Amazon Business" [level=5] [ref=e1456]
+              - generic [ref=e1457]:
+                - text: Paiement 30 jours. Hors TVA.
+                - text: Pour les professionnels.
+          - listitem [ref=e1458]
+          - listitem [ref=e1459]
+    - generic [ref=e1460]:
+      - list [ref=e1461]:
+        - listitem [ref=e1462]:
+          - link "Conditions générales de vente" [ref=e1463] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=201909000&ref_=footer_cou
+        - listitem [ref=e1464]:
+          - link "Vos informations personnelles" [ref=e1465] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=201909010&ref_=footer_privacy
+        - listitem [ref=e1466]:
+          - link "Cookies" [ref=e1467] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=201890250&ref_=footer_cookies_notice
+        - listitem [ref=e1468]:
+          - link "Annonces basées sur vos centres d’intérêt" [ref=e1469] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=201909150&ref_=footer_Interest_Based_Ads_Notice
+      - generic [ref=e1470]: © 1996-2026, Amazon.com Inc. ou ses affiliés
+  - iframe [ref=e1475]:
+    

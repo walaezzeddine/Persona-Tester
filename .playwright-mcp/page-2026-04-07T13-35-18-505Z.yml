@@ -1,0 +1,1594 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e1355]:
+      - heading [level=2] [ref=e1356]: Passer à
+      - list [ref=e1357]:
+        - listitem [ref=e6]:
+          - link [ref=e1358] [cursor=pointer]:
+            - /url: "#skippedLink"
+            - text: Contenu principal
+      - separator [ref=e8]
+      - heading [level=2] [ref=e1359]: Raccourcis clavier
+      - list [ref=e1360]:
+        - listitem [ref=e11]:
+          - link [ref=e1361] [cursor=pointer]:
+            - /url: javascript:void(0)
+            - generic [ref=e13]:
+              - generic [ref=e14]: Rechercher
+              - generic [ref=e15]:
+                - generic [ref=e16]: alt
+                - generic [ref=e17]: +
+                - generic [ref=e18]: /
+        - listitem [ref=e19]:
+          - link [ref=e1362] [cursor=pointer]:
+            - /url: javascript:void(0)
+            - generic [ref=e21]:
+              - generic [ref=e22]: Panier
+              - generic [ref=e23]:
+                - generic [ref=e24]: shift
+                - generic [ref=e25]: +
+                - generic [ref=e26]: alt
+                - generic [ref=e27]: +
+                - generic [ref=e28]: C
+        - listitem [ref=e29]:
+          - link [ref=e1363] [cursor=pointer]:
+            - /url: javascript:void(0)
+            - generic [ref=e31]:
+              - generic [ref=e32]: Accueil
+              - generic [ref=e33]:
+                - generic [ref=e34]: shift
+                - generic [ref=e35]: +
+                - generic [ref=e36]: alt
+                - generic [ref=e37]: +
+                - generic [ref=e38]: H
+        - listitem [ref=e39]:
+          - link [ref=e1364] [cursor=pointer]:
+            - /url: javascript:void(0)
+            - generic [ref=e41]:
+              - generic [ref=e42]: Commandes
+              - generic [ref=e43]:
+                - generic [ref=e44]: shift
+                - generic [ref=e45]: +
+                - generic [ref=e46]: alt
+                - generic [ref=e47]: +
+                - generic [ref=e48]: O
+        - listitem [ref=e49]:
+          - button [ref=e1365] [cursor=pointer]:
+            - generic [ref=e51]:
+              - generic [ref=e52]: Afficher/masquer les raccourcis
+              - generic [ref=e53]:
+                - generic [ref=e54]: shift
+                - generic [ref=e55]: +
+                - generic [ref=e56]: alt
+                - generic [ref=e57]: +
+                - generic [ref=e58]: Z
+      - generic [ref=e64]: Pour vous déplacer entre les articles, utilisez les flèches vers le haut ou vers le bas de votre clavier.
+    - banner [ref=e65]:
+      - navigation [ref=e1366]:
+        - generic [ref=e67]:
+          - generic [ref=e68]:
+            - link [ref=e1367] [cursor=pointer]:
+              - /url: /ref=nav_logo
+              - generic: .fr
+            - button [ref=e1368] [cursor=pointer]:
+              - generic [ref=e75]:
+                - generic [ref=e76]: "Votre adresse de livraison:"
+                - generic [ref=e77]: Tunisie
+          - search [ref=e80]:
+            - generic [ref=e83]:
+              - generic [ref=e85]: Toutes nos catégories
+              - combobox [ref=e1369] [cursor=pointer]
+            - searchbox [ref=e1370]
+            - button [ref=e1372] [cursor=pointer]: Go
+          - generic [ref=e96]:
+            - generic [ref=e97]:
+              - link [ref=e1373] [cursor=pointer]:
+                - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=topnav_lang
+                - generic [ref=e101]:
+                  - img [ref=e1374]
+                  - generic [ref=e103]: FR
+              - button [ref=e1375] [cursor=pointer]
+            - generic [ref=e105]:
+              - link [ref=e1376] [cursor=pointer]:
+                - /url: https://www.amazon.fr/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.fr%2F%3Fref_%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=frflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0
+                - generic [ref=e108]: Bonjour, Identifiez-vous
+                - generic [ref=e109]: Compte et listes
+              - button [ref=e1377] [cursor=pointer]
+            - link [ref=e1378] [cursor=pointer]:
+              - /url: /gp/css/order-history?ref_=nav_orders_first
+              - generic [ref=e112]: Retours
+              - generic [ref=e113]: et commandes
+            - link [ref=e1379] [cursor=pointer]:
+              - /url: /gp/cart/view.html?ref_=nav_cart
+              - generic [ref=e116]: "0"
+              - generic [ref=e119]: Panier
+        - generic [ref=e120]:
+          - button [ref=e1380] [cursor=pointer]:
+            - generic [ref=e124]: Toutes
+          - list [ref=e128]:
+            - listitem [ref=e129]:
+              - link [ref=e1381] [cursor=pointer]:
+                - /url: /haul/store?ref_=nav_cs_hul_disb
+                - text: Amazon Haul
+            - listitem [ref=e132]:
+              - link [ref=e1382] [cursor=pointer]:
+                - /url: /gp/bestsellers/?ref_=nav_cs_bestsellers
+                - text: Meilleures ventes
+            - listitem [ref=e135]:
+              - link [ref=e1383] [cursor=pointer]:
+                - /url: /deals?ref_=nav_cs_gb
+                - text: Ventes Flash
+            - listitem [ref=e138]:
+              - link [ref=e1384] [cursor=pointer]:
+                - /url: /gp/new-releases/?ref_=nav_cs_newreleases
+                - text: Dernières Nouveautés
+            - listitem [ref=e141]:
+              - link [ref=e1385] [cursor=pointer]:
+                - /url: /amazonbasics/?field-lbr_brands_browse-bin=AmazonBasics&ref_=nav_cs_amazonbasics
+                - text: Amazon Basics
+            - listitem [ref=e144]:
+              - link [ref=e1386] [cursor=pointer]:
+                - /url: /b/?node=2383619031&ld=AZFRGNOSellC&ref_=nav_cs_sell
+                - text: Vendre sur Amazon
+            - listitem [ref=e147]:
+              - link [ref=e1387] [cursor=pointer]:
+                - /url: /livre-achat-occasion-litterature-roman/b/?ie=UTF8&node=301061&ref_=nav_cs_books
+                - text: Livres
+            - listitem [ref=e150]:
+              - link [ref=e1388] [cursor=pointer]:
+                - /url: /b/?node=14839058031&ref_=nav_cs_shoppertoolkit
+                - text: Guide de l’acheteur
+            - listitem [ref=e153]:
+              - generic [ref=e154]:
+                - link [ref=e1389] [cursor=pointer]:
+                  - /url: /cheques-cartes-cadeaux/b/?ie=UTF8&node=2524127031&ref_=nav_cs_gc
+                  - text: Cartes cadeaux
+                - button [ref=e1390] [cursor=pointer]
+            - listitem [ref=e157]:
+              - link [ref=e1391] [cursor=pointer]:
+                - /url: /cuisine-maison-%C3%A9lectrom%C3%A9nager/b/?ie=UTF8&node=57004031&ref_=nav_cs_home
+                - text: Cuisine et maison
+            - listitem [ref=e160]:
+              - link [ref=e1392] [cursor=pointer]:
+                - /url: /photo-TV-mp3-Hifi-GPS/b/?ie=UTF8&node=13921051&ref_=nav_cs_electronics
+                - text: High-Tech
+            - listitem [ref=e163]:
+              - link [ref=e1393] [cursor=pointer]:
+                - /url: /jeux-jouets/b/?ie=UTF8&node=322086011&ref_=nav_cs_toys
+                - text: Jeux et Jouets
+            - listitem [ref=e166]:
+              - link [ref=e1394] [cursor=pointer]:
+                - /url: /jeux-video-consoles-portables-accessoires-pc/b/?ie=UTF8&node=530490&ref_=nav_cs_video_games
+                - text: Jeux vidéo
+            - listitem [ref=e169]:
+              - link [ref=e1395] [cursor=pointer]:
+                - /url: /bebe-puericulture/b/?ie=UTF8&node=206617031&ref_=nav_cs_baby
+                - text: Bébé
+            - listitem [ref=e172]:
+              - link [ref=e1396] [cursor=pointer]:
+                - /url: /ebooks-kindle/b/?ie=UTF8&node=695398031&ref_=nav_cs_kindle_books
+                - text: Ebooks Kindle
+            - listitem [ref=e175]:
+              - generic [ref=e176]:
+                - link [ref=e1397] [cursor=pointer]:
+                  - /url: /prime?ref_=nav_cs_primelink_nonmember
+                  - text: Prime
+                - button [ref=e1398] [cursor=pointer]
+            - listitem [ref=e179]:
+              - link [ref=e1399] [cursor=pointer]:
+                - /url: /informatique-ordinateurs-imprimantes-r%C3%A9seaux-composants/b/?ie=UTF8&node=340858031&ref_=nav_cs_pc
+                - text: Informatique
+            - listitem [ref=e182]:
+              - link [ref=e1400] [cursor=pointer]:
+                - /url: /hygi%C3%A8ne-sant%C3%A9-soins-du-corps/b/?ie=UTF8&node=197861031&ref_=nav_cs_hpc
+                - text: Santé et produits d’hygiène
+            - listitem [ref=e185]:
+              - link [ref=e1401] [cursor=pointer]:
+                - /url: /Voiture-et-moto/b/?ie=UTF8&node=1571265031&ref_=nav_cs_automotive
+                - text: Auto et moto
+            - listitem [ref=e188]:
+              - link [ref=e1402] [cursor=pointer]:
+                - /url: /Parfums-cosm%C3%A9tiques/b/?ie=UTF8&node=197858031&ref_=nav_cs_beauty
+                - text: Beauté
+            - listitem [ref=e191]:
+              - link [ref=e1403] [cursor=pointer]:
+                - /url: /Amazon-Custom/b/?ie=UTF8&node=14578059031&ref_=nav_cs_custom
+                - text: Produits personnalisés
+            - listitem [ref=e194]:
+              - link [ref=e1404] [cursor=pointer]:
+                - /url: /sports-loisirs-fitness/b/?ie=UTF8&node=325614031&ref_=nav_cs_sports
+                - text: Sports & Activités en plein-air
+            - listitem [ref=e197]:
+              - link [ref=e1405] [cursor=pointer]:
+                - /url: /gp/browse.html?node=11961521031&ref_=nav_cs_fashion
+                - text: Mode
+            - listitem [ref=e200]:
+              - link [ref=e1406] [cursor=pointer]:
+                - /url: /gp/browse.html?node=98209018031&ref_=nav_cs_sadFR1
+                - text: Prime Video
+            - listitem [ref=e203]:
+              - link [ref=e1407] [cursor=pointer]:
+                - /url: /fmc/everyday-essentials?ref_=nav_cs_ee
+                - text: Produits du Quotidien
+            - listitem [ref=e206]:
+              - link [ref=e1408] [cursor=pointer]:
+                - /url: /auto-deliveries/landing?ref_=nav_cs_sns
+                - text: Prévoyez et Économisez
+            - listitem [ref=e209]:
+              - link [ref=e1409] [cursor=pointer]:
+                - /url: /gp/browse.html/?node=27173183031&ref_=nav_cs_freeshipping
+                - text: Livraison gratuite
+            - listitem [ref=e212]:
+              - link [ref=e1410] [cursor=pointer]:
+                - /url: /gp/help/customer/display.html?nodeId=508510&ref_=nav_cs_help
+                - text: Service Client
+          - link [ref=e1411] [cursor=pointer]:
+            - /url: /gp/video/ssoredirect/?ie=UTF8&pvp=%2Fdetail%2Famzn1.dv.gti.b1f68c99-5fbf-4c13-aaea-90fca60db187%2Fref%3Ddvm_crs_nav_fr_s_dt_swm_l_al_crme_tpo&ref_=nav_swm_dvm_crs_nav_fr_s_dt_swm_l_al_crme_tpo&pf_rd_p=ed2e8a61-17db-49f4-889e-a9fb6a8be922&pf_rd_s=nav-sitewide-msg&pf_rd_t=4201&pf_rd_i=navbar-4201&pf_rd_m=A13V1IB3VIYZZH&pf_rd_r=H45Z0BF8RV5R2DJS593A
+            - img [ref=e1412]
+    - main [ref=e221]:
+      - banner [ref=e223]:
+        - group [ref=e1413]:
+          - generic [ref=e226] [cursor=pointer]:
+            - button [ref=e1414]
+            - generic [ref=e228]: "Rotation : Activée"
+          - generic [ref=e229]: "Rotation : Activée"
+          - generic [ref=e231]:
+            - button [ref=e1415] [cursor=pointer]:
+              - generic [ref=e235]: Previous slide
+            - group [ref=e237]:
+              - list [ref=e238]:
+                - listitem [ref=e1416]:
+                  - generic [ref=e1420]:
+                    - img [ref=e1422]
+                    - link [ref=e1423] [cursor=pointer]:
+                      - /url: /b/?ie=UTF8&node=99942241031&ref_=ods_gw_GW_FR_FR_XPL_Comb_APRIL26_PROMO_H2_QH1&pd_rd_w=QnQVf&content-id=amzn1.sym.00291b60-feff-453d-9e72-9d42102d1371&pf_rd_p=00291b60-feff-453d-9e72-9d42102d1371&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=jtJv6&pd_rd_r=b98ac92f-e457-4c40-8ed1-39b552f346a6
+                    - link [ref=e1424] [cursor=pointer]:
+                      - /url: /dp/B0CQMWQDH4/ref=ods_gw_GW_FR_FR_XPL_Comb_APRIL26_PROMO_H2_QH2/?_encoding=UTF8&pd_rd_w=QnQVf&content-id=amzn1.sym.00291b60-feff-453d-9e72-9d42102d1371&pf_rd_p=00291b60-feff-453d-9e72-9d42102d1371&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=jtJv6&pd_rd_r=b98ac92f-e457-4c40-8ed1-39b552f346a6&ref_=pd_hp_d_hero_unk
+                    - link [ref=e1425] [cursor=pointer]:
+                      - /url: /dp/B09B8X9RGM/ref=ods_gw_GW_FR_FR_XPL_Comb_APRIL26_PROMO_H2_QH3/?_encoding=UTF8&pd_rd_w=QnQVf&content-id=amzn1.sym.00291b60-feff-453d-9e72-9d42102d1371&pf_rd_p=00291b60-feff-453d-9e72-9d42102d1371&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=jtJv6&pd_rd_r=b98ac92f-e457-4c40-8ed1-39b552f346a6&ref_=pd_hp_d_hero_unk
+                    - link [ref=e1426] [cursor=pointer]:
+                      - /url: /dp/B0BZWQP9Z1/ref=ods_gw_GW_FR_FR_XPL_Comb_APRIL26_PROMO_H2_QH4/?_encoding=UTF8&pd_rd_w=QnQVf&content-id=amzn1.sym.00291b60-feff-453d-9e72-9d42102d1371&pf_rd_p=00291b60-feff-453d-9e72-9d42102d1371&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=jtJv6&pd_rd_r=b98ac92f-e457-4c40-8ed1-39b552f346a6&ref_=pd_hp_d_hero_unk
+                    - link [ref=e1427] [cursor=pointer]:
+                      - /url: /dp/B0CP31T5M6/ref=ods_gw_GW_FR_FR_XPL_Comb_APRIL26_PROMO_H2_QH5/?_encoding=UTF8&pd_rd_w=QnQVf&content-id=amzn1.sym.00291b60-feff-453d-9e72-9d42102d1371&pf_rd_p=00291b60-feff-453d-9e72-9d42102d1371&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=jtJv6&pd_rd_r=b98ac92f-e457-4c40-8ed1-39b552f346a6&ref_=pd_hp_d_hero_unk
+            - button [ref=e1428] [cursor=pointer]:
+              - generic [ref=e248]: Next slide
+      - generic [ref=e249]:
+        - generic [ref=e250]:
+          - generic [ref=e252]:
+            - heading [level=2] [ref=e1429]: Maison et cuisine
+            - generic [ref=e255]:
+              - generic [ref=e256]:
+                - link [ref=e1430] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=57696031&pd_rd_w=wKkk7&content-id=amzn1.sym.137855d4-699d-4132-b9e3-acab90700de9&pf_rd_p=137855d4-699d-4132-b9e3-acab90700de9&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6&ref_=pd_hp_d_atf_unk
+                  - img [ref=e1431]
+                  - generic [ref=e262]: Petit électroménager
+                - link [ref=e1432] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=59451031&pd_rd_w=wKkk7&content-id=amzn1.sym.137855d4-699d-4132-b9e3-acab90700de9&pf_rd_p=137855d4-699d-4132-b9e3-acab90700de9&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6&ref_=pd_hp_d_atf_unk
+                  - img [ref=e1433]
+                  - generic [ref=e268]: Cuisine
+              - generic [ref=e269]:
+                - link [ref=e1434] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&_encoding=UTF8&node=57927031&pd_rd_w=wKkk7&content-id=amzn1.sym.137855d4-699d-4132-b9e3-acab90700de9&pf_rd_p=137855d4-699d-4132-b9e3-acab90700de9&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6&ref_=pd_hp_d_atf_unk
+                  - img [ref=e1435]
+                  - generic [ref=e275]: Décoration
+                - link [ref=e1436] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=2916060031&pd_rd_w=wKkk7&content-id=amzn1.sym.137855d4-699d-4132-b9e3-acab90700de9&pf_rd_p=137855d4-699d-4132-b9e3-acab90700de9&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6&ref_=pd_hp_d_atf_unk
+                  - img [ref=e1437]
+                  - generic [ref=e281]: Rangement
+            - link [ref=e1438] [cursor=pointer]:
+              - /url: /b/?_encoding=UTF8&node=57004031&pd_rd_w=wKkk7&content-id=amzn1.sym.137855d4-699d-4132-b9e3-acab90700de9&pf_rd_p=137855d4-699d-4132-b9e3-acab90700de9&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6&ref_=pd_hp_d_atf_unk
+              - generic [ref=e284]:
+                - generic [ref=e285]: Voir plus
+                - generic [ref=e286]: Voir plus
+          - generic [ref=e288]:
+            - heading [level=2] [ref=e1439]:
+              - generic [ref=e291]:
+                - generic [ref=e292]: Économisez sur les appareils Amazon
+                - generic [ref=e293]: Économisez sur les appareils Amazon
+            - generic [ref=e295]:
+              - link [ref=e1440] [cursor=pointer]:
+                - /url: /Ring-int%C3%A9rieure-g%C3%A9n%C3%A9ration-surveillance-labonnement/dp/B0FTFXWKL5/?_encoding=UTF8&pd_rd_w=1kZBJ&content-id=amzn1.sym.f6c998f6-5635-42c0-b0cd-7306a641c853&pf_rd_p=f6c998f6-5635-42c0-b0cd-7306a641c853&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6&ref_=pd_hp_d_atf_dealz_sod
+                - img [ref=e1441]
+              - link [ref=e1442] [cursor=pointer]:
+                - /url: /Ring-Staging-Product-Bundle/dp/B0CZF7B1V8/?_encoding=UTF8&pd_rd_w=1kZBJ&content-id=amzn1.sym.f6c998f6-5635-42c0-b0cd-7306a641c853&pf_rd_p=f6c998f6-5635-42c0-b0cd-7306a641c853&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6&ref_=pd_hp_d_atf_dealz_sod
+                - img [ref=e1443]
+              - link [ref=e1444] [cursor=pointer]:
+                - /url: /Ring-Floodlight-projecteurs-installation-raccord%C3%A9e/dp/B09BK2GLHV/?_encoding=UTF8&pd_rd_w=1kZBJ&content-id=amzn1.sym.f6c998f6-5635-42c0-b0cd-7306a641c853&pf_rd_p=f6c998f6-5635-42c0-b0cd-7306a641c853&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6&ref_=pd_hp_d_atf_dealz_sod
+                - img [ref=e1445]
+              - link [ref=e1446] [cursor=pointer]:
+                - /url: /Nouvelle-Blink-Outdoor-sonnette-suppl%C3%A9mentaire/dp/B0FLY7SHJK/?_encoding=UTF8&pd_rd_w=1kZBJ&content-id=amzn1.sym.f6c998f6-5635-42c0-b0cd-7306a641c853&pf_rd_p=f6c998f6-5635-42c0-b0cd-7306a641c853&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6&ref_=pd_hp_d_atf_dealz_sod
+                - img [ref=e1447]
+            - link [ref=e1448] [cursor=pointer]:
+              - /url: /events/devicedeals/?_encoding=UTF8&ref_=dealz_sod_see_more&pd_rd_w=1kZBJ&content-id=amzn1.sym.f6c998f6-5635-42c0-b0cd-7306a641c853&pf_rd_p=f6c998f6-5635-42c0-b0cd-7306a641c853&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6
+              - generic [ref=e314]:
+                - generic [ref=e315]: Découvrir les bonnes affaires sur les appareils
+                - generic [ref=e316]: Découvrir les bonnes affaires sur les appareils
+          - generic [ref=e318]:
+            - heading [level=2] [ref=e1449]: 10€ de réduction avec l'app
+            - link [ref=e1450] [cursor=pointer]:
+              - /url: https://www.amazon.fr/b/?_encoding=UTF8&node=216377093031&pd_rd_w=qrQD3&content-id=amzn1.sym.a686a04a-d456-4e32-913d-4e3d79068a96&pf_rd_p=a686a04a-d456-4e32-913d-4e3d79068a96&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6&ref_=pd_hp_d_atf_unk
+              - img [ref=e1451]
+              - generic [ref=e326]:
+                - generic [ref=e327]: Profitez de l'offre maintenant
+                - generic [ref=e328]: Profitez de l'offre maintenant
+          - generic [ref=e330]:
+            - heading [level=2] [ref=e1452]: Nouvel Album
+            - link [ref=e1453] [cursor=pointer]:
+              - /url: /r/?_encoding=UTF8&aid=ksCzBy_4SPK8BL9JVlE1wA&dest=https%3A%2F%2Fmusic.amazon.fr%2Falbums%2FB0G67VVQQ3%3Fref%3Ddmm_gw_c_eng_fr_am_wb_nr_ambi_030426&pd_rd_w=Ug5Lh&content-id=amzn1.sym.b766f2a5-5c44-4965-a613-4cc73ea78605&pf_rd_p=b766f2a5-5c44-4965-a613-4cc73ea78605&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6&ref_=pd_hp_d_atf_unk
+              - img [ref=e1454]
+              - generic [ref=e338]:
+                - generic [ref=e339]: Découvrir
+                - generic [ref=e340]: Découvrir
+          - separator [ref=e341]
+          - generic [ref=e343]:
+            - heading [level=2] [ref=e1455]: "Maison: -25% à partir de 2 articles."
+            - link [ref=e1456] [cursor=pointer]:
+              - /url: /b/?_encoding=UTF8&node=216997596031&ref_=hul_cgw_atf_d_fr_cc_0426_off20_hp_id&ishaul=1_fr&pd_rd_w=Bqdvh&content-id=amzn1.sym.e93ea94a-2b7c-42dd-8b21-1af576f87ceb&pf_rd_p=e93ea94a-2b7c-42dd-8b21-1af576f87ceb&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6
+              - img [ref=e1457]
+            - link [ref=e1458] [cursor=pointer]:
+              - /url: /b/?_encoding=UTF8&node=216997596031&ref_=hul_cgw_atf_d_fr_cc_0426_off20_hp_cta&ishaul=1_fr&pd_rd_w=Bqdvh&content-id=amzn1.sym.e93ea94a-2b7c-42dd-8b21-1af576f87ceb&pf_rd_p=e93ea94a-2b7c-42dd-8b21-1af576f87ceb&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6
+              - generic [ref=e352]:
+                - generic [ref=e353]: Découvrir les offres Haul
+                - generic [ref=e354]: Découvrir les offres Haul
+          - generic [ref=e356]:
+            - heading [level=2] [ref=e1459]: Podcast à la une
+            - link [ref=e1460] [cursor=pointer]:
+              - /url: /r/?_encoding=UTF8&aid=MUGwMjxMQe2OxcQOsZdl3g&dest=https%3A%2F%2Fmusic.amazon.fr%2Fpodcasts%2Fb499512a-ab70-4df9-846a-99dde0a832d5%3Fref%3Ddmm_gw_c_eng_fr_am_wb_rhd_hond_030426&pd_rd_w=o4sE2&content-id=amzn1.sym.c7460aa2-aa72-4990-9cfa-81ce9f28c7c2&pf_rd_p=c7460aa2-aa72-4990-9cfa-81ce9f28c7c2&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6&ref_=pd_hp_d_atf_unk
+              - img [ref=e1461]
+              - generic [ref=e364]:
+                - generic [ref=e365]: Découvrir
+                - generic [ref=e366]: Découvrir
+          - generic [ref=e368]:
+            - heading [level=2] [ref=e1462]: Crime 101 - nouveau film
+            - link [ref=e1463] [cursor=pointer]:
+              - /url: /gp/video/ssoredirect/?ie=UTF8&pvp=%2Fdetail%2Famzn1.dv.gti.b1f68c99-5fbf-4c13-aaea-90fca60db187%2Fref%3Ddvm_crs_gat_fr_s_dt_ac_l_al_crme_tpo&pd_rd_w=nEJPe&content-id=amzn1.sym.af1f0dfe-3918-46f3-b0be-bde621b1d7be&pf_rd_p=af1f0dfe-3918-46f3-b0be-bde621b1d7be&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6&ref_=pd_hp_d_atf_unk
+              - img [ref=e1464]
+              - generic [ref=e376]:
+                - generic [ref=e377]: Voir plus
+                - generic [ref=e378]: Voir plus
+          - generic [ref=e380]:
+            - heading [level=2] [ref=e1465]: "Playlist : Un jour de printemps"
+            - link [ref=e1466] [cursor=pointer]:
+              - /url: /r/?_encoding=UTF8&aid=jSYgAYc2RqeiftAyO5Z5yA&dest=https%3A%2F%2Fmusic.amazon.fr%2Fplaylists%2FB07MJT84G3%3Fref%3Ddmm_gw_c_eng_fr_am_wb_pp_jour_030426&pd_rd_w=qmbmN&content-id=amzn1.sym.ea888a9c-ab96-45c6-84f2-b91bd6809bec&pf_rd_p=ea888a9c-ab96-45c6-84f2-b91bd6809bec&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=m8MF2&pd_rd_r=0aadc4ba-8488-4e3b-9c9c-de50b19f4ab6&ref_=pd_hp_d_atf_unk
+              - img [ref=e1467]
+              - generic [ref=e388]:
+                - generic [ref=e389]: Découvrir
+                - generic [ref=e390]: Découvrir
+        - generic [ref=e392]:
+          - generic [ref=e395]:
+            - heading [level=2] [ref=e1468]: Meilleures ventes dans Jeux et Jouets
+            - generic [ref=e398]:
+              - list [ref=e400]:
+                - listitem [ref=e401]:
+                  - link [ref=e1469] [cursor=pointer]:
+                    - /url: /LEGO-Speed-Champions-Voiture-Ferrari/dp/B0DHSBBV6R/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1470]
+                - listitem [ref=e405]:
+                  - link [ref=e1471] [cursor=pointer]:
+                    - /url: /LEGO-10343-tbd-10343/dp/B01N6CJ1QW/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1472]
+                - listitem [ref=e409]:
+                  - link [ref=e1473] [cursor=pointer]:
+                    - /url: /Pok%C3%A9mon-M%C3%A9ga-%C3%89volution-Carte-boosters-JCC-Pok%C3%A9mon/dp/B0GGJ11H9Y/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1474]
+                - listitem [ref=e413]:
+                  - link [ref=e1475] [cursor=pointer]:
+                    - /url: /ATM-Gaming-PILI-Vainqueur-dAmbiance/dp/B0FBMDZY83/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1476]
+                - listitem [ref=e417]:
+                  - link [ref=e1477] [cursor=pointer]:
+                    - /url: /Catch-Up-Games-soci%C3%A9t%C3%A9-CAT100FL/dp/B07NS9QJFN/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1478]
+                - listitem [ref=e421]:
+                  - link [ref=e1479] [cursor=pointer]:
+                    - /url: /Pok%C3%A9mon-Collection-M%C3%A9ga-%C3%89volution-Transcendants-M%C3%A9ga-Gardevoir/dp/B0FX1C7CCY/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1480]
+                - listitem [ref=e425]:
+                  - link [ref=e1481] [cursor=pointer]:
+                    - /url: /Paw-Patrol-Patrouille-Collectionner-Plastique/dp/B0DCBXNSRS/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1482]
+                - listitem [ref=e429]:
+                  - link [ref=e1483] [cursor=pointer]:
+                    - /url: /Pok%C3%A9mon-M%C3%A9ga-%C3%89volution-Carte-enti%C3%A8rement-boosters/dp/B0GGJ29HSD/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1484]
+                - listitem [ref=e433]:
+                  - link [ref=e1485] [cursor=pointer]:
+                    - /url: /Pok%C3%A9mon-M%C3%A9ga-%C3%89volution-%C3%89quilibre-boosters-JCC-Pok%C3%A9mon/dp/B0GGJ7JF7J/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1486]
+                - listitem [ref=e437]:
+                  - link [ref=e1487] [cursor=pointer]:
+                    - /url: /ATM-Gaming-Mouton-Compl%C3%A9tez-Co%C3%A9quipiers/dp/B0FJSLMQNY/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1488]
+                - listitem [ref=e441]:
+                  - link [ref=e1489] [cursor=pointer]:
+                    - /url: /Unicorn-Academy-Licornes-Accessoires-Collectionner/dp/B0DQBRV39H/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1490]
+                - listitem [ref=e445]:
+                  - link [ref=e1491] [cursor=pointer]:
+                    - /url: /Pok%C3%A9mon-Collection-M%C3%A9ga-%C3%89volution-Transcendants-M%C3%A9ga-Lucario/dp/B0FX1F9R28/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1492]
+                - listitem [ref=e449]:
+                  - link [ref=e1493] [cursor=pointer]:
+                    - /url: /Pok%C3%A9mon-Collection-Carte-pi%C3%A8ce-boosters/dp/B0G3QLKXC5/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1494]
+                - listitem [ref=e453]:
+                  - link [ref=e1495] [cursor=pointer]:
+                    - /url: /RUBIKS-CUBE-3X3-Casse-T%C3%AAte-Correspondance/dp/B09FG5L5ZX/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1496]
+                - listitem [ref=e457]:
+                  - link [ref=e1497] [cursor=pointer]:
+                    - /url: /GIGAMIC-dambiance-interg%C3%A9n%C3%A9rationnel-nouveau-soci%C3%A9t%C3%A9/dp/B000YIDF5A/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1498]
+                - listitem [ref=e461]:
+                  - link [ref=e1499] [cursor=pointer]:
+                    - /url: /Pok%C3%A9mon-M%C3%A9ga-Dracaufeu-boosters-Carte-Brillante/dp/B0GF94QS1Q/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1500]
+                - listitem [ref=e465]:
+                  - link [ref=e1501] [cursor=pointer]:
+                    - /url: /Play-Doh-Pack-18-Pots-Imagination/dp/B0DNFPHXDN/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1502]
+                - listitem [ref=e469]:
+                  - link [ref=e1503] [cursor=pointer]:
+                    - /url: /Ultimate-Guard-Couvertures-cartes-Toploading/dp/B0BQ1J9C1P/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1504]
+                - listitem [ref=e473]:
+                  - link [ref=e1505] [cursor=pointer]:
+                    - /url: /PERPLEXUS-Labyrinthe-Parcours-dAction-R%C3%A9flexe/dp/B07MGRNKBT/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1506]
+                - listitem [ref=e477]:
+                  - link [ref=e1507] [cursor=pointer]:
+                    - /url: /Asmodee-Cocktail-Games-Soci%C3%A9t%C3%A9-fran%C3%A7aise/dp/B0C2PN2TBG/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1508]
+                - listitem [ref=e481]:
+                  - link [ref=e1509] [cursor=pointer]:
+                    - /url: /Clementoni-Idea-Create-Fantaisie-Jeu-Laboratoire-Personnalisables/dp/B0CTN1BNQZ/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1510]
+                - listitem [ref=e485]:
+                  - link [ref=e1511] [cursor=pointer]:
+                    - /url: /Pok%C3%A9mon-Leuphorie-ex-Cartes-Carte-boosters/dp/B0FPMVQLWZ/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1512]
+                - listitem [ref=e489]:
+                  - link [ref=e1513] [cursor=pointer]:
+                    - /url: /Legami-Caoutchouc-r%C3%A9tractable-papeterie-mignonne/dp/B0D41ZVXN9/?_encoding=UTF8&pd_rd_w=OWJIz&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_322086011
+                    - img [ref=e1514]
+              - link [ref=e493] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=e495] [cursor=pointer]:
+                - /url: "#"
+          - separator [ref=e499]
+          - generic [ref=e501]:
+            - heading [level=2] [ref=e1515]: High-Tech
+            - generic [ref=e504]:
+              - generic [ref=e505]:
+                - link [ref=e1516] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=682942031&pd_rd_w=19GUz&content-id=amzn1.sym.93e31380-9856-4145-b5ed-653bfb897415&pf_rd_p=93e31380-9856-4145-b5ed-653bfb897415&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1517]
+                  - generic [ref=e511]: Audio
+                - link [ref=e1518] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=4551203031&pd_rd_w=19GUz&content-id=amzn1.sym.93e31380-9856-4145-b5ed-653bfb897415&pf_rd_p=93e31380-9856-4145-b5ed-653bfb897415&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1519]
+                  - generic [ref=e517]: Objets connectés
+              - generic [ref=e518]:
+                - link [ref=e1520] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=340858031&pd_rd_w=19GUz&content-id=amzn1.sym.93e31380-9856-4145-b5ed-653bfb897415&pf_rd_p=93e31380-9856-4145-b5ed-653bfb897415&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1521]
+                  - generic [ref=e524]: Électronique et informatique
+                - link [ref=e1522] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=13910691&pd_rd_w=19GUz&content-id=amzn1.sym.93e31380-9856-4145-b5ed-653bfb897415&pf_rd_p=93e31380-9856-4145-b5ed-653bfb897415&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1523]
+                  - generic [ref=e530]: Photographie
+            - link [ref=e1524] [cursor=pointer]:
+              - /url: /b/?ie=UTF8&node=13921051&ref_=nav_em__el_0_2_13_11&pd_rd_w=19GUz&content-id=amzn1.sym.93e31380-9856-4145-b5ed-653bfb897415&pf_rd_p=93e31380-9856-4145-b5ed-653bfb897415&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+              - generic [ref=e533]:
+                - generic [ref=e534]: Voir plus
+                - generic [ref=e535]: Voir plus
+          - iframe [ref=e538]:
+            - generic [ref=f10e2]:
+              - generic [ref=f10e3]: Publicité sponsorisée. Logo de la marque. Image du produit. Wiltec Clapier à Lapin XXL – 1800 x 900 x 480 mm – en Bois, avec Grille métallique – Cage pour Petits Animaux avec Enclos – Parc Rongeurs, Élevage Basse-Cour Ferme 114.99 En savoir plus
+              - link "Publicité sponsorisée. Logo de la marque. Image du produit. Wiltec Clapier à Lapin XXL – 1800 x 900 x 480 mm – en Bois, avec Grille métallique – Cage pour Petits Animaux avec Enclos – Parc Rongeurs, Élevage Basse-Cour Ferme 114.99 En savoir plus" [ref=f10e6] [cursor=pointer]:
+                - /url: https://www.amazon.fr/dp/B07BLND269?aref=r6MaNlPGcm&aaxitk=624e0338d6ac372af021b46182df5d06&language=fr_FR&pf_rd_p=e6c18d32-5eda-4075-84c1-49b4b1c86681&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_w=TlT71&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref=dacx_dp_579060722767939823_593734904349602577
+              - generic [ref=f10e7]:
+                - generic [ref=f10e8]:
+                  - generic [ref=f10e9]: En vedette dans Animaux de compagnie
+                  - button "Leave feedback on Sponsored ad" [ref=f10e11] [cursor=pointer]:
+                    - text: Sponsorisé
+                    - img [ref=f10e12]
+                - img "Wiltec Clapier à Lapin XXL – 1800 x 900 x 480 mm – en Bois, avec Grille métallique – Cage pour Petits Animaux avec Enclos – Parc Rongeurs, Élevage Basse-Cour Ferme" [ref=f10e15]
+                - generic [ref=f10e17]:
+                  - generic [ref=f10e18]:
+                    - generic [ref=f10e19]: Wiltec Clapier à Lapin XXL – 1800 x 900 x 480 mm – en Bois, avec Grille métallique – Cage pour Petits Animaux avec Enclos – Parc Rongeurs, Élevage Basse-Cour Ferme
+                    - generic [ref=f10e21]:
+                      - generic [ref=f10e22]: 114,99 €
+                      - generic [ref=f10e23]:
+                        - generic [ref=f10e24]: "114"
+                        - generic [ref=f10e25]: ","
+                        - generic [ref=f10e26]: "99"
+                        - generic [ref=f10e27]: €
+                  - link "Publicité sponsorisée. Logo de la marque. Image du produit. Wiltec Clapier à Lapin XXL – 1800 x 900 x 480 mm – en Bois, avec Grille métallique – Cage pour Petits Animaux avec Enclos – Parc Rongeurs, Élevage Basse-Cour Ferme 114.99 En savoir plus" [ref=f10e28] [cursor=pointer]:
+                    - /url: https://www.amazon.fr/dp/B07BLND269?aref=r6MaNlPGcm&aaxitk=624e0338d6ac372af021b46182df5d06&language=fr_FR&pf_rd_p=e6c18d32-5eda-4075-84c1-49b4b1c86681&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_w=TlT71&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref=dacx_dp_579060722767939823_593734904349602577
+                    - generic [ref=f10e29]: En savoir plus
+          - generic [ref=e540]:
+            - heading [level=2] [ref=e1525]: Entretien de la maison
+            - generic [ref=e543]:
+              - generic [ref=e544]:
+                - link [ref=e1526] [cursor=pointer]:
+                  - /url: /b/?ie=UTF8&node=1716191031&ref_=nav_em_hilg_flyout_shopall_hardware_0_2_16_9&pd_rd_w=Xobv1&content-id=amzn1.sym.ea9500bc-332a-413d-bcd3-386b50666902&pf_rd_p=ea9500bc-332a-413d-bcd3-386b50666902&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1527]
+                  - generic [ref=e550]: Quincaillerie
+                - link [ref=e1528] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=1716192031&pd_rd_w=Xobv1&content-id=amzn1.sym.ea9500bc-332a-413d-bcd3-386b50666902&pf_rd_p=ea9500bc-332a-413d-bcd3-386b50666902&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1529]
+                  - generic [ref=e556]: Électricité
+              - generic [ref=e557]:
+                - link [ref=e1530] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=1716189031&pd_rd_w=Xobv1&content-id=amzn1.sym.ea9500bc-332a-413d-bcd3-386b50666902&pf_rd_p=ea9500bc-332a-413d-bcd3-386b50666902&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1531]
+                  - generic [ref=e563]: Outils
+                - link [ref=e1532] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=3557027031&pd_rd_w=Xobv1&content-id=amzn1.sym.ea9500bc-332a-413d-bcd3-386b50666902&pf_rd_p=ea9500bc-332a-413d-bcd3-386b50666902&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1533]
+                  - generic [ref=e569]: Jardin
+            - link [ref=e1534] [cursor=pointer]:
+              - /url: /b/?ie=UTF8&node=590748031&ref_=nav_em_hilg_flyout_shopall_allhi_0_2_16_1&pd_rd_w=Xobv1&content-id=amzn1.sym.ea9500bc-332a-413d-bcd3-386b50666902&pf_rd_p=ea9500bc-332a-413d-bcd3-386b50666902&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+              - generic [ref=e572]:
+                - generic [ref=e573]: Voir plus
+                - generic [ref=e574]: Voir plus
+          - generic [ref=e576]:
+            - heading [level=2] [ref=e1535]: Aménagez votre maison
+            - generic [ref=e579]:
+              - generic [ref=e580]:
+                - link [ref=e1536] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&_encoding=UTF8&node=68991031&ref_=sv_top_ap_arrow_4&pd_rd_w=xQOQA&content-id=amzn1.sym.eec27274-88c6-464d-9fb4-e48604f4c8ea&pf_rd_p=eec27274-88c6-464d-9fb4-e48604f4c8ea&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1537]
+                  - generic [ref=e586]: Literie
+                - link [ref=e1538] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&_encoding=UTF8&node=213080031&ref_=sv_top_ap_arrow_6&pd_rd_w=xQOQA&content-id=amzn1.sym.eec27274-88c6-464d-9fb4-e48604f4c8ea&pf_rd_p=eec27274-88c6-464d-9fb4-e48604f4c8ea&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1539]
+                  - generic [ref=e592]: Luminaires
+              - generic [ref=e593]:
+                - link [ref=e1540] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&_encoding=UTF8&node=57927031&pd_rd_w=xQOQA&content-id=amzn1.sym.eec27274-88c6-464d-9fb4-e48604f4c8ea&pf_rd_p=eec27274-88c6-464d-9fb4-e48604f4c8ea&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1541]
+                  - generic [ref=e599]: Décoration
+                - link [ref=e1542] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&_encoding=UTF8&node=2916060031&ref_=sv_top_ap_arrow_8&pd_rd_w=xQOQA&content-id=amzn1.sym.eec27274-88c6-464d-9fb4-e48604f4c8ea&pf_rd_p=eec27274-88c6-464d-9fb4-e48604f4c8ea&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1543]
+                  - generic [ref=e605]: Rangements
+            - link [ref=e1544] [cursor=pointer]:
+              - /url: /b/?_encoding=UTF8&_encoding=UTF8&node=194641031&ref_=sv_top_ap_arrow_3&pd_rd_w=xQOQA&content-id=amzn1.sym.eec27274-88c6-464d-9fb4-e48604f4c8ea&pf_rd_p=eec27274-88c6-464d-9fb4-e48604f4c8ea&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+              - generic [ref=e608]:
+                - generic [ref=e609]: Voir plus
+                - generic [ref=e610]: Voir plus
+          - separator [ref=e611]
+          - generic [ref=e614]:
+            - generic [ref=e615]:
+              - heading [level=2] [ref=e1545]: Découvrez la Vitrine Française
+              - link [ref=e1546] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=96141311031&pd_rd_w=3baeQ&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                - text: Voir plus
+            - list [ref=e621]:
+              - listitem [ref=e622]:
+                - link [ref=e1547] [cursor=pointer]:
+                  - /url: /b?node=96141309031&pd_rd_w=3baeQ&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1548]
+              - listitem [ref=e626]:
+                - link [ref=e1549] [cursor=pointer]:
+                  - /url: /b?node=96141307031&pd_rd_w=3baeQ&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1550]
+              - listitem [ref=e630]:
+                - link [ref=e1551] [cursor=pointer]:
+                  - /url: /b?node=96141296031&pd_rd_w=3baeQ&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1552]
+              - listitem [ref=e634]:
+                - link [ref=e1553] [cursor=pointer]:
+                  - /url: /b?node=96141303031&pd_rd_w=3baeQ&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1554]
+              - listitem [ref=e638]:
+                - link [ref=e1555] [cursor=pointer]:
+                  - /url: /b?node=96141318031&pd_rd_w=3baeQ&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1556]
+              - listitem [ref=e642]:
+                - link [ref=e1557] [cursor=pointer]:
+                  - /url: /b?node=96141294031&pd_rd_w=3baeQ&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1558]
+              - listitem [ref=e646]:
+                - link [ref=e1559] [cursor=pointer]:
+                  - /url: /b?node=96141299031&pd_rd_w=3baeQ&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1560]
+              - listitem [ref=e650]:
+                - link [ref=e1561] [cursor=pointer]:
+                  - /url: /b?node=96141308031&pd_rd_w=3baeQ&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1562]
+              - listitem [ref=e654]:
+                - link [ref=e1563] [cursor=pointer]:
+                  - /url: /b?node=96141315031&pd_rd_w=3baeQ&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1564]
+              - listitem [ref=e658]:
+                - link [ref=e1565] [cursor=pointer]:
+                  - /url: /b?node=96141297031&pd_rd_w=3baeQ&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1566]
+              - listitem [ref=e662]:
+                - link [ref=e1567] [cursor=pointer]:
+                  - /url: /b?node=96141312031&pd_rd_w=3baeQ&content-id=amzn1.sym.c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_p=c6e5b166-cb60-4074-abaf-df910aa60e3c&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1568]
+          - separator [ref=e667]
+          - generic [ref=e670]:
+            - heading [level=2] [ref=e1569]: Meilleures ventes dans Beauté et Parfum
+            - list [ref=e675]:
+              - listitem [ref=e676]:
+                - link [ref=e1570] [cursor=pointer]:
+                  - /url: /Maybelline-New-York-ultra-longs-Sensational/dp/B08P4YPB8Q/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1571]
+              - listitem [ref=e680]:
+                - link [ref=e1572] [cursor=pointer]:
+                  - /url: /Bionoble-Huile-Ricin-Bio-50ml/dp/B08D6G78W6/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1573]
+              - listitem [ref=e684]:
+                - link [ref=e1574] [cursor=pointer]:
+                  - /url: /Maybelline-New-York-Correcteur-multi-usages/dp/B0BLCZX6XP/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1575]
+              - listitem [ref=e688]:
+                - link [ref=e1576] [cursor=pointer]:
+                  - /url: /REXONA-D%C3%A9odorant-Anti-transpirant-transpiration-Protection/dp/B00AI7COA4/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1577]
+              - listitem [ref=e692]:
+                - link [ref=e1578] [cursor=pointer]:
+                  - /url: /Mixa-Cr%C3%A8me-Mains-R%C3%A9paratrice-Intense/dp/B081QH4M68/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1579]
+              - listitem [ref=e696]:
+                - link [ref=e1580] [cursor=pointer]:
+                  - /url: /Essence-M%C3%A1scara-pesta%C3%B1as-Extreme-Crazy/dp/B00GSUCEJ6/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1581]
+              - listitem [ref=e700]:
+                - link [ref=e1582] [cursor=pointer]:
+                  - /url: /LOr%C3%A9al-Paris-Maquillage-Infaillible-R%C3%A9sistant/dp/B0CGMBM6D4/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1583]
+              - listitem [ref=e704]:
+                - link [ref=e1584] [cursor=pointer]:
+                  - /url: /GRIFEMA-Pulv%C3%A9risateur-dEau-200-Blanc/dp/B0DXTLWVBL/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1585]
+              - listitem [ref=e708]:
+                - link [ref=e1586] [cursor=pointer]:
+                  - /url: /SCHOLL-Cr%C3%A8me-Anti-Crevasses-Talons-24/dp/B084K4BG9R/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1587]
+              - listitem [ref=e712]:
+                - link [ref=e1588] [cursor=pointer]:
+                  - /url: /LOr%C3%A9al-Paris-Fluide-Accord-Parfait/dp/B00SXKWB42/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1589]
+              - listitem [ref=e716]:
+                - link [ref=e1590] [cursor=pointer]:
+                  - /url: /CeraVe-Hydratante-Visage-Hyaluronique-Normales/dp/B0BT6VDJ5M/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1591]
+              - listitem [ref=e720]:
+                - link [ref=e1592] [cursor=pointer]:
+                  - /url: /Schwarzkopf-Coiffante-Matifiant-dingr%C3%A9dients-naturelle/dp/B0D1VX25QB/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1593]
+              - listitem [ref=e724]:
+                - link [ref=e1594] [cursor=pointer]:
+                  - /url: /LUX%C3%89OL-Croissance-Fortification-Compl%C3%A9ment-Alimentaire/dp/B07DLX83JM/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1595]
+              - listitem [ref=e728]:
+                - link [ref=e1596] [cursor=pointer]:
+                  - /url: /Garnier-Coloration-Permanente-Ammoniaque-Ch%C3%A2tain/dp/B00JWVCHKE/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1597]
+              - listitem [ref=e732]:
+                - link [ref=e1598] [cursor=pointer]:
+                  - /url: /Garnier-lHuile-dAvocat-Beurre-Karit%C3%A9/dp/B07YQFGNQQ/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1599]
+              - listitem [ref=e736]:
+                - link [ref=e1600] [cursor=pointer]:
+                  - /url: /GARNIER-SkinActive-Vitamine-Hydratante-Anti-Taches/dp/B0FVG12N9N/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1601]
+              - listitem [ref=e740]:
+                - link [ref=e1602] [cursor=pointer]:
+                  - /url: /LOr%C3%A9al-Paris-Magique-Hydratation-Universelle/dp/B07RNH35K4/?_encoding=UTF8&pd_rd_w=ZAGKy&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_197858031
+                  - img [ref=e1603]
+          - separator [ref=e745]
+          - generic [ref=e747]:
+            - heading [level=2] [ref=e1604]: Les top catégories
+            - generic [ref=e750]:
+              - generic [ref=e751]:
+                - link [ref=e1605] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=3635788031&pd_rd_w=VkWdp&content-id=amzn1.sym.b6a12d4f-0beb-4afc-a70a-59e2860b6ed8&pf_rd_p=b6a12d4f-0beb-4afc-a70a-59e2860b6ed8&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1606]
+                  - generic [ref=e757]: Épicerie
+                - link [ref=e1607] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=2916060031&pd_rd_w=VkWdp&content-id=amzn1.sym.b6a12d4f-0beb-4afc-a70a-59e2860b6ed8&pf_rd_p=b6a12d4f-0beb-4afc-a70a-59e2860b6ed8&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1608]
+                  - generic [ref=e763]: Rangements
+              - generic [ref=e764]:
+                - link [ref=e1609] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=4551203031&pd_rd_w=VkWdp&content-id=amzn1.sym.b6a12d4f-0beb-4afc-a70a-59e2860b6ed8&pf_rd_p=b6a12d4f-0beb-4afc-a70a-59e2860b6ed8&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1610]
+                  - generic [ref=e770]: Objets connectés
+                - link [ref=e1611] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&ie=UTF8&node=301137&ref_=sv_books_6&pd_rd_w=VkWdp&content-id=amzn1.sym.b6a12d4f-0beb-4afc-a70a-59e2860b6ed8&pf_rd_p=b6a12d4f-0beb-4afc-a70a-59e2860b6ed8&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1612]
+                  - generic [ref=e776]: Littérature jeunesse
+            - link [ref=e1613] [cursor=pointer]:
+              - /url: /gp/bestsellers/?ie=UTF8&ref_=nav_cs_bestsellers&pd_rd_w=VkWdp&content-id=amzn1.sym.b6a12d4f-0beb-4afc-a70a-59e2860b6ed8&pf_rd_p=b6a12d4f-0beb-4afc-a70a-59e2860b6ed8&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+              - generic [ref=e779]:
+                - generic [ref=e780]: Voir plus
+                - generic [ref=e781]: Voir plus
+          - generic [ref=e783]:
+            - heading [level=2] [ref=e1614]: Jeux vidéo
+            - generic [ref=e786]:
+              - generic [ref=e787]:
+                - link [ref=e1615] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=427938031&pd_rd_w=VbQlN&content-id=amzn1.sym.f09b9ab8-22f9-432b-a181-4aa9667388e2&pf_rd_p=f09b9ab8-22f9-432b-a181-4aa9667388e2&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1616]
+                  - generic [ref=e793]: Moniteurs
+                - link [ref=e1617] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=92566380031&pd_rd_w=VbQlN&content-id=amzn1.sym.f09b9ab8-22f9-432b-a181-4aa9667388e2&pf_rd_p=f09b9ab8-22f9-432b-a181-4aa9667388e2&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1618]
+                  - generic [ref=e799]: Bureaux
+              - generic [ref=e800]:
+                - link [ref=e1619] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=92555569031&pd_rd_w=VbQlN&content-id=amzn1.sym.f09b9ab8-22f9-432b-a181-4aa9667388e2&pf_rd_p=f09b9ab8-22f9-432b-a181-4aa9667388e2&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1620]
+                  - generic [ref=e806]: Accessoires gaming
+                - link [ref=e1621] [cursor=pointer]:
+                  - /url: /s/?_encoding=UTF8&k=gaming%20merchandise&pf_rd_i=21734155031&pf_rd_m=A1X6FK5RDHNB96&pf_rd_s=merchandised-search-6&ref=GSMoreGaming_4&pd_rd_w=VbQlN&content-id=amzn1.sym.f09b9ab8-22f9-432b-a181-4aa9667388e2&pf_rd_p=f09b9ab8-22f9-432b-a181-4aa9667388e2&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1622]
+                  - generic [ref=e812]: Produits dérivés
+            - link [ref=e1623] [cursor=pointer]:
+              - /url: /b/?_encoding=UTF8&node=530490&pd_rd_w=VbQlN&content-id=amzn1.sym.f09b9ab8-22f9-432b-a181-4aa9667388e2&pf_rd_p=f09b9ab8-22f9-432b-a181-4aa9667388e2&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+              - generic [ref=e815]:
+                - generic [ref=e816]: Voir plus
+                - generic [ref=e817]: Voir plus
+          - iframe [ref=e820]:
+            - generic [ref=f11e2]:
+              - generic [ref=f11e3]: Publicité sponsorisée. Image du produit. Manucurist Masque S.O.S - Masque Réparateur Nuit Soin Ongles Abîmés Enrichi en D-Panthenol - Traitement Réparateur Ongles Cassants, Striés, Dédoublés - Fortifiant & Durcisseur Ongle 15 En savoir plus
+              - link "Publicité sponsorisée. Image du produit. Manucurist Masque S.O.S - Masque Réparateur Nuit Soin Ongles Abîmés Enrichi en D-Panthenol - Traitement Réparateur Ongles Cassants, Striés, Dédoublés - Fortifiant & Durcisseur Ongle 15 En savoir plus" [ref=f11e6] [cursor=pointer]:
+                - /url: https://www.amazon.fr/dp/B0DT4M6C5X?aref=VlAL0Iu4mI&aaxitk=160ee635b39cccfed180fe839e0d6711&language=fr_FR&pf_rd_p=ce728d9f-9c94-4d3c-8aef-a18ef5cda25d&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_w=YH08v&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref=dacx_dp_590779992410347781_581758820052996246
+              - generic [ref=f11e7]:
+                - generic [ref=f11e8]:
+                  - generic [ref=f11e9]: En vedette dans Beauté
+                  - button "Leave feedback on Sponsored ad" [ref=f11e11] [cursor=pointer]:
+                    - text: Sponsorisé
+                    - img [ref=f11e12]
+                - img "Manucurist Masque S.O.S - Masque Réparateur Nuit Soin Ongles Abîmés Enrichi en D-Panthenol - Traitement Réparateur Ongles Cassants, Striés, Dédoublés - Fortifiant & Durcisseur Ongle" [ref=f11e15]
+                - generic [ref=f11e17]:
+                  - generic [ref=f11e18]:
+                    - generic [ref=f11e19]: Manucurist Masque S.O.S - Masque Réparateur Nuit Soin Ongles Abîmés Enrichi en D-Panthenol - Traitement Réparateur Ongles Cassants, Striés, Dédoublés - Fortifiant & Durcisseur Ongle
+                    - generic [ref=f11e21]:
+                      - generic [ref=f11e22]: 15,00 €
+                      - generic [ref=f11e23]:
+                        - generic [ref=f11e24]: "15"
+                        - generic [ref=f11e25]: ","
+                        - generic [ref=f11e26]: "00"
+                        - generic [ref=f11e27]: €
+                  - link "Publicité sponsorisée. Image du produit. Manucurist Masque S.O.S - Masque Réparateur Nuit Soin Ongles Abîmés Enrichi en D-Panthenol - Traitement Réparateur Ongles Cassants, Striés, Dédoublés - Fortifiant & Durcisseur Ongle 15 En savoir plus" [ref=f11e28] [cursor=pointer]:
+                    - /url: https://www.amazon.fr/dp/B0DT4M6C5X?aref=VlAL0Iu4mI&aaxitk=160ee635b39cccfed180fe839e0d6711&language=fr_FR&pf_rd_p=ce728d9f-9c94-4d3c-8aef-a18ef5cda25d&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_w=YH08v&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref=dacx_dp_590779992410347781_581758820052996246
+                    - generic [ref=f11e29]: En savoir plus
+          - generic [ref=e822]:
+            - heading [level=2] [ref=e1624]: Toutes les Ventes Flash
+            - link [ref=e1625] [cursor=pointer]:
+              - /url: /gp/goldbox/?ie=UTF8&pd_rd_w=JslPm&content-id=amzn1.sym.422ec625-a210-4c1b-9355-af28b5072a8f&pf_rd_p=422ec625-a210-4c1b-9355-af28b5072a8f&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+              - img [ref=e1626]
+              - generic [ref=e830]:
+                - generic [ref=e831]: Découvrir
+                - generic [ref=e832]: Découvrir
+          - separator [ref=e833]
+          - generic [ref=e836]:
+            - heading [level=2] [ref=e1627]: Meilleures ventes dans Informatique
+            - list [ref=e841]:
+              - listitem [ref=e842]:
+                - link [ref=e1628] [cursor=pointer]:
+                  - /url: /HP-Cartouches-Couleurs-Authentiques-6ZD17AE/dp/B08T1HR5CS/?_encoding=UTF8&pd_rd_w=QfV5e&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                  - img [ref=e1629]
+              - listitem [ref=e846]:
+                - link [ref=e1630] [cursor=pointer]:
+                  - /url: /SanDisk-Extreme-RescuePRO-Deluxe-jusqu%C3%A0/dp/B0B7NTY2S6/?_encoding=UTF8&pd_rd_w=QfV5e&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                  - img [ref=e1631]
+              - listitem [ref=e850]:
+                - link [ref=e1632] [cursor=pointer]:
+                  - /url: /SanDisk-connecteurs-r%C3%A9versibles-smartphones-tablettes/dp/B07YYK13LF/?_encoding=UTF8&pd_rd_w=QfV5e&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                  - img [ref=e1633]
+              - listitem [ref=e854]:
+                - link [ref=e1634] [cursor=pointer]:
+                  - /url: /ARCTIC-MX-4-2019-Refroidisseur-Dissipateur/dp/B07L9BDY3T/?_encoding=UTF8&pd_rd_w=QfV5e&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                  - img [ref=e1635]
+              - listitem [ref=e858]:
+                - link [ref=e1636] [cursor=pointer]:
+                  - /url: /HP-X4D37AE-Original-Cartridges-Tri-color/dp/B01LXLFF6H/?_encoding=UTF8&pd_rd_w=QfV5e&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                  - img [ref=e1637]
+              - listitem [ref=e862]:
+                - link [ref=e1638] [cursor=pointer]:
+                  - /url: /SanDisk-Cards-Extreme-256GB-Memory/dp/B09X7CFXSX/?_encoding=UTF8&pd_rd_w=QfV5e&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                  - img [ref=e1639]
+              - listitem [ref=e866]:
+                - link [ref=e1640] [cursor=pointer]:
+                  - /url: /Canon-Cartouches-Certifi%C3%A9-Feuilles-Emballage/dp/B0CH8H25T8/?_encoding=UTF8&pd_rd_w=QfV5e&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                  - img [ref=e1641]
+              - listitem [ref=e870]:
+                - link [ref=e1642] [cursor=pointer]:
+                  - /url: /Toshiba-Portable-External-Compatible-HDTB520EK3AB/dp/B0BGXZRKQN/?_encoding=UTF8&pd_rd_w=QfV5e&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                  - img [ref=e1643]
+              - listitem [ref=e874]:
+                - link [ref=e1644] [cursor=pointer]:
+                  - /url: /TP-Link-RE330-R%C3%A9p%C3%A9teur-WiFi-AC1200/dp/B08X19VZN8/?_encoding=UTF8&pd_rd_w=QfV5e&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                  - img [ref=e1645]
+              - listitem [ref=e878]:
+                - link [ref=e1646] [cursor=pointer]:
+                  - /url: /Samsung-MZ-V9P1T0BW-Interne-Vitesses-fulgurantes/dp/B0B9C3ZVHR/?_encoding=UTF8&pd_rd_w=QfV5e&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                  - img [ref=e1647]
+              - listitem [ref=e882]:
+                - link [ref=e1648] [cursor=pointer]:
+                  - /url: /SanDisk-Ultra-128-jusqu%C3%A0-130-Mo/dp/B00P8XQPY4/?_encoding=UTF8&pd_rd_w=QfV5e&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                  - img [ref=e1649]
+              - listitem [ref=e886]:
+                - link [ref=e1650] [cursor=pointer]:
+                  - /url: /Epson-Starfish-CMYK-C13T10G64010-Noir/dp/B0B8X2D5DD/?_encoding=UTF8&pd_rd_w=QfV5e&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                  - img [ref=e1651]
+              - listitem [ref=e890]:
+                - link [ref=e1652] [cursor=pointer]:
+                  - /url: /TP-Link-Ethernet-Gigabit-Int%C3%A9gr%C3%A9e-Boitier/dp/B0859MDSFX/?_encoding=UTF8&pd_rd_w=QfV5e&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_340858031
+                  - img [ref=e1653]
+          - separator [ref=e895]
+          - generic [ref=e898]:
+            - generic [ref=e899]:
+              - heading [level=2] [ref=e1654]: La boutique Made in Italy
+              - link [ref=e1655] [cursor=pointer]:
+                - /url: /b/?_encoding=UTF8&node=9443565031&ref=miibubble&pd_rd_w=QhVWX&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                - text: Découvrir
+            - list [ref=e905]:
+              - listitem [ref=e906]:
+                - link [ref=e1656] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=206839166031&pd_rd_w=QhVWX&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1657]
+              - listitem [ref=e910]:
+                - link [ref=e1658] [cursor=pointer]:
+                  - /url: /s?k=Jouets&i=specialty-aps&srs=9443565031&bbn=9443565031&rh=p_n_feature_twenty-four_browse-bin%3A27009789031&dc&ds=v1%3A6TQ328Fmk2dDDaX6kD04rJL05GoDooFAAgxsidJ8Lzc&__mk_fr_FR=ÅMÅŽÕÑ&crid=249C08T6SG8CA&qid=1734621178&rnid=27009785031&sprefix=jouets%2Cspecialty-aps%2C138&ref=miibubble2&pd_rd_w=QhVWX&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1659]
+              - listitem [ref=e914]:
+                - link [ref=e1660] [cursor=pointer]:
+                  - /url: /b?node=16750235031&ref=miibubble3&pd_rd_w=QhVWX&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1661]
+              - listitem [ref=e918]:
+                - link [ref=e1662] [cursor=pointer]:
+                  - /url: /b?node=16749924031&ref=miibubble4&pd_rd_w=QhVWX&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1663]
+              - listitem [ref=e922]:
+                - link [ref=e1664] [cursor=pointer]:
+                  - /url: /b?node=16750250031&ref=miibubble5&pd_rd_w=QhVWX&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1665]
+              - listitem [ref=e926]:
+                - link [ref=e1666] [cursor=pointer]:
+                  - /url: /b?node=16750233031&ref=miibubble6&pd_rd_w=QhVWX&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1667]
+              - listitem [ref=e930]:
+                - link [ref=e1668] [cursor=pointer]:
+                  - /url: /b?node=12440605031&ref=miibubble7&pd_rd_w=QhVWX&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1669]
+              - listitem [ref=e934]:
+                - link [ref=e1670] [cursor=pointer]:
+                  - /url: /b?node=16750258031&ref=miibubble8&pd_rd_w=QhVWX&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1671]
+              - listitem [ref=e938]:
+                - link [ref=e1672] [cursor=pointer]:
+                  - /url: /b?node=16750256031&ref=miibubble9&pd_rd_w=QhVWX&content-id=amzn1.sym.0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_p=0dace0e1-0e65-475a-b0a1-b86a4608c3ee&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1673]
+          - separator [ref=e943]
+          - generic [ref=e945]:
+            - heading [level=2] [ref=e1674]:
+              - generic [ref=e948]:
+                - generic [ref=e949]: Produits essentiels à petit budget
+                - generic [ref=e950]: Produits essentiels à petit budget
+            - generic [ref=e952]:
+              - link [ref=e1675] [cursor=pointer]:
+                - /url: /OXFORD-Papier-multiusage-80gsm-feuilles/dp/B0BYJMPKRN/?_encoding=UTF8&pd_rd_w=1CAYA&content-id=amzn1.sym.1fb29a75-053c-4bb5-9f1b-2be014f69a93&pf_rd_p=1fb29a75-053c-4bb5-9f1b-2be014f69a93&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_ee_bs_dsk_0
+                - img [ref=e1676]
+              - link [ref=e1677] [cursor=pointer]:
+                - /url: /Garnier-SkinActive-Solution-Micellaire-Sensibles/dp/B082VP1NRT/?_encoding=UTF8&pd_rd_w=1CAYA&content-id=amzn1.sym.1fb29a75-053c-4bb5-9f1b-2be014f69a93&pf_rd_p=1fb29a75-053c-4bb5-9f1b-2be014f69a93&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_ee_bs_dsk_0
+                - img [ref=e1678]
+              - link [ref=e1679] [cursor=pointer]:
+                - /url: /feutres-effa%C3%A7ables-bleus-chiffonnette-MarkerPeps/dp/B0748BGYR9/?_encoding=UTF8&pd_rd_w=1CAYA&content-id=amzn1.sym.1fb29a75-053c-4bb5-9f1b-2be014f69a93&pf_rd_p=1fb29a75-053c-4bb5-9f1b-2be014f69a93&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_ee_bs_dsk_0
+                - img [ref=e1680]
+              - link [ref=e1681] [cursor=pointer]:
+                - /url: /Lotus-papier-toilette-douceur-feuilles/dp/B07DPBZ7VT/?_encoding=UTF8&pd_rd_w=1CAYA&content-id=amzn1.sym.1fb29a75-053c-4bb5-9f1b-2be014f69a93&pf_rd_p=1fb29a75-053c-4bb5-9f1b-2be014f69a93&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_ee_bs_dsk_0
+                - img [ref=e1682]
+            - link [ref=e1683] [cursor=pointer]:
+              - /url: /everydayessentialsonbudget/?_encoding=UTF8&pd_rd_w=1CAYA&content-id=amzn1.sym.1fb29a75-053c-4bb5-9f1b-2be014f69a93&pf_rd_p=1fb29a75-053c-4bb5-9f1b-2be014f69a93&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_ee_bs_dsk_0
+              - generic [ref=e971]:
+                - generic [ref=e972]: Voir plus
+                - generic [ref=e973]: Voir plus
+          - generic [ref=e975]:
+            - heading [level=2] [ref=e1684]: Haul Printemps sous 20€
+            - generic [ref=e978]:
+              - generic [ref=e979]:
+                - link [ref=e1685] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=206903114031&ref_=hul_cgw_btf_d_de_qc_0326_ssh_beauty&pd_rd_w=w08kG&content-id=amzn1.sym.f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_p=f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1686]
+                  - generic [ref=e985]: Beauté
+                - link [ref=e1687] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=206903125031&ref_=hul_cgw_btf_d_fr_qc_0326_ssh_staples&pd_rd_w=w08kG&content-id=amzn1.sym.f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_p=f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1688]
+                  - generic [ref=e991]: Indispensables
+              - generic [ref=e992]:
+                - link [ref=e1689] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=206903078031&ref_=hul_cgw_btf_d_fr_qc_0326_ssh_newin&pd_rd_w=w08kG&content-id=amzn1.sym.f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_p=f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1690]
+                  - generic [ref=e998]: Nouveautés
+                - link [ref=e1691] [cursor=pointer]:
+                  - /url: /b/?_encoding=UTF8&node=206903083031&ref_=hul_cgw_btf_d_fr_qc_0326_ssh_trend&pd_rd_w=w08kG&content-id=amzn1.sym.f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_p=f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+                  - img [ref=e1692]
+                  - generic [ref=e1004]: Tendance
+            - link [ref=e1693] [cursor=pointer]:
+              - /url: /haul/store/?_encoding=UTF8&ref_=hul_cgw_btf_d_fr_qc_0326_ssh_cta&pd_rd_w=w08kG&content-id=amzn1.sym.f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_p=f1233725-a6c5-4bc9-b3bf-df6555e223b2&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc
+              - generic [ref=e1007]:
+                - generic [ref=e1008]: Voir plus sur Amazon Haul
+                - generic [ref=e1009]: Voir plus sur Amazon Haul
+          - generic [ref=e1011]:
+            - heading [level=2] [ref=e1694]: Produits français en dessous de 10€
+            - generic [ref=e1014]:
+              - generic [ref=e1015]:
+                - link [ref=e1695] [cursor=pointer]:
+                  - /url: /s/?_encoding=UTF8&i=grocery&bbn=15387122031&rh=n%3A15387122031%2Cp_36%3A-1000&dc=&_encoding=UTF8&qid=1731509412&rnid=2492331031&ref=sr_nr_p_36_0_0&pd_rd_w=JKQju&content-id=amzn1.sym.1f38a2db-ec9f-4f3c-9a29-1eb95cf0e3c0&pf_rd_p=1f38a2db-ec9f-4f3c-9a29-1eb95cf0e3c0&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1696]
+                  - generic [ref=e1021]: Huiles et condiments
+                - link [ref=e1697] [cursor=pointer]:
+                  - /url: /s/?_encoding=UTF8&i=grocery&bbn=26402361031&rh=n%3A26402361031%2Cp_36%3A-1000&dc=&_encoding=UTF8&qid=1731509425&rnid=2492331031&ref=sr_nr_p_36_0_0&pd_rd_w=JKQju&content-id=amzn1.sym.1f38a2db-ec9f-4f3c-9a29-1eb95cf0e3c0&pf_rd_p=1f38a2db-ec9f-4f3c-9a29-1eb95cf0e3c0&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1698]
+                  - generic [ref=e1027]: Thés et cafés
+              - generic [ref=e1028]:
+                - link [ref=e1699] [cursor=pointer]:
+                  - /url: /s/?_encoding=UTF8&i=grocery&bbn=15387123031&rh=n%3A15387123031%2Cp_36%3A-1000&dc=&_encoding=UTF8&qid=1731509414&rnid=2492331031&ref=sr_nr_p_36_0_0&pd_rd_w=JKQju&content-id=amzn1.sym.1f38a2db-ec9f-4f3c-9a29-1eb95cf0e3c0&pf_rd_p=1f38a2db-ec9f-4f3c-9a29-1eb95cf0e3c0&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1700]
+                  - generic [ref=e1034]: Snacks et confiserie
+                - link [ref=e1701] [cursor=pointer]:
+                  - /url: /s/?_encoding=UTF8&i=grocery&bbn=26407419031&rh=n%3A26407419031&dc=&qid=1731509634&rnid=2492331031&ref=sr_nr_p_36_0_0&low-price=&high-price=10&pd_rd_w=JKQju&content-id=amzn1.sym.1f38a2db-ec9f-4f3c-9a29-1eb95cf0e3c0&pf_rd_p=1f38a2db-ec9f-4f3c-9a29-1eb95cf0e3c0&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+                  - img [ref=e1702]
+                  - generic [ref=e1040]: Coffrets gourmands
+            - link [ref=e1703] [cursor=pointer]:
+              - /url: /s/?_encoding=UTF8&i=grocery&bbn=14862936031&rh=n%3A14862936031%2Cp_36%3A-1000&dc=&_encoding=UTF8&qid=1736247746&rnid=2492331031&ref=sr_nr_p_36_0_0&pd_rd_w=JKQju&content-id=amzn1.sym.1f38a2db-ec9f-4f3c-9a29-1eb95cf0e3c0&pf_rd_p=1f38a2db-ec9f-4f3c-9a29-1eb95cf0e3c0&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+              - generic [ref=e1043]:
+                - generic [ref=e1044]: Voir plus
+                - generic [ref=e1045]: Voir plus
+          - generic [ref=e1047]:
+            - heading [level=2] [ref=e1704]: Prenez soin de vous à prix doux
+            - link [ref=e1705] [cursor=pointer]:
+              - /url: /s/?_encoding=UTF8&rh=n%3A197858031%2Cp_36%3A211724031&ref=Oct_d_oup_S&pd_rd_w=D0341&content-id=amzn1.sym.b7f05468-7847-4761-aea1-f5647c2974dd&pf_rd_p=b7f05468-7847-4761-aea1-f5647c2974dd&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_unk
+              - img [ref=e1706]
+              - generic [ref=e1055]:
+                - generic [ref=e1056]: Découvrir
+                - generic [ref=e1057]: Découvrir
+          - separator [ref=e1058]
+          - generic [ref=e1061]:
+            - heading [level=2] [ref=e1707]: Meilleures ventes dans Livres
+            - list [ref=e1066]:
+              - listitem [ref=e1067]:
+                - link [ref=e1708] [cursor=pointer]:
+                  - /url: /Profileuse-Commandante-Audrey-Renard/dp/2226502653/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1709]
+              - listitem [ref=e1071]:
+                - link [ref=e1710] [cursor=pointer]:
+                  - /url: /Antigone-Jean-Anouilh/dp/2710381419/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1711]
+              - listitem [ref=e1075]:
+                - link [ref=e1712] [cursor=pointer]:
+                  - /url: /femme-m%C3%A9nage-voit-tout/dp/2290415634/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1713]
+              - listitem [ref=e1079]:
+                - link [ref=e1714] [cursor=pointer]:
+                  - /url: /secrets-femme-m%C3%A9nage-Freida-McFadden/dp/2290391190/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1715]
+              - listitem [ref=e1083]:
+                - link [ref=e1716] [cursor=pointer]:
+                  - /url: /femme-m%C3%A9nage-se-marie/dp/2824629428/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1717]
+              - listitem [ref=e1087]:
+                - link [ref=e1718] [cursor=pointer]:
+                  - /url: /femme-m%C3%A9nage-Freida-McFadden/dp/2290391174/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1719]
+              - listitem [ref=e1091]:
+                - link [ref=e1720] [cursor=pointer]:
+                  - /url: /Coloriages-myst%C3%A8res-Disney-classiques-chiffres/dp/2017276308/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1721]
+              - listitem [ref=e1095]:
+                - link [ref=e1722] [cursor=pointer]:
+                  - /url: /Crime-paradis-Nouveau-roman-2026/dp/2702192971/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1723]
+              - listitem [ref=e1099]:
+                - link [ref=e1724] [cursor=pointer]:
+                  - /url: /soci%C3%A9t%C3%A9-factice-Journal-dun-complotiste/dp/2213734844/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1725]
+              - listitem [ref=e1103]:
+                - link [ref=e1726] [cursor=pointer]:
+                  - /url: /Toutes-mati%C3%A8res-3e-Compil-fiches/dp/2091575852/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1727]
+              - listitem [ref=e1107]:
+                - link [ref=e1728] [cursor=pointer]:
+                  - /url: /Petit-Prince-illustr%C3%A9e-interactive-illustrations/dp/2075230161/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1729]
+              - listitem [ref=e1111]:
+                - link [ref=e1730] [cursor=pointer]:
+                  - /url: /psy-Freida-McFadden/dp/2290415626/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1731]
+              - listitem [ref=e1115]:
+                - link [ref=e1732] [cursor=pointer]:
+                  - /url: /locataire-Freida-McFadden/dp/282462633X/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1733]
+              - listitem [ref=e1119]:
+                - link [ref=e1734] [cursor=pointer]:
+                  - /url: /Bibliocoll%C3%A8ge-M%C3%A9decin-malgr%C3%A9-lui-Moli%C3%A8re/dp/2017167142/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1735]
+              - listitem [ref=e1123]:
+                - link [ref=e1736] [cursor=pointer]:
+                  - /url: /Maxi-Annales-Brevet-2026-Histoire-G%C3%A9ographie-Physique-Chimie/dp/2095050266/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1737]
+              - listitem [ref=e1127]:
+                - link [ref=e1738] [cursor=pointer]:
+                  - /url: /LIslam-contre-modernit%C3%A9-Ferghane-Azihari/dp/2258201403/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1739]
+              - listitem [ref=e1131]:
+                - link [ref=e1740] [cursor=pointer]:
+                  - /url: /Frieren-T15-collector-Kanehito-Yamada/dp/B0G8FBCFBK/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1741]
+              - listitem [ref=e1135]:
+                - link [ref=e1742] [cursor=pointer]:
+                  - /url: /enfants-silence-Parcours-entendre-prot%C3%A9ger/dp/B0GQGM9BRZ/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1743]
+              - listitem [ref=e1139]:
+                - link [ref=e1744] [cursor=pointer]:
+                  - /url: /badine-lamour-programme-fran%C3%A7ais-g%C3%A9n%C3%A9rale/dp/2401105425/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1745]
+              - listitem [ref=e1143]:
+                - link [ref=e1746] [cursor=pointer]:
+                  - /url: /Cahiers-oeuvre-programme-fran%C3%A7ais-g%C3%A9n%C3%A9rale/dp/2401094423/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1747]
+              - listitem [ref=e1147]:
+                - link [ref=e1748] [cursor=pointer]:
+                  - /url: /One-Piece-%C3%89dition-originale-Haley/dp/2344068929/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1749]
+              - listitem [ref=e1151]:
+                - link [ref=e1750] [cursor=pointer]:
+                  - /url: /Quatre-Accords-tolt%C3%A8ques-libert%C3%A9-personnelle/dp/B0D32M5XRL/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1751]
+              - listitem [ref=e1155]:
+                - link [ref=e1752] [cursor=pointer]:
+                  - /url: /Sp%C3%A9cimen-Pauline-Claviere/dp/2246846102/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1753]
+              - listitem [ref=e1159]:
+                - link [ref=e1754] [cursor=pointer]:
+                  - /url: /Dns-peau-dEpstein-Karl-Z%C3%A9ro/dp/2753304904/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1755]
+              - listitem [ref=e1163]:
+                - link [ref=e1756] [cursor=pointer]:
+                  - /url: /Hasard-nexiste-Karl-Otto-Schmidt/dp/2900219043/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1757]
+              - listitem [ref=e1167]:
+                - link [ref=e1758] [cursor=pointer]:
+                  - /url: /Je-suis-dr%C3%B4le-David-Foenkinos/dp/2073152988/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1759]
+              - listitem [ref=e1171]:
+                - link [ref=e1760] [cursor=pointer]:
+                  - /url: /Une-unique-lueur-Fred-Vargas/dp/2080160710/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1761]
+              - listitem [ref=e1175]:
+                - link [ref=e1762] [cursor=pointer]:
+                  - /url: /Mes-premi%C3%A8res-gommettes-animaux-monde/dp/2215183535/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1763]
+              - listitem [ref=e1179]:
+                - link [ref=e1764] [cursor=pointer]:
+                  - /url: /Mon-programme-callisth%C3%A9nie-D%C3%A9veloppez-capacit%C3%A9s/dp/2501200225/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1765]
+              - listitem [ref=e1183]:
+                - link [ref=e1766] [cursor=pointer]:
+                  - /url: /L%C3%A9tranger-Albert-Camus/dp/2070360024/?_encoding=UTF8&pd_rd_w=1aTXA&content-id=amzn1.sym.f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_p=f1302343-9817-4aee-a01c-cc93646e7acc&pf_rd_r=H45Z0BF8RV5R2DJS593A&pd_rd_wg=TU6g1&pd_rd_r=80a90e9b-fe00-4712-8a22-d7b417dadbcc&ref_=pd_hp_d_btf_crs_zg_bs_301061
+                  - img [ref=e1767]
+    - generic [ref=e1188]:
+      - button [ref=e1768] [cursor=pointer]:
+        - generic [ref=e1190]: Retour en haut
+      - generic [ref=e1191]:
+        - generic [ref=e1192]:
+          - heading [level=6] [ref=e1769]: Pour mieux nous connaître
+          - list [ref=e1194]:
+            - listitem [ref=e1195]:
+              - link [ref=e1770] [cursor=pointer]:
+                - /url: /p/feature/k6wxgxw88w7z78q?ref_=footer_cs_nav_bn_ab
+                - text: À propos d'Amazon
+            - listitem [ref=e1197]:
+              - link [ref=e1771] [cursor=pointer]:
+                - /url: /gp/browse.html?node=202589011&ref_=footer_gw_m_b_careers
+                - text: Carrières
+            - listitem [ref=e1199]:
+              - link [ref=e1772] [cursor=pointer]:
+                - /url: https://durabilite.aboutamazon.fr/?utm_source=gateway&utm_medium=footer&ref_=susty_footer
+                - text: Durabilité
+            - listitem [ref=e1201]:
+              - link [ref=e1773] [cursor=pointer]:
+                - /url: https://www.amazon.science
+                - text: Amazon Science
+        - generic [ref=e1204]:
+          - heading [level=6] [ref=e1774]: Gagnez de l'argent
+          - list [ref=e1206]:
+            - listitem [ref=e1207]:
+              - link [ref=e1775] [cursor=pointer]:
+                - /url: https://services.amazon.fr/sell.html?ld=AZFRSOAFooter&ref_=sdfr_soa
+                - text: Vendez avec plus de 47.250 € d'avantages
+            - listitem [ref=e1209]:
+              - link [ref=e1776] [cursor=pointer]:
+                - /url: https://services.amazon.fr/services/vendre-aux-professionnels/avantages.html?ref=azfrb2brf&ld=AZFRB2BRetailFooter
+                - text: Vendez sur Amazon Business
+            - listitem [ref=e1211]:
+              - link [ref=e1777] [cursor=pointer]:
+                - /url: https://services.amazon.fr/handmade.htm?ref=azfrsoafoo&ld=AZFRHNDFooter
+                - text: Vendez sur Amazon Handmade
+            - listitem [ref=e1213]:
+              - link [ref=e1778] [cursor=pointer]:
+                - /url: https://sell.amazon.fr/proprietaires-de-marques/?ref_=AOFRABRLGNRFOOT&ld=AZFRBrandRegFooter#inscrivez-votre-marque
+                - text: Protégez et développez votre marque
+            - listitem [ref=e1215]:
+              - link [ref=e1779] [cursor=pointer]:
+                - /url: https://partenaires.amazon.fr
+                - text: Devenez Partenaire
+            - listitem [ref=e1217]:
+              - link [ref=e1780] [cursor=pointer]:
+                - /url: https://services.amazon.fr/services/expedie-par-amazon/outils-et-avantages.html/ref=az_fr_fba_ft?ld=AZFRFBAFooter
+                - text: Expédié par Amazon
+            - listitem [ref=e1219]:
+              - link [ref=e1781] [cursor=pointer]:
+                - /url: https://supply.amazon.com/?ref_=footer_sta&lang=fr-FR
+                - text: Livrer à Amazon
+            - listitem [ref=e1221]:
+              - link [ref=e1782] [cursor=pointer]:
+                - /url: https://advertising.amazon.fr/products-self-serve?ref_=ext_amzn_ftr
+                - text: Faites la promotion de vos produits
+            - listitem [ref=e1223]:
+              - link [ref=e1783] [cursor=pointer]:
+                - /url: https://kdp.amazon.com/?language=fr_FR
+                - text: Auto-publiez votre livre
+            - listitem [ref=e1225]:
+              - link [ref=e1784] [cursor=pointer]:
+                - /url: https://pay.amazon.com/fr?ld=AWREFRAPAFooter
+                - text: Amazon Pay
+            - listitem [ref=e1227]:
+              - text: ›
+              - link [ref=e1785] [cursor=pointer]:
+                - /url: https://www.amazon.fr/b/?node=17751878031
+                - text: "Voir plus : Gagner de l'argent avec nous"
+        - generic [ref=e1230]:
+          - heading [level=6] [ref=e1786]: Moyens de paiement Amazon
+          - list [ref=e1232]:
+            - listitem [ref=e1233]:
+              - link [ref=e1787] [cursor=pointer]:
+                - /url: /dp/B08HYJJ7TY?plattr=ACOMFO&ie=UTF-8&ref_=b2b_sow_sbcc_fr_acom_omp_na_footer_nca_202112
+                - text: Carte Amazon Business Amex
+            - listitem [ref=e1235]:
+              - link [ref=e1788] [cursor=pointer]:
+                - /url: /gp/help/customer/display.html?nodeId=201267600&ref_=footer_payment
+                - text: Cartes de paiement
+            - listitem [ref=e1237]:
+              - link [ref=e1789] [cursor=pointer]:
+                - /url: /gp/browse.html?node=15933160031&ref_=footer_4xcb
+                - text: Paiement en plusieurs fois
+            - listitem [ref=e1239]:
+              - link [ref=e1790] [cursor=pointer]:
+                - /url: /gp/help/customer/display.html?nodeId=200233750&ref_=footer_tfx
+                - text: Convertisseur de devises Amazon
+            - listitem [ref=e1241]:
+              - link [ref=e1791] [cursor=pointer]:
+                - /url: /gp/browse.html?node=2524127031&ref_=footer_giftcards
+                - text: Cartes cadeaux
+            - listitem [ref=e1243]:
+              - link [ref=e1792] [cursor=pointer]:
+                - /url: /gp/gc/create?ref_=footer_reload
+                - text: Recharge en ligne
+            - listitem [ref=e1245]:
+              - link [ref=e1793] [cursor=pointer]:
+                - /url: /gp/browse.html?node=15420612031&ref_=footer_purchase_code
+                - text: Recharge en point de vente
+        - generic [ref=e1248]:
+          - heading [level=6] [ref=e1794]: Besoin d'aide ?
+          - list [ref=e1250]:
+            - listitem [ref=e1251]:
+              - link [ref=e1795] [cursor=pointer]:
+                - /url: /gp/css/order-history?ref_=footer_hp_ss_comp_tmp
+                - text: Voir ou suivre vos commandes
+            - listitem [ref=e1253]:
+              - link [ref=e1796] [cursor=pointer]:
+                - /url: /gp/help/customer/display.html?nodeId=548566&ref_=footer_shiprates
+                - text: Tarifs et options de livraison
+            - listitem [ref=e1255]:
+              - link [ref=e1797] [cursor=pointer]:
+                - /url: /gp/subs/primeclub/signup/main.html?ref_=footer_prime
+                - text: Amazon Prime
+            - listitem [ref=e1257]:
+              - link [ref=e1798] [cursor=pointer]:
+                - /url: /gp/css/returns/homepage.html?ref_=footer_hy_f_4
+                - text: Retours et remplacements
+            - listitem [ref=e1259]:
+              - link [ref=e1799] [cursor=pointer]:
+                - /url: /gp/help/customer/display.html?nodeId=201843130&ref_=footer_gw_legalg
+                - text: Garantie légale
+            - listitem [ref=e1261]:
+              - link [ref=e1800] [cursor=pointer]:
+                - /url: https://www.amazon.fr/your-product-safety-alerts?ref_=footer_bsx_ypsa
+                - text: Rappels et alertes de sécurité des produits
+            - listitem [ref=e1263]:
+              - link [ref=e1801] [cursor=pointer]:
+                - /url: /gp/browse.html?node=22380237031&ref_=footer_disposal
+                - text: Recyclage (y compris les équipements électriques et électroniques)
+            - listitem [ref=e1265]:
+              - link [ref=e1802] [cursor=pointer]:
+                - /url: /gp/help/customer/display.html?nodeId=GE2WLMMQBF4T5WMN&ref_=footer_info_mkpl
+                - text: Infos sur notre Marketplace
+            - listitem [ref=e1267]:
+              - link [ref=e1803] [cursor=pointer]:
+                - /url: /gp/browse.html?node=541319031&ref_=footer_mobapp
+                - text: Application Amazon Mobile
+            - listitem [ref=e1269]:
+              - link [ref=e1804] [cursor=pointer]:
+                - /url: /gp/help/customer/display.html?nodeId=559912&ref_=footer_gw_m_b_cs
+                - text: Service Client
+            - listitem [ref=e1271]:
+              - link [ref=e1805] [cursor=pointer]:
+                - /url: /gp/help/customer/display.html?nodeId=GUUVBZ8WGVFP8R8X&ref_=footer_gw_access
+                - text: Accessibilité
+            - listitem [ref=e1273]:
+              - link [ref=e1806] [cursor=pointer]:
+                - /url: /registries?ref_=nav_footer_registry_giftlist_desktop
+                - text: Liste de cadeaux
+            - listitem [ref=e1275]:
+              - link [ref=e1807] [cursor=pointer]:
+                - /url: /gp/help/customer/display.html?nodeId=TLtMJsPGBmJPpN3hvy&ref_=footer_report_illegal_content
+                - text: Signaler un contenu illégal
+      - generic [ref=e1278]:
+        - link [ref=e1808] [cursor=pointer]:
+          - /url: /?_encoding=UTF8&ref_=footer_logo
+        - generic [ref=e1284]:
+          - generic [ref=e1285]:
+            - link [ref=e1809] [cursor=pointer]:
+              - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=footer_lang
+              - generic [ref=e1288]: Français
+            - button [ref=e1810] [cursor=pointer]
+          - button [ref=e1811] [cursor=pointer]:
+            - generic [ref=e1292]: France
+      - generic [ref=e1813]:
+        - list [ref=e1295]:
+          - listitem [ref=e1296]:
+            - link [ref=e1814] [cursor=pointer]:
+              - /url: https://music.amazon.fr?ref=dm_aff_amz_fr
+              - heading [level=5] [ref=e1815]: Amazon Music
+              - generic [ref=e1299]: Écoutez des millions de chansons
+          - listitem [ref=e1300]
+          - listitem [ref=e1301]:
+            - link [ref=e1816] [cursor=pointer]:
+              - /url: https://www.abebooks.fr
+              - heading [level=5] [ref=e1817]: AbeBooks
+              - generic [ref=e1304]: Livres, art & articles de collection
+          - listitem [ref=e1305]
+          - listitem [ref=e1306]:
+            - link [ref=e1818] [cursor=pointer]:
+              - /url: https://aws.amazon.com/fr/what-is-cloud-computing/?sc_channel=EL&sc_campaign=FR_amazonfooter
+              - heading [level=5] [ref=e1819]: Amazon Web Services
+              - generic [ref=e1309]: Services de Cloud Computing Flexibles
+          - listitem [ref=e1310]
+          - listitem [ref=e1311]:
+            - link [ref=e1820] [cursor=pointer]:
+              - /url: https://www.audible.fr
+              - heading [level=5] [ref=e1821]: Audible
+              - generic [ref=e1314]: Livres audio télécharger
+          - listitem [ref=e1315]
+          - listitem [ref=e1316]:
+            - link [ref=e1822] [cursor=pointer]:
+              - /url: https://kdp.amazon.com/?language=fr_FR
+              - heading [level=5] [ref=e1823]: Kindle Direct Publishing
+              - generic [ref=e1319]: Auto-publiez facilement vos livres au format numérique
+        - list [ref=e1320]:
+          - listitem [ref=e1321]:
+            - link [ref=e1824] [cursor=pointer]:
+              - /url: /gp/browse.html?node=3581943031&ref_=footer_wrhsdls
+              - heading [level=5] [ref=e1825]: Amazon Seconde main
+              - generic [ref=e1324]: Produits d'occasion ou emballage ouvert
+          - listitem [ref=e1325]
+          - listitem [ref=e1326]:
+            - link [ref=e1826] [cursor=pointer]:
+              - /url: https://www.shopbop.com/fr/welcome
+              - heading [level=5] [ref=e1827]: Shopbop
+              - generic [ref=e1329]: Vêtements de Marque & Mode
+          - listitem [ref=e1330]
+          - listitem [ref=e1331]:
+            - link [ref=e1828] [cursor=pointer]:
+              - /url: https://advertising.amazon.fr/?ref=footer_advtsing_fr
+              - heading [level=5] [ref=e1829]: Amazon Advertising
+              - generic [ref=e1334]: Ciblez, attirez et fidélisez vos clients
+          - listitem [ref=e1335]
+          - listitem [ref=e1336]:
+            - link [ref=e1830] [cursor=pointer]:
+              - /url: /gp/browse.html?node=14310146031&ref_=nav_footer_business
+              - heading [level=5] [ref=e1831]: Amazon Business
+              - generic [ref=e1339]: Paiement 30 jours. Hors TVA. Pour les professionnels.
+          - listitem [ref=e1340]
+          - listitem [ref=e1341]
+      - generic [ref=e1342]:
+        - list [ref=e1343]:
+          - listitem [ref=e1344]:
+            - link [ref=e1832] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=201909000&ref_=footer_cou
+              - text: Conditions générales de vente
+          - listitem [ref=e1346]:
+            - link [ref=e1833] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=201909010&ref_=footer_privacy
+              - text: Vos informations personnelles
+          - listitem [ref=e1348]:
+            - link [ref=e1834] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=201890250&ref_=footer_cookies_notice
+              - text: Cookies
+          - listitem [ref=e1350]:
+            - link [ref=e1835] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=201909150&ref_=footer_Interest_Based_Ads_Notice
+              - text: Annonces basées sur vos centres d’intérêt
+        - generic [ref=e1352]: © 1996-2026, Amazon.com Inc. ou ses affiliés
+    - iframe [ref=e1354]:
+      
+  - dialog "Choisissez votre emplacement" [ref=e1837]:
+    - generic [ref=e1839]:
+      - generic [ref=e1840]:
+        - heading "Choisissez votre emplacement" [level=4] [ref=e1841]
+        - button "Close" [active] [ref=e1842] [cursor=pointer]
+        - generic [ref=e1844]: Choisissez votre emplacement
+      - generic [ref=e1847]:
+        - generic [ref=e1848]:
+          - generic [ref=e1849]: Sélectionnez votre lieu de livraison pour voir les options de livraison
+          - generic [ref=e1851] [cursor=pointer]:
+            - button "Identifiez-vous pour voir vos adresses" [ref=e1852]
+            - generic [ref=e1853]: Identifiez-vous pour voir vos adresses
+        - generic [ref=e1854]:
+          - heading "ou entrez un code postal en France métropolitaine" [level=5] [ref=e1856]
+          - generic [ref=e1857]:
+            - generic:
+              - textbox "ou entrez un code postal en France métropolitaine" [ref=e1859]
+              - button "Actualiser" [ref=e1860]:
+                - generic [ref=e1862] [cursor=pointer]:
+                  - button "Actualiser" [ref=e1863]
+                  - generic [ref=e1864]: Actualiser
+          - heading "ou livrer hors de la France" [level=5] [ref=e1866]
+          - generic [ref=e1868]:
+            - combobox "ou livrer hors de la France" [ref=e1869]:
+              - option "Choisir"
+              - option "Allemagne"
+              - option "Belgique"
+              - option "Chine"
+              - option "États-Unis"
+              - option "Luxembourg"
+              - option "Monaco"
+              - option "Suisse"
+              - option "Afrique du Sud"
+              - option "Albanie"
+              - option "Algérie"
+              - option "Allemagne"
+              - option "Andorre"
+              - option "Angola"
+              - option "Anguilla"
+              - option "Antigua-et-Barbuda"
+              - option "Antilles néerlandaises"
+              - option "Arabie Saoudite"
+              - option "Argentine"
+              - option "Arménie"
+              - option "Aruba"
+              - option "Australie"
+              - option "Autriche"
+              - option "Azerbaïdjan"
+              - option "Bahamas"
+              - option "Bahreïn"
+              - option "Bangladesh"
+              - option "Barbade"
+              - option "Belgique"
+              - option "Bermudes"
+              - option "Bélize"
+              - option "Bénin"
+              - option "Bhoutan"
+              - option "Biélorussie"
+              - option "Bolivie"
+              - option "Bonaire, Saint Eustatius et Saba"
+              - option "Bosnie-Herzégovine"
+              - option "Botswana"
+              - option "Brésil"
+              - option "Brunéi Darussalam"
+              - option "Bulgarie"
+              - option "Burkina Faso"
+              - option "Burundi"
+              - option "Cambodge"
+              - option "Cameroun"
+              - option "Canada"
+              - option "Cap Vert"
+              - option "Chili"
+              - option "Chine"
+              - option "Chypre"
+              - option "Colombie"
+              - option "Comores"
+              - option "Congo"
+              - option "Congo, République démocratique du"
+              - option "Corée, République de"
+              - option "Costa Rica"
+              - option "Côte d'ivoire"
+              - option "Croatie"
+              - option "Curaçao"
+              - option "Danemark"
+              - option "Djibouti"
+              - option "Dominique"
+              - option "El Salvador"
+              - option "Espagne"
+              - option "Estonie"
+              - option "Ethiopie"
+              - option "Égypte"
+              - option "Émirats arabes unis"
+              - option "Équateur"
+              - option "Érythrée"
+              - option "États-Unis"
+              - option "Fédération de Russie"
+              - option "Fidji"
+              - option "Finlande"
+              - option "Gabon"
+              - option "Gambie"
+              - option "Géorgie"
+              - option "Géorgie du Sud et les Îles Sandwich du Sud"
+              - option "Ghana"
+              - option "Gibraltar"
+              - option "Grenade"
+              - option "Grèce"
+              - option "Groenland"
+              - option "Guadeloupe"
+              - option "Guam"
+              - option "Guatemala"
+              - option "Guinée"
+              - option "Guinée équatoriale"
+              - option "Guinée-Bissau"
+              - option "Guyane"
+              - option "Guyane française"
+              - option "Haïti"
+              - option "Honduras"
+              - option "Hong Kong"
+              - option "Hongrie"
+              - option "Inde"
+              - option "Indonésie"
+              - option "Irlande"
+              - option "Islande"
+              - option "Israël"
+              - option "Italie"
+              - option "Île Bouvet"
+              - option "Île Christmas"
+              - option "Île Heard et îles McDonald"
+              - option "Îles Caïmans"
+              - option "Îles Cocos (Keeling)"
+              - option "Îles Cook"
+              - option "Îles Falkland (Malouines)"
+              - option "Îles Féroé"
+              - option "Îles Mariannes du Nord"
+              - option "Îles Marshall"
+              - option "Îles Salomon"
+              - option "Îles Turques-et-Caïques"
+              - option "Îles Vierges américaines"
+              - option "Îles Vierges britanniques"
+              - option "Îles mineures éloignées des États-Unis"
+              - option "Jamaïque"
+              - option "Japon"
+              - option "Jordanie"
+              - option "Kazakhstan"
+              - option "Kenya"
+              - option "Kirghizistan"
+              - option "Kiribati"
+              - option "Kosovo"
+              - option "Koweït"
+              - option "Lesotho"
+              - option "Lettonie"
+              - option "Liban"
+              - option "Liberia"
+              - option "Libye"
+              - option "Liechtenstein"
+              - option "Lituanie"
+              - option "Luxembourg"
+              - option "Macao"
+              - option "Macédoine, Ex-République yougoslave de"
+              - option "Madagascar"
+              - option "Malaisie"
+              - option "Malawi"
+              - option "Maldives"
+              - option "Mali"
+              - option "Malte"
+              - option "Maroc"
+              - option "Martinique"
+              - option "Maurice"
+              - option "Mauritanie"
+              - option "Mayotte"
+              - option "Mexique"
+              - option "Micronésie, États fédérés de"
+              - option "Monaco"
+              - option "Mongolie"
+              - option "Montenegro"
+              - option "Montserrat"
+              - option "Mozambique"
+              - option "Myanmar"
+              - option "Namibie"
+              - option "Nauru"
+              - option "Népal"
+              - option "Nicaragua"
+              - option "Niger"
+              - option "Nigeria"
+              - option "Niué"
+              - option "Norvège"
+              - option "Nouvelle-Calédonie"
+              - option "Nouvelle-Zélande"
+              - option "Oman"
+              - option "Ouganda"
+              - option "Ouzbékistan"
+              - option "Pakistan"
+              - option "Palaos"
+              - option "Panama"
+              - option "Papouasie-Nouvelle-Guinée"
+              - option "Paraguay"
+              - option "Pays-Bas"
+              - option "Pérou"
+              - option "Philippines"
+              - option "Pitcairn"
+              - option "Pologne"
+              - option "Polynésie française"
+              - option "Porto Rico"
+              - option "Portugal"
+              - option "Qatar"
+              - option "République Tchèque"
+              - option "République centrafricaine"
+              - option "République de Moldavie"
+              - option "République démocratique populaire lao"
+              - option "République dominicaine"
+              - option "Réunion"
+              - option "Roumanie"
+              - option "Royaume-Uni"
+              - option "Rwanda"
+              - option "Sahara occidental"
+              - option "Saint-Barthélemy"
+              - option "Saint-Kitts-et-Nevis"
+              - option "Saint-Marin"
+              - option "Saint-Martin (France)"
+              - option "Saint-Martin (Pays Bas)"
+              - option "Saint-Pierre-et-Miquelon"
+              - option "Saint-Siège"
+              - option "Saint-Vincent-et-les Grenadines"
+              - option "Sainte-Hélène, Ascension et Tristan da Cunha"
+              - option "Sainte-Lucie"
+              - option "Samoa"
+              - option "Samoa américaines"
+              - option "Sao-Tomé-et-Principe"
+              - option "Serbie"
+              - option "Seychelles"
+              - option "Sénégal"
+              - option "Sierra Leone"
+              - option "Singapour"
+              - option "Slovaquie"
+              - option "Slovénie"
+              - option "Somalie"
+              - option "Sri Lanka"
+              - option "Suède"
+              - option "Suisse"
+              - option "Surinam"
+              - option "Svalbard et Jan Mayen"
+              - option "Swaziland"
+              - option "Tadjikistan"
+              - option "Taïwan"
+              - option "Tanzanie, République unie de"
+              - option "Tchad"
+              - option "Terres australes et antarctiques françaises"
+              - option "Territoire britannique de l'océan Indien"
+              - option "Territoires palestiniens"
+              - option "Thaïlande"
+              - option "Timor-leste"
+              - option "Togo"
+              - option "Tokelau"
+              - option "Tonga"
+              - option "Trinité-et-Tobago"
+              - option "Tunisie" [selected]
+              - option "Turkménistan"
+              - option "Turquie"
+              - option "Tuvalu"
+              - option "Ukraine"
+              - option "Uruguay"
+              - option "Vanuatu"
+              - option "Venezuela"
+              - option "Vietnam"
+              - option "Wallis-et-Futuna"
+              - option "Yémen"
+              - option "Zambie"
+              - option "Zimbabwe"
+            - radiogroup [ref=e1872] [cursor=pointer]: Tunisie

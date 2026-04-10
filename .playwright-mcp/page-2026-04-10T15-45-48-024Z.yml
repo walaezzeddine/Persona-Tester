@@ -1,0 +1,913 @@
+- generic [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - navigation "Primary" [ref=e3]:
+    - generic [ref=e4]:
+      - link "Wall Street Survivor" [ref=e7] [cursor=pointer]:
+        - /url: https://www.wallstreetsurvivor.com/
+        - img "Wall Street Survivor" [ref=e8]
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - link "Courses" [ref=e12] [cursor=pointer]:
+            - /url: "#"
+            - text: Courses
+            - img [ref=e14]
+          - list:
+            - listitem:
+              - link "Getting Started In The Stock Market":
+                - /url: https://www.wallstreetsurvivor.com/stock-market-for-beginners/
+            - listitem:
+              - link "Beginner Investing-10 Steps":
+                - /url: https://www.wallstreetsurvivor.com/beginner-investing-10-steps-to-start-investing/
+            - listitem:
+              - link "How to Know What Stocks to Invest in":
+                - /url: https://www.wallstreetsurvivor.com/stock-ratings/
+            - listitem:
+              - link "Investing With Little Money":
+                - /url: https://www.wallstreetsurvivor.com/how-to-invest-with-little-money/
+            - listitem:
+              - link "Best Investment Apps":
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem:
+              - link "Start Investing The Right Way":
+                - /url: https://www.wallstreetsurvivor.com/robinhood-free-stock/
+            - listitem:
+              - link "All Courses":
+                - /url: https://www.wallstreetsurvivor.com/courses/
+        - listitem [ref=e16]:
+          - link "Stock Game" [active] [ref=e17] [cursor=pointer]:
+            - /url: "#"
+            - text: Stock Game
+            - img [ref=e19]
+          - list [ref=e619]:
+            - listitem [ref=e620]:
+              - link "Join A Contest For Cash Prizes" [ref=e621] [cursor=pointer]:
+                - /url: https://app.wallstreetsurvivor.com/members/register
+            - listitem [ref=e622]:
+              - link "Join Our Most Popular Contests" [ref=e623] [cursor=pointer]:
+                - /url: https://app.wallstreetsurvivor.com/members/register
+            - listitem [ref=e624]:
+              - link "Free Stock Market Game" [ref=e625] [cursor=pointer]:
+                - /url: /stock-market-game/
+            - listitem [ref=e626]:
+              - link "Search For A Private Stock Contest" [ref=e627] [cursor=pointer]:
+                - /url: https://app.wallstreetsurvivor.com/contests/find
+            - listitem [ref=e628]:
+              - link "View Contests I have Already Joined" [ref=e629] [cursor=pointer]:
+                - /url: https://app.wallstreetsurvivor.com/contests
+            - listitem [ref=e630]:
+              - link "Create A Stock Contest" [ref=e631] [cursor=pointer]:
+                - /url: https://app.wallstreetsurvivor.com/admin/createtournament
+        - listitem [ref=e21]:
+          - link "Best Investing Tools" [ref=e22] [cursor=pointer]:
+            - /url: "#"
+            - text: Best Investing Tools
+            - img [ref=e24]
+          - list:
+            - listitem:
+              - link "Best Stock Newsletters":
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem:
+              - link "Motley Fool Review-Is it Worth It?":
+                - /url: /motley-fool-review/
+            - listitem:
+              - link "Alpha Picks Review":
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem:
+              - link "Open a Robinhood Account-Get up to $1700 Free Stock":
+                - /url: https://www.wallstreetsurvivor.com/robinhood-free-stock/
+            - listitem:
+              - link "Seeking Alpha Review":
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem:
+              - link "5 Stocks Set to Double (Zacks Free Picks)":
+                - /url: https://www.wallstreetsurvivor.com/zacks-review/
+            - listitem:
+              - link "Is Robinhood Safe?":
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem:
+              - 'link "Robinhood Review: Is Robinhood Legit?"':
+                - /url: https://www.wallstreetsurvivor.com/robinhood-review/
+            - listitem:
+              - link "Motley Fool Canada Review":
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-canada-stock-advisor-review/
+            - listitem:
+              - link "Moomoo Review":
+                - /url: https://www.wallstreetsurvivor.com/moomoo-review/
+            - listitem:
+              - link "Best Investing Apps":
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem:
+              - link "Is Coinbase Safe?":
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem:
+              - link "Trade-Ideas Review":
+                - /url: https://www.wallstreetsurvivor.com/trade-ideas-review/
+        - listitem [ref=e26]:
+          - link "Investing Ideas" [ref=e27] [cursor=pointer]:
+            - /url: "#"
+            - text: Investing Ideas
+            - img [ref=e29]
+          - list:
+            - listitem:
+              - 'link "Seeking Alpha Review: Is Seeking Alpha Worth It? Updated April 5, 2026"':
+                - /url: https://www.wallstreetsurvivor.com/is-seeking-alpha-worth-it/
+            - listitem:
+              - link "Swing Trading":
+                - /url: /investing-ideas/swing-trader/
+            - listitem:
+              - link "Value Investing":
+                - /url: /investing-ideas/value-investing/
+            - listitem:
+              - link "Dividend Stock Investing":
+                - /url: /investing-ideas/dividend-stocks/
+            - listitem:
+              - link "Growth Investing":
+                - /url: /investing-ideas/growth-investing/
+            - listitem:
+              - link "Small Cap Investing":
+                - /url: /investing-ideas/small-cap/
+            - listitem:
+              - link "Mid Cap Investing":
+                - /url: /investing-ideas/mid-cap/
+            - listitem:
+              - link "Best Stocks to Buy Now":
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem:
+              - link "Large Cap Investing":
+                - /url: /investing-ideas/large-cap/
+            - listitem:
+              - link "Motley Fool Stock Picks":
+                - /url: /motley-fool-stock-picks-2021/
+            - listitem:
+              - link "Trending Stocks":
+                - /url: /investing-ideas/trending/
+            - listitem:
+              - link "Sports Stock Ideas":
+                - /url: /find-stocks/interest/sport-stocks/
+            - listitem:
+              - link "Technology And Internet Stocks":
+                - /url: /find-stocks/interest/tech-stocks/
+            - listitem:
+              - link "Find Stocks":
+                - /url: https://www.wallstreetsurvivor.com/find-stocks/
+            - listitem:
+              - link "More Ideas…":
+                - /url: /investing-ideas/
+        - listitem [ref=e31]:
+          - link "Starter Guides" [ref=e32] [cursor=pointer]:
+            - /url: "#"
+            - text: Starter Guides
+            - img [ref=e34]
+          - list:
+            - listitem:
+              - link "How To Read Stocks":
+                - /url: /starter-guides/how-to-read-stocks/
+            - listitem:
+              - link "Steps To Start Buying Stocks":
+                - /url: /starter-guides/how-to-buy-stocks/
+            - listitem:
+              - link "5 Types of Investing Strategies":
+                - /url: /starter-guides/investment-strategies/
+            - listitem:
+              - link "8 Questions To Ask When Choosing A Broker":
+                - /url: /starter-guides/intro-to-stockbrokers/
+            - listitem:
+              - link "Stock Charting For Beginners":
+                - /url: /starter-guides/stock-charts/
+            - listitem:
+              - link "What Stocks To Buy":
+                - /url: /starter-guides/what-stocks-to-buy/
+            - listitem:
+              - link "What Is Short Selling":
+                - /url: /starter-guides/short-selling/
+            - listitem:
+              - link "What Are Penny Stocks And How Do They Work":
+                - /url: /starter-guides/what-are-penny-stocks-how-they-work/
+            - listitem:
+              - link "How To Find Penny Stocks To Buy":
+                - /url: /starter-guides/find-penny-stock/
+            - listitem:
+              - link "Types of Mutual Funds":
+                - /url: /starter-guides/mutual-funds-types/
+            - listitem:
+              - link "All Starter Guides":
+                - /url: https://www.wallstreetsurvivor.com/starter-guides/
+        - listitem [ref=e36]:
+          - link "Login" [ref=e37] [cursor=pointer]:
+            - /url: https://app.wallstreetsurvivor.com/login
+        - listitem [ref=e38]:
+          - link "Register" [ref=e39] [cursor=pointer]:
+            - /url: https://app.wallstreetsurvivor.com/members/register
+  - main [ref=e43]:
+    - article [ref=e44]:
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]:
+            - heading "Stock Market Simulator:" [level=1] [ref=e49]
+            - heading "Practice Trading Stocks With Fake Money" [level=2] [ref=e50]
+            - paragraph [ref=e51]: Get $100,000 in virtual cash to practice in our real-time stock market simulator. Start trading in 30 seconds.
+            - paragraph [ref=e52]:
+              - text: New to the stock market? Don’t worry. Our free mini courses will help you get started the
+              - emphasis [ref=e53]: right way
+              - text: .
+            - paragraph
+            - link "start practing for Free" [ref=e56] [cursor=pointer]:
+              - /url: https://app.wallstreetsurvivor.com/members/register
+              - text: start practing for Free
+              - img [ref=e57]
+          - figure [ref=e59]
+        - generic [ref=e60]:
+          - 'heading "Ranked #1 Stock Simulator by the Corporate Finance Institute" [level=2] [ref=e62]'
+          - figure [ref=e63]:
+            - link "CFI logo" [ref=e64] [cursor=pointer]:
+              - /url: https://corporatefinanceinstitute.com/resources/knowledge/trading-investing/three-best-stock-simulators/
+              - img "CFI logo" [ref=e65]
+        - generic [ref=e67]:
+          - generic [ref=e69]:
+            - group "1 / 4" [ref=e70]:
+              - generic [ref=e71]:
+                - generic [ref=e72]:
+                  - paragraph [ref=e73]: Free Stock Market Courses
+                  - heading "LEARN" [level=2] [ref=e74]:
+                    - strong [ref=e75]: LEARN
+                  - paragraph [ref=e76]: Learn about investing in plain English. No jargon. Just what you need to know.
+                - figure [ref=e77]:
+                  - img "Learn" [ref=e78]
+            - group "2 / 4" [ref=e79]:
+              - generic [ref=e80]:
+                - generic [ref=e81]:
+                  - paragraph [ref=e82]: Build a virtual portfolio
+                  - heading "PRACTICE" [level=2] [ref=e83]:
+                    - strong [ref=e84]: PRACTICE
+                  - paragraph [ref=e85]: With $100,000 in fake money. Trade stocks, ETFs, options, and crypto under real market conditions.
+                - figure [ref=e86]:
+                  - img "Practice" [ref=e87]
+            - group "3 / 4" [ref=e88]:
+              - generic [ref=e89]:
+                - generic [ref=e90]:
+                  - paragraph [ref=e91]: Join Monthly Contests
+                  - heading "COMPETE" [level=2] [ref=e92]:
+                    - strong [ref=e93]:
+                      - strong [ref=e94]: COMPETE
+                  - paragraph [ref=e95]: See how your picks perform against other investors. (It’s good practice.)
+                - figure [ref=e96]:
+                  - img "Compete" [ref=e97]
+            - group "4 / 4" [ref=e98]:
+              - generic [ref=e99]:
+                - generic [ref=e100]:
+                  - paragraph [ref=e101]: Create Your Own Contests
+                  - heading "SHARE" [level=2] [ref=e102]:
+                    - strong [ref=e103]:
+                      - strong [ref=e104]: SHARE
+                  - paragraph [ref=e105]: Invite friends and family, and learn how to invest together.
+                - figure [ref=e106]:
+                  - 'img "Getting Started: Invite Friends to Private Contests" [ref=e107]'
+          - button "Previous slide" [ref=e632] [cursor=pointer]: prev
+          - button "Next slide" [ref=e113] [cursor=pointer]: next
+        - generic [ref=e115]:
+          - heading "Learn to Invest with Confidence" [level=2] [ref=e116]
+          - paragraph [ref=e117]:
+            - text: Why choose Wall Street Survivor to learn
+            - strong [ref=e118]: how to begin investing in stocks
+            - text: "?"
+        - generic [ref=e119]:
+          - generic [ref=e120]:
+            - heading "How to Invest in Stocks" [level=3] [ref=e121]:
+              - link "How to Invest in Stocks" [ref=e122] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/investing-ideas/
+            - paragraph [ref=e123]:
+              - strong [ref=e124]: Discover the best way to get started. Period.
+            - paragraph [ref=e125]:
+              - text: Wall Street Survivor mini-courses are the best way to learn and
+              - strong [ref=e126]: practice how to invest
+              - text: at the same time. You’ll get experience managing your money in a virtual brokerage account. We’ll teach you all the
+              - strong [ref=e127]: steps to become wealthy
+              - text: ", so you’ll know exactly what to do with your investments when you’re ready."
+            - paragraph [ref=e128]:
+              - text: Ever ask yourself, “how do I achieve
+              - strong [ref=e129]: financial freedom
+              - text: "?” We have dozens of courses designed to teach you everything you need to know."
+            - link "Get started and compete" [ref=e132] [cursor=pointer]:
+              - /url: https://app.wallstreetsurvivor.com/members/register
+          - figure [ref=e134]:
+            - figure [ref=e135]:
+              - img "Best Way to Learn" [ref=e136]
+        - generic [ref=e137]:
+          - figure [ref=e139]
+          - generic [ref=e140]:
+            - heading "Investing Simplified" [level=3] [ref=e141]
+            - paragraph [ref=e142]:
+              - strong [ref=e143]: No jargon. Just the straightforward answers you’ve been searching for
+              - text: "!"
+            - paragraph [ref=e144]:
+              - text: Our library of articles and short videos help you
+              - strong [ref=e145]: understand the stock market
+              - text: . We break down complex concepts you need to know into simple, one-bite lessons.
+            - paragraph [ref=e146]:
+              - text: Whether you’re wondering how to start
+              - strong [ref=e147]: dividend investing
+              - text: or how to
+              - strong [ref=e148]: day trade stocks
+              - text: ", our free educational resources will help you discover the best investment strategy for wherever you are today. No experience necessary."
+            - link "Explore free courses" [ref=e151] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/courses
+        - generic [ref=e152]:
+          - generic [ref=e153]:
+            - heading "Find Trading Ideas" [level=3] [ref=e154]
+            - paragraph [ref=e155]:
+              - strong [ref=e156]: Stop guessing. Start investing with expert-vetted stock picks.
+            - paragraph [ref=e157]: What to buy? With thousands of companies trading on public exchanges, how do you know which stocks to add to your portfolio?
+            - paragraph [ref=e158]:
+              - text: With the Ideas section, Wall Street Survivor sifts through all those companies to bring you the very best stocks to invest in. Also, don’t miss our
+              - link "Trade Ideas" [ref=e159] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/trade-ideas-review/
+              - text: review.
+            - link "Get investing ideas" [ref=e162] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/investing-ideas/
+          - figure [ref=e164]
+        - generic [ref=e165]:
+          - figure [ref=e167]
+          - generic [ref=e168]:
+            - heading "Practice Investing, Risk-Free" [level=3] [ref=e169]
+            - paragraph [ref=e170]:
+              - strong [ref=e171]: This is where you go from spectator to investor.
+            - paragraph [ref=e172]:
+              - text: Your days of sitting on the side lines are over. That’s why we combined free investing courses with a world-class
+              - strong [ref=e173]: stock market simulator
+              - text: ", so you can stop wondering"
+              - emphasis [ref=e174]: what-if
+              - text: and start investing.
+            - paragraph [ref=e175]:
+              - text: You get
+              - strong [ref=e176]: $100,000 in virtual cash
+              - text: to practice with real stocks, ETFs, crypto, and options. You’ll trade in real-time under real market conditions, the most realistic experience possible without the risk.
+            - link "Get started and compete" [ref=e179] [cursor=pointer]:
+              - /url: https://app.wallstreetsurvivor.com/members/register
+        - generic [ref=e180]:
+          - generic [ref=e181]:
+            - heading "Investing for Beginners" [level=3] [ref=e182]
+            - paragraph [ref=e183]:
+              - strong [ref=e184]: Join a community of over 500,000 members who are on the same journey as you.
+            - paragraph [ref=e185]: At Wall Street Survivor, you get to trade stocks and see how your portfolio performs against fellow traders of all skill levels.
+            - paragraph [ref=e186]:
+              - text: Not sure where to invest? Read our expert reviews of the
+              - link "best stock newsletters" [ref=e187] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+              - text: ", then use the simulator to test their ideas before spending real money. This is how beginners and experienced investors alike keep their skills sharp and ready for the real markets."
+            - paragraph
+            - link "Get started and compete" [ref=e190] [cursor=pointer]:
+              - /url: https://app.wallstreetsurvivor.com/members/register
+          - figure [ref=e192]
+        - separator [ref=e193]
+        - heading "Top Investing Newsletter" [level=2] [ref=e194]
+        - paragraph [ref=e195]:
+          - strong [ref=e196]: "& Stock Picking Service Reviews"
+        - paragraph [ref=e197]: We subscribe to the top 20 investing newsletters, so you don’t have to. We share our results in our reviews below!
+        - generic [ref=e199]:
+          - generic [ref=e200]:
+            - figure [ref=e201]
+            - heading "Best Stock Newsletters as of February 7, 2026" [level=4] [ref=e202]
+            - paragraph [ref=e203]: We subscribe to dozens of stock newsletters and track their performances. See which service has the best performance for 2025 & 3 years.
+            - paragraph [ref=e204]:
+              - link "See Best Newsletters" [ref=e205] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/?utm_source=WSS&utm_medium=homepage&utm_campaign=learn&news_position=2
+          - generic [ref=e206]:
+            - figure [ref=e207]
+            - 'heading "Motley Fool Stock Advisor: Best Stock Newsletter for under $100" [level=4] [ref=e208]'
+            - paragraph [ref=e209]: Find out why this service is consistently ranked the BEST STOCK NEWSLETTER and see the remarkable returns their picks have achieved vs. the market.
+            - paragraph [ref=e210]:
+              - link "Read Motley Fool Review" [ref=e211] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/?utm_source=WSS&utm_medium=homepage&utm_campaign=geteducated&news_position=1
+          - generic [ref=e212]:
+            - figure [ref=e213]
+            - 'heading "Alpha Picks Review: Learn Why this Top Newsletter Is Worth It!" [level=4] [ref=e214]': "Alpha Picks Review: Learn Why this Top Newsletter Is Worth It!"
+            - paragraph [ref=e215]: "Discover why Alpha Picks is ranked #1 for beating the market over the last 3 years. See how their powerful, data-driven Quant system delivers top stock picks."
+            - paragraph [ref=e216]:
+              - link "Read Seeking Alpha Review" [ref=e217] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/?utm_source=WSS&utm_medium=homepage&utm_campaign=learn&news_position=3
+        - separator [ref=e218]
+        - 'heading "Our Mission: To Demystify Investing for Everyone" [level=2] [ref=e220]'
+        - generic [ref=e221]:
+          - generic [ref=e222]:
+            - figure [ref=e223]:
+              - link [ref=e224] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=7qO225mpbLI
+            - paragraph [ref=e225]: Wall Street Survivor is on a mission to demystify investing and personal finance through interactive and comprehensive education.
+          - generic [ref=e226]:
+            - paragraph [ref=e227]: "Wall Street Survivor was built on a simple idea: anyone can become a confident investor with the right tools and education."
+            - paragraph [ref=e228]: We break down complex financial topics into simple, jargon-free lessons and pair them with the web’s best stock market simulator. Here, you can practice buying real stocks under real market conditions—all without the risk.
+            - paragraph [ref=e229]: From building a budget to building a portfolio, we are committed to providing the resources you need to build a secure and successful financial life.
+        - link "Practice trading for free" [ref=e233] [cursor=pointer]:
+          - /url: https://app.wallstreetsurvivor.com/members/register
+        - generic [ref=e234]:
+          - strong [ref=e235]:
+            - text: The markets are down but, like Warren Buffet says, ‘be greedy when others are fearful.’ Buy the best stocks at a reduced price. See our
+            - link "ranking of the Best Stock Newsletters!" [ref=e236] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/?utm_source=WSS&utm_medium=homepage&utm_campaign=wsshomefooter
+          - text: .
+        - paragraph
+        - heading "Rank of Top Stock Newsletters Last 3 Years, as of April 5, 2026" [level=3] [ref=e238]
+        - paragraph [ref=e239]:
+          - text: We are paid subscribers to dozens of stock and option newsletters. We actively track every recommendation from all of these services, calculate performance, and share our results of the top performing stock newsletters whose subscriptions fees are under $500. The main metric to look for is "Return vs S&P500" which is their return above that of the S&P500. So,
+          - strong [ref=e240]: based on April 5, 2026 prices
+          - text: ":"
+        - heading "Best Stock Newsletters Last 3 Years' Performance" [level=2] [ref=e241]:
+          - generic [ref=e242]: Best Stock Newsletters Last 3 Years' Performance
+        - figure [ref=e243]:
+          - table [ref=e244]:
+            - rowgroup [ref=e245]:
+              - row "Rank Stock Newsletter Picks Return Return vs S&P500 Picks w Profit Max % Return Current Promotion" [ref=e246]:
+                - columnheader "Rank" [ref=e247]
+                - columnheader "Stock Newsletter" [ref=e248]
+                - columnheader "Picks Return" [ref=e249]:
+                  - text: Picks
+                  - text: Return
+                - columnheader "Return vs S&P500" [ref=e250]:
+                  - text: Return
+                  - text: vs S&P500
+                - columnheader "Picks w Profit" [ref=e251]:
+                  - text: Picks
+                  - text: w Profit
+                - columnheader "Max % Return" [ref=e252]:
+                  - text: Max %
+                  - text: Return
+                - columnheader "Current Promotion" [ref=e253]
+            - rowgroup [ref=e254]:
+              - 'row "1. Seeking Alpha logo Alpha Picks +93% +75% 72% 1,571% April, 2026 Promotion: See all their picks & get $50 off" [ref=e255]':
+                - cell "1." [ref=e256]:
+                  - strong [ref=e257]: "1."
+                - cell "Seeking Alpha logo Alpha Picks" [ref=e258]:
+                  - img "Seeking Alpha logo" [ref=e259]
+                  - strong [ref=e260]: Alpha Picks
+                - cell "+93%" [ref=e261]:
+                  - strong [ref=e262]: +93%
+                - cell "+75%" [ref=e263]:
+                  - strong [ref=e264]: +75%
+                - cell "72%" [ref=e265]
+                - cell "1,571%" [ref=e266]
+                - 'cell "April, 2026 Promotion: See all their picks & get $50 off" [ref=e267]':
+                  - text: "April, 2026 Promotion:"
+                  - link "See all their picks & get $50 off" [ref=e268] [cursor=pointer]:
+                    - /url: /go/bsin-alphapicks/?sub2=learn-how-to-invest-in-stocks,src=,cmp=,med=,term=,loc=scwidget
+              - 'row "Summary: 2 picks per month based on Seeking Alpha''s Quant Rating; consistently beating the market every year since launch; tells you when to sell and they have sold almost half. See complete details in our Alpha Picks Review. Or get their Premium service to get their QUANT RATINGS on your stocks to better manage your current portfolio--read our Is Seeking Alpha Worth It? article to learn more about their Quant Ratings." [ref=e269]':
+                - 'cell "Summary: 2 picks per month based on Seeking Alpha''s Quant Rating; consistently beating the market every year since launch; tells you when to sell and they have sold almost half. See complete details in our Alpha Picks Review. Or get their Premium service to get their QUANT RATINGS on your stocks to better manage your current portfolio--read our Is Seeking Alpha Worth It? article to learn more about their Quant Ratings." [ref=e270]':
+                  - text: "Summary: 2 picks per month based on Seeking Alpha's Quant Rating; consistently beating the market every year since launch; tells you when to sell and they have sold almost half. See complete details in our"
+                  - link "Alpha Picks Review" [ref=e271] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/?utm_source=WSS&utm_medium=blogBSN&utm_campaign=inlinetable
+                  - text: .
+                  - text: Or get their Premium service to get their QUANT RATINGS on your stocks to better manage your current portfolio--
+                  - link "read our Is Seeking Alpha Worth It?" [ref=e272] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/is-seeking-alpha-worth-it/?utm_source=WSS&utm_medium=blogBSN&utm_campaign=BSN
+                  - text: article to learn more about their Quant Ratings.
+              - 'row "2. Zacks logo Zacks Value Investor +58% +46% 53% 1,134% April, 2026 Promotion: $1, then $495/yr" [ref=e273]':
+                - cell "2." [ref=e274]:
+                  - strong [ref=e275]: "2."
+                - cell "Zacks logo Zacks Value Investor" [ref=e276]:
+                  - img "Zacks logo" [ref=e277]
+                  - strong [ref=e278]: Zacks Value Investor
+                - cell "+58%" [ref=e279]:
+                  - strong [ref=e280]: +58%
+                - cell "+46%" [ref=e281]:
+                  - strong [ref=e282]: +46%
+                - cell "53%" [ref=e283]
+                - cell "1,134%" [ref=e284]
+                - 'cell "April, 2026 Promotion: $1, then $495/yr" [ref=e285]':
+                  - text: "April, 2026 Promotion:"
+                  - link "$1, then $495/yr" [ref=e286] [cursor=pointer]:
+                    - /url: /go/bin-zvi
+                    - text: $1, then $495/yr
+                    - img [ref=e287]
+              - 'row "Summary: 10 stock picks per year on January 1st based on Zacks'' Quant Rating; Retail Price is $495/yr and includes 6 different services including those below. Read our Zacks Review." [ref=e289]':
+                - 'cell "Summary: 10 stock picks per year on January 1st based on Zacks'' Quant Rating; Retail Price is $495/yr and includes 6 different services including those below. Read our Zacks Review." [ref=e290]':
+                  - text: "Summary: 10 stock picks per year on January 1st based on Zacks' Quant Rating; Retail Price is $495/yr and includes 6 different services including those below. Read our"
+                  - link "Zacks Review" [ref=e291] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/zacks-premium-review/?utm_source=WSS&utm_medium=blogBSN&utm_campaign=BSN
+                  - text: .
+              - 'row "3. Zacks logo Zacks Top 10 +31% +19% 74% 170% April, 2026 Promotion: $1, then $495/yr" [ref=e292]':
+                - cell "3." [ref=e293]:
+                  - strong [ref=e294]: "3."
+                - cell "Zacks logo Zacks Top 10" [ref=e295]:
+                  - img "Zacks logo" [ref=e296]
+                  - strong [ref=e297]: Zacks Top 10
+                - cell "+31%" [ref=e298]:
+                  - strong [ref=e299]: +31%
+                - cell "+19%" [ref=e300]:
+                  - strong [ref=e301]: +19%
+                - cell "74%" [ref=e302]
+                - cell "170%" [ref=e303]
+                - 'cell "April, 2026 Promotion: $1, then $495/yr" [ref=e304]':
+                  - text: "April, 2026 Promotion:"
+                  - link "$1, then $495/yr" [ref=e305] [cursor=pointer]:
+                    - /url: /go/bin-zvi
+                    - text: $1, then $495/yr
+                    - img [ref=e306]
+              - 'row "Summary: 10 stock picks per year on January 1st based on Zacks'' Quant Rating; Retail Price is $495/yr and includes 6 different services. Read our Zacks Review." [ref=e308]':
+                - 'cell "Summary: 10 stock picks per year on January 1st based on Zacks'' Quant Rating; Retail Price is $495/yr and includes 6 different services. Read our Zacks Review." [ref=e309]':
+                  - text: "Summary: 10 stock picks per year on January 1st based on Zacks' Quant Rating; Retail Price is $495/yr and includes 6 different services. Read our"
+                  - link "Zacks Review" [ref=e310] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/zacks-premium-review/?utm_source=WSS&utm_medium=blogBSN&utm_campaign=BSN
+                  - text: .
+              - 'row "4. TheStreet logo Action Alerts Plus +20% +6% 61% 208% Current Promotion: None" [ref=e311]':
+                - cell "4." [ref=e312]
+                - cell "TheStreet logo Action Alerts Plus" [ref=e313]:
+                  - img "TheStreet logo" [ref=e314]
+                  - strong [ref=e315]: Action Alerts Plus
+                - cell "+20%" [ref=e316]:
+                  - strong [ref=e317]: +20%
+                - cell "+6%" [ref=e318]:
+                  - strong [ref=e319]: +6%
+                - cell "61%" [ref=e320]
+                - cell "208%" [ref=e321]
+                - 'cell "Current Promotion: None" [ref=e322]':
+                  - text: "Current Promotion:"
+                  - link "None" [ref=e323] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/jim-cramer-review/
+                    - text: None
+                    - img [ref=e324]
+              - 'row "Summary: 100-150 trades per year, lots of buying and selling and short-term trades. Read our Jim Cramer Review." [ref=e326]':
+                - 'cell "Summary: 100-150 trades per year, lots of buying and selling and short-term trades. Read our Jim Cramer Review." [ref=e327]':
+                  - text: "Summary: 100-150 trades per year, lots of buying and selling and short-term trades. Read our"
+                  - link "Jim Cramer Review" [ref=e328] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/jim-cramer-review/?utm_source=WSS&utm_medium=blogBSN&utm_campaign=BSN
+                  - text: .
+              - 'row "5. TipRanks logo TipRanks SmartInvestor +13% +5% 57% 266% Current Promotion: Save $180" [ref=e329]':
+                - cell "5." [ref=e330]
+                - cell "TipRanks logo TipRanks SmartInvestor" [ref=e331]:
+                  - img "TipRanks logo" [ref=e332]
+                  - strong [ref=e333]: TipRanks SmartInvestor
+                - cell "+13%" [ref=e334]:
+                  - strong [ref=e335]: +13%
+                - cell "+5%" [ref=e336]:
+                  - strong [ref=e337]: +5%
+                - cell "57%" [ref=e338]
+                - cell "266%" [ref=e339]
+                - 'cell "Current Promotion: Save $180" [ref=e340]':
+                  - text: "Current Promotion:"
+                  - link "Save $180" [ref=e341] [cursor=pointer]:
+                    - /url: /go/bin-tipranks
+                    - text: Save $180
+                    - img [ref=e342]
+              - 'row "Summary: About 1 pick/week focusing on short term trades; Lifetime average return of 355% vs S&P500''s 149% since 2015. Retail Price is $379/yr. Read our TipRanks Review." [ref=e344]':
+                - 'cell "Summary: About 1 pick/week focusing on short term trades; Lifetime average return of 355% vs S&P500''s 149% since 2015. Retail Price is $379/yr. Read our TipRanks Review." [ref=e345]':
+                  - text: "Summary: About 1 pick/week focusing on short term trades; Lifetime average return of 355% vs S&P500's 149% since 2015. Retail Price is $379/yr. Read our"
+                  - link "TipRanks Review" [ref=e346] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/tipranks-review/?utm_source=WSS&utm_medium=blogBSN&utm_campaign=BSN
+                  - text: .
+              - 'row "6. Zacks logo Zacks Home Run Investor +7% +2% 43% 337% April, 2026 Promotion: $1, then $495/yr" [ref=e347]':
+                - cell "6." [ref=e348]
+                - cell "Zacks logo Zacks Home Run Investor" [ref=e349]:
+                  - img "Zacks logo" [ref=e350]
+                  - strong [ref=e351]: Zacks Home Run Investor
+                - cell "+7%" [ref=e352]:
+                  - strong [ref=e353]: +7%
+                - cell "+2%" [ref=e354]:
+                  - strong [ref=e355]: +2%
+                - cell "43%" [ref=e356]
+                - cell "337%" [ref=e357]
+                - 'cell "April, 2026 Promotion: $1, then $495/yr" [ref=e358]':
+                  - text: "April, 2026 Promotion:"
+                  - link "$1, then $495/yr" [ref=e359] [cursor=pointer]:
+                    - /url: /go/bin-zvi
+                    - text: $1, then $495/yr
+                    - img [ref=e360]
+              - 'row "Summary: 40-50 stock picks per year based on Zacks'' Quant Rating; Retail Price is $495/yr. Read our Zacks Review." [ref=e362]':
+                - 'cell "Summary: 40-50 stock picks per year based on Zacks'' Quant Rating; Retail Price is $495/yr. Read our Zacks Review." [ref=e363]':
+                  - text: "Summary: 40-50 stock picks per year based on Zacks' Quant Rating; Retail Price is $495/yr. Read our"
+                  - link "Zacks Review" [ref=e364] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/zacks-premium-review/?utm_source=WSS&utm_medium=blogBSN&utm_campaign=BSN
+                  - text: .
+              - 'row "7. Moby logo Moby.co +19% 0% 55% 797% April, 2026 Promotion: None" [ref=e365]':
+                - cell "7." [ref=e366]
+                - cell "Moby logo Moby.co" [ref=e367]:
+                  - img "Moby logo" [ref=e368]
+                  - strong [ref=e369]: Moby.co
+                - cell "+19%" [ref=e370]:
+                  - strong [ref=e371]: +19%
+                - cell "0%" [ref=e372]:
+                  - strong [ref=e373]: 0%
+                - cell "55%" [ref=e374]
+                - cell "797%" [ref=e375]
+                - 'cell "April, 2026 Promotion: None" [ref=e376]':
+                  - text: "April, 2026 Promotion:"
+                  - link "None" [ref=e377] [cursor=pointer]:
+                    - /url: /go/bin-moby
+                    - text: None
+                    - img [ref=e378]
+              - 'row "Summary: 60-150 stock picks per year, segmented by industry; consistently beating the market every year; retail price is $199/yr. Read our Moby Review." [ref=e380]':
+                - 'cell "Summary: 60-150 stock picks per year, segmented by industry; consistently beating the market every year; retail price is $199/yr. Read our Moby Review." [ref=e381]':
+                  - text: "Summary: 60-150 stock picks per year, segmented by industry; consistently beating the market every year; retail price is $199/yr. Read our"
+                  - link "Moby Review" [ref=e382] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/moby-review/?utm_source=WSS&utm_medium=blogBSN&utm_campaign=BSN
+                  - text: .
+              - 'row "8. IBD Leaderboard ETF 11% -1.8% n/a n/a April, 2026 Promotion: NONE" [ref=e383]':
+                - cell "8." [ref=e384]
+                - cell "IBD Leaderboard ETF" [ref=e385]:
+                  - strong [ref=e386]: IBD Leaderboard ETF
+                - cell "11%" [ref=e387]
+                - cell "-1.8%" [ref=e388]:
+                  - strong [ref=e389]: "-1.8%"
+                - cell "n/a" [ref=e390]
+                - cell "n/a" [ref=e391]
+                - 'cell "April, 2026 Promotion: NONE" [ref=e392]':
+                  - text: "April, 2026 Promotion:"
+                  - link "NONE" [ref=e393] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-ibd-leaderboard/
+                    - text: NONE
+                    - img [ref=e394]
+              - 'row "Summary: Maintains top 50 stocks to invest in based on IBD algorithm; Retail Price is $495/yr. Read our Investors Business Daily Review." [ref=e396]':
+                - 'cell "Summary: Maintains top 50 stocks to invest in based on IBD algorithm; Retail Price is $495/yr. Read our Investors Business Daily Review." [ref=e397]':
+                  - text: "Summary: Maintains top 50 stocks to invest in based on IBD algorithm; Retail Price is $495/yr. Read our"
+                  - link "Investors Business Daily Review" [ref=e398] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-ibd-leaderboard/?utm_source=WSS&utm_medium=blogBSN&utm_campaign=BSN
+                  - text: .
+              - 'row "9. Zacks logo Zacks Under $10 +0.4% -3% 33% 263% April, 2026 Promotion: $1, then $495/yr" [ref=e399]':
+                - cell "9." [ref=e400]
+                - cell "Zacks logo Zacks Under $10" [ref=e401]:
+                  - img "Zacks logo" [ref=e402]
+                  - strong [ref=e403]: Zacks Under $10
+                - cell "+0.4%" [ref=e404]
+                - cell "-3%" [ref=e405]:
+                  - strong [ref=e406]: "-3%"
+                - cell "33%" [ref=e407]
+                - cell "263%" [ref=e408]
+                - 'cell "April, 2026 Promotion: $1, then $495/yr" [ref=e409]':
+                  - text: "April, 2026 Promotion:"
+                  - link "$1, then $495/yr" [ref=e410] [cursor=pointer]:
+                    - /url: /go/bin-zvi
+                    - text: $1, then $495/yr
+                    - img [ref=e411]
+              - 'row "Summary: 40-50 stock picks per year based on Zacks'' Quant Rating; Retail Price is $495/yr. Read our Zacks Review." [ref=e413]':
+                - 'cell "Summary: 40-50 stock picks per year based on Zacks'' Quant Rating; Retail Price is $495/yr. Read our Zacks Review." [ref=e414]':
+                  - text: "Summary: 40-50 stock picks per year based on Zacks' Quant Rating; Retail Price is $495/yr. Read our"
+                  - link "Zacks Review" [ref=e415] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/zacks-premium-review/?utm_source=WSS&utm_medium=blogBSN&utm_campaign=BSN
+                  - text: .
+              - 'row "10. Dogs of the Dow Strategy +6% --7% 50% 34% Current Promotion: None" [ref=e416]':
+                - cell "10." [ref=e417]
+                - cell "Dogs of the Dow Strategy" [ref=e418]:
+                  - strong [ref=e419]: Dogs of the Dow Strategy
+                - cell "+6%" [ref=e420]
+                - cell "--7%" [ref=e421]:
+                  - strong [ref=e422]: "--7%"
+                - cell "50%" [ref=e423]
+                - cell "34%" [ref=e424]
+                - 'cell "Current Promotion: None" [ref=e425]':
+                  - text: "Current Promotion:"
+                  - link "None" [ref=e426] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/jim-cramer-review/
+                    - text: None
+                    - img [ref=e427]
+              - 'row "Summary: Buy the 10 highest yielding dividends stocks in the Dow Jones Industrial Average on January 1st and sell on Dec 31st each year." [ref=e429]':
+                - 'cell "Summary: Buy the 10 highest yielding dividends stocks in the Dow Jones Industrial Average on January 1st and sell on Dec 31st each year." [ref=e430]'
+              - 'row "11. Motley Fool logo Stock Advisor +7% -17% 59% 141% April, 2026 Promotion: Get $100 Off" [ref=e431]':
+                - cell "11." [ref=e432]
+                - cell "Motley Fool logo Stock Advisor" [ref=e433]:
+                  - img "Motley Fool logo" [ref=e434]
+                  - strong [ref=e435]: Stock Advisor
+                - cell "+7%" [ref=e436]
+                - cell "-17%" [ref=e437]:
+                  - strong [ref=e438]: "-17%"
+                - cell "59%" [ref=e439]
+                - cell "141%" [ref=e440]
+                - 'cell "April, 2026 Promotion: Get $100 Off" [ref=e441]':
+                  - text: "April, 2026 Promotion:"
+                  - link "Get $100 Off" [ref=e442] [cursor=pointer]:
+                    - /url: /go/fool-best60
+                    - text: Get $100 Off
+                    - img [ref=e443]
+              - 'row "Summary: 2 picks/month and 2 Best Buy Stocks lists focusing on high growth potential stocks over 5 years; Retail Price is $199/yr. Read our Motley Fool Review." [ref=e445]':
+                - 'cell "Summary: 2 picks/month and 2 Best Buy Stocks lists focusing on high growth potential stocks over 5 years; Retail Price is $199/yr. Read our Motley Fool Review." [ref=e446]':
+                  - text: "Summary: 2 picks/month and 2 Best Buy Stocks lists focusing on high growth potential stocks over 5 years; Retail Price is $199/yr. Read our"
+                  - link "Motley Fool Review" [ref=e447] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/motley-fool-review/?utm_source=WSS&utm_medium=blogBSN&utm_campaign=BSN
+                  - text: .
+              - 'row "12. Motley Fool logo Rule Breakers +11% -18% 51% 208% Current Promotion: Save $200" [ref=e448]':
+                - cell "12." [ref=e449]
+                - cell "Motley Fool logo Rule Breakers" [ref=e450]:
+                  - img "Motley Fool logo" [ref=e451]
+                  - strong [ref=e452]: Rule Breakers
+                - cell "+11%" [ref=e453]
+                - cell "-18%" [ref=e454]:
+                  - strong [ref=e455]: "-18%"
+                - cell "51%" [ref=e456]
+                - cell "208%" [ref=e457]
+                - 'cell "Current Promotion: Save $200" [ref=e458]':
+                  - text: "Current Promotion:"
+                  - link "Save $200" [ref=e459] [cursor=pointer]:
+                    - /url: /go/bestsn2023-ruleb
+                    - text: Save $200
+                    - img [ref=e460]
+              - 'row "Summary: Rule Breakers is included with the Fool''s Epic Service. Get 5 picks/month focusing on disruptive technology and business models; Lifetime average return of 355% vs S&P500''s 149% since 2005; Now part of Motley Fool Epic. Read our Motley Fool Epic Review." [ref=e462]':
+                - 'cell "Summary: Rule Breakers is included with the Fool''s Epic Service. Get 5 picks/month focusing on disruptive technology and business models; Lifetime average return of 355% vs S&P500''s 149% since 2005; Now part of Motley Fool Epic. Read our Motley Fool Epic Review." [ref=e463]':
+                  - text: "Summary: Rule Breakers is included with the Fool's Epic Service. Get 5 picks/month focusing on disruptive technology and business models; Lifetime average return of 355% vs S&P500's 149% since 2005; Now part of Motley Fool Epic. Read our"
+                  - link "Motley Fool Epic Review" [ref=e464] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/motley-fool-epic-review/?utm_source=WSS&utm_medium=blogBSN&utm_campaign=BSN
+                  - text: .
+            - rowgroup [ref=e465]:
+              - 'row "Top Ranking Stock Newsletters based on their last 3 years of stock picks covering 2026, 2025, 2024, and 2023 performance as compared to S&P500. S&P500''s return is based on average return of S&P500 from date each stock pick is released. NOTE: To get these results you must buy equal dollar amounts of each pick on the date the stock pick is released. Investor Business Daily Top 50 based on performance of FFTY ETF. Performance as of April 5, 2026." [ref=e466]':
+                - 'cell "Top Ranking Stock Newsletters based on their last 3 years of stock picks covering 2026, 2025, 2024, and 2023 performance as compared to S&P500. S&P500''s return is based on average return of S&P500 from date each stock pick is released. NOTE: To get these results you must buy equal dollar amounts of each pick on the date the stock pick is released. Investor Business Daily Top 50 based on performance of FFTY ETF. Performance as of April 5, 2026." [ref=e467]'
+        - paragraph
+  - generic [ref=e468]:
+    - generic [ref=e471]:
+      - complementary [ref=e473]:
+        - figure [ref=e474]:
+          - link "WallStreetSurvivor logo" [ref=e475] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e476]
+      - generic [ref=e477]:
+        - complementary [ref=e478]:
+          - heading "Our Platform" [level=3] [ref=e479]
+        - complementary [ref=e480]:
+          - list [ref=e481]:
+            - listitem [ref=e482]:
+              - link "Stock Market Simulator" [ref=e483] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e484]:
+              - link "Investing Basics for Beginners" [ref=e485] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/investing-basics-for-beginners/
+            - listitem [ref=e486]:
+              - link "Best Stocks to Buy Now" [ref=e487] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e488]:
+              - link "How to Invest in the Stock Market Videos" [ref=e489] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/videos/
+            - listitem [ref=e490]:
+              - link "Free Online Investing Course" [ref=e491] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e492]:
+              - link "Financial Literacy Game for Students" [ref=e493] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e494]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e495] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e496]:
+              - link "Crypto Paper Trading" [ref=e497] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e498]:
+              - link "Contact Us" [ref=e499] [cursor=pointer]:
+                - /url: /contact-us
+            - listitem [ref=e500]:
+              - link "About WallStreetSurvivor" [ref=e501] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+            - listitem [ref=e502]:
+              - link "Crypto Trading Simulator" [ref=e503] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-trading-simulator/
+            - listitem [ref=e504]:
+              - link "Wall Street Survivor YouTube Videos" [ref=e505] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+      - generic [ref=e506]:
+        - complementary [ref=e507]:
+          - heading "Review Center" [level=3] [ref=e508]
+        - complementary [ref=e509]:
+          - list [ref=e510]:
+            - listitem [ref=e511]:
+              - link "Motley Fool Review" [ref=e512] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e513]:
+              - link "Seeking Alpha Review" [ref=e514] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e515]:
+              - link "Alpha Picks Review" [ref=e516] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e517]:
+              - link "Moby Stocks Review" [ref=e518] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e519]:
+              - link "Best Seeking Alpha Discount" [ref=e520] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-seeking-alpha-discounts-promo-codes/
+            - listitem [ref=e521]:
+              - link "Is Robinhood Safe to Use?" [ref=e522] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e523]:
+              - link "Rule Breakers Review" [ref=e524] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e525]:
+              - link "Best Investment Newsletters" [ref=e526] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e527]:
+              - link "Best Investing Apps" [ref=e528] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e529]:
+              - link "Best Motley Fool Discount Code" [ref=e530] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e531]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e532] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e533]:
+              - link "Best Tipranks Discount Code" [ref=e534] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e535]:
+              - link "Is Coinbase Safe?" [ref=e536] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e537]:
+              - link "Free Crypto with Coinbase" [ref=e538] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e539]:
+              - link "Best Stock Picking Service" [ref=e540] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+            - listitem [ref=e541]:
+              - link "Rocket Money Review" [ref=e542] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/rocket-money-review/
+            - listitem [ref=e543]:
+              - link "Moomoo Review" [ref=e544] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moomoo-review/
+            - listitem [ref=e545]:
+              - link "WeBull Review" [ref=e546] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/webull-review/
+      - generic [ref=e547]:
+        - complementary [ref=e548]:
+          - heading "Corporate Services" [level=3] [ref=e549]
+        - complementary [ref=e550]:
+          - list [ref=e551]:
+            - listitem [ref=e552]:
+              - link "White Label Stock Market Games" [ref=e553] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e554]:
+              - link "White Label Virtual Crypto Trading" [ref=e555] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e556]:
+              - link "Employee Financial Wellness" [ref=e557] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e558]:
+              - link "Sponsor a College or High School" [ref=e559] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e560]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e561] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e562]:
+          - heading "Our Company" [level=3] [ref=e563]
+        - complementary [ref=e564]:
+          - list [ref=e565]:
+            - listitem [ref=e566]:
+              - link "Contact StockTrak" [ref=e567] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/contact-us/
+            - listitem [ref=e568]:
+              - link "About StockTrak" [ref=e569] [cursor=pointer]:
+                - /url: https://www.stocktrak.com/about-us/
+            - listitem [ref=e570]:
+              - link "Motley Fool Review" [ref=e571] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e572]:
+              - link "Privacy Policy" [ref=e573] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e574]:
+              - link "Terms and Conditions" [ref=e575] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e576]:
+              - link "Advertise with Us" [ref=e577] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e578]:
+        - complementary [ref=e579]:
+          - heading "Family of Sites" [level=3] [ref=e580]:
+            - strong [ref=e581]: Family of Sites
+        - complementary [ref=e582]:
+          - figure [ref=e583]:
+            - link "StockTrak logo" [ref=e584] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e585]
+        - complementary [ref=e586]:
+          - figure [ref=e587]:
+            - link "PersonalFinanceLab logo" [ref=e588] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e589]
+        - complementary [ref=e590]:
+          - figure [ref=e591]:
+            - link "WallStreetSurvivor logo" [ref=e592] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Stock Market Simulator" [ref=e593]
+        - complementary [ref=e594]:
+          - figure [ref=e595]:
+            - link "HowTheMarketWorks logo" [ref=e596] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free Stock Market Game for Students" [ref=e597]
+        - complementary [ref=e598]:
+          - link "Global Virtual Stock Game" [ref=e599] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e600] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - contentinfo "Site" [ref=e601]:
+      - generic [ref=e602]:
+        - generic [ref=e603]:
+          - complementary [ref=e604]:
+            - heading "Connect With Us" [level=2] [ref=e605]
+          - complementary:
+            - figure [ref=e606]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e607] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e608]
+          - complementary:
+            - figure [ref=e609]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e610] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e611]
+          - complementary:
+            - figure [ref=e612]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e613] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e614]
+        - generic [ref=e615]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2026 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.
+  - iframe [ref=e618]:
+    - generic [ref=f2e6]:
+      - text: protection par
+      - strong [ref=f2e7]: reCAPTCHA

@@ -8,6 +8,13 @@ import base64
 import re
 from typing import Dict, List, Optional, Any
 from urllib.parse import urlparse
+from pathlib import Path
+from dotenv import load_dotenv
+
+# Load environment variables
+env_path = Path(__file__).parent.parent / ".env"
+load_dotenv(dotenv_path=env_path)
+
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 
@@ -242,7 +249,12 @@ class PersonaAgent:
             return self.llm
     
     def _build_user_message(self, page_content: str, page_url: str, step: int) -> str:
-       
+
+        # Truncate page content to avoid exceeding API limits (max 8000 chars)
+        max_content_length = 8000
+        if len(page_content) > max_content_length:
+            page_content = page_content[:max_content_length] + "\n...[Content truncated]"
+
         message = f"""
 ═══════════════════════════════════════════════════════════════
 STEP {step} - Current State
@@ -355,6 +367,10 @@ Remember to respond in the exact format: Thought / Action / Target
                     action_name = tool_name
                     break
 
+        # Auto-correct browser_select_option: convert "value" key to "values" array
+        if action_name == "browser_select_option" and "value" in action_input:
+            action_input["values"] = [action_input.pop("value")]
+
         return action_name, action_input
     
     def decide(self, page_content: str, page_url: str, step: int) -> Dict[str, str]:
@@ -464,13 +480,12 @@ Remember to respond in the exact format: Thought / Action / Target
             "When done, summarise what you did and the final outcome."
         )
 
-    @staticmethod
-    def _compress_snapshot(raw: str, max_chars: int = 8000, max_products: int = None) -> str:
-        """Extract structured product data from a Playwright MCP snapshot.
+    def _compress_snapshot(self, raw: str, site_type: str = "other", max_chars: int = 8000, max_products: int = None) -> str:
+        """Extract structured data from a Playwright MCP snapshot based on website type.
 
-        Parses the accessibility-tree YAML to find product names, prices,
-        and 'Add to cart' refs.  Returns a compact product table that the
-        LLM can act on directly.  Deduplicates overlay entries.
+        For e-commerce: Finds product names, prices, and 'Add to cart' refs.
+        For SaaS/marketing: Extracts CTA buttons, navigation links, and form field refs.
+        For banking: Extracts form inputs, banking-related links, and action buttons.
         """
         import re
 
@@ -488,6 +503,26 @@ Remember to respond in the exact format: Thought / Action / Target
             parts.append(f"URL: {url_m.group(1).strip()}")
         if title_m:
             parts.append(f"Title: {title_m.group(1).strip()}")
+
+        # ── Route based on site type ───────────────────────────
+        if site_type.lower() in ["e-commerce", "ecommerce", "shop"]:
+            parts.extend(self._extract_ecommerce_data(raw, max_products))
+        elif site_type.lower() in ["saas", "marketing", "software"]:
+            parts.extend(self._extract_saas_marketing_data(raw))
+        elif site_type.lower() in ["banking", "finance", "financial"]:
+            parts.extend(self._extract_banking_data(raw))
+        else:
+            # Fallback: generic content extraction
+            parts.extend(self._extract_generic_data(raw))
+
+        result = "\n\n".join(parts)
+        return result[:max_chars] + ("\n... (truncated)" if len(result) > max_chars else "")
+
+    def _extract_ecommerce_data(self, raw: str, max_products: int = None) -> list:
+        """Extract products: names, prices, and 'Add to cart' refs."""
+        import re
+
+        parts = []
 
         # ── Normalize accessibility tree format variations ─────
         # After scrolling, Playwright emits a different heading format:
@@ -633,8 +668,6 @@ Remember to respond in the exact format: Thought / Action / Target
         if extras:
             parts.append("OTHER:\n" + "\n".join(extras))
 
-        result = "\n\n".join(parts)
-
         # ── Fallback: if no products extracted, use line filter ─
         if not unique:
             keep_re = re.compile(
@@ -655,9 +688,138 @@ Remember to respond in the exact format: Thought / Action / Target
                     continue
                 if keep_re.search(s):
                     lines.append(s)
-            result = "\n".join(lines) if lines else raw
+            if lines:
+                parts.append("CONTENT:\n" + "\n".join(lines))
 
-        return result[:max_chars] + ("\n... (truncated)" if len(result) > max_chars else "")
+        return parts
+
+    def _extract_saas_marketing_data(self, raw: str) -> list:
+        """Extract CTA buttons, navigation links, and form field refs for SaaS/marketing."""
+        import re
+        parts = []
+
+        # ── FIRST: Detect cookie banner ────────────────────────
+        # Look for cookie consent buttons that should be dismissed first
+        cookie_patterns = r'accept|allow|agree|deny|reject'
+        cookie_buttons = re.findall(
+            r'button\s+"([^"]*(?:' + cookie_patterns + r')[^"]*)"\s*\[ref=(e\d+)\]',
+            raw, re.IGNORECASE)
+        
+        if cookie_buttons:
+            cookie_list = [f"- {label} ref={ref}" for label, ref in cookie_buttons[:3]]
+            parts.append("COOKIE BANNER (dismiss first):\n" + "\n".join(cookie_list))
+
+        # ── Extract CTA buttons ────────────────────────────────
+        # Common CTA labels: Sign Up, Get Started, Try Free, Request Demo, etc.
+        cta_patterns = r'sign up|get started|try free|request demo|start free trial|learn more|book demo|contact us|schedule call|pricing'
+        cta_buttons = re.findall(
+            r'button\s+"([^"]*(?:' + cta_patterns + r')[^"]*)"\s*\[ref=(e\d+)\]',
+            raw, re.IGNORECASE)
+        
+        if cta_buttons:
+            cta_list = [f"- button \"{label}\" ref={ref}" for label, ref in cta_buttons[:5]]
+            parts.append("CTA BUTTONS:\n" + "\n".join(cta_list))
+
+        # ── Extract navigation links ───────────────────────────
+        nav_patterns = r'home|about|features|pricing|blog|docs|help|contact|careers|company'
+        nav_links = re.findall(
+            r'link\s+"([^"]*(?:' + nav_patterns + r')[^"]*)"\s*\[ref=(e\d+)\]',
+            raw, re.IGNORECASE)
+        
+        if nav_links:
+            nav_list = [f"- link \"{label}\" ref={ref}" for label, ref in nav_links[:8]]
+            parts.append("NAVIGATION:\n" + "\n".join(nav_list))
+
+        # ── Extract form fields and submit buttons ──────────────
+        textboxes = re.findall(r'textbox\s+"([^"]*)".*?\[ref=(e\d+)\]', raw)
+        selects = re.findall(r'combobox\s+"([^"]*)".*?\[ref=(e\d+)\]', raw)
+        # Find submit buttons: Start, Submit, Sign, Get, Try, Send
+        submit_patterns = r'submit|start|sign|get|try|send'
+        submit_buttons = re.findall(
+            r'button\s+"([^"]*(?:' + submit_patterns + r')[^"]*)"\s*\[ref=(e\d+)\]',
+            raw, re.IGNORECASE)
+        
+        form_fields = []
+        for label, ref in textboxes[:3]:
+            form_fields.append(f"- textbox \"{label}\" ref={ref}")
+        for label, ref in selects[:2]:
+            form_fields.append(f"- select \"{label}\" ref={ref}")
+        for label, ref in submit_buttons[:2]:
+            form_fields.append(f"- submit \"{label}\" ref={ref}")
+        
+        if form_fields:
+            parts.append("FORM FIELDS:\n" + "\n".join(form_fields))
+
+        return parts
+
+    def _extract_banking_data(self, raw: str) -> list:
+        """Extract form inputs, banking links, and action buttons for banking sites."""
+        import re
+        parts = []
+
+        # ── Extract form inputs (username, password, account fields) ──
+        textboxes = re.findall(r'textbox\s+"([^"]*)".*?\[ref=(e\d+)\]', raw)
+        if textboxes:
+            inputs = [f"- input \"{label}\" ref={ref}" for label, ref in textboxes[:5]]
+            parts.append("FORM INPUTS:\n" + "\n".join(inputs))
+
+        # ── Extract banking-related links ──────────────────────
+        banking_patterns = r'transfer|accounts|account activity|statements|bill pay|payments|loans|cards|deposits|withdrawals|login|logout'
+        banking_links = re.findall(
+            r'link\s+"([^"]*)".*?\[ref=(e\d+)\]',
+            raw)
+        
+        filtered_links = []
+        for label, ref in banking_links:
+            if re.search(banking_patterns, label, re.IGNORECASE):
+                filtered_links.append(f"- link \"{label}\" ref={ref}")
+        
+        if filtered_links:
+            parts.append("BANKING ACTIONS:\n" + "\n".join(filtered_links[:8]))
+
+        # ── Extract action buttons ─────────────────────────────
+        buttons = re.findall(r'button\s+"([^"]*)".*?\[ref=(e\d+)\]', raw)
+        action_buttons = [f"- button \"{label}\" ref={ref}" for label, ref in buttons[:4]]
+        
+        if action_buttons:
+            parts.append("ACTIONS:\n" + "\n".join(action_buttons))
+
+        return parts
+
+    def _extract_generic_data(self, raw: str) -> list:
+        """Generic fallback extraction for unknown site types."""
+        import re
+        parts = []
+
+        # ── FIRST: Detect cookie banner ────────────────────────
+        # Look for cookie consent buttons that should be dismissed first
+        cookie_patterns = r'accept|allow|agree|deny|reject'
+        cookie_buttons = re.findall(
+            r'button\s+"([^"]*(?:' + cookie_patterns + r')[^"]*)"\s*\[ref=(e\d+)\]',
+            raw, re.IGNORECASE)
+        
+        if cookie_buttons:
+            cookie_list = [f"- {label} ref={ref}" for label, ref in cookie_buttons[:3]]
+            parts.append("COOKIE BANNER (dismiss first):\n" + "\n".join(cookie_list))
+
+        # Extract buttons and links
+        buttons = re.findall(r'button\s+"([^"]*)".*?\[ref=(e\d+)\]', raw)
+        links = re.findall(r'link\s+"([^"]+)"\s*\[ref=(e\d+)\]', raw)
+        textboxes = re.findall(r'textbox\s+"([^"]*)".*?\[ref=(e\d+)\]', raw)
+
+        if buttons:
+            btn_list = [f"- {label} ref={ref}" for label, ref in buttons[:5]]
+            parts.append("BUTTONS:\n" + "\n".join(btn_list))
+
+        if links:
+            link_list = [f"- {label} ref={ref}" for label, ref in links[:8]]
+            parts.append("LINKS:\n" + "\n".join(link_list))
+
+        if textboxes:
+            text_list = [f"- {label} ref={ref}" for label, ref in textboxes[:3]]
+            parts.append("INPUTS:\n" + "\n".join(text_list))
+
+        return parts
 
     # BROWSER USE INTEGRATION — START
     async def _launch_sandbox(self):
@@ -724,6 +886,9 @@ Remember to respond in the exact format: Thought / Action / Target
         from mcp import ClientSession, StdioServerParameters
         from mcp.client.stdio import stdio_client
         from langchain_mcp_adapters.tools import load_mcp_tools
+
+        # Extract site type for context-aware snapshot compression
+        site_type = self.user.get("website_type", "other")
 
         # BROWSER USE INTEGRATION — START
         bu_browser, cdp_url = await self._launch_sandbox()
@@ -806,16 +971,26 @@ Remember to respond in the exact format: Thought / Action / Target
             # PARABANK — START
             is_parabank = "parabank" in (start_url or "").lower()
             scenario_context = self.scenario.get("context", {}) if isinstance(self.scenario, dict) else {}
+            
+            # Get credentials from persona JSON first, then scenario, then env, then default
+            persona_credentials = self.user.get("credentials", {})
             parabank_username = str(
-                scenario_context.get("username")
+                persona_credentials.get("username")
+                or scenario_context.get("username")
                 or os.getenv("PARABANK_USERNAME")
                 or "john"
             )
             parabank_password = str(
-                scenario_context.get("password")
+                persona_credentials.get("password")
+                or scenario_context.get("password")
                 or os.getenv("PARABANK_PASSWORD")
                 or "demo"
             )
+            
+            # Get features to test from persona
+            features_to_test = self.user.get("features_to_test", ["transfer_funds"])
+            primary_feature = features_to_test[0] if features_to_test else "transfer_funds"
+            
             parsed_start_url = urlparse(start_url or "")
             parabank_base_url = (
                 f"{parsed_start_url.scheme}://{parsed_start_url.netloc}"
@@ -823,6 +998,9 @@ Remember to respond in the exact format: Thought / Action / Target
                 else "https://parabank.parasoft.com"
             )
             parabank_transfer_url = f"{parabank_base_url}/parabank/transfer.htm"
+            parabank_billpay_url = f"{parabank_base_url}/parabank/billpay.htm"
+            parabank_findtrans_url = f"{parabank_base_url}/parabank/findtrans.htm"
+            parabank_activity_url = f"{parabank_base_url}/parabank/activity.htm"
             # PARABANK — END
 
             # ── Persona-specific strategy ──────────────────────
@@ -855,49 +1033,136 @@ Remember to respond in the exact format: Thought / Action / Target
                     )
                 # BOOKING.COM — START
                 elif is_booking:
+                    # Get persona-specific fields from JSON
+                    persona_nom = self.user.get("nom", "Voyageur")
+                    persona_objectif = self.user.get("objectif", "Réserver un hébergement")
+                    persona_actions = self.user.get("actions_site", [])
+                    persona_comportements = self.user.get("comportements_specifiques", [])
+                    persona_description = self.user.get("description", "")
+                    persona_motivation = self.user.get("motivation_principale", "")
+                    persona_douleurs = self.user.get("douleurs", [])
+                    
+                    # Format actions and behaviors for prompt
+                    actions_text = "\n".join([f"   • {a}" for a in persona_actions]) if persona_actions else "   • Navigation rapide"
+                    comportements_text = "\n".join([f"   • {c}" for c in persona_comportements]) if persona_comportements else ""
+                    douleurs_text = ", ".join(persona_douleurs) if persona_douleurs else "Lenteur"
+                    
                     strategy = (
-                        "PERSONA PROFILE (acheteur_impatient on booking.com):\n"
-                        f"  device={device}, vitesse={vitesse}, patience={patience_sec}s\n\n"
-                        "STRATEGY — follow these steps IN ORDER:\n"
+                        f"PERSONA PROFILE ({persona_id} - {persona_nom}):\n"
+                        f"  Objectif: {persona_objectif}\n"
+                        f"  Device: {device} | Vitesse: {vitesse} | Patience: {patience_sec}s\n"
+                        f"  Sensibilité prix: {sensibilite} | Tolérance erreurs: {tolerance}\n"
+                        f"  Description: {persona_description}\n"
+                        f"  Motivation: {persona_motivation}\n"
+                        f"  Douleurs à éviter: {douleurs_text}\n\n"
+                        f"COMPORTEMENTS ATTENDUS:\n{actions_text}\n"
+                        f"{comportements_text}\n\n"
+                        "STRATEGY — Navigation rapide sur Booking.com:\n"
                         "Step 1: browser_navigate to https://www.booking.com\n"
-                        "Step 2: browser_snapshot to see the search form\n"
-                        "Step 3: Find the destination textbox ref in the snapshot\n"
-                        "        It is labeled 'Destination' or 'Ou allez-vous ?'\n"
-                        "        Use browser_type to type 'Paris'\n"
-                        "Step 4: browser_snapshot to see the autocomplete dropdown\n"
-                        "Step 5: Click the first 'Paris' suggestion in the dropdown\n"
-                        "Step 6: Click the Search button (ref from snapshot)\n"
-                        "Step 7: browser_snapshot to see hotel results with prices\n"
-                        "Step 8: Click on the FIRST visible hotel — no comparison\n"
-                        "Step 9: DONE — report hotel name and price\n"
-                        "RULES:\n"
-                        "- NEVER scroll before using the search form\n"
-                        "- ALWAYS use browser_snapshot before browser_click\n"
-                        "- Use fresh refs from the latest snapshot only\n"
-                        "- If overlay blocks click: browser_press_key Escape first\n"
-                        "- If rate limited: wait and retry\n"
-                        "- Maximum 10 steps — act fast\n"
+                        "Step 2: browser_snapshot — dismiss any popup if present\n"
+                        "Step 3: Use browser_evaluate to type destination (field is hidden):\n"
+                        "        {\"function\": \"() => { const input = document.querySelector('input[placeholder*=\\\"allez-vous\\\"]') || document.querySelector('input[name=\\\"ss\\\"]'); if(!input) return 'not found'; input.click(); input.focus(); input.value='Paris'; input.dispatchEvent(new Event('input', {bubbles: true})); return 'Paris typed';}\"}\n"
+                        "Step 4: browser_wait_for time 2000 for suggestions\n"
+                        "Step 5: browser_snapshot to see Paris suggestions\n"
+                        "Step 6: Click first Paris suggestion\n"
+                        "Step 7: Click Search button\n"
+                        "Step 8: browser_snapshot to see hotel results\n"
+                        f"Step 9: {'Click FIRST visible hotel immediately — no comparison' if vitesse == 'rapide' else 'Compare prices, find cheapest hotel'}\n"
+                        "Step 10: DONE — report hotel name and price\n\n"
+                        "RULES (based on persona):\n"
+                        f"- You are {persona_nom}, behave according to your profile\n"
+                        f"- {'Act FAST, no hesitation, click first options' if vitesse == 'rapide' else 'Take time to compare, verify details'}\n"
+                        f"- {'Skip filters and comparisons' if sensibilite == 'faible' else 'Use filters to find best price'}\n"
+                        f"- If page takes more than {patience_sec}s, {'abandon and move on' if tolerance == 'haute' else 'wait patiently'}\n"
+                        "- Destination field is HIDDEN — MUST use browser_evaluate\n"
                     )
                 # BOOKING.COM — END
-                # PARABANK — START
-                elif is_parabank:
+                # PARABANK — START (IMPULSIF - BILL PAY)
+                elif is_parabank and primary_feature == "bill_pay":
+                    # Get persona's full name for registration fallback
+                    persona_fullname = self.user.get("nom", "Test User")
+                    name_parts = persona_fullname.strip().split()
+                    persona_firstname = name_parts[0] if name_parts else "Test"
+                    persona_lastname = name_parts[-1] if len(name_parts) > 1 else "User"
+                    parabank_register_url = f"{parabank_base_url}/parabank/register.htm"
+                    
                     strategy = (
-                        "PERSONA PROFILE (acheteur_impatient on parabank):\n"
-                        f"  device={device}, vitesse={vitesse}, patience={patience_sec}s\n\n"
-                        "STRATEGY — follow IN ORDER, max 6 steps:\n"
+                        f"PERSONA PROFILE ({persona_id} - IMPULSIF on parabank):\n"
+                        f"  device={device}, vitesse={vitesse}, patience={patience_sec}s\n"
+                        f"  Login: {parabank_username}\n"
+                        f"  Full Name: {persona_fullname}\n"
+                        f"  Feature to test: BILL PAY (pay a bill quickly)\n\n"
+                        "STRATEGY — follow IN ORDER, FAST:\n"
                         f"Step 1: browser_navigate to {start_url}\n"
                         "Step 2: browser_snapshot to see the login form\n"
-                        f"Step 3: browser_type username field (ref from snapshot) with '{parabank_username}'\n"
-                        f"Step 4: browser_type password field (ref from snapshot) with '{parabank_password}'\n"
+                        f"Step 3: browser_type username field with '{parabank_username}'\n"
+                        f"Step 4: browser_type password field with '{parabank_password}'\n"
                         "Step 5: browser_click the Login button\n"
-                        "Step 6: browser_snapshot to confirm login → DONE immediately\n"
+                        "Step 6: browser_snapshot to check login result\n"
+                        "Step 6b: IF LOGIN FAILED (error message like 'Could not find customer' or 'incorrect' appears):\n"
+                        f"    - browser_navigate to {parabank_register_url}\n"
+                        "    - browser_snapshot to see registration form\n"
+                        f"    - Fill form QUICKLY: First Name='{persona_firstname}', Last Name='{persona_lastname}', "
+                        f"Address='123 Fast St', City='QuickCity', State='QC', Zip='54321', Phone='555-FAST', SSN='987-65-4321', "
+                        f"Username='{parabank_username}', Password='{parabank_password}', Confirm='{parabank_password}'\n"
+                        "    - Click Register button, then continue\n"
+                        f"Step 7: browser_navigate to {parabank_billpay_url} — go directly to Bill Pay\n"
+                        "Step 8: browser_snapshot to see the Bill Pay form\n"
+                        "Step 9-17: Fill payee information quickly:\n"
+                        "        'Payee Name' = 'Electric Company', 'Address' = '123 Power St',\n"
+                        "        'City' = 'TestCity', 'State' = 'TS', 'Zip Code' = '12345',\n"
+                        "        'Phone' = '555-1234', 'Account' = '12345', 'Verify Account' = '12345', 'Amount' = '50'\n"
+                        "Step 18: browser_click 'Send Payment' button\n"
+                        "Step 19: browser_snapshot to see confirmation\n"
+                        "Step 20: DONE — bill payment completed\n"
                         "RULES:\n"
-                        "- Do NOT browse accounts or check balances — just login fast\n"
-                        "- Do NOT transfer money — just confirm you are logged in\n"
-                        "- DONE as soon as accounts page is visible\n"
-                        "- Maximum 6 steps\n"
+                        "- You are IMPATIENT — fill forms quickly without double-checking\n"
+                        "- IF LOGIN FAILS: Register quickly with persona name, then continue to Bill Pay\n"
+                        "- Use simple test values for payee info\n"
+                        "- DONE as soon as payment confirmation appears\n"
                     )
-                # PARABANK — END
+                # PARABANK — END (IMPULSIF BILL PAY)
+                # PARABANK — START (IMPULSIF - TRANSFER - fallback)
+                elif is_parabank and vitesse == "rapide":
+                    # Get persona's full name for registration fallback
+                    persona_fullname = self.user.get("nom", "Test User")
+                    name_parts = persona_fullname.strip().split()
+                    persona_firstname = name_parts[0] if name_parts else "Test"
+                    persona_lastname = name_parts[-1] if len(name_parts) > 1 else "User"
+                    parabank_register_url = f"{parabank_base_url}/parabank/register.htm"
+                    
+                    strategy = (
+                        f"PERSONA PROFILE ({persona_id} - IMPULSIF on parabank):\n"
+                        f"  device={device}, vitesse={vitesse}, patience={patience_sec}s\n"
+                        f"  Login: {parabank_username}\n"
+                        f"  Full Name: {persona_fullname}\n"
+                        f"  Feature to test: QUICK TRANSFER\n\n"
+                        "STRATEGY — follow IN ORDER, FAST (max 15 steps):\n"
+                        f"Step 1: browser_navigate to {start_url}\n"
+                        "Step 2: browser_snapshot to see the login form\n"
+                        f"Step 3: browser_type username field with '{parabank_username}'\n"
+                        f"Step 4: browser_type password field with '{parabank_password}'\n"
+                        "Step 5: browser_click the Login button\n"
+                        "Step 6: browser_snapshot to check login result\n"
+                        "Step 6b: IF LOGIN FAILED:\n"
+                        f"    - browser_navigate to {parabank_register_url}\n"
+                        f"    - Fill registration FAST with: First='{persona_firstname}', Last='{persona_lastname}', "
+                        f"Username='{parabank_username}', Password='{parabank_password}'\n"
+                        "    - Click Register, continue\n"
+                        f"Step 7: browser_navigate to {parabank_transfer_url}\n"
+                        "Step 8: browser_type amount field with '5'\n"
+                        "Step 9: browser_evaluate to select first FROM account:\n"
+                        "        {\"function\": \"() => { const sel = document.getElementById('fromAccountId'); if(sel) { sel.selectedIndex = 0; return 'from set'; } return 'not found'; }\"}\n"
+                        "Step 10: browser_evaluate to select second TO account:\n"
+                        "         {\"function\": \"() => { const sel = document.getElementById('toAccountId'); if(sel && sel.options.length > 1) { sel.selectedIndex = 1; return 'to set'; } return 'not found'; }\"}\n"
+                        "Step 11: browser_click Transfer button\n"
+                        "Step 12: DONE — transfer initiated\n"
+                        "RULES:\n"
+                        "- You are IMPATIENT — do everything fast\n"
+                        "- IF LOGIN FAILS: Register quickly, then continue\n"
+                        "- Use browser_evaluate to set dropdowns quickly\n"
+                    )
+                # PARABANK — END (IMPULSIF TRANSFER)
                 else:
                     # DEMOBLAZE SUPPORT — END
                     # ── Impatient buyer ─────────────────────────────
@@ -940,64 +1205,203 @@ Remember to respond in the exact format: Thought / Action / Target
                     )
                 # BOOKING.COM — START
                 elif is_booking:
+                    # Get persona-specific fields from JSON
+                    persona_nom = self.user.get("nom", "Voyageur")
+                    persona_objectif = self.user.get("objectif", "Trouver le meilleur hébergement")
+                    persona_actions = self.user.get("actions_site", [])
+                    persona_comportements = self.user.get("comportements_specifiques", [])
+                    persona_description = self.user.get("description", "")
+                    persona_motivation = self.user.get("motivation_principale", "")
+                    persona_douleurs = self.user.get("douleurs", [])
+                    persona_exploration = self.user.get("exploration_fonctionnalites", [])
+                    
+                    # Format actions and behaviors for prompt
+                    actions_text = "\n".join([f"   • {a}" for a in persona_actions]) if persona_actions else "   • Recherche approfondie"
+                    comportements_text = "\n".join([f"   • {c}" for c in persona_comportements]) if persona_comportements else ""
+                    exploration_text = "\n".join([f"   • {e}" for e in persona_exploration]) if persona_exploration else ""
+                    douleurs_text = ", ".join(persona_douleurs) if persona_douleurs else "Manque de clarté"
+                    
                     strategy = (
-                        "PERSONA PROFILE (acheteur_prudent on booking.com):\n"
-                        f"  device={device}, vitesse={vitesse}, patience={patience_sec}s\n\n"
-                        "STRATEGY — follow these steps IN ORDER:\n"
+                        f"PERSONA PROFILE ({persona_id} - {persona_nom}):\n"
+                        f"  Objectif: {persona_objectif}\n"
+                        f"  Device: {device} | Vitesse: {vitesse} | Patience: {patience_sec}s\n"
+                        f"  Sensibilité prix: {sensibilite} | Tolérance erreurs: {tolerance}\n"
+                        f"  Description: {persona_description}\n"
+                        f"  Motivation: {persona_motivation}\n"
+                        f"  Douleurs à éviter: {douleurs_text}\n\n"
+                        f"COMPORTEMENTS ATTENDUS:\n{actions_text}\n"
+                        f"{comportements_text}\n\n"
+                        f"EXPLORATION:\n{exploration_text}\n\n"
+                        "STRATEGY — Navigation prudente sur Booking.com:\n"
                         "Step 1: browser_navigate to https://www.booking.com\n"
-                        "Step 2: browser_snapshot to see the search form\n"
-                        "Step 3: Find the destination textbox ref in the snapshot\n"
-                        "        It is labeled 'Destination' or 'Ou allez-vous ?'\n"
-                        "        Use browser_type to type 'Paris'\n"
-                        "Step 4: browser_snapshot to see the autocomplete dropdown\n"
-                        "Step 5: Click 'Paris, Ile-de-France, France' suggestion\n"
-                        "Step 6: Look for check-in date button and click it\n"
-                        "Step 7: Select next Saturday as check-in date\n"
-                        "Step 8: Select next Sunday as check-out date\n"
-                        "Step 9: Click the Search button\n"
-                        "Step 10: browser_snapshot to see hotel results with prices\n"
-                        "Step 11: Scroll through results, note ALL hotel prices\n"
-                        "Step 12: Identify the cheapest hotel from all visible results\n"
-                        "Step 13: Click on the cheapest hotel\n"
-                        "Step 14: DONE — report hotel name and lowest price found\n"
-                        "RULES:\n"
-                        "- NEVER scroll before using the search form\n"
-                        "- ALWAYS use browser_snapshot before browser_click\n"
-                        "- Use fresh refs from the latest snapshot only\n"
-                        "- If overlay blocks click: browser_press_key Escape first\n"
-                        "- If date picker is complex, use the screenshot to identify date cells\n"
-                        "- NEVER attempt actual booking or payment\n"
+                        "Step 2: browser_snapshot — dismiss any popup, observe the page\n"
+                        "Step 3: Use browser_evaluate to type destination (field is hidden):\n"
+                        "        {\"function\": \"() => { const input = document.querySelector('input[placeholder*=\\\"allez-vous\\\"]') || document.querySelector('input[name=\\\"ss\\\"]'); if(!input) return 'not found'; input.click(); input.focus(); input.value='Paris'; input.dispatchEvent(new Event('input', {bubbles: true})); return 'Paris typed';}\"}\n"
+                        "Step 4: browser_wait_for time 2000 for suggestions\n"
+                        "Step 5: browser_snapshot to see Paris suggestions\n"
+                        "Step 6: Click Paris suggestion carefully\n"
+                        "Step 7: browser_snapshot to see dates section\n"
+                        "Step 8: Select appropriate dates if needed\n"
+                        "Step 9: Click Search button\n"
+                        "Step 10: browser_snapshot to see ALL hotel results\n"
+                        f"Step 11: {'Compare ALL prices, read reviews, find the BEST value' if sensibilite == 'haute' else 'Look for family-friendly options' if 'famil' in persona_id.lower() else 'Evaluate options carefully'}\n"
+                        "Step 12: Click on the best hotel based on your criteria\n"
+                        "Step 13: browser_snapshot to verify hotel details\n"
+                        "Step 14: DONE — report hotel name, price, and why you chose it\n\n"
+                        "RULES (based on persona):\n"
+                        f"- You are {persona_nom}, behave according to your profile\n"
+                        f"- {'Compare ALL prices before deciding' if sensibilite == 'haute' else 'Focus on quality and features, not just price'}\n"
+                        f"- {'Use filters to narrow down options' if persona_exploration else 'Browse available options'}\n"
+                        f"- {'Verify details twice before any action' if tolerance == 'faible' else 'Proceed with confidence'}\n"
+                        f"- Take your time, you have {patience_sec}s patience\n"
+                        "- Destination field is HIDDEN — MUST use browser_evaluate\n"
                     )
                 # BOOKING.COM — END
-                # PARABANK — START
-                elif is_parabank:
+                # PARABANK — START (PRUDENT - TRANSFER FUNDS)
+                elif is_parabank and primary_feature == "transfer_funds":
+                    # Get persona's full name for registration fallback
+                    persona_fullname = self.user.get("nom", "Test User")
+                    # Split name into first and last
+                    name_parts = persona_fullname.strip().split()
+                    persona_firstname = name_parts[0] if name_parts else "Test"
+                    persona_lastname = name_parts[-1] if len(name_parts) > 1 else "User"
+                    
                     strategy = (
-                        "PERSONA PROFILE (acheteur_prudent on parabank):\n"
-                        f"  device={device}, vitesse={vitesse}, patience={patience_sec}s\n\n"
-                        "STRATEGY — follow IN ORDER:\n"
+                        f"PERSONA PROFILE ({persona_id} - PRUDENT on parabank):\n"
+                        f"  device={device}, vitesse={vitesse}, patience={patience_sec}s\n"
+                        f"  Login: {parabank_username}\n"
+                        f"  Full Name: {persona_fullname}\n"
+                        f"  Feature to test: TRANSFER FUNDS (with careful verification)\n\n"
+                        "STRATEGY — follow IN ORDER, CAREFULLY:\n"
                         f"Step 1: browser_navigate to {start_url}\n"
                         "Step 2: browser_snapshot to see the login form\n"
                         f"Step 3: browser_type username field with '{parabank_username}'\n"
                         f"Step 4: browser_type password field with '{parabank_password}'\n"
                         "Step 5: browser_click the Login button\n"
-                        "Step 6: browser_snapshot to see accounts overview\n"
-                        "Step 7: Note ALL account names and balances visible\n"
-                        "Step 8: browser_click on the first account to see details\n"
-                        "Step 9: browser_snapshot to see transaction history\n"
+                        "Step 6: browser_snapshot to check login result\n"
+                        "Step 6b: IF LOGIN FAILED (error message like 'Could not find customer' appears):\n"
+                        "    - Click 'Register' link to go to registration page\n"
+                        "    - browser_snapshot to see registration form\n"
+                        f"    - Fill registration form with: First Name='{persona_firstname}', Last Name='{persona_lastname}', "
+                        f"Address='123 Test St', City='TestCity', State='TS', Zip='12345', Phone='555-1234', SSN='123-45-6789', "
+                        f"Username='{parabank_username}', Password='{parabank_password}', Confirm='{parabank_password}'\n"
+                        "    - Click Register button\n"
+                        "    - browser_snapshot to confirm registration success\n"
+                        "Step 7: Now on accounts overview — CAREFULLY note ALL account names and balances\n"
+                        "Step 8: browser_click on the first account with positive balance to see details\n"
+                        "Step 9: browser_snapshot to see transaction history — verify account is active\n"
                         "Step 10: browser_navigate_back to accounts overview\n"
-                        "Step 11: Find the Transfer Funds link and click it\n"
+                        f"Step 11: browser_navigate to {parabank_transfer_url}\n"
                         "Step 12: browser_snapshot to see transfer form\n"
-                        "Step 13: Select source account and destination account\n"
-                        "Step 14: Enter amount 10 in the amount field\n"
-                        "Step 15: browser_click Transfer button\n"
-                        "Step 16: DONE — report transfer confirmation\n"
+                        "Step 13: browser_type amount field with '10' — smallest safe amount\n"
+                        "Step 14: Use browser_evaluate to select FROM account with POSITIVE balance:\n"
+                        "         {\"function\": \"() => { const sel = document.getElementById('fromAccountId'); if(sel) { for(let i=0; i<sel.options.length; i++) { sel.selectedIndex = i; break; } return 'from selected: ' + sel.value; } return 'not found'; }\"}\n"
+                        "Step 15: Use browser_evaluate to select a DIFFERENT TO account:\n"
+                        "         {\"function\": \"() => { const sel = document.getElementById('toAccountId'); if(sel && sel.options.length > 1) { sel.selectedIndex = 1; return 'to selected: ' + sel.value; } return 'not found'; }\"}\n"
+                        "Step 16: VERIFY the from and to accounts are DIFFERENT before clicking\n"
+                        "Step 17: browser_click Transfer button\n"
+                        "Step 18: browser_snapshot to see confirmation\n"
+                        "Step 19: VERIFY confirmation message shows correct amount and accounts\n"
+                        "Step 20: DONE — report transfer confirmation with details\n"
                         "RULES:\n"
+                        "- You are PRUDENT — verify EVERYTHING before proceeding\n"
+                        "- IF LOGIN FAILS: Register as a new user with the persona's name, then continue\n"
                         "- ALWAYS check balances BEFORE transferring\n"
                         "- Transfer the SMALLEST possible amount (10)\n"
-                        "- Verify confirmation page after transfer\n"
+                        "- The dropdowns are HTML <select> elements with IDs 'fromAccountId' and 'toAccountId'\n"
+                        "- Use browser_evaluate with JavaScript to change dropdown values\n"
+                        "- VERIFY confirmation page shows correct transfer details\n"
                         "- Be careful, verify every step before proceeding\n"
                     )
-                # PARABANK — END
+                # PARABANK — END (PRUDENT)
+                # PARABANK — START (REFLEXIF - FIND TRANSACTIONS)
+                elif is_parabank and primary_feature == "find_transactions":
+                    # Get persona's full name for registration fallback
+                    persona_fullname = self.user.get("nom", "Test User")
+                    name_parts = persona_fullname.strip().split()
+                    persona_firstname = name_parts[0] if name_parts else "Test"
+                    persona_lastname = name_parts[-1] if len(name_parts) > 1 else "User"
+                    parabank_register_url = f"{parabank_base_url}/parabank/register.htm"
+                    
+                    strategy = (
+                        f"PERSONA PROFILE ({persona_id} - REFLEXIF on parabank):\n"
+                        f"  device={device}, vitesse={vitesse}, patience={patience_sec}s\n"
+                        f"  Login: {parabank_username}\n"
+                        f"  Full Name: {persona_fullname}\n"
+                        f"  Feature to test: FIND TRANSACTIONS (analyze account activity)\n\n"
+                        "STRATEGY — follow IN ORDER, ANALYTICALLY:\n"
+                        f"Step 1: browser_navigate to {start_url}\n"
+                        "Step 2: browser_snapshot to see the login form\n"
+                        f"Step 3: browser_type username field with '{parabank_username}'\n"
+                        f"Step 4: browser_type password field with '{parabank_password}'\n"
+                        "Step 5: browser_click the Login button\n"
+                        "Step 6: browser_snapshot to check login result\n"
+                        "Step 6b: IF LOGIN FAILED (error message appears):\n"
+                        f"    - browser_navigate to {parabank_register_url}\n"
+                        "    - browser_snapshot to see registration form\n"
+                        f"    - Fill registration: First Name='{persona_firstname}', Last Name='{persona_lastname}', "
+                        f"Address='456 Analyze Ave', City='DataCity', State='DC', Zip='67890', Phone='555-DATA', SSN='456-78-9012', "
+                        f"Username='{parabank_username}', Password='{parabank_password}', Confirm='{parabank_password}'\n"
+                        "    - Click Register button, then continue\n"
+                        "Step 7: ANALYZE all account balances — note which accounts have activity\n"
+                        "Step 8: browser_click on the first account to see Account Activity\n"
+                        "Step 9: browser_snapshot to see transaction list\n"
+                        "Step 10: ANALYZE the transactions — note dates, amounts, types\n"
+                        "Step 11: Look for 'Find Transactions' link in the left menu and click it\n"
+                        "Step 12: browser_snapshot to see the Find Transactions form\n"
+                        "Step 13: Use browser_evaluate to select the account dropdown:\n"
+                        "         {\"function\": \"() => { const sel = document.getElementById('accountId'); if(sel) { sel.selectedIndex = 0; return 'account selected: ' + sel.value; } return 'not found'; }\"}\n"
+                        "Step 14: browser_type in the 'Amount' field with '100' to search by amount\n"
+                        "Step 15: browser_click 'Find Transactions' button\n"
+                        "Step 16: browser_snapshot to see search results\n"
+                        "Step 17: ANALYZE the search results — verify transactions match criteria\n"
+                        "Step 18: DONE — report findings (number of transactions found, amounts, dates)\n"
+                        "RULES:\n"
+                        "- You are ANALYTICAL — examine all data carefully\n"
+                        "- IF LOGIN FAILS: Register with the persona's name, then continue\n"
+                        "- Take notes on account balances and transaction patterns\n"
+                        "- Use Find Transactions to search by amount\n"
+                        "- Report detailed findings at the end\n"
+                    )
+                # PARABANK — END (REFLEXIF)
+                # PARABANK — START (GENERIC PRUDENT - any slow persona on parabank)
+                elif is_parabank and vitesse == "lente":
+                    # Get persona's full name for registration fallback
+                    persona_fullname = self.user.get("nom", "Test User")
+                    name_parts = persona_fullname.strip().split()
+                    persona_firstname = name_parts[0] if name_parts else "Test"
+                    persona_lastname = name_parts[-1] if len(name_parts) > 1 else "User"
+                    parabank_register_url = f"{parabank_base_url}/parabank/register.htm"
+                    
+                    strategy = (
+                        f"PERSONA PROFILE ({persona_id} - PRUDENT on parabank):\n"
+                        f"  device={device}, vitesse={vitesse}, patience={patience_sec}s\n"
+                        f"  Login: {parabank_username}\n"
+                        f"  Full Name: {persona_fullname}\n"
+                        f"  Feature to test: TRANSFER FUNDS (default)\n\n"
+                        "STRATEGY — follow IN ORDER, CAREFULLY:\n"
+                        f"Step 1: browser_navigate to {start_url}\n"
+                        "Step 2: browser_snapshot to see the login form\n"
+                        f"Step 3: browser_type username field with '{parabank_username}'\n"
+                        f"Step 4: browser_type password field with '{parabank_password}'\n"
+                        "Step 5: browser_click the Login button\n"
+                        "Step 6: browser_snapshot to check login result\n"
+                        "Step 6b: IF LOGIN FAILED (error message appears):\n"
+                        f"    - browser_navigate to {parabank_register_url}\n"
+                        f"    - Fill registration: First='{persona_firstname}', Last='{persona_lastname}', "
+                        f"Username='{parabank_username}', Password='{parabank_password}'\n"
+                        "    - Click Register, then continue\n"
+                        "Step 7: CAREFULLY note ALL account balances\n"
+                        f"Step 8: browser_navigate to {parabank_transfer_url}\n"
+                        "Step 9: browser_type amount field with '10'\n"
+                        "Step 10-11: Use browser_evaluate to select FROM (index 0) and TO (index 1) accounts\n"
+                        "Step 12: browser_click Transfer button\n"
+                        "Step 13: DONE — report transfer confirmation\n"
+                        "RULES:\n"
+                        "- IF LOGIN FAILS: Register with the persona's name, then continue\n"
+                        "- VERIFY everything before proceeding\n"
+                    )
+                # PARABANK — END (GENERIC PRUDENT)
                 else:
                     # DEMOBLAZE SUPPORT — END
                     # ── Prudent buyer ────────────────────────────────
@@ -1030,31 +1434,78 @@ Remember to respond in the exact format: Thought / Action / Target
                         "- Do NOT click any product until confirmed at the bottom of the page.\n"
                     )
 
+            # ── SaaS/Marketing cookie banner warning ──────────────────────────
+            if site_type.lower() in ("saas", "marketing", "software"):
+                strategy = (
+                    "COOKIE BANNER RULE:\n"
+                    "Step 1: ALWAYS take browser_snapshot first after browser_navigate\n"
+                    "Step 2: Look for COOKIE BANNER section in the snapshot\n"
+                    "Step 3: Click the 'Allow all' ref from the snapshot\n"
+                    "NEVER click ref before taking a snapshot first.\n"
+                    "NEVER use browser_evaluate for cookie dismissal.\n\n"
+                    "FORM FILLING: When on a signup/trial/contact form page "
+                    "(URL contains trial, signup, contact, register), "
+                    "use browser_fill_form in ONE action to fill ALL fields at once. "
+                    "Do NOT use browser_type field by field.\n"
+                    "ACTION: browser_fill_form\n"
+                    "ACTION_INPUT: {\"fields\": [\n"
+                    "  {\"ref\": \"eXX\", \"type\": \"textbox\", \"name\": \"company\", \"value\": \"startuphr\"},\n"
+                    "  {\"ref\": \"eYY\", \"type\": \"textbox\", \"name\": \"fullname\", \"value\": \"Startup User\"},\n"
+                    "  {\"ref\": \"eZZ\", \"type\": \"textbox\", \"name\": \"email\", \"value\": \"startup@example.com\"}\n"
+                    "]}\n\n"
+                    "HIDDEN FIELDS RULE: Some form fields never appear in FORM FIELDS snapshot.\n"
+                    "Use browser_evaluate to fill them by their label text:\n\n"
+                    "For Company Name:\n"
+                    "ACTION: browser_evaluate\n"
+                    "ACTION_INPUT: {\"function\": \"() => { \n"
+                    "  const inputs = document.querySelectorAll('input[type=text]');\n"
+                    "  for(const i of inputs){\n"
+                    "    const label = document.querySelector('label[for=\\\"'+i.id+'\\\"]');\n"
+                    "    if(label && /company/i.test(label.textContent)){\n"
+                    "      i.value='Startup Inc'; \n"
+                    "      i.dispatchEvent(new Event('input',{bubbles:true}));\n"
+                    "      return 'company filled';\n"
+                    "    }\n"
+                    "  } return 'not found'; }\"}\n\n"
+                    "For Job Title:\n"
+                    "ACTION: browser_evaluate\n"
+                    "ACTION_INPUT: {\"function\": \"() => { \n"
+                    "  const inputs = document.querySelectorAll('input[type=text]');\n"
+                    "  for(const i of inputs){\n"
+                    "    const label = document.querySelector('label[for=\\\"'+i.id+'\\\"]');\n"
+                    "    if(label && /title|role|position/i.test(label.textContent)){\n"
+                    "      i.value='CEO'; \n"
+                    "      i.dispatchEvent(new Event('input',{bubbles:true}));\n"
+                    "      return 'title filled';\n"
+                    "    }\n"
+                    "  } return 'not found'; }\"}\n\n"
+                    "NEVER use ref=e52 for anything other than Phone Number field.\n\n"
+                    "SELECT DROPDOWNS: browser_select_option ALWAYS requires values as ARRAY, not single string.\n"
+                    "CORRECT: {\"ref\": \"eXX\", \"values\": [\"France\"]}\n"
+                    "INCORRECT: {\"ref\": \"eXX\", \"value\": \"France\"}\n\n"
+                ) + strategy
+
             # BOOKING.COM — START
             if is_booking:
                 site_rules = (
                     "4. BOOKING.COM RULES (CRITICAL):\n"
-                    "- The homepage has a search form — USE IT FIRST\n"
-                    "- DO NOT scroll the homepage looking for hotels\n"
-                    "- DO NOT click hotel cards on the homepage\n"
-                    "  (they are recommendations, not search results)\n"
-                    "- CORRECT FLOW:\n"
-                    "  1) browser_snapshot -> find destination textbox ref\n"
-                    "  2) browser_type destination textbox -> 'Paris'\n"
-                    "  3) browser_snapshot -> find Paris suggestion ref\n"
-                    "  4) browser_click Paris suggestion\n"
-                    "  5) browser_click Search button\n"
-                    "  6) browser_snapshot -> see actual search results\n"
-                    "  7) Find cheapest hotel in results\n"
-                    "  8) browser_click hotel link -> DONE\n"
-                    "- NEVER navigate to /searchresults directly\n"
-                    "- If an overlay appears: browser_press_key Escape\n"
-                    "  then browser_snapshot to refresh refs\n"
-                    "- Hotel links open in a NEW TAB — that is normal\n"
-                    "  Use browser_tabs to switch to the new tab if needed\n"
-                    "- ACTION_INPUT must be valid JSON: {\"key\": \"value\"}\n"
+                    "- The destination input field is HIDDEN in accessibility snapshot\n"
+                    "- You MUST use browser_evaluate to interact with it directly\n"
+                    "- DESTINATION FIELD SOLUTION:\n"
+                    "  ACTION: browser_evaluate\n"
+                    "  ACTION_INPUT: {'function': \"() => {\n"
+                    "    const input = document.querySelector('input[placeholder*=\\\"allez-vous\\\"]');\n"
+                    "    if(!input) return 'not found';\n"
+                    "    input.click(); input.focus(); input.value='Paris';\n"
+                    "    input.dispatchEvent(new Event('input', {bubbles: true}));\n"
+                    "    return 'Paris typed';}\"\n"
+                    "- After typing in destination, WAIT 2000ms then take snapshot\n"
+                    "- Look for Paris suggestion in snapshot refs\n"
+                    "- Click the correct Paris suggestion ref\n"
+                    "- Then proceed with dates and search normally\n"
+                    "- Do NOT attempt to use browser_type on destination field\n"
+                    "- Do NOT look for destination textbox in snapshot — it won't be there\n"
                     "- NEVER attempt actual booking or payment\n"
-                    "- If CAPTCHA appears: DONE with reason 'CAPTCHA encountered'\n"
                 )
             elif is_demoblaze:
             # BOOKING.COM — END
@@ -1098,10 +1549,14 @@ Remember to respond in the exact format: Thought / Action / Target
                     "- After transfer → confirmation page shows transaction ID\n"
                     "- ALWAYS use browser_snapshot before browser_type to get fresh refs\n"
                     "- ALWAYS use browser_snapshot before browser_click to get fresh refs\n"
-                    "- If login fails: browser_snapshot to see error message, then retry\n"
+                    "- If login fails: check for 'Register' link, click it to register new account\n"
                     "- ACTION_INPUT must be valid JSON: {\"key\": \"value\"}\n"
-                    "5. Do NOT attempt to register a new account\n"
-                    "6. Do NOT attempt to pay bills or request loans\n"
+                    "5. IF LOGIN FAILS — REGISTRATION REQUIRED:\n"
+                    "   - Look for error like 'Could not find customer' or 'incorrect credentials'\n"
+                    "   - Click 'Register' link (usually below login form)\n"
+                    "   - Fill registration form with persona's name and credentials\n"
+                    "   - After registration, you'll be logged in automatically\n"
+                    "6. Available features after login: Transfer Funds, Bill Pay, Find Transactions, Account Activity\n"
                 )
             # PARABANK — END
             else:
@@ -1137,6 +1592,7 @@ Remember to respond in the exact format: Thought / Action / Target
                 "If a PRODUCTS or CATALOG summary is present, use it as the source of truth for product names, prices, and refs.\n"
                 "2. Prefer stable refs from OBSERVATION (ref=eXXX) when clicking. Never reuse old refs from previous pages.\n"
                 "3. To add a product to cart, first open product details when needed, then ALWAYS take browser_snapshot on the detail page and use the CURRENT add-to-cart ref from that snapshot.\n"
+                "4. browser_select_option ALWAYS requires 'values' as ARRAY: {\"ref\": \"eXX\", \"values\": [\"France\"]} — NEVER use single 'value' string.\n"
                 f"{site_rules}"
                 "EXAMPLE WORKFLOW:\n"
                 "Step 1 → THOUGHT: Navigate to the target catalog page.\n"
@@ -1160,10 +1616,18 @@ Remember to respond in the exact format: Thought / Action / Target
             ))
 
             # ── ReAct loop ─────────────────────────────────────
-            # Steps are no longer hard-coded in code. Use config as safety cap.
-            max_steps = int(self.config.max_steps) if self.config.max_steps else 100
+            # Use site-type specific max_steps with config as fallback
+            max_steps_by_type = {
+                "e-commerce": 20,
+                "banking": 25,
+                "saas": 40,
+                "marketing": 40,
+                "other": 30
+            }
+            max_steps = max_steps_by_type.get(site_type, 
+                        int(self.config.max_steps) if self.config.max_steps else 30)
             if max_steps <= 0:
-                max_steps = 100
+                max_steps = 30
             messages: List = [system_msg]
             steps_detail: List[Dict[str, Any]] = []
             _current_llm = self.llm
@@ -1200,6 +1664,9 @@ Remember to respond in the exact format: Thought / Action / Target
 
             # Running cheapest tracker for prudent buyer (updated after each scroll)
             cheapest_product: dict = {}  # {"name": ..., "price_value": float, "price_label": str, "ref": ...}
+
+            # Track compressed snapshot content to detect unchanged pages after scroll
+            _last_compressed = ""
 
             step = 0
             while step < max_steps:
@@ -1280,6 +1747,8 @@ Remember to respond in the exact format: Thought / Action / Target
                             or "rate limit" in error_msg_lower
                             or "resource_exhausted" in error_msg_lower
                             or "429" in error_msg_lower
+                            or "connection error" in error_msg_lower
+                            or "connection refused" in error_msg_lower
                         )
                         if is_rate_limit:
                             # Try a one-time provider fallback when Gemini is throttled.
@@ -1446,7 +1915,7 @@ Remember to respond in the exact format: Thought / Action / Target
                         try:
                             snap_result = await session.call_tool("browser_snapshot", {})
                             snap_str = str(snap_result)
-                            compressed = self._compress_snapshot(snap_str, max_products=max_prod)
+                            compressed = self._compress_snapshot(snap_str, site_type=site_type, max_products=max_prod)
                             observation_text = f"OBSERVATION (auto browser_snapshot):\n{compressed}\n\nNext?"
                             # Disable vision after invalid responses to avoid model confusion
                             messages.append(HumanMessage(content=observation_text))
@@ -1544,11 +2013,58 @@ Remember to respond in the exact format: Thought / Action / Target
 
                     # Compress snapshots to keep only actionable content
                     if action_name in ("browser_navigate", "browser_snapshot"):
-                        result_for_llm = self._compress_snapshot(result_str, max_products=max_prod)
+                        result_for_llm = self._compress_snapshot(result_str, site_type=site_type, max_products=max_prod)
                     else:
                         result_for_llm = result_str[:1500]
                         if len(result_str) > 1500:
                             result_for_llm += "\n... (truncated)"
+
+                    # ── Parasitic cookie tab detection ────────────────────────────
+                    # Close cookiebot.com or similar parasite tabs that open after clicks
+                    if action_name == "browser_click":
+                        if "cookiebot.com" in result_str.lower():
+                            print("🪤 Parasitic cookie tab detected — closing...")
+                            try:
+                                if "browser_tabs" in tools_dict:
+                                    await tools_dict["browser_tabs"].ainvoke({"action": "close", "index": 1})
+                                    print("✓ Cookie tab closed")
+                            except Exception as e:
+                                print(f"⚠ Failed to close cookie tab: {e}")
+
+                    # ── Detect unchanged snapshots after scroll ────────────────────────────
+                    if action_name in ("browser_evaluate", "browser_snapshot"):
+                        if result_for_llm == _last_compressed:
+                            result_for_llm += "\nPage unchanged after scroll. Stop scrolling, use visible refs above."
+                        else:
+                            _last_compressed = result_for_llm
+
+                    # ── Dropdown detection & auto-close ────────────────────────────
+                    # If browser_navigate or browser_click opened a dropdown, close it
+                    if action_name in ("browser_navigate", "browser_click"):
+                        has_dropdown = "dropdown" in result_str.lower()
+                        url_has_anchor = False
+                        if action_name == "browser_navigate":
+                            url_match = _re.search(r"Page URL:\s*(\S+)", result_str)
+                            if url_match:
+                                url_has_anchor = "#" in url_match.group(1)
+                        
+                        if has_dropdown or url_has_anchor:
+                            print("🔽 Dropdown detected — auto-closing with Escape...")
+                            try:
+                                if "browser_press_key" in tools_dict:
+                                    await tools_dict["browser_press_key"].ainvoke({"key": "Escape"})
+                                    # Take snapshot after closing dropdown
+                                    snap_after_close = await session.call_tool("browser_snapshot", {})
+                                    snap_str_after = str(snap_after_close)
+                                    result_for_llm = self._compress_snapshot(snap_str_after, site_type=site_type, max_products=max_prod)
+                                    # Detect unchanged snapshots after dropdown close
+                                    if result_for_llm == _last_compressed:
+                                        result_for_llm += "\nPage unchanged after scroll. Stop scrolling, use visible refs above."
+                                    else:
+                                        _last_compressed = result_for_llm
+                                    print("✓ Escape pressed and snapshot refreshed")
+                            except Exception as e:
+                                print(f"⚠ Auto-close dropdown failed: {e}")
 
                     # After a scroll action, wait 2s then auto-take a snapshot
                     # so the LLM sees updated products without a separate step.
@@ -1561,7 +2077,12 @@ Remember to respond in the exact format: Thought / Action / Target
                         print("📸 Auto-snapshot after scroll...")
                         snap_result = await session.call_tool("browser_snapshot", {})
                         snap_str = str(snap_result)
-                        compressed = self._compress_snapshot(snap_str, max_products=max_prod)
+                        compressed = self._compress_snapshot(snap_str, site_type=site_type, max_products=max_prod)
+                        # Detect unchanged snapshots after scroll
+                        if compressed == _last_compressed:
+                            compressed += "\nPage unchanged after scroll. Stop scrolling, use visible refs above."
+                        else:
+                            _last_compressed = compressed
                         action_name = "browser_snapshot"
                         # For prudent buyer: track cheapest across all scrolls,
                         # send only a compact summary instead of the full table
