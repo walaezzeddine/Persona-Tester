@@ -1,0 +1,476 @@
+- generic [ref=e3]:
+  - link "Accéder au contenu principal" [ref=e5] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e7]:
+    - banner [ref=e19]:
+      - generic [ref=e20]:
+        - navigation [ref=e21]:
+          - link "Booking.com" [ref=e25] [cursor=pointer]:
+            - /url: https://www.booking.com/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+            - img [ref=e26]
+          - generic [ref=e28]:
+            - button "Tarifs en Dollar des États-Unis" [ref=e30] [cursor=pointer]:
+              - generic [ref=e31]: USD
+            - 'button "Langue : Français" [ref=e33] [cursor=pointer]'
+            - link "Service Clients" [ref=e38] [cursor=pointer]:
+              - /url: https://secure.booking.com/help.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6&source=header&src=profile_contact_cs
+              - img [ref=e41]
+            - link "Ajouter mon établissement" [ref=e43] [cursor=pointer]:
+              - /url: https://join.booking.com/?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&lang=fr&sid=7ce759fbdee0743f1532c7fe3d5de5b6&utm_medium=frontend&utm_source=topbar
+              - generic [ref=e44]: Ajouter mon établissement
+            - link "S’inscrire." [ref=e45] [cursor=pointer]:
+              - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=fr&aid=304142&bkng_action=index&prompt=signin&state=Ut8CC1kAisvCtiS6d8amU0vXj2_B0f982rwA2UN0DrmKBujojfIc9VMMQouS3iQBXNARQ8KXdVbmBfAugos5g4m-E8h4BR3a16luxyfEd--78L3y2cenxq9bxzNNoEtgA2dz2JeGgHI7Jof9e75S4lxaEvtRy2Xwp7Mq73YxAs3zBtvErCfknYEv4hQ8xhlwp__8G1O6T0jTKqyLqA3DTMgJjYqiKFJTUNb59QhNDF_YyfWL3ndZr-4IwS4slwcNeJ576_s057rue4_y3PTICqjMcP4pcgosIheOA4x2DZbl5krVNRvQntZpkcSoc-UDhJrqqDAj_c74AyMrGilQfEtAD_CXTd5B3_vXx1rllN8y4f0v84TW793UcGf1DIoDvKaXveKOPeG39Apl8k9FyvQ49kND4NDaPpG8bx6vekv3nGa3IPecmi9HwbNZKQHtvCE7DITIpF0ervW5UNn2R_jB*eyJpZCI6InRyYXZlbGxlcl9oZWFkZXIifQ%3D%3D
+              - generic [ref=e46]: S'inscrire
+            - link "Se connecter" [ref=e48] [cursor=pointer]:
+              - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=fr&aid=304142&bkng_action=index&prompt=signin&state=Ut8CC1kAisvCtiS6d8amU0vXj2_B0f982rwA2UN0DrmKBujojfIc9VMMQouS3iQBXNARQ8KXdVbmBfAugos5g4m-E8h4BR3a16luxyfEd--78L3y2cenxq9bxzNNoEtgA2dz2JeGgHI7Jof9e75S4lxaEvtRy2Xwp7Mq73YxAs3zBtvErCfknYEv4hQ8xhlwp__8G1O6T0jTKqyLqA3DTMgJjYqiKFJTUNb59QhNDF_YyfWL3ndZr-4IwS4slwcNeJ576_s057rue4_y3PTICqjMcP4pcgosIheOA4x2DZbl5krVNRvQntZpkcSoc-UDhJrqqDAj_c74AyMrGilQfEtAD_CXTd5B3_vXx1rllN8y4f0v84TW793UcGf1DIoDvKaXveKOPeG39Apl8k9FyvQ49kND4NDaPpG8bx6vekv3nGa3IPecmi9HwbNZKQHtvCE7DITIpF0ervW5UNn2R_jB*eyJpZCI6InRyYXZlbGxlcl9oZWFkZXIifQ%3D%3D
+              - generic [ref=e49]: Se connecter
+        - navigation "Que recherchez-vous ?" [ref=e50]:
+          - menubar [ref=e52]:
+            - menuitem "Séjours" [ref=e53] [cursor=pointer]:
+              - generic [ref=e54]:
+                - img [ref=e56]
+                - generic [ref=e58]: Séjours
+            - menuitem "Vols" [ref=e59] [cursor=pointer]:
+              - generic [ref=e60]:
+                - img [ref=e62]
+                - generic [ref=e64]: Vols
+            - menuitem "Voitures de location" [ref=e65] [cursor=pointer]:
+              - generic [ref=e66]:
+                - img [ref=e68]
+                - generic [ref=e70]: Voitures de location
+            - menuitem "Attractions" [ref=e71] [cursor=pointer]:
+              - generic [ref=e72]:
+                - img [ref=e74]
+                - generic [ref=e76]: Attractions
+            - menuitem "Taxis aéroport" [ref=e77] [cursor=pointer]:
+              - generic [ref=e78]:
+                - img [ref=e80]
+                - generic [ref=e82]: Taxis aéroport
+    - main [ref=e83]:
+      - generic [ref=e91]:
+        - generic [ref=e97]:
+          - heading "Trouvez votre prochain séjour" [level=1] [ref=e99]:
+            - generic [ref=e100]: Trouvez votre prochain séjour
+          - paragraph [ref=e101]: Recherchez des offres sur des hôtels, des hébergements indépendants et plus encore
+        - region "Rechercher des hébergements" [ref=e105]:
+          - generic [ref=e106]:
+            - generic [ref=e112]:
+              - img [ref=e115]
+              - combobox "Où allez-vous ?" [ref=e117]
+            - button "Date d'arrivée — Date de départ" [ref=e121] [cursor=pointer]:
+              - generic [ref=e122]:
+                - img [ref=e124]
+                - generic [ref=e126]: Date d'arrivée
+                - generic [ref=e127]: —
+                - generic [ref=e128]: Date de départ
+            - 'button "Nombre de personnes et d’hébergements. Sélection actuelle : 2 adultes · 0 enfant · 1 chambre." [ref=e131] [cursor=pointer]':
+              - generic [ref=e132]:
+                - img [ref=e134]
+                - text: 2 adultes · 0 enfant · 1 chambre
+              - img [ref=e137]
+            - button "Rechercher" [ref=e140] [cursor=pointer]:
+              - generic [ref=e141]: Rechercher
+      - generic [ref=e146]:
+        - generic [ref=e152]:
+          - generic [ref=e154]: Pourquoi choisir Booking.com ?
+          - generic [ref=e155]:
+            - heading "Réservez maintenant et payez sur place" [level=3] [ref=e157]
+            - paragraph [ref=e158]: Annulation GRATUITE sur la plupart des hébergements
+          - generic [ref=e159]:
+            - heading "Plus de 300 millions de commentaires" [level=3] [ref=e161]
+            - paragraph [ref=e162]: Obtenez des informations de clients comme vous.
+          - generic [ref=e163]:
+            - heading "Plus de 2 millions d'établissements à travers le monde" [level=3] [ref=e165]
+            - paragraph [ref=e166]: Hôtels, maisons d'hôtes, appartements, etc.
+          - generic [ref=e167]:
+            - heading "Un Service Clients de confiance, disponible 24h/24 et 7j/7" [level=3] [ref=e169]
+            - paragraph [ref=e170]: Nous sommes là pour vous aider, à tout moment
+        - region [ref=e183]:
+          - group [ref=e184]
+          - group [ref=e193]
+          - group [ref=e202]
+          - group [ref=e211]
+        - generic [ref=e225]:
+          - generic [ref=e226]:
+            - heading "Offres" [level=2] [ref=e227]
+            - generic [ref=e228]: Des promotions, des réductions et des offres spécialement pour vous
+          - generic [ref=e233]:
+            - generic [ref=e235]:
+              - generic [ref=e236]: Évadez-vous à moindre coût avec nos Offres Saisonnières
+              - heading "Il n’y a aucun piège, choisissez simplement votre escapade" [level=3] [ref=e237]
+              - generic [ref=e238]: Bénéficiez de -15 % ou plus sur certains séjours dans le monde entier. Réservez et profitez.
+              - link "Économisez sur votre prochain voyage en bénéficiant de -15 % ou plus sur une sélection de séjours." [ref=e241] [cursor=pointer]:
+                - /url: https://www.booking.com/dealspage.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&campaign_id=getaway
+                - generic [ref=e242]: Économiser avec une Offre Saisonnière
+            - img "Une scène de plage à Maui, Hawaii, avec des voyageurs marchant et se relaxant au bord de l’océan par une journée ensoleillée." [ref=e246]
+        - generic [ref=e271]:
+          - region [ref=e281]:
+            - group [ref=e282]
+            - group [ref=e291]
+            - group [ref=e300]
+            - group [ref=e309]
+            - group [ref=e318]
+            - group [ref=e327]
+          - generic [ref=e338]:
+            - generic [ref=e340]:
+              - heading "Destinations en vogue" [level=2] [ref=e341]
+              - generic [ref=e342]: Options les plus populaires parmi les voyageurs habitant en Tunisie
+            - link "Paris" [ref=e343] [cursor=pointer]:
+              - /url: https://www.booking.com/searchresults.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&dest_id=-1456928&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0
+              - generic [ref=e346]: Paris
+            - link "Istanbul" [ref=e347] [cursor=pointer]:
+              - /url: https://www.booking.com/searchresults.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&dest_id=-755070&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0
+              - generic [ref=e350]: Istanbul
+            - generic [ref=e351]:
+              - link "Tunis" [ref=e352] [cursor=pointer]:
+                - /url: https://www.booking.com/searchresults.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&dest_id=-731701&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0
+                - generic [ref=e355]: Tunis
+              - link "Hammamet" [ref=e356] [cursor=pointer]:
+                - /url: https://www.booking.com/searchresults.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&dest_id=-722356&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0
+                - generic [ref=e359]: Hammamet
+              - link "Sousse" [ref=e360] [cursor=pointer]:
+                - /url: https://www.booking.com/searchresults.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&dest_id=-731250&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0
+                - generic [ref=e363]: Sousse
+          - region [ref=e374]:
+            - group [ref=e375]
+            - group [ref=e384]
+            - group [ref=e393]
+            - group [ref=e402]
+            - group [ref=e411]
+            - group [ref=e420]
+          - region [ref=e438]:
+            - group [ref=e439]
+            - group [ref=e448]
+            - group [ref=e457]
+            - group [ref=e466]
+          - region [ref=e483]:
+            - group [ref=e484]
+            - group [ref=e493]
+            - group [ref=e502]
+            - group [ref=e511]
+          - region [ref=e529]:
+            - group [ref=e530]
+            - group [ref=e539]
+            - group [ref=e548]
+            - group [ref=e557]
+          - region [ref=e575]:
+            - group [ref=e576]
+            - group [ref=e585]
+            - group [ref=e594]
+            - group [ref=e603]
+            - group [ref=e612]
+            - group [ref=e621]
+        - generic [ref=e640]:
+          - heading "Voyagez plus en dépensant moins" [level=2] [ref=e642]
+          - generic [ref=e647]:
+            - heading "Connectez-vous pour économiser" [level=3] [ref=e648]
+            - generic [ref=e649]: Économisez au moins 10 % en repérant les établissements dotés du logo bleu Genius.
+            - generic [ref=e650]:
+              - link "Se connecter" [ref=e651] [cursor=pointer]:
+                - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=fr&aid=304142&bkng_action=index&state=Ut8CC1kAisvCtiS6d8amU0vXj2_B0f982rwA2UN0DrmKBujojfIc9VMMQouS3iQBXNARQ8KXdVbmBfAugos5g4m-E8h4BR3a16luxyfEd--78L3y2cenxq9bxzNNoEtgA2dz2JeGgHI7Jof9e75S4lxaEvtRy2Xwp7Mq73YxAs3zBtvErCfknYEv4hQ8xhlwp__8G1O6T0jTKqyLqA3DTMgJjYqiKFJTUNb59QhNDF_YyfWL3ndZr-4IwS4slwcNeJ576_s057rue4_y3PTICqjMcP4pcgosIheOA4x2DZbl5krVNRvQntZpkcSoc-UDhJrqqDAj_c74AyMrGilQfEtAD_CXTd5B3_vXx1rllN8y4f0v84TW793UcGf1DIoDvKaXveKOPeG39Apl8k9FyvQ49kND4NDaPpG8bx6vekv3nGa3IPecmi9HwbNZKQHtvCE7DITIpF0ervW5UNn2R_jB*eyJpZCI6ImluZGV4In0%3D
+                - generic [ref=e652]: Se connecter
+              - link "S'inscrire" [ref=e653] [cursor=pointer]:
+                - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=fr&aid=304142&bkng_action=index&state=Ut8CC1kAisvCtiS6d8amU0vXj2_B0f982rwA2UN0DrmKBujojfIc9VMMQouS3iQBXNARQ8KXdVbmBfAugos5g4m-E8h4BR3a16luxyfEd--78L3y2cenxq9bxzNNoEtgA2dz2JeGgHI7Jof9e75S4lxaEvtRy2Xwp7Mq73YxAs3zBtvErCfknYEv4hQ8xhlwp__8G1O6T0jTKqyLqA3DTMgJjYqiKFJTUNb59QhNDF_YyfWL3ndZr-4IwS4slwcNeJ576_s057rue4_y3PTICqjMcP4pcgosIheOA4x2DZbl5krVNRvQntZpkcSoc-UDhJrqqDAj_c74AyMrGilQfEtAD_CXTd5B3_vXx1rllN8y4f0v84TW793UcGf1DIoDvKaXveKOPeG39Apl8k9FyvQ49kND4NDaPpG8bx6vekv3nGa3IPecmi9HwbNZKQHtvCE7DITIpF0ervW5UNn2R_jB*eyJpZCI6ImluZGV4In0%3D
+                - generic [ref=e654]: S'inscrire
+        - generic [ref=e661]:
+          - heading "Top des recherches en Tunisie" [level=2] [ref=e663]
+          - navigation [ref=e664]:
+            - tablist [ref=e666]:
+              - tab "Villes dans votre pays" [selected] [ref=e667] [cursor=pointer]:
+                - generic [ref=e669]: Villes dans votre pays
+              - tab "Villes dans le monde" [ref=e670] [cursor=pointer]:
+                - generic [ref=e672]: Villes dans le monde
+              - tab "Pays" [ref=e673] [cursor=pointer]:
+                - generic [ref=e675]: Pays
+              - tab "Hébergements" [ref=e676] [cursor=pointer]:
+                - generic [ref=e678]: Hébergements
+            - tabpanel "Villes dans votre pays" [ref=e680]:
+              - list [ref=e682]:
+                - listitem [ref=e683]:
+                  - link "Hôtels à Hammamet" [ref=e687] [cursor=pointer]:
+                    - /url: https://www.booking.com/city/tn/yasmine-hammamet.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142
+                    - generic [ref=e688]: Hôtels à Hammamet
+                - listitem [ref=e689]:
+                  - link "Hôtels à Tunis" [ref=e693] [cursor=pointer]:
+                    - /url: https://www.booking.com/city/tn/tunis.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142
+                    - generic [ref=e694]: Hôtels à Tunis
+                - listitem [ref=e695]:
+                  - link "Hôtels à Mahdia" [ref=e699] [cursor=pointer]:
+                    - /url: https://www.booking.com/city/tn/mahdia.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142
+                    - generic [ref=e700]: Hôtels à Mahdia
+                - listitem [ref=e701]:
+                  - link "Hôtels à Sousse" [ref=e705] [cursor=pointer]:
+                    - /url: https://www.booking.com/city/tn/sousse.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142
+                    - generic [ref=e706]: Hôtels à Sousse
+                - listitem [ref=e707]:
+                  - link "Hôtels à Tabarka" [ref=e711] [cursor=pointer]:
+                    - /url: https://www.booking.com/city/tn/tabarka.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142
+                    - generic [ref=e712]: Hôtels à Tabarka
+    - contentinfo [ref=e724]:
+      - navigation "Liens rapides" [ref=e727]:
+        - list [ref=e728]:
+          - listitem [ref=e729]:
+            - link "Pays" [ref=e730] [cursor=pointer]:
+              - /url: https://www.booking.com/country.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e732]: Pays
+            - text: .
+          - listitem [ref=e733]:
+            - link "Régions" [ref=e734] [cursor=pointer]:
+              - /url: https://www.booking.com/region.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e736]: Régions
+            - text: .
+          - listitem [ref=e737]:
+            - link "Villes" [ref=e738] [cursor=pointer]:
+              - /url: https://www.booking.com/city.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e740]: Villes
+            - text: .
+          - listitem [ref=e741]:
+            - link "Quartiers" [ref=e742] [cursor=pointer]:
+              - /url: https://www.booking.com/district.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e744]: Quartiers
+            - text: .
+          - listitem [ref=e745]:
+            - link "Aéroports" [ref=e746] [cursor=pointer]:
+              - /url: https://www.booking.com/airport.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e748]: Aéroports
+            - text: .
+          - listitem [ref=e749]:
+            - link "Hôtels" [ref=e750] [cursor=pointer]:
+              - /url: https://www.booking.com/hotel/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e752]: Hôtels
+            - text: .
+          - listitem [ref=e753]:
+            - link "Sites d'intérêt" [ref=e754] [cursor=pointer]:
+              - /url: https://www.booking.com/landmark.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e756]: Sites d'intérêt
+            - text: .
+          - listitem [ref=e757]:
+            - link "Maisons de vacances" [ref=e758] [cursor=pointer]:
+              - /url: https://www.booking.com/booking-home/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e760]: Maisons de vacances
+            - text: .
+          - listitem [ref=e761]:
+            - link "Appartements" [ref=e762] [cursor=pointer]:
+              - /url: https://www.booking.com/apartments/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e764]: Appartements
+            - text: .
+          - listitem [ref=e765]:
+            - link "Complexes hôteliers" [ref=e766] [cursor=pointer]:
+              - /url: https://www.booking.com/resorts/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e768]: Complexes hôteliers
+            - text: .
+          - listitem [ref=e769]:
+            - link "Villas" [ref=e770] [cursor=pointer]:
+              - /url: https://www.booking.com/villas/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e772]: Villas
+            - text: .
+          - listitem [ref=e773]:
+            - link "Auberges de jeunesse" [ref=e774] [cursor=pointer]:
+              - /url: https://www.booking.com/hostels/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e776]: Auberges de jeunesse
+            - text: .
+          - listitem [ref=e777]:
+            - link "B&B/Chambres d'hôtes" [ref=e778] [cursor=pointer]:
+              - /url: https://www.booking.com/bed-and-breakfast/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e780]: B&B/Chambres d'hôtes
+            - text: .
+          - listitem [ref=e781]:
+            - link "Maisons d'Hôtes" [ref=e782] [cursor=pointer]:
+              - /url: https://www.booking.com/guest-house/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e784]: Maisons d'Hôtes
+            - text: .
+          - listitem [ref=e785]:
+            - link "Des hébergements uniques" [ref=e786] [cursor=pointer]:
+              - /url: https://www.booking.com/accommodations.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e788]: Des hébergements uniques
+            - text: .
+          - listitem [ref=e789]:
+            - link "Toutes les destinations" [ref=e790] [cursor=pointer]:
+              - /url: https://www.booking.com/destination.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e792]: Toutes les destinations
+            - text: .
+          - listitem [ref=e793]:
+            - link "Toutes les destinations des vols" [ref=e794] [cursor=pointer]:
+              - /url: https://www.booking.com/flights/sitemap.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e796]: Toutes les destinations des vols
+            - text: .
+          - listitem [ref=e797]:
+            - link "Toutes les agences de location de voitures" [ref=e798] [cursor=pointer]:
+              - /url: https://www.booking.com/cars/sitemap.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e800]: Toutes les agences de location de voitures
+            - text: .
+          - listitem [ref=e801]:
+            - link "Toutes les destinations de vacances" [ref=e802] [cursor=pointer]:
+              - /url: https://www.booking.com/holidays/sitemap.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e804]: Toutes les destinations de vacances
+            - text: .
+          - listitem [ref=e805]:
+            - link "Guides" [ref=e806] [cursor=pointer]:
+              - /url: https://www.booking.com/guides/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e808]: Guides
+            - text: .
+          - listitem [ref=e809]:
+            - link "Découvrir" [ref=e810] [cursor=pointer]:
+              - /url: https://www.booking.com/discover.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e812]: Découvrir
+            - text: .
+          - listitem [ref=e813]:
+            - link "Découvrir les séjours au mois" [ref=e814] [cursor=pointer]:
+              - /url: https://www.booking.com/extended-stays/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+              - generic [ref=e816]: Découvrir les séjours au mois
+      - generic [ref=e818]:
+        - generic [ref=e819]:
+          - heading "Assistance" [level=3] [ref=e821]
+          - list [ref=e822]:
+            - listitem [ref=e823]:
+              - link "Gérez vos voyages" [ref=e825] [cursor=pointer]:
+                - /url: https://secure.booking.com/content/cs.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e826]: Gérez vos voyages
+            - listitem [ref=e827]:
+              - link "Contacter le Service Clients" [ref=e829] [cursor=pointer]:
+                - /url: https://secure.booking.com/help.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e830]: Contacter le Service Clients
+            - listitem [ref=e831]:
+              - link "Centre des ressources en matière de sécurité" [ref=e833] [cursor=pointer]:
+                - /url: https://www.booking.com/trust_and_safety.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e834]: Centre des ressources en matière de sécurité
+        - generic [ref=e835]:
+          - heading "À découvrir" [level=3] [ref=e837]
+          - list [ref=e838]:
+            - listitem [ref=e839]:
+              - link "Programme de fidélité Genius" [ref=e841] [cursor=pointer]:
+                - /url: https://www.booking.com/genius.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e842]: Programme de fidélité Genius
+            - listitem [ref=e843]:
+              - link "Offres de voyage saisonnières" [ref=e845] [cursor=pointer]:
+                - /url: https://www.booking.com/deals/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e846]: Offres de voyage saisonnières
+            - listitem [ref=e847]:
+              - link "Articles de voyages" [ref=e849] [cursor=pointer]:
+                - /url: https://www.booking.com/articles.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e850]: Articles de voyages
+            - listitem [ref=e851]:
+              - link "Booking.com Business" [ref=e853] [cursor=pointer]:
+                - /url: https://business.booking.com/?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e854]: Booking.com Business
+            - listitem [ref=e855]:
+              - link "Traveller Review Awards" [ref=e857] [cursor=pointer]:
+                - /url: https://www.booking.com/traveller-awards/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e858]: Traveller Review Awards
+            - listitem [ref=e859]:
+              - link "Location de voitures" [ref=e861] [cursor=pointer]:
+                - /url: https://www.booking.com/cars/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e862]: Location de voitures
+            - listitem [ref=e863]:
+              - link "Comparateur de vols" [ref=e865] [cursor=pointer]:
+                - /url: https://booking.com/pxgo?lang=fr&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&token=UmFuZG9tSVYkc2RlIyh9YY_oTPIGnIwxsTOANoogQKG3E8oWKY6n4Gt3mS4Pi3o0E9jtDpbGhbCVaNWZye6CFmwmntrQZ2YkuDlJoj85kXVcUw5S_7ET72B8NC07Y47VqkrD6ICh52VD77eUA1Zegl_63WQms_LqKTjRVGVH8lUEnFtaEhwvtJChC6j_K66970em8bdy2bnh8HpAAFlaflCwEysmReHMuAMjRNbvz034T59B22nzU-wZg6xOXhbNfTRvqHAaqTx8aUVLckrMSqBPK_p3I0EL0UdgrSAc2o8Rmn9ePE_vEZa0KT6esmbQqZ0AjavY0u7xcoMdncVMqXAVhfnZBltsmtHk3uP3NpviMBuv1kMVXWTQOwKOa8L-cI4P8CpEN4qeChBEmFs0-gRV7oFLuAX-YHEox7_dZkS9gUFEFx6UzmmsiXSJlziaVYI5YtqLi42KdLU0X0nfRnbDZNUv5BQFOZAz6eo2P12OqxtfdlPVCBahGRZ1cmqVHx4CNjEwJ46pUQNjqEZS9TdfVkPfe34p&aid=304142&url=https%3A%2F%2Fbooking.kayak.com%2Fin%3Fsid%3D7ce759fbdee0743f1532c7fe3d5de5b6%26mc%3DUSD%26bdclc%3Dfr%26p%3Dfooter_link%26a%3Dbdc%252Ffooter_link
+                - generic [ref=e866]: Comparateur de vols
+            - listitem [ref=e867]:
+              - link "Réservations de restaurant" [ref=e869] [cursor=pointer]:
+                - /url: https://www.opentable.com/?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&ref=16087
+                - generic [ref=e870]: Réservations de restaurant
+            - listitem [ref=e871]:
+              - link "Booking.com pour les Agents de Voyage" [ref=e873] [cursor=pointer]:
+                - /url: https://www.booking.com/affiliate-program/v2/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6&utm_campaign=booking-footer&utm_content=travel-agents-link&utm_medium=referral&utm_source=booking.com
+                - generic [ref=e874]: Booking.com pour les Agents de Voyage
+        - generic [ref=e875]:
+          - heading "Conditions et paramètres" [level=3] [ref=e877]
+          - list [ref=e878]:
+            - listitem [ref=e879]:
+              - link "Charte de confidentialité" [ref=e881] [cursor=pointer]:
+                - /url: https://www.booking.com/content/privacy.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e882]: Charte de confidentialité
+            - listitem [ref=e883]:
+              - link "Conditions de Service" [ref=e885] [cursor=pointer]:
+                - /url: https://www.booking.com/content/terms.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e886]: Conditions de Service
+            - listitem [ref=e887]:
+              - link "Déclaration d’accessibilité" [ref=e889] [cursor=pointer]:
+                - /url: https://www.booking.com/content/accessibility_statement.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e890]: Déclaration d’accessibilité
+            - listitem [ref=e891]:
+              - link "Réclamation partenaires" [ref=e893] [cursor=pointer]:
+                - /url: https://secure.booking.com/content/complaints.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e894]: Réclamation partenaires
+            - listitem [ref=e895]:
+              - link "Charte relative à l'esclavage moderne" [ref=e897] [cursor=pointer]:
+                - /url: https://www.bookingholdings.com/modern-slavery-statement/?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142
+                - generic [ref=e898]: Charte relative à l'esclavage moderne
+            - listitem [ref=e899]:
+              - link "Charte relative aux droits humains" [ref=e901] [cursor=pointer]:
+                - /url: https://www.bookingholdings.com/about/compliance-and-ethics/human-rights/?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142
+                - generic [ref=e902]: Charte relative aux droits humains
+        - generic [ref=e903]:
+          - heading "Partenaires" [level=3] [ref=e905]
+          - list [ref=e906]:
+            - listitem [ref=e907]:
+              - link "Accéder à l'extranet" [ref=e909] [cursor=pointer]:
+                - /url: https://admin.booking.com/?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6&utm_campaign=login_footer_v0&utm_medium=frontend&utm_source=extranet_login_footer
+                - generic [ref=e910]: Accéder à l'extranet
+            - listitem [ref=e911]:
+              - link "Aide aux partenaires" [ref=e913] [cursor=pointer]:
+                - /url: https://partner.booking.com/fr?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6&utm_campaign=footer_list&utm_medium=frontend_footer&utm_source=booking.com
+                - generic [ref=e914]: Aide aux partenaires
+            - listitem [ref=e915]:
+              - link "Ajouter mon établissement" [ref=e917] [cursor=pointer]:
+                - /url: https://join.booking.com/?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&lang=fr&sid=7ce759fbdee0743f1532c7fe3d5de5b6&utm_medium=frontend&utm_source=footer_menu
+                - generic [ref=e918]: Ajouter mon établissement
+            - listitem [ref=e919]:
+              - link "Devenir affilié" [ref=e921] [cursor=pointer]:
+                - /url: https://www.booking.com/affiliate-program/v2/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6&utm_campaign=booking-footer&utm_content=become-an-affiliate-link&utm_medium=referral&utm_source=booking.com
+                - generic [ref=e922]: Devenir affilié
+        - generic [ref=e923]:
+          - heading "À propos" [level=3] [ref=e925]
+          - list [ref=e926]:
+            - listitem [ref=e927]:
+              - link "À propos de Booking.com" [ref=e929] [cursor=pointer]:
+                - /url: https://www.booking.com/content/about.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e930]: À propos de Booking.com
+            - listitem [ref=e931]:
+              - link "Le fonctionnement de notre site" [ref=e933] [cursor=pointer]:
+                - /url: https://www.booking.com/content/how_we_work.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e934]: Le fonctionnement de notre site
+            - listitem [ref=e935]:
+              - link "Durabilité" [ref=e937] [cursor=pointer]:
+                - /url: https://sustainability.booking.com/?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142
+                - generic [ref=e938]: Durabilité
+            - listitem [ref=e939]:
+              - link "Centre de presse" [ref=e941] [cursor=pointer]:
+                - /url: https://globalnews.booking.com/?aid=304142&lang=fr
+                - generic [ref=e942]: Centre de presse
+            - listitem [ref=e943]:
+              - link "Recrutement" [ref=e945] [cursor=pointer]:
+                - /url: https://careers.booking.com/?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142
+                - generic [ref=e946]: Recrutement
+            - listitem [ref=e947]:
+              - link "Relations avec les investisseurs" [ref=e949] [cursor=pointer]:
+                - /url: https://www.bookingholdings.com/?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142
+                - generic [ref=e950]: Relations avec les investisseurs
+            - listitem [ref=e951]:
+              - link "Contacts de l'entreprise" [ref=e953] [cursor=pointer]:
+                - /url: https://www.booking.com/content/contact-us.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e954]: Contacts de l'entreprise
+            - listitem [ref=e955]:
+              - link "Règles relatives aux contenus et signalement" [ref=e957] [cursor=pointer]:
+                - /url: https://www.booking.com/content-moderation-policy/overview-page.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKcmu_OBsACAdICJDlhNzU3YzVjLWMyZGEtNGQyYi04NzI5LTRiOWM3ZTI2ZDNlZtgCAeACAQ&aid=304142&sid=7ce759fbdee0743f1532c7fe3d5de5b6
+                - generic [ref=e958]: Règles relatives aux contenus et signalement
+      - generic [ref=e960]:
+        - generic [ref=e961]:
+          - 'button "Langue : Français" [ref=e963] [cursor=pointer]'
+          - button "Tarifs en Dollar des États-Unis" [ref=e968] [cursor=pointer]:
+            - generic [ref=e969]: USD
+        - separator [ref=e970]
+        - generic [ref=e971]:
+          - generic [ref=e973]: Booking.com fait partie de Booking Holdings Inc., le leader mondial des voyages en ligne et services associés.
+          - generic [ref=e974]: Copyright © 1996–2026 Booking.com™. Tous droits réservés.
+        - generic [ref=e975]:
+          - img "Booking.com" [ref=e976]:
+            - img [ref=e977]
+          - img "Priceline.com" [ref=e979]:
+            - img [ref=e980]
+          - img "Kayak" [ref=e983]:
+            - img [ref=e984]
+          - img "Agoda" [ref=e998]:
+            - img [ref=e999]
+          - img "OpenTable" [ref=e1007]:
+            - img [ref=e1008]

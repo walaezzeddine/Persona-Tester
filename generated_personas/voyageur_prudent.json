@@ -1,0 +1,36 @@
+{
+  "id": "voyageur_prudent",
+  "nom": "Léa Dupont",
+  "objectif": "Réserver un hôtel et un vol pour un voyage d'affaires",
+  "actions_site": [
+    "Recherche un hôtel par destination",
+    "Compare les options de vols",
+    "Lit les avis des autres voyageurs"
+  ],
+  "patterns_achat": [
+    "Compare les prix avant chaque réservation",
+    "Hésite avant de réserver"
+  ],
+  "exploration_produits": [
+    "Utilise la recherche",
+    "Navigue par catégorie de voyage"
+  ],
+  "description": "Léa est une voyageuse prudente qui prend son temps pour planifier ses voyages. Elle compare les prix et les options pour trouver la meilleure solution pour son budget et ses besoins.",
+  "vitesse_navigation": "lente",
+  "sensibilite_prix": "haute",
+  "tolerance_erreurs": "faible",
+  "patience_attente_sec": 20,
+  "device": "desktop",
+  "style_navigation": "prudent",
+  "comportements_specifiques": [
+    "Vérifie deux fois les détails de réservation avant de confirmer"
+  ],
+  "motivation_principale": "Sécurité et contrôle",
+  "douleurs": [
+    "Processus de réservation trop longs",
+    "Manque de clarté sur les conditions d'annulation"
+  ],
+  "website_domain": "www.booking.com",
+  "website_url": "https://www.booking.com",
+  "index": 1
+}

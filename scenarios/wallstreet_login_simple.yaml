@@ -1,0 +1,80 @@
+name: "Wall Street Survivor - Login & Access Dashboard"
+target_url: "https://www.wallstreetsurvivor.com/"
+
+description: |
+  Complete login process on Wall Street Survivor:
+  1. Navigate to the website
+  2. Find and click the Login/Register link
+  3. Create a new account with email and password
+  4. Successfully log in and access the main dashboard
+  5. Verify you can see the portfolio or main trading interface
+
+constraints:
+  time_limit: 300
+  max_retries: 2
+
+success_criteria:
+  - "Successfully registered/created new account"
+  - "Successfully logged in to the platform"
+  - "Dashboard or main trading interface is visible"
+
+abandon_criteria:
+  - "Cannot find login/register link after 3 attempts"
+  - "First registration attempt fails with error"
+  - "Unable to access dashboard after login"
+
+key_actions:
+  - "Step 1: Navigate to Wall Street Survivor homepage"
+  - "Step 2: Take snapshot to see page structure"
+  - "Step 3: Find Login or Register button/link"
+  - "Step 4: Click on Register/Sign Up option"
+  - "Step 5: Fill in registration form with email and password"
+  - "Step 6: Submit registration form"
+  - "Step 7: Wait for confirmation and redirect"
+  - "Step 8: Verify dashboard is accessible"
+
+site_guidance: |
+  ⚠️ CRITICAL: Wall Street Survivor is a Single Page Application (SPA)
+
+  What This Means:
+  - URLs use hash navigation: https://www.wallstreetsurvivor.com/#/login
+  - Content loads dynamically without full page refresh
+  - Clicking links may not visually reload the page
+  - ALWAYS use browser_snapshot after clicking to confirm navigation worked
+
+  Login/Registration Navigation:
+  1. Look for "Login", "Register", "Sign Up", or "Join" in top navigation
+  2. Click it (you'll see hash change in URL like /#/login or /#/register)
+  3. Take snapshot to see the form
+  4. Common fields: email, password, confirm_password, optional name
+  5. Fill form with browser_fill_form
+  6. Submit the form
+  7. Watch for success message or redirect to dashboard
+
+  Registration Credentials Guide:
+  - Email: Use unique format like "testuser_TIMESTAMP@example.com"
+    Examples: testuser_1713098400@example.com
+  - Password: Strong password required: "TestPassword123!"
+  - Name: Optional, can use "Test User" if required
+  - Confirm Password: May need to match password field
+
+  After Successful Login:
+  - You should see main dashboard with portfolio/trading interface
+  - Layout might show:
+    * Portfolio value display
+    * Stock watchlist
+    * Navigation menu to Courses, Research, etc
+    * Account/Profile dropdown in top right
+  - Success indicators: No error messages, portfolio/trading interface visible
+
+  Troubleshooting:
+  - If form won't submit: Check all required fields are filled
+  - If redirected back to login: Registration might have failed
+  - If blank screen: Page might be loading - wait 2-3 seconds then snapshot again
+  - Use browser_evaluate to scroll down if form fields are below fold
+
+  SPA Navigation Tips:
+  - Don't expect full page reloads
+  - Hash (#) changes in URL are normal and expected
+  - Always verify with browser_snapshot, not just URL changes
+  - Content appears dynamically after clicks

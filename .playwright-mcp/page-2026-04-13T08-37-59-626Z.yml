@@ -1,0 +1,52 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - banner [ref=e4]:
+        - heading "Investopedia" [level=1] [ref=e6]:
+          - link "Investopedia" [ref=e7] [cursor=pointer]:
+            - /url: https://www.investopedia.com/simulator
+            - img "Investopedia" [ref=e8]
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - heading "Sign up for FREE" [level=2] [ref=e11]
+          - list [ref=e12]:
+            - listitem [ref=e13]: Practice trading stocks, cryptos & options with virtual money
+            - listitem [ref=e14]: Gain confidence before risking your own money
+            - listitem [ref=e15]: Learn how the markets work in a safe space with no risk
+        - img "Investopedia" [ref=e16]
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - banner [ref=e19]:
+          - heading "Register for Simulator" [level=2] [ref=e21]
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - generic [ref=e24]: Email Address
+            - textbox "Email Address" [ref=e25]:
+              - /placeholder: Enter Your Email Address
+          - generic [ref=e26]:
+            - generic [ref=e27]: Username
+            - textbox "Username" [ref=e28]:
+              - /placeholder: Enter a Username
+            - alert [ref=e29]:
+              - generic [ref=e30]:
+                - img "Username alert" [ref=e31]
+                - generic [ref=e32]: "Your username may only contain:"
+              - list [ref=e33]:
+                - listitem [ref=e34]: Letters, numbers, hyphens (-), and underscores (_).
+          - generic [ref=e35]:
+            - button "Register" [ref=e37] [cursor=pointer]
+            - generic [ref=e40]: or
+            - link "Sign In Now" [ref=e43] [cursor=pointer]:
+              - /url: /realms/investopedia/login-actions/authenticate?client_id=finance-simulator&tab_id=UAnDtcuGAoo&client_data=eyJydSI6Imh0dHBzOi8vd3d3LmludmVzdG9wZWRpYS5jb20vc2ltdWxhdG9yL3BvcnRmb2xpbyIsInJ0IjoiY29kZSIsInJtIjoiZnJhZ21lbnQiLCJzdCI6IjYwNDY3ODMxLTI4OTItNDIxYi1iZTRkLTAxZWMxZjIwOGQwOSJ9
+      - generic [ref=e45]:
+        - text: By registering, you agree to the
+        - link "Terms of Use" [ref=e46] [cursor=pointer]:
+          - /url: https://www.investopedia.com/legal-4768893#TermsofUse
+        - text: and
+        - link "Privacy Policy" [ref=e47] [cursor=pointer]:
+          - /url: https://www.investopedia.com/legal-4768893#PrivacyPolicy
+        - text: . If you live in the US you’ll also be subscribed to The Market Sum and The Express newsletters.
+  - iframe [ref=e50]:
+    - generic [ref=f12e6]:
+      - text: protected by
+      - strong [ref=f12e7]: reCAPTCHA

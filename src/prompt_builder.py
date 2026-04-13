@@ -118,6 +118,55 @@ def build_system_prompt(user: dict, scenario: dict = None) -> str:
     patience = user.get("patience_attente_sec", 15)
     user_id = user.get("user_id", "unknown")
     persona_id = user.get("id", "unknown")
+    persona_name = user.get("nom", "Unknown User")
+    persona_description = user.get("description", "")
+    
+    # NEW: Get realistic behavior fields
+    style_navigation = user.get("style_navigation", "normal")
+    actions_site = user.get("actions_site", [])
+    patterns_comportement = user.get("patterns_comportement", user.get("patterns_achat", []))
+    exploration = user.get("exploration_fonctionnalites", user.get("exploration_produits", []))
+    comportements_specifiques = user.get("comportements_specifiques", [])
+    motivation = user.get("motivation_principale", "")
+    douleurs = user.get("douleurs", [])
+    
+    # Build human behavior section
+    human_behavior_section = ""
+    if actions_site or patterns_comportement or exploration:
+        human_behavior_section = f"""
+## 🎯 YOUR EXACT BEHAVIOR (you MUST follow this - it's your personality)
+These are concrete steps describing HOW YOU pursue your objective.
+Every action sequence below should guide your navigation.
+
+"""
+        if actions_site:
+            human_behavior_section += "📋 Your step-by-step action sequence:\n"
+            for i, action in enumerate(actions_site, 1):
+                human_behavior_section += f"  STEP {i}: {action}\n"
+            human_behavior_section += "\n⚠️ Follow these steps IN ORDER when pursuing your goal. Don't skip steps!\n"
+
+        if patterns_comportement:
+            human_behavior_section += "\n💭 Your behavior patterns (these describe YOUR APPROACH):\n"
+            for pattern in patterns_comportement:
+                human_behavior_section += f"  • {pattern}\n"
+
+        if exploration:
+            human_behavior_section += "\n🔍 How you typically navigate and explore:\n"
+            for exp in exploration:
+                human_behavior_section += f"  • {exp}\n"
+
+        if comportements_specifiques:
+            human_behavior_section += "\n⚡ Your specific habits and quirks (IMPORTANT - stay true to these):\n"
+            for comp in comportements_specifiques:
+                human_behavior_section += f"  • {comp}\n"
+
+        if motivation:
+            human_behavior_section += f"\n🎯 Why you're doing this: {motivation}\n"
+
+        if douleurs:
+            human_behavior_section += "\n😤 Things that frustrate you (avoid these if possible):\n"
+            for douleur in douleurs:
+                human_behavior_section += f"  • {douleur}\n"
     
     # IMPORTANT: Objective ALWAYS comes from PERSONA, not scenario
     objectif = user.get("objectif", "Browse the website")
@@ -126,7 +175,7 @@ def build_system_prompt(user: dict, scenario: dict = None) -> str:
     if scenario:
         scenario_name = scenario.get("name", "unknown")
         scenario_desc = scenario.get("description", "")
-        
+
         # Build constraints string from scenario
         constraints = scenario.get("constraints", {})
         constraints_str = ""
@@ -136,32 +185,54 @@ def build_system_prompt(user: dict, scenario: dict = None) -> str:
                 constraints_list.append(f"Maximum budget: {constraints['max_price']} {constraints.get('currency', '')}")
             if constraints.get("category"):
                 constraints_list.append(f"Category: {constraints['category']}")
+            if constraints.get("time_limit"):
+                constraints_list.append(f"Time limit: {constraints['time_limit']} seconds")
+            if constraints.get("max_retries"):
+                constraints_list.append(f"Max retries: {constraints['max_retries']}")
             constraints_str = "\n".join(f"- {c}" for c in constraints_list)
-        
+
         # Build success criteria
         success_criteria = scenario.get("success_criteria", [])
-        success_str = "\n".join(f"- {c}" for c in success_criteria) if success_criteria else "- Objective achieved"
-        
-        # Build abandon criteria  
+        success_str = "\n".join(f"✓ {c}" for c in success_criteria) if success_criteria else "✓ Objective achieved"
+
+        # Build abandon criteria
         abandon_criteria = scenario.get("abandon_criteria", [])
-        abandon_str = "\n".join(f"- {c}" for c in abandon_criteria) if abandon_criteria else "- Unable to proceed"
+        abandon_str = "\n".join(f"✗ {c}" for c in abandon_criteria) if abandon_criteria else "✗ Unable to proceed"
+
+        # Build key actions if provided
+        key_actions = scenario.get("key_actions", [])
+        key_actions_str = ""
+        if key_actions:
+            key_actions_str = "\n## STEP-BY-STEP GUIDANCE (these are HINTS for how to proceed):\n"
+            for i, action in enumerate(key_actions, 1):
+                key_actions_str += f"{i}. {action}\n"
+
+        # Add Wall Street-specific guidance
+        site_guidance = scenario.get("site_guidance", "")
+        if site_guidance and "Wall Street" in scenario_name:
+            key_actions_str += f"\n## WALL STREET SURVIVOR NAVIGATION INFO:\n{site_guidance}\n"
     else:
         scenario_name = "default"
         scenario_desc = ""
         constraints_str = ""
-        success_str = "- Objective achieved"
-        abandon_str = "- Unable to proceed"
+        success_str = "✓ Objective achieved"
+        abandon_str = "✗ Unable to proceed"
+        key_actions_str = ""
     
     prompt = f"""═══════════════════════════════════════════════════════════════
                         PERSONA SIMULATION SYSTEM
 ═══════════════════════════════════════════════════════════════
 
 ## IDENTITY
-You are simulating a real user with the following profile:
+You are simulating a REAL HUMAN user named {persona_name}.
+{persona_description}
+
+Profile:
 - Persona ID: {persona_id}
 - User ID: {user_id}
 - {device}
 - {heure}
+- Navigation style: {style_navigation}
 - Maximum patience for loading: {patience} seconds
 
 ## SCENARIO: {scenario_name}
@@ -174,13 +245,15 @@ Your goal: {objectif}
 {constraints_str}
 
 You must navigate the website step by step to achieve this objective.
-Think like a real human user would.
-
+Think and act like {persona_name} would - a real human, not a bot.
+{human_behavior_section}
 ## SUCCESS CRITERIA (use FINISH when achieved):
 {success_str}
 
 ## ABANDON CRITERIA (use ABANDON if encountered):
 {abandon_str}
+
+{key_actions_str}
 
 ## BEHAVIOR
 {vitesse}
@@ -195,12 +268,31 @@ Think like a real human user would.
 - {erreurs_behavior}
 
 Important behavioral rules:
-- Act like a real human, not a bot
-- Make decisions based on what you see on the page
+- You ARE {persona_name} - don't generic browsing, BE THIS PERSON
+- 🔴 CRITICAL: You MUST follow the behavior patterns and action sequences described above
+  - If listed: "Compare prices", you MUST compare prices before deciding
+  - If listed: "Read reviews carefully", you MUST read and consider reviews
+  - If listed: "Click quickly without reading", you MUST not waste time reading
+- Your actions should reflect the patterns/quirks listed in YOUR SPECIFIC BEHAVIOR section
+- Act naturally - make mistakes, hesitate, speed up, or be careful depending on your profile
+- If you have a "patient" style, don't rush; perform detailed comparisons
+- If you have an "impulsive" style, make quick decisions without extensive research
+- Think and explain your decisions IN CHARACTER as {persona_name}
+- Your motivation is: {motivation if motivation else 'to achieve your objective'}
+- Make decisions based on what you see on the page AND your behavior patterns
 - Use NAVIGATION info (back_available) and SCROLL info to decide
 - If you achieve your objective, use FINISH action
 - If you encounter too many problems or can't achieve the objective, use ABANDON action
-- Always explain your reasoning before taking action
+
+🚀 ADVANCED NAVIGATION TIPS (for modern websites):
+- If links only add "#" to URL and don't navigate: This is a Single Page App (SPA)
+  → Try scrolling down to see if content loads below
+  → Use browser_evaluate to find and interact with hidden/dynamic elements
+  → Look for search boxes or input fields that might accept direct input
+  → Try typing text into input fields using the type action
+- If you see "ref=e###" in snapshots: These are element references - click them!
+- If a page seems stuck: Try scrolling down or using browser_evaluate to trigger JavaScript
+- Maximum 3 retries with different approaches before abandoning
 
 IMPORTANT — MODAL / POPUP FEEDBACK:
 - After clicking an 'Add to cart' button, the site may show a confirmation modal popup.
