@@ -1,6 +1,6 @@
 # Backend Structure
 
-This is the reorganized backend following a standard Python project structure.
+Complete backend with organized code, data, and database storage.
 
 ## Directory Structure
 
@@ -8,143 +8,179 @@ This is the reorganized backend following a standard Python project structure.
 Backend/
 ├── requirements.txt         # Python dependencies
 ├── .env                     # Environment variables (not committed)
+│
 ├── config/                  # Configuration files
 │   └── config.yaml
-├── database/                # SQLite database
-│   └── persona_automation.db
+│
+├── database/                # Database storage
+│   ├── persona_automation.db
+│   ├── db_manager.py
+│   ├── init_db.py
+│   └── schema.sql
+│
+├── data/                    # ⭐ Generated data and resources
+│   ├── personas/            # Generated personas (JSON)
+│   ├── scenarios/           # Test scenarios (YAML)
+│   └── logs/                # Application logs
 │
 └── src/
-    ├── main.py              # Entry point — run to start API server
+    ├── main.py              # Entry point
     ├── __init__.py
     │
-    ├── agents/              # Agent definitions and orchestration
-    │   ├── __init__.py
-    │   ├── persona_agent.py       # Main automation agent with MCP support
-    │   ├── persona_generator.py   # LLM-powered persona generation
-    │   └── website_context.py     # Website context analysis
+    ├── agents/              # AI agents
+    │   ├── persona_agent.py
+    │   ├── persona_generator.py
+    │   └── website_context.py
     │
-    ├── api/                 # API routes and endpoints
-    │   ├── __init__.py
-    │   └── routes.py        # FastAPI routes (when ready)
-    │
-    ├── schema/              # Pydantic validation schemas
-    │   └── __init__.py
-    │
-    ├── models/              # Database models and ORM
-    │   ├── __init__.py
-    │   └── db_manager.py    # Database connection and queries
-    │
-    ├── tools/               # Tools and utilities for agents
-    │   ├── __init__.py
-    │   ├── dom_extractor.py      # Extract DOM structure from pages
-    │   ├── parser.py             # Parse LLM responses
-    │   ├── web_search_tool.py    # Web search integration
-    │   └── website_analyzer.py   # LLM-powered website analysis
-    │
-    ├── prompts/             # System prompts and prompt builders
-    │   ├── __init__.py
-    │   └── builder.py       # Build system prompts for LLMs
-    │
-    ├── utils/               # Configuration and utilities
-    │   ├── __init__.py
-    │   └── config.py        # Configuration loader
-    │
-    └── logs/                # Auto-generated log files
-        └── __init__.py
+    ├── api/                 # REST API (ready for expansion)
+    ├── schema/              # Pydantic schemas (ready)
+    ├── models/              # Database layer
+    ├── tools/               # Utilities & tools
+    ├── prompts/             # System prompt builder
+    ├── utils/               # Configuration
+    └── logs/                # Application logs
 ```
+
+## Key Points
+
+### ⭐ Data Organization
+
+**All generated data lives in `Backend/data/`:**
+
+- **data/personas/** - Generated user personas (JSON files)
+  - Created by PersonaGenerator (LLM)
+  - Stored in database too
+  - Used by frontend via API
+  
+- **data/scenarios/** - Test scenarios and workflows (YAML files)
+  - Drive automation execution
+  - Define success criteria and steps
+  - Used by PersonaAgent
+  
+- **data/logs/** - Application execution logs
+  - Centralized logging
+  - Test runs, agent executions
+  - Debugging and monitoring
+
+### Database vs Data Files
+
+| Content | Location | Purpose |
+|---------|----------|---------|
+| Personas (generated) | `data/personas/` | Source files |
+| Personas (metadata) | `database/persona_automation.db` | Indexed lookup |
+| Scenarios | `data/scenarios/` | YAML configurations |
+| Logs | `data/logs/` | Execution tracking |
+
+### Why This Structure?
+
+```
+BACKEND-FRONTEND SEPARATION:
+
+┌─────────────────────────────────────┐
+│  FRONTEND (React/TypeScript)        │
+│  - UI Components                    │
+│  - User interactions                │
+│  - Dashboard visualization          │
+│  - WebSocket connections            │
+└──────────────────┬──────────────────┘
+                   │ REST API calls
+                   ↓
+┌─────────────────────────────────────┐
+│  BACKEND (Backend/)                 │
+│  ├── src/                           │
+│  │   ├── agents/  (AI logic)        │
+│  │   ├── api/     (routes)          │
+│  │   └── tools/   (utilities)       │
+│  ├── data/        (generated data)  │
+│  ├── database/    (persistence)     │
+│  └── config/      (settings)        │
+└─────────────────────────────────────┘
+```
+
+**Backend handles:** Generation, Execution, Storage, Retrieval
+**Frontend handles:** Display, User Input, Interaction
 
 ## Running the Backend
 
 ```bash
+cd Backend
+
 # Install dependencies
 pip install -r requirements.txt
 
-# Set up environment variables
-cp .env.example .env
-# Edit .env with your API keys
-
-# Run the server
+# Run API server
 python src/main.py
 
-# Server will be available at http://localhost:5000
+# Server on http://localhost:5000
 ```
 
-## Module Organization
+## API Endpoints (Future)
 
-### `agents/`
-Contains AI agent definitions:
-- **PersonaAgent**: Main automation engine with MCP (Model Context Protocol) support for browser automation
-- **PersonaGenerator**: Generates realistic user personas using LLMs
-- **WebsiteContextAgent**: Analyzes websites and provides context
+```
+GET  /api/personas           # List all personas
+POST /api/personas           # Generate new persona
+GET  /api/personas/{id}      # Get persona details
 
-### `tools/`
-Reusable tools and utilities:
-- **dom_extractor.py**: Extracts page structure for LLM understanding
-- **parser.py**: Parses and processes LLM responses
-- **web_search_tool.py**: Integrates web search for information gathering
-- **website_analyzer.py**: Analyzes websites using LLMs
+GET  /api/scenarios          # List scenarios
+POST /api/scenarios/run      # Execute scenario
 
-### `prompts/`
-Manages system prompts:
-- **builder.py**: Builds context-aware system prompts for different scenarios
-
-### `models/`
-Database layer:
-- **db_manager.py**: SQLite database connection and ORM
-
-### `utils/`
-Configuration and utilities:
-- **config.py**: Loads configuration from `config/config.yaml` and environment variables
-
-### `api/`
-API endpoints (FastAPI):
-- Routes for persona management
-- Scenario execution
-- Results retrieval
-
-## Importing Modules
-
-Use relative imports within the Backend:
-
-```python
-# From agents
-from ..tools.parser import parse_response
-from ..utils.config import Config
-from ..prompts.builder import build_system_prompt
-
-# From tools
-from ..agents.persona_agent import PersonaAgent
+GET  /api/results            # Get execution results
 ```
 
 ## Environment Variables
-
-Create a `.env` file with:
 
 ```
 OPENAI_API_KEY=sk-...
 GROQ_API_KEY=...
 GOOGLE_API_KEY=...
-SERPER_API_KEY=...
 LLM_PROVIDER=openai
 LLM_MODEL=gpt-4-turbo
 ```
 
-## Testing
+## Backend vs Frontend Separation
 
-```bash
-# Test imports
-python -c "from src.agents import PersonaAgent; print('✓ PersonaAgent OK')"
-python -c "from src.tools import WebSearchTool; print('✓ WebSearchTool OK')"
+### Frontend (`frontend/`)
+- React/TypeScript
+- React components
+- API client calls
+- Dashboard UI
+- User interactions
 
-# Run backend
-python src/main.py
+### Backend (`Backend/`)
+- Python FastAPI
+- AI agents and automation
+- Generated data storage
+- Database persistence
+- Business logic
+
+**Communication:** Frontend → REST API → Backend
+
+## File Organization
+
+| Layer | Location | Purpose |
+|-------|----------|---------|
+| **API** | `src/api/` | Route definitions |
+| **Logic** | `src/agents/` | AI agents, orchestration |
+| **Tools** | `src/tools/` | Utilities, extractors |
+| **Prompts** | `src/prompts/` | LLM system prompts |
+| **Data** | `data/` | Generated personas, scenarios |
+| **Storage** | `database/` | SQLite persistence |
+| **Config** | `config/` | Application settings |
+
+## Importing in Backend
+
+```python
+# From different modules
+from ..agents.persona_agent import PersonaAgent
+from ..tools.parser import parse_response
+from ..utils.config import Config
 ```
 
-## Key Files Reference
+## Next Steps
 
-- **Entry Point**: `src/main.py`
-- **Main Agent**: `src/agents/persona_agent.py`
-- **System Prompts**: `src/prompts/builder.py`
-- **Database**: `src/models/db_manager.py`
-- **Config**: `config/config.yaml`
+1. **Add API routes** in `src/api/routes.py`
+2. **Connect database** in `src/models/db_manager.py`
+3. **Add validation schemas** in `src/schema/`
+4. **Create tests** directory
+5. **Add logging** configuration to `src/utils/`
 
