@@ -130,6 +130,38 @@ def build_system_prompt(user: dict, scenario: dict = None) -> str:
     motivation = user.get("motivation_principale", "")
     douleurs = user.get("douleurs", [])
     
+    # Extract login credentials if provided
+    credentials = user.get("credentials", {})
+    credentials_section = ""
+    if credentials:
+        username = credentials.get("username", "")
+        password = credentials.get("password", "")
+        if username and password:
+            credentials_section = f"""
+## 🔐 LOGIN CREDENTIALS - CRITICAL - MUST USE EXACTLY AS PROVIDED
+🚨 THESE ARE YOUR ONLY VALID CREDENTIALS - DO NOT GENERATE OR CHANGE THEM 🚨
+
+Username: {username}
+Password: {password}
+
+⚠️ CRITICAL INSTRUCTIONS - YOU MUST FOLLOW:
+1. You will find a login form on the website
+2. In the USERNAME field, type EXACTLY: {username}
+3. In the PASSWORD field, type EXACTLY: {password}
+4. Click the "Log me in" or "Login" button
+5. NEVER generate fake credentials
+6. NEVER try to register or create account
+7. NEVER change these credentials
+8. Use {username} and {password} - these are HARDCODED and FINAL
+
+If you see a form asking for credentials, STOP and think:
+- Username field should have: {username}
+- Password field should have: {password}
+
+These credentials are NOT suggestions - they are REQUIREMENTS.
+
+"""
+    
     # Build human behavior section
     human_behavior_section = ""
     if actions_site or patterns_comportement or exploration:
@@ -235,7 +267,7 @@ Profile:
 - Navigation style: {style_navigation}
 - Maximum patience for loading: {patience} seconds
 
-## SCENARIO: {scenario_name}
+{credentials_section}## SCENARIO: {scenario_name}
 {scenario_desc}
 
 ## OBJECTIVE

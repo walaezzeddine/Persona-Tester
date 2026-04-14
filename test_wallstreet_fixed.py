@@ -8,33 +8,20 @@ from pathlib import Path
 from src.config_loader import Config, load_scenario
 from src.agent import PersonaAgent
 
-def get_login_credentials():
-    """
-    Prompt user for Wall Street Survivor login credentials
-    """
-    print("\n" + "="*80)
-    print("🔐 LOGIN CREDENTIALS SETUP")
-    print("="*80)
-    print("\nPlease enter your Wall Street Survivor credentials:")
-    print("(These will be used for the login test)\n")
-    
-    email = input("📧 Email address: ").strip()
-    password = input("🔒 Password: ").strip()
-    
-    if not email or not password:
-        print("❌ Email and password are required!")
-        exit(1)
-    
-    print(f"\n✅ Credentials saved for: {email}")
-    return {"email": email, "password": password}
+# 🔐 HARDCODED LOGIN CREDENTIALS
+CREDENTIALS = {
+    "username": "WALAEZZEDINE",
+    "password": "WALA@123"
+}
 
 async def test_wallstreet_fixed():
     print("="*80)
     print("🧪 WALL STREET SURVIVOR - FIXED SCENARIO TEST")
     print("="*80)
 
-    # Get login credentials from user
-    credentials = get_login_credentials()
+    # Use hardcoded credentials
+    credentials = CREDENTIALS
+    print(f"\n✅ Using hardcoded credentials for: {credentials['username']}")
 
     # Load config
     config = Config()
@@ -42,8 +29,8 @@ async def test_wallstreet_fixed():
     print(f"   Headless: {config.headless}")
     print(f"   Max steps: {config.max_steps}")
 
-    # Load Wall Street scenario with login focus
-    scenario_path = Path("scenarios/wallstreet_login_simple.yaml")
+    # Load Wall Street scenario - LOGIN ONLY (no registration)
+    scenario_path = Path("scenarios/wallstreet_login_only.yaml")
     scenario = load_scenario(str(scenario_path))
     print(f"✅ Scenario loaded: {scenario.get('name')}")
     print(f"   Description: {scenario.get('description', '').split(chr(10))[0][:60]}...")
@@ -51,12 +38,12 @@ async def test_wallstreet_fixed():
     print(f"   Success criteria: {len(scenario.get('success_criteria', []))} defined")
     print(f"   Key actions: {len(scenario.get('key_actions', []))} steps provided")
 
-    # Create test persona with login credentials
+    # Create test persona for LOGIN ONLY (not registration)
     test_persona = {
         "id": "test_wallstreet_login",
-        "nom": "New Investor",
-        "description": "First-time user registering on Wall Street Survivor",
-        "objectif": "Register an account and log in to Wall Street Survivor",
+        "nom": "Existing User",
+        "description": "Existing user logging into Wall Street Survivor and exploring courses",
+        "objectif": "Login to Wall Street Survivor and select a course from the Courses section",
         "device": "desktop",
         "heure_connexion": "14:00",
         "vitesse_navigation": "normale",
@@ -66,7 +53,7 @@ async def test_wallstreet_fixed():
     }
     print(f"✅ Test persona created: {test_persona['nom']}")
     print(f"   Objective: {test_persona['objectif']}")
-    print(f"   Credentials: {credentials['email']}")
+    print(f"   Credentials: {credentials['username']}")
 
     # Create agent with MCP support
     agent = PersonaAgent(

@@ -922,6 +922,18 @@ Remember to respond in the exact format: Thought / Action / Target
         print(f"📍 Target URL: {start_url}")
         print(f"👤 Persona: {self.user.get('id', self.user.get('nom', 'Unknown'))}")
         print(f"🎯 Scenario: {self.scenario.get('name', 'Unknown') if self.scenario else 'None'}")
+        
+        # DEBUG: Print credentials from system prompt
+        if "LOGIN CREDENTIALS" in self.system_prompt:
+            print("✅ LOGIN CREDENTIALS SECTION FOUND IN SYSTEM PROMPT")
+            # Extract and print the credentials section
+            cred_start = self.system_prompt.find("LOGIN CREDENTIALS")
+            cred_end = self.system_prompt.find("##", cred_start + 100)
+            if cred_start > 0:
+                print(self.system_prompt[cred_start:min(cred_end, cred_start + 500)])
+        else:
+            print("❌ WARNING: No LOGIN CREDENTIALS section in system prompt!")
+        
         # GEMINI VISION — START
         if self._attach_observation_images:
             print(f"👁️  Vision mode ACTIVE — screenshots → "
@@ -980,10 +992,21 @@ Remember to respond in the exact format: Thought / Action / Target
 
             # PARABANK — START
             is_parabank = "parabank" in (start_url or "").lower()
+            # PARABANK — END
+            
+            # WALL STREET SURVIVOR — START
+            is_wallstreet = "wallstreetsurvivor" in (start_url or "").lower()
+            # WALL STREET SURVIVOR — END
+            
             scenario_context = self.scenario.get("context", {}) if isinstance(self.scenario, dict) else {}
             
             # Get credentials from persona JSON first, then scenario, then env, then default
             persona_credentials = self.user.get("credentials", {})
+            
+            # For Wall Street - use provided credentials
+            wallstreet_username = str(persona_credentials.get("username", ""))
+            wallstreet_password = str(persona_credentials.get("password", ""))
+            
             parabank_username = str(
                 persona_credentials.get("username")
                 or scenario_context.get("username")
@@ -996,22 +1019,6 @@ Remember to respond in the exact format: Thought / Action / Target
                 or os.getenv("PARABANK_PASSWORD")
                 or "demo"
             )
-            
-            # Get features to test from persona
-            features_to_test = self.user.get("features_to_test", ["transfer_funds"])
-            primary_feature = features_to_test[0] if features_to_test else "transfer_funds"
-            
-            parsed_start_url = urlparse(start_url or "")
-            parabank_base_url = (
-                f"{parsed_start_url.scheme}://{parsed_start_url.netloc}"
-                if parsed_start_url.scheme and parsed_start_url.netloc
-                else "https://parabank.parasoft.com"
-            )
-            parabank_transfer_url = f"{parabank_base_url}/parabank/transfer.htm"
-            parabank_billpay_url = f"{parabank_base_url}/parabank/billpay.htm"
-            parabank_findtrans_url = f"{parabank_base_url}/parabank/findtrans.htm"
-            parabank_activity_url = f"{parabank_base_url}/parabank/activity.htm"
-            # PARABANK — END
 
             # ── Persona-specific strategy ──────────────────────
             vitesse        = self.user.get("vitesse_navigation", "rapide")
@@ -1041,6 +1048,31 @@ Remember to respond in the exact format: Thought / Action / Target
                         "- Do NOT browse other categories.\n"
                         f"- If a page takes more than {patience_sec}s, move on immediately.\n"
                     )
+                # WALL STREET SURVIVOR — START
+                elif is_wallstreet and wallstreet_username and wallstreet_password:
+                    strategy = (
+                        f"🔐 WALL STREET SURVIVOR LOGIN - AUTO-FILL WITH CREDENTIALS\n\n"
+                        f"USERNAME: {wallstreet_username}\n"
+                        f"PASSWORD: {wallstreet_password}\n\n"
+                        "CRITICAL INSTRUCTIONS - YOU MUST FOLLOW EXACTLY:\n\n"
+                        "Step 1: browser_navigate to https://www.wallstreetsurvivor.com/\n"
+                        "Step 2: browser_snapshot — capture the homepage\n"
+                        "Step 3: browser_click on the Login link\n"
+                        "Step 4: browser_snapshot — capture the login form\n"
+                        f"Step 5: browser_type username field with '{wallstreet_username}'\n"
+                        f"Step 6: browser_type password field with '{wallstreet_password}'\n"
+                        "Step 7: browser_click the 'Log me in' button\n"
+                        "Step 8: browser_snapshot — verify successful login and dashboard is visible\n"
+                        "Step 9: DONE — report that you successfully logged in\n\n"
+                        "RULES:\n"
+                        f"- Use EXACTLY these credentials: {wallstreet_username} / {wallstreet_password}\n"
+                        "- DO NOT generate or modify credentials\n"
+                        "- DO NOT try to register\n"
+                        "- DO NOT create a new account\n"
+                        "- ONLY login with the provided credentials\n"
+                        "- If login fails, retry the same credentials (do not change them)\n"
+                    )
+                # WALL STREET SURVIVOR — END
                 # BOOKING.COM — START
                 elif is_booking:
                     # Get persona-specific fields from JSON
@@ -2044,6 +2076,65 @@ Remember to respond in the exact format: Thought / Action / Target
                         result_for_llm = result_str[:1500]
                         if len(result_str) > 1500:
                             result_for_llm += "\n... (truncated)"
+
+                    # ── AUTO-FILL LOGIN FORMS ────────────────────────────
+                    # Detect login forms and auto-fill with credentials
+                    if is_wallstreet and wallstreet_username and wallstreet_password:
+                        if action_name in ("browser_navigate", "browser_snapshot", "browser_click"):
+                            # Check if this is a login page
+                            if ("login" in result_str.lower() and 
+                                ("username" in result_str.lower() or "password" in result_str.lower())):
+                                print("🔐 Login form detected! Auto-filling credentials...")
+                                print(f"   Username: {wallstreet_username}")
+                                print(f"   Password: {wallstreet_password}")
+                                
+                                try:
+                                    # Use browser_evaluate with JavaScript to fill form fields directly
+                                    fill_script = f"""
+                                    () => {{
+                                        let filled = 0;
+                                        
+                                        // Find and fill username field
+                                        let usernameInput = document.querySelector('input[name="username"]') || 
+                                                           document.querySelector('input[type="text"]') ||
+                                                           document.querySelector('input[name*="user"]');
+                                        if (usernameInput) {{
+                                            usernameInput.focus();
+                                            usernameInput.value = '{wallstreet_username}';
+                                            usernameInput.dispatchEvent(new Event('input', {{ bubbles: true }}));
+                                            usernameInput.dispatchEvent(new Event('change', {{ bubbles: true }}));
+                                            filled++;
+                                        }}
+                                        
+                                        // Find and fill password field
+                                        let passwordInput = document.querySelector('input[type="password"]') ||
+                                                           document.querySelector('input[name*="pass"]');
+                                        if (passwordInput) {{
+                                            passwordInput.focus();
+                                            passwordInput.value = '{wallstreet_password}';
+                                            passwordInput.dispatchEvent(new Event('input', {{ bubbles: true }}));
+                                            passwordInput.dispatchEvent(new Event('change', {{ bubbles: true }}));
+                                            filled++;
+                                        }}
+                                        
+                                        return {{ filled: filled, username: usernameInput?.value || 'not found', password: passwordInput?.value ? '***' : 'not found' }};
+                                    }}
+                                    """
+                                    
+                                    fill_result = await tools_dict["browser_evaluate"].ainvoke({
+                                        "function": fill_script
+                                    })
+                                    print(f"✓ Auto-fill result: {fill_result}")
+                                    
+                                    # Take snapshot to confirm
+                                    snapshot_result = await tools_dict["browser_snapshot"].ainvoke({})
+                                    result_str = str(snapshot_result)
+                                    result_for_llm = self._compress_snapshot(result_str, site_type=site_type, max_products=max_prod)
+                                    print(f"✓ Login form auto-filled successfully!")
+                                    result_for_llm += f"\n\n✓ CREDENTIALS AUTO-FILLED:\n   Username: {wallstreet_username}\n   Password: ***\n\nNow click 'Log me in' button to complete login."
+                                    
+                                except Exception as e:
+                                    print(f"⚠ Auto-fill failed: {e}")
 
                     # ── Parasitic cookie tab detection ────────────────────────────
                     # Close cookiebot.com or similar parasite tabs that open after clicks

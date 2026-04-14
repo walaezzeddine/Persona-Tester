@@ -1,0 +1,96 @@
+name: "Wall Street Survivor - Login & Select Course"
+target_url: "https://www.wallstreetsurvivor.com/"
+
+description: |
+  Complete login and select a course:
+  1. Navigate to the website
+  2. Click the Login link
+  3. Fill in username and password fields
+  4. Click Log In button
+  5. Verify dashboard is accessible
+  6. Navigate to a course (on homepage or from dashboard)
+  7. Verify course page loads successfully
+
+constraints:
+  time_limit: 300
+  max_retries: 2
+
+success_criteria:
+  - "Successfully logged in to the platform"
+  - "Dashboard or main interface is visible after login"
+  - "Successfully found a course to select"
+  - "Successfully opened a course page"
+  - "Course content is displayed"
+
+abandon_criteria:
+  - "Cannot find login form after navigation"
+  - "Login attempt fails with error"
+  - "Cannot access dashboard after login"
+  - "Cannot find any courses"
+  - "Course page fails to load"
+
+key_actions:
+  - "Step 1: Navigate to Wall Street Survivor homepage"
+  - "Step 2: Take snapshot to see available courses"
+  - "Step 3: Find and click Login button/link"
+  - "Step 4: Fill in username field with provided username"
+  - "Step 5: Fill in password field with provided password"
+  - "Step 6: Click Log In button"
+  - "Step 7: Wait for dashboard to load"
+  - "Step 8: Take snapshot to verify dashboard is accessible"
+  - "Step 9: Navigate back to homepage (click Logo or navigate to /) to see courses"
+  - "Step 10: Take snapshot to see course offerings"
+  - "Step 11: Look for course links like 'Getting Started In The Stock Market' or 'Beginner Investing'"
+  - "Step 12: Click on a course link to open it"
+  - "Step 13: Wait for course page to load"
+  - "Step 14: Take snapshot to verify course content is visible"
+  - "Step 15: DONE - Successfully selected and opened a course"
+
+site_guidance: |
+  LOGIN FLOW FOR WALL STREET SURVIVOR:
+
+  🔐 CREDENTIALS PROVIDED IN YOUR SYSTEM PROMPT
+  - Your username and password are hardcoded
+  - Use EXACTLY those credentials
+  - Do not try to create an account
+
+  STEP-BY-STEP FLOW:
+
+  1. NAVIGATE & LOGIN
+     - Go to homepage: https://www.wallstreetsurvivor.com/
+     - Click Login link
+     - Auto-filled credentials will be entered
+     - Click "Log me in"
+
+  2. ACCESS DASHBOARD
+     - You'll see: Dashboard page at /account/dashboardv2 or /account/dashboard
+     - Portfolio, Stock watchlist, Navigation menus visible
+
+  3. NAVIGATE TO COURSES
+     - Navigate back to homepage (click Logo or go to https://www.wallstreetsurvivor.com/)
+     - The homepage displays multiple course links directly
+     - Do NOT click on "Courses" link with href="#" (it doesn't work)
+     - Instead, click directly on course links like:
+       * "Getting Started In The Stock Market"
+       * "Beginner Investing-10 Steps"
+       * "How to Know What Stocks to Invest in"
+       * "Investing With Little Money"
+       * "Best Investment Apps"
+
+  4. SELECT A COURSE
+     - Click on ANY of the course links above
+     - Page will navigate to course content page
+     - You'll see course text, lessons, or course material
+     - Take snapshot to confirm
+
+  5. ALTERNATIVE: Direct Navigation
+     - If needed, navigate directly to:
+       https://www.wallstreetsurvivor.com/courses/
+     - This shows a list of all courses you can select
+
+  IMPORTANT NOTES:
+  - Courses are on the homepage directly, not in a menu
+  - The "Courses" text in navigation is just a label with href="#" - don't click it
+  - Actual course links have real URLs starting with /stock-market-for-beginners/, etc.
+  - Always verify with snapshots after each navigation
+  - Login is fast, then navigate back to homepage to see courses

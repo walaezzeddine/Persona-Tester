@@ -1,0 +1,460 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - text: 
+      - button "Select Language" [ref=e5] [cursor=pointer]:
+        - text: About
+        - generic [ref=e6]: 
+      - generic "Challenges" [ref=e7] [cursor=pointer]:
+        - text: Contests
+        - generic [ref=e8]: 
+    - generic [ref=e10]:
+      - generic "Username" [ref=e11]: walaezzedine
+      - link "Unread Messages" [ref=e12] [cursor=pointer]:
+        - /url: /forum/messages
+        - generic [ref=e13]: 
+        - generic "Number of Unread Messages" [ref=e14]: "1"
+      - combobox "Tournament Select" [ref=e16]:
+        - option "My Practice Portfolio" [selected]
+      - link "Logout" [ref=e17] [cursor=pointer]:
+        - /url: /logout
+  - navigation [ref=e18]:
+    - menubar [ref=e20]:
+      - menuitem "Logo" [ref=e21]:
+        - link "Logo" [ref=e22] [cursor=pointer]:
+          - /url: /home
+          - img "Logo" [ref=e23]
+    - menubar [ref=e25]:
+      - menuitem "Dashboard" [ref=e26]:
+        - generic [ref=e27] [cursor=pointer]: Dashboard 
+        - text: 
+      - menuitem "Stock Game" [ref=e28]:
+        - generic [ref=e29] [cursor=pointer]: Stock Game 
+      - menuitem "Investing Research" [ref=e30]:
+        - generic "Investing Research" [ref=e31] [cursor=pointer]: Investing Research 
+      - menuitem "Courses" [ref=e32]:
+        - generic [ref=e33] [cursor=pointer]: Courses 
+      - menuitem "Getting Started" [ref=e34]:
+        - generic [ref=e35] [cursor=pointer]: Getting Started 
+  - generic [ref=e36]:
+    - generic [ref=e38]:
+      - table [ref=e41]:
+        - rowgroup [ref=e42]:
+          - row "Chapter 1 - Introduction To Investing Whether you have $1,000 or $1,000,000 in savings, education is the key to empowering yourself to take charge of your financial future. Read More" [ref=e43]:
+            - cell [ref=e44]:
+              - img [ref=e45]
+            - cell "Chapter 1 - Introduction To Investing Whether you have $1,000 or $1,000,000 in savings, education is the key to empowering yourself to take charge of your financial future. Read More" [ref=e46]:
+              - heading "Chapter 1 - Introduction To Investing" [level=3] [ref=e47]
+              - text: Whether you have $1,000 or $1,000,000 in savings, education is the key to empowering yourself to take charge of your financial future.
+              - link "Read More" [ref=e48] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-chapter-1-introduction-to-investing
+          - row "1-01 Understanding Investment Choices When learning any new skill, like playing golf or investing, you must begin understanding some of the \"tools\" and \"terms\" involved. Without this basic knowledge, it is difficult – if not impossible – to practice your new skill properly. Read More" [ref=e49]:
+            - cell [ref=e50]:
+              - img [ref=e51]
+            - cell "1-01 Understanding Investment Choices When learning any new skill, like playing golf or investing, you must begin understanding some of the \"tools\" and \"terms\" involved. Without this basic knowledge, it is difficult – if not impossible – to practice your new skill properly. Read More" [ref=e52]:
+              - heading "1-01 Understanding Investment Choices" [level=3] [ref=e53]
+              - text: When learning any new skill, like playing golf or investing, you must begin understanding some of the "tools" and "terms" involved. Without this basic knowledge, it is difficult – if not impossible – to practice your new skill properly.
+              - link "Read More" [ref=e54] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-01-01
+          - row "1-02 Bank and Credit Union Products Most financial institutions, banks, credit unions, and savings and loan associations have a similar menu of investment products from which you may choose. Here are the most common and popular products Read More" [ref=e55]:
+            - cell [ref=e56]:
+              - img [ref=e57]
+            - cell "1-02 Bank and Credit Union Products Most financial institutions, banks, credit unions, and savings and loan associations have a similar menu of investment products from which you may choose. Here are the most common and popular products Read More" [ref=e58]:
+              - heading "1-02 Bank and Credit Union Products" [level=3] [ref=e59]
+              - text: Most financial institutions, banks, credit unions, and savings and loan associations have a similar menu of investment products from which you may choose. Here are the most common and popular products
+              - link "Read More" [ref=e60] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-01-02
+          - row "1-03 Certificates of Deposit (CDs) When you buy a CD you are locked into that interest rate for the life of the CD. If you take out your money before the full term, the bank will charge you a penalty so make sure you understand the term and the penalties involved if you suddenly need the cash and you have to “bust” your CD. Also, consider which direction you think interest rates are heading. If interest rates are very low, don’t lock in a low rate for 5 years! You can’t just bust your CD and then buy a new one with a higher interest rate if you’re current CD hasn’t matured yet. Read More" [ref=e61]:
+            - cell [ref=e62]:
+              - img [ref=e63]
+            - cell "1-03 Certificates of Deposit (CDs) When you buy a CD you are locked into that interest rate for the life of the CD. If you take out your money before the full term, the bank will charge you a penalty so make sure you understand the term and the penalties involved if you suddenly need the cash and you have to “bust” your CD. Also, consider which direction you think interest rates are heading. If interest rates are very low, don’t lock in a low rate for 5 years! You can’t just bust your CD and then buy a new one with a higher interest rate if you’re current CD hasn’t matured yet. Read More" [ref=e64]:
+              - heading "1-03 Certificates of Deposit (CDs)" [level=3] [ref=e65]
+              - text: When you buy a CD you are locked into that interest rate for the life of the CD. If you take out your money before the full term, the bank will charge you a penalty so make sure you understand the term and the penalties involved if you suddenly need the cash and you have to “bust” your CD. Also, consider which direction you think interest rates are heading. If interest rates are very low, don’t lock in a low rate for 5 years! You can’t just bust your CD and then buy a new one with a higher interest rate if you’re current CD hasn’t matured yet.
+              - link "Read More" [ref=e66] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-01-03
+          - row "1-04 Stocks Stocks are \"equity investments\" which means that when you own shares of a company you own part of that company. For example, if you own 1,000 shares of Apple Computer stock and Apple has 1,000,000 shares that are \"issued and outstanding,\" then you own 0.1% of the company. If Apple were then to be sold to another company for $50,000,000, then each share would be worth $50 ($50 million divided by 1 million shares). At $50 a share, you would receive $50,000 for your 1,000 shares. Read More" [ref=e67]:
+            - cell [ref=e68]:
+              - img [ref=e69]
+            - cell "1-04 Stocks Stocks are \"equity investments\" which means that when you own shares of a company you own part of that company. For example, if you own 1,000 shares of Apple Computer stock and Apple has 1,000,000 shares that are \"issued and outstanding,\" then you own 0.1% of the company. If Apple were then to be sold to another company for $50,000,000, then each share would be worth $50 ($50 million divided by 1 million shares). At $50 a share, you would receive $50,000 for your 1,000 shares. Read More" [ref=e70]:
+              - heading "1-04 Stocks" [level=3] [ref=e71]
+              - text: Stocks are "equity investments" which means that when you own shares of a company you own part of that company. For example, if you own 1,000 shares of Apple Computer stock and Apple has 1,000,000 shares that are "issued and outstanding," then you own 0.1% of the company. If Apple were then to be sold to another company for $50,000,000, then each share would be worth $50 ($50 million divided by 1 million shares). At $50 a share, you would receive $50,000 for your 1,000 shares.
+              - link "Read More" [ref=e72] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-01-04
+          - row "1-05 Mutual Funds A mutual fund is a type of investment where a money manager takes your cash and invests it as he sees fit, usually following some rough guidelines. For example, the Fidelity Group has a fund that specializes in finding high dividend paying stocks, one that specializes in bank stocks, and one that specializes in European stocks, etc. You simply find a fund that matches your objective, you review its past performance and its management team, and then you write a check to that mutual fund. Read More" [ref=e73]:
+            - cell [ref=e74]:
+              - img [ref=e75]
+            - cell "1-05 Mutual Funds A mutual fund is a type of investment where a money manager takes your cash and invests it as he sees fit, usually following some rough guidelines. For example, the Fidelity Group has a fund that specializes in finding high dividend paying stocks, one that specializes in bank stocks, and one that specializes in European stocks, etc. You simply find a fund that matches your objective, you review its past performance and its management team, and then you write a check to that mutual fund. Read More" [ref=e76]:
+              - heading "1-05 Mutual Funds" [level=3] [ref=e77]
+              - text: A mutual fund is a type of investment where a money manager takes your cash and invests it as he sees fit, usually following some rough guidelines. For example, the Fidelity Group has a fund that specializes in finding high dividend paying stocks, one that specializes in bank stocks, and one that specializes in European stocks, etc. You simply find a fund that matches your objective, you review its past performance and its management team, and then you write a check to that mutual fund.
+              - link "Read More" [ref=e78] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-01-05
+          - row "1-06 ETFs (Exchange-Traded Funds) ETFs have the benefits of Mutual Funds in that one investment allows ownership in a group of Stocks, and usually that ownership is targeted to a specific industry, region or market segment (like gold stocks, financial stocks, small-cap stocks, or the Brazilian market). This built- in diversification is advantageous if you don’t like picking individual stocks but you have an interest in a particular industry. Read More" [ref=e79]:
+            - cell [ref=e80]:
+              - img [ref=e81]
+            - cell "1-06 ETFs (Exchange-Traded Funds) ETFs have the benefits of Mutual Funds in that one investment allows ownership in a group of Stocks, and usually that ownership is targeted to a specific industry, region or market segment (like gold stocks, financial stocks, small-cap stocks, or the Brazilian market). This built- in diversification is advantageous if you don’t like picking individual stocks but you have an interest in a particular industry. Read More" [ref=e82]:
+              - heading "1-06 ETFs (Exchange-Traded Funds)" [level=3] [ref=e83]
+              - text: ETFs have the benefits of Mutual Funds in that one investment allows ownership in a group of Stocks, and usually that ownership is targeted to a specific industry, region or market segment (like gold stocks, financial stocks, small-cap stocks, or the Brazilian market). This built- in diversification is advantageous if you don’t like picking individual stocks but you have an interest in a particular industry.
+              - link "Read More" [ref=e84] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-01-06
+          - row "1-07 Bonds Unlike stocks, which are equity instruments, bonds are debt instruments. When bonds are first issued by the company, the investor/lender typically gives the company $1,000 and the company promises to pay the investor/lender a certain interest rate every year (called the Coupon Rate), AND, repay the $1,000 loan when the bond matures (called the Maturity Date). Read More" [ref=e85]:
+            - cell [ref=e86]:
+              - img [ref=e87]
+            - cell "1-07 Bonds Unlike stocks, which are equity instruments, bonds are debt instruments. When bonds are first issued by the company, the investor/lender typically gives the company $1,000 and the company promises to pay the investor/lender a certain interest rate every year (called the Coupon Rate), AND, repay the $1,000 loan when the bond matures (called the Maturity Date). Read More" [ref=e88]:
+              - heading "1-07 Bonds" [level=3] [ref=e89]
+              - text: Unlike stocks, which are equity instruments, bonds are debt instruments. When bonds are first issued by the company, the investor/lender typically gives the company $1,000 and the company promises to pay the investor/lender a certain interest rate every year (called the Coupon Rate), AND, repay the $1,000 loan when the bond matures (called the Maturity Date).
+              - link "Read More" [ref=e90] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-01-07
+          - row "1-08 Commodities Commodities, like iron, copper, milk, wheat, cocoa, and orange juice, are also investments that many traders keep in an active portfolio Read More" [ref=e91]:
+            - cell [ref=e92]:
+              - img [ref=e93]
+            - cell "1-08 Commodities Commodities, like iron, copper, milk, wheat, cocoa, and orange juice, are also investments that many traders keep in an active portfolio Read More" [ref=e94]:
+              - heading "1-08 Commodities" [level=3] [ref=e95]
+              - text: Commodities, like iron, copper, milk, wheat, cocoa, and orange juice, are also investments that many traders keep in an active portfolio
+              - link "Read More" [ref=e96] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-01-08
+          - row "1-09 Gold and Other Precious Metals Precious metals, particularly gold and silver, are attractive investments to many people. But as usual, you must learn to become a knowledgeable investor as precious metals can fluctuate in value as rapidly as common stocks. Read More" [ref=e97]:
+            - cell [ref=e98]:
+              - img [ref=e99]
+            - cell "1-09 Gold and Other Precious Metals Precious metals, particularly gold and silver, are attractive investments to many people. But as usual, you must learn to become a knowledgeable investor as precious metals can fluctuate in value as rapidly as common stocks. Read More" [ref=e100]:
+              - heading "1-09 Gold and Other Precious Metals" [level=3] [ref=e101]
+              - text: Precious metals, particularly gold and silver, are attractive investments to many people. But as usual, you must learn to become a knowledgeable investor as precious metals can fluctuate in value as rapidly as common stocks.
+              - link "Read More" [ref=e102] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-01-09
+          - row "1-10 Foreign Currency and Foreign Stocks Investing in FX (foreign exchange), currency speculation, and hedging are variations of the same basic investment strategy—you are betting that one currency will strengthen or weaken against the other. Read More" [ref=e103]:
+            - cell [ref=e104]:
+              - img [ref=e105]
+            - cell "1-10 Foreign Currency and Foreign Stocks Investing in FX (foreign exchange), currency speculation, and hedging are variations of the same basic investment strategy—you are betting that one currency will strengthen or weaken against the other. Read More" [ref=e106]:
+              - heading "1-10 Foreign Currency and Foreign Stocks" [level=3] [ref=e107]
+              - text: Investing in FX (foreign exchange), currency speculation, and hedging are variations of the same basic investment strategy—you are betting that one currency will strengthen or weaken against the other.
+              - link "Read More" [ref=e108] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-01-10
+          - row "1-11 Real Estate Buying and selling real estate as an investment strategy is quite different from simply buying a home or commercial building. Just as important in determining FMV (fair market value) as comparable properties are when buying a home, the income stream generated by a property is a primary component for an investor Read More" [ref=e109]:
+            - cell [ref=e110]:
+              - img [ref=e111]
+            - cell "1-11 Real Estate Buying and selling real estate as an investment strategy is quite different from simply buying a home or commercial building. Just as important in determining FMV (fair market value) as comparable properties are when buying a home, the income stream generated by a property is a primary component for an investor Read More" [ref=e112]:
+              - heading "1-11 Real Estate" [level=3] [ref=e113]
+              - text: Buying and selling real estate as an investment strategy is quite different from simply buying a home or commercial building. Just as important in determining FMV (fair market value) as comparable properties are when buying a home, the income stream generated by a property is a primary component for an investor
+              - link "Read More" [ref=e114] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-01-11
+          - row "1-12 Recent Performance of Investments For those just beginning, a good point of reference is the recent performance of the common investments described above. How have they done over the last five years? These charts illustrate their performance over the same time period. When looking at the charts, keep in mind what you read earlier in the lesson and what you’ve heard about the economy in the news. Read More" [ref=e115]:
+            - cell [ref=e116]:
+              - img [ref=e117]
+            - cell "1-12 Recent Performance of Investments For those just beginning, a good point of reference is the recent performance of the common investments described above. How have they done over the last five years? These charts illustrate their performance over the same time period. When looking at the charts, keep in mind what you read earlier in the lesson and what you’ve heard about the economy in the news. Read More" [ref=e118]:
+              - heading "1-12 Recent Performance of Investments" [level=3] [ref=e119]
+              - text: For those just beginning, a good point of reference is the recent performance of the common investments described above. How have they done over the last five years? These charts illustrate their performance over the same time period. When looking at the charts, keep in mind what you read earlier in the lesson and what you’ve heard about the economy in the news.
+              - link "Read More" [ref=e120] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-01-12
+          - row "1-13 Resources Glossary and further exercises Read More" [ref=e121]:
+            - cell [ref=e122]:
+              - img [ref=e123]
+            - cell "1-13 Resources Glossary and further exercises Read More" [ref=e124]:
+              - heading "1-13 Resources" [level=3] [ref=e125]
+              - text: Glossary and further exercises
+              - link "Read More" [ref=e126] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-01-13
+          - row "Vocabular Quiz Vocabulary quiz covering terms introduced in Chapter 1 Read More" [ref=e127]:
+            - cell [ref=e128]:
+              - img [ref=e129]
+            - cell "Vocabular Quiz Vocabulary quiz covering terms introduced in Chapter 1 Read More" [ref=e130]:
+              - heading "Vocabular Quiz" [level=3] [ref=e131]
+              - text: Vocabulary quiz covering terms introduced in Chapter 1
+              - link "Read More" [ref=e132] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-01-vocab
+          - row "Chapter 1 Exam Final exam covering all topics discussed in Chapter 1 Read More" [ref=e133]:
+            - cell [ref=e134]:
+              - img [ref=e135]
+            - cell "Chapter 1 Exam Final exam covering all topics discussed in Chapter 1 Read More" [ref=e136]:
+              - heading "Chapter 1 Exam" [level=3] [ref=e137]
+              - text: Final exam covering all topics discussed in Chapter 1
+              - link "Read More" [ref=e138] [cursor=pointer]:
+                - /url: http://app.wallstreetsurvivor.com/content/index?url=wss-htmw-01-exam
+      - generic [ref=e141]:
+        - generic [ref=e143]:
+          - heading "Announcements" [level=3] [ref=e147]
+          - generic [ref=e149]:
+            - text: Join WallStreetSurvivor on Facebook for the latest updates, market insights, and contest news.
+            - link "Follow us on Facebook" [ref=e150] [cursor=pointer]:
+              - /url: https://www.facebook.com/WallStSurvivor
+        - generic [ref=e151]:
+          - list [ref=e154]:
+            - listitem [ref=e155]:
+              - generic [ref=e156] [cursor=pointer]: Asset Class
+            - listitem [ref=e157]:
+              - generic [ref=e158] [cursor=pointer]: Symbols
+            - listitem [ref=e159]:
+              - generic [ref=e160] [cursor=pointer]: Industry
+            - listitem [ref=e161]:
+              - generic [ref=e162] [cursor=pointer]: Market Cap
+          - generic "A chart." [ref=e167]:
+            - img "A chart." [ref=e168]:
+              - generic [ref=e169]: You Currently have no stocks in your portfolio
+            - generic "A tabular representation of the data in the chart." [ref=e170]:
+              - table [ref=e171]:
+                - rowgroup [ref=e172]:
+                  - row "holderId symbols-pie-chart" [ref=e173]:
+                    - columnheader "holderId" [ref=e174]
+                    - columnheader "symbols-pie-chart" [ref=e175]
+                - rowgroup
+        - tablist
+        - generic [ref=e176]:
+          - generic [ref=e178]:
+            - heading "My Watchlist" [level=3] [ref=e180]
+            - generic [ref=e183] [cursor=pointer]: +
+          - table [ref=e185]:
+            - rowgroup [ref=e186]:
+              - row "AAPL 259.20 -1.28" [ref=e187]:
+                - cell [ref=e188]:
+                  - generic [ref=e190] [cursor=pointer]: 
+                - cell "AAPL" [ref=e191]:
+                  - link "AAPL" [ref=e192] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?converted=1&symbol=AAPL
+                - cell "259.20" [ref=e193]
+                - cell "-1.28" [ref=e194]
+              - row "BAC 53.35 0.81" [ref=e195]:
+                - cell [ref=e196]:
+                  - generic [ref=e198] [cursor=pointer]: 
+                - cell "BAC" [ref=e199]:
+                  - link "BAC" [ref=e200] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?converted=1&symbol=BAC
+                - cell "53.35" [ref=e201]
+                - cell "0.81" [ref=e202]
+              - row "GOOG 319.21 3.49" [ref=e203]:
+                - cell [ref=e204]:
+                  - generic [ref=e206] [cursor=pointer]: 
+                - cell "GOOG" [ref=e207]:
+                  - link "GOOG" [ref=e208] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?converted=1&symbol=GOOG
+                - cell "319.21" [ref=e209]
+                - cell "3.49" [ref=e210]
+              - row "KO 76.41 -1.06" [ref=e211]:
+                - cell [ref=e212]:
+                  - generic [ref=e214] [cursor=pointer]: 
+                - cell "KO" [ref=e215]:
+                  - link "KO" [ref=e216] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?converted=1&symbol=KO
+                - cell "76.41" [ref=e217]
+                - cell "-1.06" [ref=e218]
+        - generic [ref=e220]:
+          - heading "Market News" [level=3] [ref=e224]
+          - generic [ref=e225]:
+            - list [ref=e226]:
+              - listitem [ref=e227]:
+                - link "Stocks Sink in Broad AI Rout Sparked by China's DeepSeek" [ref=e228] [cursor=pointer]:
+                  - /url: https://www.wsj.com/articles/nikkei-may-rise-as-weak-yen-raises-earnings-hopes-776a8056?mod=rss_markets_main
+              - listitem [ref=e229]:
+                - link "Stocks Sink in Broad AI Rout Sparked by China's DeepSeek" [ref=e230] [cursor=pointer]:
+                  - /url: https://www.wsj.com/articles/nikkei-may-rise-as-weak-yen-raises-earnings-hopes-776a8056?mod=rss_markets_main
+              - listitem [ref=e231]:
+                - link "Comex Gold, Silver Settle Lower" [ref=e232] [cursor=pointer]:
+                  - /url: https://www.wsj.com/articles/gold-edges-lower-feds-rate-decision-in-focus-09dbfceb?mod=rss_markets_main
+              - listitem [ref=e233]:
+                - link "DeepSeek Won't Sink U.S. AI Titans" [ref=e234] [cursor=pointer]:
+                  - /url: https://www.wsj.com/articles/deepseek-us-ai-stocks-nvidia-broadcom-6cdfae81?mod=rss_markets_main
+              - listitem [ref=e235]:
+                - 'link "Financial Services Roundup: Market Talk" [ref=e236] [cursor=pointer]':
+                  - /url: https://www.wsj.com/articles/financial-services-roundup-market-talk-94f52cba?mod=rss_markets_main
+              - listitem [ref=e237]:
+                - link "Arabica Coffee Prices Hit Record on U.S., Colombia Tariff Spat" [ref=e238] [cursor=pointer]:
+                  - /url: https://www.wsj.com/articles/arabica-coffee-prices-hit-new-high-on-u-s-colombia-tariff-spat-582446fe?mod=rss_markets_main
+              - listitem [ref=e239]:
+                - link "Swiss franc, Japanese yen Rise as DeepSeek News Boosts Safe Havens" [ref=e240] [cursor=pointer]:
+                  - /url: https://www.wsj.com/articles/safe-haven-currencies-strengthen-amid-fears-over-global-tariffs-9964e17a?mod=rss_markets_main
+            - link "Read more..." [ref=e242] [cursor=pointer]:
+              - /url: http://syndication.thestreet.com/feed/476/outbound
+    - generic [ref=e245]:
+      - strong [ref=e246]: Notice
+      - paragraph [ref=e247]:
+        - text: This website uses cookies, for more information please visit our
+        - link "Privacy Policy" [ref=e248] [cursor=pointer]:
+          - /url: https://content.stocktrak.com/privacy-policy/
+          - strong [ref=e249]: Privacy Policy
+      - generic [ref=e250] [cursor=pointer]: Ok
+  - contentinfo [ref=e251]:
+    - generic [ref=e253]:
+      - complementary [ref=e255]:
+        - figure [ref=e256]:
+          - link "WallStreetSurvivor logo" [ref=e257] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e258]
+      - generic [ref=e259]:
+        - complementary [ref=e260]:
+          - heading "Our Platform" [level=3] [ref=e261]
+        - complementary [ref=e262]:
+          - list [ref=e263]:
+            - listitem [ref=e264]:
+              - link "Stock Market Simulator" [ref=e265] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e266]:
+              - link "Investing Courses for Beginners" [ref=e267] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/courses/
+            - listitem [ref=e268]:
+              - link "Best Stocks to Buy Now" [ref=e269] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e270]:
+              - link "How to Invest Videos" [ref=e271] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+            - listitem [ref=e272]:
+              - link "Free Online Investing Course" [ref=e273] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e274]:
+              - link "Financial Literacy Game for Students" [ref=e275] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e276]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e277] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e278]:
+              - link "Crypto Paper Trading" [ref=e279] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e280]:
+              - link "About WallStreetSurvivor" [ref=e281] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+      - generic [ref=e282]:
+        - complementary [ref=e283]:
+          - heading "Review Center" [level=3] [ref=e284]
+        - complementary [ref=e285]:
+          - list [ref=e286]:
+            - listitem [ref=e287]:
+              - link "Motley Fool Review" [ref=e288] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e289]:
+              - link "Seeking Alpha Review" [ref=e290] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e291]:
+              - link "Alpha Picks Review" [ref=e292] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e293]:
+              - link "Moby Stocks Review" [ref=e294] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e295]:
+              - link "Wealthsimple Review" [ref=e296] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/wealthsimple-review/
+            - listitem [ref=e297]:
+              - link "Is Robinhood Safe to Use?" [ref=e298] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e299]:
+              - link "Rule Breakers Review" [ref=e300] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e301]:
+              - link "Best Investment Newsletters" [ref=e302] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e303]:
+              - link "Best Investing Apps" [ref=e304] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e305]:
+              - link "Best Motley Fool Discount Code" [ref=e306] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e307]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e308] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e309]:
+              - link "Best Tipranks Discount Code" [ref=e310] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e311]:
+              - link "Is Coinbase Safe?" [ref=e312] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e313]:
+              - link "Free Crypto with Coinbase" [ref=e314] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e315]:
+              - link "Best Stock Picking Service" [ref=e316] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+      - generic [ref=e317]:
+        - complementary [ref=e318]:
+          - heading "Corporate Services" [level=3] [ref=e319]
+        - complementary [ref=e320]:
+          - list [ref=e321]:
+            - listitem [ref=e322]:
+              - link "White Label Stock Market Games" [ref=e323] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e324]:
+              - link "White Label Virtual Crypto Trading" [ref=e325] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e326]:
+              - link "Employee Financial Wellness" [ref=e327] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e328]:
+              - link "Sponsor a College or High School" [ref=e329] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e330]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e331] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e332]:
+          - heading "Our Company" [level=3] [ref=e333]
+        - complementary [ref=e334]:
+          - list [ref=e335]:
+            - listitem [ref=e336]:
+              - link "Contact Us" [ref=e337] [cursor=pointer]:
+                - /url: mailto:support@wallstreetsurvivor.com
+            - listitem [ref=e338]:
+              - link "About Us" [ref=e339] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/
+            - listitem [ref=e340]:
+              - link "Motley Fool Review" [ref=e341] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e342]:
+              - link "Privacy Policy" [ref=e343] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e344]:
+              - link "Terms and Conditions" [ref=e345] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e346]:
+              - link "Advertise with Us" [ref=e347] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e348]:
+        - complementary [ref=e349]:
+          - heading "Family of Sites" [level=3] [ref=e350]:
+            - strong [ref=e351]: Family of Sites
+        - complementary [ref=e352]:
+          - figure [ref=e353]:
+            - link "StockTrak logo" [ref=e354] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e355]
+        - complementary [ref=e356]:
+          - figure [ref=e357]:
+            - link "PersonalFinanceLab logo" [ref=e358] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e359]
+        - complementary [ref=e360]:
+          - figure [ref=e361]:
+            - link "WallStreetSurvivor logo" [ref=e362] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Practice stock trading site" [ref=e363]
+        - complementary [ref=e364]:
+          - figure [ref=e365]:
+            - link "HowTheMarketWorks logo" [ref=e366] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free stock market game for students" [ref=e367]
+        - complementary [ref=e368]:
+          - link "Global Virtual Stock Game" [ref=e369] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e370] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - generic "Site" [ref=e371]:
+      - generic [ref=e372]:
+        - generic [ref=e373]:
+          - complementary [ref=e374]:
+            - heading "Connect With Us" [level=2] [ref=e375]
+          - complementary:
+            - figure [ref=e376]:
+              - link "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e377] [cursor=pointer]:
+                - /url: https://www.instagram.com/wallstreetsurvivor/
+                - img "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e378]
+          - complementary:
+            - figure [ref=e379]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e380] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e381]
+          - complementary:
+            - figure [ref=e382]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e383] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e384]
+          - complementary:
+            - figure [ref=e385]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e386] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e387]
+        - generic [ref=e388]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2025 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.
+  - text: 
+  - generic [ref=e390]:
+    - img
