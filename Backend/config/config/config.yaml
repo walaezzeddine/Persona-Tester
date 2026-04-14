@@ -1,0 +1,33 @@
+llm:
+  provider: "ollama"
+  model: "qwen3.5:cloud"
+  temperature: 0.1
+  max_tokens: 512
+  base_url: "http://localhost:11434/v1"
+  vision_provider: "ollama"
+  vision_model: "qwen3.5:cloud"
+  vision_max_tokens: 512
+navigation:
+  max_steps: 25
+  action_delay: 0.5
+  action_timeout: 10000
+  page_timeout: 30000
+  page_content_limit: 1500
+browser:
+  headless: false
+  viewport:
+    width: 1280
+    height: 800
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  vision_enabled: false
+  sandbox: false
+  screenshot_quality: 60
+  screenshot_width: 1024
+logging:
+  verbosity: "normal"
+  opentelemetry_enabled: false
+  screenshots_enabled: false
+  screenshots_dir: "screenshots"
+personas:
+  parallel_count: 1
+  history_limit: 10
