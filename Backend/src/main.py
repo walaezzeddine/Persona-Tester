@@ -22,18 +22,9 @@ print("\n🚀 Starting Persona Automation API...")
 print("=" * 50)
 
 try:
-    # Import app from the new Backend API structure
-    # Note: Make sure frontend/api/app.py exists and is properly set up
-    # Or create Backend/src/api/routes.py
-    
-    # For now, try to import from frontend (will work during transition)
-    try:
-        from frontend.api.app import app
-        print("✓ App imported from frontend.api.app")
-    except ImportError:
-        # Fallback to Backend structure when ready
-        from src.api.routes import app
-        print("✓ App imported from src.api.routes")
+    # Import app from Backend API structure
+    from api.routes import app
+    print("✓ App imported from api.routes (Backend)")
 
     import uvicorn
     print("📊 Running on http://0.0.0.0:5000")
@@ -46,3 +37,4 @@ except Exception as e:
     import traceback
     traceback.print_exc()
     sys.exit(1)
+
