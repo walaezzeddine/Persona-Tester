@@ -8,7 +8,7 @@ llm:
   vision_model: "qwen3.5:cloud"
   vision_max_tokens: 512
 navigation:
-  max_steps: 25
+  max_steps: 50
   action_delay: 0.5
   action_timeout: 10000
   page_timeout: 30000
@@ -19,14 +19,14 @@ browser:
     width: 1280
     height: 800
   user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-  vision_enabled: false
+  vision_enabled: true
   sandbox: false
   screenshot_quality: 60
   screenshot_width: 1024
 logging:
   verbosity: "normal"
   opentelemetry_enabled: false
-  screenshots_enabled: false
+  screenshots_enabled: true
   screenshots_dir: "screenshots"
 personas:
   parallel_count: 1

@@ -1,0 +1,151 @@
+name: "Wall Street Survivor - Real Trading Scenario"
+target_url: "https://www.wallstreetsurvivor.com/"
+
+description: |
+  Complete a real trading scenario on Wall Street Survivor:
+  1. Login to the platform
+  2. Access the trading dashboard/portfolio
+  3. Search for a stock (e.g., Apple, Microsoft, Tesla)
+  4. View stock details and analysis
+  5. Place a BUY order for the stock
+  6. Verify the order was placed successfully
+  7. Check the portfolio to see the new position
+
+constraints:
+  time_limit: 600
+  max_retries: 3
+
+success_criteria:
+  - "Successfully logged in to the platform"
+  - "Dashboard/trading interface is accessible"
+  - "Stock search functionality works"
+  - "Stock details page loaded"
+  - "Successfully placed a BUY order"
+  - "Order confirmation received"
+  - "Portfolio reflects the new position"
+
+abandon_criteria:
+  - "Cannot login after 3 attempts"
+  - "Trading dashboard not accessible"
+  - "Stock search fails"
+  - "Cannot place order"
+  - "Order placement returns error"
+
+key_actions:
+  - "Step 1: Navigate to Wall Street Survivor homepage"
+  - "Step 2: Find and click Login button"
+  - "Step 3: Fill in username field"
+  - "Step 4: Fill in password field"
+  - "Step 5: Click Log In button"
+  - "Step 6: Wait for dashboard to load"
+  - "Step 7: Take snapshot to see trading dashboard"
+  - "Step 8: Look for a stock search box or portfolio section"
+  - "Step 9: Search for a stock (AAPL, MSFT, or TSLA recommended)"
+  - "Step 10: Wait for search results to load"
+  - "Step 11: Click on the stock to view details"
+  - "Step 12: Take snapshot of stock details page"
+  - "Step 13: Look for a BUY button or Trade button"
+  - "Step 14: Click the BUY button"
+  - "Step 15: Wait for order dialog/form to appear"
+  - "Step 16: Enter number of shares (e.g., 10 shares)"
+  - "Step 17: Verify order preview (price, total)"
+  - "Step 18: Click Confirm/Place Order button"
+  - "Step 19: Wait for order confirmation"
+  - "Step 20: Take snapshot of confirmation"
+  - "Step 21: Navigate back to portfolio"
+  - "Step 22: Verify the stock appears in holdings"
+  - "Step 23: Take snapshot of updated portfolio"
+  - "Step 24: DONE - Successfully completed trading scenario"
+
+site_guidance: |
+  WALL STREET SURVIVOR TRADING SCENARIO:
+  
+  🔐 LOGIN (Same as before)
+  - Username: WALAEZZEDINE
+  - Password: WALA@123
+  - Navigate to https://www.wallstreetsurvivor.com/
+  - Click Login
+  - Enter credentials
+  - Click "Log me in"
+  
+  💼 TRADING DASHBOARD
+  - After login, you'll be on dashboard (typically /account/dashboard or similar)
+  - Look for:
+    * Stock search box
+    * "Buy Stock" button
+    * Portfolio section
+    * "My Holdings" or "Portfolio"
+  - If not visible immediately, navigate to main trading area
+  
+  🔍 STOCK SEARCH & SELECTION
+  - Look for search input field
+  - Search for a popular stock:
+    * AAPL (Apple) - Most liquid
+    * MSFT (Microsoft)
+    * TSLA (Tesla)
+    * GOOGL (Google)
+    * AMZN (Amazon)
+  - Click on stock from search results
+  - Page will show stock details:
+    * Current price
+    * Chart
+    * Company info
+    * BUY/SELL buttons
+  
+  📊 BUYING A STOCK
+  - Look for "BUY" button (usually prominent, green colored)
+  - Click BUY button
+  - A dialog/form will appear with:
+    * Quantity field (shares to buy)
+    * Order type (Market/Limit)
+    * Price information
+    * Total cost calculation
+  - Enter quantity (e.g., 10 shares)
+  - Review the order:
+    * Share price
+    * Total cost
+    * Commission (if any)
+  - Click "Place Order", "Confirm", or "Buy Now"
+  - Wait for confirmation message
+  
+  ✅ ORDER CONFIRMATION
+  - System should show:
+    * Order ID
+    * "Order placed successfully" message
+    * Stock symbol and quantity
+    * Execution price
+    * Order status (Pending/Filled)
+  - Take screenshot to confirm
+  
+  📈 VERIFY IN PORTFOLIO
+  - Navigate to Portfolio/Holdings section
+  - Look for the stock you just bought
+  - Verify:
+    * Stock symbol appears
+    * Quantity matches (e.g., 10 shares)
+    * Entry price shown
+    * Current value calculated
+  - Take screenshot of portfolio showing new position
+  
+  ⚠️ IMPORTANT NOTES:
+  - This is a VIRTUAL trading platform (paper trading/simulator)
+  - No real money is involved
+  - All trades are simulated
+  - Orders execute instantly (no real execution delays)
+  - Price data may be delayed or simulated
+  - Make sure to SELL before closing browser if you want to clean up
+  
+  🎯 ALTERNATIVE IF BUYING NOT AVAILABLE:
+  - If buy button not clearly available, look for:
+    * "Trade" button
+    * "Place Order" button
+    * "Add to Portfolio" button
+  - Or navigate to /trading or /portfolio section
+  - Some pages may have different layouts
+  
+  💡 TIPS FOR SUCCESS:
+  - Take snapshots after each major step to verify progress
+  - Look for loading indicators and wait for them to complete
+  - Check error messages carefully if something fails
+  - The platform may have demo/tutorial mode - ignore those, use real trading
+  - If stuck, try clicking on the stock name again or going back to search

@@ -1,0 +1,100 @@
+name: "Wall Street Survivor - Buy Stock (Wise User)"
+description: "Researched stock purchase scenario - Wise user checks performance before deciding"
+
+objectif: "Search a stock, check performance, then decide intelligently whether to buy"
+
+context:
+  username: WALAEZZEDINE
+  password: WALA@123
+  portfolio: "My Practice Portfolio"
+  target_stock: "TSLA"
+  buy_quantity: 1
+  decision_criteria: "Buy if price trending up, skip if trending down"
+
+key_actions:
+  - Login to Wall Street Survivor with credentials
+  - Search for TSLA stock
+  - Examine stock performance (price chart, trend direction)
+  - Analyze: Is price trending UP or DOWN?
+  - Make decision: Buy only if trending up, skip if trending down
+  - If buying: Enter quantity and confirm
+  - Record decision logic and outcome
+
+success_criteria:
+  - Successfully logged in
+  - Stock performance data examined
+  - Decision made based on performance (buy or skip)
+  - If bought: Transaction confirmed
+  - Decision logic followed correctly
+
+# Detailed scenario steps for LLM guidance
+steps:
+  - step_1:
+      description: "Login to dashboard"
+      action: "Navigate to login, enter credentials (auto-filled), click login"
+      expected: "Dashboard accessible with portfolio"
+      time_budget: "5 seconds"
+      
+  - step_2:
+      description: "Search for stock - DELIBERATE"
+      action: "Find search box, type TSLA, press enter"
+      expected: "TSLA stock page appears with performance data"
+      time_budget: "5 seconds"
+      guidance: "Take time to view the stock page fully"
+      
+  - step_3:
+      description: "Examine stock performance"
+      action: "Look at price chart, price trend, recent performance metrics"
+      expected: "Can see if price is going UP or DOWN"
+      time_budget: "10 seconds"
+      guidance: "Check the chart - is price trending up or down? What's the direction?"
+      
+  - step_4:
+      description: "Analyze and decide"
+      action: "Determine trend direction and make buy decision"
+      expected: "Decision made based on performance"
+      decision_rule: |
+        IF price/trend is going UP:
+          - Decision: BUY
+          - Reason: Positive momentum
+        ELSE IF price/trend is going DOWN or FLAT:
+          - Decision: SKIP/DO NOT BUY
+          - Reason: Negative or no momentum
+      time_budget: "5 seconds"
+      guidance: "Be thoughtful - only buy if the stock is trending UP"
+      
+  - step_5:
+      description: "Execute decision - BUY (if trending up)"
+      action: "If decision is BUY: Click buy button, enter quantity, confirm"
+      expected: "Order confirmation if bought, or navigation back if skipped"
+      time_budget: "10 seconds"
+      guidance: "If skipping: Navigate away or report that you decided not to buy"
+      
+  - step_6:
+      description: "Done - decision executed"
+      action: "Report final decision and outcome"
+      expected: "Clear statement: 'Bought 1 TSLA share' or 'Decided not to buy TSLA'"
+      time_budget: "5 seconds"
+
+# Persona behavior rules
+persona_rules:
+  - You are WISE - you research before making decisions
+  - Always examine stock performance first
+  - Look at price charts and trends
+  - Only buy if the stock shows POSITIVE momentum (price going up)
+  - Skip if price is flat, declining, or uncertain
+  - Take time to make informed decisions
+  - Consider risk vs. reward
+  - Report your reasoning for every decision
+
+decision_logic:
+  - "Examine the stock page carefully"
+  - "Look for visual indicators: is the price chart showing UP or DOWN trend?"
+  - "Check recent price changes - positive or negative?"
+  - "Make decision based on performance:"
+  - "  - UP trend = BUY with confidence"
+  - "  - DOWN/FLAT trend = SKIP this opportunity"
+  - "Articulate your reasoning in final response"
+
+strict_done_validation: true
+max_steps: 40

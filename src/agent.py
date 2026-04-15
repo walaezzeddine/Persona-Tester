@@ -1006,6 +1006,10 @@ Remember to respond in the exact format: Thought / Action / Target
             # For Wall Street - use provided credentials
             wallstreet_username = str(persona_credentials.get("username", ""))
             wallstreet_password = str(persona_credentials.get("password", ""))
+            wallstreet_email = str(persona_credentials.get("email", ""))
+            
+            # Store email for later use in auto-fill
+            self.wallstreet_email = wallstreet_email
             
             parabank_username = str(
                 persona_credentials.get("username")
@@ -1733,6 +1737,24 @@ Remember to respond in the exact format: Thought / Action / Target
                 print("=" * 80)
 
                 # ── Anti-loop: detect repeated identical actions ──
+                if len(steps_detail) >= 4:
+                    last4 = [s.get("action") for s in steps_detail[-4:]]
+                    # Detect repeated browser_click (likely stuck on unresponsive button)
+                    if len(set(last4)) == 1 and last4[0] == "browser_click":
+                        last4_targets = [s.get("action_input", {}).get("selector", "") for s in steps_detail[-4:]]
+                        # If clicking same selector repeatedly
+                        if len(set(last4_targets)) == 1 and last4_targets[0]:
+                            nudge = (
+                                f"⚠️ LOOP DETECTED: You clicked '{last4_targets[0]}' 4 times with no progress.\n"
+                                "The button may be unresponsive. TRY ALTERNATIVE:\n"
+                                "- Use browser_navigate with direct URL instead of button click\n"
+                                "- Or try browser_evaluate to interact with JavaScript directly\n"
+                                "- Or skip this UI element entirely and navigate directly\n"
+                                "Do NOT click the same button again."
+                            )
+                            print(f"⚠️ Anti-loop (browser_click repetition) nudge injected")
+                            messages.append(HumanMessage(content=nudge))
+
                 if len(steps_detail) >= 3:
                     last3 = [s.get("action") for s in steps_detail[-3:]]
                     if len(set(last3)) == 1 and last3[0] in ("browser_snapshot", "browser_press_key", "browser_evaluate"):
@@ -2019,6 +2041,41 @@ Remember to respond in the exact format: Thought / Action / Target
                             invalid_format_streak += 1
                             continue
 
+                # ── Validate browser_navigate URLs ────────────────
+                # CRITICAL: Only allow browser_navigate to the initial start_url
+                # All other navigation MUST use visible UI elements (buttons, links, search boxes)
+                if action_name == "browser_navigate":
+                    if isinstance(action_input, dict) and "url" in action_input:
+                        requested_url = action_input["url"]
+                        # Only allow navigation to the initial start_url
+                        if requested_url != start_url:
+                            error_msg = (
+                                f"❌ NAVIGATION RESTRICTION ENFORCED\n"
+                                f"❌ browser_navigate is ONLY allowed for the initial URL: {start_url}\n"
+                                f"❌ Your attempted URL: {requested_url}\n\n"
+                                f"✅ SOLUTION: Use visible UI elements to navigate (human-like behavior):\n"
+                                f"   1. Use browser_snapshot to see the current page\n"
+                                f"   2. Use browser_evaluate to FIND visible links/buttons by their text\n"
+                                f"   3. Use browser_click to click the discovered elements\n"
+                                f"   4. Use search boxes (browser_click + browser_type) to search and navigate\n\n"
+                                f"🔍 Navigation Strategy:\n"
+                                f"   - For quotes/trading pages: Find and click visible 'Stock/Fund Quotes' link\n"
+                                f"   - For search: Click search input, type symbol, press Enter\n"
+                                f"   - For trading form: Find and click 'TRADE' button on stock page\n"
+                                f"   - For portfolio: Find and click 'Portfolio' or 'My Positions' link\n\n"
+                                f"Remember: Real humans navigate using visible UI, not hardcoded URLs!"
+                            )
+                            print(f"⚠️ {error_msg}")
+                            messages.append(HumanMessage(content=error_msg))
+                            steps_detail.append({
+                                "step": step + 1,
+                                "action": "browser_navigate",
+                                "action_input": action_input,
+                                "rejected_reason": "URL not allowed (not the initial start_url)",
+                                "allowed_url": start_url,
+                            })
+                            continue
+
                 # ── Execute MCP tool ───────────────────────────
                 # Normalize common schema mismatches from model outputs.
                 if action_name == "browser_type" and isinstance(action_input, dict):
@@ -2077,13 +2134,79 @@ Remember to respond in the exact format: Thought / Action / Target
                         if len(result_str) > 1500:
                             result_for_llm += "\n... (truncated)"
 
+                    # ── AUTO-FILL REGISTRATION FORMS (WALLSTREET) ────────────────────────────
+                    # Fill hidden Date of Birth dropdowns that the LLM can't see or fill
+                    if is_wallstreet and wallstreet_email and "/register" in result_str.lower():
+                        if action_name in ("browser_navigate", "browser_snapshot", "browser_click"):
+                            print("📋 Registration form detected! Auto-filling hidden DOB fields...")
+                            try:
+                                # Fill hidden Date of Birth fields using JavaScript
+                                fill_dob_script = """
+                                () => {
+                                    let filled = 0;
+                                    
+                                    // Fill Day (default to 15)
+                                    let daySelect = document.getElementById('ddl-dob-day');
+                                    if (daySelect) {
+                                        daySelect.value = '15';
+                                        daySelect.dispatchEvent(new Event('change', { bubbles: true }));
+                                        filled++;
+                                    }
+                                    
+                                    // Fill Month (default to 6 = June)
+                                    let monthSelect = document.getElementById('ddl-dob-month');
+                                    if (monthSelect) {
+                                        monthSelect.value = '6';
+                                        monthSelect.dispatchEvent(new Event('change', { bubbles: true }));
+                                        filled++;
+                                    }
+                                    
+                                    // Fill Year (default to 2010 for age ~14)
+                                    let yearSelect = document.getElementById('ddl-dob-year');
+                                    if (yearSelect) {
+                                        // Find 2010 in options
+                                        let found = false;
+                                        for (let opt of yearSelect.options) {
+                                            if (opt.value === '2010' || opt.text === '2010') {
+                                                yearSelect.value = opt.value;
+                                                found = true;
+                                                break;
+                                            }
+                                        }
+                                        if (!found && yearSelect.options.length > 10) {
+                                            yearSelect.selectedIndex = 10;
+                                        }
+                                        yearSelect.dispatchEvent(new Event('change', { bubbles: true }));
+                                        filled++;
+                                    }
+                                    
+                                    return { filled: filled, day: daySelect?.value || 'not found', month: monthSelect?.value || 'not found', year: yearSelect?.value || 'not found' };
+                                }
+                                """
+                                
+                                fill_result = await tools_dict["browser_evaluate"].ainvoke({
+                                    "function": fill_dob_script
+                                })
+                                print(f"✓ DOB auto-fill result: {fill_result}")
+                            except Exception as e:
+                                print(f"⚠ DOB auto-fill failed: {e}")
+
                     # ── AUTO-FILL LOGIN FORMS ────────────────────────────
                     # Detect login forms and auto-fill with credentials
                     if is_wallstreet and wallstreet_username and wallstreet_password:
-                        if action_name in ("browser_navigate", "browser_snapshot", "browser_click"):
-                            # Check if this is a login page
-                            if ("login" in result_str.lower() and 
-                                ("username" in result_str.lower() or "password" in result_str.lower())):
+                        if action_name in ("browser_navigate", "browser_snapshot", "browser_click", "browser_type"):
+                            # Check if this is a LOGIN page (not registration page)
+                            # Look for URL indicators and page content
+                            is_login_page = (
+                                ("login" in result_str.lower() and "/login" in result_str.lower()) or
+                                ("log me in" in result_str.lower()) or
+                                (result_str.lower().count("password") == 1 and "username" in result_str.lower())
+                            )
+                            
+                            # Exclude registration pages
+                            is_registration_page = "/register" in result_str.lower()
+                            
+                            if is_login_page and not is_registration_page:
                                 print("🔐 Login form detected! Auto-filling credentials...")
                                 print(f"   Username: {wallstreet_username}")
                                 print(f"   Password: {wallstreet_password}")

@@ -5,8 +5,15 @@ import os
 import warnings
 from pathlib import Path
 
-# Add Backend to path
-sys.path.insert(0, str(Path(__file__).parent))
+# Add Backend/src to path for proper imports
+backend_src = str(Path(__file__).parent)
+if backend_src not in sys.path:
+    sys.path.insert(0, backend_src)
+
+# Also add parent (Backend) directory
+backend_root = str(Path(__file__).parent.parent)
+if backend_root not in sys.path:
+    sys.path.insert(0, backend_root)
 
 warnings.filterwarnings("ignore")
 
@@ -37,4 +44,3 @@ except Exception as e:
     import traceback
     traceback.print_exc()
     sys.exit(1)
-
