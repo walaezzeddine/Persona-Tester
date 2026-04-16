@@ -1,0 +1,35 @@
+name: "Microsoft Deep Stock Analysis"
+description: |
+  Analyze Microsoft stock through comprehensive research:
+  1. Search for Microsoft in stocks search bar
+  2. Navigate to Company Profile page
+  3. Review: Company News, Analyst Rating, Price History, Financial Statements
+  4. Based on analysis, decide whether to BUY or NOT BUY the stock
+
+constraints:
+  time_limit: 600
+  max_retries: 3
+
+success_criteria:
+  - "Navigated to Microsoft company profile"
+  - "Reviewed at least 4 data sources: News, Ratings, Price History, Financial Statements"
+  - "Made a clear BUY/NO BUY decision based on analysis"
+  - "Decision is documented with reasoning"
+
+abandon_criteria:
+  - "Microsoft profile page not found after 3 search attempts"
+  - "Unable to access financial data sections after 2 tries"
+  - "Search functionality broken"
+
+key_actions:
+  - "Step 1: Navigate to Stock Game homepage"
+  - "Step 2: Click on 'Stocks' menu to view stock list"
+  - "Step 3: Find and click the search bar"
+  - "Step 4: Type 'Microsoft' (MSFT) in search"
+  - "Step 5: Navigate to company profile page"
+  - "Step 6: Review Company News section - look for recent developments"
+  - "Step 7: Check Analyst Rating section - see buy/sell/hold recommendations"
+  - "Step 8: Analyze Price History section - identify trend direction"
+  - "Step 9: Review Financial Statements - check revenue, earnings, growth"
+  - "Step 10: Make final decision: BUY or NO BUY based on all data gathered"
+  - "Step 11: Document your decision and reasoning"

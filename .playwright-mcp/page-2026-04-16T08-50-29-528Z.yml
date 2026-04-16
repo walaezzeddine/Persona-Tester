@@ -1,0 +1,14 @@
+- generic [ref=e3]:
+  - generic [ref=e6]:
+    - heading "Ce site est inaccessible" [level=1] [ref=e7]
+    - paragraph [ref=e8]: Vérifiez si l'adresse www.wallstreetsurvisor.com est correcte.
+    - generic [ref=e9]:
+      - paragraph
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - text: S'il n'y a pas d'erreur, essayez de
+          - link "faire un diagnostic réseau Windows" [ref=e12] [cursor=pointer]:
+            - /url: javascript:diagnoseErrors()
+          - text: .
+    - generic [ref=e13]: DNS_PROBE_FINISHED_NXDOMAIN
+  - button "Actualiser" [ref=e16] [cursor=pointer]

@@ -8,7 +8,7 @@ llm:
   vision_model: "qwen3.5:cloud"
   vision_max_tokens: 512
 navigation:
-  max_steps: 25
+  max_steps: 40
   action_delay: 0.5
   action_timeout: 10000
   page_timeout: 30000

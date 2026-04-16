@@ -251,6 +251,58 @@ Every action sequence below should guide your navigation.
         abandon_str = "✗ Unable to proceed"
         key_actions_str = ""
     
+    # Add URL restriction for financial scenarios
+    url_restriction = ""
+    if "Wall Street" in scenario_name or "financial" in scenario_name.lower() or "trading" in scenario_name.lower():
+        url_restriction = """
+## 🚫 NAVIGATION RESTRICTION (FOR HUMAN-LIKE BEHAVIOR)
+⚠️ CRITICAL: You are FORBIDDEN from using browser_navigate with hardcoded URLs except for the initial homepage
+- ✅ ALLOWED: browser_navigate to initial homepage ONLY (first step)
+- ❌ FORBIDDEN: Using browser_navigate to go to quotes, trading, portfolio pages, etc.
+- ✅ ALLOWED: Click visible buttons and links discovered on the page
+- ✅ ALLOWED: Use browser_evaluate to find elements by their visible text
+- ✅ ALLOWED: Search using search boxes (type then press Enter)
+
+Why? Real humans don't shortcut navigation with hardcoded URLs - they click visible links!
+If you skip this rule, you'll fail because it's NOT human-like behavior.
+
+EXAMPLES:
+❌ WRONG: browser_navigate({'url': 'https://app.wallstreetsurvivor.com/quotes/quotes?symbol=NVDA'})
+✅ RIGHT: Use browser_evaluate to find and click directly:
+   browser_evaluate({'function': "() => Array.from(document.querySelectorAll('a')).find(el => el.textContent?.includes('Stock/Fund Quotes'))?.click()"})
+
+⭐ MOST RELIABLE PATTERN FOR NAVIGATION:
+1. Use browser_evaluate with filter to find the link by text
+2. Click it DIRECTLY via JavaScript - NO refs needed!
+3. Example: find link with text "Portfolio Summary" and click it in one step
+4. This avoids stale refs and page reload issues
+
+⭐ MOST RELIABLE PATTERN FOR FORM BUTTONS:
+1. Find the button by its text content (not refs!)
+2. Click it DIRECTLY via browser_evaluate
+3. Examples:
+   - Login button: Array.from(document.querySelectorAll('button')).find(b => b.textContent.includes('Log me in'))?.click()
+   - Confirm button: Array.from(document.querySelectorAll('button')).find(b => b.textContent.includes('Confirm'))?.click()
+   - Preview button: Array.from(document.querySelectorAll('button')).find(b => b.textContent.includes('Preview'))?.click()
+   - Sell button: Array.from(document.querySelectorAll('button')).find(b => b.textContent.toLowerCase().includes('sell'))?.click()
+4. NEVER use refs for form buttons after page changes - always find by text
+
+When clicking discovered links or buttons:
+- ALWAYS click directly via browser_evaluate
+- NEVER use refs that become stale after page changes
+- NEVER take extra snapshots between finding and clicking
+- This keeps the action atomic and prevents ref resolution bugs
+
+CRITICAL PATTERN - Use this for ANY button/link click:
+```javascript
+Array.from(document.querySelectorAll('button, a')).find(el =>
+  el.textContent.toLowerCase().includes('TARGET_TEXT')
+)?.click()
+```
+Replace TARGET_TEXT with: login, confirm, preview, sell, trade, buy, submit, etc.
+
+"""
+
     prompt = f"""═══════════════════════════════════════════════════════════════
                         PERSONA SIMULATION SYSTEM
 ═══════════════════════════════════════════════════════════════
@@ -267,7 +319,7 @@ Profile:
 - Navigation style: {style_navigation}
 - Maximum patience for loading: {patience} seconds
 
-{credentials_section}## SCENARIO: {scenario_name}
+{credentials_section}{url_restriction}## SCENARIO: {scenario_name}
 {scenario_desc}
 
 ## OBJECTIVE

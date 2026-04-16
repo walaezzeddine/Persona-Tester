@@ -1,0 +1,170 @@
+name: "Wall Street Survivor - NVIDIA Trading (Realistic Dashboard)"
+target_url: "https://www.wallstreetsurvivor.com/"
+
+description: |
+  Realistic trading scenario matching actual dashboard layout:
+  1. Login to Wall Street Survivor
+  2. Navigate dashboard - close tour overlay
+  3. Access trading or portfolio section
+  4. Search for Nvidia (NVDA) stock
+  5. READ stock data and recent news
+  6. ANALYZE market sentiment (bullish vs bearish)
+  7. Make BUY or SELL decision
+  8. Execute trade
+  9. Verify in portfolio
+
+constraints:
+  time_limit: 600  # 10 minutes
+  max_retries: 3
+
+success_criteria:
+  - "Successfully logged in"
+  - "Closed tour and accessed dashboard"
+  - "Found Nvidia stock information"
+  - "Read stock data and analyzed sentiment"
+  - "Made informed trading decision"
+  - "Executed trade"
+  - "Trade confirmed"
+
+abandon_criteria:
+  - "Cannot login after 3 attempts"
+  - "Cannot access trading interface"
+  - "Cannot find Nvidia stock"
+  - "Cannot complete trade"
+
+key_actions:
+  - "Step 1: Navigate to homepage at https://www.wallstreetsurvivor.com/ (ONLY TIME YOU USE DIRECT URL)"
+  - "Step 2: Take snapshot to see the login area"
+  - "Step 3: Look for 'Login' link text on the page"
+  - "Step 4: Click Login link using browser_click with ref"
+  - "Step 5: Login form appears - Enter username: WALAEZZEDINE in Username field"
+  - "Step 6: Enter password: WALA@123 in Password field"
+  - "Step 7: Click 'Log me in' button to submit"
+  - "Step 8: Dashboard loads with tour overlay"
+  - "Step 9: Click 'Close Tour' button to dismiss the overlay"
+  - "Step 10: Dashboard is now visible - take snapshot to see navigation"
+  - "Step 11: Use browser_evaluate to FIND 'Stock/Fund Quotes' link by searching visible text"
+  - "Step 12: Click the discovered 'Stock/Fund Quotes' link using browser_click"
+  - "Step 13: Quotes page loads - take snapshot to find search box"
+  - "Step 14: Look for search input with placeholder 'Search for a symbol or company'"
+  - "Step 15: Click in the search box to focus it"
+  - "Step 16: Type 'NVDA' (Nvidia stock ticker) in the search box"
+  - "Step 17: Press Enter to search OR click 'Show Result' button if visible"
+  - "Step 18: NVDA stock page loads - READ the displayed price information"
+  - "Step 19: READ: Current NVDA stock price (large number at top)"
+  - "Step 20: READ: Price change percentage and direction (green=up, red=down)"
+  - "Step 21: READ: Stock chart visualization showing price trend"
+  - "Step 22: Scroll down on the page to see more information"
+  - "Step 23: READ: Recent news articles about Nvidia"
+  - "Step 24: READ: Company announcements or analyst ratings if visible"
+  - "Step 25: ANALYZE: Is the price trending UP (bullish) or DOWN (bearish)?"
+  - "Step 26: ANALYZE: Is the recent news mostly POSITIVE or NEGATIVE?"
+  - "Step 27: DECIDE: Based on your analysis, will you BUY or SELL NVDA?"
+  - "Step 28: Use browser_evaluate to FIND 'TRADE' button by searching for visible text"
+  - "Step 29: Click 'TRADE' button to go to the trading interface for NVDA"
+  - "Step 30: Trading form appears for NVDA - take snapshot to see form fields"
+  - "Step 31: Find the Quantity field (should show 'Qty' label)"
+  - "Step 32: Click on Quantity field and enter 10 (ten shares)"
+  - "Step 33: Look for 'Preview' button and click it to review the order"
+  - "Step 34: Order preview page shows - READ order summary details"
+  - "Step 35: Verify: Symbol = NVDA, Quantity = 10, Price information correct"
+  - "Step 36: Look for 'Confirm' button and click it to execute the trade"
+  - "Step 37: Wait for trade confirmation message to appear"
+  - "Step 38: READ: Order confirmed message with order details"
+  - "Step 39: Trade executed successfully - NVDA position created"
+  - "Step 40: DONE - Full trading workflow completed"
+
+site_guidance: |
+  WALL STREET SURVIVOR - REALISTIC TRADING FLOW (HUMAN BEHAVIOR ONLY)
+
+  🚫 CRITICAL RESTRICTION - MUST FOLLOW:
+  ❌ YOU ARE FORBIDDEN FROM USING browser_navigate WITH HARDCODED URLs
+  ❌ NO direct URL shortcuts like: https://app.wallstreetsurvivor.com/...
+  ⚠️ YOU CAN ONLY browser_navigate TO THE INITIAL HOMEPAGE on first step
+  ✅ ALL other navigation MUST use visible UI elements (buttons, links, search boxes)
+
+  How to navigate correctly:
+  - Take snapshot → Find visible text link/button
+  - Use browser_evaluate to locate clickable elements by their visible text
+  - Click discovered elements using their ref or browser_evaluate
+  - Use search boxes (type then press Enter)
+  - NEVER skip steps by jumping to URLs
+
+  ⭐ CORRECT WORKFLOW (Proven to Work):
+  Dashboard → Find Quotes Link → Click It → Search → View Stock → Click TRADE → Trading Form → Execute
+
+  🔐 STEP 1-8: LOGIN & ACCESS DASHBOARD
+  - Navigate to homepage (ONLY TIME YOU USE DIRECT URL)
+  - Find and click "Login" link (usually top right)
+  - Fill username: WALAEZZEDINE
+  - Fill password: WALA@123
+  - Click "Log me in" button
+  - Dashboard loads with tour overlay
+  - Click "Close Tour" button to dismiss
+
+  🔍 STEP 9-11: GO TO QUOTES PAGE (USING VISIBLE ELEMENTS ONLY!)
+
+  ⚠️ RESTRICTIONS:
+  - The Trading/Equities page search doesn't work properly (console errors)
+  - Instead, navigate to the QUOTES PAGE using visible links
+  - DO NOT use browser_navigate with hardcoded quote URLs
+  - MUST click visible navigation elements
+
+  The correct path:
+  - From dashboard, use browser_snapshot to see layout
+  - Use browser_evaluate to FIND the "Stock/Fund Quotes" link by searching for visible text
+  - Use browser_evaluate to GET its href if needed
+  - Click the link using browser_click with the discovered ref
+  - This takes you to Quotes page (URL will show automatically)
+  - Quotes page is where stock search actually works
+
+  ❌ FORBIDDEN: browser_navigate({'url': 'https://app.wallstreetsurvivor.com/quotes/quotes...'})
+  ✅ ALLOWED: Find link, click it with browser_click or browser_evaluate
+
+  📊 STEP 12-17: SEARCH FOR NVDA ON QUOTES PAGE
+  - On Quotes page, take snapshot to find search input
+  - Click on search input with placeholder "Search for a symbol or company"
+  - Type "NVDA"
+  - If "Show Result" button appears, click it
+  - If search dropdown appears automatically, click on NVDA result
+  - Nvidia stock page loads with:
+    * Current price (large number)
+    * Price change % (green/red)
+    * Stock chart
+    * News and analysis
+
+  💭 STEP 18-27: READ & ANALYZE
+  - READ: NVDA price, trend, chart direction
+  - READ: Recent news, company announcements
+  - ANALYZE: Bullish (price up, positive news) or Bearish (price down, negative news)?
+  - DECIDE: BUY if bullish, SELL if bearish
+
+  💰 STEP 28-40: EXECUTE TRADE (USING VISIBLE UI ONLY!)
+  - Look for "TRADE" button on the stock page
+  - Use browser_evaluate to find the TRADE button by text
+  - Click "TRADE" button using browser_click
+  - Trading form appears for NVDA
+  - Enter Quantity: 10 shares
+  - Click "Preview" button
+  - Review order summary
+  - Click "Confirm" button
+  - Wait for confirmation message
+  - Trade complete!
+
+  ✅ KEY SUCCESS FACTORS
+  1. Use Quotes page for stock lookup (find via visible link, NOT direct URL)
+  2. Click links you discover, don't hardcode URLs
+  3. Click TRADE button from stock details page using browser_evaluate
+  4. This takes you to trading form
+  5. Complete form → Confirm → Trade executed
+  6. NEVER bypass steps with direct URL navigation
+
+  ⚠️ WHEN YOU GET STUCK
+  - If page looks blank: Use browser_evaluate to find elements
+  - If search not visible: Try scrolling down
+  - If search doesn't trigger: Try clicking "Show Result" or "Show Latest" button
+  - If stuck navigating: Look for visible link text and click it, don't use URLs
+  - If console errors appear: Ignore them, page still functions
+
+max_steps: 65
+headless: false

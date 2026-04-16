@@ -1,0 +1,94 @@
+================================================================================
+🧪 MICROSOFT DEEP ANALYSIS TEST
+================================================================================
+
+✅ Configuration:
+   Provider: ollama - qwen3.5:cloud
+   Headless: False
+   Max steps: 65
+
+✅ Scenario loaded: Microsoft Deep Stock Analysis
+   Description: Analyze Microsoft stock through comprehensive research:
+1. Search for Microsoft in stocks search bar...
+   Key actions: 11 steps
+
+👤 Persona: David Thornton
+   ID: financial_analyst
+   Style: Methodical/Thorough
+   Objective: Perform comprehensive analysis of Microsoft stock before investment decision
+   Tolerance for errors: Very Low (precision focused)
+
+✅ Agent initialized with MCP support
+
+================================================================================
+🚀 STARTING MICROSOFT ANALYSIS TEST (65 steps max)
+================================================================================
+
+
+================================================================================
+🚀 MCP ReAct SESSION STARTING
+================================================================================
+📍 Target URL: https://www.wallstreetsurvivor.com/
+👤 Persona: financial_analyst
+🎯 Scenario: Microsoft Deep Stock Analysis
+✅ LOGIN CREDENTIALS SECTION FOUND IN SYSTEM PROMPT
+LOGIN CREDENTIALS - CRITICAL - MUST USE EXACTLY AS PROVIDED
+🚨 THESE ARE YOUR ONLY VALID CREDENTIALS - DO NOT GENERATE OR CHANGE THEM 🚨
+
+Username: WALAEZZEDINE
+Password: WALA@123
+
+⚠️ CRITICAL INSTRUCTIONS - YOU MUST FOLLOW:
+1. You will find a login form on the website
+2. In the USERNAME field, type EXACTLY: WALAEZZEDINE
+3. In the PASSWORD field, type EXACTLY: WALA@123
+4. Click the "Log me in" or "Login" button
+5. NEVER generate fake credentials
+6. NEVER try to register or create account
+7. NEVER 
+ℹ Vision mode OFF (vision_enabled: false in config)
+
+🔌 Connecting to Playwright MCP Server...
+✓ Connected! 21 tools available
+  1. browser_close: Close the page...
+  2. browser_resize: Resize the browser window...
+  3. browser_console_messages: Returns all console messages...
+  4. browser_handle_dialog: Handle a dialog...
+  5. browser_evaluate: Evaluate JavaScript expression on page or element...
+  6. browser_file_upload: Upload one or multiple files...
+  7. browser_fill_form: Fill multiple form fields...
+  8. browser_press_key: Press a key on the keyboard...
+  9. browser_type: Type text into editable element...
+  10. browser_navigate: Navigate to a URL...
+  11. browser_navigate_back: Go back to the previous page in the history...
+  12. browser_network_requests: Returns all network requests since loading the page...
+  13. browser_run_code: Run Playwright code snippet...
+  14. browser_take_screenshot: Take a screenshot of the current page. You can't perform actions based on the sc...
+  15. browser_snapshot: Capture accessibility snapshot of the current page, this is better than screensh...
+  16. browser_click: Perform click on a web page...
+  17. browser_drag: Perform drag and drop between two elements...
+  18. browser_hover: Hover over element on page...
+  19. browser_select_option: Select an option in a dropdown...
+  20. browser_tabs: List, create, close, or select a browser tab....
+  21. browser_wait_for: Wait for text to appear or disappear or a specified time to pass...
+
+
+================================================================================
+STEP 1/65
+================================================================================
+🤖 Calling LLM...
+⏳ Rate limited (attempt 1/5). Waiting 10s...
+⏳ Rate limited (attempt 2/5). Waiting 20s...
+⏳ Rate limited (attempt 3/5). Waiting 30s...
+⏳ Rate limited (attempt 4/5). Waiting 40s...
+❌ Rate limit exhausted after 5 retries — aborting run
+
+================================================================================
+✅ TEST EXECUTION COMPLETE
+================================================================================
+
+📊 Results:
+   Status: error
+   Steps completed: 1/65
+
+📁 Results saved to: test_microsoft_analyst_results.json

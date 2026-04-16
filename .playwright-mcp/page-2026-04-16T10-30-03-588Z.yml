@@ -1,0 +1,734 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4] [cursor=pointer]:
+        - generic [ref=e5]: 
+        - text: Run Tour
+      - button "Select Language" [ref=e6] [cursor=pointer]:
+        - text: About
+        - generic [ref=e7]: 
+      - generic "Challenges" [ref=e8] [cursor=pointer]:
+        - text: Contests
+        - generic [ref=e9]: 
+    - generic [ref=e11]:
+      - generic "Username" [ref=e12]: walaezzedine
+      - link "Unread Messages" [ref=e13] [cursor=pointer]:
+        - /url: /forum/messages
+        - generic [ref=e14]: 
+        - generic "Number of Unread Messages" [ref=e15]: "1"
+      - combobox "Tournament Select" [ref=e17]:
+        - option "My Practice Portfolio" [selected]
+      - link "Logout" [ref=e18] [cursor=pointer]:
+        - /url: /logout
+  - navigation [ref=e19]:
+    - menubar [ref=e21]:
+      - menuitem "Logo" [ref=e22]:
+        - link "Logo" [ref=e23] [cursor=pointer]:
+          - /url: /home
+          - img "Logo" [ref=e24]
+    - menubar [ref=e26]:
+      - menuitem "Dashboard" [ref=e27]:
+        - generic [ref=e28] [cursor=pointer]: Dashboard 
+        - text: 
+      - menuitem "Stock Game" [ref=e29]:
+        - generic [ref=e30] [cursor=pointer]: Stock Game 
+      - menuitem "Investing Research" [ref=e31]:
+        - generic "Investing Research" [ref=e32] [cursor=pointer]: Investing Research 
+      - menuitem "Courses" [ref=e33]:
+        - generic [ref=e34] [cursor=pointer]: Courses 
+      - menuitem "Getting Started" [ref=e35]:
+        - generic [ref=e36] [cursor=pointer]: Getting Started 
+  - generic [ref=e37]:
+    - generic [ref=e42]:
+      - heading "Dashboard" [level=3] [ref=e46]
+      - generic [ref=e49]:
+        - generic [ref=e51]:
+          - generic [ref=e53]:
+            - generic [ref=e55]:
+              - generic [ref=e56]: 
+              - text: My Assignments
+            - link "View" [ref=e58] [cursor=pointer]:
+              - /url: /account/accountassignmentdetails
+            - combobox "User Assignments" [ref=e60]:
+              - option "assignment 1" [selected]
+              - option "IICS Investment 101"
+              - option "Investing Assignment"
+              - option "1"
+              - option "Investing 101"
+          - table [ref=e65]:
+            - rowgroup [ref=e66]:
+              - row "Task Comp. % Min Grade" [ref=e67]:
+                - columnheader "Task" [ref=e68]
+                - columnheader "Comp. %" [ref=e69]
+                - columnheader "Min Grade" [ref=e70]
+                - columnheader [ref=e71]
+            - rowgroup [ref=e72]:
+              - row "Read Chapter 01 (Introduction to Investing) 0% View" [ref=e73]:
+                - cell "Read Chapter 01 (Introduction to Investing)" [ref=e74]
+                - cell "0%" [ref=e75]
+                - cell [ref=e76]
+                - cell "View" [ref=e77]:
+                  - link "View" [ref=e78] [cursor=pointer]:
+                    - /url: /content/tagslist?tags=investing101,%20ch1wss
+        - generic [ref=e79]:
+          - generic [ref=e80]:
+            - generic [ref=e82]:
+              - generic [ref=e83]:
+                - generic [ref=e84]:
+                  - generic [ref=e85]: 
+                  - text: My Portfolio
+                - generic [ref=e86]: How to Play Stock Game
+              - link "View" [ref=e88] [cursor=pointer]:
+                - /url: /portfolio/openpositions
+            - generic [ref=e90]:
+              - generic [ref=e92]:
+                - generic [ref=e93]: Portfolio Values
+                - generic [ref=e95]: 
+                - generic [ref=e96]: $203.02(0.20 %)
+              - generic [ref=e98]:
+                - generic [ref=e99]: Rank
+                - generic [ref=e100]: "4551"
+            - generic [ref=e102]:
+              - combobox [ref=e103]:
+                - option "Equities" [selected]
+                - option "Options"
+                - option "Crypto"
+              - table [ref=e104]:
+                - rowgroup [ref=e105]:
+                  - row "Symbol Quantity Total Return %" [ref=e106]:
+                    - columnheader "Symbol" [ref=e107]
+                    - columnheader "Quantity" [ref=e108]
+                    - columnheader "Total Return %" [ref=e109]
+                - rowgroup [ref=e110]:
+                  - row "AAPL 31 2.01%" [ref=e111]:
+                    - cell "AAPL" [ref=e112]
+                    - cell "31" [ref=e113]
+                    - cell "2.01%" [ref=e114]
+                  - row "NVDA 90 0.23%" [ref=e115]:
+                    - cell "NVDA" [ref=e116]
+                    - cell "90" [ref=e117]
+                    - cell "0.23%" [ref=e118]
+              - text:  
+              - link "View All Open Positions" [ref=e120] [cursor=pointer]:
+                - /url: /portfolio/openpositions
+          - generic [ref=e121]:
+            - generic [ref=e123]:
+              - generic [ref=e125]:
+                - generic [ref=e126]: 
+                - text: My Watchlist
+              - link "Add" [ref=e128] [cursor=pointer]:
+                - /url: "#"
+            - table [ref=e130]:
+              - rowgroup [ref=e131]:
+                - row "Symbol Last Price Change" [ref=e132]:
+                  - columnheader [ref=e133]
+                  - columnheader "Symbol" [ref=e134]
+                  - columnheader "Last Price" [ref=e135]
+                  - columnheader "Change" [ref=e136]
+              - rowgroup [ref=e137]:
+                - row "AAPL 266.43 7.6" [ref=e138]:
+                  - cell [ref=e139]:
+                    - generic [ref=e141] [cursor=pointer]: 
+                  - cell "AAPL" [ref=e142]:
+                    - link "AAPL" [ref=e143] [cursor=pointer]:
+                      - /url: /quotes/quotesv2?converted=1&symbol=AAPL
+                  - cell "266.43" [ref=e144]
+                  - cell "7.6" [ref=e145]
+                - row "BAC 54.32 0.97" [ref=e146]:
+                  - cell [ref=e147]:
+                    - generic [ref=e149] [cursor=pointer]: 
+                  - cell "BAC" [ref=e150]:
+                    - link "BAC" [ref=e151] [cursor=pointer]:
+                      - /url: /quotes/quotesv2?converted=1&symbol=BAC
+                  - cell "54.32" [ref=e152]
+                  - cell "0.97" [ref=e153]
+                - row "GOOG 334.47 3.89" [ref=e154]:
+                  - cell [ref=e155]:
+                    - generic [ref=e157] [cursor=pointer]: 
+                  - cell "GOOG" [ref=e158]:
+                    - link "GOOG" [ref=e159] [cursor=pointer]:
+                      - /url: /quotes/quotesv2?converted=1&symbol=GOOG
+                  - cell "334.47" [ref=e160]
+                  - cell "3.89" [ref=e161]
+                - row "KO 75.31 -0.59" [ref=e162]:
+                  - cell [ref=e163]:
+                    - generic [ref=e165] [cursor=pointer]: 
+                  - cell "KO" [ref=e166]:
+                    - link "KO" [ref=e167] [cursor=pointer]:
+                      - /url: /quotes/quotesv2?converted=1&symbol=KO
+                  - cell "75.31" [ref=e168]
+                  - cell "-0.59" [ref=e169]
+          - generic [ref=e170]:
+            - generic [ref=e172]:
+              - generic [ref=e174]:
+                - generic [ref=e175]: 
+                - text: Recent Orders
+              - link "View" [ref=e177] [cursor=pointer]:
+                - /url: /account/orderhistory
+            - generic [ref=e178]:
+              - combobox "Order Status" [ref=e179]:
+                - option "All" [selected]
+                - option "Executed"
+                - option "Open"
+                - option "Cancelled"
+                - option "Expired"
+              - table [ref=e181]:
+                - rowgroup [ref=e182]:
+                  - row "Symbol Quantity Price Filled" [ref=e183]:
+                    - columnheader "Symbol" [ref=e184]
+                    - columnheader "Quantity" [ref=e185]
+                    - columnheader "Price Filled" [ref=e186]
+                - rowgroup [ref=e187]:
+                  - row "NVDA -90" [ref=e188]:
+                    - cell "NVDA" [ref=e189]
+                    - cell "-90" [ref=e190]
+                    - cell [ref=e191]
+                  - row "NVDA 10 $197.45" [ref=e192]:
+                    - cell "NVDA" [ref=e193]
+                    - cell "10" [ref=e194]
+                    - cell "$197.45" [ref=e195]
+                  - row "NVDA -10 $197.87" [ref=e196]:
+                    - cell "NVDA" [ref=e197]
+                    - cell "-10" [ref=e198]
+                    - cell "$197.87" [ref=e199]
+                  - row "NVDA 10 $199.43" [ref=e200]:
+                    - cell "NVDA" [ref=e201]
+                    - cell "10" [ref=e202]
+                    - cell "$199.43" [ref=e203]
+                  - row "AAPL 10 $263.56" [ref=e204]:
+                    - cell "AAPL" [ref=e205]
+                    - cell "10" [ref=e206]
+                    - cell "$263.56" [ref=e207]
+        - generic [ref=e210]:
+          - generic [ref=e214]:
+            - generic [ref=e215]: 
+            - text: Latest News
+          - generic [ref=e219]:
+            - generic [ref=e220]:
+              - heading [level=3] [ref=e221]:
+                - link [ref=e222] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/comparison/chase-sapphire-preferred-vs-capital-one-venture-012925883.html
+                  - text: "Chase Sapphire Preferred vs. Capital One Venture: Which offers more value?"
+              - paragraph [ref=e223]:
+                - link [ref=e224] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/comparison/chase-sapphire-preferred-vs-capital-one-venture-012925883.html
+                  - text: read more...
+            - generic [ref=e225]:
+              - heading "When will gas prices go back down?" [level=3] [ref=e226]:
+                - link "When will gas prices go back down?" [ref=e227] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/banking/article/when-will-gas-prices-go-back-down-154506610.html
+              - paragraph [ref=e228]:
+                - link "read more..." [ref=e229] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/banking/article/when-will-gas-prices-go-back-down-154506610.html
+            - generic [ref=e230]:
+              - heading [level=3] [ref=e231]:
+                - link [ref=e232] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/taxes/article/wheres-my-tax-refund-how-to-check-your-refund-status-in-3-steps-223701316.html
+                  - text: Where’s my tax refund? How to check your refund status in 3 steps.
+              - paragraph [ref=e233]:
+                - link [ref=e234] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/taxes/article/wheres-my-tax-refund-how-to-check-your-refund-status-in-3-steps-223701316.html
+                  - text: read more...
+            - generic [ref=e235]:
+              - heading [level=3] [ref=e236]:
+                - link [ref=e237] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/article/reserve-a-table-with-credit-card-224248503.html
+                  - text: How to reserve a table at the hottest restaurant with your credit card
+              - paragraph [ref=e238]:
+                - link [ref=e239] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/article/reserve-a-table-with-credit-card-224248503.html
+                  - text: read more...
+            - generic [ref=e240]:
+              - heading [level=3] [ref=e241]:
+                - link [ref=e242] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-quicksilver-student-cash-rewards-credit-card-review-200719561.html
+                  - text: "Capital One Quicksilver Student Cash Rewards: A beginner rewards card with a cash bonus"
+              - paragraph [ref=e243]:
+                - link [ref=e244] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-quicksilver-student-cash-rewards-credit-card-review-200719561.html
+                  - text: read more...
+            - generic [ref=e245]:
+              - heading [level=3] [ref=e246]:
+                - link [ref=e247] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-savor-cash-rewards-review-221127430.html
+                  - text: "Capital One Savor Cash Rewards review: Unlimited cash back for no annual fee"
+              - paragraph [ref=e248]:
+                - link [ref=e249] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-savor-cash-rewards-review-221127430.html
+                  - text: read more...
+            - generic [ref=e250]:
+              - heading [level=3] [ref=e251]:
+                - link [ref=e252] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/comparison/capital-one-quicksilver-vs-savor-232222530.html
+                  - text: "Capital One Quicksilver vs. Savor: Your top cash-back pick depends on your spending habits"
+              - paragraph [ref=e253]:
+                - link [ref=e254] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/comparison/capital-one-quicksilver-vs-savor-232222530.html
+                  - text: read more...
+            - generic [ref=e255]:
+              - heading [level=3] [ref=e256]:
+                - link [ref=e257] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/article/best-credit-cards-for-restaurants-154321852.html
+                  - text: Best credit cards for restaurants for April 2026
+              - paragraph [ref=e258]:
+                - link [ref=e259] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/article/best-credit-cards-for-restaurants-154321852.html
+                  - text: read more...
+            - generic [ref=e260]:
+              - heading [level=3] [ref=e261]:
+                - link [ref=e262] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-quicksilver-cash-rewards-credit-card-review-210744298.html
+                  - text: "Capital One Quicksilver Cash Rewards review: Simplify spending with 1.5% cash back"
+              - paragraph [ref=e263]:
+                - link [ref=e264] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-quicksilver-cash-rewards-credit-card-review-210744298.html
+                  - text: read more...
+            - generic [ref=e265]:
+              - heading [level=3] [ref=e266]:
+                - link [ref=e267] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-spark-miles-for-business-review-174514920.html
+                  - text: "Capital One Spark Miles for Business: Simple rewards for business owners"
+              - paragraph [ref=e268]:
+                - link [ref=e269] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-spark-miles-for-business-review-174514920.html
+                  - text: read more...
+            - generic [ref=e270]:
+              - heading [level=3] [ref=e271]:
+                - link [ref=e272] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/comparison/chase-sapphire-preferred-vs-capital-one-venture-012925883.html
+                  - text: "Chase Sapphire Preferred vs. Capital One Venture: Which offers more value?"
+              - paragraph [ref=e273]:
+                - link [ref=e274] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/comparison/chase-sapphire-preferred-vs-capital-one-venture-012925883.html
+                  - text: read more...
+            - generic [ref=e275]:
+              - heading [level=3] [ref=e276]:
+                - link [ref=e277] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/banking/article/when-will-gas-prices-go-back-down-154506610.html
+                  - text: When will gas prices go back down?
+              - paragraph [ref=e278]:
+                - link [ref=e279] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/banking/article/when-will-gas-prices-go-back-down-154506610.html
+                  - text: read more...
+            - generic [ref=e280]:
+              - heading [level=3] [ref=e281]:
+                - link [ref=e282] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/taxes/article/wheres-my-tax-refund-how-to-check-your-refund-status-in-3-steps-223701316.html
+                  - text: Where’s my tax refund? How to check your refund status in 3 steps.
+              - paragraph [ref=e283]:
+                - link [ref=e284] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/taxes/article/wheres-my-tax-refund-how-to-check-your-refund-status-in-3-steps-223701316.html
+                  - text: read more...
+            - generic [ref=e285]:
+              - heading [level=3] [ref=e286]:
+                - link [ref=e287] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/article/reserve-a-table-with-credit-card-224248503.html
+                  - text: How to reserve a table at the hottest restaurant with your credit card
+              - paragraph [ref=e288]:
+                - link [ref=e289] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/article/reserve-a-table-with-credit-card-224248503.html
+                  - text: read more...
+            - generic [ref=e290]:
+              - heading [level=3] [ref=e291]:
+                - link [ref=e292] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-quicksilver-student-cash-rewards-credit-card-review-200719561.html
+                  - text: "Capital One Quicksilver Student Cash Rewards: A beginner rewards card with a cash bonus"
+              - paragraph [ref=e293]:
+                - link [ref=e294] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-quicksilver-student-cash-rewards-credit-card-review-200719561.html
+                  - text: read more...
+            - generic [ref=e295]:
+              - heading [level=3] [ref=e296]:
+                - link [ref=e297] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-savor-cash-rewards-review-221127430.html
+                  - text: "Capital One Savor Cash Rewards review: Unlimited cash back for no annual fee"
+              - paragraph [ref=e298]:
+                - link [ref=e299] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-savor-cash-rewards-review-221127430.html
+                  - text: read more...
+            - generic [ref=e300]:
+              - heading [level=3] [ref=e301]:
+                - link [ref=e302] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/comparison/capital-one-quicksilver-vs-savor-232222530.html
+                  - text: "Capital One Quicksilver vs. Savor: Your top cash-back pick depends on your spending habits"
+              - paragraph [ref=e303]:
+                - link [ref=e304] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/comparison/capital-one-quicksilver-vs-savor-232222530.html
+                  - text: read more...
+            - generic [ref=e305]:
+              - heading [level=3] [ref=e306]:
+                - link [ref=e307] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/article/best-credit-cards-for-restaurants-154321852.html
+                  - text: Best credit cards for restaurants for April 2026
+              - paragraph [ref=e308]:
+                - link [ref=e309] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/article/best-credit-cards-for-restaurants-154321852.html
+                  - text: read more...
+            - generic [ref=e310]:
+              - heading [level=3] [ref=e311]:
+                - link [ref=e312] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-quicksilver-cash-rewards-credit-card-review-210744298.html
+                  - text: "Capital One Quicksilver Cash Rewards review: Simplify spending with 1.5% cash back"
+              - paragraph [ref=e313]:
+                - link [ref=e314] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-quicksilver-cash-rewards-credit-card-review-210744298.html
+                  - text: read more...
+            - generic [ref=e315]:
+              - heading [level=3] [ref=e316]:
+                - link [ref=e317] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-spark-miles-for-business-review-174514920.html
+                  - text: "Capital One Spark Miles for Business: Simple rewards for business owners"
+              - paragraph [ref=e318]:
+                - link [ref=e319] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/review/capital-one-spark-miles-for-business-review-174514920.html
+                  - text: read more...
+            - generic [ref=e320]:
+              - heading [level=3] [ref=e321]:
+                - link [ref=e322] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/comparison/chase-sapphire-preferred-vs-capital-one-venture-012925883.html
+                  - text: "Chase Sapphire Preferred vs. Capital One Venture: Which offers more value?"
+              - paragraph [ref=e323]:
+                - link [ref=e324] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/credit-cards/comparison/chase-sapphire-preferred-vs-capital-one-venture-012925883.html
+                  - text: read more...
+        - generic [ref=e326]:
+          - generic [ref=e330]:
+            - generic [ref=e331]: 
+            - text: You have unread messages!
+          - table [ref=e333]:
+            - rowgroup [ref=e334]:
+              - row "Date Message" [ref=e335]:
+                - columnheader "Date" [ref=e336]
+                - columnheader "Message" [ref=e337]
+            - rowgroup [ref=e338]:
+              - row "4/13/2026 9:08:51 AM Welcome to WallStreetSurvivor!" [ref=e339]:
+                - cell "4/13/2026 9:08:51 AM" [ref=e340]
+                - cell "Welcome to WallStreetSurvivor!" [ref=e341]:
+                  - link "Welcome to WallStreetSurvivor!" [ref=e342] [cursor=pointer]:
+                    - /url: /forum/messages?messageId=3906300
+        - generic [ref=e345]:
+          - generic [ref=e349]:
+            - generic [ref=e350]: 
+            - text: Announcements
+          - generic [ref=e351]:
+            - paragraph
+            - generic [ref=e352]:
+              - text: Join WallStreetSurvivor on Facebook for the latest updates, market insights, and contest news.
+              - link "Follow us on Facebook" [ref=e353] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStSurvivor
+            - paragraph
+        - generic [ref=e355]:
+          - generic [ref=e359]:
+            - generic [ref=e360]: 
+            - text: Facebook Feed
+          - generic [ref=e361]:
+            - tablist:
+              - generic:
+                - iframe
+        - generic [ref=e363]:
+          - generic [ref=e367]:
+            - generic [ref=e368]: $
+            - text: Investing Tip
+          - iframe [ref=e372]:
+            - generic [ref=f13e1]:
+              - link [ref=f13e2] [cursor=pointer]:
+                - /url: https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjsue_yQ3_42f6XKjuZu-cfgtQK5gMdN2elKBai1Pih8JumP7I7JSqIkoYGJsnd2QDyF_OrKMAlrq74rfX00yWeA3stBpZOhj3RIZot0Wu9q2cZgbxvGn8pYn87SKORvr9nPN-70ecxSyaCJZ-w9hT96-c2Y0NNmu0pASmqWXNd9y0ZzJg-aiya8L-j6t3Lalv6AGLHcFtq2tfdGRq12ZcYAd5Pnktc-cECdf3_CgAI6Baq2nzfSsSF6dkS2oiEZqd7tx0BxnTD1WI9RtPWhJCtvoS__A2HdTmSKKIUQbFBOAg6ec2351notCNI4TYBXUFyu-FWLRQCJYc6gx_CtxhVf6fE59LjpkjhKWQ8E98ff5kL7eZEMUNRalFWaPbOcHK4X2l9R6dwBJqYZNUibPK3qhEke6WLxO-3NG&sai=AMfl-YTUz4m73VhJIXZR97GvMMQD0CnKxt5pLG0v7HPoGbcBP1KD9df9_imqo_mDXKvw8-CKWDb-rJ_HU3M9TEudOphYzBMjLSLz8SsioGyK_M7xbb4F042RdTiJIVAcXmsPrOF5SMUO-E1hPnTlFJGOJXtz5JnD4I8KGq3FjUOIGa8_J6xfh_YQaQgqdVOUbJhdadnsuzovwYvQNNXLCYAU5RHETm_alvaTDxLsJnAWVcz1Vrffb_xSdYbXE6uccieB3UfB6q0uim6wshUuYaq6eiUcMPqskKH-PQcs73ngCa0IyHmbfbY8Y9xKqAtD_n6hMbLj_Y3_&sig=Cg0ArKJSzGXxXqHPBCo8&fbs_aeid=%5Bgw_fbsaeid%5D&adurl=https://robinhood.c3me6x.net/c/1330181/1594706/10402%3FsubId1%3DGAM%26u%3Dhttps://www.robinhood.com/us/en/invest%26partnerpropertyid%3D2042442
+              - img [ref=f13e6] [cursor=pointer]
+              - button [ref=f13e8] [cursor=pointer]:
+                - img [ref=f13e9]
+        - generic [ref=e374]:
+          - generic [ref=e376]:
+            - generic [ref=e378]:
+              - generic [ref=e379]: 
+              - text: Top 10 Courses
+            - link "View" [ref=e381] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/courses/
+          - generic [ref=e382]:
+            - generic [ref=e383]:
+              - 'link "1 Stock Market for Beginners: Here are the Basics" [ref=e384] [cursor=pointer]':
+                - /url: https://www.wallstreetsurvivor.com/stock-market-for-beginners/
+                - generic [ref=e385]:
+                  - generic [ref=e386]:
+                    - generic [ref=e387]: "1"
+                    - img [ref=e388]
+                  - strong [ref=e390]: "Stock Market for Beginners: Here are the Basics"
+              - 'link "2 Beginner Investing: 10 Steps to Start Investing the Right Way" [ref=e391] [cursor=pointer]':
+                - /url: https://www.wallstreetsurvivor.com/beginner-investing-10-steps-to-start-investing/
+                - generic [ref=e392]:
+                  - generic [ref=e393]:
+                    - generic [ref=e394]: "2"
+                    - img [ref=e395]
+                  - strong [ref=e397]: "Beginner Investing: 10 Steps to Start Investing the Right Way"
+              - link "3 Fundamental Analysis" [ref=e398] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/fundamental-analysis/
+                - generic [ref=e399]:
+                  - generic [ref=e400]:
+                    - generic [ref=e401]: "3"
+                    - img [ref=e402]
+                  - strong [ref=e404]: Fundamental Analysis
+              - link "4 How to Value a Stock" [ref=e405] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-value-a-stock/
+                - generic [ref=e406]:
+                  - generic [ref=e407]:
+                    - generic [ref=e408]: "4"
+                    - img [ref=e409]
+                  - strong [ref=e411]: How to Value a Stock
+              - link "5 How to Invest with Little Money" [ref=e412] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-invest-with-little-money/
+                - generic [ref=e413]:
+                  - generic [ref=e414]:
+                    - generic [ref=e415]: "5"
+                    - img [ref=e416]
+                  - strong [ref=e418]: How to Invest with Little Money
+              - link "6 Value Investing for Beginners" [ref=e419] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/value-investing/
+                - generic [ref=e420]:
+                  - generic [ref=e421]:
+                    - generic [ref=e422]: "6"
+                    - img [ref=e423]
+                  - strong [ref=e425]: Value Investing for Beginners
+              - 'link "7 Stock Ratings: How to Know What Stocks to Invest in" [ref=e426] [cursor=pointer]':
+                - /url: https://www.wallstreetsurvivor.com/stock-ratings/
+                - generic [ref=e427]:
+                  - generic [ref=e428]:
+                    - generic [ref=e429]: "7"
+                    - img [ref=e430]
+                  - strong [ref=e432]: "Stock Ratings: How to Know What Stocks to Invest in"
+              - link "8 Millionaire Crash Course" [ref=e433] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/millionaire-crash-course/
+                - generic [ref=e434]:
+                  - generic [ref=e435]:
+                    - generic [ref=e436]: "8"
+                    - img [ref=e437]
+                  - strong [ref=e439]: Millionaire Crash Course
+              - link "9 The Best Investment Apps of 2020" [ref=e440] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-apps/
+                - generic [ref=e441]:
+                  - generic [ref=e442]:
+                    - generic [ref=e443]: "9"
+                    - img [ref=e444]
+                  - strong [ref=e446]: The Best Investment Apps of 2020
+              - link "10 Best Investment Newsletters & Best Stock Newsletters of 2020" [ref=e447] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+                - generic [ref=e448]:
+                  - generic [ref=e449]:
+                    - generic [ref=e450]: "10"
+                    - img [ref=e451]
+                  - strong [ref=e453]: Best Investment Newsletters & Best Stock Newsletters of 2020
+            - link "View all courses" [ref=e455] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/courses/
+        - generic [ref=e457]:
+          - generic [ref=e461]:
+            - generic [ref=e462]: 
+            - text: Top 10 Videos
+          - iframe [ref=e465]:
+            - generic [ref=f15e2]:
+              - img "loading image" [ref=f15e3]
+              - generic [ref=f15e4]: Loading .
+        - generic [ref=e467]:
+          - generic [ref=e471]:
+            - generic [ref=e472]: $
+            - text: Best Offer of the Month
+          - iframe [ref=e476]:
+            - generic [ref=f16e1]:
+              - link [ref=f16e2] [cursor=pointer]:
+                - /url: https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjss7mXljlpoDN9bCPsA03K9h_QLh1EP0IvDoPUdhVQj9M0Idmn0av7FAyo9fkR5FtRi7Wqd_g4Pqf7SOfm9FRZCNZf2zU6NJoRYyDCN7JG22IJgLMRMpo9ym0pcIDtXLdKAhLdssPaOpez7V-YIwX7wogixWX0d0nC-6OrfOO4WRGO4p4_2TQG6Q8sU-pYqcg9K_kVBsJtcAMZ_0oqTDsKB8tBog_LgZtsFinYcztZG42NN-wN_ZzoBxlcxIrq6kNiuWGAqktZeC7y7FGwXB9cCmqEVZBO9dSMopLcW-nWFHUpUkbGAlyjY3-x6WJ1Tc7w6IuNc3pZ06V0e_9khCosSEnX64-2O5_dY5bWB25-JyJnC-DjdcU8qDFrthB7bildL_Xb6BbCXBl_UoATmpWZqJM1jSWUyYJQ&sai=AMfl-YRvaobKu-mmgfSlWX04eiQ_zd4Q_9VdqjXrqu2sT_NDTaF-EZH31tQ20z2P_bbjGaU7HptaT-X_4766mCXFW2sT4KSiMrHhPXWPoHqZ3WGJFPIkjQxaeZ8KrVl4mSq4OWeWfwqvgE79_AwZHWXldhLUV4pwKVm8NZct-w8W9A7laUuzxrpFJKNHXSYv7olTfviZG-Esf7-dwrof1z8szE3IX4u_MTKmOyLHe3VJh3E2UJK1-Syl7H0RzigrumOUB2GsEfmrFFVoWcPsCPBli5TU6q0nOZMDKE_xWcs5rtWMrimtqWeCoTg-xuwZcrMZB6oH3XM-&sig=Cg0ArKJSzOMNelC5ubUS&fbs_aeid=%5Bgw_fbsaeid%5D&adurl=https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/%3Futm_source%3Dwss%26utm_medium%3Dgam%26utm_campaign%3Dwss-cb-gam-2
+              - img [ref=f16e6] [cursor=pointer]
+              - button [ref=f16e8] [cursor=pointer]:
+                - img [ref=f16e9]
+    - generic [ref=e480]:
+      - strong [ref=e481]: Notice
+      - paragraph [ref=e482]:
+        - text: This website uses cookies, for more information please visit our
+        - link "Privacy Policy" [ref=e483] [cursor=pointer]:
+          - /url: https://content.stocktrak.com/privacy-policy/
+          - strong [ref=e484]: Privacy Policy
+      - generic [ref=e485] [cursor=pointer]: Ok
+  - contentinfo [ref=e486]:
+    - generic [ref=e488]:
+      - complementary [ref=e490]:
+        - figure [ref=e491]:
+          - link "WallStreetSurvivor logo" [ref=e492] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e493]
+      - generic [ref=e494]:
+        - complementary [ref=e495]:
+          - heading "Our Platform" [level=3] [ref=e496]
+        - complementary [ref=e497]:
+          - list [ref=e498]:
+            - listitem [ref=e499]:
+              - link "Stock Market Simulator" [ref=e500] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e501]:
+              - link "Investing Courses for Beginners" [ref=e502] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/courses/
+            - listitem [ref=e503]:
+              - link "Best Stocks to Buy Now" [ref=e504] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e505]:
+              - link "How to Invest Videos" [ref=e506] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+            - listitem [ref=e507]:
+              - link "Free Online Investing Course" [ref=e508] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e509]:
+              - link "Financial Literacy Game for Students" [ref=e510] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e511]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e512] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e513]:
+              - link "Crypto Paper Trading" [ref=e514] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e515]:
+              - link "About WallStreetSurvivor" [ref=e516] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+      - generic [ref=e517]:
+        - complementary [ref=e518]:
+          - heading "Review Center" [level=3] [ref=e519]
+        - complementary [ref=e520]:
+          - list [ref=e521]:
+            - listitem [ref=e522]:
+              - link "Motley Fool Review" [ref=e523] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e524]:
+              - link "Seeking Alpha Review" [ref=e525] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e526]:
+              - link "Alpha Picks Review" [ref=e527] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e528]:
+              - link "Moby Stocks Review" [ref=e529] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e530]:
+              - link "Wealthsimple Review" [ref=e531] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/wealthsimple-review/
+            - listitem [ref=e532]:
+              - link "Is Robinhood Safe to Use?" [ref=e533] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e534]:
+              - link "Rule Breakers Review" [ref=e535] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e536]:
+              - link "Best Investment Newsletters" [ref=e537] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e538]:
+              - link "Best Investing Apps" [ref=e539] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e540]:
+              - link "Best Motley Fool Discount Code" [ref=e541] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e542]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e543] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e544]:
+              - link "Best Tipranks Discount Code" [ref=e545] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e546]:
+              - link "Is Coinbase Safe?" [ref=e547] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e548]:
+              - link "Free Crypto with Coinbase" [ref=e549] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e550]:
+              - link "Best Stock Picking Service" [ref=e551] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+      - generic [ref=e552]:
+        - complementary [ref=e553]:
+          - heading "Corporate Services" [level=3] [ref=e554]
+        - complementary [ref=e555]:
+          - list [ref=e556]:
+            - listitem [ref=e557]:
+              - link "White Label Stock Market Games" [ref=e558] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e559]:
+              - link "White Label Virtual Crypto Trading" [ref=e560] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e561]:
+              - link "Employee Financial Wellness" [ref=e562] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e563]:
+              - link "Sponsor a College or High School" [ref=e564] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e565]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e566] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e567]:
+          - heading "Our Company" [level=3] [ref=e568]
+        - complementary [ref=e569]:
+          - list [ref=e570]:
+            - listitem [ref=e571]:
+              - link "Contact Us" [ref=e572] [cursor=pointer]:
+                - /url: mailto:support@wallstreetsurvivor.com
+            - listitem [ref=e573]:
+              - link "About Us" [ref=e574] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/
+            - listitem [ref=e575]:
+              - link "Motley Fool Review" [ref=e576] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e577]:
+              - link "Privacy Policy" [ref=e578] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e579]:
+              - link "Terms and Conditions" [ref=e580] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e581]:
+              - link "Advertise with Us" [ref=e582] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e583]:
+        - complementary [ref=e584]:
+          - heading "Family of Sites" [level=3] [ref=e585]:
+            - strong [ref=e586]: Family of Sites
+        - complementary [ref=e587]:
+          - figure [ref=e588]:
+            - link "StockTrak logo" [ref=e589] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e590]
+        - complementary [ref=e591]:
+          - figure [ref=e592]:
+            - link "PersonalFinanceLab logo" [ref=e593] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e594]
+        - complementary [ref=e595]:
+          - figure [ref=e596]:
+            - link "WallStreetSurvivor logo" [ref=e597] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Practice stock trading site" [ref=e598]
+        - complementary [ref=e599]:
+          - figure [ref=e600]:
+            - link "HowTheMarketWorks logo" [ref=e601] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free stock market game for students" [ref=e602]
+        - complementary [ref=e603]:
+          - link "Global Virtual Stock Game" [ref=e604] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e605] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - generic "Site" [ref=e606]:
+      - generic [ref=e607]:
+        - generic [ref=e608]:
+          - complementary [ref=e609]:
+            - heading "Connect With Us" [level=2] [ref=e610]
+          - complementary:
+            - figure [ref=e611]:
+              - link "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e612] [cursor=pointer]:
+                - /url: https://www.instagram.com/wallstreetsurvivor/
+                - img "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e613]
+          - complementary:
+            - figure [ref=e614]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e615] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e616]
+          - complementary:
+            - figure [ref=e617]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e618] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e619]
+          - complementary:
+            - figure [ref=e620]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e621] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e622]
+        - generic [ref=e623]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2025 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.
+  - text: 
+  - img [ref=e626]

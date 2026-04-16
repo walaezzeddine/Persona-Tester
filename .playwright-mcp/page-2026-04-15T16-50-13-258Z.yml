@@ -1,0 +1,607 @@
+- generic [ref=e1]:
+  - generic [ref=e250]:
+    - iframe [ref=e280]:
+      - insertion [ref=f197e3]:
+        - iframe [ref=f197e5]:
+          
+    - generic [ref=e281] [cursor=pointer]: X
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - text: 
+      - button "Select Language" [ref=e4] [cursor=pointer]:
+        - text: About
+        - generic [ref=e5]: 
+      - generic "Challenges" [ref=e6] [cursor=pointer]:
+        - text: Contests
+        - generic [ref=e7]: 
+    - generic [ref=e9]:
+      - generic "Username" [ref=e10]: walaezzedine
+      - link "Unread Messages" [ref=e11] [cursor=pointer]:
+        - /url: /forum/messages
+        - generic [ref=e12]: 
+        - generic "Number of Unread Messages" [ref=e13]: "1"
+      - combobox "Tournament Select" [ref=e15]:
+        - option "My Practice Portfolio" [selected]
+      - link "Logout" [ref=e16] [cursor=pointer]:
+        - /url: /logout
+  - navigation [ref=e17]:
+    - menubar [ref=e19]:
+      - menuitem "Logo" [ref=e20]:
+        - link "Logo" [ref=e21] [cursor=pointer]:
+          - /url: /home
+          - img "Logo" [ref=e22]
+    - menubar [ref=e24]:
+      - menuitem "Dashboard" [ref=e25]:
+        - generic [ref=e26] [cursor=pointer]: Dashboard 
+        - text: 
+      - menuitem "Stock Game" [ref=e27]:
+        - generic [ref=e28] [cursor=pointer]: Stock Game 
+      - menuitem "Investing Research" [ref=e29]:
+        - generic "Investing Research" [ref=e30] [cursor=pointer]: Investing Research 
+      - menuitem "Courses" [ref=e31]:
+        - generic [ref=e32] [cursor=pointer]: Courses 
+      - menuitem "Getting Started" [ref=e33]:
+        - generic [ref=e34] [cursor=pointer]: Getting Started 
+  - generic [ref=e35]:
+    - generic [ref=e36]:
+      - generic [ref=e38]:
+        - generic [ref=e40]:
+          - text: Portfolio Value
+          - strong [ref=e41]: $100,111.59
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - text: Return Percentage
+            - strong [ref=e44]:
+              - text: 0,11%
+              - generic [ref=e45]: 
+          - generic [ref=e46]:
+            - text: Cash Balance
+            - strong [ref=e47]: $76,019.89
+          - generic [ref=e48]:
+            - text: Buying Power
+            - strong [ref=e49]: $176,035.18
+          - generic [ref=e50]:
+            - text: Current Rank
+            - strong [ref=e51]: 4 403/73599
+      - generic [ref=e52]:
+        - generic [ref=e55]:
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - generic [ref=e59]: DOW JONES ETF
+              - generic [ref=e60]: "-.44%"
+              - generic [ref=e62]: 
+            - img "Chart" [ref=e252]
+          - generic [ref=e64]:
+            - generic [ref=e65]:
+              - generic [ref=e66]: S&P500 ETF
+              - generic [ref=e67]: .40%
+              - generic [ref=e69]: 
+            - img "Chart" [ref=e71]
+          - generic [ref=e73]:
+            - generic [ref=e74]:
+              - generic [ref=e75]: NASDAQ ETF
+              - generic [ref=e76]: .73%
+              - generic [ref=e78]: 
+            - img "Chart" [ref=e80]
+          - generic [ref=e82]:
+            - generic [ref=e83]:
+              - generic [ref=e84]: CRUDE OIL ETF
+              - generic [ref=e85]: "-.15%"
+              - generic [ref=e87]: 
+            - img "Chart" [ref=e89]
+          - generic [ref=e91]:
+            - generic [ref=e92]:
+              - generic [ref=e93]: GOLD ETF
+              - generic [ref=e94]: "-.76%"
+              - generic [ref=e96]: 
+            - img "Chart" [ref=e98]
+          - generic [ref=e100]:
+            - generic [ref=e101]:
+              - generic [ref=e102]: NAT GAS ETF
+              - generic [ref=e103]: "-.52%"
+              - generic [ref=e105]: 
+            - img "Chart" [ref=e107]
+        - generic [ref=e109] [cursor=pointer]: 
+    - iframe [ref=e256]:
+      - insertion [ref=f190e3]:
+        - iframe [ref=f190e5]:
+          
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - list:
+              - listitem: Markets
+              - listitem: Market Summary
+              - listitem: Market Movers
+              - listitem: Top Performing ETFs
+              - listitem: Futures Summary
+              - listitem: Economic Rates
+              - listitem: Currencies
+              - listitem: Industries
+              - listitem: Basic Research
+              - listitem: Detailed Quote
+              - listitem: Company Profile
+              - listitem: Company News
+              - listitem: Charts
+              - listitem: Analyst Ratings
+              - listitem: Price History
+              - listitem: Financial Statements
+              - listitem: Advanced Research
+              - listitem: Key Ratios
+              - listitem: Option Chain
+              - listitem: Share Performance
+              - listitem: Earnings
+              - listitem: SEC Filings
+              - listitem: Corporate Actions
+              - listitem: Trades
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - heading "Quotes" [level=3]
+          - generic [ref=e257]:
+            - generic [ref=e262]:
+              - generic [ref=e263]:
+                - generic [ref=e266]:
+                  - generic [ref=e267] [cursor=pointer]: 
+                  - textbox "Search for a symbol or company, typing will show categorized results in tabs below" [active] [ref=e268]:
+                    - /placeholder: Search for a symbol or company
+                  - text: 
+                - text: 
+              - text:             
+            - generic [ref=e283]:
+              - text:         
+              - generic [ref=e285]:
+                - heading "GE AerospaceGE" [level=1] [ref=e287]: GE Aerospace (GE)
+                - generic "quote data for GE Aerospace" [ref=e290]:
+                  - generic [ref=e291]:
+                    - generic [ref=e292]:
+                      - text: $312.82
+                      - generic [ref=e293]:
+                        - generic [ref=e294]: 
+                        - generic [ref=e295]: "-5.18"
+                        - generic [ref=e296]: (-1.63%)
+                    - generic [ref=e297]:
+                      - generic [ref=e298]:
+                        - generic [ref=e299]: "Bid:"
+                        - text: 312.75 x 40
+                      - generic [ref=e300]:
+                        - generic [ref=e301]: "Ask:"
+                        - text: 312.88 x 40
+                    - generic [ref=e302]:
+                      - generic [ref=e304]: April 15, 2026 12:34 PMET
+                      - generic [ref=e306]: "Volume: 1,680,077"
+                  - generic [ref=e307]:
+                    - generic [ref=e308]: USD
+                    - generic [ref=e309]: "|New York Stock Exchange"
+                    - generic [ref=e310]: "|Delayed Price"
+                    - text: "|"
+              - generic [ref=e313]:
+                - generic [ref=e314]:
+                  - heading "News and Media" [level=2] [ref=e315]
+                  - generic [ref=e317]:
+                    - generic [ref=e319]:
+                      - generic [ref=e321]:
+                        - generic [ref=e322] [cursor=pointer]: 
+                        - textbox "From Date" [ref=e323]
+                      - generic [ref=e325]:
+                        - generic [ref=e326] [cursor=pointer]: 
+                        - textbox "To Date" [ref=e327]
+                    - generic [ref=e329]:
+                      - button "Show Result" [ref=e330] [cursor=pointer]
+                      - button "Show Latest" [ref=e331] [cursor=pointer]
+                  - generic [ref=e333]:
+                    - generic [ref=e334]:
+                      - heading "Wed Apr 15th, 2026" [level=3] [ref=e335]
+                      - list [ref=e336]:
+                        - listitem [ref=e337]:
+                          - generic [ref=e338]:
+                            - generic [ref=e339]: GlobeNewswire
+                            - generic [ref=e340]: 10:44 AM
+                            - generic [ref=e341] [cursor=pointer]: Starfighters Space Partners with Blackstar Orbital for Hypersonic Testing Platform as Space Sector Prepares for Historic SpaceX Public Debut
+                            - generic [ref=e342]: CAPE CANAVERAL, Fla., April 15, 2026 (GLOBE NEWSWIRE) -- As SpaceX prepares for what could become the largest IPO in history with its confidential S-1 filing targeting a $1.75 trillion valuation and June roadshow, space infrastructure companies are positioning for sector-wide growth. Starfighters...
+                        - listitem [ref=e343]:
+                          - generic [ref=e344]:
+                            - generic [ref=e345]: SeekingAlpha
+                            - generic [ref=e346]: 8:04 AM
+                            - generic [ref=e347] [cursor=pointer]: Mar Vista U.S. Quality Q1 2026 Portfolio Activity
+                            - generic [ref=e348]: "2026-04-15 08:04:00 ET The following segment was excerpted from the Mar Vista U.S. Quality Portfolio Q1 2026 Commentary . ... Read the full article on Seeking Alpha For further details see: Mar Vista U.S. Quality Q1 2026 Portfolio Activity"
+                    - generic [ref=e349]:
+                      - heading "Tue Apr 14th, 2026" [level=3] [ref=e350]
+                      - list [ref=e351]:
+                        - listitem [ref=e352]:
+                          - generic [ref=e353]:
+                            - generic [ref=e354]: SeekingAlpha
+                            - generic [ref=e355]: 2:01 PM
+                            - generic [ref=e356] [cursor=pointer]: India to set up local engine repair facility for Tejas jets under GE Aerospace deal
+                            - generic [ref=e357]: "2026-04-14 14:01:38 ET More on GE Aerospace GE Aerospace: The Market Is Missing The Multi-Decade Cash Flow Engine GE Aerospace: Profitable Growth Coming From Emerging Markets GE Aerospace Vs. Rolls-Royce: Which Jet Engine Maker Is The Better Investment? Wars ..."
+                    - generic [ref=e358]:
+                      - heading "Thu Apr 9th, 2026" [level=3] [ref=e359]
+                      - list [ref=e360]:
+                        - listitem [ref=e361]:
+                          - generic [ref=e362]:
+                            - generic [ref=e363]: SeekingAlpha
+                            - generic [ref=e364]: 8:06 AM
+                            - generic [ref=e365] [cursor=pointer]: "GE Aerospace: The Market Is Missing The Multi-Decade Cash Flow Engine"
+                            - generic [ref=e366]: "2026-04-09 08:06:24 ET ... Read the full article on Seeking Alpha For further details see: GE Aerospace: The Market Is Missing The Multi-Decade Cash Flow Engine"
+                    - generic [ref=e367]:
+                      - heading "Wed Apr 8th, 2026" [level=3] [ref=e368]
+                      - list [ref=e369]:
+                        - listitem [ref=e370]:
+                          - generic [ref=e371]:
+                            - generic [ref=e372]: Motley Fool
+                            - generic [ref=e373]: 3:30 PM
+                            - generic [ref=e374] [cursor=pointer]: Where Will GE Vernova (GEV) Stock Be in 10 Years?
+                            - generic [ref=e375]: "2026-04-08 15:30:00 ET GE Vernova (NYSE: GEV) , the former energy division of General Electric (NYSE: GE) that was spun off as a stand-alone company in 2024, has risen more than eightfold since its market debut. Let's see why it skyrocketed -- and if it can maintain that mom..."
+                        - listitem [ref=e376]:
+                          - generic [ref=e377]:
+                            - generic [ref=e378]: SeekingAlpha
+                            - generic [ref=e379]: 9:50 AM
+                            - generic [ref=e380] [cursor=pointer]: Wars cut output and force hard fiscal trade-offs, IMF says
+                            - generic [ref=e381]: "2026-04-08 09:50:10 ET More on defense L3Harris: The Pentagon Buys, Wall Street Follows Updating DFEN, A Leveraged Defense ETF In The Current Environment Lockheed Martin: Strong Franchise, Limited Upside At Current Valuation Hegseth claims battlefield victory..."
+                        - listitem [ref=e382]:
+                          - generic [ref=e383]:
+                            - generic [ref=e384]: SeekingAlpha
+                            - generic [ref=e385]: 6:29 AM
+                            - generic [ref=e386] [cursor=pointer]: "Trump administration eyes $80B-$100B war funding request: WaPo"
+                            - generic [ref=e387]: "2026-04-08 06:29:10 ET Read the full article on Seeking Alpha For further details see: Trump administration eyes $80B-$100B war funding request: WaPo"
+                    - generic [ref=e388]:
+                      - heading "Thu Apr 2nd, 2026" [level=3] [ref=e389]
+                      - list [ref=e390]:
+                        - listitem [ref=e391]:
+                          - generic [ref=e392]:
+                            - generic [ref=e393]: SEC Filings
+                            - generic [ref=e394]: 4:12 PM
+                            - generic [ref=e395] [cursor=pointer]: Statement of changes in beneficial ownership of securities - Form 4
+                            - generic [ref=e396]: Statement of changes in beneficial ownership of securities - Form 4
+                        - listitem [ref=e397]:
+                          - generic [ref=e398]:
+                            - generic [ref=e399]: SEC Filings
+                            - generic [ref=e400]: 4:12 PM
+                            - generic [ref=e401] [cursor=pointer]: Statement of changes in beneficial ownership of securities - Form 4
+                            - generic [ref=e402]: Statement of changes in beneficial ownership of securities - Form 4
+                        - listitem [ref=e403]:
+                          - generic [ref=e404]:
+                            - generic [ref=e405]: SeekingAlpha
+                            - generic [ref=e406]: 6:24 AM
+                            - generic [ref=e407] [cursor=pointer]: Most crowded stocks in long-only funds by sector
+                            - generic [ref=e408]: 2026-04-02 06:24:12 ET More on the markets Iran And Oil Spark An Explosive Month How Reserve Management Purchases Have Eased Money Market Rates Implications From Japan's March Rate Decision Lawmakers react as Trump signals Iran escalation No deal yet?...
+                    - generic [ref=e409]:
+                      - heading "Wed Apr 1st, 2026" [level=3] [ref=e410]
+                      - list [ref=e411]:
+                        - listitem [ref=e412]:
+                          - generic [ref=e413]:
+                            - generic [ref=e414]: SeekingAlpha
+                            - generic [ref=e415]: 4:41 PM
+                            - generic [ref=e416] [cursor=pointer]: "Boeing supply chain shows signs of stabilization as 737 output trails target: BNP Paribas"
+                            - generic [ref=e417]: "2026-04-01 16:41:34 ET Read the full article on Seeking Alpha For further details see: Boeing supply chain shows signs of stabilization as 737 output trails target: BNP Paribas"
+                        - listitem [ref=e418]:
+                          - generic [ref=e419]:
+                            - generic [ref=e420]: Motley Fool
+                            - generic [ref=e421]: 4:18 PM
+                            - generic [ref=e422] [cursor=pointer]: "GE Vernova (GEV) Stock: Buy, Sell, or Hold?"
+                            - generic [ref=e423]: "2026-04-01 16:18:00 ET GE Vernova (NYSE: GEV) , the former energy division of General Electric (NYSE: GE) that was spun off as a separate company in 2024, has impressed many investors since its market debut. Its stock opened at $115 per share on its first day, and it now tra..."
+                        - listitem [ref=e424]:
+                          - generic [ref=e425]:
+                            - generic [ref=e426]: SeekingAlpha
+                            - generic [ref=e427]: 5:44 AM
+                            - generic [ref=e428] [cursor=pointer]: "Iran threatens attacks on Nvidia, Apple and other tech majors: report"
+                            - generic [ref=e429]: "2026-04-01 05:44:53 ET More on GE Aerospace, Boeing, etc. Tesla: This Is Not The Right Time To Buy The Dip Boeing Vs. Airbus: The Iran War Shock And The Production Reality The Cure For FOMO With Tech Contrarians Microsoft plans to invest $5.5B for cloud, AI i..."
+                    - generic [ref=e430]:
+                      - heading "Tue Mar 31st, 2026" [level=3] [ref=e431]
+                      - list [ref=e432]:
+                        - listitem [ref=e433]:
+                          - generic [ref=e434]:
+                            - generic [ref=e435]: SEC Filings
+                            - generic [ref=e436]: 4:28 PM
+                            - generic [ref=e437] [cursor=pointer]: Notice of exempt solicitation submitted by non-management - Form PX14A6G
+                            - generic [ref=e438]: Notice of exempt solicitation submitted by non-management - Form PX14A6G
+                    - generic [ref=e439]:
+                      - heading "Mon Mar 30th, 2026" [level=3] [ref=e440]
+                      - list [ref=e441]:
+                        - listitem [ref=e442]:
+                          - generic [ref=e443]:
+                            - generic [ref=e444]: SeekingAlpha
+                            - generic [ref=e445]: 1:16 PM
+                            - generic [ref=e446] [cursor=pointer]: "Investors hold their nerve on aerospace amid conflict risks: BNP Paribas"
+                            - generic [ref=e447]: "2026-03-30 13:16:20 ET More on Select STOXX Europe Aerospace & Defense ETF, GE Aerospace, etc. GE Aerospace: Profitable Growth Coming From Emerging Markets Howmet Aerospace: Flying Too High, Some Turbulence To Be Expected Boeing: The Triple Blow Who are s..."
+                        - listitem [ref=e448]:
+                          - generic [ref=e449]:
+                            - generic [ref=e450]: Motley Fool
+                            - generic [ref=e451]: 12:24 PM
+                            - generic [ref=e452] [cursor=pointer]: 3 Green Energy Stocks to Buy While the Rest of the Market Is Distracted by Oil
+                            - generic [ref=e453]: 2026-03-30 12:24:17 ET Over the past month, Iran's attacks on key energy sites and its blockade of the Strait of Hormuz have driven up oil prices worldwide. That pressure drove many investors to rotate toward oil and energy stocks, but it's also generating strong tailwinds for certain green...
+                        - listitem [ref=e454]:
+                          - generic [ref=e455]:
+                            - generic [ref=e456]: Financial News Media
+                            - generic [ref=e457]: 8:45 AM
+                            - generic [ref=e458] [cursor=pointer]: Companies Unveiling Autonomous Defense System Amid Surge Toward $43 Billion Global Market
+                            - generic [ref=e459]: 2026-03-30 08:45:19 ET Integrated AI system empowers forces to detect, decide, and deploy faster than traditional command structures New York, NY – March 30, 2026 – Market News Updates News Commentary – Autonomous systems are transforming def...
+                        - listitem [ref=e460]:
+                          - generic [ref=e461]:
+                            - generic [ref=e462]: Canada Newswire
+                            - generic [ref=e463]: 8:45 AM
+                            - generic [ref=e464] [cursor=pointer]: Companies Unveiling Autonomous Defense System Amid Surge Toward $43 Billion Global Market
+                            - generic [ref=e465]: Companies Unveiling Autonomous Defense System Amid Surge Toward $43 Billion Global Market Canada NewsWire Integrated AI system empowers forces to detect, decide, and deploy faster than traditional command structures NEW YORK , March 30, 2026 /CNW/ -- Market News Updates N...
+                        - listitem [ref=e466]:
+                          - generic [ref=e467]:
+                            - generic [ref=e468]: PR Newswire
+                            - generic [ref=e469]: 8:45 AM
+                            - generic [ref=e470] [cursor=pointer]: Companies Unveiling Autonomous Defense System Amid Surge Toward $43 Billion Global Market
+                            - generic [ref=e471]: Companies Unveiling Autonomous Defense System Amid Surge Toward $43 Billion Global Market PR Newswire Integrated AI system empowers forces to detect, decide, and deploy faster than traditional command structures NEW YORK , March 30, 2026 /PRNewswire/ -- Market News Updates ...
+                        - listitem [ref=e472]:
+                          - generic [ref=e473]:
+                            - generic [ref=e474]: SeekingAlpha
+                            - generic [ref=e475]: 6:59 AM
+                            - generic [ref=e476] [cursor=pointer]: NATO is at a breaking point with defense spending on the line
+                            - generic [ref=e477]: "2026-03-30 06:59:42 ET More on military spending and stocks RTX Corporation (RTX) Stock Analysis: 36 Years Of Dividends Vs. Quant \"Hold\" | 2-Minute Analysis Boeing: The Triple Blow The Shahed Drone War Is Creating A Missile Defense Supercycle For Lockheed Martin ..."
+                    - generic [ref=e478]:
+                      - heading "Fri Mar 27th, 2026" [level=3] [ref=e479]
+                      - list [ref=e480]:
+                        - listitem [ref=e481]:
+                          - generic [ref=e482]:
+                            - generic [ref=e483]: SeekingAlpha
+                            - generic [ref=e484]: 9:00 AM
+                            - generic [ref=e485] [cursor=pointer]: "SPMO: Not So Much Momentum Now, But That's What Makes It A Buy Long Term"
+                            - generic [ref=e486]: "2026-03-27 09:00:00 ET Introduction Due to heightened volatility, the stock market, particularly the S&P ( SP500 ), has lost its momentum from 2025, where it saw gains over 16%.... Read the full article on Seeking Alpha For further details see: SPMO: Not So Much ..."
+                    - generic [ref=e487]:
+                      - heading "Thu Mar 26th, 2026" [level=3] [ref=e488]
+                      - list [ref=e489]:
+                        - listitem [ref=e490]:
+                          - generic [ref=e491]:
+                            - generic [ref=e492]: SEC Filings
+                            - generic [ref=e493]: 6:39 PM
+                            - generic [ref=e494] [cursor=pointer]: "[Amend] Statement of acquisition of beneficial ownership by individuals - Form SCHEDULE 13G/A"
+                            - generic [ref=e495]: "[Amend] Statement of acquisition of beneficial ownership by individuals - Form SCHEDULE 13G/A"
+                    - generic [ref=e496]:
+                      - heading "Wed Mar 25th, 2026" [level=3] [ref=e497]
+                      - list [ref=e498]:
+                        - listitem [ref=e499]:
+                          - generic [ref=e500]:
+                            - generic [ref=e501]: SeekingAlpha
+                            - generic [ref=e502]: 4:10 AM
+                            - generic [ref=e503] [cursor=pointer]: "GE Aerospace: Profitable Growth Coming From Emerging Markets"
+                            - generic [ref=e504]: 2026-03-25 04:10:49 ET Investment thesis General Electric Company ( GE ) operates in two business worlds. The first is North America, where growth is essentially flat. The second is the rest of the world and specific regions, where growth in air traffic generates growth for ...
+                    - generic [ref=e505]:
+                      - heading "Tue Mar 24th, 2026" [level=3] [ref=e506]
+                      - list [ref=e507]:
+                        - listitem [ref=e508]:
+                          - generic [ref=e509]:
+                            - generic [ref=e510]: SeekingAlpha
+                            - generic [ref=e511]: 8:04 PM
+                            - generic [ref=e512] [cursor=pointer]: Tracking Cliff Asness' AQR Capital Management 13F Portfolio - Q4 2025 Update
+                            - generic [ref=e513]: 2026-03-24 20:04:56 ET This article is part of a series that provides an ongoing analysis of the changes made to AQR Capital Management’s US stock portfolio on a quarterly basis. It is based on their 13F Form filed on 02/17/2026. Please check out our last update for the m...
+                        - listitem [ref=e514]:
+                          - generic [ref=e515]:
+                            - generic [ref=e516]: SeekingAlpha
+                            - generic [ref=e517]: 9:12 AM
+                            - generic [ref=e518] [cursor=pointer]: "Aerospace aftermarket pullback seen as entry point: Morgan Stanley"
+                            - generic [ref=e519]: "2026-03-24 09:12:40 ET More on GE Aerospace, TransDigm Group, etc. In War, Things Tire Or Break, StandardAero To The Rescue StandardAero, Inc. (SARO) Presents at JPMorgan Industrials Conference 2026 Transcript FTAI Aviation: I'm Adding To My Shares Despite It R..."
+                  - generic [ref=e521]:
+                    - button "First"
+                    - button "Prev"
+                    - button "Last" [ref=e522] [cursor=pointer]
+                    - button "Next" [ref=e523] [cursor=pointer]
+                    - button "1" [ref=e524] [cursor=pointer]
+                    - button "2" [ref=e525] [cursor=pointer]
+                    - button "3" [ref=e526] [cursor=pointer]
+                    - button "4" [ref=e527] [cursor=pointer]
+                    - button "5" [ref=e528] [cursor=pointer]
+                - generic [ref=e529]:
+                  - heading "Video News" [level=2] [ref=e530]
+                  - list [ref=e533]:
+                    - listitem [ref=e534] [cursor=pointer]:
+                      - generic [ref=e535]:
+                        - img "Are We in a Recession? Predictions, Signs and Strategies" [ref=e537]
+                        - generic [ref=e538]: Are We in a Recession? Predictions, Signs and Strategies
+                        - generic [ref=e539]:
+                          - generic [ref=e540]: Investing News Network
+                          - generic [ref=e541]: Apr 28th, 2025
+                    - listitem [ref=e542] [cursor=pointer]:
+                      - generic [ref=e543]:
+                        - img "Are We in a Recession? Predictions, Signs and Strategies" [ref=e545]
+                        - generic [ref=e546]: Are We in a Recession? Predictions, Signs and Strategies
+                        - generic [ref=e547]:
+                          - generic [ref=e548]: Investing News Network
+                          - generic [ref=e549]: Apr 28th, 2025
+          - iframe [ref=e269]:
+            - insertion [ref=f191e3]:
+              - iframe [ref=f191e5]:
+                
+    - generic [ref=e272]:
+      - strong [ref=e273]: Notice
+      - paragraph [ref=e274]:
+        - text: This website uses cookies, for more information please visit our
+        - link "Privacy Policy" [ref=e275] [cursor=pointer]:
+          - /url: https://content.stocktrak.com/privacy-policy/
+          - strong [ref=e276]: Privacy Policy
+      - generic [ref=e277] [cursor=pointer]: Ok
+  - contentinfo [ref=e112]:
+    - generic [ref=e114]:
+      - complementary [ref=e116]:
+        - figure [ref=e117]:
+          - link "WallStreetSurvivor logo" [ref=e118] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e119]
+      - generic [ref=e120]:
+        - complementary [ref=e121]:
+          - heading "Our Platform" [level=3] [ref=e122]
+        - complementary [ref=e123]:
+          - list [ref=e124]:
+            - listitem [ref=e125]:
+              - link "Stock Market Simulator" [ref=e126] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e127]:
+              - link "Investing Courses for Beginners" [ref=e128] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/courses/
+            - listitem [ref=e129]:
+              - link "Best Stocks to Buy Now" [ref=e130] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e131]:
+              - link "How to Invest Videos" [ref=e132] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+            - listitem [ref=e133]:
+              - link "Free Online Investing Course" [ref=e134] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e135]:
+              - link "Financial Literacy Game for Students" [ref=e136] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e137]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e138] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e139]:
+              - link "Crypto Paper Trading" [ref=e140] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e141]:
+              - link "About WallStreetSurvivor" [ref=e142] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+      - generic [ref=e143]:
+        - complementary [ref=e144]:
+          - heading "Review Center" [level=3] [ref=e145]
+        - complementary [ref=e146]:
+          - list [ref=e147]:
+            - listitem [ref=e148]:
+              - link "Motley Fool Review" [ref=e149] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e150]:
+              - link "Seeking Alpha Review" [ref=e151] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e152]:
+              - link "Alpha Picks Review" [ref=e153] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e154]:
+              - link "Moby Stocks Review" [ref=e155] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e156]:
+              - link "Wealthsimple Review" [ref=e157] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/wealthsimple-review/
+            - listitem [ref=e158]:
+              - link "Is Robinhood Safe to Use?" [ref=e159] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e160]:
+              - link "Rule Breakers Review" [ref=e161] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e162]:
+              - link "Best Investment Newsletters" [ref=e163] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e164]:
+              - link "Best Investing Apps" [ref=e165] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e166]:
+              - link "Best Motley Fool Discount Code" [ref=e167] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e168]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e169] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e170]:
+              - link "Best Tipranks Discount Code" [ref=e171] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e172]:
+              - link "Is Coinbase Safe?" [ref=e173] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e174]:
+              - link "Free Crypto with Coinbase" [ref=e175] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e176]:
+              - link "Best Stock Picking Service" [ref=e177] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+      - generic [ref=e178]:
+        - complementary [ref=e179]:
+          - heading "Corporate Services" [level=3] [ref=e180]
+        - complementary [ref=e181]:
+          - list [ref=e182]:
+            - listitem [ref=e183]:
+              - link "White Label Stock Market Games" [ref=e184] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e185]:
+              - link "White Label Virtual Crypto Trading" [ref=e186] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e187]:
+              - link "Employee Financial Wellness" [ref=e188] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e189]:
+              - link "Sponsor a College or High School" [ref=e190] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e191]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e192] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e193]:
+          - heading "Our Company" [level=3] [ref=e194]
+        - complementary [ref=e195]:
+          - list [ref=e196]:
+            - listitem [ref=e197]:
+              - link "Contact Us" [ref=e198] [cursor=pointer]:
+                - /url: mailto:support@wallstreetsurvivor.com
+            - listitem [ref=e199]:
+              - link "About Us" [ref=e200] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/
+            - listitem [ref=e201]:
+              - link "Motley Fool Review" [ref=e202] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e203]:
+              - link "Privacy Policy" [ref=e204] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e205]:
+              - link "Terms and Conditions" [ref=e206] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e207]:
+              - link "Advertise with Us" [ref=e208] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e209]:
+        - complementary [ref=e210]:
+          - heading "Family of Sites" [level=3] [ref=e211]:
+            - strong [ref=e212]: Family of Sites
+        - complementary [ref=e213]:
+          - figure [ref=e214]:
+            - link "StockTrak logo" [ref=e215] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e216]
+        - complementary [ref=e217]:
+          - figure [ref=e218]:
+            - link "PersonalFinanceLab logo" [ref=e219] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e220]
+        - complementary [ref=e221]:
+          - figure [ref=e222]:
+            - link "WallStreetSurvivor logo" [ref=e223] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Practice stock trading site" [ref=e224]
+        - complementary [ref=e225]:
+          - figure [ref=e226]:
+            - link "HowTheMarketWorks logo" [ref=e227] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free stock market game for students" [ref=e228]
+        - complementary [ref=e229]:
+          - link "Global Virtual Stock Game" [ref=e230] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e231] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - generic "Site" [ref=e232]:
+      - generic [ref=e233]:
+        - generic [ref=e234]:
+          - complementary [ref=e235]:
+            - heading "Connect With Us" [level=2] [ref=e236]
+          - complementary:
+            - figure [ref=e237]:
+              - link "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e238] [cursor=pointer]:
+                - /url: https://www.instagram.com/wallstreetsurvivor/
+                - img "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e239]
+          - complementary:
+            - figure [ref=e240]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e241] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e242]
+          - complementary:
+            - figure [ref=e243]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e244] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e245]
+          - complementary:
+            - figure [ref=e246]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e247] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e248]
+        - generic [ref=e249]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2025 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.
+  - generic [ref=e551]:
+    - img

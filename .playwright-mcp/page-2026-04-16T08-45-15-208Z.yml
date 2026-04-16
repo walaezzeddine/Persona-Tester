@@ -1,0 +1,572 @@
+- generic [ref=e1]:
+  - generic [ref=e178]:
+    - iframe [ref=e181]:
+      - insertion [ref=f314e3]:
+        - iframe [ref=f314e5]:
+          
+    - generic [ref=e182] [cursor=pointer]: X
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - text: 
+      - button "Select Language" [ref=e4] [cursor=pointer]:
+        - text: About
+        - generic [ref=e5]: 
+      - generic "Challenges" [ref=e6] [cursor=pointer]:
+        - text: Contests
+        - generic [ref=e7]: 
+    - generic [ref=e9]:
+      - generic "Username" [ref=e10]: walaezzedine
+      - link "Unread Messages" [ref=e11] [cursor=pointer]:
+        - /url: /forum/messages
+        - generic [ref=e12]: 
+        - generic "Number of Unread Messages" [ref=e13]: "1"
+      - combobox "Tournament Select" [ref=e15]:
+        - option "My Practice Portfolio" [selected]
+      - link "Logout" [ref=e16] [cursor=pointer]:
+        - /url: /logout
+  - navigation [ref=e17]:
+    - menubar [ref=e183]:
+      - menuitem "Logo" [ref=e184]:
+        - link "Logo" [ref=e21] [cursor=pointer]:
+          - /url: /home
+          - img "Logo" [ref=e22]
+    - menubar [ref=e185]:
+      - menuitem "Dashboard" [ref=e186]:
+        - generic [ref=e28] [cursor=pointer]: Dashboard 
+        - text: 
+      - menuitem "Stock Game" [ref=e187]:
+        - generic [ref=e30] [cursor=pointer]: Stock Game 
+      - menuitem "Investing Research" [ref=e188]:
+        - generic "Investing Research" [ref=e32] [cursor=pointer]: Investing Research 
+      - menuitem "Courses" [ref=e189]:
+        - generic [ref=e34] [cursor=pointer]: Courses 
+      - menuitem "Getting Started" [ref=e190]:
+        - generic [ref=e36] [cursor=pointer]: Getting Started 
+  - generic [ref=e37]:
+    - generic [ref=e191]:
+      - generic [ref=e193]:
+        - generic [ref=e195]:
+          - text: Portfolio Value
+          - strong [ref=e196]: $100,203.02
+        - generic [ref=e197]:
+          - generic [ref=e198]:
+            - text: Return Percentage
+            - strong [ref=e199]:
+              - text: 0,2%
+              - generic [ref=e200]: 
+          - generic [ref=e201]:
+            - text: Cash Balance
+            - strong [ref=e202]: $74,045.39
+          - generic [ref=e203]:
+            - text: Buying Power
+            - strong [ref=e204]: $174,248.41
+          - generic [ref=e205]:
+            - text: Current Rank
+            - strong [ref=e206]: 4 553/73511
+      - generic [ref=e207]:
+        - generic [ref=e210]:
+          - generic [ref=e212]:
+            - generic [ref=e213]:
+              - generic [ref=e214]: DOW JONES ETF
+              - generic [ref=e215]: "-.16%"
+              - generic [ref=e217]: 
+            - img "Chart" [ref=e219]
+          - generic [ref=e221]:
+            - generic [ref=e222]:
+              - generic [ref=e223]: S&P500 ETF
+              - generic [ref=e224]: .79%
+              - generic [ref=e226]: 
+            - img "Chart" [ref=e228]
+          - generic [ref=e230]:
+            - generic [ref=e231]:
+              - generic [ref=e232]: NASDAQ ETF
+              - generic [ref=e233]: 1.40%
+              - generic [ref=e235]: 
+            - img "Chart" [ref=e237]
+          - generic [ref=e239]:
+            - generic [ref=e240]:
+              - generic [ref=e241]: CRUDE OIL ETF
+              - generic [ref=e242]: "-1.02%"
+              - generic [ref=e244]: 
+            - img "Chart" [ref=e246]
+          - generic [ref=e248]:
+            - generic [ref=e249]:
+              - generic [ref=e250]: GOLD ETF
+              - generic [ref=e251]: "-1.04%"
+              - generic [ref=e253]: 
+            - img "Chart" [ref=e255]
+          - generic [ref=e257]:
+            - generic [ref=e258]:
+              - generic [ref=e259]: NAT GAS ETF
+              - generic [ref=e260]: .19%
+              - generic [ref=e262]: 
+            - img "Chart" [ref=e264]
+        - generic [ref=e266] [cursor=pointer]: 
+    - iframe [ref=e270]:
+      - insertion [ref=f300e3]:
+        - iframe [ref=f300e5]:
+          
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - list:
+              - listitem: Markets
+              - listitem: Market Summary
+              - listitem: Market Movers
+              - listitem: Top Performing ETFs
+              - listitem: Futures Summary
+              - listitem: Economic Rates
+              - listitem: Currencies
+              - listitem: Industries
+              - listitem: Basic Research
+              - listitem: Detailed Quote
+              - listitem: Company Profile
+              - listitem: Company News
+              - listitem: Charts
+              - listitem: Analyst Ratings
+              - listitem: Price History
+              - listitem: Financial Statements
+              - listitem: Advanced Research
+              - listitem: Key Ratios
+              - listitem: Option Chain
+              - listitem: Share Performance
+              - listitem: Earnings
+              - listitem: SEC Filings
+              - listitem: Corporate Actions
+              - listitem: Trades
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - heading "Quotes" [level=3]
+          - generic [ref=e271]:
+            - generic [ref=e276]:
+              - generic [ref=e277]:
+                - generic [ref=e280]:
+                  - generic [ref=e281] [cursor=pointer]: 
+                  - textbox "Search for a symbol or company, typing will show categorized results in tabs below" [ref=e282]:
+                    - /placeholder: Search for a symbol or company
+                  - text: 
+                - text: 
+                - link "Trade" [ref=e283] [cursor=pointer]:
+                  - /url: /trading/Equities?symbol=AAPL&quantity=0&exchange=US
+              - text:             
+            - generic [ref=e286]:
+              - text:         
+              - generic [ref=e288]:
+                - heading "Apple Inc.AAPL" [level=1] [ref=e290]: Apple Inc. (AAPL)
+                - generic "quote data for Apple Inc." [ref=e293]:
+                  - generic [ref=e294]:
+                    - generic [ref=e295]:
+                      - text: $266.43
+                      - generic [ref=e296]:
+                        - generic [ref=e297]: 
+                        - generic [ref=e298]: "7.60"
+                        - generic [ref=e299]: (2.94%)
+                    - generic [ref=e300]:
+                      - generic [ref=e301]:
+                        - generic [ref=e302]: "Bid:"
+                        - text: 266.00 x 5300
+                      - generic [ref=e303]:
+                        - generic [ref=e304]: "Ask:"
+                        - text: 266.16 x 100
+                    - generic [ref=e305]:
+                      - generic [ref=e307]: April 15, 2026 4:00 PMET
+                      - generic [ref=e309]: "Volume: 49,913,510"
+                  - generic [ref=e310]:
+                    - generic [ref=e311]: USD
+                    - generic [ref=e312]: "|Nasdaq Global Select"
+                    - generic [ref=e313]: "|Delayed Price"
+                    - generic [ref=e314]: "|Market Closed"
+              - generic [ref=e318]:
+                - heading "News and Media" [level=2] [ref=e319]
+                - generic [ref=e321]:
+                  - generic [ref=e323]:
+                    - generic [ref=e325]:
+                      - generic [ref=e326] [cursor=pointer]: 
+                      - textbox "From Date" [ref=e327]
+                    - generic [ref=e329]:
+                      - generic [ref=e330] [cursor=pointer]: 
+                      - textbox "To Date" [ref=e331]
+                  - generic [ref=e333]:
+                    - button "Show Result" [active] [ref=e334] [cursor=pointer]
+                    - button "Show Latest" [ref=e335] [cursor=pointer]
+                - generic [ref=e337]:
+                  - generic [ref=e338]:
+                    - heading "Thu Apr 16th, 2026" [level=3] [ref=e339]
+                    - list [ref=e340]:
+                      - listitem [ref=e341]:
+                        - generic [ref=e342]:
+                          - generic [ref=e343]: Motley Fool
+                          - generic [ref=e344]: 4:26 AM
+                          - generic [ref=e345] [cursor=pointer]: Warren Buffett's Successor, Greg Abel, Has 79% of Berkshire Hathaway's $318 Billion of Invested Assets Put to Work in Just 10 Stocks
+                          - generic [ref=e346]: "2026-04-16 04:26:00 ET For the first time in well over half a century, Wall Street's trillion-dollar conglomerate, Berkshire Hathaway (NYSE: BRKA) (NYSE: BRKB) , is in uncharted territory. On Dec. 31, Warren Buffett officially retired from his multidecade role as Berkshi..."
+                  - generic [ref=e347]:
+                    - heading "Wed Apr 15th, 2026" [level=3] [ref=e348]
+                    - list [ref=e349]:
+                      - listitem [ref=e350]:
+                        - generic [ref=e351]:
+                          - generic [ref=e352]: Motley Fool
+                          - generic [ref=e353]: 8:34 PM
+                          - generic [ref=e354] [cursor=pointer]: AI's Most Dangerous Moment
+                          - generic [ref=e355]: "2026-04-15 20:34:42 ET In this episode of Motley Fool Money, Motley Fool contributors Travis Hoium, Lou Whiteman, and Jon Quast discuss: To catch full episodes of all The Motley Fool's free podcasts, check out our podcast center . When you're ready to invest, check out this top 10..."
+                      - listitem [ref=e356]:
+                        - generic [ref=e357]:
+                          - generic [ref=e358]: Motley Fool
+                          - generic [ref=e359]: 5:50 PM
+                          - generic [ref=e360] [cursor=pointer]: I've Owned Apple Stock for Years. Here's Why I'm Letting Its AI Story Play Out.
+                          - generic [ref=e361]: "2026-04-15 17:50:00 ET I'm a long-term Apple (NASDAQ: AAPL) shareholder, and over the past couple of years, I've been seen the share prices of other tech giants blow past the company's gains. Apple hasn't competed in the artificial intelligence race in the same way that other compan..."
+                      - listitem [ref=e362]:
+                        - generic [ref=e363]:
+                          - generic [ref=e364]: Motley Fool
+                          - generic [ref=e365]: 5:17 PM
+                          - generic [ref=e366] [cursor=pointer]: The 1 Tech Stock I'd Put in Every Retirement Account Right Now
+                          - generic [ref=e367]: 2026-04-15 17:17:00 ET Retirees looking for stability should be especially cautious in the current environment. Equity markets have been volatile, with tech stocks leading the Nasdaq Composite into correction territory. Is there any tech company that's worth it for retirees to invest ...
+                      - listitem [ref=e368]:
+                        - generic [ref=e369]:
+                          - generic [ref=e370]: SeekingAlpha
+                          - generic [ref=e371]: 5:02 PM
+                          - generic [ref=e372] [cursor=pointer]: "Berkshire Hathaway: The Fortress Has Become A Waiting Room"
+                          - generic [ref=e373]: "2026-04-15 17:02:54 ET Introduction Read the full article on Seeking Alpha For further details see: Berkshire Hathaway: The Fortress Has Become A Waiting Room"
+                      - listitem [ref=e374]:
+                        - generic [ref=e375]:
+                          - generic [ref=e376]: Motley Fool
+                          - generic [ref=e377]: 2:36 PM
+                          - generic [ref=e378] [cursor=pointer]: Dow Jones Falls 0.5% as S&P 500, Nasdaq 100 Post Modest Mid-Day Gains
+                          - generic [ref=e379]: "2026-04-15 14:36:26 ET Happy Tax Day, everyone! While you're scrambling to file those returns, Wall Street is having a mixed day today. Just after 1:00 p.m. ET, the Nasdaq-100 is the mid-day leader, up 0.6%. The S&P 500 (SNPINDEX: ^GSPC) is tagging along with a 0.4% gain..."
+                      - listitem [ref=e380]:
+                        - generic [ref=e381]:
+                          - generic [ref=e382]: Motley Fool
+                          - generic [ref=e383]: 1:20 PM
+                          - generic [ref=e384] [cursor=pointer]: Apple's Latest Round of Product Announcements May Be More Important Than You Think
+                          - generic [ref=e385]: "2026-04-15 13:20:00 ET Apple (NASDAQ: AAPL) hasn't come out with a blockbuster new product for a long time. And that didn't change with its latest announcements in March. The biggest new product it released is a low-end laptop computer, the MacBook Neo. It complements the iPhone..."
+                      - listitem [ref=e386]:
+                        - generic [ref=e387]:
+                          - generic [ref=e388]: SeekingAlpha
+                          - generic [ref=e389]: 11:06 AM
+                          - generic [ref=e390] [cursor=pointer]: "Microsoft: Mispriced And Unfairly Tarnished With Overblown Capital Allocation Fears (Rating Upgrade)"
+                          - generic [ref=e391]: 2026-04-15 11:06:56 ET The Oddball of The Mag 7 Cohort Notwithstanding the recent bouts of volatility, the past year has still turned out to be a fairly lucrative period for US large caps, with the chief equity benchmark generating returns of close to 30%. One of the notable poc...
+                      - listitem [ref=e392]:
+                        - generic [ref=e393]:
+                          - generic [ref=e394]: SeekingAlpha
+                          - generic [ref=e395]: 9:54 AM
+                          - generic [ref=e396] [cursor=pointer]: "Apple: More Attention On AI Strategy, Less On iPhone Ahead Of Q2"
+                          - generic [ref=e397]: "2026-04-15 09:54:12 ET Apple ( AAPL ) is continuing to enjoy the fruits of its dominant position in the smartphone market with its latest iPhone 17 iteration.... Read the full article on Seeking Alpha For further details see: Apple: More Attention On AI Strategy, Less On..."
+                      - listitem [ref=e398]:
+                        - generic [ref=e399]:
+                          - generic [ref=e400]: SeekingAlpha
+                          - generic [ref=e401]: 8:47 AM
+                          - generic [ref=e402] [cursor=pointer]: "Memory cost inflation prompts smartphone OLED growth to stall in 2026: Counterpoint"
+                          - generic [ref=e403]: "2026-04-15 08:47:42 ET More on Samsung, Corning and Apple Why Apple Still Wins Here Corning Looks Overvalued, Until You Drill Down And See All That's Here - Buy Corning: Great Company Amid AI Boom, But Don't Value It Like A Hot Tech Stock Apple may use OLED s..."
+                      - listitem [ref=e404]:
+                        - generic [ref=e405]:
+                          - generic [ref=e406]: SeekingAlpha
+                          - generic [ref=e407]: 8:05 AM
+                          - generic [ref=e408] [cursor=pointer]: "Apple may use OLED screens for iPad Air next year: report"
+                          - generic [ref=e409]: "2026-04-15 08:05:20 ET More on Apple Why Apple Still Wins Here Apple Q2 Earnings Preview: Robust iPhone Demand Should Pay Off Now Apple: The Infrastructure Play On Local AI Adoption Smartphone shipments decline in Q1 as chip shortage, Iran war drive costs hig..."
+                      - listitem [ref=e410]:
+                        - generic [ref=e411]:
+                          - generic [ref=e412]: SeekingAlpha
+                          - generic [ref=e413]: 7:41 AM
+                          - generic [ref=e414] [cursor=pointer]: "Taiwan Semiconductor likely to report 'strong' quarter, guidance, aided by AI: Wedbush"
+                          - generic [ref=e415]: "2026-04-15 07:41:03 ET More on Taiwan Semiconductor Taiwan Semiconductor Q1: Middle East War Consequences And The Zero-Availability Crisis TSMC: The AI Silicon Shortage Is About To Get Worse TSMC's AI Grip Tightens Further Japan approves $4B subsidies for loc..."
+                      - listitem [ref=e416]:
+                        - generic [ref=e417]:
+                          - generic [ref=e418]: SeekingAlpha
+                          - generic [ref=e419]: 3:09 AM
+                          - generic [ref=e420] [cursor=pointer]: "Smartphone shipments decline in Q1 as chip shortage, Iran war drive costs higher: IDC"
+                          - generic [ref=e421]: "2026-04-15 03:09:17 ET More on Apple, Samsung Electronics Why Apple Still Wins Here Apple Q2 Earnings Preview: Robust iPhone Demand Should Pay Off Now Apple: The Infrastructure Play On Local AI Adoption Samsung SDS shares surge 20% on KKR partnership and $820..."
+                  - generic [ref=e422]:
+                    - heading "Tue Apr 14th, 2026" [level=3] [ref=e423]
+                    - list [ref=e424]:
+                      - listitem [ref=e425]:
+                        - generic [ref=e426]:
+                          - generic [ref=e427]: SeekingAlpha
+                          - generic [ref=e428]: 11:15 PM
+                          - generic [ref=e429] [cursor=pointer]: Monthly Newsletter - March 2026
+                          - generic [ref=e430]: 2026-04-14 23:15:00 ET By David Baskin Nobody expects an asteroid to hit their house The old joke goes that risk is a four-letter word, and one of the nastiest varieties is exogenous risk. By definition, a risk that is out of the normal course of events, is unexpected, unant...
+                      - listitem [ref=e431]:
+                        - generic [ref=e432]:
+                          - generic [ref=e433]: Motley Fool
+                          - generic [ref=e434]: 5:25 PM
+                          - generic [ref=e435] [cursor=pointer]: Why Globalstar Stock Jumped Today
+                          - generic [ref=e436]: "2026-04-14 17:25:07 ET Shares of Globalstar (NASDAQ: GSAT) climbed on Tuesday after the satellite operator struck a deal to be acquired by Amazon (NASDAQ: AMZN) . Image source: Getty Images. Under the terms of the deal, Globalstar's shareholders would have the option..."
+                      - listitem [ref=e437]:
+                        - generic [ref=e438]:
+                          - generic [ref=e439]: SeekingAlpha
+                          - generic [ref=e440]: 4:51 PM
+                          - generic [ref=e441] [cursor=pointer]: Nike gets lift from insider buys from CEO Hill, Tim Cook
+                          - generic [ref=e442]: "2026-04-14 16:51:21 ET More on Nike Nike Earnings Summary: Continued Lack Of Revenue Growth Is Particularly Disheartening Nike: A Textbook Trap For Contrarians Wall Street Lunch: Nike Tumbles On Soft Forecast Insider trades: Nike, Marvell Technology among not..."
+                      - listitem [ref=e443]:
+                        - generic [ref=e444]:
+                          - generic [ref=e445]: Motley Fool
+                          - generic [ref=e446]: 3:18 PM
+                          - generic [ref=e447] [cursor=pointer]: Why Amazon Stock Just Popped
+                          - generic [ref=e448]: "2026-04-14 15:18:51 ET Amazon.com (NASDAQ: AMZN) is buying Globalstar (NASDAQ: GSAT) for $11.6 billion, as announced this morning. In response to the news, Amazon stock is up 4%, Globalstar is up 9.3%... and Apple (NASDAQ: AAPL) stock is down 0.3%, all as of 2:40..."
+                      - listitem [ref=e449]:
+                        - generic [ref=e450]:
+                          - generic [ref=e451]: SeekingAlpha
+                          - generic [ref=e452]: 11:24 AM
+                          - generic [ref=e453] [cursor=pointer]: Samsung hikes prices on smartphones and tablets as Apple holds steady
+                          - generic [ref=e454]: "2026-04-14 11:24:49 ET More on Samsung and Apple Why Apple Still Wins Here Apple Q2 Earnings Preview: Robust iPhone Demand Should Pay Off Now Apple: The Infrastructure Play On Local AI Adoption Apple likely to report 'strong' results amid iPhone, services dem..."
+                      - listitem [ref=e455]:
+                        - generic [ref=e456]:
+                          - generic [ref=e457]: Motley Fool
+                          - generic [ref=e458]: 11:05 AM
+                          - generic [ref=e459] [cursor=pointer]: "Bull vs. Bear: Is Apple a Buy or Sell?"
+                          - generic [ref=e460]: "2026-04-14 11:05:00 ET The latest popular stock I'm looking at in my series of \"bull vs. bear\" articles is Apple (NASDAQ: AAPL) . The stock has been a favorite of famed investor Warren Buffett , although Berkshire Hathaway was reducing its stake in the iPhone maker before Bu..."
+                      - listitem [ref=e461]:
+                        - generic [ref=e462]:
+                          - generic [ref=e463]: Motley Fool
+                          - generic [ref=e464]: 10:25 AM
+                          - generic [ref=e465] [cursor=pointer]: Warren Buffett Just Delivered a Fresh Warning to Wall Street. Here's What It Means for Investing Right Now.
+                          - generic [ref=e466]: 2026-04-14 10:25:00 ET Warren Buffett has become an icon in the world of investing, thanks to his excellence in this area decade after decade. As chief executive officer, he led Berkshire Hathaway to 60 years of market-beating performance. Though he retired from that post at the end of ...
+                      - listitem [ref=e467]:
+                        - generic [ref=e468]:
+                          - generic [ref=e469]: SeekingAlpha
+                          - generic [ref=e470]: 9:47 AM
+                          - generic [ref=e471] [cursor=pointer]: Why Apple Still Wins Here
+                          - generic [ref=e472]: 2026-04-14 09:47:54 ET Investment Thesis Apple ( AAPL ) is entering Q2 FY2026 with a rare degree of momentum, having seen increased estimates, high iPhone sales and even stronger-than-expected demand in China amid a challenging market environment. With 27 upgrades to the company...
+                      - listitem [ref=e473]:
+                        - generic [ref=e474]:
+                          - generic [ref=e475]: SeekingAlpha
+                          - generic [ref=e476]: 9:14 AM
+                          - generic [ref=e477] [cursor=pointer]: "Apple likely to report 'strong' results amid iPhone, services demand: BofA"
+                          - generic [ref=e478]: "2026-04-14 09:14:08 ET More on Apple Apple Q2 Earnings Preview: Robust iPhone Demand Should Pay Off Now Apple: The Infrastructure Play On Local AI Adoption Apple: Everyone's Wrong About The Delay Amazon to acquire Globalstar; inks deal with Apple to provide s..."
+                      - listitem [ref=e479]:
+                        - generic [ref=e480]:
+                          - generic [ref=e481]: SeekingAlpha
+                          - generic [ref=e482]: 8:20 AM
+                          - generic [ref=e483] [cursor=pointer]: Amazon to acquire Globalstar; inks deal with Apple to provide satellite services for iPhone, Watch
+                          - generic [ref=e484]: "2026-04-14 08:20:26 ET Read the full article on Seeking Alpha For further details see: Amazon to acquire Globalstar; inks deal with Apple to provide satellite services for iPhone, Watch"
+                      - listitem [ref=e485]:
+                        - generic [ref=e486]:
+                          - generic [ref=e487]: Motley Fool
+                          - generic [ref=e488]: 6:05 AM
+                          - generic [ref=e489] [cursor=pointer]: Amazon Has Out-of-This-World Ambitions. Can It Lift the Stock?
+                          - generic [ref=e490]: "2026-04-14 06:05:00 ET Amazon (NASDAQ: AMZN) has never been afraid to bet big. The company became the world's largest e-commerce company by investing in fulfillment centers and logistics. Meanwhile, it's never sat still in its core business, continuing to invest in robotics, automat..."
+                      - listitem [ref=e491]:
+                        - generic [ref=e492]:
+                          - generic [ref=e493]: Motley Fool
+                          - generic [ref=e494]: 5:26 AM
+                          - generic [ref=e495] [cursor=pointer]: One of Greg Abel's Forever Holdings at Berkshire Hathaway Is Breaking Warren Buffett's Most Important Investing Rule
+                          - generic [ref=e496]: "2026-04-14 05:26:00 ET On Dec. 31, billionaire Warren Buffett hung up his work coat for the final time as Berkshire Hathaway 's (NYSE: BRKA) (NYSE: BRKB) CEO (though he remains chairman of the board) and handed the baton to his successor, Greg Abel. During the Oracle of Omaha's ..."
+                - generic [ref=e498]:
+                  - button "First"
+                  - button "Prev"
+                  - button "Last" [ref=e499] [cursor=pointer]
+                  - button "Next" [ref=e500] [cursor=pointer]
+                  - button "1" [ref=e501] [cursor=pointer]
+                  - button "2" [ref=e502] [cursor=pointer]
+                  - button "3" [ref=e503] [cursor=pointer]
+                  - button "4" [ref=e504] [cursor=pointer]
+                  - button "5" [ref=e505] [cursor=pointer]
+          - iframe [ref=e506]:
+            - insertion [ref=f301e3]:
+              - iframe [ref=f301e5]:
+                
+    - generic [ref=e509]:
+      - strong [ref=e510]: Notice
+      - paragraph [ref=e511]:
+        - text: This website uses cookies, for more information please visit our
+        - link "Privacy Policy" [ref=e512] [cursor=pointer]:
+          - /url: https://content.stocktrak.com/privacy-policy/
+          - strong [ref=e513]: Privacy Policy
+      - generic [ref=e514] [cursor=pointer]: Ok
+  - contentinfo [ref=e40]:
+    - generic [ref=e42]:
+      - complementary [ref=e44]:
+        - figure [ref=e45]:
+          - link "WallStreetSurvivor logo" [ref=e46] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e47]
+      - generic [ref=e48]:
+        - complementary [ref=e49]:
+          - heading "Our Platform" [level=3] [ref=e50]
+        - complementary [ref=e51]:
+          - list [ref=e52]:
+            - listitem [ref=e53]:
+              - link "Stock Market Simulator" [ref=e54] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e55]:
+              - link "Investing Courses for Beginners" [ref=e56] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/courses/
+            - listitem [ref=e57]:
+              - link "Best Stocks to Buy Now" [ref=e58] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e59]:
+              - link "How to Invest Videos" [ref=e60] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+            - listitem [ref=e61]:
+              - link "Free Online Investing Course" [ref=e62] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e63]:
+              - link "Financial Literacy Game for Students" [ref=e64] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e65]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e66] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e67]:
+              - link "Crypto Paper Trading" [ref=e68] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e69]:
+              - link "About WallStreetSurvivor" [ref=e70] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+      - generic [ref=e71]:
+        - complementary [ref=e72]:
+          - heading "Review Center" [level=3] [ref=e73]
+        - complementary [ref=e74]:
+          - list [ref=e75]:
+            - listitem [ref=e76]:
+              - link "Motley Fool Review" [ref=e77] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e78]:
+              - link "Seeking Alpha Review" [ref=e79] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e80]:
+              - link "Alpha Picks Review" [ref=e81] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e82]:
+              - link "Moby Stocks Review" [ref=e83] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e84]:
+              - link "Wealthsimple Review" [ref=e85] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/wealthsimple-review/
+            - listitem [ref=e86]:
+              - link "Is Robinhood Safe to Use?" [ref=e87] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e88]:
+              - link "Rule Breakers Review" [ref=e89] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e90]:
+              - link "Best Investment Newsletters" [ref=e91] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e92]:
+              - link "Best Investing Apps" [ref=e93] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e94]:
+              - link "Best Motley Fool Discount Code" [ref=e95] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e96]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e97] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e98]:
+              - link "Best Tipranks Discount Code" [ref=e99] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e100]:
+              - link "Is Coinbase Safe?" [ref=e101] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e102]:
+              - link "Free Crypto with Coinbase" [ref=e103] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e104]:
+              - link "Best Stock Picking Service" [ref=e105] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+      - generic [ref=e106]:
+        - complementary [ref=e107]:
+          - heading "Corporate Services" [level=3] [ref=e108]
+        - complementary [ref=e109]:
+          - list [ref=e110]:
+            - listitem [ref=e111]:
+              - link "White Label Stock Market Games" [ref=e112] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e113]:
+              - link "White Label Virtual Crypto Trading" [ref=e114] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e115]:
+              - link "Employee Financial Wellness" [ref=e116] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e117]:
+              - link "Sponsor a College or High School" [ref=e118] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e119]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e120] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e121]:
+          - heading "Our Company" [level=3] [ref=e122]
+        - complementary [ref=e123]:
+          - list [ref=e124]:
+            - listitem [ref=e125]:
+              - link "Contact Us" [ref=e126] [cursor=pointer]:
+                - /url: mailto:support@wallstreetsurvivor.com
+            - listitem [ref=e127]:
+              - link "About Us" [ref=e128] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/
+            - listitem [ref=e129]:
+              - link "Motley Fool Review" [ref=e130] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e131]:
+              - link "Privacy Policy" [ref=e132] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e133]:
+              - link "Terms and Conditions" [ref=e134] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e135]:
+              - link "Advertise with Us" [ref=e136] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e137]:
+        - complementary [ref=e138]:
+          - heading "Family of Sites" [level=3] [ref=e139]:
+            - strong [ref=e140]: Family of Sites
+        - complementary [ref=e141]:
+          - figure [ref=e142]:
+            - link "StockTrak logo" [ref=e143] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e144]
+        - complementary [ref=e145]:
+          - figure [ref=e146]:
+            - link "PersonalFinanceLab logo" [ref=e147] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e148]
+        - complementary [ref=e149]:
+          - figure [ref=e150]:
+            - link "WallStreetSurvivor logo" [ref=e151] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Practice stock trading site" [ref=e152]
+        - complementary [ref=e153]:
+          - figure [ref=e154]:
+            - link "HowTheMarketWorks logo" [ref=e155] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free stock market game for students" [ref=e156]
+        - complementary [ref=e157]:
+          - link "Global Virtual Stock Game" [ref=e158] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e159] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - generic "Site" [ref=e160]:
+      - generic [ref=e161]:
+        - generic [ref=e162]:
+          - complementary [ref=e163]:
+            - heading "Connect With Us" [level=2] [ref=e164]
+          - complementary:
+            - figure [ref=e165]:
+              - link "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e166] [cursor=pointer]:
+                - /url: https://www.instagram.com/wallstreetsurvivor/
+                - img "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e167]
+          - complementary:
+            - figure [ref=e168]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e169] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e170]
+          - complementary:
+            - figure [ref=e171]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e172] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e173]
+          - complementary:
+            - figure [ref=e174]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e175] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e176]
+        - generic [ref=e177]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2025 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.
+  - generic [ref=e517] [cursor=pointer]:
+    - generic [ref=e518]:
+      - text: 
+      - generic "We're Online!" [ref=e519]
+    - text: 
+  - generic [ref=e521]:
+    - img
+  - generic:
+    - generic:
+      - iframe

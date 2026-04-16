@@ -1,0 +1,36 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - link "Go Back" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e6]: 
+      - text: Go Back
+    - generic [ref=e8]:
+      - heading "Forgot Username" [level=4] [ref=e9]
+      - generic [ref=e10]:
+        - paragraph [ref=e11]: Please enter the email address that was used during registration to retrieve the username(s) we have on file matching this address
+        - textbox "Email Address" [ref=e12]
+        - button "Submit" [ref=e13] [cursor=pointer]
+  - generic [ref=e16] [cursor=pointer]:
+    - generic [ref=e17]:
+      - text: 
+      - generic "We're Online!" [ref=e18]
+    - text: 
+  - iframe [active] [ref=e21] [cursor=pointer]:
+    - generic [active] [ref=f294e1]:
+      - generic "Minimize live chat window" [ref=f294e2] [cursor=pointer]: 
+      - generic [ref=f294e3]:
+        - generic [ref=f294e4]:
+          - generic [ref=f294e6]: 
+          - text: 
+        - generic [ref=f294e8]:
+          - generic [ref=f294e9]:
+            - generic [ref=f294e10]: ST-Support
+            - paragraph [ref=f294e11]: We are here to help you! Call or chat to connect with us right away.
+          - generic [ref=f294e12]:
+            - emphasis [ref=f294e13] [cursor=pointer]:
+              - text: 
+              - generic "Call" [ref=f294e14]
+            - emphasis [ref=f294e15] [cursor=pointer]:
+              - text: 
+              - generic "Chat" [ref=f294e16]
+        - text:   

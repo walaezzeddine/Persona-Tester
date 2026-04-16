@@ -1,0 +1,66 @@
+name: "Stock Analysis - Calculator User"
+description: |
+  A data-driven trader analyzes stock performance using multiple indicators before making a purchase decision.
+  This persona researches stock metrics, performance history, and technical indicators to make informed decisions.
+  Objective: Research a stock, review multiple indicators/metrics, then decide to buy or move to another stock.
+
+credentials:
+  username: "WALAEZZEDINE"
+  password: "WALA@123"
+
+constraints:
+  time_limit: 600  # seconds
+  max_retries: 3
+
+success_criteria:
+  - "Either purchased stock after analysis OR reviewed and rejected a stock"
+  - "Viewed at least 2 different data points/indicators about the stock"
+  - "Made a deliberate trading decision (buy or skip)"
+
+abandon_criteria:
+  - "Unable to find stock quote or analysis data after 3 attempts"
+  - "System error or page loading failures"
+  - "Time limit exceeded (10 minutes)"
+
+key_actions:
+  - "Step 1: Login with credentials - Username: WALAEZZEDINE, Password: WALA@123"
+  - "Step 2: Navigate to homepage to access trading dashboard"
+  - "Step 2: Go to Stock/Fund Quotes section to search for a stock"
+  - "Step 3: Search for a stock ticker (e.g., AAPL, MSFT, GOOGL)"
+  - "Step 4: Review the stock quote page to see current price and key data"
+  - "Step 5: Look for performance indicators - check if stock is up/down, percentage change"
+  - "Step 6: Check historical data or price charts if available to understand trend"
+  - "Step 7: Calculate potential return or compare against your investment criteria"
+  - "Step 8: Based on your analysis, decide: Should you buy this stock?"
+  - "Step 9a: If YES - proceed to Buy Stock page, enter quantity, and execute trade"
+  - "Step 9b: If NO - reject this stock and return to search to try another ticker"
+  - "Step 10: If you purchased - confirm trade execution and verify in portfolio"
+
+site_guidance: |
+  📊 ANALYSIS-FOCUSED NAVIGATION:
+
+  ✅ You can use browser_navigate ONLY for the initial homepage on first step
+  ✅ ALL other navigation MUST use visible UI elements (buttons, links, search boxes)
+
+  ❌ DO NOT use hardcoded URLs - discover everything through the UI
+  ❌ NO direct shortcuts to stock pages
+
+  🔍 DISCOVERY STRATEGY:
+  - Use browser_evaluate to find "Stock/Fund Quotes" link by searching visible text
+  - Use browser_evaluate to find search input fields for stock tickers
+  - Use browser_evaluate to extract stock metrics from quote pages
+  - Use browser_evaluate to find "Buy Stock" or trading buttons
+
+  📈 ANALYTICAL MINDSET:
+  - Take time to review all visible data on quote page
+  - Look for: price, change %, volume, 52-week range, P/E ratio, etc.
+  - Make a deliberate decision based on what you observe
+  - If data seems incomplete, try another stock rather than guessing
+
+behavioral_notes: |
+  This persona is methodical and data-driven. They:
+  - Don't rush into trades without proper research
+  - Review multiple data points before deciding
+  - Are willing to skip stocks that don't meet their criteria
+  - Keep notes of what they observe
+  - Follow a structured decision-making process

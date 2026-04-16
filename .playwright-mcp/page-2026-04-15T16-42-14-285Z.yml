@@ -1,0 +1,572 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - iframe [ref=e277]:
+      - insertion [ref=f339e3]:
+        - iframe [ref=f339e5]:
+          
+    - generic [ref=e278] [cursor=pointer]: X
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - text: 
+      - button "Select Language" [ref=e5] [cursor=pointer]:
+        - text: About
+        - generic [ref=e6]: 
+      - generic "Challenges" [ref=e7] [cursor=pointer]:
+        - text: Contests
+        - generic [ref=e8]: 
+    - generic [ref=e10]:
+      - generic "Username" [ref=e11]: walaezzedine
+      - link "Unread Messages" [ref=e12] [cursor=pointer]:
+        - /url: /forum/messages
+        - generic [ref=e13]: 
+        - generic "Number of Unread Messages" [ref=e14]: "1"
+      - combobox "Tournament Select" [ref=e16]:
+        - option "My Practice Portfolio" [selected]
+      - link "Logout" [ref=e17] [cursor=pointer]:
+        - /url: /logout
+  - navigation [ref=e18]:
+    - menubar [ref=e20]:
+      - menuitem "Logo" [ref=e21]:
+        - link "Logo" [ref=e22] [cursor=pointer]:
+          - /url: /home
+          - img "Logo" [ref=e23]
+    - menubar [ref=e25]:
+      - menuitem "Dashboard" [ref=e26]:
+        - generic [ref=e27] [cursor=pointer]: Dashboard 
+        - text: 
+      - menuitem "Stock Game" [ref=e28]:
+        - generic [ref=e29] [cursor=pointer]: Stock Game 
+      - menuitem "Investing Research" [ref=e30]:
+        - generic "Investing Research" [ref=e31] [cursor=pointer]: Investing Research 
+      - menuitem "Courses" [ref=e32]:
+        - generic [ref=e33] [cursor=pointer]: Courses 
+      - menuitem "Getting Started" [ref=e34]:
+        - generic [ref=e35] [cursor=pointer]: Getting Started 
+  - generic [ref=e36]:
+    - generic [ref=e37]:
+      - generic [ref=e39]:
+        - generic [ref=e41]:
+          - text: Portfolio Value
+          - strong [ref=e42]: $100,204.21
+        - generic [ref=e43]:
+          - generic [ref=e44]:
+            - text: Return Percentage
+            - strong [ref=e45]:
+              - text: 0,2%
+              - generic [ref=e46]: 
+          - generic [ref=e47]:
+            - text: Cash Balance
+            - strong [ref=e48]: $74,041.19
+          - generic [ref=e49]:
+            - text: Buying Power
+            - strong [ref=e50]: $174,114.82
+          - generic [ref=e51]:
+            - text: Current Rank
+            - strong [ref=e52]: 4 403/73597
+      - generic [ref=e53]:
+        - generic [ref=e56]:
+          - generic [ref=e58]:
+            - generic [ref=e59]:
+              - generic [ref=e60]: DOW JONES ETF
+              - generic [ref=e61]: "-.47%"
+              - generic [ref=e63]: 
+            - img "Chart" [ref=e65]
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - generic [ref=e69]: S&P500 ETF
+              - generic [ref=e70]: .44%
+              - generic [ref=e72]: 
+            - img "Chart" [ref=e74]
+          - generic [ref=e76]:
+            - generic [ref=e77]:
+              - generic [ref=e78]: NASDAQ ETF
+              - generic [ref=e79]: .86%
+              - generic [ref=e81]: 
+            - img "Chart" [ref=e83]
+          - generic [ref=e85]:
+            - generic [ref=e86]:
+              - generic [ref=e87]: CRUDE OIL ETF
+              - generic [ref=e88]: .14%
+              - generic [ref=e90]: 
+            - img "Chart" [ref=e92]
+          - generic [ref=e94]:
+            - generic [ref=e95]:
+              - generic [ref=e96]: GOLD ETF
+              - generic [ref=e97]: "-.77%"
+              - generic [ref=e99]: 
+            - img "Chart" [ref=e101]
+          - generic [ref=e103]:
+            - generic [ref=e104]:
+              - generic [ref=e105]: NAT GAS ETF
+              - generic [ref=e106]: "-.14%"
+              - generic [ref=e108]: 
+            - img "Chart" [ref=e110]
+        - generic [ref=e112] [cursor=pointer]: 
+    - iframe [ref=e282]:
+      - insertion [ref=f332e3]:
+        - iframe [ref=f332e5]:
+          
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - list:
+              - listitem: Markets
+              - listitem: Market Summary
+              - listitem: Market Movers
+              - listitem: Top Performing ETFs
+              - listitem: Futures Summary
+              - listitem: Economic Rates
+              - listitem: Currencies
+              - listitem: Industries
+              - listitem: Basic Research
+              - listitem: Detailed Quote
+              - listitem: Company Profile
+              - listitem: Company News
+              - listitem: Charts
+              - listitem: Analyst Ratings
+              - listitem: Price History
+              - listitem: Financial Statements
+              - listitem: Advanced Research
+              - listitem: Key Ratios
+              - listitem: Option Chain
+              - listitem: Share Performance
+              - listitem: Earnings
+              - listitem: SEC Filings
+              - listitem: Corporate Actions
+              - listitem: Trades
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - heading "Quotes" [level=3]
+          - generic [ref=e115]:
+            - generic [ref=e120]:
+              - generic [ref=e121]:
+                - generic [ref=e124]:
+                  - generic [ref=e125] [cursor=pointer]: 
+                  - textbox "Search for a symbol or company, typing will show categorized results in tabs below" [ref=e126]:
+                    - /placeholder: Search for a symbol or company
+                  - text: 
+                - text: 
+                - link "Trade" [ref=e283] [cursor=pointer]:
+                  - /url: /trading/Equities?symbol=NVDA&quantity=0&exchange=US
+              - text:             
+            - generic [ref=e286]:
+              - text:         
+              - generic [ref=e288]:
+                - heading "NVIDIA CorporationNVDA" [level=1] [ref=e290]: NVIDIA Corporation (NVDA)
+                - generic "quote data for NVIDIA Corporation" [ref=e293]:
+                  - generic [ref=e294]:
+                    - generic [ref=e295]:
+                      - text: $199.52
+                      - generic [ref=e296]:
+                        - generic [ref=e297]: 
+                        - generic [ref=e298]: "3.01"
+                        - generic [ref=e299]: (1.53%)
+                    - generic [ref=e300]:
+                      - generic [ref=e301]:
+                        - generic [ref=e302]: "Bid:"
+                        - text: 199.51 x 100
+                      - generic [ref=e303]:
+                        - generic [ref=e304]: "Ask:"
+                        - text: 199.52 x 700
+                    - generic [ref=e305]:
+                      - generic [ref=e307]: April 15, 2026 12:26 PMET
+                      - generic [ref=e309]: "Volume: 92,626,994"
+                  - generic [ref=e310]:
+                    - generic [ref=e311]: USD
+                    - generic [ref=e312]: "|Nasdaq Global Select"
+                    - generic [ref=e313]: "|Delayed Price"
+                    - text: "|"
+              - generic [ref=e316]:
+                - generic [ref=e317]:
+                  - heading "News and Media" [level=2] [ref=e318]
+                  - generic [ref=e320]:
+                    - generic [ref=e322]:
+                      - generic [ref=e324]:
+                        - generic [ref=e325] [cursor=pointer]: 
+                        - textbox "From Date" [ref=e326]
+                      - generic [ref=e328]:
+                        - generic [ref=e329] [cursor=pointer]: 
+                        - textbox "To Date" [ref=e330]
+                    - generic [ref=e332]:
+                      - button "Show Result" [active] [ref=e333] [cursor=pointer]
+                      - button "Show Latest" [ref=e334] [cursor=pointer]
+                  - generic [ref=e336]:
+                    - generic [ref=e337]:
+                      - heading "Wed Apr 15th, 2026" [level=3] [ref=e338]
+                      - list [ref=e339]:
+                        - listitem [ref=e340]:
+                          - generic [ref=e341]:
+                            - generic [ref=e342]: Motley Fool
+                            - generic [ref=e343]: 12:35 PM
+                            - generic [ref=e344] [cursor=pointer]: Why Quantum Computing Stock Keeps Going Up
+                            - generic [ref=e345]: "2026-04-15 12:35:06 ET For the fourth day in a row, Quantum Computing (NASDAQ: QUBT) stock is flying. So are quantum computing stocks not actually named \"quantum computing.\" IonQ (NYSE: IONQ) , D-Wave (NYSE: QBTS) , Rigetti Computing (NASDAQ: RGTI) ..."
+                        - listitem [ref=e346]:
+                          - generic [ref=e347]:
+                            - generic [ref=e348]: Motley Fool
+                            - generic [ref=e349]: 12:23 PM
+                            - generic [ref=e350] [cursor=pointer]: Why Rigetti Computing Stock Keeps Going Up
+                            - generic [ref=e351]: "2026-04-15 12:23:23 ET For the fourth day in a row, Rigetti Computing (NASDAQ: RGTI) stock is flying. Shares of the third-biggest name in quantum computing systems (behind IonQ (NYSE: IONQ) and D-Wave (NYSE: QBTS) , but ahead of the eponymous Quantum Comput..."
+                        - listitem [ref=e352]:
+                          - generic [ref=e353]:
+                            - generic [ref=e354]: Motley Fool
+                            - generic [ref=e355]: 11:44 AM
+                            - generic [ref=e356] [cursor=pointer]: Why D-Wave Quantum Stock Keeps Going Up
+                            - generic [ref=e357]: "2026-04-15 11:44:32 ET For the fourth day in a row, D-Wave Quantum (NYSE: QBTS) stock is flying. Shares of the second-biggest name in quantum computing systems (behind IonQ (NYSE: IONQ) but ahead of Rigetti Computing (NASDAQ: RGTI) stock), soared 11.6% throug..."
+                        - listitem [ref=e358]:
+                          - generic [ref=e359]:
+                            - generic [ref=e360]: Motley Fool
+                            - generic [ref=e361]: 11:24 AM
+                            - generic [ref=e362] [cursor=pointer]: Why IonQ Stock Keeps Going Up
+                            - generic [ref=e363]: "2026-04-15 11:24:35 ET For the fourth day in a row, IonQ (NYSE: IONQ) stock is flying. Shares of the biggest name in quantum computing systems (IonQ is worth more than $13 billion, nearly as much as Rigetti Computing (NASDAQ: RGTI) , D-Wave Quantum (NYSE: QBTS)..."
+                        - listitem [ref=e364]:
+                          - generic [ref=e365]:
+                            - generic [ref=e366]: SeekingAlpha
+                            - generic [ref=e367]: 11:19 AM
+                            - generic [ref=e368] [cursor=pointer]: Nvidia's Moat Vulnerable As Anthropic And Elon Musk Build Chips
+                            - generic [ref=e369]: 2026-04-15 11:19:35 ET I’ve consistently been a vocal bear of Nvidia ( NVDA ) over the past year or so, viewing it as overhyped and fully valued if not overvalued. I was recently bearish in my piece Nvidia At Significant Risk As Upside Priced In, But Downside Not as I arg...
+                        - listitem [ref=e370]:
+                          - generic [ref=e371]:
+                            - generic [ref=e372]: SeekingAlpha
+                            - generic [ref=e373]: 11:06 AM
+                            - generic [ref=e374] [cursor=pointer]: "Microsoft: Mispriced And Unfairly Tarnished With Overblown Capital Allocation Fears (Rating Upgrade)"
+                            - generic [ref=e375]: 2026-04-15 11:06:56 ET The Oddball of The Mag 7 Cohort Notwithstanding the recent bouts of volatility, the past year has still turned out to be a fairly lucrative period for US large caps, with the chief equity benchmark generating returns of close to 30%. One of the notable poc...
+                        - listitem [ref=e376]:
+                          - generic [ref=e377]:
+                            - generic [ref=e378]: SeekingAlpha
+                            - generic [ref=e379]: 10:40 AM
+                            - generic [ref=e380] [cursor=pointer]: "SA analyst upgrades/downgrades: NVDA, JNJ, KO, ACN"
+                            - generic [ref=e381]: 2026-04-15 10:40:23 ET More on markets Economic Warfare Could Lead To A Global Depression What In The World? 3 Country ETFs That Look Good Vs. S&P 500 Smart Money Is Deploying Fresh Capital Narrow tech rally powers market higher despite weak breadth ...
+                        - listitem [ref=e382]:
+                          - generic [ref=e383]:
+                            - generic [ref=e384]: SeekingAlpha
+                            - generic [ref=e385]: 10:31 AM
+                            - generic [ref=e386] [cursor=pointer]: Senator Warren sees 'risks' to Nvidia's SchedMD deal in letter to Hegseth, Wright
+                            - generic [ref=e387]: "2026-04-15 10:31:53 ET More on Nvidia Nvidia: Multiple Compression Is No Compliment (Rating Upgrade) Nvidia: The Rerating Is Over, The Growth Story Isn't AI Capex Surge, Bottlenecks, And The Race For ROI Snapshot of Quant and Wall St. ratings for quantum comp..."
+                        - listitem [ref=e388]:
+                          - generic [ref=e389]:
+                            - generic [ref=e390]: SeekingAlpha
+                            - generic [ref=e391]: 10:20 AM
+                            - generic [ref=e392] [cursor=pointer]: CoreWeave lands $6B deal to provide Jane Street with AI cloud services
+                            - generic [ref=e393]: "2026-04-15 10:20:43 ET More on CoreWeave CoreWeave: Hypergrowth Is Here, But The Cash Cost Is Massive (Downgrade) CoreWeave: The Hypergrowth AI Infrastructure Play Built For Aggressive Investors CoreWeave: The Best Way To Play The Data Center Boom CoreWeave c..."
+                        - listitem [ref=e394]:
+                          - generic [ref=e395]:
+                            - generic [ref=e396]: SeekingAlpha
+                            - generic [ref=e397]: 9:19 AM
+                            - generic [ref=e398] [cursor=pointer]: "Broadcom: Stealing Nvidia's Lunch Money"
+                            - generic [ref=e399]: 2026-04-15 09:19:39 ET Broadcom Inc. ( AVGO ) shares were violently knocked out of investors’ favor after its Q4 FY25 earnings report in December, when the stock price hovered around $412 per share, since then it has hit a low of about $293.... Read the full article...
+                        - listitem [ref=e400]:
+                          - generic [ref=e401]:
+                            - generic [ref=e402]: SeekingAlpha
+                            - generic [ref=e403]: 9:15 AM
+                            - generic [ref=e404] [cursor=pointer]: My 2 Favorite Cash-Gushing Machines To Sleep Well At Night
+                            - generic [ref=e405]: "2026-04-15 09:15:00 ET Environments like these make me appreciate my decision to follow an income investing strategy.... Read the full article on Seeking Alpha For further details see: My 2 Favorite Cash-Gushing Machines To Sleep Well At Night"
+                        - listitem [ref=e406]:
+                          - generic [ref=e407]:
+                            - generic [ref=e408]: SeekingAlpha
+                            - generic [ref=e409]: 8:53 AM
+                            - generic [ref=e410] [cursor=pointer]: "Amazon: A Once-In-A-Generation Opportunity That's Not Priced In"
+                            - generic [ref=e411]: 2026-04-15 08:53:12 ET Investors who think they’ve got Amazon.com, Inc. ( AMZN ) finally figured out, are in for a surprise. The company is releasing something so exciting, I think it could become its own vertical. It happened with AWS in 2006, then with advertising, and it&#...
+                        - listitem [ref=e412]:
+                          - generic [ref=e413]:
+                            - generic [ref=e414]: Motley Fool
+                            - generic [ref=e415]: 8:20 AM
+                            - generic [ref=e416] [cursor=pointer]: "Amazon's $50 Billion AI Chip Business: A Significant Threat to Nvidia?"
+                            - generic [ref=e417]: "2026-04-15 08:20:00 ET Nvidia (NASDAQ: NVDA) has dominated the market for artificial intelligence (AI) chips over the past three years. The company has been rewarded for its efforts. Revenue and earnings have soared, as has the tech giant's stock price. However, some investors are..."
+                        - listitem [ref=e418]:
+                          - generic [ref=e419]:
+                            - generic [ref=e420]: SeekingAlpha
+                            - generic [ref=e421]: 8:04 AM
+                            - generic [ref=e422] [cursor=pointer]: Mar Vista U.S. Quality Q1 2026 Portfolio Activity
+                            - generic [ref=e423]: "2026-04-15 08:04:00 ET The following segment was excerpted from the Mar Vista U.S. Quality Portfolio Q1 2026 Commentary . ... Read the full article on Seeking Alpha For further details see: Mar Vista U.S. Quality Q1 2026 Portfolio Activity"
+                        - listitem [ref=e424]:
+                          - generic [ref=e425]:
+                            - generic [ref=e426]: SiliconANGLE
+                            - generic [ref=e427]: 8:00 AM
+                            - generic [ref=e428] [cursor=pointer]: "Emergent launches Wingman: a personal AI agent for everyone"
+                            - generic [ref=e429]: 2026-04-15 08:00:36 ET Emergent Labs Inc., a vibe coding platform for building production-ready software, today announced the launch of Wingman, a personal, autonomous artificial intelligence agent that helps people manage tasks. The company launched its Vibe coding platform with a Ch...
+                        - listitem [ref=e430]:
+                          - generic [ref=e431]:
+                            - generic [ref=e432]: SeekingAlpha
+                            - generic [ref=e433]: 7:02 AM
+                            - generic [ref=e434] [cursor=pointer]: Snapshot of Quant and Wall St. ratings for quantum computing stocks after Nvidia's latest push
+                            - generic [ref=e435]: "2026-04-15 07:02:48 ET More on Nvidia, IonQ, etc. D-Wave Quantum: Sanity Returns D-Wave Quantum: Extreme Valuation Meets Execution Reality Microsoft: CAPEX Spending In Focus Ahead Of Q3 Nokia and Orange partner on AI-RAN using Nvidia tech AI capex ROI..."
+                        - listitem [ref=e436]:
+                          - generic [ref=e437]:
+                            - generic [ref=e438]: SeekingAlpha
+                            - generic [ref=e439]: 5:36 AM
+                            - generic [ref=e440] [cursor=pointer]: Nokia and Orange partner on AI-RAN using Nvidia tech
+                            - generic [ref=e441]: "2026-04-15 05:36:17 ET More on Nokia Oyj, Nvidia Why Nokia Is Still A Buy Above $10 Nvidia: Multiple Compression Is No Compliment (Rating Upgrade) Nvidia: The Rerating Is Over, The Growth Story Isn't Nvidia’s newest AI models spark rally in quantum com..."
+                        - listitem [ref=e442]:
+                          - generic [ref=e443]:
+                            - generic [ref=e444]: SeekingAlpha
+                            - generic [ref=e445]: 5:34 AM
+                            - generic [ref=e446] [cursor=pointer]: Meta emerges as ROI frontrunner - Investing Experts
+                            - generic [ref=e447]: "2026-04-15 05:34:00 ET More on Meta Wall Street Lunch: Big Banks Open Earnings Season With Mixed Results Meta Strikes Back Meta Has Found Its AI Footing AI capex ROI becomes key 2026 test for hyperscalers - Investing Experts Broadcom edges up after in..."
+                        - listitem [ref=e448]:
+                          - generic [ref=e449]:
+                            - generic [ref=e450]: Motley Fool
+                            - generic [ref=e451]: 5:25 AM
+                            - generic [ref=e452] [cursor=pointer]: The 3 Best Stocks to Buy in the Market
+                            - generic [ref=e453]: "2026-04-15 05:25:00 ET If you're looking for where to start investing, I've got three stock picks that will set investors up well for the long term. Individual investors have a secret weapon that helps outperform larger funds: time. We don't have to answer to clients about quarterly per..."
+                        - listitem [ref=e454]:
+                          - generic [ref=e455]:
+                            - generic [ref=e456]: Motley Fool
+                            - generic [ref=e457]: 5:04 AM
+                            - generic [ref=e458] [cursor=pointer]: Amazon Just Revealed a Hidden $50 Billion Business -- Is This the Buy Signal Investors Needed?
+                            - generic [ref=e459]: "2026-04-15 05:04:00 ET Amazon (NASDAQ: AMZN) has a massive business that many investors probably haven't considered. CEO Andy Jassy wrote in his recent letter to shareholders, \"Our chips business is on fire, changes the economics for AWS, and will be much larger than most think.\" ..."
+                        - listitem [ref=e460]:
+                          - generic [ref=e461]:
+                            - generic [ref=e462]: Motley Fool
+                            - generic [ref=e463]: 4:08 AM
+                            - generic [ref=e464] [cursor=pointer]: Nvidia Has 74% of Its Portfolio Invested in 2 Artificial Intelligence (AI) Stocks
+                            - generic [ref=e465]: "2026-04-15 04:08:00 ET Nvidia (NASDAQ: NVDA) sits at the center of the artificial intelligence (AI) boom by supplying customers with critical data center hardware and software. Given its deep insight into the artificial intelligence economy, keeping tabs on where Nvidia invest..."
+                        - listitem [ref=e466]:
+                          - generic [ref=e467]:
+                            - generic [ref=e468]: Motley Fool
+                            - generic [ref=e469]: 3:30 AM
+                            - generic [ref=e470] [cursor=pointer]: The Nasdaq Composite Did This After Hitting a Low in April 2025. Here's What the Index Can Do in 2026 After the Latest Sell-off.
+                            - generic [ref=e471]: 2026-04-15 03:30:00 ET The Nasdaq Composite index was under pressure in the first three months of 2026, losing 7% of its value before staging a comeback in April. The index's decline is primarily due to external factors like the war in the Middle East, which has sent shock waves thr...
+                        - listitem [ref=e472]:
+                          - generic [ref=e473]:
+                            - generic [ref=e474]: SeekingAlpha
+                            - generic [ref=e475]: 12:54 AM
+                            - generic [ref=e476] [cursor=pointer]: Nvidia's latest AI models ignite surge in quantum computing stocks
+                            - generic [ref=e477]: "2026-04-15 05:13:31 ET More on Nvidia, IonQ, etc. D-Wave Quantum: Extreme Valuation Meets Execution Reality Nvidia: Multiple Compression Is No Compliment (Rating Upgrade) IonQ's Edge Over Rigetti Widens, But Market Timing Delays Pay Off Microsoft will rent 30..."
+                        - listitem [ref=e478]:
+                          - generic [ref=e479]:
+                            - generic [ref=e480]: Motley Fool
+                            - generic [ref=e481]: 12:22 AM
+                            - generic [ref=e482] [cursor=pointer]: Anthropic Needs More AI Compute -- Here Are My Top 8 Stocks to Own
+                            - generic [ref=e483]: "2026-04-15 00:22:51 ET In today's video, I discuss recent updates affecting CoreWeave (NASDAQ: CRWV) and other AI stocks. To learn more, check out the short video, consider subscribing, and click the special offer link below. *Stock prices used were the p..."
+                    - generic [ref=e484]:
+                      - heading "Tue Apr 14th, 2026" [level=3] [ref=e485]
+                      - list [ref=e486]:
+                        - listitem [ref=e487]:
+                          - generic [ref=e488]:
+                            - generic [ref=e489]: Motley Fool
+                            - generic [ref=e490]: 11:50 PM
+                            - generic [ref=e491] [cursor=pointer]: Nvidia's Stock Is Up Over 1,100% Since 2023, And It Just Might Be Getting Started
+                            - generic [ref=e492]: "2026-04-14 23:50:00 ET 2023 marked the unofficial start of the artificial intelligence (AI) boom, and was also a turning point for Nvidia (NASDAQ: NVDA) . Since then, the stock is up over 1,100%, but I don't think Nvidia is close to being done. The reality is, there is still a ton m..."
+                  - generic [ref=e494]:
+                    - button "First"
+                    - button "Prev"
+                    - button "Last" [ref=e495] [cursor=pointer]
+                    - button "Next" [ref=e496] [cursor=pointer]
+                    - button "1" [ref=e497] [cursor=pointer]
+                    - button "2" [ref=e498] [cursor=pointer]
+                    - button "3" [ref=e499] [cursor=pointer]
+                    - button "4" [ref=e500] [cursor=pointer]
+                    - button "5" [ref=e501] [cursor=pointer]
+                - generic [ref=e502]:
+                  - heading "Video News" [level=2] [ref=e503]
+                  - list [ref=e506]:
+                    - listitem [ref=e507] [cursor=pointer]:
+                      - generic [ref=e508]:
+                        - img "Bones Studio to Release BONES-SEED - the First Multimodal Motion Dataset Purpose-Built for Humanoid Robotics" [ref=e510]
+                        - generic [ref=e511]: Bones Studio to Release BONES-SEED - the First Multimodal Motion Dataset Purpose-Built for Humanoid Robotics
+                        - generic [ref=e512]:
+                          - generic [ref=e513]: PR Newswire
+                          - generic [ref=e514]: Mar 16th, 2026
+          - iframe [ref=e515]:
+            - insertion [ref=f333e3]:
+              - iframe [ref=f333e5]:
+                
+    - generic [ref=e129]:
+      - strong [ref=e130]: Notice
+      - paragraph [ref=e131]:
+        - text: This website uses cookies, for more information please visit our
+        - link "Privacy Policy" [ref=e132] [cursor=pointer]:
+          - /url: https://content.stocktrak.com/privacy-policy/
+          - strong [ref=e133]: Privacy Policy
+      - generic [ref=e134] [cursor=pointer]: Ok
+  - contentinfo [ref=e135]:
+    - generic [ref=e137]:
+      - complementary [ref=e139]:
+        - figure [ref=e140]:
+          - link "WallStreetSurvivor logo" [ref=e141] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e142]
+      - generic [ref=e143]:
+        - complementary [ref=e144]:
+          - heading "Our Platform" [level=3] [ref=e145]
+        - complementary [ref=e146]:
+          - list [ref=e147]:
+            - listitem [ref=e148]:
+              - link "Stock Market Simulator" [ref=e149] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e150]:
+              - link "Investing Courses for Beginners" [ref=e151] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/courses/
+            - listitem [ref=e152]:
+              - link "Best Stocks to Buy Now" [ref=e153] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e154]:
+              - link "How to Invest Videos" [ref=e155] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+            - listitem [ref=e156]:
+              - link "Free Online Investing Course" [ref=e157] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e158]:
+              - link "Financial Literacy Game for Students" [ref=e159] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e160]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e161] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e162]:
+              - link "Crypto Paper Trading" [ref=e163] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e164]:
+              - link "About WallStreetSurvivor" [ref=e165] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+      - generic [ref=e166]:
+        - complementary [ref=e167]:
+          - heading "Review Center" [level=3] [ref=e168]
+        - complementary [ref=e169]:
+          - list [ref=e170]:
+            - listitem [ref=e171]:
+              - link "Motley Fool Review" [ref=e172] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e173]:
+              - link "Seeking Alpha Review" [ref=e174] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e175]:
+              - link "Alpha Picks Review" [ref=e176] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e177]:
+              - link "Moby Stocks Review" [ref=e178] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e179]:
+              - link "Wealthsimple Review" [ref=e180] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/wealthsimple-review/
+            - listitem [ref=e181]:
+              - link "Is Robinhood Safe to Use?" [ref=e182] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e183]:
+              - link "Rule Breakers Review" [ref=e184] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e185]:
+              - link "Best Investment Newsletters" [ref=e186] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e187]:
+              - link "Best Investing Apps" [ref=e188] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e189]:
+              - link "Best Motley Fool Discount Code" [ref=e190] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e191]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e192] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e193]:
+              - link "Best Tipranks Discount Code" [ref=e194] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e195]:
+              - link "Is Coinbase Safe?" [ref=e196] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e197]:
+              - link "Free Crypto with Coinbase" [ref=e198] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e199]:
+              - link "Best Stock Picking Service" [ref=e200] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+      - generic [ref=e201]:
+        - complementary [ref=e202]:
+          - heading "Corporate Services" [level=3] [ref=e203]
+        - complementary [ref=e204]:
+          - list [ref=e205]:
+            - listitem [ref=e206]:
+              - link "White Label Stock Market Games" [ref=e207] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e208]:
+              - link "White Label Virtual Crypto Trading" [ref=e209] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e210]:
+              - link "Employee Financial Wellness" [ref=e211] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e212]:
+              - link "Sponsor a College or High School" [ref=e213] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e214]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e215] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e216]:
+          - heading "Our Company" [level=3] [ref=e217]
+        - complementary [ref=e218]:
+          - list [ref=e219]:
+            - listitem [ref=e220]:
+              - link "Contact Us" [ref=e221] [cursor=pointer]:
+                - /url: mailto:support@wallstreetsurvivor.com
+            - listitem [ref=e222]:
+              - link "About Us" [ref=e223] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/
+            - listitem [ref=e224]:
+              - link "Motley Fool Review" [ref=e225] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e226]:
+              - link "Privacy Policy" [ref=e227] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e228]:
+              - link "Terms and Conditions" [ref=e229] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e230]:
+              - link "Advertise with Us" [ref=e231] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e232]:
+        - complementary [ref=e233]:
+          - heading "Family of Sites" [level=3] [ref=e234]:
+            - strong [ref=e235]: Family of Sites
+        - complementary [ref=e236]:
+          - figure [ref=e237]:
+            - link "StockTrak logo" [ref=e238] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e239]
+        - complementary [ref=e240]:
+          - figure [ref=e241]:
+            - link "PersonalFinanceLab logo" [ref=e242] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e243]
+        - complementary [ref=e244]:
+          - figure [ref=e245]:
+            - link "WallStreetSurvivor logo" [ref=e246] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Practice stock trading site" [ref=e247]
+        - complementary [ref=e248]:
+          - figure [ref=e249]:
+            - link "HowTheMarketWorks logo" [ref=e250] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free stock market game for students" [ref=e251]
+        - complementary [ref=e252]:
+          - link "Global Virtual Stock Game" [ref=e253] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e254] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - generic "Site" [ref=e255]:
+      - generic [ref=e256]:
+        - generic [ref=e257]:
+          - complementary [ref=e258]:
+            - heading "Connect With Us" [level=2] [ref=e259]
+          - complementary:
+            - figure [ref=e260]:
+              - link "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e261] [cursor=pointer]:
+                - /url: https://www.instagram.com/wallstreetsurvivor/
+                - img "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e262]
+          - complementary:
+            - figure [ref=e263]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e264] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e265]
+          - complementary:
+            - figure [ref=e266]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e267] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e268]
+          - complementary:
+            - figure [ref=e269]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e270] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e271]
+        - generic [ref=e272]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2025 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.
+  - generic [ref=e274]:
+    - img

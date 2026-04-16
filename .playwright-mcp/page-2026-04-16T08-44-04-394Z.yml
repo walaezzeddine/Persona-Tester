@@ -1,0 +1,726 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - iframe [ref=e191]:
+      - insertion [ref=f255e3]:
+        - iframe [ref=f255e5]:
+          
+    - generic [ref=e192] [cursor=pointer]: X
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - text: 
+      - button "Select Language" [ref=e5] [cursor=pointer]:
+        - text: About
+        - generic [ref=e6]: 
+      - generic "Challenges" [ref=e7] [cursor=pointer]:
+        - text: Contests
+        - generic [ref=e8]: 
+    - generic [ref=e10]:
+      - generic "Username" [ref=e11]: walaezzedine
+      - link "Unread Messages" [ref=e12] [cursor=pointer]:
+        - /url: /forum/messages
+        - generic [ref=e13]: 
+        - generic "Number of Unread Messages" [ref=e14]: "1"
+      - combobox "Tournament Select" [ref=e16]:
+        - option "My Practice Portfolio" [selected]
+      - link "Logout" [ref=e17] [cursor=pointer]:
+        - /url: /logout
+  - navigation [ref=e18]:
+    - menubar [ref=e20]:
+      - menuitem "Logo" [ref=e21]:
+        - link "Logo" [ref=e22] [cursor=pointer]:
+          - /url: /home
+          - img "Logo" [ref=e23]
+    - menubar [ref=e25]:
+      - menuitem "Dashboard" [ref=e26]:
+        - generic [ref=e27] [cursor=pointer]: Dashboard 
+        - text: 
+      - menuitem "Stock Game" [ref=e28]:
+        - generic [ref=e29] [cursor=pointer]: Stock Game 
+      - menuitem "Investing Research" [ref=e30]:
+        - generic "Investing Research" [ref=e31] [cursor=pointer]: Investing Research 
+      - menuitem "Courses" [ref=e32]:
+        - generic [ref=e33] [cursor=pointer]: Courses 
+      - menuitem "Getting Started" [ref=e34]:
+        - generic [ref=e35] [cursor=pointer]: Getting Started 
+  - generic [ref=e36]:
+    - generic [ref=e193]:
+      - generic [ref=e195]:
+        - generic [ref=e197]:
+          - text: Portfolio Value
+          - strong [ref=e198]: $100,203.02
+        - generic [ref=e199]:
+          - generic [ref=e200]:
+            - text: Return Percentage
+            - strong [ref=e201]:
+              - text: 0,2%
+              - generic [ref=e202]: 
+          - generic [ref=e203]:
+            - text: Cash Balance
+            - strong [ref=e204]: $74,045.39
+          - generic [ref=e205]:
+            - text: Buying Power
+            - strong [ref=e206]: $174,248.41
+          - generic [ref=e207]:
+            - text: Current Rank
+            - strong [ref=e208]: 4 555/73511
+      - generic [ref=e209]:
+        - generic [ref=e212]:
+          - generic [ref=e214]:
+            - generic [ref=e215]:
+              - generic [ref=e216]: DOW JONES ETF
+              - generic [ref=e217]: "-.16%"
+              - generic [ref=e219]: 
+            - img "Chart" [ref=e221]
+          - generic [ref=e223]:
+            - generic [ref=e224]:
+              - generic [ref=e225]: S&P500 ETF
+              - generic [ref=e226]: .79%
+              - generic [ref=e228]: 
+            - img "Chart" [ref=e230]
+          - generic [ref=e232]:
+            - generic [ref=e233]:
+              - generic [ref=e234]: NASDAQ ETF
+              - generic [ref=e235]: 1.40%
+              - generic [ref=e237]: 
+            - img "Chart" [ref=e239]
+          - generic [ref=e241]:
+            - generic [ref=e242]:
+              - generic [ref=e243]: CRUDE OIL ETF
+              - generic [ref=e244]: "-1.02%"
+              - generic [ref=e246]: 
+            - img "Chart" [ref=e248]
+          - generic [ref=e250]:
+            - generic [ref=e251]:
+              - generic [ref=e252]: GOLD ETF
+              - generic [ref=e253]: "-1.04%"
+              - generic [ref=e255]: 
+            - img "Chart" [ref=e257]
+          - generic [ref=e259]:
+            - generic [ref=e260]:
+              - generic [ref=e261]: NAT GAS ETF
+              - generic [ref=e262]: .19%
+              - generic [ref=e264]: 
+            - img "Chart" [ref=e266]
+        - generic [ref=e268] [cursor=pointer]: 
+    - iframe [ref=e272]:
+      - insertion [ref=f238e3]:
+        - iframe [ref=f238e5]:
+          
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - list:
+              - listitem: Markets
+              - listitem: Market Summary
+              - listitem: Market Movers
+              - listitem: Top Performing ETFs
+              - listitem: Futures Summary
+              - listitem: Economic Rates
+              - listitem: Currencies
+              - listitem: Industries
+              - listitem: Basic Research
+              - listitem: Detailed Quote
+              - listitem: Company Profile
+              - listitem: Company News
+              - listitem: Charts
+              - listitem: Analyst Ratings
+              - listitem: Price History
+              - listitem: Financial Statements
+              - listitem: Advanced Research
+              - listitem: Key Ratios
+              - listitem: Option Chain
+              - listitem: Share Performance
+              - listitem: Earnings
+              - listitem: SEC Filings
+              - listitem: Corporate Actions
+              - listitem: Trades
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - heading "Quotes" [level=3]
+          - generic [ref=e273]:
+            - text:                
+            - generic [ref=e275]:
+              - heading "Market Summary" [level=2] [ref=e276]
+              - generic [ref=e282]:
+                - generic [ref=e286]:
+                  - generic [ref=e288]:
+                    - generic [ref=e289]:
+                      - text: S&P 100 INDEX
+                      - generic [ref=e290]: PD
+                    - generic [ref=e291]:
+                      - text: 3,416.61
+                      - generic [ref=e292]:
+                        - generic [ref=e293]: ▲
+                        - text: "49.94"
+                  - img [ref=e296]
+                - generic [ref=e300]:
+                  - generic [ref=e302]:
+                    - generic [ref=e303]: S&P/TSX Composite Index
+                    - generic [ref=e304]:
+                      - text: 34,155.99
+                      - generic [ref=e305]:
+                        - generic [ref=e306]: ▲
+                        - text: "53.63"
+                  - img [ref=e309]
+              - generic [ref=e310]:
+                - heading "Market Diary" [level=3] [ref=e311]
+                - table [ref=e318]:
+                  - rowgroup [ref=e319]:
+                    - 'row "Exchange: activate to sort column ascending Adv.: activate to sort column ascending Dec.: activate to sort column ascending Unchg: activate to sort column ascending Adv. Vol: activate to sort column ascending Dec. Vol: activate to sort column ascending Total Volume: activate to sort column ascending 52w Hi: activate to sort column ascending 52w Lo: activate to sort column ascending" [ref=e320]':
+                      - 'columnheader "Exchange: activate to sort column ascending" [ref=e321] [cursor=pointer]':  Exchange 
+                      - 'columnheader "Adv.: activate to sort column ascending" [ref=e322] [cursor=pointer]':  Adv. 
+                      - 'columnheader "Dec.: activate to sort column ascending" [ref=e323] [cursor=pointer]':  Dec. 
+                      - 'columnheader "Unchg: activate to sort column ascending" [ref=e324] [cursor=pointer]':  Unchg 
+                      - 'columnheader "Adv. Vol: activate to sort column ascending" [ref=e325] [cursor=pointer]':  Adv. Vol 
+                      - 'columnheader "Dec. Vol: activate to sort column ascending" [ref=e326] [cursor=pointer]':  Dec. Vol 
+                      - 'columnheader "Total Volume: activate to sort column ascending" [ref=e327] [cursor=pointer]':  Total Volume 
+                      - 'columnheader "52w Hi: activate to sort column ascending" [ref=e328] [cursor=pointer]':  52w Hi 
+                      - 'columnheader "52w Lo: activate to sort column ascending" [ref=e329] [cursor=pointer]':  52w Lo 
+                  - rowgroup [ref=e330]:
+                    - row "NYSE 1,487 1,243 96 3,183,016,000 2,024,146,000 5,292,109,000 82 7" [ref=e331]:
+                      - text: 
+                      - cell "NYSE" [ref=e332]
+                      - cell "1,487" [ref=e333]
+                      - cell "1,243" [ref=e334]
+                      - cell "96" [ref=e335]
+                      - cell "3,183,016,000" [ref=e336]
+                      - cell "2,024,146,000" [ref=e337]
+                      - cell "5,292,109,000" [ref=e338]
+                      - cell "82" [ref=e339]
+                      - cell "7" [ref=e340]
+                    - row "NYSE American 138 141 10 206,683,000 339,222,000 433,771,000 3 3" [ref=e341]:
+                      - text: 
+                      - cell "NYSE American" [ref=e342]
+                      - cell "138" [ref=e343]
+                      - cell "141" [ref=e344]
+                      - cell "10" [ref=e345]
+                      - cell "206,683,000" [ref=e346]
+                      - cell "339,222,000" [ref=e347]
+                      - cell "433,771,000" [ref=e348]
+                      - cell "3" [ref=e349]
+                      - cell "3" [ref=e350]
+                    - row "NSD - - - - - - 230 68" [ref=e351]:
+                      - text: 
+                      - cell "NSD" [ref=e352]
+                      - cell "-" [ref=e353]
+                      - cell "-" [ref=e354]
+                      - cell "-" [ref=e355]
+                      - cell "-" [ref=e356]
+                      - cell "-" [ref=e357]
+                      - cell "-" [ref=e358]
+                      - cell "230" [ref=e359]
+                      - cell "68" [ref=e360]
+                    - row "TSX 1,062 1,114 136 219,420,000 200,098,000 434,088,000 188 19" [ref=e361]:
+                      - text: 
+                      - cell "TSX" [ref=e362]
+                      - cell "1,062" [ref=e363]
+                      - cell "1,114" [ref=e364]
+                      - cell "136" [ref=e365]
+                      - cell "219,420,000" [ref=e366]
+                      - cell "200,098,000" [ref=e367]
+                      - cell "434,088,000" [ref=e368]
+                      - cell "188" [ref=e369]
+                      - cell "19" [ref=e370]
+                    - row "TSXV 373 422 282 90,748,000 74,829,000 200,511,000 19 12" [ref=e371]:
+                      - text: 
+                      - cell "TSXV" [ref=e372]
+                      - cell "373" [ref=e373]
+                      - cell "422" [ref=e374]
+                      - cell "282" [ref=e375]
+                      - cell "90,748,000" [ref=e376]
+                      - cell "74,829,000" [ref=e377]
+                      - cell "200,511,000" [ref=e378]
+                      - cell "19" [ref=e379]
+                      - cell "12" [ref=e380]
+              - generic [ref=e381]:
+                - heading "Market News Today" [level=3] [ref=e382]
+                - generic [ref=e383]:
+                  - generic [ref=e384]:
+                    - generic [ref=e385]:
+                      - generic [ref=e386]:
+                        - generic [ref=e388]:
+                          - generic [ref=e389]: Cytora expands partnership with Arch Insurance to London Market business
+                          - generic [ref=e390]:
+                            - generic [ref=e391]: April 16, 2026 4:00 AM
+                            - text: ET
+                        - paragraph [ref=e393]: London, UK, April 16, 2026 (GLOBE NEWSWIRE) -- Cytora , the digital risk processing platform, ha...
+                        - generic [ref=e397] [cursor=pointer]: Read More
+                      - generic [ref=e398]:
+                        - generic [ref=e400]:
+                          - generic [ref=e401]: GMV Minerals Begins Drilling at the Mexican Hat Gold Deposit in S.E. Arizona
+                          - generic [ref=e402]:
+                            - generic [ref=e403]: April 16, 2026 4:00 AM
+                            - text: ET
+                        - paragraph [ref=e405]: VANCOUVER, BC / ACCESS Newswire / April 16, 2026 / GMV Minerals Inc. (the "Company" or "GMV"...
+                        - generic [ref=e409] [cursor=pointer]: Read More
+                      - generic [ref=e410]:
+                        - generic [ref=e412]:
+                          - generic [ref=e413]: Cytora expands partnership with Arch Insurance to London Market business
+                          - generic [ref=e414]:
+                            - generic [ref=e415]: April 16, 2026 4:00 AM
+                            - text: ET
+                        - paragraph [ref=e417]: London, UK, April 16, 2026 (GLOBE NEWSWIRE) -- Cytora , the digital risk processing platform, ha...
+                        - generic [ref=e421] [cursor=pointer]: Read More
+                    - generic [ref=e422]:
+                      - generic [ref=e423]:
+                        - generic [ref=e425]:
+                          - generic [ref=e426]: CancerVax to Target Colorectal Cancer Following Recent Biodistribution Breakthroughs
+                          - generic [ref=e427]:
+                            - generic [ref=e428]: April 16, 2026 3:00 AM
+                            - text: ET
+                        - paragraph [ref=e430]: Lehi, Utah, April 16, 2026 (GLOBE NEWSWIRE) -- CancerVax, Inc., the developer of a breakthrough u...
+                        - generic [ref=e434] [cursor=pointer]: Read More
+                      - generic [ref=e435]:
+                        - generic [ref=e437]:
+                          - generic [ref=e438]: Nokia and Cinia partner to secure Finland's critical infrastructure with advanced DDoS protection
+                          - generic [ref=e439]:
+                            - generic [ref=e440]: April 16, 2026 2:01 AM
+                            - text: ET
+                        - paragraph [ref=e442]: Nokia and Cinia partner to secure Finland’s critical infrastructure with advanced DDoS pro...
+                        - generic [ref=e446] [cursor=pointer]: Read More
+                      - generic [ref=e447]:
+                        - generic [ref=e449]:
+                          - generic [ref=e450]: "?50,000 Sofas vs ?500/Month Rentals: Rentomojo Sees Demand Surge Across Delhi, Bangalore, Mumbai, and Hyderabad"
+                          - generic [ref=e451]:
+                            - generic [ref=e452]: April 16, 2026 1:47 AM
+                            - text: ET
+                        - paragraph [ref=e454]: BENGALURU, KA, April 16, 2026 (GLOBE NEWSWIRE) -- BENGALURU, KA - April 16, 2026 - - Rentomojo...
+                        - generic [ref=e458] [cursor=pointer]: Read More
+                  - button "More Market News" [ref=e461] [cursor=pointer]
+              - generic [ref=e462]:
+                - heading "Major North American Indices" [level=3] [ref=e463]
+                - table [ref=e470]:
+                  - rowgroup [ref=e471]:
+                    - 'row "Name: activate to sort column ascending Symbol: activate to sort column ascending Last: activate to sort column ascending $ Chg: activate to sort column ascending % Chg: activate to sort column ascending Prev. Close: activate to sort column ascending" [ref=e472]':
+                      - 'columnheader "Name: activate to sort column ascending" [ref=e473] [cursor=pointer]':  Name 
+                      - 'columnheader "Symbol: activate to sort column ascending" [ref=e474] [cursor=pointer]':  Symbol 
+                      - 'columnheader "Last: activate to sort column ascending" [ref=e475] [cursor=pointer]':  Last 
+                      - 'columnheader "$ Chg: activate to sort column ascending" [ref=e476] [cursor=pointer]':  $ Chg 
+                      - 'columnheader "% Chg: activate to sort column ascending" [ref=e477] [cursor=pointer]':  % Chg 
+                      - 'columnheader "Prev. Close: activate to sort column ascending" [ref=e478] [cursor=pointer]':  Prev. Close 
+                  - rowgroup [ref=e479]:
+                    - text: 
+                    - row "S&P 100 INDEX PD ^OEX 3,416.61 49.94 1.48% 3,366.67" [ref=e480]:
+                      - text: 
+                      - cell "S&P 100 INDEX PD" [ref=e481]:
+                        - text: S&P 100 INDEX
+                        - generic [ref=e482]: PD
+                      - cell "^OEX" [ref=e483]
+                      - cell "3,416.61" [ref=e484]
+                      - cell "49.94" [ref=e485]
+                      - cell "1.48%" [ref=e486]
+                      - cell "3,366.67" [ref=e487]
+                    - text:  
+                    - row "S&P/TSX Composite Index ^TSX 34,155.99 53.63 0.16% 34,102.36" [ref=e488]:
+                      - text: 
+                      - cell "S&P/TSX Composite Index" [ref=e489]
+                      - cell "^TSX" [ref=e490]
+                      - cell "34,155.99" [ref=e491]
+                      - cell "53.63" [ref=e492]
+                      - cell "0.16%" [ref=e493]
+                      - cell "34,102.36" [ref=e494]
+              - generic [ref=e495]:
+                - heading "Market Movers - Volume Actives" [level=3] [ref=e496]
+                - generic [ref=e498]:
+                  - generic [ref=e500]:
+                    - generic [ref=e502]: NYSE
+                    - table [ref=e505]:
+                      - rowgroup [ref=e506]:
+                        - 'row "Symbol: activate to sort column ascending Last: activate to sort column ascending $ Chg: activate to sort column ascending Vol: activate to sort column ascending" [ref=e507]':
+                          - 'columnheader "Symbol: activate to sort column ascending" [ref=e508] [cursor=pointer]':  Symbol 
+                          - 'columnheader "Last: activate to sort column ascending" [ref=e509] [cursor=pointer]':  Last 
+                          - 'columnheader "$ Chg: activate to sort column ascending" [ref=e510] [cursor=pointer]':  $ Chg 
+                          - 'columnheader "Vol: activate to sort column ascending" [ref=e511] [cursor=pointer]':  Vol 
+                      - rowgroup [ref=e512]:
+                        - row "SNAP 6.04 0.44 153.32m" [ref=e513]:
+                          - text: 
+                          - cell "SNAP" [ref=e514]
+                          - cell "6.04" [ref=e515]
+                          - cell "0.44" [ref=e516]
+                          - cell "153.32m" [ref=e517]
+                        - row "TZA 5.46 -0.05 103.16m" [ref=e518]:
+                          - text: 
+                          - cell "TZA" [ref=e519]
+                          - cell "5.46" [ref=e520]
+                          - cell "-0.05" [ref=e521]
+                          - cell "103.16m" [ref=e522]
+                        - row "QBTS 20.81 3.84 98.96m" [ref=e523]:
+                          - text: 
+                          - cell "QBTS" [ref=e524]
+                          - cell "20.81" [ref=e525]
+                          - cell "3.84" [ref=e526]
+                          - cell "98.96m" [ref=e527]
+                        - row "BITO 10.30 0.11 97.63m" [ref=e528]:
+                          - text: 
+                          - cell "BITO" [ref=e529]
+                          - cell "10.30" [ref=e530]
+                          - cell "0.11" [ref=e531]
+                          - cell "97.63m" [ref=e532]
+                        - row "IONQ 43.25 7.49 96.97m" [ref=e533]:
+                          - text: 
+                          - cell "IONQ" [ref=e534]
+                          - cell "43.25" [ref=e535]
+                          - cell "7.49" [ref=e536]
+                          - cell "96.97m" [ref=e537]
+                  - generic [ref=e539]:
+                    - generic [ref=e541]: NYSE American
+                    - table [ref=e544]:
+                      - rowgroup [ref=e545]:
+                        - 'row "Symbol: activate to sort column ascending Last: activate to sort column ascending $ Chg: activate to sort column ascending Vol: activate to sort column ascending" [ref=e546]':
+                          - 'columnheader "Symbol: activate to sort column ascending" [ref=e547] [cursor=pointer]':  Symbol 
+                          - 'columnheader "Last: activate to sort column ascending" [ref=e548] [cursor=pointer]':  Last 
+                          - 'columnheader "$ Chg: activate to sort column ascending" [ref=e549] [cursor=pointer]':  $ Chg 
+                          - 'columnheader "Vol: activate to sort column ascending" [ref=e550] [cursor=pointer]':  Vol 
+                      - rowgroup [ref=e551]:
+                        - row "MLSS 0.2658 -0.0262 90.29m" [ref=e552]:
+                          - text: 
+                          - cell "MLSS" [ref=e553]
+                          - cell "0.2658" [ref=e554]
+                          - cell "-0.0262" [ref=e555]
+                          - cell "90.29m" [ref=e556]
+                        - row "SRXH 0.12 -0.0162 50.14m" [ref=e557]:
+                          - text: 
+                          - cell "SRXH" [ref=e558]
+                          - cell "0.12" [ref=e559]
+                          - cell "-0.0162" [ref=e560]
+                          - cell "50.14m" [ref=e561]
+                        - row "GPUS 0.1545 0.0045 41.01m" [ref=e562]:
+                          - text: 
+                          - cell "GPUS" [ref=e563]
+                          - cell "0.1545" [ref=e564]
+                          - cell "0.0045" [ref=e565]
+                          - cell "41.01m" [ref=e566]
+                        - row "DNN 3.88 0.12 30.22m" [ref=e567]:
+                          - text: 
+                          - cell "DNN" [ref=e568]
+                          - cell "3.88" [ref=e569]
+                          - cell "0.12" [ref=e570]
+                          - cell "30.22m" [ref=e571]
+                        - row "BTG 4.92 -0.02 29.63m" [ref=e572]:
+                          - text: 
+                          - cell "BTG" [ref=e573]
+                          - cell "4.92" [ref=e574]
+                          - cell "-0.02" [ref=e575]
+                          - cell "29.63m" [ref=e576]
+                  - generic [ref=e578]:
+                    - generic [ref=e580]: NASDAQ
+                    - table [ref=e583]:
+                      - rowgroup [ref=e584]:
+                        - 'row "Symbol: activate to sort column ascending Last: activate to sort column ascending $ Chg: activate to sort column ascending Vol: activate to sort column ascending" [ref=e585]':
+                          - 'columnheader "Symbol: activate to sort column ascending" [ref=e586] [cursor=pointer]':  Symbol 
+                          - 'columnheader "Last: activate to sort column ascending" [ref=e587] [cursor=pointer]':  Last 
+                          - 'columnheader "$ Chg: activate to sort column ascending" [ref=e588] [cursor=pointer]':  $ Chg 
+                          - 'columnheader "Vol: activate to sort column ascending" [ref=e589] [cursor=pointer]':  Vol 
+                      - rowgroup [ref=e590]:
+                        - row "IMMP 0.544 0.2292 704.46m" [ref=e591]:
+                          - text: 
+                          - cell "IMMP" [ref=e592]
+                          - cell "0.544" [ref=e593]
+                          - cell "0.2292" [ref=e594]
+                          - cell "704.46m" [ref=e595]
+                        - row "AGAE 0.472 0.144 480.98m" [ref=e596]:
+                          - text: 
+                          - cell "AGAE" [ref=e597]
+                          - cell "0.472" [ref=e598]
+                          - cell "0.144" [ref=e599]
+                          - cell "480.98m" [ref=e600]
+                        - row "HUBC 0.26 0.133 439.84m" [ref=e601]:
+                          - text: 
+                          - cell "HUBC" [ref=e602]
+                          - cell "0.26" [ref=e603]
+                          - cell "0.133" [ref=e604]
+                          - cell "439.84m" [ref=e605]
+                        - row "BIRD 16.99 14.50 288.16m" [ref=e606]:
+                          - text: 
+                          - cell "BIRD" [ref=e607]
+                          - cell "16.99" [ref=e608]
+                          - cell "14.50" [ref=e609]
+                          - cell "288.16m" [ref=e610]
+                        - row "VSA 0.805 0.205 213.58m" [ref=e611]:
+                          - text: 
+                          - cell "VSA" [ref=e612]
+                          - cell "0.805" [ref=e613]
+                          - cell "0.205" [ref=e614]
+                          - cell "213.58m" [ref=e615]
+              - generic [ref=e616]:
+                - heading "Forex (USA Dollars)" [level=3] [ref=e617]
+                - generic [ref=e619]:
+                  - table [ref=e624]:
+                    - rowgroup [ref=e625]:
+                      - 'row "Currency: activate to sort column ascending Sell: activate to sort column ascending $ Chg: activate to sort column ascending % Chg: activate to sort column ascending" [ref=e626]':
+                        - 'columnheader "Currency: activate to sort column ascending" [ref=e627] [cursor=pointer]':  Currency 
+                        - 'columnheader "Sell: activate to sort column ascending" [ref=e628] [cursor=pointer]':  Sell 
+                        - 'columnheader "$ Chg: activate to sort column ascending" [ref=e629] [cursor=pointer]':  $ Chg 
+                        - 'columnheader "% Chg: activate to sort column ascending" [ref=e630] [cursor=pointer]':  % Chg 
+                    - rowgroup [ref=e631]:
+                      - row "EU Euro 0.84898 0.00208 0.25%" [ref=e632]:
+                        - text: 
+                        - cell "EU Euro" [ref=e633]: EU Euro
+                        - cell "0.84898" [ref=e635]
+                        - cell "0.00208" [ref=e636]
+                        - cell "0.25%" [ref=e637]
+                      - row "Japan Yen 159.03 0.2085 0.13%" [ref=e638]:
+                        - text: 
+                        - cell "Japan Yen" [ref=e639]: Japan Yen
+                        - cell "159.03" [ref=e641]
+                        - cell "0.2085" [ref=e642]
+                        - cell "0.13%" [ref=e643]
+                      - row "UK Pounds 0.73804 0.001278 0.17%" [ref=e644]:
+                        - text: 
+                        - cell "UK Pounds" [ref=e645]: UK Pounds
+                        - cell "0.73804" [ref=e647]
+                        - cell "0.001278" [ref=e648]
+                        - cell "0.17%" [ref=e649]
+                      - row "Switzerland Francs 0.782835 0.00148 0.19%" [ref=e650]:
+                        - text: 
+                        - cell "Switzerland Francs" [ref=e651]: Switzerland Francs
+                        - cell "0.782835" [ref=e653]
+                        - cell "0.00148" [ref=e654]
+                        - cell "0.19%" [ref=e655]
+                  - table [ref=e660]:
+                    - rowgroup [ref=e661]:
+                      - 'row "Currency: activate to sort column ascending Sell: activate to sort column ascending $ Chg: activate to sort column ascending % Chg: activate to sort column ascending" [ref=e662]':
+                        - 'columnheader "Currency: activate to sort column ascending" [ref=e663] [cursor=pointer]':  Currency 
+                        - 'columnheader "Sell: activate to sort column ascending" [ref=e664] [cursor=pointer]':  Sell 
+                        - 'columnheader "$ Chg: activate to sort column ascending" [ref=e665] [cursor=pointer]':  $ Chg 
+                        - 'columnheader "% Chg: activate to sort column ascending" [ref=e666] [cursor=pointer]':  % Chg 
+                    - rowgroup [ref=e667]:
+                      - row "Canada Dollars 1.37295 -0.000225 -0.02%" [ref=e668]:
+                        - text: 
+                        - cell "Canada Dollars" [ref=e669]: Canada Dollars
+                        - cell "1.37295" [ref=e671]
+                        - cell "-0.000225" [ref=e672]
+                        - cell "-0.02%" [ref=e673]
+                      - row "Australia Dollars 1.394642 0.00103 0.07%" [ref=e674]:
+                        - text: 
+                        - cell "Australia Dollars" [ref=e675]: Australia Dollars
+                        - cell "1.394642" [ref=e677]
+                        - cell "0.00103" [ref=e678]
+                        - cell "0.07%" [ref=e679]
+                      - row "New Zealand Dollars 1.696396 0.004764 0.28%" [ref=e680]:
+                        - text: 
+                        - cell "New Zealand Dollars" [ref=e681]: New Zealand Dollars
+                        - cell "1.696396" [ref=e683]
+                        - cell "0.004764" [ref=e684]
+                        - cell "0.28%" [ref=e685]
+                      - row "Hong Kong Dollars 7.83 -0.00388 -0.05%" [ref=e686]:
+                        - text: 
+                        - cell "Hong Kong Dollars" [ref=e687]: Hong Kong Dollars
+                        - cell "7.83" [ref=e689]
+                        - cell "-0.00388" [ref=e690]
+                        - cell "-0.05%" [ref=e691]
+              - generic [ref=e692]:
+                - generic [ref=e693]: April 14, 2026 4:15 PM
+                - generic [ref=e694]: ET
+              - text:         
+          - iframe [ref=e695]:
+            - insertion [ref=f239e3]:
+              - iframe [ref=f239e5]:
+                
+    - generic [ref=e41]:
+      - strong [ref=e42]: Notice
+      - paragraph [ref=e43]:
+        - text: This website uses cookies, for more information please visit our
+        - link "Privacy Policy" [ref=e44] [cursor=pointer]:
+          - /url: https://content.stocktrak.com/privacy-policy/
+          - strong [ref=e45]: Privacy Policy
+      - generic [ref=e46] [cursor=pointer]: Ok
+  - contentinfo [ref=e47]:
+    - generic [ref=e49]:
+      - complementary [ref=e51]:
+        - figure [ref=e52]:
+          - link "WallStreetSurvivor logo" [ref=e53] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e54]
+      - generic [ref=e55]:
+        - complementary [ref=e56]:
+          - heading "Our Platform" [level=3] [ref=e57]
+        - complementary [ref=e58]:
+          - list [ref=e59]:
+            - listitem [ref=e60]:
+              - link "Stock Market Simulator" [ref=e61] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e62]:
+              - link "Investing Courses for Beginners" [ref=e63] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/courses/
+            - listitem [ref=e64]:
+              - link "Best Stocks to Buy Now" [ref=e65] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e66]:
+              - link "How to Invest Videos" [ref=e67] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+            - listitem [ref=e68]:
+              - link "Free Online Investing Course" [ref=e69] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e70]:
+              - link "Financial Literacy Game for Students" [ref=e71] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e72]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e73] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e74]:
+              - link "Crypto Paper Trading" [ref=e75] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e76]:
+              - link "About WallStreetSurvivor" [ref=e77] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+      - generic [ref=e78]:
+        - complementary [ref=e79]:
+          - heading "Review Center" [level=3] [ref=e80]
+        - complementary [ref=e81]:
+          - list [ref=e82]:
+            - listitem [ref=e83]:
+              - link "Motley Fool Review" [ref=e84] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e85]:
+              - link "Seeking Alpha Review" [ref=e86] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e87]:
+              - link "Alpha Picks Review" [ref=e88] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e89]:
+              - link "Moby Stocks Review" [ref=e90] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e91]:
+              - link "Wealthsimple Review" [ref=e92] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/wealthsimple-review/
+            - listitem [ref=e93]:
+              - link "Is Robinhood Safe to Use?" [ref=e94] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e95]:
+              - link "Rule Breakers Review" [ref=e96] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e97]:
+              - link "Best Investment Newsletters" [ref=e98] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e99]:
+              - link "Best Investing Apps" [ref=e100] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e101]:
+              - link "Best Motley Fool Discount Code" [ref=e102] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e103]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e104] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e105]:
+              - link "Best Tipranks Discount Code" [ref=e106] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e107]:
+              - link "Is Coinbase Safe?" [ref=e108] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e109]:
+              - link "Free Crypto with Coinbase" [ref=e110] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e111]:
+              - link "Best Stock Picking Service" [ref=e112] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+      - generic [ref=e113]:
+        - complementary [ref=e114]:
+          - heading "Corporate Services" [level=3] [ref=e115]
+        - complementary [ref=e116]:
+          - list [ref=e117]:
+            - listitem [ref=e118]:
+              - link "White Label Stock Market Games" [ref=e119] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e120]:
+              - link "White Label Virtual Crypto Trading" [ref=e121] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e122]:
+              - link "Employee Financial Wellness" [ref=e123] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e124]:
+              - link "Sponsor a College or High School" [ref=e125] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e126]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e127] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e128]:
+          - heading "Our Company" [level=3] [ref=e129]
+        - complementary [ref=e130]:
+          - list [ref=e131]:
+            - listitem [ref=e132]:
+              - link "Contact Us" [ref=e133] [cursor=pointer]:
+                - /url: mailto:support@wallstreetsurvivor.com
+            - listitem [ref=e134]:
+              - link "About Us" [ref=e135] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/
+            - listitem [ref=e136]:
+              - link "Motley Fool Review" [ref=e137] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e138]:
+              - link "Privacy Policy" [ref=e139] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e140]:
+              - link "Terms and Conditions" [ref=e141] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e142]:
+              - link "Advertise with Us" [ref=e143] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e144]:
+        - complementary [ref=e145]:
+          - heading "Family of Sites" [level=3] [ref=e146]:
+            - strong [ref=e147]: Family of Sites
+        - complementary [ref=e148]:
+          - figure [ref=e149]:
+            - link "StockTrak logo" [ref=e150] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e151]
+        - complementary [ref=e152]:
+          - figure [ref=e153]:
+            - link "PersonalFinanceLab logo" [ref=e154] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e155]
+        - complementary [ref=e156]:
+          - figure [ref=e157]:
+            - link "WallStreetSurvivor logo" [ref=e158] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Practice stock trading site" [ref=e159]
+        - complementary [ref=e160]:
+          - figure [ref=e161]:
+            - link "HowTheMarketWorks logo" [ref=e162] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free stock market game for students" [ref=e163]
+        - complementary [ref=e164]:
+          - link "Global Virtual Stock Game" [ref=e165] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e166] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - generic "Site" [ref=e167]:
+      - generic [ref=e168]:
+        - generic [ref=e169]:
+          - complementary [ref=e170]:
+            - heading "Connect With Us" [level=2] [ref=e171]
+          - complementary:
+            - figure [ref=e172]:
+              - link "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e173] [cursor=pointer]:
+                - /url: https://www.instagram.com/wallstreetsurvivor/
+                - img "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e174]
+          - complementary:
+            - figure [ref=e175]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e176] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e177]
+          - complementary:
+            - figure [ref=e178]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e179] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e180]
+          - complementary:
+            - figure [ref=e181]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e182] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e183]
+        - generic [ref=e184]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2025 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.
+  - generic [ref=e697]:
+    - img
+  - generic [ref=e700] [cursor=pointer]:
+    - generic [ref=e701]:
+      - text: 
+      - generic "We're Online!" [ref=e702]
+    - text: 
+  - generic:
+    - generic:
+      - iframe

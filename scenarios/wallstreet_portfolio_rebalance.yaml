@@ -1,0 +1,70 @@
+name: "Portfolio Rebalancing - Sell Underperformer"
+description: |
+  A portfolio manager reviews their current stock holdings and identifies the worst performer to sell.
+  This persona analyzes each stock position, compares performance metrics, and sells the underperforming stock.
+  Objective: Review portfolio, identify worst performer, and sell that stock.
+
+credentials:
+  username: "WALAEZZEDINE"
+  password: "WALA@123"
+
+constraints:
+  time_limit: 600  # seconds
+  max_retries: 3
+
+success_criteria:
+  - "Accessed and reviewed portfolio holdings"
+  - "Identified performance of at least 2 holdings"
+  - "Sold the worst performing stock from portfolio"
+
+abandon_criteria:
+  - "Portfolio is empty or has fewer than 2 holdings"
+  - "Unable to access portfolio view after multiple attempts"
+  - "Cannot identify performance data for holdings"
+  - "Time limit exceeded (10 minutes)"
+
+key_actions:
+  - "Step 1: Login with credentials - Username: WALAEZZEDINE, Password: WALA@123"
+  - "Step 2: Navigate to homepage to access dashboard"
+  - "Step 2: Go to Portfolio section to view current holdings"
+  - "Step 3: Review all open positions and their current values"
+  - "Step 4: For each holding, note the purchase price and current price"
+  - "Step 5: Calculate or identify which stock has the largest loss/lowest gain"
+  - "Step 6: Identify the worst performing stock (biggest % loss or smallest gain)"
+  - "Step 7: Click on the worst performing stock position"
+  - "Step 8: Go to Sell Stock page for that holding"
+  - "Step 9: Enter quantity to sell (can be full position or partial)"
+  - "Step 10: Review the sell order details and confirm"
+  - "Step 11: Execute the sell order"
+  - "Step 12: Verify sale by checking updated portfolio - position should be reduced or gone"
+
+site_guidance: |
+  📊 PORTFOLIO MANAGEMENT NAVIGATION:
+
+  ✅ You can use browser_navigate ONLY for the initial homepage on first step
+  ✅ ALL other navigation MUST use visible UI elements (buttons, links)
+
+  ❌ DO NOT use hardcoded URLs
+  ❌ NO direct shortcuts to specific pages
+
+  🔍 DISCOVERY STRATEGY:
+  - Use browser_evaluate to find "Portfolio" or "My Holdings" link
+  - Use browser_evaluate to find individual stock positions on portfolio page
+  - Use browser_evaluate to extract performance data (gains/losses)
+  - Use browser_evaluate to find "Sell" buttons for positions
+  - Use browser_evaluate to find quantity input and confirm buttons
+
+  📉 ANALYTICAL PROCESS:
+  - Don't just sell the first stock you see
+  - Compare at least 2-3 positions to find the true worst performer
+  - Look for: current value, gain/loss amount, and percentage change
+  - Make a deliberate choice about which stock to sell
+  - Verify the sale was successful before ending
+
+behavioral_notes: |
+  This persona is strategic and performance-focused. They:
+  - Take time to analyze multiple holdings
+  - Make data-driven decisions about which stocks to sell
+  - Follow a systematic approach to portfolio rebalancing
+  - Verify transactions are complete before moving on
+  - Are not afraid to admit losses if needed for portfolio optimization
