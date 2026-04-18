@@ -1,0 +1,989 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - text: May the 4th Be With You! Join our free trading contest to win prizes.
+    - link "Learn More" [ref=e6] [cursor=pointer]:
+      - /url: https://www.wallstreetsurvivor.com/may-the-4th-stock-trading-contest/?utm_source=wss&utm_medium=hellobar&utm_campaign=spring417
+      - strong [ref=e7]: Learn More
+  - generic [ref=e8]:
+    - generic [ref=e9]:
+      - text: 
+      - button "Select Language" [ref=e10] [cursor=pointer]:
+        - text: About
+        - generic [ref=e11]: 
+      - generic "Challenges" [ref=e12] [cursor=pointer]:
+        - text: Contests
+        - generic [ref=e13]: 
+    - generic [ref=e15]:
+      - generic "Username" [ref=e16]: walaezzedine
+      - link "Unread Messages" [ref=e17] [cursor=pointer]:
+        - /url: /forum/messages
+        - generic [ref=e18]: 
+        - generic "Number of Unread Messages" [ref=e19]: "1"
+      - combobox "Tournament Select" [ref=e21]:
+        - option "My Practice Portfolio" [selected]
+      - link "Logout" [ref=e22] [cursor=pointer]:
+        - /url: /logout
+  - navigation [ref=e23]:
+    - menubar [ref=e25]:
+      - menuitem "Logo" [ref=e26]:
+        - link "Logo" [ref=e27] [cursor=pointer]:
+          - /url: /home
+          - img "Logo" [ref=e28]
+    - menubar [ref=e30]:
+      - menuitem "Dashboard" [ref=e31]:
+        - generic [ref=e32] [cursor=pointer]: Dashboard 
+        - text: 
+      - menuitem "Stock Game" [ref=e33]:
+        - generic [ref=e34] [cursor=pointer]: Stock Game 
+      - menuitem "Investing Research" [ref=e35]:
+        - generic "Investing Research" [ref=e36] [cursor=pointer]: Investing Research 
+      - menuitem "Courses" [ref=e37]:
+        - generic [ref=e38] [cursor=pointer]: Courses 
+      - menuitem "Getting Started" [ref=e39]:
+        - generic [ref=e40] [cursor=pointer]: Getting Started 
+  - generic [ref=e41]:
+    - generic [ref=e42]:
+      - generic [ref=e44]:
+        - generic [ref=e46]:
+          - text: Portfolio Value
+          - strong [ref=e47]: $100,314.15
+        - generic [ref=e48]:
+          - generic [ref=e49]:
+            - text: Return Percentage
+            - strong [ref=e50]:
+              - text: 0,29%
+              - generic [ref=e51]: 
+          - generic [ref=e52]:
+            - text: Cash Balance
+            - strong [ref=e53]: $89,176.09
+          - generic [ref=e54]:
+            - text: Buying Power
+            - strong [ref=e55]: $189,477.12
+          - generic [ref=e56]:
+            - text: Current Rank
+            - strong [ref=e57]: 4 553,16/73513
+      - generic [ref=e58]:
+        - generic [ref=e61]:
+          - generic [ref=e63]:
+            - generic [ref=e64]:
+              - generic [ref=e65]: DOW JONES ETF
+              - generic [ref=e66]: 2.20%
+              - generic [ref=e68]: 
+            - img "Chart" [ref=e70]
+          - generic [ref=e72]:
+            - generic [ref=e73]:
+              - generic [ref=e74]: S&P500 ETF
+              - generic [ref=e75]: 1.36%
+              - generic [ref=e77]: 
+            - img "Chart" [ref=e79]
+          - generic [ref=e81]:
+            - generic [ref=e82]:
+              - generic [ref=e83]: NASDAQ ETF
+              - generic [ref=e84]: 1.36%
+              - generic [ref=e86]: 
+            - img "Chart" [ref=e88]
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - generic [ref=e92]: CRUDE OIL ETF
+              - generic [ref=e93]: "-10.11%"
+              - generic [ref=e95]: 
+            - img "Chart" [ref=e97]
+          - generic [ref=e99]:
+            - generic [ref=e100]:
+              - generic [ref=e101]: GOLD ETF
+              - generic [ref=e102]: 1.58%
+              - generic [ref=e104]: 
+            - img "Chart" [ref=e106]
+          - generic [ref=e108]:
+            - generic [ref=e109]:
+              - generic [ref=e110]: NAT GAS ETF
+              - generic [ref=e111]: .14%
+              - generic [ref=e113]: 
+            - img "Chart" [ref=e115]
+        - generic [ref=e117] [cursor=pointer]: 
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - list:
+              - listitem: Markets
+              - listitem: Market Summary
+              - listitem: Market Movers
+              - listitem: Top Performing ETFs
+              - listitem: Futures Summary
+              - listitem: Economic Rates
+              - listitem: Currencies
+              - listitem: Industries
+              - listitem: Basic Research
+              - listitem: Detailed Quote
+              - listitem: Company Profile
+              - listitem: Company News
+              - listitem: Charts
+              - listitem: Analyst Ratings
+              - listitem: Price History
+              - listitem: Financial Statements
+              - listitem: Advanced Research
+              - listitem: Key Ratios
+              - listitem: Option Chain
+              - listitem: Share Performance
+              - listitem: Earnings
+              - listitem: SEC Filings
+              - listitem: Corporate Actions
+              - listitem: Trades
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - heading "Quotes" [level=3]
+          - generic [ref=e120]:
+            - generic [ref=e125]:
+              - generic [ref=e126]:
+                - generic [ref=e129]:
+                  - generic [ref=e130] [cursor=pointer]: 
+                  - textbox "Search for a symbol or company, typing will show categorized results in tabs below" [ref=e131]:
+                    - /placeholder: Search for a symbol or company
+                  - text: 
+                - text: 
+              - text:             
+            - generic [ref=e133]:
+              - generic [ref=e135]:
+                - heading "Advanced Micro Devices Inc.AMD" [level=1] [ref=e137]: Advanced Micro Devices Inc. (AMD)
+                - generic "quote data for Advanced Micro Devices Inc." [ref=e140]:
+                  - generic [ref=e141]:
+                    - generic [ref=e142]:
+                      - text: $277.33
+                      - generic [ref=e143]:
+                        - generic [ref=e144]: 
+                        - generic [ref=e145]: "-0.93"
+                        - generic [ref=e146]: (-0.33%)
+                    - generic [ref=e147]:
+                      - generic [ref=e148]:
+                        - generic [ref=e149]: "Bid:"
+                        - text: 277.30 x 100
+                      - generic [ref=e150]:
+                        - generic [ref=e151]: "Ask:"
+                        - text: 277.39 x 200
+                    - generic [ref=e152]:
+                      - generic [ref=e154]: April 17, 2026 11:51 AMET
+                      - generic [ref=e156]: "Volume: 16,379,919"
+                  - generic [ref=e157]:
+                    - generic [ref=e158]: USD
+                    - generic [ref=e159]: "|Nasdaq Global Select"
+                    - generic [ref=e160]: "|Delayed Price"
+                    - text: "|"
+              - generic [ref=e162]:
+                - heading "Financials" [level=2] [ref=e163]
+                - generic [ref=e164]:
+                  - generic [ref=e166]:
+                    - generic [ref=e167]:
+                      - generic [ref=e170]:
+                        - generic [ref=e171]: "Type:"
+                        - 'button "Type: Income Statement" [ref=e173] [cursor=pointer]':
+                          - text: Income Statement
+                          - generic [ref=e174]: 
+                      - generic [ref=e177]:
+                        - generic [ref=e178]: "Period:"
+                        - 'button "Period: Annual" [ref=e180] [cursor=pointer]':
+                          - text: Annual
+                          - generic [ref=e181]: 
+                      - generic [ref=e184]:
+                        - generic [ref=e185]: "Report:"
+                        - 'button "Report: 2025-12-31 - 2021-12-31" [ref=e187] [cursor=pointer]':
+                          - text: 2025-12-31 - 2021-12-31
+                          - generic [ref=e188]: 
+                      - text:  
+                    - generic [ref=e190]:
+                      - list [ref=e192]:
+                        - listitem [ref=e193]:
+                          - button "Export" [ref=e194] [cursor=pointer]:
+                            - generic [ref=e195]: 
+                            - text: Export
+                      - list [ref=e197]:
+                        - listitem [ref=e198]:
+                          - button ".00" [ref=e199] [cursor=pointer]:
+                            - generic [ref=e200]: 
+                            - text: ".00"
+                        - listitem [ref=e201]:
+                          - button ".00" [ref=e202] [cursor=pointer]:
+                            - generic [ref=e203]: 
+                            - text: ".00"
+                      - list [ref=e205]:
+                        - listitem [ref=e206]:
+                          - button "All" [ref=e207] [cursor=pointer]:
+                            - generic [ref=e208]: 
+                            - text: All
+                        - listitem [ref=e209]:
+                          - button "All" [ref=e210] [cursor=pointer]:
+                            - generic [ref=e211]: 
+                            - text: All
+                  - table [ref=e213]:
+                    - rowgroup [ref=e214]:
+                      - row "Fiscal Year ends in Dec USD in Millions except per share data Dec 25 Dec 24 Dec 23 Dec 22 Dec 21" [ref=e215]:
+                        - columnheader "Fiscal Year ends in Dec USD in Millions except per share data" [ref=e216]:
+                          - generic [ref=e217]: Fiscal Year ends in
+                          - text: Dec
+                          - generic [ref=e218]: USD
+                          - generic [ref=e219]: in
+                          - generic [ref=e220]: Millions
+                          - text: except per share data
+                        - columnheader [ref=e221]
+                        - columnheader "Dec 25" [ref=e222]
+                        - columnheader "Dec 24" [ref=e223]
+                        - columnheader "Dec 23" [ref=e224]
+                        - columnheader "Dec 22" [ref=e225]
+                        - columnheader "Dec 21" [ref=e226]
+                    - rowgroup [ref=e227]:
+                      - row "Total Revenue 34,639 25,785 22,680 23,601 16,434" [ref=e228]:
+                        - cell "Total Revenue" [ref=e229]
+                        - cell [ref=e230]
+                        - cell "34,639" [ref=e231]
+                        - cell "25,785" [ref=e232]
+                        - cell "22,680" [ref=e233]
+                        - cell "23,601" [ref=e234]
+                        - cell "16,434" [ref=e235]
+                      - row "Operating Revenue 34,639 25,785 22,680 23,601 16,434" [ref=e236]:
+                        - cell "Operating Revenue" [ref=e237]
+                        - cell [ref=e238]
+                        - cell "34,639" [ref=e239]
+                        - cell "25,785" [ref=e240]
+                        - cell "22,680" [ref=e241]
+                        - cell "23,601" [ref=e242]
+                        - cell "16,434" [ref=e243]
+                      - row "Excise Taxes — — — — —" [ref=e244]:
+                        - cell "Excise Taxes" [ref=e245]
+                        - cell [ref=e246]
+                        - cell "—" [ref=e247]
+                        - cell "—" [ref=e248]
+                        - cell "—" [ref=e249]
+                        - cell "—" [ref=e250]
+                        - cell "—" [ref=e251]
+                      - row "Cost Of Revenue 16,456 12,114 12,220 11,550 8,505" [ref=e252]:
+                        - cell "Cost Of Revenue" [ref=e253]
+                        - cell [ref=e254]
+                        - cell "16,456" [ref=e255]
+                        - cell "12,114" [ref=e256]
+                        - cell "12,220" [ref=e257]
+                        - cell "11,550" [ref=e258]
+                        - cell "8,505" [ref=e259]
+                      - row "Gross Profit 17,152 12,725 10,460 10,603 7,929" [ref=e260]:
+                        - cell "Gross Profit" [ref=e261]
+                        - cell [ref=e262]
+                        - cell "17,152" [ref=e263]
+                        - cell "12,725" [ref=e264]
+                        - cell "10,460" [ref=e265]
+                        - cell "10,603" [ref=e266]
+                        - cell "7,929" [ref=e267]
+                      - row "Operating Expense 13,458 10,825 8,224 9,339 4,305" [ref=e268]:
+                        - cell "Operating Expense" [ref=e269]
+                        - cell [ref=e270]
+                        - cell "13,458" [ref=e271]
+                        - cell "10,825" [ref=e272]
+                        - cell "8,224" [ref=e273]
+                        - cell "9,339" [ref=e274]
+                        - cell "4,305" [ref=e275]
+                      - row "Expand / Collpase Selling General And Administration 4,144 2,735 2,352 2,336 1,448" [ref=e276]:
+                        - cell "Expand / Collpase Selling General And Administration" [ref=e277]:
+                          - generic [ref=e278] [cursor=pointer]: 
+                          - generic [ref=e279]: Expand / Collpase
+                          - text: Selling General And Administration
+                        - cell [ref=e280]
+                        - cell "4,144" [ref=e281]
+                        - cell "2,735" [ref=e282]
+                        - cell "2,352" [ref=e283]
+                        - cell "2,336" [ref=e284]
+                        - cell "1,448" [ref=e285]
+                      - row
+                      - row
+                      - row
+                      - row
+                      - row
+                      - row
+                      - row "Research And Development 8,091 6,456 5,872 5,005 2,845" [ref=e286]:
+                        - cell "Research And Development" [ref=e287]
+                        - cell [ref=e288]
+                        - cell "8,091" [ref=e289]
+                        - cell "6,456" [ref=e290]
+                        - cell "5,872" [ref=e291]
+                        - cell "5,005" [ref=e292]
+                        - cell "2,845" [ref=e293]
+                      - row "Expand / Collpase Depreciation And Amortization — 454 441 439 296" [ref=e294]:
+                        - cell "Expand / Collpase Depreciation And Amortization" [ref=e295]:
+                          - generic [ref=e296] [cursor=pointer]: 
+                          - generic [ref=e297]: Expand / Collpase
+                          - text: Depreciation And Amortization
+                        - cell [ref=e298]
+                        - cell "—" [ref=e299]
+                        - cell "454" [ref=e300]
+                        - cell "441" [ref=e301]
+                        - cell "439" [ref=e302]
+                        - cell "296" [ref=e303]
+                      - row
+                      - row
+                      - row
+                      - row "Depletion — — — — —" [ref=e304]:
+                        - cell "Depletion" [ref=e305]
+                        - cell [ref=e306]
+                        - cell "—" [ref=e307]
+                        - cell "—" [ref=e308]
+                        - cell "—" [ref=e309]
+                        - cell "—" [ref=e310]
+                        - cell "—" [ref=e311]
+                      - row "Provision For Doubtful Accounts — — — — —" [ref=e312]:
+                        - cell "Provision For Doubtful Accounts" [ref=e313]
+                        - cell [ref=e314]
+                        - cell "—" [ref=e315]
+                        - cell "—" [ref=e316]
+                        - cell "—" [ref=e317]
+                        - cell "—" [ref=e318]
+                        - cell "—" [ref=e319]
+                      - row "Other Taxes — — — — —" [ref=e320]:
+                        - cell "Other Taxes" [ref=e321]
+                        - cell [ref=e322]
+                        - cell "—" [ref=e323]
+                        - cell "—" [ref=e324]
+                        - cell "—" [ref=e325]
+                        - cell "—" [ref=e326]
+                        - cell "—" [ref=e327]
+                      - row "Other Operating Expenses — — — — -156" [ref=e328]:
+                        - cell "Other Operating Expenses" [ref=e329]
+                        - cell [ref=e330]
+                        - cell "—" [ref=e331]
+                        - cell "—" [ref=e332]
+                        - cell "—" [ref=e333]
+                        - cell "—" [ref=e334]
+                        - cell "-156" [ref=e335]
+                      - row "Operating Income 3,694 1,900 401 1,264 3,648" [ref=e336]:
+                        - cell "Operating Income" [ref=e337]
+                        - cell [ref=e338]
+                        - cell "3,694" [ref=e339]
+                        - cell "1,900" [ref=e340]
+                        - cell "401" [ref=e341]
+                        - cell "1,264" [ref=e342]
+                        - cell "3,648" [ref=e343]
+                      - row "Net Non Operating Interest Income Expense -131 -92 -106 23 -34" [ref=e344]:
+                        - cell "Net Non Operating Interest Income Expense" [ref=e345]
+                        - cell [ref=e346]
+                        - cell "-131" [ref=e347]
+                        - cell "-92" [ref=e348]
+                        - cell "-106" [ref=e349]
+                        - cell "23" [ref=e350]
+                        - cell "-34" [ref=e351]
+                      - row "Interest Income Non Operating — 182 — — —" [ref=e352]:
+                        - cell "Interest Income Non Operating" [ref=e353]
+                        - cell [ref=e354]
+                        - cell "—" [ref=e355]
+                        - cell "182" [ref=e356]
+                        - cell "—" [ref=e357]
+                        - cell "—" [ref=e358]
+                        - cell "—" [ref=e359]
+                      - row "Interest Expense Non Operating 131 92 106 88 34" [ref=e360]:
+                        - cell "Interest Expense Non Operating" [ref=e361]
+                        - cell [ref=e362]
+                        - cell "131" [ref=e363]
+                        - cell "92" [ref=e364]
+                        - cell "106" [ref=e365]
+                        - cell "88" [ref=e366]
+                        - cell "34" [ref=e367]
+                      - row "Total Other Finance Cost — — — — —" [ref=e368]:
+                        - cell "Total Other Finance Cost" [ref=e369]
+                        - cell [ref=e370]
+                        - cell "—" [ref=e371]
+                        - cell "—" [ref=e372]
+                        - cell "—" [ref=e373]
+                        - cell "—" [ref=e374]
+                        - cell "—" [ref=e375]
+                      - row "Other Income Expense -603 -214 -213 -57 -61" [ref=e376]:
+                        - cell "Other Income Expense" [ref=e377]
+                        - cell [ref=e378]
+                        - cell "-603" [ref=e379]
+                        - cell "-214" [ref=e380]
+                        - cell "-213" [ref=e381]
+                        - cell "-57" [ref=e382]
+                        - cell "-61" [ref=e383]
+                      - row "Gain On Sale Of Security — — — — 64" [ref=e384]:
+                        - cell "Gain On Sale Of Security" [ref=e385]
+                        - cell [ref=e386]
+                        - cell "—" [ref=e387]
+                        - cell "—" [ref=e388]
+                        - cell "—" [ref=e389]
+                        - cell "—" [ref=e390]
+                        - cell "64" [ref=e391]
+                      - row "Earnings From Equity Interest 26 33 16 14 6" [ref=e392]:
+                        - cell "Earnings From Equity Interest" [ref=e393]
+                        - cell [ref=e394]
+                        - cell "26" [ref=e395]
+                        - cell "33" [ref=e396]
+                        - cell "16" [ref=e397]
+                        - cell "14" [ref=e398]
+                        - cell "6" [ref=e399]
+                      - row "Securities Amortization — — — — —" [ref=e400]:
+                        - cell "Securities Amortization" [ref=e401]
+                        - cell [ref=e402]
+                        - cell "—" [ref=e403]
+                        - cell "—" [ref=e404]
+                        - cell "—" [ref=e405]
+                        - cell "—" [ref=e406]
+                        - cell "—" [ref=e407]
+                      - row "Special Income Charges — -186 — 2,311 8" [ref=e408]:
+                        - cell "Special Income Charges" [ref=e409]
+                        - cell [ref=e410]
+                        - cell "—" [ref=e411]
+                        - cell "-186" [ref=e412]
+                        - cell "—" [ref=e413]
+                        - cell "2,311" [ref=e414]
+                        - cell "8" [ref=e415]
+                      - row "Other Non Operating Income Expenses — — — — —" [ref=e416]:
+                        - cell "Other Non Operating Income Expenses" [ref=e417]
+                        - cell [ref=e418]
+                        - cell "—" [ref=e419]
+                        - cell "—" [ref=e420]
+                        - cell "—" [ref=e421]
+                        - cell "—" [ref=e422]
+                        - cell "—" [ref=e423]
+                      - row "Pretax Income 4,140 1,989 492 1,184 3,669" [ref=e424]:
+                        - cell "Pretax Income" [ref=e425]
+                        - cell [ref=e426]
+                        - cell "4,140" [ref=e427]
+                        - cell "1,989" [ref=e428]
+                        - cell "492" [ref=e429]
+                        - cell "1,184" [ref=e430]
+                        - cell "3,669" [ref=e431]
+                      - row "Tax Provision -103 381 -346 -122 513" [ref=e432]:
+                        - cell "Tax Provision" [ref=e433]
+                        - cell [ref=e434]
+                        - cell "-103" [ref=e435]
+                        - cell "381" [ref=e436]
+                        - cell "-346" [ref=e437]
+                        - cell "-122" [ref=e438]
+                        - cell "513" [ref=e439]
+                      - row "Earnings From Equity Interest Net Of Tax 26 33 16 14 6" [ref=e440]:
+                        - cell "Earnings From Equity Interest Net Of Tax" [ref=e441]
+                        - cell [ref=e442]
+                        - cell "26" [ref=e443]
+                        - cell "33" [ref=e444]
+                        - cell "16" [ref=e445]
+                        - cell "14" [ref=e446]
+                        - cell "6" [ref=e447]
+                      - row "Net Income Common Stockholders 4,335 1,641 854 1,320 3,162" [ref=e448]:
+                        - cell "Net Income Common Stockholders" [ref=e449]
+                        - cell [ref=e450]
+                        - cell "4,335" [ref=e451]
+                        - cell "1,641" [ref=e452]
+                        - cell "854" [ref=e453]
+                        - cell "1,320" [ref=e454]
+                        - cell "3,162" [ref=e455]
+                      - row "Net Income 4,335 1,641 854 1,320 3,162" [ref=e456]:
+                        - cell "Net Income" [ref=e457]
+                        - cell [ref=e458]
+                        - cell "4,335" [ref=e459]
+                        - cell "1,641" [ref=e460]
+                        - cell "854" [ref=e461]
+                        - cell "1,320" [ref=e462]
+                        - cell "3,162" [ref=e463]
+                      - row "Preferred Stock Dividends — — — — —" [ref=e464]:
+                        - cell "Preferred Stock Dividends" [ref=e465]
+                        - cell [ref=e466]
+                        - cell "—" [ref=e467]
+                        - cell "—" [ref=e468]
+                        - cell "—" [ref=e469]
+                        - cell "—" [ref=e470]
+                        - cell "—" [ref=e471]
+                      - row "Diluted NI Availto Com Stockholders — — — — —" [ref=e472]:
+                        - cell "Diluted NI Availto Com Stockholders" [ref=e473]
+                        - cell [ref=e474]
+                        - cell "—" [ref=e475]
+                        - cell "—" [ref=e476]
+                        - cell "—" [ref=e477]
+                        - cell "—" [ref=e478]
+                        - cell "—" [ref=e479]
+                      - row "Basic EPS 2.67 1.01 0.53 0.85 2.61" [ref=e480]:
+                        - cell "Basic EPS" [ref=e481]
+                        - cell [ref=e482]
+                        - cell "2.67" [ref=e483]
+                        - cell "1.01" [ref=e484]
+                        - cell "0.53" [ref=e485]
+                        - cell "0.85" [ref=e486]
+                        - cell "2.61" [ref=e487]
+                      - row "Basic Continuous Operations 5.30 1.01 0.53 0.85 2.61" [ref=e488]:
+                        - cell "Basic Continuous Operations" [ref=e489]
+                        - cell [ref=e490]
+                        - cell "5.30" [ref=e491]
+                        - cell "1.01" [ref=e492]
+                        - cell "0.53" [ref=e493]
+                        - cell "0.85" [ref=e494]
+                        - cell "2.61" [ref=e495]
+                      - row "Basic Discontinuous Operations 0.04 — — — —" [ref=e496]:
+                        - cell "Basic Discontinuous Operations" [ref=e497]
+                        - cell [ref=e498]
+                        - cell "0.04" [ref=e499]
+                        - cell "—" [ref=e500]
+                        - cell "—" [ref=e501]
+                        - cell "—" [ref=e502]
+                        - cell "—" [ref=e503]
+                      - row "Basic Extraordinary — — — — —" [ref=e504]:
+                        - cell "Basic Extraordinary" [ref=e505]
+                        - cell [ref=e506]
+                        - cell "—" [ref=e507]
+                        - cell "—" [ref=e508]
+                        - cell "—" [ref=e509]
+                        - cell "—" [ref=e510]
+                        - cell "—" [ref=e511]
+                      - row "Basic Accounting Change — — — — —" [ref=e512]:
+                        - cell "Basic Accounting Change" [ref=e513]
+                        - cell [ref=e514]
+                        - cell "—" [ref=e515]
+                        - cell "—" [ref=e516]
+                        - cell "—" [ref=e517]
+                        - cell "—" [ref=e518]
+                        - cell "—" [ref=e519]
+                      - row "Tax Loss Carryforward Basic EPS — — — — —" [ref=e520]:
+                        - cell "Tax Loss Carryforward Basic EPS" [ref=e521]
+                        - cell [ref=e522]
+                        - cell "—" [ref=e523]
+                        - cell "—" [ref=e524]
+                        - cell "—" [ref=e525]
+                        - cell "—" [ref=e526]
+                        - cell "—" [ref=e527]
+                      - row "Basic EPS Other Gains Losses — — — — —" [ref=e528]:
+                        - cell "Basic EPS Other Gains Losses" [ref=e529]
+                        - cell [ref=e530]
+                        - cell "—" [ref=e531]
+                        - cell "—" [ref=e532]
+                        - cell "—" [ref=e533]
+                        - cell "—" [ref=e534]
+                        - cell "—" [ref=e535]
+                      - row "Diluted EPS 2.65 1 0.53 0.84 2.57" [ref=e536]:
+                        - cell "Diluted EPS" [ref=e537]
+                        - cell [ref=e538]
+                        - cell "2.65" [ref=e539]
+                        - cell "1" [ref=e540]
+                        - cell "0.53" [ref=e541]
+                        - cell "0.84" [ref=e542]
+                        - cell "2.57" [ref=e543]
+                      - row "Diluted Continuous Operations 5.26 1 0.53 0.84 2.57" [ref=e544]:
+                        - cell "Diluted Continuous Operations" [ref=e545]
+                        - cell [ref=e546]
+                        - cell "5.26" [ref=e547]
+                        - cell "1" [ref=e548]
+                        - cell "0.53" [ref=e549]
+                        - cell "0.84" [ref=e550]
+                        - cell "2.57" [ref=e551]
+                      - row "Diluted Discontinuous Operations 0.04 — — — —" [ref=e552]:
+                        - cell "Diluted Discontinuous Operations" [ref=e553]
+                        - cell [ref=e554]
+                        - cell "0.04" [ref=e555]
+                        - cell "—" [ref=e556]
+                        - cell "—" [ref=e557]
+                        - cell "—" [ref=e558]
+                        - cell "—" [ref=e559]
+                      - row "Diluted Extraordinary — — — — —" [ref=e560]:
+                        - cell "Diluted Extraordinary" [ref=e561]
+                        - cell [ref=e562]
+                        - cell "—" [ref=e563]
+                        - cell "—" [ref=e564]
+                        - cell "—" [ref=e565]
+                        - cell "—" [ref=e566]
+                        - cell "—" [ref=e567]
+                      - row "Diluted Accounting Change — — — — —" [ref=e568]:
+                        - cell "Diluted Accounting Change" [ref=e569]
+                        - cell [ref=e570]
+                        - cell "—" [ref=e571]
+                        - cell "—" [ref=e572]
+                        - cell "—" [ref=e573]
+                        - cell "—" [ref=e574]
+                        - cell "—" [ref=e575]
+                      - row "Tax Loss Carryforward Diluted EPS — — — — —" [ref=e576]:
+                        - cell "Tax Loss Carryforward Diluted EPS" [ref=e577]
+                        - cell [ref=e578]
+                        - cell "—" [ref=e579]
+                        - cell "—" [ref=e580]
+                        - cell "—" [ref=e581]
+                        - cell "—" [ref=e582]
+                        - cell "—" [ref=e583]
+                      - row "Diluted EPS Other Gains Losses — — — — —" [ref=e584]:
+                        - cell "Diluted EPS Other Gains Losses" [ref=e585]
+                        - cell [ref=e586]
+                        - cell "—" [ref=e587]
+                        - cell "—" [ref=e588]
+                        - cell "—" [ref=e589]
+                        - cell "—" [ref=e590]
+                        - cell "—" [ref=e591]
+                      - row "Basic Average Shares 1,624 1,620 1,614 1,561 1,213" [ref=e592]:
+                        - cell "Basic Average Shares" [ref=e593]
+                        - cell [ref=e594]
+                        - cell "1,624" [ref=e595]
+                        - cell "1,620" [ref=e596]
+                        - cell "1,614" [ref=e597]
+                        - cell "1,561" [ref=e598]
+                        - cell "1,213" [ref=e599]
+                      - row "Diluted Average Shares 1,636 1,637 1,625 1,571 1,229" [ref=e600]:
+                        - cell "Diluted Average Shares" [ref=e601]
+                        - cell [ref=e602]
+                        - cell "1,636" [ref=e603]
+                        - cell "1,637" [ref=e604]
+                        - cell "1,625" [ref=e605]
+                        - cell "1,571" [ref=e606]
+                        - cell "1,229" [ref=e607]
+                      - row "Dividend Per Share — — — — —" [ref=e608]:
+                        - cell "Dividend Per Share" [ref=e609]
+                        - cell [ref=e610]
+                        - cell "—" [ref=e611]
+                        - cell "—" [ref=e612]
+                        - cell "—" [ref=e613]
+                        - cell "—" [ref=e614]
+                        - cell "—" [ref=e615]
+                      - row "Total Operating Income As Reported — — — — —" [ref=e616]:
+                        - cell "Total Operating Income As Reported" [ref=e617]
+                        - cell [ref=e618]
+                        - cell "—" [ref=e619]
+                        - cell "—" [ref=e620]
+                        - cell "—" [ref=e621]
+                        - cell "—" [ref=e622]
+                        - cell "—" [ref=e623]
+                      - row "Reported Normalized Basic EPS — — — — —" [ref=e624]:
+                        - cell "Reported Normalized Basic EPS" [ref=e625]
+                        - cell [ref=e626]
+                        - cell "—" [ref=e627]
+                        - cell "—" [ref=e628]
+                        - cell "—" [ref=e629]
+                        - cell "—" [ref=e630]
+                        - cell "—" [ref=e631]
+                      - row "Reported Normalized Diluted EPS — — — — —" [ref=e632]:
+                        - cell "Reported Normalized Diluted EPS" [ref=e633]
+                        - cell [ref=e634]
+                        - cell "—" [ref=e635]
+                        - cell "—" [ref=e636]
+                        - cell "—" [ref=e637]
+                        - cell "—" [ref=e638]
+                        - cell "—" [ref=e639]
+                      - row "Rent Expense Supplemental — — — — —" [ref=e640]:
+                        - cell "Rent Expense Supplemental" [ref=e641]
+                        - cell [ref=e642]
+                        - cell "—" [ref=e643]
+                        - cell "—" [ref=e644]
+                        - cell "—" [ref=e645]
+                        - cell "—" [ref=e646]
+                        - cell "—" [ref=e647]
+                      - row "Total Expenses 29,914 22,939 20,444 20,889 12,810" [ref=e648]:
+                        - cell "Total Expenses" [ref=e649]
+                        - cell [ref=e650]
+                        - cell "29,914" [ref=e651]
+                        - cell "22,939" [ref=e652]
+                        - cell "20,444" [ref=e653]
+                        - cell "20,889" [ref=e654]
+                        - cell "12,810" [ref=e655]
+                      - row "Net Income From Continuing And Discontinued Operation 4,335 1,641 854 1,320 3,162" [ref=e656]:
+                        - cell "Net Income From Continuing And Discontinued Operation" [ref=e657]
+                        - cell [ref=e658]
+                        - cell "4,335" [ref=e659]
+                        - cell "1,641" [ref=e660]
+                        - cell "854" [ref=e661]
+                        - cell "1,320" [ref=e662]
+                        - cell "3,162" [ref=e663]
+                      - row "Normalized Income 4,084 — — — —" [ref=e664]:
+                        - cell "Normalized Income" [ref=e665]
+                        - cell [ref=e666]
+                        - cell "4,084" [ref=e667]
+                        - cell "—" [ref=e668]
+                        - cell "—" [ref=e669]
+                        - cell "—" [ref=e670]
+                        - cell "—" [ref=e671]
+                      - row "Interest Expense — — — — —" [ref=e672]:
+                        - cell "Interest Expense" [ref=e673]
+                        - cell [ref=e674]
+                        - cell "—" [ref=e675]
+                        - cell "—" [ref=e676]
+                        - cell "—" [ref=e677]
+                        - cell "—" [ref=e678]
+                        - cell "—" [ref=e679]
+                      - row "EBIT 4,363 2,114 614 1,286 3,703" [ref=e680]:
+                        - cell "EBIT" [ref=e681]
+                        - cell [ref=e682]
+                        - cell "4,363" [ref=e683]
+                        - cell "2,114" [ref=e684]
+                        - cell "614" [ref=e685]
+                        - cell "1,286" [ref=e686]
+                        - cell "3,703" [ref=e687]
+                      - row "EBITDA 7,367 5,178 4,165 5,737 4,166" [ref=e688]:
+                        - cell "EBITDA" [ref=e689]
+                        - cell [ref=e690]
+                        - cell "7,367" [ref=e691]
+                        - cell "5,178" [ref=e692]
+                        - cell "4,165" [ref=e693]
+                        - cell "5,737" [ref=e694]
+                        - cell "4,166" [ref=e695]
+                      - row "Reconciled Cost Of Revenue — — — — —" [ref=e696]:
+                        - cell "Reconciled Cost Of Revenue" [ref=e697]
+                        - cell [ref=e698]
+                        - cell "—" [ref=e699]
+                        - cell "—" [ref=e700]
+                        - cell "—" [ref=e701]
+                        - cell "—" [ref=e702]
+                        - cell "—" [ref=e703]
+                      - row "Reconciled Depreciation — — — — —" [ref=e704]:
+                        - cell "Reconciled Depreciation" [ref=e705]
+                        - cell [ref=e706]
+                        - cell "—" [ref=e707]
+                        - cell "—" [ref=e708]
+                        - cell "—" [ref=e709]
+                        - cell "—" [ref=e710]
+                        - cell "—" [ref=e711]
+                      - row "Net Income From Continuing Operation Net Minority Interest — — — — —" [ref=e712]:
+                        - cell "Net Income From Continuing Operation Net Minority Interest" [ref=e713]
+                        - cell [ref=e714]
+                        - cell "—" [ref=e715]
+                        - cell "—" [ref=e716]
+                        - cell "—" [ref=e717]
+                        - cell "—" [ref=e718]
+                        - cell "—" [ref=e719]
+                      - row "Total Unusual Items Excluding Goodwill — — — — —" [ref=e720]:
+                        - cell "Total Unusual Items Excluding Goodwill" [ref=e721]
+                        - cell [ref=e722]
+                        - cell "—" [ref=e723]
+                        - cell "—" [ref=e724]
+                        - cell "—" [ref=e725]
+                        - cell "—" [ref=e726]
+                        - cell "—" [ref=e727]
+                      - row "Total Unusual Items — — — — —" [ref=e728]:
+                        - cell "Total Unusual Items" [ref=e729]
+                        - cell [ref=e730]
+                        - cell "—" [ref=e731]
+                        - cell "—" [ref=e732]
+                        - cell "—" [ref=e733]
+                        - cell "—" [ref=e734]
+                        - cell "—" [ref=e735]
+                      - row "Normalized Basic EPS — — — — —" [ref=e736]:
+                        - cell "Normalized Basic EPS" [ref=e737]
+                        - cell [ref=e738]
+                        - cell "—" [ref=e739]
+                        - cell "—" [ref=e740]
+                        - cell "—" [ref=e741]
+                        - cell "—" [ref=e742]
+                        - cell "—" [ref=e743]
+                      - row "Normalized Diluted EPS — — — — —" [ref=e744]:
+                        - cell "Normalized Diluted EPS" [ref=e745]
+                        - cell [ref=e746]
+                        - cell "—" [ref=e747]
+                        - cell "—" [ref=e748]
+                        - cell "—" [ref=e749]
+                        - cell "—" [ref=e750]
+                        - cell "—" [ref=e751]
+                      - row "Normalized EBITDA — — — — —" [ref=e752]:
+                        - cell "Normalized EBITDA" [ref=e753]
+                        - cell [ref=e754]
+                        - cell "—" [ref=e755]
+                        - cell "—" [ref=e756]
+                        - cell "—" [ref=e757]
+                        - cell "—" [ref=e758]
+                        - cell "—" [ref=e759]
+                      - row "Tax Rate For Calcs — — — — —" [ref=e760]:
+                        - cell "Tax Rate For Calcs" [ref=e761]
+                        - cell [ref=e762]
+                        - cell "—" [ref=e763]
+                        - cell "—" [ref=e764]
+                        - cell "—" [ref=e765]
+                        - cell "—" [ref=e766]
+                        - cell "—" [ref=e767]
+                      - row "Tax Effect Of Unusual Items — — — — —" [ref=e768]:
+                        - cell "Tax Effect Of Unusual Items" [ref=e769]
+                        - cell [ref=e770]
+                        - cell "—" [ref=e771]
+                        - cell "—" [ref=e772]
+                        - cell "—" [ref=e773]
+                        - cell "—" [ref=e774]
+                        - cell "—" [ref=e775]
+                - text: 
+    - generic [ref=e783]:
+      - strong [ref=e784]: Notice
+      - paragraph [ref=e785]:
+        - text: This website uses cookies, for more information please visit our
+        - link "Privacy Policy" [ref=e786] [cursor=pointer]:
+          - /url: https://content.stocktrak.com/privacy-policy/
+          - strong [ref=e787]: Privacy Policy
+      - generic [ref=e788] [cursor=pointer]: Ok
+  - contentinfo [ref=e789]:
+    - generic [ref=e791]:
+      - complementary [ref=e793]:
+        - figure [ref=e794]:
+          - link "WallStreetSurvivor logo" [ref=e795] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e796]
+      - generic [ref=e797]:
+        - complementary [ref=e798]:
+          - heading "Our Platform" [level=3] [ref=e799]
+        - complementary [ref=e800]:
+          - list [ref=e801]:
+            - listitem [ref=e802]:
+              - link "Stock Market Simulator" [ref=e803] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e804]:
+              - link "Investing Courses for Beginners" [ref=e805] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/courses/
+            - listitem [ref=e806]:
+              - link "Best Stocks to Buy Now" [ref=e807] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e808]:
+              - link "How to Invest Videos" [ref=e809] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+            - listitem [ref=e810]:
+              - link "Free Online Investing Course" [ref=e811] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e812]:
+              - link "Financial Literacy Game for Students" [ref=e813] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e814]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e815] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e816]:
+              - link "Crypto Paper Trading" [ref=e817] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e818]:
+              - link "About WallStreetSurvivor" [ref=e819] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+      - generic [ref=e820]:
+        - complementary [ref=e821]:
+          - heading "Review Center" [level=3] [ref=e822]
+        - complementary [ref=e823]:
+          - list [ref=e824]:
+            - listitem [ref=e825]:
+              - link "Motley Fool Review" [ref=e826] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e827]:
+              - link "Seeking Alpha Review" [ref=e828] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e829]:
+              - link "Alpha Picks Review" [ref=e830] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e831]:
+              - link "Moby Stocks Review" [ref=e832] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e833]:
+              - link "Wealthsimple Review" [ref=e834] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/wealthsimple-review/
+            - listitem [ref=e835]:
+              - link "Is Robinhood Safe to Use?" [ref=e836] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e837]:
+              - link "Rule Breakers Review" [ref=e838] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e839]:
+              - link "Best Investment Newsletters" [ref=e840] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e841]:
+              - link "Best Investing Apps" [ref=e842] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e843]:
+              - link "Best Motley Fool Discount Code" [ref=e844] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e845]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e846] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e847]:
+              - link "Best Tipranks Discount Code" [ref=e848] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e849]:
+              - link "Is Coinbase Safe?" [ref=e850] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e851]:
+              - link "Free Crypto with Coinbase" [ref=e852] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e853]:
+              - link "Best Stock Picking Service" [ref=e854] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+      - generic [ref=e855]:
+        - complementary [ref=e856]:
+          - heading "Corporate Services" [level=3] [ref=e857]
+        - complementary [ref=e858]:
+          - list [ref=e859]:
+            - listitem [ref=e860]:
+              - link "White Label Stock Market Games" [ref=e861] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e862]:
+              - link "White Label Virtual Crypto Trading" [ref=e863] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e864]:
+              - link "Employee Financial Wellness" [ref=e865] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e866]:
+              - link "Sponsor a College or High School" [ref=e867] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e868]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e869] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e870]:
+          - heading "Our Company" [level=3] [ref=e871]
+        - complementary [ref=e872]:
+          - list [ref=e873]:
+            - listitem [ref=e874]:
+              - link "Contact Us" [ref=e875] [cursor=pointer]:
+                - /url: mailto:support@wallstreetsurvivor.com
+            - listitem [ref=e876]:
+              - link "About Us" [ref=e877] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/
+            - listitem [ref=e878]:
+              - link "Motley Fool Review" [ref=e879] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e880]:
+              - link "Privacy Policy" [ref=e881] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e882]:
+              - link "Terms and Conditions" [ref=e883] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e884]:
+              - link "Advertise with Us" [ref=e885] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e886]:
+        - complementary [ref=e887]:
+          - heading "Family of Sites" [level=3] [ref=e888]:
+            - strong [ref=e889]: Family of Sites
+        - complementary [ref=e890]:
+          - figure [ref=e891]:
+            - link "StockTrak logo" [ref=e892] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e893]
+        - complementary [ref=e894]:
+          - figure [ref=e895]:
+            - link "PersonalFinanceLab logo" [ref=e896] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e897]
+        - complementary [ref=e898]:
+          - figure [ref=e899]:
+            - link "WallStreetSurvivor logo" [ref=e900] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Practice stock trading site" [ref=e901]
+        - complementary [ref=e902]:
+          - figure [ref=e903]:
+            - link "HowTheMarketWorks logo" [ref=e904] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free stock market game for students" [ref=e905]
+        - complementary [ref=e906]:
+          - link "Global Virtual Stock Game" [ref=e907] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e908] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - generic "Site" [ref=e909]:
+      - generic [ref=e910]:
+        - generic [ref=e911]:
+          - complementary [ref=e912]:
+            - heading "Connect With Us" [level=2] [ref=e913]
+          - complementary:
+            - figure [ref=e914]:
+              - link "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e915] [cursor=pointer]:
+                - /url: https://www.instagram.com/wallstreetsurvivor/
+                - img "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e916]
+          - complementary:
+            - figure [ref=e917]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e918] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e919]
+          - complementary:
+            - figure [ref=e920]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e921] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e922]
+          - complementary:
+            - figure [ref=e923]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e924] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e925]
+        - generic [ref=e926]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2025 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.

@@ -1,0 +1,1309 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - iframe [ref=e630]:
+      - insertion [ref=f33e3]:
+        - iframe [ref=f33e5]:
+          
+    - generic [ref=e631] [cursor=pointer]: X
+  - generic [ref=e4]:
+    - text: May the 4th Be With You! Join our free trading contest to win prizes.
+    - link "Learn More" [ref=e6] [cursor=pointer]:
+      - /url: https://www.wallstreetsurvivor.com/may-the-4th-stock-trading-contest/?utm_source=wss&utm_medium=hellobar&utm_campaign=spring417
+      - strong [ref=e7]: Learn More
+  - generic [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10] [cursor=pointer]:
+        - generic [ref=e11]: 
+        - text: Run Tour
+      - button "Select Language" [ref=e12] [cursor=pointer]:
+        - text: About
+        - generic [ref=e13]: 
+      - generic "Challenges" [ref=e14] [cursor=pointer]:
+        - text: Contests
+        - generic [ref=e15]: 
+    - generic [ref=e17]:
+      - generic "Username" [ref=e18]: walaezzedine
+      - link "Unread Messages" [ref=e19] [cursor=pointer]:
+        - /url: /forum/messages
+        - generic [ref=e20]: 
+        - generic "Number of Unread Messages" [ref=e21]: "1"
+      - combobox "Tournament Select" [ref=e23]:
+        - option "My Practice Portfolio" [selected]
+      - link "Logout" [ref=e24] [cursor=pointer]:
+        - /url: /logout
+  - navigation [ref=e25]:
+    - menubar [ref=e27]:
+      - menuitem "Logo" [ref=e28]:
+        - link "Logo" [ref=e29] [cursor=pointer]:
+          - /url: /home
+          - img "Logo" [ref=e30]
+    - menubar [ref=e32]:
+      - menuitem "Dashboard" [ref=e33]:
+        - generic [ref=e34] [cursor=pointer]: Dashboard 
+        - text: 
+      - menuitem "Stock Game" [ref=e35]:
+        - generic [ref=e36] [cursor=pointer]: Stock Game 
+      - menuitem "Investing Research" [ref=e37]:
+        - generic "Investing Research" [ref=e38] [cursor=pointer]: Investing Research 
+        - menu [ref=e655]:
+          - menuitem "Markets Market Summary Market Movers Top Performing ETFs Economic Rates Currencies Trading Ideas Trading Ideas Explore By Sector Stock Research Stock/Fund Quotes Symbol Lookup Stock Screener Interactive Charts Company News Option Chains Key Ratios Share Performance Earnings Corporate Actions Recent Trades Historical Prices Financial Statements SEC Filings Analyst Ratings Tutorials Using Our Research Tools Basic Research and Comparing Stocks" [ref=e656]:
+            - generic [ref=e657]:
+              - generic [ref=e658]:
+                - list [ref=e659]:
+                  - menuitem "Markets" [ref=e660]
+                  - menuitem "Market Summary" [ref=e661]:
+                    - link "Market Summary" [ref=e662] [cursor=pointer]:
+                      - /url: /quotes/quotesv2?type=marketsummary
+                  - menuitem "Market Movers" [ref=e663]:
+                    - link "Market Movers" [ref=e664] [cursor=pointer]:
+                      - /url: /quotes/quotesv2?type=marketmovers
+                  - menuitem "Top Performing ETFs" [ref=e665]:
+                    - link "Top Performing ETFs" [ref=e666] [cursor=pointer]:
+                      - /url: /quotes/quotesv2?type=fundperformersetf
+                  - menuitem "Economic Rates" [ref=e667]:
+                    - link "Economic Rates" [ref=e668] [cursor=pointer]:
+                      - /url: /quotes/quotesv2?type=marketrates
+                  - menuitem "Currencies" [ref=e669]:
+                    - link "Currencies" [ref=e670] [cursor=pointer]:
+                      - /url: /quotes/quotesv2?type=marketcurrencies
+                - list [ref=e671]:
+                  - menuitem "Trading Ideas" [ref=e672]
+                  - menuitem "Trading Ideas" [ref=e673]:
+                    - link "Trading Ideas" [ref=e674] [cursor=pointer]:
+                      - /url: /quotes/tradingideas
+                  - menuitem "Explore By Sector" [ref=e675]:
+                    - link "Explore By Sector" [ref=e676] [cursor=pointer]:
+                      - /url: /content/index?url=sector-explorer
+              - list [ref=e678]:
+                - menuitem "Stock Research" [ref=e679]
+                - menuitem "Stock/Fund Quotes" [ref=e680]:
+                  - link "Stock/Fund Quotes" [ref=e681] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?converted=1&sym=GOOG
+                - menuitem "Symbol Lookup" [ref=e682]:
+                  - link "Symbol Lookup" [ref=e683] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?converted=1&sym=GOOG
+                - menuitem "Stock Screener" [ref=e684]:
+                  - link "Stock Screener" [ref=e685] [cursor=pointer]:
+                    - /url: /content/index?url=stock-screener
+                - menuitem "Interactive Charts" [ref=e686]:
+                  - link "Interactive Charts" [ref=e687] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?type=interactivechart
+                - menuitem "Company News" [ref=e688]:
+                  - link "Company News" [ref=e689] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?type=fullnewssummary
+                - menuitem "Option Chains" [ref=e690]:
+                  - link "Option Chains" [ref=e691] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?type=options
+                - menuitem "Key Ratios" [ref=e692]:
+                  - link "Key Ratios" [ref=e693] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?type=keyratios
+              - list [ref=e695]:
+                - menuitem [ref=e696]
+                - menuitem "Share Performance" [ref=e697]:
+                  - link "Share Performance" [ref=e698] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?type=shareinfoperformance
+                - menuitem "Earnings" [ref=e699]:
+                  - link "Earnings" [ref=e700] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?type=earnings
+                - menuitem "Corporate Actions" [ref=e701]:
+                  - link "Corporate Actions" [ref=e702] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?type=corporateevents
+                - menuitem "Recent Trades" [ref=e703]:
+                  - link "Recent Trades" [ref=e704] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?type=trades
+                - menuitem "Historical Prices" [ref=e705]:
+                  - link "Historical Prices" [ref=e706] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?type=pricehistorydownload1
+                - menuitem "Financial Statements" [ref=e707]:
+                  - link "Financial Statements" [ref=e708] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?type=financials20yr
+                - menuitem "SEC Filings" [ref=e709]:
+                  - link "SEC Filings" [ref=e710] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?type=filings
+                - menuitem "Analyst Ratings" [ref=e711]:
+                  - link "Analyst Ratings" [ref=e712] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?type=analyst
+              - list [ref=e714]:
+                - menuitem "Tutorials" [ref=e715]
+                - menuitem "Using Our Research Tools" [ref=e716]:
+                  - link "Using Our Research Tools" [ref=e717] [cursor=pointer]:
+                    - /url: /content/videos?category=Managing_portfolio_content&content=Research-Tools&title=ResearchToolsVideo
+                - menuitem "Basic Research and Comparing Stocks" [ref=e718]:
+                  - link "Basic Research and Comparing Stocks" [ref=e719] [cursor=pointer]:
+                    - /url: /content/index?url=basic-research-and-comparing-stocks2
+      - menuitem "Courses" [ref=e39]:
+        - generic [ref=e40] [cursor=pointer]: Courses 
+      - menuitem "Getting Started" [ref=e41]:
+        - generic [ref=e42] [cursor=pointer]: Getting Started 
+  - generic [ref=e43]:
+    - iframe [ref=e635]:
+      - insertion [ref=f29e3]:
+        - iframe [ref=f29e5]:
+          
+    - generic [ref=e48]:
+      - heading "Dashboard" [level=3] [ref=e52]
+      - generic [ref=e55]:
+        - generic [ref=e59]:
+          - generic [ref=e61]:
+            - generic [ref=e62]: 
+            - text: My Assignments
+          - link "View" [ref=e64] [cursor=pointer]:
+            - /url: /account/accountassignmentdetails
+          - combobox "User Assignments" [ref=e66]:
+            - option "assignment 1" [selected]
+            - option "IICS Investment 101"
+            - option "Investing Assignment"
+            - option "1"
+            - option "Investing 101"
+        - generic [ref=e68]:
+          - generic [ref=e69]:
+            - generic [ref=e71]:
+              - generic [ref=e72]:
+                - generic [ref=e73]:
+                  - generic [ref=e74]: 
+                  - text: My Portfolio
+                - generic [ref=e75]: How to Play Stock Game
+              - link "View" [ref=e77] [cursor=pointer]:
+                - /url: /portfolio/openpositions
+            - generic [ref=e79]:
+              - generic [ref=e81]:
+                - generic [ref=e82]: Portfolio Values
+                - generic [ref=e84]: 
+                - generic [ref=e85]: $328.71(0.33 %)
+              - generic [ref=e87]:
+                - generic [ref=e88]: Rank
+                - generic [ref=e89]: "4774"
+            - generic [ref=e91]:
+              - combobox [ref=e92]:
+                - option "Equities" [selected]
+                - option "Options"
+                - option "Crypto"
+              - table [ref=e93]:
+                - rowgroup [ref=e94]:
+                  - row "Symbol Quantity Total Return %" [ref=e95]:
+                    - columnheader "Symbol" [ref=e96]
+                    - columnheader "Quantity" [ref=e97]
+                    - columnheader "Total Return %" [ref=e98]
+                - rowgroup [ref=e99]:
+                  - row "AAPL 41 3.74%" [ref=e100]:
+                    - cell "AAPL" [ref=e101]
+                    - cell "41" [ref=e102]
+                    - cell "3.74%" [ref=e103]
+              - text:  
+              - link "View All Open Positions" [ref=e105] [cursor=pointer]:
+                - /url: /portfolio/openpositions
+          - generic [ref=e106]:
+            - generic [ref=e108]:
+              - generic [ref=e110]:
+                - generic [ref=e111]: 
+                - text: My Watchlist
+              - link "Add" [ref=e113] [cursor=pointer]:
+                - /url: "#"
+            - table [ref=e115]:
+              - rowgroup [ref=e116]:
+                - row "Symbol Last Price Change" [ref=e117]:
+                  - columnheader [ref=e118]
+                  - columnheader "Symbol" [ref=e119]
+                  - columnheader "Last Price" [ref=e120]
+                  - columnheader "Change" [ref=e121]
+              - rowgroup [ref=e122]:
+                - row "AAPL 272.09 8.69" [ref=e123]:
+                  - cell [ref=e124]:
+                    - generic [ref=e126] [cursor=pointer]: 
+                  - cell "AAPL" [ref=e127]:
+                    - link "AAPL" [ref=e128] [cursor=pointer]:
+                      - /url: /quotes/quotesv2?converted=1&symbol=AAPL
+                  - cell "272.09" [ref=e129]
+                  - cell "8.69" [ref=e130]
+                - row "BAC 54.09 0.5815" [ref=e131]:
+                  - cell [ref=e132]:
+                    - generic [ref=e134] [cursor=pointer]: 
+                  - cell "BAC" [ref=e135]:
+                    - link "BAC" [ref=e136] [cursor=pointer]:
+                      - /url: /quotes/quotesv2?converted=1&symbol=BAC
+                  - cell "54.09" [ref=e137]
+                  - cell "0.5815" [ref=e138]
+                - row "GOOG 335.85 3.075" [ref=e139]:
+                  - cell [ref=e140]:
+                    - generic [ref=e142] [cursor=pointer]: 
+                  - cell "GOOG" [ref=e143]:
+                    - link "GOOG" [ref=e144] [cursor=pointer]:
+                      - /url: /quotes/quotesv2?converted=1&symbol=GOOG
+                  - cell "335.85" [ref=e145]
+                  - cell "3.075" [ref=e146]
+                - row "KO 75.79 0.61" [ref=e147]:
+                  - cell [ref=e148]:
+                    - generic [ref=e150] [cursor=pointer]: 
+                  - cell "KO" [ref=e151]:
+                    - link "KO" [ref=e152] [cursor=pointer]:
+                      - /url: /quotes/quotesv2?converted=1&symbol=KO
+                  - cell "75.79" [ref=e153]
+                  - cell "0.61" [ref=e154]
+          - generic [ref=e155]:
+            - generic [ref=e157]:
+              - generic [ref=e159]:
+                - generic [ref=e160]: 
+                - text: Recent Orders
+              - link "View" [ref=e162] [cursor=pointer]:
+                - /url: /account/orderhistory
+            - generic [ref=e163]:
+              - combobox "Order Status" [ref=e164]:
+                - option "All" [selected]
+                - option "Executed"
+                - option "Open"
+                - option "Cancelled"
+                - option "Expired"
+              - table [ref=e166]:
+                - rowgroup [ref=e167]:
+                  - row "Symbol Quantity Price Filled" [ref=e168]:
+                    - columnheader "Symbol" [ref=e169]
+                    - columnheader "Quantity" [ref=e170]
+                    - columnheader "Price Filled" [ref=e171]
+                - rowgroup [ref=e172]:
+                  - row "AAPL 10 $265.33" [ref=e173]:
+                    - cell "AAPL" [ref=e174]
+                    - cell "10" [ref=e175]
+                    - cell "$265.33" [ref=e176]
+                  - row "NVDA -90 $197.60" [ref=e177]:
+                    - cell "NVDA" [ref=e178]
+                    - cell "-90" [ref=e179]
+                    - cell "$197.60" [ref=e180]
+                  - row "NVDA 10 $197.45" [ref=e181]:
+                    - cell "NVDA" [ref=e182]
+                    - cell "10" [ref=e183]
+                    - cell "$197.45" [ref=e184]
+                  - row "NVDA -10 $197.87" [ref=e185]:
+                    - cell "NVDA" [ref=e186]
+                    - cell "-10" [ref=e187]
+                    - cell "$197.87" [ref=e188]
+                  - row "NVDA 10 $199.43" [ref=e189]:
+                    - cell "NVDA" [ref=e190]
+                    - cell "10" [ref=e191]
+                    - cell "$199.43" [ref=e192]
+        - generic [ref=e195]:
+          - generic [ref=e199]:
+            - generic [ref=e200]: 
+            - text: Latest News
+          - generic [ref=e204]:
+            - generic [ref=e205]:
+              - heading [level=3] [ref=e206]:
+                - link [ref=e207] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/wall-street-indexes-rally-iran-142240508.html
+                  - text: Wall Street indexes rally after Iran says Strait of Hormuz 'completely open'
+              - paragraph [ref=e208]:
+                - link [ref=e209] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/wall-street-indexes-rally-iran-142240508.html
+                  - text: read more...
+            - generic [ref=e210]:
+              - heading [level=3] [ref=e636]:
+                - link [ref=e637] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/127-old-retailer-confirms-more-231700401.html
+                  - text: 127-year-old retailer confirms more cuts in 2026
+              - paragraph [ref=e213]:
+                - link [ref=e638] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/127-old-retailer-confirms-more-231700401.html
+                  - text: read more...
+            - generic [ref=e215]:
+              - heading [level=3] [ref=e216]:
+                - link [ref=e217] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/live/stock-market-today-sp-500-nasdaq-dow-climb-as-iran-says-strait-of-hormuz-completely-open-230532812.html
+                  - text: "Stock market today: S&P 500, Nasdaq, Dow climb as Iran says Strait of Hormuz 'completely open'"
+              - paragraph [ref=e218]:
+                - link [ref=e219] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/live/stock-market-today-sp-500-nasdaq-dow-climb-as-iran-says-strait-of-hormuz-completely-open-230532812.html
+                  - text: read more...
+            - generic [ref=e220]:
+              - heading [level=3] [ref=e221]:
+                - link [ref=e222] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/im-62-1-2-million-143000907.html
+                  - text: I'm 62 with $1.2 million in investments, but I don’t own my home. Can I afford to leave my husband?
+              - paragraph [ref=e223]:
+                - link [ref=e224] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/im-62-1-2-million-143000907.html
+                  - text: read more...
+            - generic [ref=e225]:
+              - heading [level=3] [ref=e647]:
+                - link [ref=e648] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/banking/article/its-not-just-gas-prices-how-the-iran-war-is-coming-for-your-grocery-bill-135110743.html
+                  - text: It's not just gas prices. How the Iran war is coming for your grocery bill.
+              - paragraph [ref=e228]:
+                - link [ref=e649] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/banking/article/its-not-just-gas-prices-how-the-iran-war-is-coming-for-your-grocery-bill-135110743.html
+                  - text: read more...
+            - generic [ref=e230]:
+              - heading [level=3] [ref=e720]:
+                - link [ref=e721] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/sectors/technology/live/tech-stocks-today-amd-and-other-tech-stocks-trade-at-record-highs-anthropic-releases-its-newest-claude-opus-model-144220487.html
+                  - text: "Tech stocks today: AMD and other tech stocks trade at record highs, Anthropic releases its newest Claude Opus model"
+              - paragraph [ref=e233]:
+                - link [ref=e722] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/sectors/technology/live/tech-stocks-today-amd-and-other-tech-stocks-trade-at-record-highs-anthropic-releases-its-newest-claude-opus-model-144220487.html
+                  - text: read more...
+            - generic [ref=e235]:
+              - 'heading "Daily Spotlight: Dollar Surges Amid Iran War" [level=3] [ref=e723]':
+                - 'link "Daily Spotlight: Dollar Surges Amid Iran War" [ref=e724] [cursor=pointer]':
+                  - /url: https://finance.yahoo.com/research/reports/ARGUS_46767_MarketOutlook_1776424971000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei
+              - paragraph [ref=e238]:
+                - link "read more..." [ref=e725] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/research/reports/ARGUS_46767_MarketOutlook_1776424971000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei
+            - generic [ref=e240]:
+              - heading [level=3] [ref=e241]:
+                - link [ref=e242] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/75-old-fast-food-chain-164700922.html
+                  - text: 75-year-old fast-food chain sues over dozens of store closures
+              - paragraph [ref=e243]:
+                - link [ref=e244] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/75-old-fast-food-chain-164700922.html
+                  - text: read more...
+            - generic [ref=e245]:
+              - heading [level=3] [ref=e246]:
+                - link [ref=e247] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/sectors/healthcare/articles/truist-adjusts-community-health-systems-142401537.html
+                  - text: Truist Adjusts Community Health Systems, Inc. (CYH) Outlook Within Broader Sector Update
+              - paragraph [ref=e248]:
+                - link [ref=e249] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/sectors/healthcare/articles/truist-adjusts-community-health-systems-142401537.html
+                  - text: read more...
+            - generic [ref=e250]:
+              - heading [level=3] [ref=e251]:
+                - link [ref=e252] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/economy/articles/logistics-layoffs-top-800-contracts-142339120.html
+                  - text: Logistics layoffs top 800 as contracts unwind across trucking, warehousing
+              - paragraph [ref=e253]:
+                - link [ref=e254] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/economy/articles/logistics-layoffs-top-800-contracts-142339120.html
+                  - text: read more...
+            - generic [ref=e255]:
+              - heading [level=3] [ref=e256]:
+                - link [ref=e257] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/wall-street-indexes-rally-iran-142240508.html
+                  - text: Wall Street indexes rally after Iran says Strait of Hormuz 'completely open'
+              - paragraph [ref=e258]:
+                - link [ref=e259] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/wall-street-indexes-rally-iran-142240508.html
+                  - text: read more...
+            - generic [ref=e260]:
+              - heading [level=3] [ref=e261]:
+                - link [ref=e262] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/127-old-retailer-confirms-more-231700401.html
+                  - text: 127-year-old retailer confirms more cuts in 2026
+              - paragraph [ref=e263]:
+                - link [ref=e264] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/127-old-retailer-confirms-more-231700401.html
+                  - text: read more...
+            - generic [ref=e265]:
+              - heading [level=3] [ref=e266]:
+                - link [ref=e267] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/live/stock-market-today-sp-500-nasdaq-dow-climb-as-iran-says-strait-of-hormuz-completely-open-230532812.html
+                  - text: "Stock market today: S&P 500, Nasdaq, Dow climb as Iran says Strait of Hormuz 'completely open'"
+              - paragraph [ref=e268]:
+                - link [ref=e269] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/live/stock-market-today-sp-500-nasdaq-dow-climb-as-iran-says-strait-of-hormuz-completely-open-230532812.html
+                  - text: read more...
+            - generic [ref=e270]:
+              - heading [level=3] [ref=e271]:
+                - link [ref=e272] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/im-62-1-2-million-143000907.html
+                  - text: I'm 62 with $1.2 million in investments, but I don’t own my home. Can I afford to leave my husband?
+              - paragraph [ref=e273]:
+                - link [ref=e274] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/im-62-1-2-million-143000907.html
+                  - text: read more...
+            - generic [ref=e275]:
+              - heading [level=3] [ref=e276]:
+                - link [ref=e277] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/banking/article/its-not-just-gas-prices-how-the-iran-war-is-coming-for-your-grocery-bill-135110743.html
+                  - text: It's not just gas prices. How the Iran war is coming for your grocery bill.
+              - paragraph [ref=e278]:
+                - link [ref=e279] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/personal-finance/banking/article/its-not-just-gas-prices-how-the-iran-war-is-coming-for-your-grocery-bill-135110743.html
+                  - text: read more...
+            - generic [ref=e280]:
+              - heading [level=3] [ref=e281]:
+                - link [ref=e282] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/sectors/technology/live/tech-stocks-today-amd-and-other-tech-stocks-trade-at-record-highs-anthropic-releases-its-newest-claude-opus-model-144220487.html
+                  - text: "Tech stocks today: AMD and other tech stocks trade at record highs, Anthropic releases its newest Claude Opus model"
+              - paragraph [ref=e283]:
+                - link [ref=e284] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/sectors/technology/live/tech-stocks-today-amd-and-other-tech-stocks-trade-at-record-highs-anthropic-releases-its-newest-claude-opus-model-144220487.html
+                  - text: read more...
+            - generic [ref=e285]:
+              - heading [level=3] [ref=e286]:
+                - link [ref=e287] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/research/reports/ARGUS_46767_MarketOutlook_1776424971000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei
+                  - text: "Daily Spotlight: Dollar Surges Amid Iran War"
+              - paragraph [ref=e288]:
+                - link [ref=e289] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/research/reports/ARGUS_46767_MarketOutlook_1776424971000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei
+                  - text: read more...
+            - generic [ref=e290]:
+              - heading [level=3] [ref=e291]:
+                - link [ref=e292] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/75-old-fast-food-chain-164700922.html
+                  - text: 75-year-old fast-food chain sues over dozens of store closures
+              - paragraph [ref=e293]:
+                - link [ref=e294] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/75-old-fast-food-chain-164700922.html
+                  - text: read more...
+            - generic [ref=e295]:
+              - heading [level=3] [ref=e296]:
+                - link [ref=e297] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/sectors/healthcare/articles/truist-adjusts-community-health-systems-142401537.html
+                  - text: Truist Adjusts Community Health Systems, Inc. (CYH) Outlook Within Broader Sector Update
+              - paragraph [ref=e298]:
+                - link [ref=e299] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/sectors/healthcare/articles/truist-adjusts-community-health-systems-142401537.html
+                  - text: read more...
+            - generic [ref=e300]:
+              - heading [level=3] [ref=e301]:
+                - link [ref=e302] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/economy/articles/logistics-layoffs-top-800-contracts-142339120.html
+                  - text: Logistics layoffs top 800 as contracts unwind across trucking, warehousing
+              - paragraph [ref=e303]:
+                - link [ref=e304] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/economy/articles/logistics-layoffs-top-800-contracts-142339120.html
+                  - text: read more...
+            - generic [ref=e305]:
+              - heading [level=3] [ref=e306]:
+                - link [ref=e307] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/wall-street-indexes-rally-iran-142240508.html
+                  - text: Wall Street indexes rally after Iran says Strait of Hormuz 'completely open'
+              - paragraph [ref=e308]:
+                - link [ref=e309] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/markets/stocks/articles/wall-street-indexes-rally-iran-142240508.html
+                  - text: read more...
+        - generic [ref=e311]:
+          - generic [ref=e315]:
+            - generic [ref=e316]: 
+            - text: You have unread messages!
+          - table [ref=e318]:
+            - rowgroup [ref=e319]:
+              - row "Date Message" [ref=e320]:
+                - columnheader "Date" [ref=e321]
+                - columnheader "Message" [ref=e322]
+            - rowgroup [ref=e323]:
+              - row "4/13/2026 9:08:51 AM Welcome to WallStreetSurvivor!" [ref=e324]:
+                - cell "4/13/2026 9:08:51 AM" [ref=e325]
+                - cell "Welcome to WallStreetSurvivor!" [ref=e326]:
+                  - link "Welcome to WallStreetSurvivor!" [ref=e327] [cursor=pointer]:
+                    - /url: /forum/messages?messageId=3906300
+        - generic [ref=e330]:
+          - generic [ref=e334]:
+            - generic [ref=e335]: 
+            - text: Announcements
+          - generic [ref=e336]:
+            - paragraph
+            - generic [ref=e337]:
+              - text: Join WallStreetSurvivor on Facebook for the latest updates, market insights, and contest news.
+              - link "Follow us on Facebook" [ref=e338] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStSurvivor
+            - paragraph
+        - generic [ref=e340]:
+          - generic [ref=e344]:
+            - generic [ref=e345]: 
+            - text: Facebook Feed
+          - generic [ref=e346]:
+            - tablist:
+              - generic:
+                - iframe
+        - generic [ref=e348]:
+          - generic [ref=e352]:
+            - generic [ref=e353]: $
+            - text: Investing Tip
+          - iframe [ref=e357]:
+            - generic [ref=f18e1]:
+              - link [ref=f18e2] [cursor=pointer]:
+                - /url: https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjst-QvMYoGx52so5HBm_8J08CDnNNve-Q3rcXZm7EIQaZ33C7P2SmcmZR2dxD7LaHP7vJnEzCSH5rsaxPpiVarfknEpWPGfnHqsu-9a17_kOszCi_wMWAgQsJYU-3IW9w2wTr7FgcOCzKepoG6O6qkBTuMJZdx0JhJl6FRr5CHnzOZTNQRoB0E15E-akC2mNegaozl-p3HGGGALshU2QFzLXxQ_y936x-4N9lPwZ1RlwF3561lkgzPFt2cjRSB0XbJjxPbue2z3PefyxQL7CrykBy20ngS6DHVgDwXH-lgngrGjFQZtxVC2PUGNzH49JKgbSlhG7rRn9VSDXSwV5IexcxF2g-mYS0jwYsQ5xLTBU1VKXsK1_vLG3uIYcyExIMcfDGKg0_iW7mopBMQCeZqw_xWGQxLLNCSqb&sai=AMfl-YS8dGcIdYFM9YxX0b3iB2SUcIdRbpREiQxQP1afH5aM39-DtSM4lFHSuMGs6YrdRB2mFb0ENpiY0Hrk33V7sEwE1ng0tdBVh0SYVus7KwKNtkYD4ss8yZAjrMkMtD_13_N9Ca61gzSlMMpP38-Ob1J3_-TU4qG_EmrDIDONpC2MJ_V907BCHLEQGUz9LpL7zQV6AO3HJVLCataEf0YxY7m1HuVRNhUV-qmGTh5ADQ7ayjk03wqTLImAyb_oBRwHheXP5ZTH3yaBIunsUXbupoZfkM_i-cIMxSJKqjYCgNE-9X96vmEs3l-sFPqv3Fr3hirdWx4&sig=Cg0ArKJSzNRDPn6vHXHV&fbs_aeid=%5Bgw_fbsaeid%5D&adurl=https://www.mzemndf8trk.com/RTN27/TZW7X/%3Fuid%3D13%26source_id%3DWSSBlog%26sub1%3DGAM
+              - img [ref=f18e6] [cursor=pointer]
+              - button [ref=f18e8] [cursor=pointer]:
+                - img [ref=f18e9]
+        - generic [ref=e359]:
+          - generic [ref=e361]:
+            - generic [ref=e363]:
+              - generic [ref=e364]: 
+              - text: Top 10 Courses
+            - link "View" [ref=e366] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/courses/
+          - generic [ref=e367]:
+            - generic [ref=e368]:
+              - 'link "1 Stock Market for Beginners: Here are the Basics" [ref=e369] [cursor=pointer]':
+                - /url: https://www.wallstreetsurvivor.com/stock-market-for-beginners/
+                - generic [ref=e370]:
+                  - generic [ref=e371]:
+                    - generic [ref=e372]: "1"
+                    - img [ref=e373]
+                  - strong [ref=e375]: "Stock Market for Beginners: Here are the Basics"
+              - 'link "2 Beginner Investing: 10 Steps to Start Investing the Right Way" [ref=e376] [cursor=pointer]':
+                - /url: https://www.wallstreetsurvivor.com/beginner-investing-10-steps-to-start-investing/
+                - generic [ref=e377]:
+                  - generic [ref=e378]:
+                    - generic [ref=e379]: "2"
+                    - img [ref=e380]
+                  - strong [ref=e382]: "Beginner Investing: 10 Steps to Start Investing the Right Way"
+              - link "3 Fundamental Analysis" [ref=e383] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/fundamental-analysis/
+                - generic [ref=e384]:
+                  - generic [ref=e385]:
+                    - generic [ref=e386]: "3"
+                    - img [ref=e387]
+                  - strong [ref=e389]: Fundamental Analysis
+              - link "4 How to Value a Stock" [ref=e390] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-value-a-stock/
+                - generic [ref=e391]:
+                  - generic [ref=e392]:
+                    - generic [ref=e393]: "4"
+                    - img [ref=e394]
+                  - strong [ref=e396]: How to Value a Stock
+              - link "5 How to Invest with Little Money" [ref=e397] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-invest-with-little-money/
+                - generic [ref=e398]:
+                  - generic [ref=e399]:
+                    - generic [ref=e400]: "5"
+                    - img [ref=e401]
+                  - strong [ref=e403]: How to Invest with Little Money
+              - link "6 Value Investing for Beginners" [ref=e404] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/value-investing/
+                - generic [ref=e405]:
+                  - generic [ref=e406]:
+                    - generic [ref=e407]: "6"
+                    - img [ref=e408]
+                  - strong [ref=e410]: Value Investing for Beginners
+              - 'link "7 Stock Ratings: How to Know What Stocks to Invest in" [ref=e411] [cursor=pointer]':
+                - /url: https://www.wallstreetsurvivor.com/stock-ratings/
+                - generic [ref=e412]:
+                  - generic [ref=e413]:
+                    - generic [ref=e414]: "7"
+                    - img [ref=e415]
+                  - strong [ref=e417]: "Stock Ratings: How to Know What Stocks to Invest in"
+              - link "8 Millionaire Crash Course" [ref=e418] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/millionaire-crash-course/
+                - generic [ref=e419]:
+                  - generic [ref=e420]:
+                    - generic [ref=e421]: "8"
+                    - img [ref=e422]
+                  - strong [ref=e424]: Millionaire Crash Course
+              - link "9 The Best Investment Apps of 2020" [ref=e425] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-apps/
+                - generic [ref=e426]:
+                  - generic [ref=e427]:
+                    - generic [ref=e428]: "9"
+                    - img [ref=e429]
+                  - strong [ref=e431]: The Best Investment Apps of 2020
+              - link "10 Best Investment Newsletters & Best Stock Newsletters of 2020" [ref=e432] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+                - generic [ref=e433]:
+                  - generic [ref=e434]:
+                    - generic [ref=e435]: "10"
+                    - img [ref=e436]
+                  - strong [ref=e438]: Best Investment Newsletters & Best Stock Newsletters of 2020
+            - link "View all courses" [ref=e440] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/courses/
+        - generic [ref=e442]:
+          - generic [ref=e446]:
+            - generic [ref=e447]: 
+            - text: Top 10 Videos
+          - iframe [ref=e450]:
+            - generic [ref=f16e7]:
+              - region "Previous" [ref=f16e8] [cursor=pointer]: Previous
+              - generic [ref=f16e10]:
+                - generic [ref=f16e14]:
+                  - iframe [ref=f16e16]:
+                    - generic [active] [ref=f139e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f139e3]
+                      - generic [ref=f139e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f139e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f139e12] [cursor=pointer]
+                            - generic [ref=f139e19]:
+                              - generic [ref=f139e20]:
+                                - link "How to Trade Stocks on Wall Street Survivor" [ref=f139e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=SeFLgQaSofw
+                                - link "Wall Street Survivor" [ref=f139e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f139e23]: Wall Street Survivor
+                              - generic [ref=f139e24]:
+                                - button [ref=f139e25] [cursor=pointer]
+                                - generic [ref=f139e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e17] [cursor=pointer]:
+                    - region [ref=f16e19]: How to Trade Stocks on Wall Street Survivor
+                - generic [ref=f16e23]:
+                  - iframe [ref=f16e25]:
+                    - generic [active] [ref=f129e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f129e3]
+                      - generic [ref=f129e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f129e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f129e12] [cursor=pointer]
+                            - generic [ref=f129e19]:
+                              - generic [ref=f129e20]:
+                                - link "How to Use Order Types on Wall Street Survivor" [ref=f129e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=vf7yMNsEBac
+                                - link "Wall Street Survivor" [ref=f129e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f129e23]: Wall Street Survivor
+                              - generic [ref=f129e24]:
+                                - button [ref=f129e25] [cursor=pointer]
+                                - generic [ref=f129e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button "How to Use Order Types on Wall Street Survivor" [ref=f16e26] [cursor=pointer]:
+                    - region "How to Use Order Types on Wall Street Survivor" [ref=f16e28]
+                - generic [ref=f16e32]:
+                  - iframe [ref=f16e34]:
+                    - generic [active] [ref=f130e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f130e3]
+                      - generic [ref=f130e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f130e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f130e12] [cursor=pointer]
+                            - generic [ref=f130e19]:
+                              - generic [ref=f130e20]:
+                                - link "How to Use Research Tools on Wall Street Survivor" [ref=f130e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=8dDQPJXob0w
+                                - link "Wall Street Survivor" [ref=f130e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f130e23]: Wall Street Survivor
+                              - generic [ref=f130e24]:
+                                - button [ref=f130e25] [cursor=pointer]
+                                - generic [ref=f130e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e35] [cursor=pointer]:
+                    - region [ref=f16e37]: How to Use Research Tools on Wall Street Survivor
+                - generic [ref=f16e41]:
+                  - iframe [ref=f16e43]:
+                    - generic [active] [ref=f131e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f131e3]
+                      - generic [ref=f131e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f131e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f131e12] [cursor=pointer]
+                            - generic [ref=f131e19]:
+                              - generic [ref=f131e20]:
+                                - link "Managing Your Portfolio on Wall Street Survivor" [ref=f131e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=Y0BLqa21N1g
+                                - link "Wall Street Survivor" [ref=f131e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f131e23]: Wall Street Survivor
+                              - generic [ref=f131e24]:
+                                - button [ref=f131e25] [cursor=pointer]
+                                - generic [ref=f131e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e44] [cursor=pointer]:
+                    - region [ref=f16e46]: Managing Your Portfolio on Wall Street Survivor
+                - generic [ref=f16e50]:
+                  - iframe [ref=f16e52]:
+                    - generic [active] [ref=f132e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f132e3]
+                      - generic [ref=f132e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f132e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f132e12] [cursor=pointer]
+                            - generic [ref=f132e19]:
+                              - generic [ref=f132e20]:
+                                - link "The Story Behind The Motley Fool Name | David Gardner (The Motley Fool)" [ref=f132e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=KX-aZIkQ0lI
+                                - link "Wall Street Survivor" [ref=f132e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f132e23]: Wall Street Survivor
+                              - generic [ref=f132e24]:
+                                - button [ref=f132e25] [cursor=pointer]
+                                - generic [ref=f132e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e53] [cursor=pointer]:
+                    - region [ref=f16e55]: The Story Behind The Motley Fool Name | David Gardner (…
+                - generic [ref=f16e59]:
+                  - iframe [ref=f16e61]:
+                    - generic [active] [ref=f133e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f133e3]
+                      - generic [ref=f133e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f133e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f133e12] [cursor=pointer]
+                            - generic [ref=f133e19]:
+                              - generic [ref=f133e20]:
+                                - link "Why Losing Is Part of Winning in Investing | David Gardner (The Motley Fool)" [ref=f133e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=cJFbe2J4Vs4
+                                - link "Wall Street Survivor" [ref=f133e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f133e23]: Wall Street Survivor
+                              - generic [ref=f133e24]:
+                                - button [ref=f133e25] [cursor=pointer]
+                                - generic [ref=f133e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e62] [cursor=pointer]:
+                    - region [ref=f16e64]: Why Losing Is Part of Winning in Investing | David Gard…
+                - generic [ref=f16e68]:
+                  - iframe [ref=f16e70]:
+                    - generic [active] [ref=f134e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f134e3]
+                      - generic [ref=f134e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f134e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f134e12] [cursor=pointer]
+                            - generic [ref=f134e19]:
+                              - generic [ref=f134e20]:
+                                - link "The 3-Year Rule for Investors | David Gardner (The Motley Fool)" [ref=f134e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=kefsPQpt4O4
+                                - link "Wall Street Survivor" [ref=f134e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f134e23]: Wall Street Survivor
+                              - generic [ref=f134e24]:
+                                - button [ref=f134e25] [cursor=pointer]
+                                - generic [ref=f134e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e71] [cursor=pointer]:
+                    - region [ref=f16e73]: The 3-Year Rule for Investors | David Gardner (The Motl…
+                - generic [ref=f16e77]:
+                  - iframe [ref=f16e79]:
+                    - generic [active] [ref=f135e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f135e3]
+                      - generic [ref=f135e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f135e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f135e12] [cursor=pointer]
+                            - generic [ref=f135e19]:
+                              - generic [ref=f135e20]:
+                                - link "Investing Is ALWAYS Long-Term | David Gardner (The Motley Fool)" [ref=f135e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=UT7SdjayZCo
+                                - link "Wall Street Survivor" [ref=f135e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f135e23]: Wall Street Survivor
+                              - generic [ref=f135e24]:
+                                - button [ref=f135e25] [cursor=pointer]
+                                - generic [ref=f135e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e80] [cursor=pointer]:
+                    - region [ref=f16e82]: Investing Is ALWAYS Long-Term | David Gardner (The Motl…
+                - generic [ref=f16e86]:
+                  - iframe [ref=f16e88]:
+                    - generic [active] [ref=f136e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f136e3]
+                      - generic [ref=f136e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f136e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f136e12] [cursor=pointer]
+                            - generic [ref=f136e19]:
+                              - generic [ref=f136e20]:
+                                - link "The Best Investing Advice for Young People | David Gardner (The Motley Fool)" [ref=f136e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=Y0cqtzMG9J8
+                                - link "Wall Street Survivor" [ref=f136e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f136e23]: Wall Street Survivor
+                              - generic [ref=f136e24]:
+                                - button [ref=f136e25] [cursor=pointer]
+                                - generic [ref=f136e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e89] [cursor=pointer]:
+                    - region [ref=f16e91]: The Best Investing Advice for Young People | David Gard…
+                - generic [ref=f16e95]:
+                  - iframe [ref=f16e97]:
+                    - generic [active] [ref=f137e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f137e3]
+                      - generic [ref=f137e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f137e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f137e12] [cursor=pointer]
+                            - generic [ref=f137e19]:
+                              - generic [ref=f137e20]:
+                                - link "How to Trade Options on Wall Street Survivor" [ref=f137e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=DWmpE-BrYe0
+                                - link "Wall Street Survivor" [ref=f137e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f137e23]: Wall Street Survivor
+                              - generic [ref=f137e24]:
+                                - button [ref=f137e25] [cursor=pointer]
+                                - generic [ref=f137e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e98] [cursor=pointer]:
+                    - region [ref=f16e100]: How to Trade Options on Wall Street Survivor
+                - generic [ref=f16e104]:
+                  - iframe [ref=f16e106]:
+                    - generic [active] [ref=f138e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f138e3]
+                      - generic [ref=f138e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f138e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f138e12] [cursor=pointer]
+                            - generic [ref=f138e19]:
+                              - generic [ref=f138e20]:
+                                - link "How to Trade Stocks on Wall Street Survivor" [ref=f138e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=SeFLgQaSofw
+                                - link "Wall Street Survivor" [ref=f138e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f138e23]: Wall Street Survivor
+                              - generic [ref=f138e24]:
+                                - button [ref=f138e25] [cursor=pointer]
+                                - generic [ref=f138e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e107] [cursor=pointer]:
+                    - region [ref=f16e109]: How to Trade Stocks on Wall Street Survivor
+                - generic [ref=f16e113]:
+                  - iframe [ref=f16e115]:
+                    - generic [active] [ref=f140e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f140e3]
+                      - generic [ref=f140e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f140e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f140e12] [cursor=pointer]
+                            - generic [ref=f140e19]:
+                              - generic [ref=f140e20]:
+                                - link "How to Use Order Types on Wall Street Survivor" [ref=f140e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=vf7yMNsEBac
+                                - link "Wall Street Survivor" [ref=f140e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f140e23]: Wall Street Survivor
+                              - generic [ref=f140e24]:
+                                - button [ref=f140e25] [cursor=pointer]
+                                - generic [ref=f140e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e116] [cursor=pointer]:
+                    - region [ref=f16e118]: How to Use Order Types on Wall Street Survivor
+                - generic [ref=f16e122]:
+                  - iframe [ref=f16e124]:
+                    - generic [active] [ref=f141e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f141e3]
+                      - generic [ref=f141e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f141e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f141e12] [cursor=pointer]
+                            - generic [ref=f141e19]:
+                              - generic [ref=f141e20]:
+                                - link "How to Use Research Tools on Wall Street Survivor" [ref=f141e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=8dDQPJXob0w
+                                - link "Wall Street Survivor" [ref=f141e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f141e23]: Wall Street Survivor
+                              - generic [ref=f141e24]:
+                                - button [ref=f141e25] [cursor=pointer]
+                                - generic [ref=f141e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e125] [cursor=pointer]:
+                    - region [ref=f16e127]: How to Use Research Tools on Wall Street Survivor
+                - generic [ref=f16e131]:
+                  - iframe [ref=f16e133]:
+                    - generic [active] [ref=f142e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f142e3]
+                      - generic [ref=f142e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f142e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f142e12] [cursor=pointer]
+                            - generic [ref=f142e19]:
+                              - generic [ref=f142e20]:
+                                - link "Managing Your Portfolio on Wall Street Survivor" [ref=f142e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=Y0BLqa21N1g
+                                - link "Wall Street Survivor" [ref=f142e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f142e23]: Wall Street Survivor
+                              - generic [ref=f142e24]:
+                                - button [ref=f142e25] [cursor=pointer]
+                                - generic [ref=f142e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e134] [cursor=pointer]:
+                    - region [ref=f16e136]: Managing Your Portfolio on Wall Street Survivor
+                - generic [ref=f16e140]:
+                  - iframe [ref=f16e142]:
+                    - generic [active] [ref=f143e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f143e3]
+                      - generic [ref=f143e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f143e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f143e12] [cursor=pointer]
+                            - generic [ref=f143e19]:
+                              - generic [ref=f143e20]:
+                                - link "The Story Behind The Motley Fool Name | David Gardner (The Motley Fool)" [ref=f143e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=KX-aZIkQ0lI
+                                - link "Wall Street Survivor" [ref=f143e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f143e23]: Wall Street Survivor
+                              - generic [ref=f143e24]:
+                                - button [ref=f143e25] [cursor=pointer]
+                                - generic [ref=f143e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e143] [cursor=pointer]:
+                    - region [ref=f16e145]: The Story Behind The Motley Fool Name | David Gardner (…
+                - generic [ref=f16e149]:
+                  - iframe [ref=f16e151]:
+                    - generic [active] [ref=f144e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f144e3]
+                      - generic [ref=f144e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f144e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f144e12] [cursor=pointer]
+                            - generic [ref=f144e19]:
+                              - generic [ref=f144e20]:
+                                - link "Why Losing Is Part of Winning in Investing | David Gardner (The Motley Fool)" [ref=f144e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=cJFbe2J4Vs4
+                                - link "Wall Street Survivor" [ref=f144e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f144e23]: Wall Street Survivor
+                              - generic [ref=f144e24]:
+                                - button [ref=f144e25] [cursor=pointer]
+                                - generic [ref=f144e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e152] [cursor=pointer]:
+                    - region [ref=f16e154]: Why Losing Is Part of Winning in Investing | David Gard…
+                - generic [ref=f16e158]:
+                  - iframe [ref=f16e160]:
+                    - generic [active] [ref=f145e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f145e3]
+                      - generic [ref=f145e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f145e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f145e12] [cursor=pointer]
+                            - generic [ref=f145e19]:
+                              - generic [ref=f145e20]:
+                                - link "The 3-Year Rule for Investors | David Gardner (The Motley Fool)" [ref=f145e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=kefsPQpt4O4
+                                - link "Wall Street Survivor" [ref=f145e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f145e23]: Wall Street Survivor
+                              - generic [ref=f145e24]:
+                                - button [ref=f145e25] [cursor=pointer]
+                                - generic [ref=f145e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e161] [cursor=pointer]:
+                    - region [ref=f16e163]: The 3-Year Rule for Investors | David Gardner (The Motl…
+                - generic [ref=f16e167]:
+                  - iframe [ref=f16e169]:
+                    - generic [active] [ref=f146e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f146e3]
+                      - generic [ref=f146e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f146e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f146e12] [cursor=pointer]
+                            - generic [ref=f146e19]:
+                              - generic [ref=f146e20]:
+                                - link "Investing Is ALWAYS Long-Term | David Gardner (The Motley Fool)" [ref=f146e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=UT7SdjayZCo
+                                - link "Wall Street Survivor" [ref=f146e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f146e23]: Wall Street Survivor
+                              - generic [ref=f146e24]:
+                                - button [ref=f146e25] [cursor=pointer]
+                                - generic [ref=f146e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e170] [cursor=pointer]:
+                    - region [ref=f16e172]: Investing Is ALWAYS Long-Term | David Gardner (The Motl…
+                - generic [ref=f16e176]:
+                  - iframe [ref=f16e178]:
+                    - generic [active] [ref=f147e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f147e3]
+                      - generic [ref=f147e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f147e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f147e12] [cursor=pointer]
+                            - generic [ref=f147e19]:
+                              - generic [ref=f147e20]:
+                                - link "The Best Investing Advice for Young People | David Gardner (The Motley Fool)" [ref=f147e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=Y0cqtzMG9J8
+                                - link "Wall Street Survivor" [ref=f147e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f147e23]: Wall Street Survivor
+                              - generic [ref=f147e24]:
+                                - button [ref=f147e25] [cursor=pointer]
+                                - generic [ref=f147e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e179] [cursor=pointer]:
+                    - region [ref=f16e181]: The Best Investing Advice for Young People | David Gard…
+                - generic [ref=f16e185]:
+                  - iframe [ref=f16e187]:
+                    - generic [active] [ref=f148e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f148e3]
+                      - generic [ref=f148e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f148e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f148e12] [cursor=pointer]
+                            - generic [ref=f148e19]:
+                              - generic [ref=f148e20]:
+                                - link "How to Trade Options on Wall Street Survivor" [ref=f148e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=DWmpE-BrYe0
+                                - link "Wall Street Survivor" [ref=f148e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f148e23]: Wall Street Survivor
+                              - generic [ref=f148e24]:
+                                - button [ref=f148e25] [cursor=pointer]
+                                - generic [ref=f148e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e188] [cursor=pointer]:
+                    - region [ref=f16e190]: How to Trade Options on Wall Street Survivor
+                - generic [ref=f16e194]:
+                  - iframe [ref=f16e196]:
+                    - generic [active] [ref=f149e1]:
+                      - generic "Lecteur vidéo YouTube" [ref=f149e3]
+                      - generic [ref=f149e5]:
+                        - generic:
+                          - generic:
+                            - button "Regarder la vidéo" [ref=f149e10] [cursor=pointer]
+                            - button "Masquer les commandes du lecteur" [ref=f149e12] [cursor=pointer]
+                            - generic [ref=f149e19]:
+                              - generic [ref=f149e20]:
+                                - link "How to Trade Stocks on Wall Street Survivor" [ref=f149e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=SeFLgQaSofw
+                                - link "Wall Street Survivor" [ref=f149e22] [cursor=pointer]:
+                                  - /url: /channel/UC6jjT2iyziAZ8vX6Ye3T4Iw
+                                  - generic [ref=f149e23]: Wall Street Survivor
+                              - generic [ref=f149e24]:
+                                - button [ref=f149e25] [cursor=pointer]
+                                - generic [ref=f149e27]:
+                                  - generic: Wall Street Survivor
+                                  - generic: 98,8 k abonnés
+                  - button [ref=f16e197] [cursor=pointer]:
+                    - region [ref=f16e199]: How to Trade Stocks on Wall Street Survivor
+              - region "Next" [ref=f16e200] [cursor=pointer]: Next
+        - generic [ref=e452]:
+          - generic [ref=e456]:
+            - generic [ref=e457]: $
+            - text: Best Offer of the Month
+          - iframe [ref=e461]:
+            - generic [ref=f25e1]:
+              - link [ref=f25e2] [cursor=pointer]:
+                - /url: https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjsu1Xeg8HA9_XZYH2qFxZRX_Gv-ErDGnjJ7m3KxyINGlNTBlW1HC4OdAOhKINGmg1eJm7YgbNINR2dVvX8A8c2ykkxLMw1OCnLdOrpMXUTGBd-h8zw7xB75ZuSmYQ4Z3abUiXxhVmj1BgZRNordn12tobhgStG-5NtnoWwaFUDjgVeIea2hYZvgkn_x1xUPdPE6VWU3LUclbaG90lmT8NgrnraWosheK9Pn72wHISt2hjw-JorwMLnwlJuyDqnrHaU6QnV-JxMFstXwqdl57k1hbH7zwcF4bM5zMK5cXl30Xu35VnRz_YmwQYIRwWx9sZ81c3S5AfKlNI045AB12eL05bdA3yc3ssQJ2vBYfZyC_wb1sA2K72V2TP8io3JdnKAfdKvY-S9n30FQuc_YaCYjal42fbl_q3A&sai=AMfl-YRPeej29yjxfm0fy1DOlUtMPdW6Y89Hx5j5ddDOtkvAulBzdT2sRdi5yspdI3hU4JHweu0t5WbdKTLyM77xiMl47RiXTDMaXL6IadhZnzx3gRDFqgyv_qIWAYiHbHsmyzCq6fLBJNzx4blxgqzooEsVu9kWtQBGxdV2g-O_92hXPWPuJsZemFI5HsmbgvEYylND3nQWRQP2yWKDZ158y1ayrLTuyIq9odZfApe0zXV6ab8QA_cfqpZALQH4QTPZgKGam8sTC8h6aTbKtxPPaJB5DWTivBfH9kOAZn_7Q1T4gxx7KMHntIj9fXs3oJtqWxU3QcM&sig=Cg0ArKJSzOLa4ADYSMQ6&fbs_aeid=%5Bgw_fbsaeid%5D&adurl=https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/%3Futm_source%3Dwss%26utm_medium%3Dgam%26utm_campaign%3Dwss-cb-gam-2
+              - img [ref=f25e6] [cursor=pointer]
+              - button [ref=f25e8] [cursor=pointer]:
+                - img [ref=f25e9]
+    - generic [ref=e465]:
+      - strong [ref=e466]: Notice
+      - paragraph [ref=e467]:
+        - text: This website uses cookies, for more information please visit our
+        - link "Privacy Policy" [ref=e468] [cursor=pointer]:
+          - /url: https://content.stocktrak.com/privacy-policy/
+          - strong [ref=e469]: Privacy Policy
+      - generic [ref=e470] [cursor=pointer]: Ok
+  - contentinfo [ref=e471]:
+    - generic [ref=e473]:
+      - complementary [ref=e475]:
+        - figure [ref=e476]:
+          - link "WallStreetSurvivor logo" [ref=e477] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e478]
+      - generic [ref=e479]:
+        - complementary [ref=e480]:
+          - heading "Our Platform" [level=3] [ref=e481]
+        - complementary [ref=e482]:
+          - list [ref=e483]:
+            - listitem [ref=e484]:
+              - link "Stock Market Simulator" [ref=e485] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e486]:
+              - link "Investing Courses for Beginners" [ref=e487] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/courses/
+            - listitem [ref=e488]:
+              - link "Best Stocks to Buy Now" [ref=e489] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e490]:
+              - link "How to Invest Videos" [ref=e491] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+            - listitem [ref=e492]:
+              - link "Free Online Investing Course" [ref=e493] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e494]:
+              - link "Financial Literacy Game for Students" [ref=e495] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e496]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e497] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e498]:
+              - link "Crypto Paper Trading" [ref=e499] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e500]:
+              - link "About WallStreetSurvivor" [ref=e501] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+      - generic [ref=e502]:
+        - complementary [ref=e503]:
+          - heading "Review Center" [level=3] [ref=e504]
+        - complementary [ref=e505]:
+          - list [ref=e506]:
+            - listitem [ref=e507]:
+              - link "Motley Fool Review" [ref=e508] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e509]:
+              - link "Seeking Alpha Review" [ref=e510] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e511]:
+              - link "Alpha Picks Review" [ref=e512] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e513]:
+              - link "Moby Stocks Review" [ref=e514] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e515]:
+              - link "Wealthsimple Review" [ref=e516] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/wealthsimple-review/
+            - listitem [ref=e517]:
+              - link "Is Robinhood Safe to Use?" [ref=e518] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e519]:
+              - link "Rule Breakers Review" [ref=e520] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e521]:
+              - link "Best Investment Newsletters" [ref=e522] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e523]:
+              - link "Best Investing Apps" [ref=e524] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e525]:
+              - link "Best Motley Fool Discount Code" [ref=e526] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e527]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e528] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e529]:
+              - link "Best Tipranks Discount Code" [ref=e530] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e531]:
+              - link "Is Coinbase Safe?" [ref=e532] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e533]:
+              - link "Free Crypto with Coinbase" [ref=e534] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e535]:
+              - link "Best Stock Picking Service" [ref=e536] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+      - generic [ref=e537]:
+        - complementary [ref=e538]:
+          - heading "Corporate Services" [level=3] [ref=e539]
+        - complementary [ref=e540]:
+          - list [ref=e541]:
+            - listitem [ref=e542]:
+              - link "White Label Stock Market Games" [ref=e543] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e544]:
+              - link "White Label Virtual Crypto Trading" [ref=e545] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e546]:
+              - link "Employee Financial Wellness" [ref=e547] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e548]:
+              - link "Sponsor a College or High School" [ref=e549] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e550]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e551] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e552]:
+          - heading "Our Company" [level=3] [ref=e553]
+        - complementary [ref=e554]:
+          - list [ref=e555]:
+            - listitem [ref=e556]:
+              - link "Contact Us" [ref=e557] [cursor=pointer]:
+                - /url: mailto:support@wallstreetsurvivor.com
+            - listitem [ref=e558]:
+              - link "About Us" [ref=e559] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/
+            - listitem [ref=e560]:
+              - link "Motley Fool Review" [ref=e561] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e562]:
+              - link "Privacy Policy" [ref=e563] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e564]:
+              - link "Terms and Conditions" [ref=e565] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e566]:
+              - link "Advertise with Us" [ref=e567] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e568]:
+        - complementary [ref=e569]:
+          - heading "Family of Sites" [level=3] [ref=e570]:
+            - strong [ref=e571]: Family of Sites
+        - complementary [ref=e572]:
+          - figure [ref=e573]:
+            - link "StockTrak logo" [ref=e574] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e575]
+        - complementary [ref=e576]:
+          - figure [ref=e577]:
+            - link "PersonalFinanceLab logo" [ref=e578] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e579]
+        - complementary [ref=e580]:
+          - figure [ref=e581]:
+            - link "WallStreetSurvivor logo" [ref=e582] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Practice stock trading site" [ref=e583]
+        - complementary [ref=e584]:
+          - figure [ref=e585]:
+            - link "HowTheMarketWorks logo" [ref=e586] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free stock market game for students" [ref=e587]
+        - complementary [ref=e588]:
+          - link "Global Virtual Stock Game" [ref=e589] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e590] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - generic "Site" [ref=e591]:
+      - generic [ref=e592]:
+        - generic [ref=e593]:
+          - complementary [ref=e594]:
+            - heading "Connect With Us" [level=2] [ref=e595]
+          - complementary:
+            - figure [ref=e596]:
+              - link "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e597] [cursor=pointer]:
+                - /url: https://www.instagram.com/wallstreetsurvivor/
+                - img "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e598]
+          - complementary:
+            - figure [ref=e599]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e600] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e601]
+          - complementary:
+            - figure [ref=e602]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e603] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e604]
+          - complementary:
+            - figure [ref=e605]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e606] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e607]
+        - generic [ref=e608]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2025 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.
+  - text: 
+  - img [ref=e612]
+  - generic [ref=e644] [cursor=pointer]:
+    - generic [ref=e645]:
+      - text: 
+      - generic "We're Online!" [ref=e646]
+    - text: 
+  - generic [ref=e654]:
+    - img
+  - generic:
+    - generic:
+      - iframe

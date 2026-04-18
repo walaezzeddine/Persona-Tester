@@ -1,0 +1,687 @@
+- generic [ref=e1]:
+  - generic [ref=e445]:
+    - iframe [ref=e675]:
+      - insertion [ref=f234e3]:
+        - iframe [ref=f234e5]:
+          
+    - generic [ref=e449] [cursor=pointer]: X
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4] [cursor=pointer]:
+        - generic [ref=e5]: 
+        - text: Run Tour
+      - button "Select Language" [ref=e6] [cursor=pointer]:
+        - text: About
+        - generic [ref=e7]: 
+      - generic "Challenges" [ref=e8] [cursor=pointer]:
+        - text: Contests
+        - generic [ref=e9]: 
+    - generic [ref=e11]:
+      - generic "Username" [ref=e12]: walaezzedine
+      - link "Unread Messages" [ref=e13] [cursor=pointer]:
+        - /url: /forum/messages
+        - generic [ref=e14]: 
+        - generic "Number of Unread Messages" [ref=e15]: "1"
+      - combobox "Tournament Select" [ref=e17]:
+        - option "My Practice Portfolio" [selected]
+      - link "Logout" [ref=e18] [cursor=pointer]:
+        - /url: /logout
+  - navigation [ref=e19]:
+    - menubar [ref=e21]:
+      - menuitem "Logo" [ref=e22]:
+        - link "Logo" [ref=e23] [cursor=pointer]:
+          - /url: /home
+          - img "Logo" [ref=e24]
+    - menubar [ref=e26]:
+      - menuitem "Dashboard" [ref=e27]:
+        - generic [ref=e28] [cursor=pointer]: Dashboard 
+        - text: 
+      - menuitem "Stock Game" [ref=e29]:
+        - generic [ref=e30] [cursor=pointer]: Stock Game 
+      - menuitem "Investing Research" [ref=e31]:
+        - generic "Investing Research" [ref=e32] [cursor=pointer]: Investing Research 
+      - menuitem "Courses" [ref=e33]:
+        - generic [ref=e34] [cursor=pointer]: Courses 
+      - menuitem "Getting Started" [ref=e35]:
+        - generic [ref=e36] [cursor=pointer]: Getting Started 
+  - generic [ref=e37]:
+    - generic [ref=e38]:
+      - generic [ref=e40]:
+        - generic [ref=e42]:
+          - text: Portfolio Value
+          - strong [ref=e43]: $99,970.57
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - text: Return Percentage
+            - strong [ref=e46]: 0,03%
+            - generic [ref=e47]: 
+          - generic [ref=e48]:
+            - text: Cash Balance
+            - strong [ref=e49]: $89,176.09
+          - generic [ref=e50]:
+            - text: Buying Power
+            - strong [ref=e51]: $189,151.58
+          - generic [ref=e52]:
+            - text: Current Rank
+            - strong [ref=e53]: 5 500/73587
+      - generic [ref=e54]:
+        - generic [ref=e57]:
+          - generic [ref=e59]:
+            - generic [ref=e60]:
+              - generic [ref=e61]: DOW JONES ETF
+              - generic [ref=e62]: "-.01%"
+              - generic [ref=e64]: 
+            - img "Chart" [ref=e451]
+          - generic [ref=e66]:
+            - generic [ref=e67]:
+              - generic [ref=e68]: S&P500 ETF
+              - generic [ref=e69]: .04%
+              - generic [ref=e71]: 
+            - img "Chart" [ref=e453]
+          - generic [ref=e73]:
+            - generic [ref=e74]:
+              - generic [ref=e75]: NASDAQ ETF
+              - generic [ref=e76]: .34%
+              - generic [ref=e78]: 
+            - img "Chart" [ref=e455]
+          - generic [ref=e80]:
+            - generic [ref=e81]:
+              - generic [ref=e82]: CRUDE OIL ETF
+              - generic [ref=e83]: 4.10%
+              - generic [ref=e85]: 
+            - img "Chart" [ref=e457]
+          - generic [ref=e87]:
+            - generic [ref=e88]:
+              - generic [ref=e89]: GOLD ETF
+              - generic [ref=e90]: "-.09%"
+              - generic [ref=e92]: 
+            - img "Chart" [ref=e459]
+          - generic [ref=e94]:
+            - generic [ref=e95]:
+              - generic [ref=e96]: NAT GAS ETF
+              - generic [ref=e97]: .76%
+              - generic [ref=e99]: 
+            - img "Chart" [ref=e461]
+        - generic [ref=e101] [cursor=pointer]: 
+    - iframe [ref=e677]:
+      - insertion [ref=f233e3]:
+        - iframe [ref=f233e5]:
+          
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - generic [ref=e108]:
+          - heading "Trade Stocks" [level=3] [ref=e110]
+          - generic [ref=e113] [cursor=pointer]:
+            - img [ref=e114]
+            - text: Wealth Wizard
+        - generic [ref=e115]:
+          - list [ref=e119]:
+            - listitem [ref=e120]:
+              - generic [ref=e121] [cursor=pointer]: United States
+            - text: 
+          - generic [ref=e126]:
+            - generic [ref=e127]:
+              - generic [ref=e128]:
+                - generic [ref=e129]:
+                  - generic [ref=e131]:
+                    - generic [ref=e132]: Action
+                    - generic [ref=e133]: 
+                    - generic [ref=e134]: Choose whether you want to Buy, Sell, Short or Cover. Select Buy to purchase shares, and Sell when you no longer want to own them. Select Short if you think the stock will go down, and Cover to close your short position.
+                    - combobox "Action Choose whether you want to Buy, Sell, Short or Cover. Select Buy to purchase shares, and Sell when you no longer want to own them. Select Short if you think the stock will go down, and Cover to close your short position." [ref=e135]:
+                      - option "Buy" [selected]
+                      - option "Sell"
+                      - option "Short"
+                      - option "Cover"
+                  - generic [ref=e137]:
+                    - generic [ref=e138]: Symbol
+                    - generic [ref=e139]: 
+                    - generic [ref=e140]: Enter the Ticker Symbol to get a quote, company profile and industry. If you don’t know the Symbol of the company, simply start typing the name and a list will populate. Once you select your stock, you will also see a recent price.
+                    - textbox "Symbol Enter the Ticker Symbol to get a quote, company profile and industry. If you don’t know the Symbol of the company, simply start typing the name and a list will populate. Once you select your stock, you will also see a recent price." [active] [ref=e141]:
+                      - /placeholder: e.g AAPL, GOOG
+                      - text: MSFT
+                  - generic [ref=e143]:
+                    - generic [ref=e144]: Quantity
+                    - generic [ref=e145]: 
+                    - generic [ref=e146]: Enter the number of shares you would like to purchase.
+                    - textbox "Qty" [ref=e147]: "100"
+                  - generic [ref=e149]:
+                    - generic [ref=e150]: Order Type
+                    - link [ref=e151] [cursor=pointer]:
+                      - /url: "#"
+                      - generic [ref=e152]: 
+                    - combobox "Order Type" [ref=e153]:
+                      - option "Market" [selected]
+                      - option "Limit Order"
+                      - option "Stop Order"
+                      - option "Trailing Stop $"
+                      - option "Trailing Stop %"
+                - text:  
+              - generic [ref=e619]:
+                - list [ref=e621]:
+                  - listitem [ref=e622]: Microsoft Corporation (MSFT)
+                  - listitem [ref=e623]
+                  - listitem [ref=e625]: Technology Services
+                - list [ref=e627]:
+                  - listitem [ref=e628]:
+                    - generic [ref=e629]:
+                      - generic [ref=e631]:
+                        - text: $419.28
+                        - generic [ref=e632]: Last Price
+                      - generic [ref=e634]:
+                        - text: "+8.06"
+                        - generic [ref=e635]: 
+                        - text: 1.96%
+                        - generic [ref=e636]: Day's Change
+                  - listitem [ref=e637]: Quote as of 04/16/2026 @ 01:24 PM Eastern Standard Time
+                  - listitem [ref=e638]:
+                    - generic [ref=e639]: Bid / Ask
+                    - generic [ref=e640]: 419.24 / 419.32
+                  - listitem [ref=e641]:
+                    - generic [ref=e642]: Day's Range
+                    - generic [ref=e643]: 412.14 - 420.56
+                  - listitem [ref=e644]:
+                    - generic [ref=e645]: Volume
+                    - generic [ref=e646]: 23,938,210
+              - generic [ref=e468]:
+                - generic [ref=e469]:
+                  - text: "Estimated Cost:"
+                  - strong [ref=e647]: "-$41,929.00"
+                - button "Preview" [ref=e471] [cursor=pointer]
+            - generic [ref=e162]:
+              - text: 
+              - generic [ref=e648]:
+                - img "Chart" [ref=e650]
+                - generic [ref=e651]:
+                  - radio "Simple" [checked] [ref=e652]
+                  - generic [ref=e653] [cursor=pointer]: Simple
+                  - radio "Advanced" [ref=e654]
+                  - generic [ref=e655] [cursor=pointer]: Advanced
+        - generic [ref=e657]:
+          - list [ref=e660]:
+            - listitem [ref=e661]:
+              - generic [ref=e662] [cursor=pointer]: Company Profile
+            - listitem [ref=e663]:
+              - generic [ref=e664] [cursor=pointer]: Company News
+            - listitem [ref=e665]:
+              - generic [ref=e666] [cursor=pointer]: Analyst Rating
+            - listitem [ref=e667]:
+              - generic [ref=e668] [cursor=pointer]: Price History
+            - listitem [ref=e669]:
+              - generic [ref=e670] [cursor=pointer]: Financial Statements
+            - listitem [ref=e671]:
+              - generic [ref=e672] [cursor=pointer]: Detailed Quote
+          - generic [ref=e681]:
+            - text:  || |
+            - generic [ref=e682]:
+              - generic [ref=e683]:
+                - heading "Description & Contact Information" [level=3] [ref=e684]
+                - generic [ref=e685]:
+                  - generic [ref=e687]: Business Description
+                  - generic [ref=e689]: Microsoft (Nasdaq "MSFT" @microsoft) creates platforms and tools powered by AI to deliver innovative solutions that meet the evolving needs of our customers. The technology company is committed to making AI available broadly and doing so responsibly, with a mission to empower every person and every organization on the planet to achieve more.
+                - generic [ref=e690]:
+                  - generic [ref=e692]: Address
+                  - generic [ref=e694]: ONE MICROSOFT WAY, REDMOND, WA, US, 98052-6399
+                - generic [ref=e695]:
+                  - generic [ref=e697]: Telephone
+                  - link "+1 425 - 882-8080" [ref=e700] [cursor=pointer]:
+                    - /url: tel:+1 425 - 882-8080
+                  - generic [ref=e702]: Website
+                  - link "https://www.microsoft.com" [ref=e705] [cursor=pointer]:
+                    - /url: https://www.microsoft.com
+                - generic [ref=e706]:
+                  - generic [ref=e708]: Fax
+                  - generic [ref=e710]: +1 425 706-7329
+                  - generic [ref=e712]: Email
+                  - link "msft@microsoft.com" [ref=e715] [cursor=pointer]:
+                    - /url: mailto:msft@microsoft.com
+              - generic [ref=e716]:
+                - heading "Details" [level=3] [ref=e717]
+                - generic [ref=e718]:
+                  - generic [ref=e720]: CEO
+                  - generic [ref=e722]: Satya Nadella
+                  - generic [ref=e724]: Employees
+                  - generic [ref=e726]: 228,000
+                - generic [ref=e727]:
+                  - generic [ref=e729]: Issue Type
+                  - generic [ref=e731]: Common Stock
+                  - generic [ref=e733]: ISOCFI
+                  - generic [ref=e735]: ESVUFR
+                - generic [ref=e736]:
+                  - generic [ref=e738]: Auditor
+                  - generic [ref=e740]: Deloitte & Touche LLP
+                  - generic [ref=e742]: Last Audit
+                  - generic [ref=e744]: —
+                - generic [ref=e745]:
+                  - generic [ref=e747]: Market Cap
+                  - generic [ref=e749]: 3,053,567,188,633
+              - generic [ref=e754]:
+                - heading "Industry Classifications" [level=3] [ref=e755]
+                - generic [ref=e756]:
+                  - generic [ref=e758]: Sector
+                  - generic [ref=e760]: Technology
+                  - generic [ref=e762]: CIK
+                  - generic [ref=e764]: "789019"
+                - generic [ref=e765]:
+                  - generic [ref=e767]: Group
+                  - generic [ref=e769]: Software & IT Services
+                  - generic [ref=e771]: SIC
+                  - generic [ref=e773]: "7372"
+                - generic [ref=e774]:
+                  - generic [ref=e776]: Industry
+                  - generic [ref=e778]: Systems Software
+                  - generic [ref=e780]: NAICS
+                  - generic [ref=e782]: Software and Other Prerecorded Compact Disc(334614)
+              - generic [ref=e783]:
+                - heading "Map" [level=3] [ref=e784]
+                - iframe [ref=e785]:
+                  
+        - generic [ref=e184]:
+          - heading "How to Place a Stock Order" [level=3] [ref=e187]
+          - generic [ref=e188]:
+            - generic [ref=e190]:
+              - heading "1. Symbol" [level=3] [ref=e194]
+              - paragraph [ref=e198]:
+                - text: Enter the
+                - strong [ref=e199]: Ticker Symbol
+                - text: to get a quote, company profile and industry. If you don’t know the
+                - strong [ref=e200]: Ticker Symbol
+                - text: of the company, simply start typing the name and a list will populate. Once you select your stock, you will also see a recent price.
+            - generic [ref=e202]:
+              - heading "2. Action" [level=3] [ref=e206]
+              - paragraph [ref=e210]:
+                - text: Choose whether you want to Buy, Sell, Short or Cover. Select
+                - strong [ref=e211]: Buy
+                - text: to purchase shares, and
+                - strong [ref=e212]: Sell
+                - text: when you no longer want to own them. Select
+                - strong [ref=e213]: Short
+                - text: if you think the stock will go down, and
+                - strong [ref=e214]: Cover
+                - text: to close your short position.
+            - generic [ref=e216]:
+              - heading "3. Quantity" [level=3] [ref=e220]
+              - paragraph [ref=e224]: Enter the number of shares you are thinking about buying, then hit TAB and you will see an estimated cost. Feel free to change your number of shares to help you get closer to the amount you want to spend.
+            - generic [ref=e226]:
+              - heading "4. Order Type" [level=3] [ref=e230]
+              - generic [ref=e233]:
+                - paragraph [ref=e234]:
+                  - text: Select an Order Type. A
+                  - strong [ref=e235]: Market
+                  - text: order will fill immediately at the current price. Set a
+                  - strong [ref=e236]: Limit
+                  - text: order if you only want to pay up to a certain price or sell at a certain price. Use a
+                  - strong [ref=e237]: Stop
+                  - text: order below the current price to sell if your stock starts declining in price. Use a
+                  - strong [ref=e238]: Trailing Stop
+                  - text: to have a stop order automatically adjust if the stock moves favorably.
+                - paragraph [ref=e239]:
+                  - link "Learn more about Order Types" [ref=e240] [cursor=pointer]:
+                    - /url: /content/index?url=order-types/
+                  - text: .
+            - generic [ref=e242]:
+              - heading "5. Limit/Stop Price" [level=3] [ref=e246]
+              - paragraph [ref=e250]: This specifies the Limit or Stop price that you are using to control when your trade is triggered. It is not available for a Market order.
+            - generic [ref=e252]:
+              - heading "6. Order Term" [level=3] [ref=e256]
+              - generic [ref=e259]:
+                - paragraph [ref=e260]: For your Limit or Stop orders, you must select the order term which is how long you want the order to remain open.
+                - list [ref=e261]:
+                  - listitem [ref=e262]:
+                    - strong [ref=e263]: Good for Day
+                    - text: will try to execute until the end of the trading day.
+                  - listitem [ref=e264]:
+                    - strong [ref=e265]: Good til Cancel
+                    - text: will try to execute until you cancel the order.
+                  - listitem [ref=e266]:
+                    - strong [ref=e267]: Good til Date
+                    - text: will try to execute until a specific date (that you must specify).
+      - generic [ref=e270]:
+        - generic [ref=e479]:
+          - heading "Announcements" [level=3] [ref=e483]
+          - generic [ref=e485]:
+            - text: Join WallStreetSurvivor on Facebook for the latest updates, market insights, and contest news.
+            - link "Follow us on Facebook" [ref=e486] [cursor=pointer]:
+              - /url: https://www.facebook.com/WallStSurvivor
+        - iframe [ref=e489]:
+          - insertion [ref=f206e3]:
+            - iframe [ref=f206e5]:
+              
+        - generic [ref=e272]:
+          - heading "Quote of the Day" [level=3] [ref=e276]
+          - generic [ref=e277]:
+            - heading "Warren Buffet" [level=6] [ref=e490]
+            - paragraph [ref=e491]: "\"The best thing that happens to us is when a great company gets into temporary trouble…We want to..."
+            - generic [ref=e278] [cursor=pointer]:
+              - text: Next
+              - generic [ref=e279]: 
+        - generic [ref=e280]:
+          - generic [ref=e282]:
+            - heading "My Watchlist" [level=3] [ref=e284]
+            - generic [ref=e287] [cursor=pointer]: +
+          - table [ref=e493]:
+            - rowgroup [ref=e494]:
+              - row "AAPL 263.44 -2.99" [ref=e495]:
+                - cell [ref=e496]:
+                  - generic [ref=e498] [cursor=pointer]: 
+                - cell "AAPL" [ref=e499]:
+                  - link "AAPL" [ref=e500] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?converted=1&symbol=AAPL
+                - cell "263.44" [ref=e501]
+                - cell "-2.99" [ref=e502]
+              - row "BAC 53.52 -0.8" [ref=e503]:
+                - cell [ref=e504]:
+                  - generic [ref=e506] [cursor=pointer]: 
+                - cell "BAC" [ref=e507]:
+                  - link "BAC" [ref=e508] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?converted=1&symbol=BAC
+                - cell "53.52" [ref=e509]
+                - cell "-0.8" [ref=e510]
+              - row "GOOG 333.37 -1.0988" [ref=e511]:
+                - cell [ref=e512]:
+                  - generic [ref=e514] [cursor=pointer]: 
+                - cell "GOOG" [ref=e515]:
+                  - link "GOOG" [ref=e516] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?converted=1&symbol=GOOG
+                - cell "333.37" [ref=e517]
+                - cell "-1.0988" [ref=e518]
+              - row "KO 75.00 -0.31" [ref=e519]:
+                - cell [ref=e520]:
+                  - generic [ref=e522] [cursor=pointer]: 
+                - cell "KO" [ref=e523]:
+                  - link "KO" [ref=e524] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?converted=1&symbol=KO
+                - cell "75.00" [ref=e525]
+                - cell "-0.31" [ref=e526]
+        - generic [ref=e288]:
+          - heading "Word of the Day" [level=3] [ref=e292]
+          - generic [ref=e293]:
+            - heading "Workplace Benefits" [level=6] [ref=e527]
+            - paragraph [ref=e528]: A combination of insurance packages, retirement benefits, savings assistance, and working conditions that are part of a job that can be considered a type of compensation, but not part of the base pay.
+        - generic [ref=e530]:
+          - heading "Top 10 Players of the Week" [level=3] [ref=e534]
+          - table [ref=e535]:
+            - rowgroup [ref=e536]:
+              - row "Username % Return Last Trade" [ref=e537]:
+                - columnheader [ref=e538]
+                - columnheader "Username" [ref=e539]
+                - columnheader "% Return" [ref=e540]
+                - columnheader "Last Trade" [ref=e541]
+            - rowgroup [ref=e542]:
+              - row "1 danielc932 2.99% CAN" [ref=e543]:
+                - cell "1" [ref=e544]
+                - cell "danielc932" [ref=e545]
+                - cell "2.99%" [ref=e546]
+                - cell "CAN" [ref=e547]
+              - row "2 AvyanB 1.31% FEED" [ref=e548]:
+                - cell "2" [ref=e549]
+                - cell "AvyanB" [ref=e550]
+                - cell "1.31%" [ref=e551]
+                - cell "FEED" [ref=e552]
+              - row "3 Daniel Polanco 267.74% GBIM" [ref=e553]:
+                - cell "3" [ref=e554]
+                - cell "Daniel Polanco" [ref=e555]:
+                  - link "Daniel Polanco" [ref=e556] [cursor=pointer]:
+                    - /url: ""
+                - cell "267.74%" [ref=e557]
+                - cell "GBIM" [ref=e558]
+              - row "4 El Solitario 215.08% NAOV" [ref=e559]:
+                - cell "4" [ref=e560]
+                - cell "El Solitario" [ref=e561]
+                - cell "215.08%" [ref=e562]
+                - cell "NAOV" [ref=e563]
+              - row "5 BARBAROSSA_II -11.18% AMZN" [ref=e564]:
+                - cell "5" [ref=e565]
+                - cell "BARBAROSSA_II" [ref=e566]
+                - cell "-11.18%" [ref=e567]
+                - cell "AMZN" [ref=e568]
+              - row "6 El Travieso 272.81% REVB" [ref=e569]:
+                - cell "6" [ref=e570]
+                - cell "El Travieso" [ref=e571]:
+                  - link "El Travieso" [ref=e572] [cursor=pointer]:
+                    - /url: ""
+                - cell "272.81%" [ref=e573]
+                - cell "REVB" [ref=e574]
+              - row "7 learner4fun 1065.96% MCRB" [ref=e575]:
+                - cell "7" [ref=e576]
+                - cell "learner4fun" [ref=e577]
+                - cell "1065.96%" [ref=e578]
+                - cell "MCRB" [ref=e579]
+              - row "8 Eneas Barbosa -33.04% VIVK" [ref=e580]:
+                - cell "8" [ref=e581]
+                - cell "Eneas Barbosa" [ref=e582]
+                - cell "-33.04%" [ref=e583]
+                - cell "VIVK" [ref=e584]
+              - row "9 larry08 2.27% SPY" [ref=e585]:
+                - cell "9" [ref=e586]
+                - cell "larry08" [ref=e587]
+                - cell "2.27%" [ref=e588]
+                - cell "SPY" [ref=e589]
+              - row "10 SPYZoomerrr -0.09% SPY2302R401" [ref=e590]:
+                - cell "10" [ref=e591]
+                - cell "SPYZoomerrr" [ref=e592]
+                - cell "-0.09%" [ref=e593]
+                - cell "SPY2302R401" [ref=e594]
+    - generic [ref=e296]:
+      - strong [ref=e297]: Notice
+      - paragraph [ref=e298]:
+        - text: This website uses cookies, for more information please visit our
+        - link "Privacy Policy" [ref=e299] [cursor=pointer]:
+          - /url: https://content.stocktrak.com/privacy-policy/
+          - strong [ref=e300]: Privacy Policy
+      - generic [ref=e301] [cursor=pointer]: Ok
+  - contentinfo [ref=e302]:
+    - generic [ref=e304]:
+      - complementary [ref=e306]:
+        - figure [ref=e307]:
+          - link "WallStreetSurvivor logo" [ref=e308] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e309]
+      - generic [ref=e310]:
+        - complementary [ref=e311]:
+          - heading "Our Platform" [level=3] [ref=e312]
+        - complementary [ref=e313]:
+          - list [ref=e314]:
+            - listitem [ref=e315]:
+              - link "Stock Market Simulator" [ref=e316] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e317]:
+              - link "Investing Courses for Beginners" [ref=e318] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/courses/
+            - listitem [ref=e319]:
+              - link "Best Stocks to Buy Now" [ref=e320] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e321]:
+              - link "How to Invest Videos" [ref=e322] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+            - listitem [ref=e323]:
+              - link "Free Online Investing Course" [ref=e324] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e325]:
+              - link "Financial Literacy Game for Students" [ref=e326] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e327]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e328] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e329]:
+              - link "Crypto Paper Trading" [ref=e330] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e331]:
+              - link "About WallStreetSurvivor" [ref=e332] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+      - generic [ref=e333]:
+        - complementary [ref=e334]:
+          - heading "Review Center" [level=3] [ref=e335]
+        - complementary [ref=e336]:
+          - list [ref=e337]:
+            - listitem [ref=e338]:
+              - link "Motley Fool Review" [ref=e339] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e340]:
+              - link "Seeking Alpha Review" [ref=e341] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e342]:
+              - link "Alpha Picks Review" [ref=e343] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e344]:
+              - link "Moby Stocks Review" [ref=e345] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e346]:
+              - link "Wealthsimple Review" [ref=e347] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/wealthsimple-review/
+            - listitem [ref=e348]:
+              - link "Is Robinhood Safe to Use?" [ref=e349] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e350]:
+              - link "Rule Breakers Review" [ref=e351] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e352]:
+              - link "Best Investment Newsletters" [ref=e353] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e354]:
+              - link "Best Investing Apps" [ref=e355] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e356]:
+              - link "Best Motley Fool Discount Code" [ref=e357] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e358]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e359] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e360]:
+              - link "Best Tipranks Discount Code" [ref=e361] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e362]:
+              - link "Is Coinbase Safe?" [ref=e363] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e364]:
+              - link "Free Crypto with Coinbase" [ref=e365] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e366]:
+              - link "Best Stock Picking Service" [ref=e367] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+      - generic [ref=e368]:
+        - complementary [ref=e369]:
+          - heading "Corporate Services" [level=3] [ref=e370]
+        - complementary [ref=e371]:
+          - list [ref=e372]:
+            - listitem [ref=e373]:
+              - link "White Label Stock Market Games" [ref=e374] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e375]:
+              - link "White Label Virtual Crypto Trading" [ref=e376] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e377]:
+              - link "Employee Financial Wellness" [ref=e378] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e379]:
+              - link "Sponsor a College or High School" [ref=e380] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e381]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e382] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e383]:
+          - heading "Our Company" [level=3] [ref=e384]
+        - complementary [ref=e385]:
+          - list [ref=e386]:
+            - listitem [ref=e387]:
+              - link "Contact Us" [ref=e388] [cursor=pointer]:
+                - /url: mailto:support@wallstreetsurvivor.com
+            - listitem [ref=e389]:
+              - link "About Us" [ref=e390] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/
+            - listitem [ref=e391]:
+              - link "Motley Fool Review" [ref=e392] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e393]:
+              - link "Privacy Policy" [ref=e394] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e395]:
+              - link "Terms and Conditions" [ref=e396] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e397]:
+              - link "Advertise with Us" [ref=e398] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e399]:
+        - complementary [ref=e400]:
+          - heading "Family of Sites" [level=3] [ref=e401]:
+            - strong [ref=e402]: Family of Sites
+        - complementary [ref=e403]:
+          - figure [ref=e404]:
+            - link "StockTrak logo" [ref=e405] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e406]
+        - complementary [ref=e407]:
+          - figure [ref=e408]:
+            - link "PersonalFinanceLab logo" [ref=e409] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e410]
+        - complementary [ref=e411]:
+          - figure [ref=e412]:
+            - link "WallStreetSurvivor logo" [ref=e413] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Practice stock trading site" [ref=e414]
+        - complementary [ref=e415]:
+          - figure [ref=e416]:
+            - link "HowTheMarketWorks logo" [ref=e417] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free stock market game for students" [ref=e418]
+        - complementary [ref=e419]:
+          - link "Global Virtual Stock Game" [ref=e420] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e421] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - generic "Site" [ref=e422]:
+      - generic [ref=e423]:
+        - generic [ref=e424]:
+          - complementary [ref=e425]:
+            - heading "Connect With Us" [level=2] [ref=e426]
+          - complementary:
+            - figure [ref=e427]:
+              - link "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e428] [cursor=pointer]:
+                - /url: https://www.instagram.com/wallstreetsurvivor/
+                - img "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e429]
+          - complementary:
+            - figure [ref=e430]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e431] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e432]
+          - complementary:
+            - figure [ref=e433]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e434] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e435]
+          - complementary:
+            - figure [ref=e436]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e437] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e438]
+        - generic [ref=e439]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2025 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.
+  - text:            
+  - list [ref=e602]:
+    - listitem [ref=e603]:
+      - generic [ref=e604] [cursor=pointer]:
+        - text: MSFL GraniteShares ETF Trust - GraniteShares 2x Long MSFT Daily ETF
+        - generic [ref=e605]: "0"
+    - listitem [ref=e606]:
+      - generic [ref=e607] [cursor=pointer]:
+        - text: MSFO Tidal Trust II - YieldMax MSFT Option Income Strategy ETF
+        - generic [ref=e608]: "0"
+    - listitem [ref=e609]:
+      - generic [ref=e610] [cursor=pointer]:
+        - text: MSFT Microsoft Corporation
+        - generic [ref=e611]: "0"
+    - listitem [ref=e612]:
+      - generic [ref=e613] [cursor=pointer]:
+        - text: MSFU Direxion Shares ETF Trust - Direxion Daily MSFT Bull 2X Shares
+        - generic [ref=e614]: "0"
+  - status [ref=e444]:
+    - generic [ref=e615]: 4 results are available, use up and down arrow keys to navigate.
+  - generic [ref=e596]:
+    - img
+  - generic [ref=e599] [cursor=pointer]:
+    - generic [ref=e600]:
+      - text: 
+      - generic "We're Online!" [ref=e601]
+    - text: 
+  - generic:
+    - generic:
+      - iframe

@@ -996,6 +996,31 @@ Remember to respond in the exact format: Thought / Action / Target
             
             # WALL STREET SURVIVOR — START
             is_wallstreet = "wallstreetsurvivor" in (start_url or "").lower()
+            scenario_name = str(self.scenario.get("name", "")) if isinstance(self.scenario, dict) else ""
+            scenario_desc = str(self.scenario.get("description", "")) if isinstance(self.scenario, dict) else ""
+            symbol_context = f"{objectif} {scenario_name} {scenario_desc}"
+            symbol_context_upper = symbol_context.upper()
+            target_symbol = ""
+            symbol_match = _re.search(r"(?:SYMBOL|TICKER)\s*(?:=|:)?\s*([A-Z]{1,5})", symbol_context_upper)
+            if symbol_match:
+                target_symbol = symbol_match.group(1)
+            else:
+                symbol_aliases = {
+                    "MICROSOFT": "MSFT",
+                    "MSFT": "MSFT",
+                    "AMD": "AMD",
+                    "NVIDIA": "NVDA",
+                    "NVDA": "NVDA",
+                    "APPLE": "AAPL",
+                    "AAPL": "AAPL",
+                    "TESLA": "TSLA",
+                    "TSLA": "TSLA",
+                }
+                for key, value in symbol_aliases.items():
+                    if key in symbol_context_upper:
+                        target_symbol = value
+                        break
+            is_wallstreet_symbol_flow = is_wallstreet and bool(target_symbol)
             # WALL STREET SURVIVOR — END
             
             scenario_context = self.scenario.get("context", {}) if isinstance(self.scenario, dict) else {}
@@ -1631,6 +1656,7 @@ Remember to respond in the exact format: Thought / Action / Target
             scenario_desc_text = ""
             key_actions_text = ""
             success_criteria_text = ""
+            is_microsoft_scenario = False
 
             if self.scenario:
                 scenario_title = self.scenario.get('name', '')
@@ -1640,6 +1666,11 @@ Remember to respond in the exact format: Thought / Action / Target
 
                 if scenario_title or scenario_desc:
                     scenario_desc_text = f"SCENARIO: {scenario_title}\n{scenario_desc}\n"
+
+                scenario_blob = f"{scenario_title}\n{scenario_desc}".lower()
+                is_microsoft_scenario = (
+                    "microsoft" in scenario_blob or "msft" in scenario_blob or target_symbol == "MSFT"
+                )
 
                 if key_actions:
                     key_actions_text = "## STEP-BY-STEP GUIDANCE:\n"
@@ -1659,6 +1690,8 @@ Remember to respond in the exact format: Thought / Action / Target
                 f"OBJECTIVE: {objectif}\n"
                 f"PERSONA: {persona_id} | device={device}\n"
                 f"START URL: {start_url}\n\n"
+                f"{strategy}\n"
+                f"{site_rules}\n"
                 f"{key_actions_text}"
                 f"{success_criteria_text}"
                 f"TOOLS:\n{tools_text}\n\n"
@@ -1688,6 +1721,11 @@ Remember to respond in the exact format: Thought / Action / Target
             }
             max_steps = max_steps_by_type.get(site_type, 
                         int(self.config.max_steps) if self.config.max_steps else 30)
+            if is_microsoft_scenario:
+                max_steps = max(max_steps, 70)
+            if is_wallstreet_symbol_flow:
+                # Keep symbol-focused WallStreet runs bounded to avoid token exhaustion during UI loops.
+                max_steps = min(max_steps, 90)
             if max_steps <= 0:
                 max_steps = 30
             messages: List = [system_msg]
@@ -1729,6 +1767,12 @@ Remember to respond in the exact format: Thought / Action / Target
 
             # Track compressed snapshot content to detect unchanged pages after scroll
             _last_compressed = ""
+            _microsoft_equities_stuck_count = 0
+            _last_page_url = ""
+            _symbol_quote_stuck_count = 0
+            _dashboard_stuck_count = 0
+            _last_observation_signature = ""
+            _no_progress_count = 0
 
             step = 0
             while step < max_steps:
@@ -1741,7 +1785,11 @@ Remember to respond in the exact format: Thought / Action / Target
                     last4 = [s.get("action") for s in steps_detail[-4:]]
                     # Detect repeated browser_click (likely stuck on unresponsive button)
                     if len(set(last4)) == 1 and last4[0] == "browser_click":
-                        last4_targets = [s.get("action_input", {}).get("selector", "") for s in steps_detail[-4:]]
+                        last4_targets = [
+                            (s.get("input", {}) or {}).get("ref")
+                            or (s.get("input", {}) or {}).get("selector", "")
+                            for s in steps_detail[-4:]
+                        ]
                         # If clicking same selector repeatedly
                         if len(set(last4_targets)) == 1 and last4_targets[0]:
                             nudge = (
@@ -1754,6 +1802,29 @@ Remember to respond in the exact format: Thought / Action / Target
                             )
                             print(f"⚠️ Anti-loop (browser_click repetition) nudge injected")
                             messages.append(HumanMessage(content=nudge))
+
+                if is_microsoft_scenario and len(steps_detail) >= 1:
+                    last_step = steps_detail[-1]
+                    last_action = str(last_step.get("action", ""))
+                    last_preview = str(last_step.get("result_preview", "")).lower()
+                    if last_action == "browser_click" and (
+                        "didn't navigate" in last_preview
+                        or "did not navigate" in last_preview
+                    ):
+                        nudge = (
+                            "MICROSOFT FLOW RECOVERY: The click did not open the MSFT detail view.\n"
+                            "Run this deterministic sequence:\n"
+                            "1) browser_press_key {\"key\": \"Escape\"}\n"
+                            "2) browser_wait_for {\"time\": 1200}\n"
+                            "3) browser_snapshot {}\n"
+                            "4) If not on MSFT quote page, navigate to: "
+                            "https://app.wallstreetsurvivor.com/quotes/quotes?type=fullnewssummary&symbol=MSFT&exchange=US\n"
+                            "5) Click sections in this exact order and snapshot after each click: "
+                            "Company Profile -> Company News -> Analyst Rating -> Price History -> Financial Statements\n"
+                            "6) Provide explicit final decision: BUY or DO NOT BUY with reasons based on all sections."
+                        )
+                        print("⚠️ Microsoft recovery nudge injected")
+                        messages.append(HumanMessage(content=nudge))
 
                 if len(steps_detail) >= 3:
                     last3 = [s.get("action") for s in steps_detail[-3:]]
@@ -2041,17 +2112,51 @@ Remember to respond in the exact format: Thought / Action / Target
                             invalid_format_streak += 1
                             continue
 
+                        eval_fn = str(action_input.get("function", ""))
+                        # WallStreet scenarios may need DOM-based evaluate to locate dynamic menu items.
+                        if (not is_wallstreet) and ("scrollBy" not in eval_fn and "scrollTo" not in eval_fn):
+                            error_msg = (
+                                "❌ INVALID browser_evaluate usage for this run. "
+                                "Only scroll functions are allowed.\n"
+                                "✅ Use one of:\n"
+                                "- browser_evaluate {\"function\": \"() => window.scrollBy(0, 3000)\"}\n"
+                                "- browser_evaluate {\"function\": \"() => window.scrollTo(0, 0)\"}\n"
+                                "For search and interaction, use browser_click / browser_type / browser_press_key."
+                            )
+                            print(f"⚠️ {error_msg}")
+                            messages.append(HumanMessage(content=error_msg))
+                            invalid_format_streak += 1
+                            continue
+
                 # ── Validate browser_navigate URLs ────────────────
                 # CRITICAL: Only allow browser_navigate to the initial start_url
                 # All other navigation MUST use visible UI elements (buttons, links, search boxes)
                 if action_name == "browser_navigate":
                     if isinstance(action_input, dict) and "url" in action_input:
                         requested_url = action_input["url"]
-                        # Only allow navigation to the initial start_url
-                        if requested_url != start_url:
+                        allowed_url_prefixes = [start_url]
+                        if is_wallstreet:
+                            allowed_url_prefixes.extend([
+                                "https://www.wallstreetsurvivor.com/",
+                                "https://app.wallstreetsurvivor.com/login",
+                                "https://app.wallstreetsurvivor.com/account/dashboardv2",
+                                "https://app.wallstreetsurvivor.com/forum/messages",
+                                "https://app.wallstreetsurvivor.com/quotes/quotes",
+                                "https://app.wallstreetsurvivor.com/quotes/quotesv2",
+                                "https://app.wallstreetsurvivor.com/trading/equities",
+                            ])
+                        if is_wallstreet and is_microsoft_scenario:
+                            allowed_url_prefixes.extend([
+                                "https://www.wallstreetsurvivor.com/",
+                                "https://app.wallstreetsurvivor.com/trading/equities",
+                                "https://app.wallstreetsurvivor.com/quotes/quotes",
+                                "https://app.wallstreetsurvivor.com/quotes/quotesv2",
+                            ])
+
+                        if not any(requested_url.startswith(prefix) for prefix in allowed_url_prefixes):
                             error_msg = (
                                 f"❌ NAVIGATION RESTRICTION ENFORCED\n"
-                                f"❌ browser_navigate is ONLY allowed for the initial URL: {start_url}\n"
+                                f"❌ browser_navigate is only allowed for approved URLs.\n"
                                 f"❌ Your attempted URL: {requested_url}\n\n"
                                 f"✅ SOLUTION: Use visible UI elements to navigate (human-like behavior):\n"
                                 f"   1. Use browser_snapshot to see the current page\n"
@@ -2071,8 +2176,8 @@ Remember to respond in the exact format: Thought / Action / Target
                                 "step": step + 1,
                                 "action": "browser_navigate",
                                 "action_input": action_input,
-                                "rejected_reason": "URL not allowed (not the initial start_url)",
-                                "allowed_url": start_url,
+                                "rejected_reason": "URL not allowed",
+                                "allowed_url_prefixes": allowed_url_prefixes,
                             })
                             continue
 
@@ -2081,6 +2186,31 @@ Remember to respond in the exact format: Thought / Action / Target
                 if action_name == "browser_type" and isinstance(action_input, dict):
                     if "text" not in action_input and "value" in action_input:
                         action_input["text"] = action_input.pop("value")
+
+                # WallStreet symbol guardrail: once target quote page is loaded, stop retyping symbol endlessly.
+                if (
+                    is_wallstreet
+                    and target_symbol
+                    and f"symbol={target_symbol.lower()}" in _last_page_url.lower()
+                    and action_name == "browser_type"
+                    and isinstance(action_input, dict)
+                    and str(action_input.get("text", "")).strip().upper() == target_symbol
+                ):
+                    msg = (
+                        f"{target_symbol} PAGE ALREADY LOADED: Do NOT type {target_symbol} again. "
+                        "Next step must be navigation to trade execution. "
+                        "Find and click the TRADE button, then proceed with Qty, Preview, Confirm."
+                    )
+                    print(f"⚠️ {msg}")
+                    messages.append(HumanMessage(content=msg))
+                    steps_detail.append({
+                        "step": step + 1,
+                        "action": "SYMBOL_RESEARCH_BLOCKED",
+                        "input": action_input,
+                        "reason": msg,
+                    })
+                    continue
+
                 print(f"🎬 Executing: {action_name}({action_input})")
                 objective_reached = False
                 try:
@@ -2366,6 +2496,128 @@ Remember to respond in the exact format: Thought / Action / Target
                     print(f"📤 Tool result ({len(result_str)} chars → {len(result_for_llm)} compressed):")
                     print(result_for_llm[:500] + "...\n")
 
+                    current_url_match = _re.search(r"Page URL:\s*(\S+)", result_str)
+                    current_url = current_url_match.group(1) if current_url_match else ""
+                    if current_url:
+                        _last_page_url = current_url
+
+                    if is_wallstreet_symbol_flow and "/account/dashboardv2" in current_url.lower():
+                        on_language_only_snapshot = "button \"Select Language\" ref=e16" in result_for_llm
+                        repetitive_action = action_name in (
+                            "browser_snapshot",
+                            "browser_press_key",
+                            "browser_evaluate",
+                        ) or (
+                            action_name == "browser_click"
+                            and isinstance(action_input, dict)
+                            and str(action_input.get("ref", "")) == "e16"
+                        )
+
+                        if on_language_only_snapshot and repetitive_action:
+                            _dashboard_stuck_count += 1
+                        else:
+                            _dashboard_stuck_count = 0
+
+                        if _dashboard_stuck_count >= 4:
+                            recovery_url = (
+                                "https://app.wallstreetsurvivor.com/quotes/quotes"
+                                f"?type=fullnewssummary&symbol={target_symbol}&exchange=US"
+                            )
+                            print(f"⚠️ {target_symbol} dashboard loop detected — forcing recovery navigate to {recovery_url}")
+                            try:
+                                forced_nav = await tools_dict["browser_navigate"].ainvoke({"url": recovery_url})
+                                forced_nav_str = str(forced_nav)
+                                forced_comp = self._compress_snapshot(forced_nav_str, site_type=site_type, max_products=max_prod)
+                                result_for_llm = (
+                                    f"{result_for_llm}\n\n"
+                                    "AUTO-RECOVERY APPLIED: dashboard loop detected and direct symbol quote navigation executed.\n"
+                                    f"{forced_comp}"
+                                )
+                                _last_page_url = recovery_url
+                                _dashboard_stuck_count = 0
+                                steps_detail.append({
+                                    "step": step + 1,
+                                    "action": "AUTO_DASHBOARD_RECOVERY_NAVIGATE",
+                                    "input": {"url": recovery_url},
+                                })
+                            except Exception as nav_err:
+                                result_for_llm += (
+                                    "\n\nAUTO-RECOVERY FAILED: Could not force navigate out of dashboard loop. "
+                                    f"Error: {nav_err}"
+                                )
+                    else:
+                        _dashboard_stuck_count = 0
+
+                    # WallStreet symbol anti-loop: once on target quote, push toward TRADE instead of repeating search.
+                    if (
+                        is_wallstreet
+                        and target_symbol
+                        and f"symbol={target_symbol.lower()}" in current_url.lower()
+                        and "/quotes/quotes" in current_url.lower()
+                    ):
+                        if action_name in ("browser_type", "browser_click", "browser_snapshot", "browser_evaluate"):
+                            _symbol_quote_stuck_count += 1
+                        else:
+                            _symbol_quote_stuck_count = 0
+
+                        result_for_llm += (
+                            f"\n\n{target_symbol} EXECUTION GUIDANCE:\n"
+                            f"You are already on {target_symbol} quote page. Stop re-searching {target_symbol}.\n"
+                            "Next actions must be:\n"
+                            "1) Locate and click TRADE\n"
+                            "2) Set Qty=5\n"
+                            "3) Click Preview\n"
+                            "4) Verify summary\n"
+                            "5) Click Confirm."
+                        )
+
+                        if _symbol_quote_stuck_count >= 6:
+                            result_for_llm += (
+                                "\n\nANTI-LOOP TRIGGERED: Same quote context repeated too many times. "
+                                f"Do not type {target_symbol} or click Search again. Click TRADE now."
+                            )
+                    else:
+                        _symbol_quote_stuck_count = 0
+
+                    # Global no-progress detector: stop long loops before burning all tokens.
+                    observation_signature = f"{current_url}|{result_for_llm[:220]}"
+                    if observation_signature == _last_observation_signature:
+                        _no_progress_count += 1
+                    else:
+                        _no_progress_count = 0
+                        _last_observation_signature = observation_signature
+
+                    if _no_progress_count >= 10:
+                        print("⛔ No-progress loop detected — stopping early to preserve tokens")
+                        await _close_sandbox_if_needed()
+                        return {
+                            "status": "stalled",
+                            "response": "Stopped early due to repeated identical observations (token-saving guardrail).",
+                            "steps": step + 1,
+                            "steps_detail": steps_detail,
+                        }
+
+                    if is_microsoft_scenario:
+                        if "/trading/equities" in current_url.lower():
+                            _microsoft_equities_stuck_count += 1
+                        else:
+                            _microsoft_equities_stuck_count = 0
+
+                        if _microsoft_equities_stuck_count >= 8:
+                            result_for_llm += (
+                                "\n\nMICROSOFT RECOVERY REQUIRED:\n"
+                                "You are stuck on Trading/Equities. Execute this exact sequence now:\n"
+                                "1) browser_click the symbol input\n"
+                                "2) browser_type MSFT\n"
+                                "3) browser_press_key Enter\n"
+                                "4) browser_wait_for {\"time\": 1200}\n"
+                                "5) browser_snapshot\n"
+                                "6) If still on Trading/Equities, browser_navigate to: "
+                                "https://app.wallstreetsurvivor.com/quotes/quotes?type=fullnewssummary&symbol=MSFT&exchange=US\n"
+                                "7) Click in order: Company Profile -> Company News -> Analyst Rating -> Price History -> Financial Statements\n"
+                                "8) Then output final decision explicitly: BUY or DO NOT BUY with reasoning."
+                            )
+
                     objective_reached = False
                     if strict_done:
                         observed = f"{result_str}\n{result_for_llm}".lower()
@@ -2399,6 +2651,24 @@ Remember to respond in the exact format: Thought / Action / Target
 
                 except Exception as e:
                     error_text = str(e)
+                    if "Target page, context or browser has been closed" in error_text:
+                        print("❌ Browser context closed — aborting run early")
+                        await _close_sandbox_if_needed()
+                        return {
+                            "status": "error",
+                            "response": "Browser context/page closed unexpectedly. Please restart the scenario session.",
+                            "steps": step + 1,
+                            "steps_detail": steps_detail,
+                        }
+                    if "Browser is already in use" in error_text:
+                        print("❌ Browser lock detected — aborting run early to avoid useless retries")
+                        await _close_sandbox_if_needed()
+                        return {
+                            "status": "error",
+                            "response": "Browser is already in use by another Playwright MCP session. Stop other sessions or use isolated browser mode.",
+                            "steps": step + 1,
+                            "steps_detail": steps_detail,
+                        }
                     if "intercepts pointer events" in error_text:
                         recovered = False
                         # Try to close blocking overlays automatically (common on many sites).
@@ -2428,6 +2698,12 @@ Remember to respond in the exact format: Thought / Action / Target
                             "If a modal/dialog is open, close it first (Escape or close button), then retry the previous action.\n"
                             "Use browser_snapshot to refresh refs before retrying."
                         )
+                        if is_wallstreet and target_symbol and f"symbol={target_symbol.lower()}" in _last_page_url.lower():
+                            result_for_llm += (
+                                "\nSYMBOL SPECIFIC RECOVERY: Search icon can intercept clicks on the input. "
+                                f"Do NOT click the {target_symbol} textbox repeatedly. Use Enter or the Search button once, "
+                                "then move directly to TRADE."
+                            )
                     else:
                         result_for_llm = (
                             f"TOOL ERROR: {e}\n"
@@ -2479,14 +2755,14 @@ Remember to respond in the exact format: Thought / Action / Target
                 # BROWSER USE INTEGRATION — END
 
                 # ── Sliding window: compress old observations ──
-                # Keep system msg + last 6 messages in full;
+                # Keep system msg + last 4 messages in full;
                 # truncate older ones to save tokens
-                if len(messages) > 6:
-                    for i in range(1, len(messages) - 6):
+                if len(messages) > 4:
+                    for i in range(1, len(messages) - 4):
                         msg = messages[i]
                         content = msg.content if hasattr(msg, 'content') else str(msg)
-                        if len(content) > 100:
-                            short = content[:80] + "..."
+                        if len(content) > 70:
+                            short = content[:50] + "..."
                             if isinstance(msg, AIMessage):
                                 messages[i] = AIMessage(content=short)
                             elif isinstance(msg, HumanMessage):
@@ -2494,9 +2770,10 @@ Remember to respond in the exact format: Thought / Action / Target
 
                 # ── Feed observation back ──────────────────────
                 # BROWSER USE INTEGRATION — START
+                llm_observation = result_for_llm if len(result_for_llm) <= 900 else (result_for_llm[:900] + "\n... (observation truncated)")
                 observation_text = (
                     f"OBSERVATION ({action_name}):\n"
-                    f"{result_for_llm}\n\n"
+                    f"{llm_observation}\n\n"
                     + (
                         "STRICT_DONE_STATUS: "
                         f"cart_page_seen={verification_state['cart_page_seen']}, "

@@ -1,0 +1,100 @@
+====================================================================================================
+­ƒº¬ MICROSOFT DETAILED ANALYSIS TEST - VISUAL ACTIONS
+====================================================================================================
+
+Ô£à Configuration:
+   Provider: ollama - qwen3.5:cloud
+   Headless: False ÔåÉ YOU SHOULD SEE THE BROWSER!
+   Max steps: 200
+
+Ô£à Scenario loaded: Microsoft Stock - Detailed Company Analysis
+
+­ƒæñ Persona: Sarah Chen
+   Style: Methodical/Thorough
+   Objective: Deep financial analysis
+
+====================================================================================================
+­ƒÜÇ STARTING TEST - WATCH THE BROWSER WINDOW FOR ACTIONS
+====================================================================================================
+
+­ƒôì Expected sequence:
+   1. Login with credentials
+   2. Navigate to Stocks section
+   3. Search for 'MSFT'
+   4. Click Company Profile tab
+   5. Click Company News
+   6. Click Analyst Rating
+   7. Click Price History
+   8. Click Financial Statements
+   9. Make BUY/NO BUY decision
+
+----------------------------------------------------------------------------------------------------
+
+
+================================================================================
+­ƒÜÇ MCP ReAct SESSION STARTING
+================================================================================
+­ƒôì Target URL: https://www.wallstreetsurvivor.com/
+­ƒæñ Persona: research_analyst
+­ƒÄ» Scenario: Microsoft Stock - Detailed Company Analysis
+Ô£à LOGIN CREDENTIALS SECTION FOUND IN SYSTEM PROMPT
+LOGIN CREDENTIALS - CRITICAL - MUST USE EXACTLY AS PROVIDED
+­ƒÜ¿ THESE ARE YOUR ONLY VALID CREDENTIALS - DO NOT GENERATE OR CHANGE THEM ­ƒÜ¿
+
+Username: WALAEZZEDINE
+Password: WALA@123
+
+ÔÜá´©Å CRITICAL INSTRUCTIONS - YOU MUST FOLLOW:
+1. You will find a login form on the website
+2. In the USERNAME field, type EXACTLY: WALAEZZEDINE
+3. In the PASSWORD field, type EXACTLY: WALA@123
+4. Click the "Log me in" or "Login" button
+5. NEVER generate fake credentials
+6. NEVER try to register or create account
+7. NEVER 
+Ôä╣ Vision mode OFF (vision_enabled: false in config)
+
+­ƒöî Connecting to Playwright MCP Server...
+Ô£ô Connected! 21 tools available
+  1. browser_close: Close the page...
+  2. browser_resize: Resize the browser window...
+  3. browser_console_messages: Returns all console messages...
+  4. browser_handle_dialog: Handle a dialog...
+  5. browser_evaluate: Evaluate JavaScript expression on page or element...
+  6. browser_file_upload: Upload one or multiple files...
+  7. browser_fill_form: Fill multiple form fields...
+  8. browser_press_key: Press a key on the keyboard...
+  9. browser_type: Type text into editable element...
+  10. browser_navigate: Navigate to a URL...
+  11. browser_navigate_back: Go back to the previous page in the history...
+  12. browser_network_requests: Returns all network requests since loading the page...
+  13. browser_run_code: Run Playwright code snippet...
+  14. browser_take_screenshot: Take a screenshot of the current page. You can't perform actions based on the sc...
+  15. browser_snapshot: Capture accessibility snapshot of the current page, this is better than screensh...
+  16. browser_click: Perform click on a web page...
+  17. browser_drag: Perform drag and drop between two elements...
+  18. browser_hover: Hover over element on page...
+  19. browser_select_option: Select an option in a dropdown...
+  20. browser_tabs: List, create, close, or select a browser tab....
+  21. browser_wait_for: Wait for text to appear or disappear or a specified time to pass...
+
+
+================================================================================
+STEP 1/200
+================================================================================
+­ƒñû Calling LLM...
+ÔÅ│ Rate limited (attempt 1/5). Waiting 10s...
+ÔÅ│ Rate limited (attempt 2/5). Waiting 20s...
+ÔÅ│ Rate limited (attempt 3/5). Waiting 30s...
+ÔÅ│ Rate limited (attempt 4/5). Waiting 40s...
+ÔØî Rate limit exhausted after 5 retries ÔÇö aborting run
+
+====================================================================================================
+Ô£à TEST EXECUTION COMPLETE
+====================================================================================================
+
+­ƒôè Summary:
+   Status: error
+   Steps completed: 1/200
+
+­ƒôü Results saved to: test_microsoft_detailed_results.json

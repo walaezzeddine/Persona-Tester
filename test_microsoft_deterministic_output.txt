@@ -1,0 +1,18 @@
+MICROSOFT DETERMINISTIC TEST
+================================================================================
+1) Navigate to WallStreetSurvivor homepage
+2) Click Login
+3) Fill credentials and submit
+4) Go to Stock Game -> Stocks
+5) Search for MSFT in top symbol input
+6) Click each Microsoft section and collect data
+7) Compute BUY/DO NOT BUY decision
+--------------------------------------------------------------------------------
+Company Profile: CLICKED
+Company News: CLICKED
+Analyst Rating: CLICKED
+Price History: CLICKED
+Financial Statements: CLICKED
+--------------------------------------------------------------------------------
+Decision: BUY
+Reasoning: Signals BUY=2, DO_NOT_BUY=0. Decision based on analyst tone, trend language, and financial keywords found across sections.

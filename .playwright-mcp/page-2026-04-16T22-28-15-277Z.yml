@@ -1,0 +1,603 @@
+- generic [ref=e1]:
+  - generic [ref=e176]:
+    - iframe [ref=e275]:
+      - insertion [ref=f262e3]:
+        - iframe [ref=f262e5]:
+          
+    - generic [ref=e276] [cursor=pointer]: X
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - text: 
+      - button "Select Language" [ref=e4] [cursor=pointer]:
+        - text: About
+        - generic [ref=e5]: 
+      - generic "Challenges" [ref=e6] [cursor=pointer]:
+        - text: Contests
+        - generic [ref=e7]: 
+    - generic [ref=e9]:
+      - generic "Username" [ref=e10]: walaezzedine
+      - link "Unread Messages" [ref=e11] [cursor=pointer]:
+        - /url: /forum/messages
+        - generic [ref=e12]: 
+        - generic "Number of Unread Messages" [ref=e13]: "1"
+      - combobox "Tournament Select" [ref=e15]:
+        - option "My Practice Portfolio" [selected]
+      - link "Logout" [ref=e16] [cursor=pointer]:
+        - /url: /logout
+  - navigation [ref=e17]:
+    - menubar [ref=e19]:
+      - menuitem "Logo" [ref=e20]:
+        - link "Logo" [ref=e21] [cursor=pointer]:
+          - /url: /home
+          - img "Logo" [ref=e22]
+    - menubar [ref=e24]:
+      - menuitem "Dashboard" [ref=e25]:
+        - generic [ref=e26] [cursor=pointer]: Dashboard 
+        - text: 
+      - menuitem "Stock Game" [ref=e27]:
+        - generic [ref=e28] [cursor=pointer]: Stock Game 
+      - menuitem "Investing Research" [ref=e29]:
+        - generic "Investing Research" [ref=e30] [cursor=pointer]: Investing Research 
+      - menuitem "Courses" [ref=e31]:
+        - generic [ref=e32] [cursor=pointer]: Courses 
+      - menuitem "Getting Started" [ref=e33]:
+        - generic [ref=e34] [cursor=pointer]: Getting Started 
+  - generic [ref=e35]:
+    - generic [ref=e177]:
+      - generic [ref=e179]:
+        - generic [ref=e181]:
+          - text: Portfolio Value
+          - strong [ref=e182]: $99,975.49
+        - generic [ref=e183]:
+          - generic [ref=e184]:
+            - text: Return Percentage
+            - strong [ref=e185]: 0,02%
+            - generic [ref=e186]: 
+          - generic [ref=e187]:
+            - text: Cash Balance
+            - strong [ref=e188]: $89,176.09
+          - generic [ref=e189]:
+            - text: Buying Power
+            - strong [ref=e190]: $189,151.58
+          - generic [ref=e191]:
+            - text: Current Rank
+            - strong [ref=e192]: 5 566/73625
+      - generic [ref=e193]:
+        - generic [ref=e196]:
+          - generic [ref=e198]:
+            - generic [ref=e199]:
+              - generic [ref=e200]: DOW JONES ETF
+              - generic [ref=e201]: .19%
+              - generic [ref=e203]: 
+            - img "Chart" [ref=e205]
+          - generic [ref=e207]:
+            - generic [ref=e208]:
+              - generic [ref=e209]: S&P500 ETF
+              - generic [ref=e210]: .25%
+              - generic [ref=e212]: 
+            - img "Chart" [ref=e214]
+          - generic [ref=e216]:
+            - generic [ref=e217]:
+              - generic [ref=e218]: NASDAQ ETF
+              - generic [ref=e219]: .48%
+              - generic [ref=e221]: 
+            - img "Chart" [ref=e223]
+          - generic [ref=e225]:
+            - generic [ref=e226]:
+              - generic [ref=e227]: CRUDE OIL ETF
+              - generic [ref=e228]: 2.65%
+              - generic [ref=e230]: 
+            - img "Chart" [ref=e232]
+          - generic [ref=e234]:
+            - generic [ref=e235]:
+              - generic [ref=e236]: GOLD ETF
+              - generic [ref=e237]: "-.09%"
+              - generic [ref=e239]: 
+            - img "Chart" [ref=e241]
+          - generic [ref=e243]:
+            - generic [ref=e244]:
+              - generic [ref=e245]: NAT GAS ETF
+              - generic [ref=e246]: 1.89%
+              - generic [ref=e248]: 
+            - img "Chart" [ref=e250]
+        - generic [ref=e252] [cursor=pointer]: 
+    - iframe [ref=e280]:
+      - insertion [ref=f255e3]:
+        - iframe [ref=f255e5]:
+          
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - list:
+              - listitem: Markets
+              - listitem: Market Summary
+              - listitem: Market Movers
+              - listitem: Top Performing ETFs
+              - listitem: Futures Summary
+              - listitem: Economic Rates
+              - listitem: Currencies
+              - listitem: Industries
+              - listitem: Basic Research
+              - listitem: Detailed Quote
+              - listitem: Company Profile
+              - listitem: Company News
+              - listitem: Charts
+              - listitem: Analyst Ratings
+              - listitem: Price History
+              - listitem: Financial Statements
+              - listitem: Advanced Research
+              - listitem: Key Ratios
+              - listitem: Option Chain
+              - listitem: Share Performance
+              - listitem: Earnings
+              - listitem: SEC Filings
+              - listitem: Corporate Actions
+              - listitem: Trades
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - heading "Quotes" [level=3]
+          - generic [ref=e253]:
+            - generic [ref=e258]:
+              - generic [ref=e259]:
+                - generic [ref=e262]:
+                  - generic [ref=e263] [cursor=pointer]: 
+                  - textbox "Search for a symbol or company, typing will show categorized results in tabs below" [ref=e264]:
+                    - /placeholder: Search for a symbol or company
+                  - text: 
+                - text: 
+                - link "Trade" [ref=e281] [cursor=pointer]:
+                  - /url: /trading/Equities?symbol=MSFT&quantity=0&exchange=US
+              - text:             
+            - generic [ref=e284]:
+              - text:         
+              - generic [ref=e286]:
+                - heading "Microsoft CorporationMSFT" [level=1] [ref=e288]: Microsoft Corporation (MSFT)
+                - generic "quote data for Microsoft Corporation" [ref=e291]:
+                  - generic [ref=e292]:
+                    - generic [ref=e293]:
+                      - text: $420.26
+                      - generic [ref=e294]:
+                        - generic [ref=e295]: 
+                        - generic [ref=e296]: "9.04"
+                        - generic [ref=e297]: (2.20%)
+                    - generic [ref=e298]:
+                      - generic [ref=e299]:
+                        - generic [ref=e300]: "Bid:"
+                        - text: 420.00 x 40
+                      - generic [ref=e301]:
+                        - generic [ref=e302]: "Ask:"
+                        - text: 420.14 x 80
+                    - generic [ref=e303]:
+                      - generic [ref=e305]: April 16, 2026 4:00 PMET
+                      - generic [ref=e307]: "Volume: 41,526,632"
+                  - generic [ref=e308]:
+                    - generic [ref=e309]: USD
+                    - generic [ref=e310]: "|Nasdaq Global Select"
+                    - generic [ref=e311]: "|Delayed Price"
+                    - generic [ref=e312]: "|Market Closed"
+              - generic [ref=e315]:
+                - generic [ref=e316]:
+                  - heading "News and Media" [level=2] [ref=e317]
+                  - generic [ref=e319]:
+                    - generic [ref=e321]:
+                      - generic [ref=e323]:
+                        - generic [ref=e324] [cursor=pointer]: 
+                        - textbox "From Date" [ref=e325]
+                      - generic [ref=e327]:
+                        - generic [ref=e328] [cursor=pointer]: 
+                        - textbox "To Date" [ref=e329]
+                    - generic [ref=e331]:
+                      - button "Show Result" [ref=e332] [cursor=pointer]
+                      - button "Show Latest" [active] [ref=e333] [cursor=pointer]
+                  - generic [ref=e552]:
+                    - heading "Thu Apr 16th, 2026" [level=3] [ref=e553]
+                    - list [ref=e554]:
+                      - listitem [ref=e555]:
+                        - generic [ref=e556]:
+                          - generic [ref=e557]: KlickAnalytics
+                          - generic [ref=e558]: 3:15 PM
+                          - generic [ref=e559] [cursor=pointer]: Outperform Recommendation Issued On MSFT By Wolfe Research
+                          - generic [ref=e560]: "2026-04-16 15:15:01 ET Wolfe Research analyst issues OUTPERFORM recommendation for MSFT on April 16, 2026 06:44PM ET. The previous analyst recommendation was Outperform. MSFT was trading at $419.25 at issue of the analyst recommendation. The overall analyst consensus : B..."
+                      - listitem [ref=e561]:
+                        - generic [ref=e562]:
+                          - generic [ref=e563]: Motley Fool
+                          - generic [ref=e564]: 3:05 PM
+                          - generic [ref=e565] [cursor=pointer]: "Don't Panic Over Microsoft: These 2 Mega-Cap Stocks Are the Real Opportunity"
+                          - generic [ref=e566]: "2026-04-16 15:05:00 ET Microsoft (NASDAQ: MSFT) shares are down around 20% to start the year, as of this writing. The company was caught up in worries about the impact of artificial intelligence (AI) on software-as-a-service (SaaS) companies and over its AI infrastructure spendi..."
+                      - listitem [ref=e567]:
+                        - generic [ref=e568]:
+                          - generic [ref=e569]: SeekingAlpha
+                          - generic [ref=e570]: 2:55 PM
+                          - generic [ref=e571] [cursor=pointer]: "White House looks to give agencies access to Anthropic's Mythos model: report"
+                          - generic [ref=e572]: "2026-04-16 14:55:11 ET More on Anthropic, Amazon and Google Amazon: The Anthropic Trade You're Not Making Amazon: My Top 8 Reasons To Buy Amazon: A Once-In-A-Generation Opportunity That's Not Priced In Kering, Google aiming to launch Gucci smart glasses in 20..."
+                      - listitem [ref=e573]:
+                        - generic [ref=e574]:
+                          - generic [ref=e575]: SiliconANGLE
+                          - generic [ref=e576]: 2:54 PM
+                          - generic [ref=e577] [cursor=pointer]: Three insights you might have missed from theCUBE's coverage of Nutanix .NEXT
+                          - generic [ref=e578]: 2026-04-16 14:54:58 ET Agentic infrastructure is quickly becoming the foundation for how enterprises build and run AI at scale. What’s emerging is a shift from piecemeal tools to integrated systems where data, models and operations are tightly connected, making AI a production capabi...
+                      - listitem [ref=e579]:
+                        - generic [ref=e580]:
+                          - generic [ref=e581]: SeekingAlpha
+                          - generic [ref=e582]: 1:55 PM
+                          - generic [ref=e583] [cursor=pointer]: "Nebius: Did Meta And Microsoft Buy Compute At Near-Zero Margin? (Rating Downgrade)"
+                          - generic [ref=e584]: "2026-04-16 13:55:12 ET Investment Thesis Last year, I upgraded Nebius ( NBIS ) to a \"Buy\" after its first (and transformative) deals with Meta ( META ) and Microsoft ( MSFT ).... Read the full article on Seeking Alpha For further details see: Nebius: Did ..."
+                      - listitem [ref=e585]:
+                        - generic [ref=e586]:
+                          - generic [ref=e587]: SeekingAlpha
+                          - generic [ref=e588]: 1:38 PM
+                          - generic [ref=e589] [cursor=pointer]: Microsoft edges up as new Fairweather data center goes online early
+                          - generic [ref=e590]: "2026-04-16 13:38:57 ET More on Microsoft Microsoft: Cheap For All The Wrong Reasons Microsoft: Claude Just Threatened Copilot Adoption Microsoft: The New Standard Oil - Why 'Intelligence Refinery' Is Future Of Global Profit Microsoft stock climbs in historic ..."
+                      - listitem [ref=e591]:
+                        - generic [ref=e592]:
+                          - generic [ref=e593]: SeekingAlpha
+                          - generic [ref=e594]: 1:34 PM
+                          - generic [ref=e595] [cursor=pointer]: Q1 2026 In Review - March Dividend Income Report
+                          - generic [ref=e596]: "2026-04-16 13:34:00 ET In 2016, I made a life-changing decision: I took a sabbatical, put my family in a small RV, and we drove all the way to Costa Rica.... Read the full article on Seeking Alpha For further details see: Q1 2026 In Review - March Dividend Income Report"
+                      - listitem [ref=e597]:
+                        - generic [ref=e598]:
+                          - generic [ref=e599]: SeekingAlpha
+                          - generic [ref=e600]: 1:31 PM
+                          - generic [ref=e601] [cursor=pointer]: What I'm Doing With My SaaS Holdings As Software Finally Bottoms
+                          - generic [ref=e602]: 2026-04-16 13:31:58 ET Introduction & Investment Thesis The software complex came again under pressure last week after Anthropic launched its own Managed Agents platform while revealing staggering ARR growth of $30B , overtaking OpenAI and positioning itself as an absolu...
+                      - listitem [ref=e603]:
+                        - generic [ref=e604]:
+                          - generic [ref=e605]: SeekingAlpha
+                          - generic [ref=e606]: 12:48 PM
+                          - generic [ref=e607] [cursor=pointer]: "Microsoft: Cheap For All The Wrong Reasons"
+                          - generic [ref=e608]: "2026-04-16 12:48:39 ET Microsoft Corporation ( MSFT ) has gone out of the market’s favor, and I don’t say this lightly. The stock is now the worst-performing in the Mag 7, as seen below.... Read the full article on Seeking Alpha For further details see: ..."
+                      - listitem [ref=e609]:
+                        - generic [ref=e610]:
+                          - generic [ref=e611]: SeekingAlpha
+                          - generic [ref=e612]: 12:24 PM
+                          - generic [ref=e613] [cursor=pointer]: "Musk's xAI to rent computing power to Cursor: report"
+                          - generic [ref=e614]: "2026-04-16 12:24:09 ET More on xAI and SpaceX SpaceX 600x Earnings: I'm Calling It A Strong Buy Anyway Can Any Investor Actually Value SpaceX? SpaceX IPO: What I Learned From ULA's Heydays U.S. Navy drone tests expose risks of heavy reliance on SpaceX’..."
+                      - listitem [ref=e615]:
+                        - generic [ref=e616]:
+                          - generic [ref=e617]: SeekingAlpha
+                          - generic [ref=e618]: 11:35 AM
+                          - generic [ref=e619] [cursor=pointer]: A 'reverse perfect storm' in earnings season is coming - Citi Research's Scott Chronert
+                          - generic [ref=e620]: 2026-04-16 11:35:43 ET More on hyperscalers 6 Themes For Earning Season Recent AI Funding Problems Should Worry You Hyperscalers Are As Strong As Ever Investors can expect ‘a muted Q2’ in big tech names due to ad budget cuts – analyst ...
+                      - listitem [ref=e621]:
+                        - generic [ref=e622]:
+                          - generic [ref=e623]: USA News Group
+                          - generic [ref=e624]: 10:48 AM
+                          - generic [ref=e625] [cursor=pointer]: "The Clock is Running Out on Legacy Encryption: These 5 Stocks Know This Fact"
+                          - generic [ref=e626]: "2026-04-16 10:48:44 ET USANewsGroup.com News Commentary VANCOUVER, BC, April 16, 2026 — Here’s the problem keeping CISOs up at night: hackers are already stealing encrypted data, betting they’ll crack it later once quantum computers catch up. The Global Risk Institu..."
+                      - listitem [ref=e627]:
+                        - generic [ref=e628]:
+                          - generic [ref=e629]: SeekingAlpha
+                          - generic [ref=e630]: 10:15 AM
+                          - generic [ref=e631] [cursor=pointer]: "Amazon: The Anthropic Trade You're Not Making"
+                          - generic [ref=e632]: "2026-04-16 10:15:50 ET Amazon ( AMZN ) is now the top-performing Mag7 on the YTD chart, up almost 8% versus the S&P 500, up 2%, while players like Tesla (TSLA) and Microsoft (MSFT) are down 19% each.... Read the full article on Seeking Alpha For further details see: ..."
+                      - listitem [ref=e633]:
+                        - generic [ref=e634]:
+                          - generic [ref=e635]: Motley Fool Canada
+                          - generic [ref=e636]: 10:00 AM
+                          - generic [ref=e637] [cursor=pointer]: How to Use Your Annual TFSA Room to Double Your Contributions
+                          - generic [ref=e638]: "2026-04-16 10:00:00 ET Here is my view: the best way to use your 2026 TFSA ( Tax-Free Savings Account ) contribution room is to own quality compounders that can generate $7,000 in tax-free income or gains on their own, effectively doubling what you put in. Microsoft ( NASDAQ:M..."
+                      - listitem [ref=e639]:
+                        - generic [ref=e640]:
+                          - generic [ref=e641]: Canada Newswire
+                          - generic [ref=e642]: 10:00 AM
+                          - generic [ref=e643] [cursor=pointer]: "The Clock is Running Out on Legacy Encryption: These 5 Stocks Know This Fact"
+                          - generic [ref=e644]: "The Clock is Running Out on Legacy Encryption: These 5 Stocks Know This Fact Canada NewsWire Issued on behalf of Quantum Secure Encryption Corp. USANewsGroup.com News Commentary VANCOUVER, BC , April 16, 2026 /CNW/ -- Here's the problem keeping CISOs up at night: h..."
+                      - listitem [ref=e645]:
+                        - generic [ref=e646]:
+                          - generic [ref=e647]: PR Newswire
+                          - generic [ref=e648]: 10:00 AM
+                          - generic [ref=e649] [cursor=pointer]: "The Clock is Running Out on Legacy Encryption: These 5 Stocks Know This Fact"
+                          - generic [ref=e650]: "The Clock is Running Out on Legacy Encryption: These 5 Stocks Know This Fact PR Newswire Issued on behalf of Quantum Secure Encryption Corp. USANewsGroup.com News Commentary VANCOUVER, BC , April 16, 2026 /PRNewswire/ -- Here's the problem keeping CISOs up at night..."
+                      - listitem [ref=e651]:
+                        - generic [ref=e652]:
+                          - generic [ref=e653]: SeekingAlpha
+                          - generic [ref=e654]: 9:13 AM
+                          - generic [ref=e655] [cursor=pointer]: Amazon in spotlight as Fox chooses AWS as its preferred AI cloud provider
+                          - generic [ref=e656]: "2026-04-16 09:13:24 ET More on Amazon and Fox Amazon: My Top 8 Reasons To Buy Amazon: A Once-In-A-Generation Opportunity That's Not Priced In Amazon: Zoox Enters The Robo Taxi Race, Jassy On Growth And Anthropic Mythos Oracle jumps as it expands AWS deal for ..."
+                      - listitem [ref=e657]:
+                        - generic [ref=e658]:
+                          - generic [ref=e659]: Motley Fool
+                          - generic [ref=e660]: 8:50 AM
+                          - generic [ref=e661] [cursor=pointer]: This Magnificent Stock Is Still a Buy Despite the Recent Rebound
+                          - generic [ref=e662]: 2026-04-16 08:50:00 ET The SaaS and cybersecurity sell-off has been brutal, but I think the market is completely wrong about where this is heading, and one name in particular is being unfairly punished. Watch the short video to learn more, consider subscribing, and click the special offer l...
+                      - listitem [ref=e663]:
+                        - generic [ref=e664]:
+                          - generic [ref=e665]: Motley Fool
+                          - generic [ref=e666]: 7:56 AM
+                          - generic [ref=e667] [cursor=pointer]: "Bargain Alert: 2 Brand-Name Software Stocks That Haven't Been This Cheap in Over a Decade"
+                          - generic [ref=e668]: "2026-04-16 07:56:00 ET Although the stock market entered 2026 at its second-priciest valuation in 155 years , based on the S&P 500 's (SNPINDEX: ^GSPC) Shiller Price-to-Earnings (P/E) Ratio, bargains can be unearthed for investors willing to seek them out. For exampl..."
+                      - listitem [ref=e669]:
+                        - generic [ref=e670]:
+                          - generic [ref=e671]: SeekingAlpha
+                          - generic [ref=e672]: 7:00 AM
+                          - generic [ref=e673] [cursor=pointer]: EU regulator proposes measures for Google to share search engine data with third parties
+                          - generic [ref=e674]: "2026-04-16 10:27:22 ET More on Alphabet Alphabet: A Powerful Earnings Beat Likely Coming Again (Earnings Preview) Alphabet: AI-Powered Google Finance Is A Masterstroke Alphabet Stock Defies AI's Gravity Google's SpaceX stake could deliver $100 billion payday ..."
+                      - listitem [ref=e675]:
+                        - generic [ref=e676]:
+                          - generic [ref=e677]: Motley Fool
+                          - generic [ref=e678]: 6:50 AM
+                          - generic [ref=e679] [cursor=pointer]: SaaS and Cybersecurity Stocks Just Surged After Weeks of Panic. Is the Worst Over?
+                          - generic [ref=e680]: 2026-04-16 06:50:00 ET SaaS and cybersecurity stocks rebounded over the past couple of days after weeks of brutal selling. Watch the short video to learn more, consider subscribing, and click the special offer link below. *Stock prices used were from the trading day of April. 13, 2026...
+                      - listitem [ref=e681]:
+                        - generic [ref=e682]:
+                          - generic [ref=e683]: SeekingAlpha
+                          - generic [ref=e684]: 5:54 AM
+                          - generic [ref=e685] [cursor=pointer]: "Microsoft: Claude Just Threatened Copilot Adoption"
+                          - generic [ref=e686]: 2026-04-16 05:54:23 ET 2026 has not started well for big tech investors. Microsoft Corporation ( MSFT ) has been the hardest-hit big tech company so far this year, with its stock down ~21% YTD. In fact, Q1 marked the worst performance for MSFT since 2008. This lackluster performance...
+                      - listitem [ref=e687]:
+                        - generic [ref=e688]:
+                          - generic [ref=e689]: SeekingAlpha
+                          - generic [ref=e690]: 4:56 AM
+                          - generic [ref=e691] [cursor=pointer]: "Microsoft: The New Standard Oil - Why 'Intelligence Refinery' Is Future Of Global Profit"
+                          - generic [ref=e692]: 2026-04-16 04:56:47 ET Introduction When we last looked at Microsoft ( MSFT ) in June 2025, it was clear that market optimism had pushed the stock price higher than the valuation metrics warranted. At that time, Microsoft was trading at $470, and we set our price target at $...
+                      - listitem [ref=e693]:
+                        - generic [ref=e694]:
+                          - generic [ref=e695]: SeekingAlpha
+                          - generic [ref=e696]: 2:40 AM
+                          - generic [ref=e697] [cursor=pointer]: TomTom sees Q1 profit surge on restructuring gains despite revenue dip
+                          - generic [ref=e698]: 2026-04-16 02:40:14 ET More on TomTom N.V. TomTom N.V. (TMOAY) Q4 2025 Earnings Call Transcript TomTom N.V. 2025 Q4 - Results - Earnings Call Presentation Historical earnings data for TomTom N.V. Financial information for TomTom N.V. Read the full a...
+                      - listitem [ref=e699]:
+                        - generic [ref=e700]:
+                          - generic [ref=e701]: Motley Fool
+                          - generic [ref=e702]: 12:20 AM
+                          - generic [ref=e703] [cursor=pointer]: 3 Screaming Buys for the Upcoming AI-Quantum Supercycle
+                          - generic [ref=e704]: 2026-04-16 00:20:00 ET All eyes are currently on the artificial intelligence (AI) buildout, and for good reason. AI is gradually becoming more and more mainstream, and several businesses are already adopting an AI-first approach to developing new products and optimizing business practices. ...
+                  - generic [ref=e490]:
+                    - button "First"
+                    - button "Prev"
+                    - button "Last" [ref=e491] [cursor=pointer]
+                    - button "Next" [ref=e492] [cursor=pointer]
+                    - button "1" [ref=e705] [cursor=pointer]
+                    - button "2" [ref=e706] [cursor=pointer]
+                    - button "3" [ref=e707] [cursor=pointer]
+                    - button "4" [ref=e708] [cursor=pointer]
+                    - button "5" [ref=e709] [cursor=pointer]
+                - generic [ref=e498]:
+                  - heading "Video News" [level=2] [ref=e499]
+                  - list [ref=e502]:
+                    - listitem [ref=e503] [cursor=pointer]:
+                      - generic [ref=e504]:
+                        - img "Zillow launches Zillow for Warcraft&#xAE;, a new way to explore World of Warcraft&#xAE; homes" [ref=e506]
+                        - generic [ref=e507]: Zillow launches Zillow for Warcraft®, a new way to explore World of Warcraft® homes
+                        - generic [ref=e508]:
+                          - generic [ref=e509]: PR Newswire
+                          - generic [ref=e510]: Feb 17th, 2026
+                    - listitem [ref=e511] [cursor=pointer]:
+                      - generic [ref=e512]:
+                        - img "Levi Strauss & Co. partners with Microsoft to develop next-gen superagent" [ref=e514]
+                        - generic [ref=e515]: Levi Strauss & Co. partners with Microsoft to develop next-gen superagent
+                        - generic [ref=e516]:
+                          - generic [ref=e517]: PR Newswire
+                          - generic [ref=e518]: Nov 17th, 2025
+                    - listitem [ref=e519] [cursor=pointer]:
+                      - generic [ref=e520]:
+                        - img /C O R R E C T I O N -- Microsoft Corp./ [ref=e522]
+                        - generic [ref=e523]: /C O R R E C T I O N -- Microsoft Corp./
+                        - generic [ref=e524]:
+                          - generic [ref=e525]: PR Newswire
+                          - generic [ref=e526]: Oct 16th, 2025
+                    - listitem [ref=e527] [cursor=pointer]:
+                      - generic [ref=e528]:
+                        - img "Microsoft extends AI advancements in Dragon Copilot to nurses and partners to enhance patient care" [ref=e530]
+                        - generic [ref=e531]: Microsoft extends AI advancements in Dragon Copilot to nurses and partners to enhance patient care
+                        - generic [ref=e532]:
+                          - generic [ref=e533]: PR Newswire
+                          - generic [ref=e534]: Oct 16th, 2025
+                    - listitem [ref=e535] [cursor=pointer]:
+                      - generic [ref=e536]:
+                        - img "Doctors Are Being Outpaced by AI-Powered Algorithms -- Here's What It Means for Investors" [ref=e538]
+                        - generic [ref=e539]: Doctors Are Being Outpaced by AI-Powered Algorithms -- Here's What It Means for Investors
+                        - generic [ref=e540]:
+                          - generic [ref=e541]: Canada Newswire
+                          - generic [ref=e542]: Jul 7th, 2025
+          - iframe [ref=e543]:
+            - insertion [ref=f271e3]:
+              - iframe [ref=f271e5]:
+                
+    - generic [ref=e267]:
+      - strong [ref=e268]: Notice
+      - paragraph [ref=e269]:
+        - text: This website uses cookies, for more information please visit our
+        - link "Privacy Policy" [ref=e270] [cursor=pointer]:
+          - /url: https://content.stocktrak.com/privacy-policy/
+          - strong [ref=e271]: Privacy Policy
+      - generic [ref=e272] [cursor=pointer]: Ok
+  - contentinfo [ref=e38]:
+    - generic [ref=e40]:
+      - complementary [ref=e42]:
+        - figure [ref=e43]:
+          - link "WallStreetSurvivor logo" [ref=e44] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e45]
+      - generic [ref=e46]:
+        - complementary [ref=e47]:
+          - heading "Our Platform" [level=3] [ref=e48]
+        - complementary [ref=e49]:
+          - list [ref=e50]:
+            - listitem [ref=e51]:
+              - link "Stock Market Simulator" [ref=e52] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e53]:
+              - link "Investing Courses for Beginners" [ref=e54] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/courses/
+            - listitem [ref=e55]:
+              - link "Best Stocks to Buy Now" [ref=e56] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e57]:
+              - link "How to Invest Videos" [ref=e58] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+            - listitem [ref=e59]:
+              - link "Free Online Investing Course" [ref=e60] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e61]:
+              - link "Financial Literacy Game for Students" [ref=e62] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e63]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e64] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e65]:
+              - link "Crypto Paper Trading" [ref=e66] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e67]:
+              - link "About WallStreetSurvivor" [ref=e68] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+      - generic [ref=e69]:
+        - complementary [ref=e70]:
+          - heading "Review Center" [level=3] [ref=e71]
+        - complementary [ref=e72]:
+          - list [ref=e73]:
+            - listitem [ref=e74]:
+              - link "Motley Fool Review" [ref=e75] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e76]:
+              - link "Seeking Alpha Review" [ref=e77] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e78]:
+              - link "Alpha Picks Review" [ref=e79] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e80]:
+              - link "Moby Stocks Review" [ref=e81] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e82]:
+              - link "Wealthsimple Review" [ref=e83] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/wealthsimple-review/
+            - listitem [ref=e84]:
+              - link "Is Robinhood Safe to Use?" [ref=e85] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e86]:
+              - link "Rule Breakers Review" [ref=e87] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e88]:
+              - link "Best Investment Newsletters" [ref=e89] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e90]:
+              - link "Best Investing Apps" [ref=e91] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e92]:
+              - link "Best Motley Fool Discount Code" [ref=e93] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e94]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e95] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e96]:
+              - link "Best Tipranks Discount Code" [ref=e97] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e98]:
+              - link "Is Coinbase Safe?" [ref=e99] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e100]:
+              - link "Free Crypto with Coinbase" [ref=e101] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e102]:
+              - link "Best Stock Picking Service" [ref=e103] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+      - generic [ref=e104]:
+        - complementary [ref=e105]:
+          - heading "Corporate Services" [level=3] [ref=e106]
+        - complementary [ref=e107]:
+          - list [ref=e108]:
+            - listitem [ref=e109]:
+              - link "White Label Stock Market Games" [ref=e110] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e111]:
+              - link "White Label Virtual Crypto Trading" [ref=e112] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e113]:
+              - link "Employee Financial Wellness" [ref=e114] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e115]:
+              - link "Sponsor a College or High School" [ref=e116] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e117]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e118] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e119]:
+          - heading "Our Company" [level=3] [ref=e120]
+        - complementary [ref=e121]:
+          - list [ref=e122]:
+            - listitem [ref=e123]:
+              - link "Contact Us" [ref=e124] [cursor=pointer]:
+                - /url: mailto:support@wallstreetsurvivor.com
+            - listitem [ref=e125]:
+              - link "About Us" [ref=e126] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/
+            - listitem [ref=e127]:
+              - link "Motley Fool Review" [ref=e128] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e129]:
+              - link "Privacy Policy" [ref=e130] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e131]:
+              - link "Terms and Conditions" [ref=e132] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e133]:
+              - link "Advertise with Us" [ref=e134] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e135]:
+        - complementary [ref=e136]:
+          - heading "Family of Sites" [level=3] [ref=e137]:
+            - strong [ref=e138]: Family of Sites
+        - complementary [ref=e139]:
+          - figure [ref=e140]:
+            - link "StockTrak logo" [ref=e141] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e142]
+        - complementary [ref=e143]:
+          - figure [ref=e144]:
+            - link "PersonalFinanceLab logo" [ref=e145] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e146]
+        - complementary [ref=e147]:
+          - figure [ref=e148]:
+            - link "WallStreetSurvivor logo" [ref=e149] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Practice stock trading site" [ref=e150]
+        - complementary [ref=e151]:
+          - figure [ref=e152]:
+            - link "HowTheMarketWorks logo" [ref=e153] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free stock market game for students" [ref=e154]
+        - complementary [ref=e155]:
+          - link "Global Virtual Stock Game" [ref=e156] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e157] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - generic "Site" [ref=e158]:
+      - generic [ref=e159]:
+        - generic [ref=e160]:
+          - complementary [ref=e161]:
+            - heading "Connect With Us" [level=2] [ref=e162]
+          - complementary:
+            - figure [ref=e163]:
+              - link "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e164] [cursor=pointer]:
+                - /url: https://www.instagram.com/wallstreetsurvivor/
+                - img "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e165]
+          - complementary:
+            - figure [ref=e166]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e167] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e168]
+          - complementary:
+            - figure [ref=e169]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e170] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e171]
+          - complementary:
+            - figure [ref=e172]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e173] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e174]
+        - generic [ref=e175]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2025 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.
+  - generic [ref=e546] [cursor=pointer]:
+    - generic [ref=e547]:
+      - text: 
+      - generic "We're Online!" [ref=e548]
+    - text: 
+  - generic [ref=e550]:
+    - img
+  - generic:
+    - generic:
+      - iframe

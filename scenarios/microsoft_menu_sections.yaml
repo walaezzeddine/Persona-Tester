@@ -1,0 +1,39 @@
+name: "Microsoft Stock - Click Menu Sections"
+description: |
+  On the MSFT Quote page, find and click each menu section:
+  1. Company Profile
+  2. Company News
+  3. Analyst Ratings
+  4. Price History
+  5. Financial Statements
+
+  Then make a BUY/NO BUY decision based on what you see.
+
+constraints:
+  time_limit: 600
+  max_retries: 3
+
+success_criteria:
+  - "Found and clicked 'Company Profile' menu item"
+  - "Found and clicked 'Company News' menu item"
+  - "Found and clicked 'Analyst Ratings' menu item"
+  - "Found and clicked 'Price History' menu item"
+  - "Found and clicked 'Financial Statements' menu item"
+  - "Made a clear BUY or NO BUY decision"
+
+abandon_criteria:
+  - "Cannot find menu items after 3 attempts"
+  - "Cannot click on any menu items"
+
+key_actions:
+  - "IMPORTANT: Look for a menu or sidebar on the page with these exact options as list items:"
+  - "  1. Company Profile"
+  - "  2. Company News"
+  - "  3. Analyst Ratings"
+  - "  4. Price History"
+  - "  5. Financial Statements"
+  - "If menu is not visible, scroll down to find it"
+  - "Click each menu item ONE BY ONE"
+  - "After clicking each, take a snapshot to read the data"
+  - "Collect data from all 5 sections"
+  - "Make final BUY or NO BUY decision"

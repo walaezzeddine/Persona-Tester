@@ -1,0 +1,16 @@
+- generic [ref=e3]:
+  - link "Go Back" [ref=e5] [cursor=pointer]:
+    - /url: /
+    - generic [ref=e6]: 
+    - text: Go Back
+  - generic [ref=e8]:
+    - heading "Login" [level=4] [ref=e9]
+    - generic [ref=e10]:
+      - textbox "Username" [active] [ref=e11]
+      - textbox "Password" [ref=e12]
+      - generic [ref=e13]:
+        - link "Forgot Username" [ref=e14] [cursor=pointer]:
+          - /url: /forgotusername
+        - link "Forgot Password" [ref=e15] [cursor=pointer]:
+          - /url: /forgotpassword
+      - button "Log me in" [ref=e17] [cursor=pointer]

@@ -1,0 +1,54 @@
+name: "Microsoft Stock - Detailed Company Analysis"
+description: |
+  Analyze Microsoft stock by finding and clicking through specific financial data sections:
+
+  NAVIGATION STEPS:
+  1. Go to Stock Game → Stocks section
+  2. Find stock search bar at TOP of page
+  3. Search for "Microsoft" (symbol: MSFT)
+  4. When MSFT appears in results, click on it
+  5. You will see a company profile page with multiple tabs/buttons:
+     - Company Profile (main info)
+     - Company News (recent news)
+     - Analyst Rating (buy/sell recommendations)
+     - Price History (stock chart)
+     - Financial Statements (balance sheet, income statement)
+  6. Click on EACH of these sections one by one
+  7. Read and analyze the data from each section
+  8. Based on ALL the data collected, decide: BUY or DO NOT BUY
+  9. Explain your reasoning
+
+constraints:
+  time_limit: 600
+  max_retries: 3
+
+success_criteria:
+  - "Successfully searched and found Microsoft (MSFT)"
+  - "Clicked on Company Profile"
+  - "Clicked on Company News and read recent developments"
+  - "Clicked on Analyst Rating and reviewed recommendations"
+  - "Clicked on Price History and reviewed trends"
+  - "Clicked on Financial Statements and reviewed metrics"
+  - "Made a clear BUY or NO BUY decision"
+  - "Provided reasoning based on the data reviewed"
+
+abandon_criteria:
+  - "Cannot find MSFT after 3 search attempts"
+  - "Cannot access company profile page"
+  - "Major page navigation broken"
+
+key_actions:
+  - "CRITICAL: If you see ANY popup or overlay (cookie banner, ad, etc), close it FIRST by clicking X or OK button"
+  - "Step 1: Navigate to 'Stocks' section from menu"
+  - "Step 2: Find the search input field at the TOP of the page (placeholder: 'Search for symbol or company')"
+  - "Step 3: Click in the search field and type 'MSFT' or 'Microsoft'"
+  - "Step 4: Wait for dropdown results to appear, then click 'MSFT - Microsoft'"
+  - "Step 5: The company profile page will load. Look for tabs/buttons with these exact names:"
+  - "   → Company Profile (usually first tab)"
+  - "   → Company News (should be visible below or as a tab)"
+  - "   → Analyst Rating (recommendation section)"
+  - "   → Price History (stock chart section)"
+  - "   → Financial Statements (accounts/earnings section)"
+  - "Step 6: Click each section SLOWLY and read the data"
+  - "Step 7: After reviewing all 5 sections, analyze: Is MSFT a good buy?"
+  - "Step 8: Make your final decision with reasoning"

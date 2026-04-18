@@ -1,0 +1,99 @@
+name: "Wall Street Survivor - AMD Momentum Trade (Market Movers Path)"
+target_url: "https://www.wallstreetsurvivor.com/"
+
+description: |
+  Alternative trading scenario with a different navigation route than NVIDIA realistic dashboard.
+  This flow intentionally starts from Market Movers (not Stock/Fund Quotes) to compare agent behavior.
+
+  1. Login to Wall Street Survivor
+  2. Close dashboard tour overlay
+  3. Open Markets -> Market Movers
+  4. Identify AMD from movers tables or search AMD from that section
+  5. Read momentum signals (price move, volume, direction)
+  6. Read latest AMD-related headlines if visible
+  7. Decide BUY or SELL based on momentum + sentiment
+  8. Execute a 5-share trade with order preview
+  9. Verify that the order is confirmed
+
+constraints:
+  time_limit: 600
+  max_retries: 3
+
+success_criteria:
+  - "Successfully logged in"
+  - "Closed tour overlay"
+  - "Reached Market Movers page from dashboard"
+  - "Located AMD stock data"
+  - "Read momentum and news/sentiment clues"
+  - "Made a justified BUY or SELL decision"
+  - "Executed trade with preview and confirm"
+  - "Received trade confirmation"
+
+abandon_criteria:
+  - "Cannot login after 3 attempts"
+  - "Cannot access Market Movers section"
+  - "Cannot find AMD quote information"
+  - "Cannot reach trade preview/confirm"
+
+key_actions:
+  - "Step 1: Navigate to https://www.wallstreetsurvivor.com/ (only direct URL use)"
+  - "Step 2: Take browser_snapshot and find Login link"
+  - "Step 3: Click Login and submit credentials (WALAEZZEDINE / WALA@123)"
+  - "Step 4: On dashboard, close tour overlay (Close Tour / Skip)"
+  - "Step 5: Open Markets navigation and click Market Movers"
+  - "Step 5b: NEVER click Logout, Username, Unread Messages, or Select Language while navigating to Market Movers"
+  - "Step 6: On Market Movers page, read top gainers/losers and locate AMD if visible"
+  - "Step 7: If AMD is not visible, use available search input and type AMD"
+  - "Step 8: Open AMD details from visible result/link"
+  - "Step 9: Read current price, daily % move, and direction (up/down)"
+  - "Step 10: Read volume/volatility clues if shown"
+  - "Step 11: Read any visible AMD news headline snippets"
+  - "Step 12: Analyze momentum + sentiment and decide BUY or SELL"
+  - "Step 13: Click TRADE from AMD detail context"
+  - "Step 14: In trade form, set quantity to 5"
+  - "Step 15: Keep order type as Market (unless blocked)"
+  - "Step 16: Click Preview"
+  - "Step 17: Verify summary (symbol AMD, qty 5, action matches decision)"
+  - "Step 18: Click Confirm"
+  - "Step 19: Wait for confirmation message"
+  - "Step 20: DONE"
+
+site_guidance: |
+  WALL STREET SURVIVOR - ALTERNATE NAVIGATION (MARKET MOVERS FIRST)
+
+  PRIMARY DIFFERENCE VS NVIDIA SCENARIO:
+  - Do NOT start by going to Stock/Fund Quotes.
+  - Start from dashboard -> Markets -> Market Movers.
+  - Use mover context (gainers/losers momentum) to decide.
+
+  RULES:
+  - Use browser_navigate only for the initial homepage.
+  - Use visible UI elements for all other navigation.
+  - Prefer browser_snapshot before each critical click.
+  - If overlay blocks clicks, close it first (Close Tour, Skip, Escape).
+  - If AMD is not in first viewport, scroll and snapshot again.
+  - NEVER click these controls while trying to reach market pages: Logout, Username, Unread Messages, Select Language.
+
+  MARKET MOVERS TARGETING RULE:
+  - Use browser_evaluate to find exact text nodes "Market Summary" and "Market Movers".
+  - Click ONLY elements whose visible text contains "Market Movers".
+  - If 2 wrong clicks happen in a row, immediately do: browser_snapshot -> browser_evaluate text search -> click exact Market Movers element.
+
+  ANTI-LOOP RULE:
+  - If you return to homepage unexpectedly, login once and continue.
+  - Do not repeat login/logout cycles more than once.
+  - After dashboard is open and tour is closed, the next valid target must be Market Movers.
+
+  DECISION FRAME:
+  - BUY if momentum is bullish (price up, positive move, supportive headlines).
+  - SELL if momentum is bearish (price down, negative move, weak headlines).
+  - Record a short reason combining price direction + sentiment clue.
+
+  TRADE EXECUTION RULES:
+  - Symbol must be AMD.
+  - Quantity must be 5 shares.
+  - Must pass through Preview before Confirm.
+  - Confirmation message is mandatory for success.
+
+max_steps: 65
+headless: false
