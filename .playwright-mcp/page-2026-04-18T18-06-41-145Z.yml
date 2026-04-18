@@ -1,0 +1,927 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - navigation "Primary" [ref=e3]:
+    - generic [ref=e4]:
+      - link "Wall Street Survivor" [ref=e7] [cursor=pointer]:
+        - /url: https://www.wallstreetsurvivor.com/
+        - img "Wall Street Survivor" [ref=e8]
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - link "Courses" [ref=e12] [cursor=pointer]:
+            - /url: "#"
+            - text: Courses
+            - img [ref=e14]
+          - list:
+            - listitem:
+              - link "Getting Started In The Stock Market":
+                - /url: https://www.wallstreetsurvivor.com/stock-market-for-beginners/
+            - listitem:
+              - link "Beginner Investing-10 Steps":
+                - /url: https://www.wallstreetsurvivor.com/beginner-investing-10-steps-to-start-investing/
+            - listitem:
+              - link "How to Know What Stocks to Invest in":
+                - /url: https://www.wallstreetsurvivor.com/stock-ratings/
+            - listitem:
+              - link "Investing With Little Money":
+                - /url: https://www.wallstreetsurvivor.com/how-to-invest-with-little-money/
+            - listitem:
+              - link "Best Investment Apps":
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem:
+              - link "Start Investing The Right Way":
+                - /url: https://www.wallstreetsurvivor.com/robinhood-free-stock/
+            - listitem:
+              - link "All Courses":
+                - /url: https://www.wallstreetsurvivor.com/courses/
+        - listitem [ref=e16]:
+          - link "Stock Game" [ref=e17] [cursor=pointer]:
+            - /url: "#"
+            - text: Stock Game
+            - img [ref=e19]
+          - list:
+            - listitem:
+              - link "Join A Contest For Cash Prizes":
+                - /url: https://app.wallstreetsurvivor.com/members/register
+            - listitem:
+              - link "Join Our Most Popular Contests":
+                - /url: https://app.wallstreetsurvivor.com/members/register
+            - listitem:
+              - link "Free Stock Market Game":
+                - /url: /stock-market-game/
+            - listitem:
+              - link "Search For A Private Stock Contest":
+                - /url: https://app.wallstreetsurvivor.com/contests/find
+            - listitem:
+              - link "View Contests I have Already Joined":
+                - /url: https://app.wallstreetsurvivor.com/contests
+            - listitem:
+              - link "Create A Stock Contest":
+                - /url: https://app.wallstreetsurvivor.com/admin/createtournament
+        - listitem [ref=e21]:
+          - link "Best Investing Tools" [ref=e22] [cursor=pointer]:
+            - /url: "#"
+            - text: Best Investing Tools
+            - img [ref=e24]
+          - list:
+            - listitem:
+              - link "Best Stock Newsletters":
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem:
+              - link "Motley Fool Review-Is it Worth It?":
+                - /url: /motley-fool-review/
+            - listitem:
+              - link "Alpha Picks Review":
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem:
+              - link "Open a Robinhood Account-Get up to $1700 Free Stock":
+                - /url: https://www.wallstreetsurvivor.com/robinhood-free-stock/
+            - listitem:
+              - link "Seeking Alpha Review":
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem:
+              - link "5 Stocks Set to Double (Zacks Free Picks)":
+                - /url: https://www.wallstreetsurvivor.com/zacks-review/
+            - listitem:
+              - link "Is Robinhood Safe?":
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem:
+              - 'link "Robinhood Review: Is Robinhood Legit?"':
+                - /url: https://www.wallstreetsurvivor.com/robinhood-review/
+            - listitem:
+              - link "Motley Fool Canada Review":
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-canada-stock-advisor-review/
+            - listitem:
+              - link "Moomoo Review":
+                - /url: https://www.wallstreetsurvivor.com/moomoo-review/
+            - listitem:
+              - link "Best Investing Apps":
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem:
+              - link "Is Coinbase Safe?":
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem:
+              - link "Trade-Ideas Review":
+                - /url: https://www.wallstreetsurvivor.com/trade-ideas-review/
+        - listitem [ref=e26]:
+          - link "Investing Ideas" [ref=e27] [cursor=pointer]:
+            - /url: "#"
+            - text: Investing Ideas
+            - img [ref=e29]
+          - list:
+            - listitem:
+              - 'link "Seeking Alpha Review: Is Seeking Alpha Worth It? Updated April 5, 2026"':
+                - /url: https://www.wallstreetsurvivor.com/is-seeking-alpha-worth-it/
+            - listitem:
+              - link "Swing Trading":
+                - /url: /investing-ideas/swing-trader/
+            - listitem:
+              - link "Value Investing":
+                - /url: /investing-ideas/value-investing/
+            - listitem:
+              - link "Dividend Stock Investing":
+                - /url: /investing-ideas/dividend-stocks/
+            - listitem:
+              - link "Growth Investing":
+                - /url: /investing-ideas/growth-investing/
+            - listitem:
+              - link "Small Cap Investing":
+                - /url: /investing-ideas/small-cap/
+            - listitem:
+              - link "Mid Cap Investing":
+                - /url: /investing-ideas/mid-cap/
+            - listitem:
+              - link "Best Stocks to Buy Now":
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem:
+              - link "Large Cap Investing":
+                - /url: /investing-ideas/large-cap/
+            - listitem:
+              - link "Motley Fool Stock Picks":
+                - /url: /motley-fool-stock-picks-2021/
+            - listitem:
+              - link "Trending Stocks":
+                - /url: /investing-ideas/trending/
+            - listitem:
+              - link "Sports Stock Ideas":
+                - /url: /find-stocks/interest/sport-stocks/
+            - listitem:
+              - link "Technology And Internet Stocks":
+                - /url: /find-stocks/interest/tech-stocks/
+            - listitem:
+              - link "Find Stocks":
+                - /url: https://www.wallstreetsurvivor.com/find-stocks/
+            - listitem:
+              - link "More Ideas…":
+                - /url: /investing-ideas/
+        - listitem [ref=e31]:
+          - link "Starter Guides" [ref=e32] [cursor=pointer]:
+            - /url: "#"
+            - text: Starter Guides
+            - img [ref=e34]
+          - list:
+            - listitem:
+              - link "How To Read Stocks":
+                - /url: /starter-guides/how-to-read-stocks/
+            - listitem:
+              - link "Steps To Start Buying Stocks":
+                - /url: /starter-guides/how-to-buy-stocks/
+            - listitem:
+              - link "5 Types of Investing Strategies":
+                - /url: /starter-guides/investment-strategies/
+            - listitem:
+              - link "8 Questions To Ask When Choosing A Broker":
+                - /url: /starter-guides/intro-to-stockbrokers/
+            - listitem:
+              - link "Stock Charting For Beginners":
+                - /url: /starter-guides/stock-charts/
+            - listitem:
+              - link "What Stocks To Buy":
+                - /url: /starter-guides/what-stocks-to-buy/
+            - listitem:
+              - link "What Is Short Selling":
+                - /url: /starter-guides/short-selling/
+            - listitem:
+              - link "What Are Penny Stocks And How Do They Work":
+                - /url: /starter-guides/what-are-penny-stocks-how-they-work/
+            - listitem:
+              - link "How To Find Penny Stocks To Buy":
+                - /url: /starter-guides/find-penny-stock/
+            - listitem:
+              - link "Types of Mutual Funds":
+                - /url: /starter-guides/mutual-funds-types/
+            - listitem:
+              - link "All Starter Guides":
+                - /url: https://www.wallstreetsurvivor.com/starter-guides/
+        - listitem [ref=e36]:
+          - link "Login" [ref=e37] [cursor=pointer]:
+            - /url: https://app.wallstreetsurvivor.com/login
+        - listitem [ref=e38]:
+          - link "Register" [ref=e39] [cursor=pointer]:
+            - /url: https://app.wallstreetsurvivor.com/members/register
+  - generic [ref=e41]:
+    - main [ref=e43]:
+      - article [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e47]:
+            - generic [ref=e48]: Categories
+            - link "broker-US" [ref=e49] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/category/broker-us/
+            - text: ","
+            - link "Review Center" [ref=e50] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/category/review-center/
+          - generic [ref=e51]:
+            - 'heading "Robinhood Free Stock Offer: How to Get Up to $1,700 in Free Stock" [level=1] [ref=e52]'
+            - generic [ref=e53]:
+              - generic [ref=e55]:
+                - text: Written by
+                - link "Mark Brookshire, MBA" [ref=e56] [cursor=pointer]:
+                  - /url: https://www.wallstreetsurvivor.com/author/mbrookshire/
+              - text: "/Last Updated: April 14, 2026"
+            - generic [ref=e57]: Advertising Disclosure
+          - img "Get Free Stock Robinhood" [ref=e59]
+          - generic [ref=e60]:
+            - paragraph [ref=e61]: Robinhood is running a free stock promotion for the month of April, 2026, offering new users up to $1,700 in free stock during their first year.
+            - paragraph [ref=e62]: To take advantage of this offer you must open and fund your account this month to be eligible; Robinhood changes their promos frequently and this is the one of their best offers.
+            - paragraph [ref=e63]: "Here is a quick summary of the Top Reasons why Robinhood won our award of the Best Brokerage App for New Investors for 2026:"
+            - list [ref=e64]:
+              - listitem [ref=e65]:
+                - emphasis [ref=e66]:
+                  - strong [ref=e67]: "April, 2026 New Account Promotion:"
+                  - text: Robinhood is giving U.S. citizens that open a new Robinhood account and deposit at least $10 in April, 2026 a free stock valued at $5 to $200. Then, when you refer your friends and family, you will get another free stock, up to $1,500 each year in referral stock. That initial $200 plus the referrals of up to $1,500 equals up to $1,700 in your first year.
+              - listitem [ref=e68]:
+                - emphasis [ref=e69]: There is no catch to this offer. Robinhood uses this free stock offer as their main marketing strategy. They don’t buy TV or print ads; they just spend their advertising dollars on these free stocks and rely on referrals to grow.
+              - listitem [ref=e70]:
+                - emphasis [ref=e71]:
+                  - text: Robinhood allows you to trade all U.S. stocks, ETFs, options and cryptos;
+                  - strong [ref=e72]: all commission-free.
+              - listitem [ref=e73]:
+                - emphasis [ref=e74]: We tested Robinhood on crypto trades and found it gave us the best pricing of the most popular crypto trading platforms–in some cases we received over 3% more in crypto per trade.
+              - listitem [ref=e75]:
+                - emphasis [ref=e76]:
+                  - text: The platform also offers retirement accounts, and users opening and contributing to an IRA receive
+                  - strong [ref=e77]
+                  - text: a
+                  - strong [ref=e78]: 1% match
+                  - text: on contributions. Users transferring other IRA accounts to Robinhood receive a
+                  - strong [ref=e79]: 3% match
+                  - text: . That’s free money!
+              - listitem [ref=e80]:
+                - emphasis [ref=e81]: Accounts are insured by the U.S. government for up to $500,000 which provides security for users.
+            - paragraph [ref=e82]:
+              - strong [ref=e83]:
+                - emphasis [ref=e84]: "IMPORTANT:"
+              - text: This Robinhood free stock offer only applies to U.S. citizens, permanent residents or those with a U.S. visa. Canadians can get up 15 free stocks with Moomoo–see how in our
+              - link "Moomoo Review!" [ref=e85] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moomoo-review/
+              - text: Everyone else should read our
+              - link "Interactive Brokers Review" [ref=e86] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/interactive-brokers-review/
+              - text: as our best brokerage platform for non-US and non-Canadian citizens.
+            - paragraph [ref=e87]:
+              - text: Robinhood is an electronic brokerage and as such, is regulated by
+              - link "FINRA" [ref=e88] [cursor=pointer]:
+                - /url: https://www.finra.org/
+              - text: and registered with
+              - link "FinCEN" [ref=e89] [cursor=pointer]:
+                - /url: https://www.fincen.gov/
+              - text: as a money services business. So that should tell you it is safe to use.
+            - paragraph [ref=e90]: Join the over 27,000,000 investors that are now using Robinhood (as of April 5, 2026).
+            - paragraph [ref=e91]: In this article, we’ll guide you through opening your Robinhood account and then maximizing your free stock. And then we will tell you where to get the most dependable stock picks to help kickstart your portfolio.
+            - generic [ref=e92]:
+              - generic [ref=e93]:
+                - generic [ref=e94]:
+                  - img "Robinhood" [ref=e95]
+                  - text: ★ ★ ★ ★ ★
+                - generic [ref=e96]:
+                  - generic [ref=e97]: "Current Promotion:"
+                  - paragraph [ref=e98]:
+                    - text: Open a new account, fund it with at least $10, and
+                    - strong [ref=e99]:
+                      - emphasis [ref=e100]: immediately get a FREE stock worth up to $200
+                    - text: ; then get up to $1,500 more in free stock when you refer friends; US residents only.
+                  - link "Get your first free stock" [ref=e101] [cursor=pointer]:
+                    - /url: /go/rh-shortcoder/
+              - generic [ref=e102]:
+                - generic [ref=e103]:
+                  - generic [ref=e104]:
+                    - generic [ref=e105]: "Fees:"
+                    - text: $0
+                  - generic [ref=e106]:
+                    - generic [ref=e107]: "Account Minimum:"
+                    - text: $10
+                  - generic [ref=e108]:
+                    - generic [ref=e109]: "Number of Assets:"
+                    - text: $225 Billion
+                - generic [ref=e110]:
+                  - separator [ref=e111]
+                  - generic [ref=e112]: "Benefits:"
+                  - img "✅" [ref=e113]
+                  - text: U.S. stocks, ETFs, options, and cryptos
+                  - img "✅" [ref=e114]
+                  - text: Now 27 million users
+                  - img "✅" [ref=e115]
+                  - text: Cash management account and credit card
+                  - img "✅" [ref=e116]
+                  - text: Upgrade to Gold and better rates on cash and margin accounts
+            - heading "What You Get for Free with Robinhood" [level=2] [ref=e117]
+            - paragraph [ref=e118]: "The brokerage app Robinhood has reached 25,000,000 funded users by giving these things away for free:"
+            - list [ref=e119]:
+              - listitem [ref=e120]:
+                - strong [ref=e121]: Commission-free trading
+                - text: of U.S. stocks, ETFs and cryptos.
+              - listitem [ref=e122]:
+                - strong [ref=e123]: Free cash ($5-$200)
+                - text: when you open a Robinhood account and fund your bank account with at least $10.
+              - listitem [ref=e124]:
+                - strong [ref=e125]: More free stocks (up to a $1,500 per year)
+                - text: for both you
+                - strong [ref=e126]: and
+                - text: any friend you refer from your personalized promotional link. Keep referring friends until you hit the $1,500 per year limit.
+              - listitem [ref=e127]:
+                - strong [ref=e128]: That’s up to $1,700 in free stock
+                - text: your first year, and up to another $1,500 every year thereafter. So next year, you can refer more people and get more stocks too.
+              - listitem [ref=e129]:
+                - strong [ref=e130]: They will need your name, email address, and Social Security Number
+                - text: to get started. It’s all safe so don’t worry about security. You must complete and fund your account within a limited time so don’t hesitate. If you don’t see this message below then you might be on the wrong page to get your free stock…
+            - figure [ref=e132]:
+              - img "Robinhood Free Stock Promo Landing Page as of May 30, 2025" [ref=e133]
+            - paragraph [ref=e134]:
+              - link "Learn More about this offer" [ref=e135] [cursor=pointer]:
+                - /url: /go/robinhoodfreestock
+              - emphasis [ref=e136]: on Robinhood’s Free Stock Promotion Page.
+            - paragraph [ref=e137]: How would you like to have all that for free and start investing on one of the most popular investing apps?
+            - paragraph [ref=e138]: Welcome to Robinhood’s growth and marketing strategy! They don’t spend their advertising dollars on TV commercials, print advertisements or even on online ads. Rather, they spend their money on giving away free stocks to users that open accounts, and then they incentivize you to share your referral link with your friends so that both of you get more free stock. No TV ads, no print ads, no Super Bowl ads.
+            - heading "Is This Truly Free?" [level=3] [ref=e139]
+            - paragraph [ref=e140]: Yes, it is truly free. To enjoy Robinhood’s initial complimentary stock offering, you need to use one of their promotional links and then fund your account with a minimum deposit of $10. Following this procedure ensures that you will get your initial free share valued between $5 and $200.
+            - paragraph [ref=e141]: Then when you refer your friends with your personal Robinhood referral link, you will get more free stocks, and they will also get their first free shares. That’s it. No real catch other than that.
+            - heading "How Does the Free Stock Promotion Work?" [level=2] [ref=e142]
+            - paragraph [ref=e143]: "Here’s exactly what it says from the Robinhood website and the details of this offer:"
+            - blockquote [ref=e144]:
+              - paragraph [ref=e145]: Once you are approved and link your bank account or debit card, you’ll earn a specified dollar amount and be able to pick your gift stock from a list of 20 of America’s leading companies. You can use the cash value toward shares of the companies offered.
+              - link "www.Robinhood.com/us/en/support" [ref=e147] [cursor=pointer]:
+                - /url: https://robinhood.com/us/en/support/
+            - paragraph [ref=e148]: But here is the one thing you have to understand. Notice it says “between $5 and $200 cash value.” Robinhood’s current offer as of May, 2025 says most will receive a value of between $5 and $10. But if you refer your friends and family you will get more free stock and increase your chance of getting $200. Two years ago, one of my stocks that I got for referring a friend was a free share of Microsoft, back when it was about $200 a share. So they absolutely do give stocks up to $200.
+            - paragraph [ref=e149]:
+              - text: Best of all, since Robinhood does NOT charge a commission, if you don’t like the stocks you are getting for free, just sell them and buy what you want. You should definitely take advantage of this
+              - strong [ref=e150]: Robinhood Free Stock
+              - text: Giveaway!
+            - heading "How Do You Maximize Your Free Stock from Robinhood?" [level=2] [ref=e151]
+            - figure [ref=e153]:
+              - img "Robinhood Free Stock Promo Landing Page as of May 30, 2025" [ref=e154]
+            - paragraph [ref=e155]:
+              - link "Learn More about this offer" [ref=e156] [cursor=pointer]:
+                - /url: /go/robinhoodfreestock
+              - emphasis [ref=e157]: on Robinhood’s Free Stock Promotion Page.
+            - paragraph [ref=e158]: This is precisely what we will present you within this blog post…..
+            - heading "Robinhood Overview" [level=2] [ref=e159]
+            - paragraph [ref=e160]:
+              - text: Robinhood is a free trading app that allows you to trade stocks
+              - strong [ref=e161]: without paying commissions.
+            - paragraph [ref=e162]: Instead of paying $8 to your brokerage per transaction, you can trade 100% free of charge.
+            - paragraph [ref=e163]: "With Robinhood, you can buy and sell the following types of securities:"
+            - list [ref=e164]:
+              - listitem [ref=e165]: Shares of any U.S. stocks
+              - listitem [ref=e166]: Exchange-Traded Funds (ETFs)
+              - listitem [ref=e167]: Options
+              - listitem [ref=e168]: Cryptocurrency
+              - listitem [ref=e169]: And more!
+            - paragraph [ref=e170]: Robinhood offers regular, taxable brokerage accounts as well as tax-advantaged retirement accounts.
+            - paragraph [ref=e171]: When you open and contribute to a traditional or Roth IRA, Robinhood will match 1% of your contributions!
+            - paragraph [ref=e172]: We ourselves have been using Robinhood for over 10 years now and have never once had an issue. In 2014 we opened a Robinhood account, connected it to our checking account, and transferred $500. We got our free stock as promised. We then made a few trades, referred our friends, got more shares for free, then sold a few stocks, and then transferred cash back to our checking account. No problems. No delays. Worked like a charm.
+            - paragraph [ref=e173]: Since then, we have added more cash, and we now have made over 200 trades–no worries.
+            - paragraph [ref=e174]: With Robinhood, you can buy shares of stock without worrying about transaction fees.
+            - paragraph [ref=e175]: There are no arbitrary account minimums – so you do not need thousands of dollars to invest. You can open your account with just $10.
+            - paragraph [ref=e176]: And remember, the earlier you start investing, the better off you will be in the future.
+            - heading "How Do I Get up to $1,700 in FREE STOCK with Robinhood?" [level=2] [ref=e177]
+            - paragraph [ref=e178]: To open a Robinhood account, all you need is your name, address, and email. To get your free stock you will need to fund your account with at least $10 within a few days of opening so you will also need your bank account routing and account number.
+            - paragraph [ref=e179]:
+              - text: As its current promotion, Robinhood will immediately give you FREE MONEY (between $5 and $200) to invest in a set list of stocks when you open a new account. You will be given your unique referral link. You will receive more free money (again valued at $5 to $200) for each person you refer. The more people you refer, the more you get up to a max of $1,500 a year.
+              - strong [ref=e180]: To learn more, visit Robinhood's free stock promo page below.
+            - link "Is Robinhood Safe? Get Free Stock" [ref=e181] [cursor=pointer]:
+              - /url: /go/robinhoodfreestock
+              - img "Is Robinhood Safe? Get Free Stock" [ref=e182]
+            - paragraph [ref=e183]:
+              - strong [ref=e184]: Why do they give away so much free stock?
+              - text: Because they spend their advertising dollars this way instead of buying TV, radio, print, or online ads! They WANT you to refer friends!
+            - paragraph [ref=e185]: We also like how this app appeals to younger investors because you can use it on your smartphone.
+            - paragraph [ref=e186]: This means you can view your investments and make trades anywhere and anytime.
+            - paragraph [ref=e187]: Sounds pretty good, right? But you may be wondering how is all of this possible?
+            - heading "How to Get Your First Free Share of Stock" [level=2] [ref=e188]
+            - paragraph [ref=e189]: To put it simply, you just need to sign up and receive your free stock – but we are here to walk you through this process.
+            - 'heading "Step 1: To be eligible for this offer, you must be new to Robinhood." [level=3] [ref=e190]'
+            - paragraph [ref=e191]: Additional details…
+            - list [ref=e192]:
+              - listitem [ref=e193]:
+                - text: This Robinhood free stock offer only applies to U.S. citizens, permanent residents or those with a U.S. visa. Canadians can get up 15 free stocks with Moomoo–see how in our
+                - link "Moomoo Review!" [ref=e194] [cursor=pointer]:
+                  - /url: https://www.wallstreetsurvivor.com/moomoo-review/
+                - text: Everyone else should read our
+                - link "Interactive Brokers Review" [ref=e195] [cursor=pointer]:
+                  - /url: https://www.wallstreetsurvivor.com/interactive-brokers-review/
+                - text: as our best brokerage platform for non-US and non-Canadian citizens.
+              - listitem [ref=e196]: If you have an account, you are not eligible for this offer. Creating a second account is not an option (sorry).
+            - 'heading "Step 2: You must sign-up for Robinhood using a valid referral link" [level=3] [ref=e197]':
+              - text: "Step 2:"
+              - strong [ref=e198]
+              - text: You must sign-up for Robinhood using a valid referral link
+            - paragraph [ref=e199]: "After you follow the referral link, you will need to provide some standard information:"
+            - list [ref=e200]:
+              - listitem [ref=e201]: Name
+              - listitem [ref=e202]: Address
+              - listitem [ref=e203]: Social Security Number
+              - listitem [ref=e204]: Date of Birth
+            - paragraph [ref=e205]: But do not be alarmed – any brokerage account will require this information.
+            - paragraph [ref=e206]: From there, the app or site will prompt you to link a bank account to your new account.
+            - paragraph [ref=e207]: Lastly, you’ll just need to transfer at least $10 into your new Robinhood account to qualify for the offer.
+            - paragraph [ref=e208]: Robinhood will add between $5 and $200 in cash to your brokerage account when you fund your account.
+            - paragraph [ref=e209]: Then, you can spend your free cash on a list of 20 stocks that Robinhood provides you. The list of 20 stocks is made up of the largest two companies in each of the top 10 sectors of the S&P 500. You can buy fractional shares of as many of these stocks as you’d like, or just invest all the cash in one stock!
+            - heading "How to Get Up to Another $1,500 in Free Stock" [level=2] [ref=e210]
+            - figure [ref=e212]:
+              - img "Free Shares Robinhood" [ref=e213]
+            - paragraph [ref=e214]: You can receive up to another $1,500 in free stocks when you refer friends. You can earn more free stock simply by referring your friends and family with your personal link.
+            - paragraph [ref=e215]: "The process is simple:"
+            - list [ref=e216]:
+              - listitem [ref=e217]: Share your personalized referral link via text, email, Facebook, Twitter, or various other platforms. Upon your friend’s utilization of the referral link, a notification will promptly reach your phone.
+              - listitem [ref=e218]:
+                - text: Navigate to your ‘Past Invites’ in your Robinhood account to seamlessly claim your free stock.
+                - strong [ref=e219]: It is essential to act promptly
+                - text: ", as there is a 60-day window to secure your complimentary stock before expiration. The free shares of stock will then be deposited directly into your account."
+              - listitem [ref=e220]: After three trading days, you gain the flexibility to sell your free shares. The option to cash out your complimentary funds becomes available 30 days after the initial claim.
+            - heading "What is Your Free Stock Worth?" [level=2] [ref=e221]
+            - paragraph [ref=e222]:
+              - text: So, you are likely wondering,
+              - emphasis [ref=e223]: “Do I get to pick my free stock?”
+            - paragraph [ref=e224]: When you claim your cash through this offer, you can invest it in a list of 20 stocks provided by Robinhood. You can invest all the money into one stock, or buy fractional shares of as much money as you’d like.
+            - list [ref=e225]:
+              - listitem [ref=e226]: 98% of the cash amounts earned through the offer are between $5 and $10
+              - listitem [ref=e227]: The remaining 2% of rewards are cash payments between $10 and $200.
+              - listitem [ref=e228]: 100% chance of getting FREE cash for each friend that signs up!
+            - paragraph [ref=e229]: As for the value of each share, that highly depends on the movement of the market.
+            - paragraph [ref=e230]:
+              - text: But even if you receive a deposit of $10 or less –
+              - strong [ref=e231]: it is still free money!
+            - paragraph [ref=e232]: And if you don’t like the stocks you pick from the list—SELL THEM and BUY WHAT YOU WANT! Remember, there is no commission!
+            - heading "How Does Robinhood Make Money if You Trade for Free?" [level=2] [ref=e233]
+            - figure [ref=e235]:
+              - img "Robinhood Cover" [ref=e236]
+            - paragraph [ref=e237]: You may be skeptical about how a company can offer free stock trading?
+            - paragraph [ref=e238]: First, Robinhood makes money by charging a monthly fee if you upgrade your account to a Robinhood Gold account. With Robinhood Gold, those who upgrade can invest $1,000 on margin for free, and invest on margin with a lower interest rate for amounts over $1,000, and Gold accounts earn a few extra % points interest on their cash.
+            - paragraph [ref=e239]: They also get access to after-hours trading, as well as a higher APY on the brokerage cash sweep program, bigger instant deposits, and more in-depth research and market data. In short, Robinhood Gold is similar to a margin account with some fantastic extra features. A margin account allows you to borrow money to invest.
+            - paragraph [ref=e240]:
+              - text: However, if you are new to investing (or have never heard of a margin account),
+              - strong [ref=e241]: you probably should not borrow money to invest!
+            - paragraph [ref=e242]:
+              - text: Secondly,
+              - strong [ref=e243]: Robinhood accepts payment for order flow
+              - text: ", which means that they route your trades to certain market makers in exchange for a fee."
+            - paragraph [ref=e244]:
+              - text: Thirdly,
+              - strong [ref=e245]: Robinhood also does not pay interest on your account balance which represents another way for the company to make money
+              - text: . However, Robinhood DOES offer an optional brokerage cash sweep program that takes your uninvested cash and places it in several banks to allow you to earn interest.
+            - paragraph [ref=e246]: So, is this business model sustainable? Only time will tell! But with 25,000,000 customers, the answer has got to be YES. Also, keep in mind the company is backed by some of the biggest Venture Capital funds on the West Coast, so they have plenty of access to funding.
+            - paragraph [ref=e247]: But if the company were to go out of business, you would be able to transfer your shares or cash out because the accounts, like all bank accounts, are insured by the U.S. government for up to $500,000.
+            - paragraph [ref=e248]: So, no matter what Robinhood does – you are good!
+            - paragraph [ref=e249]:
+              - strong [ref=e250]: "Bottom line:"
+              - text: Robinhood trading is free (in every sense)!
+            - heading "What Stocks Should I Buy with My Robinhood Account?" [level=2] [ref=e251]
+            - paragraph [ref=e252]: Once you have your account open and you have put some money in your account, the next decision is to determine what stocks to buy.
+            - paragraph [ref=e253]: At WallStreetSurvivor, one of our core purposes is to provide our users with data and research that will help them find the best stock picks.
+            - paragraph [ref=e254]: For the last 20 years, we have subscribed to dozens of stock newsletters and tracked their recommendations. We now know, without a doubt, which stock newsletter is the best. In fact, for the last 5 years, we have bought every one one of this service’s stock picks in our real brokerage account.
+            - paragraph [ref=e255]:
+              - text: Follow this link to read our
+              - link "review of the Motley Fool Stock Advisor" [ref=e256] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+              - text: .
+            - heading "Once You Open Your Robinhood Account and Add Cash, Then What Stocks Do You Buy?" [level=2] [ref=e257]
+            - paragraph [ref=e258]: Once your Robinhood account is open, have a plan and consider getting some real advice from sources that have proven track records.
+            - paragraph [ref=e259]: "If you are not sure what stock to buys, then take advantage of some of these promotions from our favorite stock picking services:"
+            - paragraph [ref=e260]:
+              - text: According to this
+              - link "Motley Fool Stock Advisor Review" [ref=e261] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+              - text: ", it is one of the best stock newsletters over the last 23 years. Their incredible return speaks for itself and it is very affordable at just $199."
+            - paragraph [ref=e262]:
+              - text: Or, read our
+              - link "Seeking Alpha Picks Review" [ref=e263] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+              - text: of the the newest stock newsletter than has been around for 3 years but is already easily beating the market. Get 2 picks a month. This service is actually beating the Motley Fool over the last 3 years.
+            - paragraph [ref=e264]:
+              - text: If you don’t want to spend money on stock newsletters, then get one
+              - link "free stock pick from Moby Stocks" [ref=e265] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+              - text: ", a relatively new research firm started by Wall Street fund managers and CFAs. Their picks have beat the market for each of the last four years."
+            - 'heading "Conclusion: Is Signing Up for Robinhood Worth Your Time?" [level=2] [ref=e266]'
+            - paragraph [ref=e267]: Opening a Robinhood account takes less than 3 minutes. It provides free opportunity for individuals to venture into stock trading with a low barrier. And you will get a free stock along the way. If you refer friends, you will get even more free stock.
+            - paragraph [ref=e268]: What better way to learn than by testing the market with free funds? Consider the prospect – an opportunity where you stand to gain without any inherent risk.
+            - paragraph [ref=e269]: Embarking on your investment journey in the stock market is a pivotal step towards wealth-building, and Robinhood offers an ideal platform for dipping your toes in the waters. The ability to experiment with free stocks presents a risk-free and profitable entry point.
+            - paragraph [ref=e270]: Should the initial free stock selection not align with your preferences, the flexibility to sell and invest in stocks of your choosing is at your fingertips.
+            - paragraph [ref=e271]: Even if you are not familiar with stock trading, this promotion is tailor-made for you. Seize the chance to explore and learn without any financial commitment.
+            - paragraph [ref=e272]: Do not let this opportunity slip by, as Robinhood stands out as one of the few companies currently providing free shares, and the availability of such promotions may change unpredictably. Additionally, the potential to earn up to $1,500 in free stocks through referrals enhances the overall benefit.
+            - paragraph [ref=e273]:
+              - link "Learn More about this offer" [ref=e274] [cursor=pointer]:
+                - /url: /go/robinhoodfreestock
+              - emphasis [ref=e275]: on Robinhood’s Free Stock Promotion Page.
+            - paragraph
+            - paragraph [ref=e276]: Once you sign up, be sure to come back and let us know what you got!
+            - strong [ref=e278]:
+              - link "View Robinhood’s Free Stock Promo Page" [ref=e279] [cursor=pointer]:
+                - /url: /go/robinhoodfreestock
+              - text: "!"
+            - paragraph
+            - heading "Top U.S. Brokers Promotions for 2026" [level=2] [ref=e280]
+            - generic [ref=e281]:
+              - generic [ref=e282]:
+                - generic [ref=e283]:
+                  - img "Robinhood" [ref=e284]
+                  - text: ★ ★ ★ ★ ★
+                - generic [ref=e285]:
+                  - generic [ref=e286]: "Fees:"
+                  - text: $0
+                  - separator [ref=e287]
+                  - link "Full Review" [ref=e288] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/robinhood-review/
+                - generic [ref=e289]:
+                  - generic [ref=e290]: "Features:"
+                  - img "✅" [ref=e291]
+                  - text: U.S. stocks, ETFs, options, and cryptos
+                  - img "✅" [ref=e292]
+                  - text: Now 23 million users
+                  - img "✅" [ref=e293]
+                  - text: Cash mgt account and credit card
+                - generic [ref=e294]:
+                  - generic [ref=e295]: "Sign-up Bonus:"
+                  - paragraph [ref=e296]:
+                    - strong [ref=e297]:
+                      - emphasis [ref=e298]: Free stock up to $200
+                    - text: with new account, plus up to $1,500 more in free stock from referrals; US residents only!
+                  - link "Get Free Stock" [ref=e299] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/go/WidBUSB-RH
+              - generic [ref=e300]:
+                - generic [ref=e301]:
+                  - img "moomoo" [ref=e302]
+                  - text: ★ ★ ★ ★ ★
+                - generic [ref=e303]:
+                  - generic [ref=e304]: "Fees:"
+                  - text: $0
+                  - separator [ref=e305]
+                  - link "Full Review" [ref=e306] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/moomoo-review/
+                - generic [ref=e307]:
+                  - generic [ref=e308]: "Features:"
+                  - img "✅" [ref=e309]
+                  - text: Free Level 2 Nasdaq quotes
+                  - img "✅" [ref=e310]
+                  - text: Access to U.S. and Hong Kong markets
+                  - img "✅" [ref=e311]
+                  - text: Educational tools
+                - generic [ref=e312]:
+                  - generic [ref=e313]: "Sign-up Bonus:"
+                  - paragraph [ref=e314]:
+                    - text: Deposit $500 get $30 in NVDA stock;
+                    - strong [ref=e315]:
+                      - emphasis [ref=e316]: Deposit $2,000 get $100 in NVDA stock
+                    - text: ; Deposit $10,000 get $200 in NVDA stock; Deposit $50,000 get $400 in NVDA stock.
+                  - link "Get Free Shares" [ref=e317] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/go/WidBUSB-Moo
+              - generic [ref=e318]:
+                - generic [ref=e319]:
+                  - img "eToro" [ref=e320]
+                  - text: ★ ★ ★ ★ ☆
+                - generic [ref=e321]:
+                  - generic [ref=e322]: "Fees:"
+                  - text: $0
+                  - separator [ref=e323]
+                  - link "Full Review" [ref=e324] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/etoro-review/
+                - generic [ref=e325]:
+                  - generic [ref=e326]: "Features:"
+                  - img "✅" [ref=e327]
+                  - text: CopyTrading™ to follow top traders
+                  - img "✅" [ref=e328]
+                  - text: Trade U.S. stocks, ETFs, and crypto
+                  - img "✅" [ref=e329]
+                  - text: Trades with themed portfolios
+                - generic [ref=e330]:
+                  - generic [ref=e331]: "Sign-up Bonus:"
+                  - paragraph [ref=e332]:
+                    - strong [ref=e333]:
+                      - emphasis [ref=e334]: Up to $500 Crypto Bonus
+                  - link "Learn more" [ref=e335] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/go/WidBUSB-Etoro
+              - generic [ref=e336]:
+                - generic [ref=e337]:
+                  - img "WeBull" [ref=e338]
+                  - text: ★ ★ ★ ★ ☆
+                - generic [ref=e339]:
+                  - generic [ref=e340]: "Fees:"
+                  - text: $0
+                  - separator [ref=e341]
+                  - link "Full Review" [ref=e342] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/webull-review/
+                - generic [ref=e343]:
+                  - generic [ref=e344]: "Features:"
+                  - img "✅" [ref=e345]
+                  - text: Extended-hours trading
+                  - img "✅" [ref=e346]
+                  - text: Great charts and screeners
+                  - img "✅" [ref=e347]
+                  - text: Commission-free options trading
+                - generic [ref=e348]:
+                  - generic [ref=e349]: "Sign-up Bonus:"
+                  - paragraph [ref=e350]: $10 and a 30-day complimentary subscription to Webull premium; $200-$30,0000 Tiered Sign up bonus
+                  - link "Learn more" [ref=e351] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/go/WidBUSB-Webull
+              - generic [ref=e352]:
+                - generic [ref=e353]:
+                  - img "Interactive Brokers" [ref=e354]
+                  - text: ★ ★ ★ ★ ☆
+                - generic [ref=e355]:
+                  - generic [ref=e356]: "Fees:"
+                  - text: $0
+                  - separator [ref=e357]
+                  - link "Full Review" [ref=e358] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/interactive-brokers-review/
+                - generic [ref=e359]:
+                  - generic [ref=e360]: "Features:"
+                  - img "✅" [ref=e361]
+                  - text: Access 150+ global stock exchanges
+                  - img "✅" [ref=e362]
+                  - text: IBKR Lite & Pro tiers for all
+                  - img "✅" [ref=e363]
+                  - text: SmartRouting™ and deep analytics
+                - generic [ref=e364]:
+                  - generic [ref=e365]: "Sign-up Bonus:"
+                  - paragraph [ref=e366]: Refer a Friend and Get $200
+                  - link "IBKR Bonus Offer" [ref=e367] [cursor=pointer]:
+                    - /url: https://www.wallstreetsurvivor.com/go/WidBUSB-IBKR
+            - paragraph [ref=e368]:
+              - button "View Full List" [ref=e369] [cursor=pointer]
+            - paragraph
+          - generic "Entry meta"
+    - generic [ref=e371]:
+      - complementary [ref=e372]
+      - complementary [ref=e373]:
+        - separator [ref=e374]
+        - heading "JUST RELEASED--Best Stock Newsletters as of April 5, 2026" [level=3] [ref=e375]
+        - generic [ref=e376]:
+          - heading "Best Stock Newsletter under $500" [level=4] [ref=e377]
+          - img "Seeking Alpha logo" [ref=e378]
+          - paragraph [ref=e379]: Alpha Picks is the BEST newsletter over the last 3 years. Last 72 picks are up 93% and beating the market by 75%.
+          - link "See our Alpha Picks Review" [ref=e380] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/?utm_source=rhc
+            - text: See our Alpha Picks Review
+            - img [ref=e381]
+        - generic [ref=e384]:
+          - heading "Best Stock Newsletter under $100" [level=4] [ref=e385]
+          - img "Motley Fool tiny logo" [ref=e386]
+          - paragraph [ref=e387]:
+            - strong [ref=e388]: Winner of Best Overall Stock Newsletter
+            - text: "&"
+            - strong [ref=e389]: Motley Fool's Stock Advisor has best lifetime return
+            - text: of 975% vs S&P's 194%.
+            - text: See their picks in our
+            - link "Motley Fool Review" [ref=e390] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/motley-fool-review/?utm_source=rhc
+            - text: .
+          - link "Save $100 Now!" [ref=e391] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/go/bestrank-foolsa
+            - text: Save $100 Now!
+            - img [ref=e392]
+        - heading "See the Best Stock Picks for 2026" [level=3] [ref=e395]
+        - paragraph [ref=e396]: Read our full review of dozens of the most popular stock newsletters and see how they rank based on their 2026 picks and their last 3 years of picks.
+        - link "BEST NEWSLETTERS RANKING" [ref=e397] [cursor=pointer]:
+          - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/?utm_source=rhc
+      - complementary [ref=e398]:
+        - generic [ref=e400]:
+          - heading "LATEST ARTICLES" [level=3] [ref=e401]
+          - list [ref=e402]:
+            - listitem [ref=e403]:
+              - link "What If You Invested Every Dollar You Spent on Takeout?" [ref=e404] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/invest-food-delivery-money/
+            - listitem [ref=e405]:
+              - link "How Athletes Go Broke — And What You Can Learn From It" [ref=e406] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-athletes-go-broke/
+            - listitem [ref=e407]:
+              - link "May the 4th Be With You Stock Trading Contest" [ref=e408] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/may-the-4th-stock-trading-contest/
+            - listitem [ref=e409]:
+              - 'link "Travel the World Every Year: How Much Should You Save Monthly?" [ref=e410] [cursor=pointer]':
+                - /url: https://www.wallstreetsurvivor.com/how-much-to-save-monthly-to-travel-every-year/
+            - listitem [ref=e411]:
+              - link "Community Reinvestment Act Community Development Services Explained (and the CRA Volunteer Opportunities That Qualify)" [ref=e412] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/community-reinvestment-act-volunteer-opportunities/
+            - listitem [ref=e413]:
+              - 'link "Community Reinvestment Act Activities: Supporting Your Local Schools’ Financial Literacy Programs That Qualify for CRA Credit" [ref=e414] [cursor=pointer]':
+                - /url: https://www.wallstreetsurvivor.com/community-reinvestment-act-financial-literacy-programs/
+            - listitem [ref=e415]:
+              - link "Is Plynk Safe? Security, Regulation, and Investor Protection Explained" [ref=e416] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-plynk-safe/
+            - listitem [ref=e417]:
+              - link "Is Plynk Legit? A Clear Look At Safety, Fees, And Real User Experience" [ref=e418] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-plynk-legit/
+            - listitem [ref=e419]:
+              - 'link "Plynk Review: Simple Investing App For Beginners" [ref=e420] [cursor=pointer]':
+                - /url: https://www.wallstreetsurvivor.com/plynk-review/
+            - listitem [ref=e421]:
+              - link "Founder’s Story" [ref=e422] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/founders-story/
+      - complementary [ref=e423]
+      - complementary [ref=e424]:
+        - generic [ref=e426]:
+          - paragraph
+          - heading "Get the Best Stock Picks" [level=2] [ref=e427]
+          - paragraph [ref=e428]: We just released our April, 2026 Rankings of the Most Popular Stock Newsletters. The winners's picks for the last 12 months are beating the market by 19%, and for the last 3 years their picks are beating the market by an average of 75%.
+          - heading "Rank of Top Stock Pick Services" [level=4] [ref=e429]
+          - figure [ref=e430]:
+            - img "stock newsletter ranking as of April 5, 2026" [ref=e431]
+          - paragraph [ref=e432]:
+            - text: You must see our
+            - link "Ranking of the Best Stock Newsletters" [ref=e433] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/?utm_source=rhc
+            - text: ; one service consitently beats the market. See our updated rankings.
+      - complementary [ref=e434]
+  - generic [ref=e435]:
+    - generic [ref=e438]:
+      - complementary [ref=e440]:
+        - figure [ref=e441]:
+          - link "WallStreetSurvivor logo" [ref=e442] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e443]
+      - generic [ref=e444]:
+        - complementary [ref=e445]:
+          - heading "Our Platform" [level=3] [ref=e446]
+        - complementary [ref=e447]:
+          - list [ref=e448]:
+            - listitem [ref=e449]:
+              - link "Stock Market Simulator" [ref=e450] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e451]:
+              - link "Investing Basics for Beginners" [ref=e452] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/investing-basics-for-beginners/
+            - listitem [ref=e453]:
+              - link "Best Stocks to Buy Now" [ref=e454] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e455]:
+              - link "How to Invest in the Stock Market Videos" [ref=e456] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/videos/
+            - listitem [ref=e457]:
+              - link "Free Online Investing Course" [ref=e458] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e459]:
+              - link "Financial Literacy Game for Students" [ref=e460] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e461]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e462] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e463]:
+              - link "Crypto Paper Trading" [ref=e464] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e465]:
+              - link "Contact Us" [ref=e466] [cursor=pointer]:
+                - /url: /contact-us
+            - listitem [ref=e467]:
+              - link "About WallStreetSurvivor" [ref=e468] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+            - listitem [ref=e469]:
+              - link "Crypto Trading Simulator" [ref=e470] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-trading-simulator/
+            - listitem [ref=e471]:
+              - link "Wall Street Survivor YouTube Videos" [ref=e472] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+      - generic [ref=e473]:
+        - complementary [ref=e474]:
+          - heading "Review Center" [level=3] [ref=e475]
+        - complementary [ref=e476]:
+          - list [ref=e477]:
+            - listitem [ref=e478]:
+              - link "Motley Fool Review" [ref=e479] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e480]:
+              - link "Seeking Alpha Review" [ref=e481] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e482]:
+              - link "Alpha Picks Review" [ref=e483] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e484]:
+              - link "Moby Stocks Review" [ref=e485] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e486]:
+              - link "Best Seeking Alpha Discount" [ref=e487] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-seeking-alpha-discounts-promo-codes/
+            - listitem [ref=e488]:
+              - link "Is Robinhood Safe to Use?" [ref=e489] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e490]:
+              - link "Rule Breakers Review" [ref=e491] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e492]:
+              - link "Best Investment Newsletters" [ref=e493] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e494]:
+              - link "Best Investing Apps" [ref=e495] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e496]:
+              - link "Best Motley Fool Discount Code" [ref=e497] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e498]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e499] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e500]:
+              - link "Best Tipranks Discount Code" [ref=e501] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e502]:
+              - link "Is Coinbase Safe?" [ref=e503] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e504]:
+              - link "Free Crypto with Coinbase" [ref=e505] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e506]:
+              - link "Best Stock Picking Service" [ref=e507] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+            - listitem [ref=e508]:
+              - link "Rocket Money Review" [ref=e509] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/rocket-money-review/
+            - listitem [ref=e510]:
+              - link "Moomoo Review" [ref=e511] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moomoo-review/
+            - listitem [ref=e512]:
+              - link "WeBull Review" [ref=e513] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/webull-review/
+      - generic [ref=e514]:
+        - complementary [ref=e515]:
+          - heading "Corporate Services" [level=3] [ref=e516]
+        - complementary [ref=e517]:
+          - list [ref=e518]:
+            - listitem [ref=e519]:
+              - link "White Label Stock Market Games" [ref=e520] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e521]:
+              - link "White Label Virtual Crypto Trading" [ref=e522] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e523]:
+              - link "Employee Financial Wellness" [ref=e524] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e525]:
+              - link "Sponsor a College or High School" [ref=e526] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e527]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e528] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e529]:
+          - heading "Our Company" [level=3] [ref=e530]
+        - complementary [ref=e531]:
+          - list [ref=e532]:
+            - listitem [ref=e533]:
+              - link "Contact StockTrak" [ref=e534] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/contact-us/
+            - listitem [ref=e535]:
+              - link "About StockTrak" [ref=e536] [cursor=pointer]:
+                - /url: https://www.stocktrak.com/about-us/
+            - listitem [ref=e537]:
+              - link "Motley Fool Review" [ref=e538] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e539]:
+              - link "Privacy Policy" [ref=e540] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e541]:
+              - link "Terms and Conditions" [ref=e542] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e543]:
+              - link "Advertise with Us" [ref=e544] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e545]:
+        - complementary [ref=e546]:
+          - heading "Family of Sites" [level=3] [ref=e547]:
+            - strong [ref=e548]: Family of Sites
+        - complementary [ref=e549]:
+          - figure [ref=e550]:
+            - link "StockTrak logo" [ref=e551] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e552]
+        - complementary [ref=e553]:
+          - figure [ref=e554]:
+            - link "PersonalFinanceLab logo" [ref=e555] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e556]
+        - complementary [ref=e557]:
+          - figure [ref=e558]:
+            - link "WallStreetSurvivor logo" [ref=e559] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Stock Market Simulator" [ref=e560]
+        - complementary [ref=e561]:
+          - figure [ref=e562]:
+            - link "HowTheMarketWorks logo" [ref=e563] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free Stock Market Game for Students" [ref=e564]
+        - complementary [ref=e565]:
+          - link "Global Virtual Stock Game" [ref=e566] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e567] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - contentinfo "Site" [ref=e568]:
+      - generic [ref=e569]:
+        - generic [ref=e570]:
+          - complementary [ref=e571]:
+            - heading "Connect With Us" [level=2] [ref=e572]
+          - complementary:
+            - figure [ref=e573]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e574] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e575]
+          - complementary:
+            - figure [ref=e576]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e577] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e578]
+          - complementary:
+            - figure [ref=e579]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e580] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e581]
+        - generic [ref=e582]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2026 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.
+  - iframe [ref=e585]:
+    - generic [ref=f27e6]:
+      - text: protection par
+      - strong [ref=f27e7]: reCAPTCHA

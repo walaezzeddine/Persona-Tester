@@ -8,6 +8,7 @@ import sys
 import time
 import json
 import asyncio
+import importlib.util
 from pathlib import Path
 from typing import Optional
 from dotenv import load_dotenv
@@ -56,6 +57,38 @@ app.add_middleware(
 
 db = get_db()
 
+# Ensure playwright table exists on startup.
+try:
+    db.ensure_playwright_table()
+    print("✅ Playwright DB table ensured")
+except Exception as e:
+    print(f"⚠️  Could not ensure playwright DB table: {e}")
+
+# Load custom Playwright MCP agent from repo path.
+_repo_root = Path(__file__).resolve().parents[3]
+PlaywrightTestAgent = None
+PLAYWRIGHT_AGENT_AVAILABLE = False
+for _agent_path in [
+    _repo_root / "mcp-server" / "playwright-custom" / "agent.py",
+    _repo_root / "mcp_servers" / "playwright_custom" / "agent.py",
+]:
+    if _agent_path.exists():
+        try:
+            _spec = importlib.util.spec_from_file_location("playwright_custom_agent", str(_agent_path))
+            if _spec and _spec.loader:
+                _module = importlib.util.module_from_spec(_spec)
+                _spec.loader.exec_module(_module)
+                PlaywrightTestAgent = getattr(_module, "PlaywrightTestAgent", None)
+                PLAYWRIGHT_AGENT_AVAILABLE = PlaywrightTestAgent is not None
+                if PLAYWRIGHT_AGENT_AVAILABLE:
+                    print("✅ PlaywrightTestAgent loaded")
+                break
+        except Exception as e:
+            print(f"⚠️  Failed to load PlaywrightTestAgent from {_agent_path}: {e}")
+
+if not PLAYWRIGHT_AGENT_AVAILABLE:
+    print("⚠️  PlaywrightTestAgent not available")
+
 
 class DeleteWebsiteRequest(BaseModel):
     id: str
@@ -75,6 +108,19 @@ class GeneratePersonasRequest(BaseModel):
 class RunPersonaRequest(BaseModel):
     persona_id: str
     start_url: str | None = None
+
+
+class RunPlaywrightTestRequest(BaseModel):
+    persona_id: str
+    start_url: str | None = None
+    browser_name: str = "chromium"
+    provider: str = "groq"
+
+
+class RunSavedPlaywrightScriptRequest(BaseModel):
+    execution_id: str
+    browser_name: str = "chromium"
+    provider: str = "groq"
 
 
 @app.get("/api/stats")
@@ -1048,6 +1094,213 @@ async def get_test_status(session_id: str):
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# ── Playwright Test Execution endpoints ─────────────────────────────────────
+
+def _load_persona_for_playwright(persona_id: str):
+    conn = db._connect()
+    cursor = conn.cursor()
+    cursor.execute(
+        """
+        SELECT p.id, p.nom, p.objectif, p.device, p.vitesse,
+               p.patience_sec, p.type_persona, p.json_file_path,
+               p.website_id, w.url, w.type as website_type
+        FROM personas p
+        JOIN websites w ON p.website_id = w.id
+        WHERE p.id = ?
+        """,
+        (persona_id,),
+    )
+    row = cursor.fetchone()
+    conn.close()
+
+    if not row:
+        return None, None, None
+
+    website_id = row[8]
+    website_url = row[9]
+    json_file_path = row[7]
+
+    persona_data = {
+        "id": row[0],
+        "nom": row[1],
+        "objectif": row[2],
+        "device": row[3],
+        "vitesse_navigation": row[4],
+        "patience_attente_sec": row[5],
+        "type_persona": row[6],
+        "website_type": row[10],
+    }
+
+    if json_file_path and Path(json_file_path).exists():
+        try:
+            with open(json_file_path, "r", encoding="utf-8") as f:
+                loaded = json.load(f)
+                if isinstance(loaded, dict):
+                    persona_data.update(loaded)
+        except Exception:
+            pass
+
+    return persona_data, website_id, website_url
+
+
+@app.post("/api/playwright/generate")
+async def generate_playwright_script(payload: RunPlaywrightTestRequest):
+    """
+    Generate and save Playwright script (without execution).
+    """
+    if not PLAYWRIGHT_AGENT_AVAILABLE:
+        raise HTTPException(status_code=503, detail="PlaywrightTestAgent not available")
+
+    persona_data, website_id, website_url = _load_persona_for_playwright(payload.persona_id)
+    if not persona_data:
+        raise HTTPException(status_code=404, detail="Persona not found")
+
+    target_url = payload.start_url or website_url
+
+    try:
+        agent = PlaywrightTestAgent(provider=payload.provider)
+        result = await agent.generate_test_script(
+            url=target_url,
+            persona=persona_data,
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    exec_id = db.add_playwright_execution(
+        persona_id=payload.persona_id,
+        website_id=website_id,
+        url=target_url,
+        generated_script=result.get("generated_script") or "",
+        status=result.get("status", "pending"),
+        execution_log=result.get("execution_log", []),
+        dom_snapshot=result.get("dom_snapshot"),
+        browser_name=payload.browser_name,
+        error_message=result.get("error_message"),
+        screenshot_base64=None,
+        duration_ms=result.get("duration_ms", 0),
+    )
+
+    return {
+        "success": result.get("status") != "error",
+        "execution_id": exec_id,
+        "status": result.get("status", "pending"),
+        "generated_script": result.get("generated_script"),
+        "execution_log": result.get("execution_log", []),
+        "error_message": result.get("error_message"),
+        "duration_ms": result.get("duration_ms", 0),
+        "has_screenshot": False,
+        "screenshot_base64": None,
+    }
+
+
+@app.post("/api/playwright/run-script")
+async def run_saved_playwright_script(payload: RunSavedPlaywrightScriptRequest):
+    """Execute an already generated script through the Playwright MCP server."""
+    if not PLAYWRIGHT_AGENT_AVAILABLE:
+        raise HTTPException(status_code=503, detail="PlaywrightTestAgent not available")
+
+    execution = db.get_playwright_execution_by_id(payload.execution_id)
+    if not execution:
+        raise HTTPException(status_code=404, detail="Execution not found")
+
+    script = execution.get("generated_script")
+    if not script:
+        raise HTTPException(status_code=400, detail="No generated script found for this execution")
+
+    try:
+        agent = PlaywrightTestAgent(provider=payload.provider)
+        run_result = await agent.execute_script(
+            test_script=script,
+            browser_name=payload.browser_name,
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    # Normalize values before SQLite binding (sqlite cannot bind dict/list directly).
+    raw_error = run_result.get("error_message")
+    if isinstance(raw_error, (dict, list)):
+        error_message = json.dumps(raw_error, ensure_ascii=False)
+    elif raw_error is None:
+        error_message = None
+    else:
+        error_message = str(raw_error)
+
+    def _normalize_db_text(value):
+        if value is None:
+            return None
+        if isinstance(value, (dict, list, tuple)):
+            return json.dumps(value, ensure_ascii=False)
+        return str(value)
+
+    raw_screenshot = run_result.get("screenshot_base64")
+    if isinstance(raw_screenshot, dict):
+        raw_screenshot = raw_screenshot.get("data") or raw_screenshot.get("base64") or raw_screenshot
+    screenshot_base64 = _normalize_db_text(raw_screenshot)
+
+    try:
+        duration_ms = int(run_result.get("duration_ms", 0) or 0)
+    except (TypeError, ValueError):
+        duration_ms = 0
+
+    conn = db._connect()
+    cursor = conn.cursor()
+    cursor.execute(
+        """
+        UPDATE playwright_test_executions
+        SET status = ?, browser_name = ?, execution_log = ?, error_message = ?,
+            screenshot_base64 = ?, duration_ms = ?, completed_at = CURRENT_TIMESTAMP
+        WHERE id = ?
+        """,
+        (
+            run_result.get("status", "error"),
+            payload.browser_name,
+            json.dumps(run_result.get("execution_log", [])),
+            error_message,
+            screenshot_base64,
+            duration_ms,
+            payload.execution_id,
+        ),
+    )
+    conn.commit()
+    conn.close()
+
+    return {
+        "success": run_result.get("status") == "success",
+        "execution_id": payload.execution_id,
+        "status": run_result.get("status"),
+        "generated_script": script,
+        "execution_log": run_result.get("execution_log", []),
+        "error_message": error_message,
+        "duration_ms": duration_ms,
+        "has_screenshot": bool(screenshot_base64),
+        "screenshot_base64": screenshot_base64,
+    }
+
+
+@app.get("/api/playwright/executions")
+def get_all_playwright_executions(
+    persona_id: Optional[str] = None,
+    website_id: Optional[str] = None,
+    limit: int = 50,
+):
+    """Get playwright test execution history, optionally filtered."""
+    executions = db.get_playwright_executions(
+        persona_id=persona_id,
+        website_id=website_id,
+        limit=limit,
+    )
+    return executions
+
+
+@app.get("/api/playwright/executions/{execution_id}")
+def get_playwright_execution_detail(execution_id: str):
+    """Get one playwright execution with full detail."""
+    execution = db.get_playwright_execution_by_id(execution_id)
+    if not execution:
+        raise HTTPException(status_code=404, detail="Execution not found")
+    return execution
 
 
 if __name__ == "__main__":
