@@ -55,6 +55,10 @@ async function executePlaywrightTest(testScript, browserName, showBrowser = true
     executionLog.push("Creating new page...");
     page = await context.newPage();
 
+    // Default timeout policy: 30s for both navigation and general page operations.
+    page.setDefaultNavigationTimeout(30000);
+    page.setDefaultTimeout(30000);
+
     const testFunction = new Function(
       "page",
       "context",
@@ -167,7 +171,7 @@ async function fetchPageDom(url) {
     page = await context.newPage();
 
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30000 });
-    await page.waitForLoadState("load", { timeout: 15000 }).catch(() => {});
+    await page.waitForLoadState("load", { timeout: 30000 }).catch(() => {});
 
     const dom = await page.evaluate(() => {
       const removeSelectors = [

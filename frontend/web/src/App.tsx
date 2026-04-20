@@ -6,6 +6,7 @@ import { TestConfigurationWizard } from './TestConfigurationWizard'
 import { PersonaDetailModal } from './PersonaDetailModal'
 import { ScriptModal } from './ScriptModal'
 import { PlaywrightHistory } from './PlaywrightHistory'
+import { CheckActionsModal } from './CheckActionsModal'
 
 type Stats = {
   websites: number
@@ -115,6 +116,9 @@ function App() {
   const [scriptPersonaName, setScriptPersonaName] = useState('')
   const [scriptPersonaUrl, setScriptPersonaUrl] = useState('')
   const [pwRunMessage, setPwRunMessage] = useState('')
+  const [actionsMessage, setActionsMessage] = useState('')
+  const [actionsPersona, setActionsPersona] = useState<Persona | null>(null)
+  const [actionsModalOpen, setActionsModalOpen] = useState(false)
 
   const [url, setUrl] = useState('https://www.booking.com')
   const [provider, setProvider] = useState('groq')
@@ -257,6 +261,32 @@ function App() {
     } catch (err) {
       setPwRunMessage(err instanceof Error ? err.message : 'Failed to open script')
     }
+  }
+
+  function handleCheckActions(persona: Persona) {
+    setActionsMessage('')
+    setActionsPersona(persona)
+    setActionsModalOpen(true)
+  }
+
+  async function handleSaveActions(actions: string[]) {
+    if (!actionsPersona) return
+
+    const response = await fetch(`${API_BASE}/personas/${actionsPersona.id}/actions`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ actions }),
+    })
+
+    if (!response.ok) {
+      const payload = (await response.json()) as { detail?: string }
+      throw new Error(payload.detail || `Failed to save actions (${response.status})`)
+    }
+
+    setActionsMessage(`Saved ${actions.length} actions for ${actionsPersona.nom || actionsPersona.name || 'persona'}`)
+    setActionsModalOpen(false)
+    setActionsPersona(null)
+    await loadDashboard()
   }
 
   async function handleRunScript(persona: Persona) {
@@ -448,6 +478,19 @@ function App() {
                       {runningPersonaId === persona.id ? 'Running...' : 'Run test'}
                     </button>
 
+                    <button
+                      type="button"
+                      className="check-actions-btn"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        handleCheckActions(persona)
+                      }}
+                      disabled={runningPersonaId === persona.id || runningScriptPersonaId === persona.id}
+                      title="Review and edit actions before script generation"
+                    >
+                      Check Actions
+                    </button>
+
                     {/* View Script button */}
                     <button
                       type="button"
@@ -481,6 +524,7 @@ function App() {
             ))}
           </ul>
           {runMessage && <p className="status">{runMessage}</p>}
+          {actionsMessage && <p className="status">{actionsMessage}</p>}
           {pwRunMessage && (
             <p className={`status ${pwRunMessage.includes('✗') ? 'error' : ''}`}>
               {pwRunMessage}
@@ -597,6 +641,18 @@ function App() {
           errorMessage={scriptResult.error_message}
           screenshotBase64={scriptResult.screenshot_base64}
           onClose={() => setScriptModalOpen(false)}
+        />
+      )}
+
+      {actionsModalOpen && actionsPersona && (
+        <CheckActionsModal
+          personaName={actionsPersona.nom || actionsPersona.name || 'Unknown'}
+          initialActions={actionsPersona.actions_site || []}
+          onClose={() => {
+            setActionsModalOpen(false)
+            setActionsPersona(null)
+          }}
+          onSave={handleSaveActions}
         />
       )}
     </main>

@@ -137,11 +137,15 @@ Generate a complete, executable Playwright JavaScript test script for the follow
 3. The script must navigate to: `{url}`
 4. Implement the persona's objective: {objectif}
 5. Use realistic selectors derived from the actual DOM above
-6. Add appropriate `await page.waitForLoadState('networkidle')` or `await page.waitForTimeout(N)` calls
-7. Handle potential popups, cookie banners, or overlays that may block interaction
-8. {'Navigate quickly, minimal waits (500ms max)' if vitesse == 'rapide' else 'Navigate carefully with longer waits (1000-2000ms)'}
-9. {'Use mobile viewport: await page.setViewportSize({{ width: 390, height: 844 }})' if device == 'mobile' else 'Use desktop viewport: await page.setViewportSize({{ width: 1280, height: 800 }})'}
-10. End with logging a summary of what was accomplished
+6. Configure defaults at the beginning of the script:
+    - `await page.setDefaultNavigationTimeout(30000)`
+    - `await page.setDefaultTimeout(30000)`
+    Always use 30s timeout for navigation and loading waits by default.
+7. Add appropriate loading waits with explicit timeout when relevant, e.g. `await page.waitForLoadState('load', {{ timeout: 30000 }})` or `await page.waitForLoadState('networkidle', {{ timeout: 30000 }})`
+8. Handle potential popups, cookie banners, or overlays that may block interaction
+9. {'Navigate quickly, minimal waits (500ms max)' if vitesse == 'rapide' else 'Navigate carefully with longer waits (1000-2000ms)'}
+10. {'Use mobile viewport: await page.setViewportSize({{ width: 390, height: 844 }})' if device == 'mobile' else 'Use desktop viewport: await page.setViewportSize({{ width: 1280, height: 800 }})'}
+11. End with logging a summary of what was accomplished
 
 ## Output Format
 Return ONLY the raw JavaScript code — no markdown fences, no explanation, no comments outside the script.
@@ -150,8 +154,10 @@ The script body will be injected into an async function. Do NOT include `async f
 Example structure:
 executionLog.push('Starting test for {persona_name}...');
 await page.setViewportSize({{ width: 1280, height: 800 }});
-await page.goto('{url}');
-await page.waitForLoadState('networkidle');
+await page.setDefaultNavigationTimeout(30000);
+await page.setDefaultTimeout(30000);
+await page.goto('{url}', {{ waitUntil: 'domcontentloaded', timeout: 30000 }});
+await page.waitForLoadState('networkidle', {{ timeout: 30000 }});
 // ... rest of test ...
 executionLog.push('Test completed successfully');
 """
@@ -161,6 +167,9 @@ executionLog.push('Test completed successfully');
                 "You are an expert Playwright test automation engineer. "
                 "You generate precise, executable JavaScript test scripts based on real DOM structure. "
                 "Always use selectors that exist in the provided DOM. "
+                "At the top of every generated script, set Playwright defaults with "
+                "page.setDefaultNavigationTimeout(30000) and page.setDefaultTimeout(30000). "
+                "Use 30000ms timeout by default for page.goto and page.waitForLoadState calls. "
                 "Return ONLY raw JavaScript — no markdown, no explanations."
             )),
             HumanMessage(content=prompt),

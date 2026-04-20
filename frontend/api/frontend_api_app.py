@@ -134,6 +134,10 @@ class RunSavedPlaywrightScriptRequest(BaseModel):
     provider: str = "groq"
 
 
+class UpdatePersonaActionsRequest(BaseModel):
+    actions: list[str] = []
+
+
 # ── Existing endpoints (unchanged) ─────────────────────────────────────────────
 
 @app.get("/api/stats")
@@ -458,6 +462,50 @@ def toggle_persona(persona_id: str):
         raise HTTPException(status_code=404, detail="Persona not found")
 
     return {"is_active": bool(row[0])}
+
+
+@app.put("/api/personas/{persona_id}/actions")
+def update_persona_actions(persona_id: str, payload: UpdatePersonaActionsRequest):
+    """Update actions_site inside persona_json for a persona."""
+    cleaned_actions = [str(a).strip() for a in payload.actions if str(a).strip()]
+
+    conn = db._connect()
+    cursor = conn.cursor()
+    cursor.execute(
+        "SELECT persona_json FROM personas WHERE id = ?",
+        (persona_id,),
+    )
+    row = cursor.fetchone()
+
+    if not row:
+        conn.close()
+        raise HTTPException(status_code=404, detail="Persona not found")
+
+    persona_json = {}
+    if row[0]:
+        try:
+            parsed = json.loads(row[0])
+            if isinstance(parsed, dict):
+                persona_json = parsed
+        except (json.JSONDecodeError, TypeError):
+            persona_json = {}
+
+    persona_json["actions_site"] = cleaned_actions
+
+    cursor.execute(
+        "UPDATE personas SET persona_json = ? WHERE id = ?",
+        (json.dumps(persona_json, ensure_ascii=False), persona_id),
+    )
+    conn.commit()
+    conn.close()
+
+    return {
+        "success": True,
+        "persona_id": persona_id,
+        "actions": cleaned_actions,
+        "count": len(cleaned_actions),
+        "message": f"Saved {len(cleaned_actions)} actions",
+    }
 
 
 @app.post("/api/generate")
@@ -1081,7 +1129,7 @@ async def generate_playwright_script(payload: RunPlaywrightTestRequest):
         """
         SELECT p.id, p.nom, p.objectif, p.device, p.vitesse,
                p.patience_sec, p.type_persona, p.json_file_path,
-               p.website_id, w.url, w.type as website_type
+             p.website_id, w.url, w.type as website_type, p.persona_json
         FROM personas p
         JOIN websites w ON p.website_id = w.id
         WHERE p.id = ?
@@ -1116,6 +1164,16 @@ async def generate_playwright_script(payload: RunPlaywrightTestRequest):
                 if isinstance(loaded, dict):
                     persona_data.update(loaded)
         except Exception:
+            pass
+
+    # DB persona_json has highest priority (includes user-edited actions_site).
+    raw_persona_json = row[11]
+    if raw_persona_json:
+        try:
+            parsed_db_json = json.loads(raw_persona_json)
+            if isinstance(parsed_db_json, dict):
+                persona_data.update(parsed_db_json)
+        except (json.JSONDecodeError, TypeError):
             pass
 
     target_url = payload.start_url or website_url

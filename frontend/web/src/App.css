@@ -596,6 +596,21 @@ thead th {
 .run-script-btn:hover { opacity: 0.85; }
 .run-script-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
+.check-actions-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background: #2f74c0;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+.check-actions-btn:hover { opacity: 0.85; }
+.check-actions-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
 /* Playwright History nav button */
 .pw-history-nav-btn {
   display: flex;
