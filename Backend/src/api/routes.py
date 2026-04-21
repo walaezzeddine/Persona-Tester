@@ -28,6 +28,7 @@ from ..models.db_manager import get_db
 from ..agents.persona_generator import PersonaGenerator
 from ..tools.website_analyzer import WebsiteAnalyzer
 from ..agents.persona_agent import PersonaAgent
+from ..agents.persona_action_planner import PersonaActionPlanner
 
 try:
     from ..utils.config import Config
@@ -114,17 +115,26 @@ class RunPlaywrightTestRequest(BaseModel):
     persona_id: str
     start_url: str | None = None
     browser_name: str = "chromium"
-    provider: str = "groq"
+    provider: str = "ollama"
+    model: str | None = None
 
 
 class RunSavedPlaywrightScriptRequest(BaseModel):
     execution_id: str
     browser_name: str = "chromium"
-    provider: str = "groq"
+    provider: str = "ollama"
+    model: str | None = None
 
 
 class UpdatePersonaActionsRequest(BaseModel):
     actions: list[str] = []
+
+
+class GenerateActionsRequest(BaseModel):
+    start_url: str | None = None
+    provider: str = "ollama"
+    model: str | None = None
+    temperature: float = 0.5
 
 
 @app.get("/api/stats")
@@ -505,6 +515,137 @@ def update_persona_actions(persona_id: str, payload: UpdatePersonaActionsRequest
         "actions": cleaned_actions,
         "count": len(cleaned_actions),
         "message": f"Saved {len(cleaned_actions)} actions",
+    }
+
+
+def _load_persona_and_analysis(persona_id: str) -> tuple[dict, dict, str]:
+    """
+    Load a persona (merged persona_json + columns) and its latest website analysis
+    from the DB. Returns (persona_data, website_analysis, website_url).
+    Raises HTTPException(404) if the persona does not exist.
+    """
+    conn = db._connect()
+    cursor = conn.cursor()
+    cursor.execute(
+        """
+        SELECT p.id, p.nom, p.objectif, p.device, p.vitesse, p.patience_sec,
+               p.type_persona, p.json_file_path, p.persona_json,
+               p.website_id, w.url, w.type as website_type
+        FROM personas p
+        JOIN websites w ON p.website_id = w.id
+        WHERE p.id = ?
+        """,
+        (persona_id,),
+    )
+    row = cursor.fetchone()
+    if not row:
+        conn.close()
+        raise HTTPException(status_code=404, detail="Persona not found")
+
+    website_id = row[9]
+    website_url = row[10]
+    website_type = row[11]
+
+    persona_data: dict = {
+        "id": row[0],
+        "nom": row[1],
+        "objectif": row[2],
+        "device": row[3],
+        "vitesse_navigation": row[4],
+        "patience_attente_sec": row[5],
+        "type_persona": row[6],
+        "website_type": website_type,
+        "website_url": website_url,
+    }
+
+    # Merge persona_json (richer fields) on top of the column values.
+    if row[8]:
+        try:
+            parsed = json.loads(row[8])
+            if isinstance(parsed, dict):
+                persona_data.update(parsed)
+        except (json.JSONDecodeError, TypeError):
+            pass
+
+    # Also fall back to the saved JSON file if present.
+    json_file_path = row[7]
+    if json_file_path and Path(json_file_path).exists():
+        try:
+            with open(json_file_path, "r", encoding="utf-8") as f:
+                loaded = json.load(f)
+                if isinstance(loaded, dict):
+                    # Columns + persona_json win; file only fills gaps.
+                    for k, v in loaded.items():
+                        persona_data.setdefault(k, v)
+        except Exception:
+            pass
+
+    # Latest website analysis for the same website_id.
+    cursor.execute(
+        """
+        SELECT raw_json FROM website_analyses
+        WHERE website_id = ?
+        ORDER BY analyzed_at DESC
+        LIMIT 1
+        """,
+        (website_id,),
+    )
+    analysis_row = cursor.fetchone()
+    conn.close()
+
+    website_analysis: dict = {}
+    if analysis_row and analysis_row[0]:
+        try:
+            parsed = json.loads(analysis_row[0])
+            if isinstance(parsed, dict):
+                website_analysis = parsed
+        except (json.JSONDecodeError, TypeError):
+            pass
+
+    # Guarantee the basics even if the analysis is missing or malformed.
+    website_analysis.setdefault("url", website_url)
+    website_analysis.setdefault("domain", website_url)
+
+    return persona_data, website_analysis, website_url
+
+
+@app.post("/api/personas/{persona_id}/generate-actions")
+def generate_persona_actions(persona_id: str, payload: GenerateActionsRequest):
+    """
+    Generate a persona-trait-weighted action plan for a specific persona.
+
+    Returns the plan WITHOUT persisting it. The frontend is expected to show
+    the actions to the user, allow edits, then save via
+    `PUT /api/personas/{persona_id}/actions`.
+    """
+    persona_data, website_analysis, website_url = _load_persona_and_analysis(persona_id)
+
+    try:
+        planner = PersonaActionPlanner(
+            provider=payload.provider,
+            model=payload.model,
+            temperature=payload.temperature,
+        )
+        result = planner.plan(
+            persona=persona_data,
+            website_analysis=website_analysis,
+            start_url=payload.start_url or website_url,
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Action planning failed: {e}")
+
+    return {
+        "success": True,
+        "persona_id": persona_id,
+        "objectif": result.get("objectif"),
+        "actions": result.get("actions", []),
+        "rationale": result.get("rationale", ""),
+        "provider": result.get("provider"),
+        "model": result.get("model"),
+        "target_url": result.get("target_url"),
+        "count": len(result.get("actions", [])),
+        "saved": False,
+        "message": "Action plan generated. Review/edit and call PUT /api/personas/{id}/actions to save.",
     }
 
 
@@ -1218,7 +1359,7 @@ async def generate_playwright_script(payload: RunPlaywrightTestRequest):
     target_url = payload.start_url or website_url
 
     try:
-        agent = PlaywrightTestAgent(provider=payload.provider)
+        agent = PlaywrightTestAgent(provider=payload.provider, model=payload.model)
         result = await agent.generate_test_script(
             url=target_url,
             persona=persona_data,
@@ -1268,7 +1409,7 @@ async def run_saved_playwright_script(payload: RunSavedPlaywrightScriptRequest):
         raise HTTPException(status_code=400, detail="No generated script found for this execution")
 
     try:
-        agent = PlaywrightTestAgent(provider=payload.provider)
+        agent = PlaywrightTestAgent(provider=payload.provider, model=payload.model)
         run_result = await agent.execute_script(
             test_script=script,
             browser_name=payload.browser_name,

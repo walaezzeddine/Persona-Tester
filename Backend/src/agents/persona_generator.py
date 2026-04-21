@@ -47,6 +47,15 @@ class PersonaGenerator:
 
     def _init_llm(self, provider: str, model: str = None) -> ChatOpenAI:
         """Initialize LLM based on provider."""
+        if provider == "ollama":
+            base_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1")
+            return ChatOpenAI(
+                model=model or os.getenv("OLLAMA_MODEL", "qwen3.5:cloud"),
+                base_url=base_url,
+                api_key="ollama",
+                temperature=self.temperature,
+                max_tokens=3000,
+            )
         if provider == "google":
             google_key = os.getenv("GOOGLE_API_KEY")
             if not google_key:
@@ -89,6 +98,67 @@ class PersonaGenerator:
                 temperature=self.temperature,
                 max_tokens=3000,
             )
+
+    def _format_site_context(self, website_analysis: Dict[str, Any]) -> str:
+        """
+        Build the SITE CONTEXT section of the persona prompt from the analyzer output.
+        Prefers the analyzer's `llm_context` markdown brief; falls back to a compact
+        summary built from structured fields.
+        """
+        if not website_analysis:
+            return "## SITE CONTEXT\n(No site analysis available — generate generic personas.)"
+
+        domain = website_analysis.get("domain") or website_analysis.get("url", "website")
+        llm_ctx = website_analysis.get("llm_context")
+        if isinstance(llm_ctx, str) and llm_ctx.strip():
+            # Cap to keep the overall prompt reasonable.
+            return f"## SITE CONTEXT — {domain}\n{llm_ctx.strip()[:4000]}"
+
+        # Fallback: compose from structured fields
+        parts = [f"## SITE CONTEXT — {domain}"]
+        site_type = website_analysis.get("site_type") or website_analysis.get("type")
+        if site_type:
+            parts.append(f"- **Site type:** {site_type}")
+        if website_analysis.get("primary_purpose"):
+            parts.append(f"- **Primary purpose:** {website_analysis['primary_purpose']}")
+        if website_analysis.get("industry"):
+            parts.append(f"- **Industry:** {website_analysis['industry']}")
+
+        feats = website_analysis.get("key_features") or []
+        if feats:
+            parts.append("- **Key features:**")
+            for f in feats[:8]:
+                parts.append(f"  - {f}")
+
+        actions = website_analysis.get("user_actions") or []
+        if actions:
+            parts.append("- **User actions observed:** " + ", ".join(str(a) for a in actions[:10]))
+
+        segments = website_analysis.get("target_audience") or []
+        if segments:
+            parts.append("- **User segments:**")
+            for s in segments[:4]:
+                if isinstance(s, dict):
+                    name = s.get("segment", "user")
+                    chars = s.get("characteristics", "")
+                    mot = s.get("motivation", "")
+                    parts.append(f"  - **{name}** — {chars}. Motivation: {mot}")
+                else:
+                    parts.append(f"  - {s}")
+
+        journey = website_analysis.get("user_journey") or {}
+        if isinstance(journey, dict) and journey.get("key_steps"):
+            parts.append("- **Typical journey:** " + " → ".join(str(s) for s in journey["key_steps"][:6]))
+
+        forms = website_analysis.get("forms_and_inputs") or []
+        if forms:
+            parts.append("- **Forms & inputs:** " + "; ".join(str(f) for f in forms[:6]))
+
+        pains = website_analysis.get("user_pain_points") or []
+        if pains:
+            parts.append("- **Known pain points:** " + "; ".join(str(p) for p in pains[:5]))
+
+        return "\n".join(parts)
 
     def _format_demographic_constraints(self, demographics_config: Dict[str, Any] | None) -> str:
         """Format demographic constraints for the LLM prompt."""
@@ -135,11 +205,13 @@ class PersonaGenerator:
         if global_objective:
             print(f"🎯 All personas will share objective: {global_objective}")
 
-        # Minimal site info - only domain
         site_domain = website_analysis.get("domain", "website")
         shared_objective = global_objective if global_objective else "Use this website"
+        site_context_block = self._format_site_context(website_analysis)
+        demographics_block = self._format_demographic_constraints(demographics_config)
 
-        # SIMPLIFIED PROMPT - Focus on shared objective, minimize site analysis influence
+        # Persona prompt: grounded in the real site analysis (llm_context + structured fields)
+        # so actions_site, exploration_fonctionnalites, and douleurs reflect the actual site.
         persona_prompt = f"""
 You are generating user personas. CRITICAL: All personas MUST have the SAME objective.
 
@@ -151,7 +223,19 @@ If ANY persona has a different objective, you FAIL.
 
 ===
 
+{site_context_block}
+
+===
+
+{demographics_block}
+
 Generate {num_personas} realistic personas who all want to: "{shared_objective}"
+
+Use the SITE CONTEXT above to ground each persona:
+- Their `actions_site` MUST be concrete steps that exist on THIS site (use the flows/features/forms you saw).
+- Their `exploration_fonctionnalites` MUST reference real features listed in the context.
+- Their `douleurs` MUST be plausible given the site's real navigation and forms.
+- Do NOT invent features the site doesn't have.
 
 They will be DIFFERENT in:
 - How fast they navigate (rapide vs lente)

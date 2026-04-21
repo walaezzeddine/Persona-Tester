@@ -44,6 +44,15 @@ class PlaywrightTestAgent:
         self.llm = self._init_llm(provider, model)
 
     def _init_llm(self, provider: str, model: str = None) -> ChatOpenAI:
+        if provider == "ollama":
+            base_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1")
+            return ChatOpenAI(
+                model=model or os.getenv("OLLAMA_MODEL", "qwen3.5:cloud"),
+                base_url=base_url,
+                api_key="ollama",
+                temperature=self.temperature,
+                max_tokens=4000,
+            )
         if provider == "groq":
             from langchain_groq import ChatGroq
             api_key = os.getenv("GROQ_API_KEY")

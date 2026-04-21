@@ -21,5 +21,8 @@ langchain-google-genai>=0.0.1
 requests>=2.31.0
 beautifulsoup4>=4.12.0
 
-# Web search (for persona generation pipeline v2)
+# LLM-friendly crawling (primary WebsiteAnalyzer backend)
+crawl4ai>=0.4.0
+
+# Web search — optional fallback enrichment when crawl is blocked
 ddgs>=6.0
