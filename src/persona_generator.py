@@ -37,7 +37,7 @@ class PersonaGenerator:
         Initialize the Persona Generator with an LLM.
 
         Args:
-            provider: LLM provider ('openai', 'groq', 'github', 'google')
+            provider: LLM provider ('ollama', 'openai', 'github', 'google')
             model: Model name (defaults based on provider)
             temperature: LLM temperature for creativity
         """
@@ -56,17 +56,6 @@ class PersonaGenerator:
                 google_api_key=google_key,
                 temperature=self.temperature,
                 max_output_tokens=3000,
-            )
-        elif provider == "groq":
-            from langchain_groq import ChatGroq
-            api_key = os.getenv("GROQ_API_KEY")
-            if not api_key:
-                raise ValueError("GROQ_API_KEY not set in .env")
-            return ChatGroq(
-                model=model or "llama-3.3-70b-versatile",
-                api_key=api_key,
-                temperature=self.temperature,
-                max_tokens=3000,
             )
         elif provider == "github":
             api_key = os.getenv("GITHUB_TOKEN")

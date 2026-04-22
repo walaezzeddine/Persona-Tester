@@ -59,7 +59,7 @@ async def get_personas():
     return await client.get("/api/personas")
 
 
-async def generate_personas(url: str, num_personas: int = 3, provider: str = "groq"):
+async def generate_personas(url: str, num_personas: int = 3, provider: str = "ollama"):
     """Generate new personas via Backend"""
     client = APIClient()
     return await client.post(
@@ -102,6 +102,6 @@ def sync_get_personas():
     return asyncio.run(get_personas())
 
 
-def sync_generate_personas(url: str, num_personas: int = 3, provider: str = "groq"):
+def sync_generate_personas(url: str, num_personas: int = 3, provider: str = "ollama"):
     """Synchronous wrapper for generate_personas"""
     return asyncio.run(generate_personas(url, num_personas, provider))

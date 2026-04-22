@@ -30,12 +30,12 @@ class WebsiteContextAgent:
     3. Output matches WebsiteAnalyzer schema for compatibility
     """
 
-    def __init__(self, provider: str = "groq", model: str = None, temperature: float = 0.3):
+    def __init__(self, provider: str = "ollama", model: str = None, temperature: float = 0.3):
         """
         Initialize the Website Context Agent.
 
         Args:
-            provider: LLM provider ('openai', 'groq', 'github', 'google')
+            provider: LLM provider ('ollama', 'openai', 'github', 'google')
             model: Model name (defaults based on provider)
             temperature: LLM temperature (lower = more factual)
         """
@@ -56,17 +56,6 @@ class WebsiteContextAgent:
                 google_api_key=google_key,
                 temperature=self.temperature,
                 max_output_tokens=2000,
-            )
-        elif provider == "groq":
-            from langchain_groq import ChatGroq
-            api_key = os.getenv("GROQ_API_KEY")
-            if not api_key:
-                raise ValueError("GROQ_API_KEY not set in .env")
-            return ChatGroq(
-                model=model or "llama-3.3-70b-versatile",
-                api_key=api_key,
-                temperature=self.temperature,
-                max_tokens=2000,
             )
         elif provider == "github":
             api_key = os.getenv("GITHUB_TOKEN")
@@ -236,7 +225,7 @@ If information is uncertain, make reasonable inferences based on the website's a
             }
 
 
-def analyze_website(url: str, provider: str = "groq") -> Dict[str, Any]:
+def analyze_website(url: str, provider: str = "ollama") -> Dict[str, Any]:
     """
     Convenience function to analyze a website.
 
@@ -261,7 +250,7 @@ if __name__ == "__main__":
     print("=" * 60)
 
     # Test with ParaBank (demo banking site)
-    agent = WebsiteContextAgent(provider="groq")
+    agent = WebsiteContextAgent(provider="ollama")
     analysis = agent.analyze("https://parabank.parasoft.com")
 
     print("\n📊 Analysis Result:")

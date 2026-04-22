@@ -130,11 +130,15 @@ GET  /api/results            # Get execution results
 ## Environment Variables
 
 ```
+# Primary — local Ollama running qwen3.5:cloud
+OLLAMA_BASE_URL=http://localhost:11434/v1
+OLLAMA_MODEL=qwen3.5:cloud
+LLM_PROVIDER=ollama
+
+# Optional fallbacks
 OPENAI_API_KEY=sk-...
-GROQ_API_KEY=...
 GOOGLE_API_KEY=...
-LLM_PROVIDER=openai
-LLM_MODEL=gpt-4-turbo
+GITHUB_TOKEN=...
 ```
 
 ## Backend vs Frontend Separation

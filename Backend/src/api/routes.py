@@ -98,7 +98,7 @@ class DeleteWebsiteRequest(BaseModel):
 class GeneratePersonasRequest(BaseModel):
     url: str
     num_personas: int = 3
-    provider: str = "groq"
+    provider: str = "ollama"
     analyzer_model: str | None = None
     generator_model: str | None = None
     output_dir: str = "Backend/data/personas"
@@ -829,8 +829,9 @@ def start_persona_run(payload: RunPersonaRequest):
         print(f"Warning: Could not load config: {e}. Using defaults.")
         # Create a simple config object with defaults
         class SimpleConfig:
-            llm_provider = "groq"
-            llm_model = "llama-3.3-70b-versatile"
+            llm_provider = "ollama"
+            llm_model = os.getenv("OLLAMA_MODEL", "qwen3.5:cloud")
+            llm_base_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1")
             vision_enabled = False
         config = SimpleConfig()
 
@@ -1140,17 +1141,18 @@ async def submit_test_configuration(config: TestConfigurationRequest):
         # Add website to database
         website_id = db.add_website(config.url, site_type="test", description=f"Task: {config.participantTask}")
 
-        # Analyze website
+        # Analyze website (crawl4ai + Ollama)
         print("🔍 Analyzing website...")
-        analyzer = WebsiteAnalyzer(provider="groq", enable_web_search=True)
+        ollama_model = os.getenv("OLLAMA_MODEL", "qwen3.5:cloud")
+        analyzer = WebsiteAnalyzer(provider="ollama", enable_web_search=False)
         website_analysis = analyzer.analyze(config.url)
 
         # Save analysis
-        analysis_id = db.add_analysis(website_id, website_analysis, llm_provider="groq", llm_model="llama-3.3-70b-versatile")
+        analysis_id = db.add_analysis(website_id, website_analysis, llm_provider="ollama", llm_model=ollama_model)
 
         # Generate personas
         print(f"🧠 Generating {config.numParticipants} personas...")
-        persona_gen = PersonaGenerator(provider="groq", model="llama-3.3-70b-versatile")
+        persona_gen = PersonaGenerator(provider="ollama", model=ollama_model)
         personas = persona_gen.generate(
             website_analysis,
             num_personas=config.numParticipants,  # Generate EXACTLY what user asked for
@@ -1170,8 +1172,8 @@ async def submit_test_configuration(config: TestConfigurationRequest):
             website_id=website_id,
             analysis_id=analysis_id,
             personas_requested=config.numParticipants,
-            llm_provider="groq",
-            llm_model="llama-3.3-70b-versatile"
+            llm_provider="ollama",
+            llm_model=ollama_model
         )
 
         generated_count = 0

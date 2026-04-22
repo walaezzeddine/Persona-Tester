@@ -99,10 +99,6 @@ class PersonaAgent:
             _vision_key_available = bool(os.getenv("GITHUB_TOKEN"))
             _vision_key_name = "GITHUB_TOKEN"
             _vision_model_display = self.config.vision_model
-        elif _vision_provider == "groq":
-            _vision_key_available = bool(os.getenv("GROQ_API_KEY"))
-            _vision_key_name = "GROQ_API_KEY"
-            _vision_model_display = self.config.vision_model
         elif _vision_provider == "ollama":
             _vision_key_available = True
             _vision_key_name = "OLLAMA_LOCAL"
@@ -137,10 +133,6 @@ class PersonaAgent:
             # Direct OpenAI
             api_key = os.getenv("OPENAI_API_KEY")
             base_url = None
-        elif provider == "groq":
-            # Groq — OpenAI-compatible API
-            api_key = os.getenv("GROQ_API_KEY")
-            base_url = "https://api.groq.com/openai/v1"
         elif provider == "ollama":
             # Local Ollama
             api_key = "ollama"  # Ollama doesn't need a real key
@@ -227,9 +219,6 @@ class PersonaAgent:
             api_key = os.getenv("OPENAI_API_KEY")
             if not api_key:
                 return self.llm
-        elif provider == "groq":
-            api_key = os.getenv("GROQ_API_KEY")
-            base_url = "https://api.groq.com/openai/v1"
         elif provider == "github":
             api_key = os.getenv("GITHUB_TOKEN")
             base_url = self.config.llm_base_url or "https://models.github.ai/inference"
@@ -405,7 +394,7 @@ Remember to respond in the exact format: Thought / Action / Target
                 response = self.llm.invoke(messages)
                 response_text = response.content
                 
-                # Get token count if available (handles both OpenAI and Groq formats)
+                # Get token count if available (OpenAI-compatible usage metadata)
                 token_count = 0
                 if hasattr(response, 'response_metadata'):
                     meta = response.response_metadata

@@ -29,6 +29,21 @@ load_dotenv(dotenv_path=env_path)
 CUSTOM_MCP_SERVER_PATH = Path(__file__).parent / "server.js"
 
 
+def _env_truthy(name: str, default: bool = False) -> bool:
+    """Parse a boolean env var. Accepts 1/true/yes/on (case-insensitive)."""
+    raw = os.getenv(name)
+    if raw is None:
+        return default
+    return raw.strip().lower() in ("1", "true", "yes", "on")
+
+
+# Headless by default — backend runtimes typically don't have a display server,
+# and the MCP subprocess can't always inherit $DISPLAY reliably. Set
+# PLAYWRIGHT_SHOW_BROWSER=true to run headed (requires a working X/Wayland
+# server or xvfb).
+_DEFAULT_SHOW_BROWSER = _env_truthy("PLAYWRIGHT_SHOW_BROWSER", default=False)
+
+
 class PlaywrightTestAgent:
     """
     Orchestrates:
@@ -38,7 +53,7 @@ class PlaywrightTestAgent:
       4. Result collection
     """
 
-    def __init__(self, provider: str = "groq", model: str = None, temperature: float = 0.2):
+    def __init__(self, provider: str = "ollama", model: str = None, temperature: float = 0.2):
         self.provider = provider
         self.temperature = temperature
         self.llm = self._init_llm(provider, model)
@@ -53,18 +68,7 @@ class PlaywrightTestAgent:
                 temperature=self.temperature,
                 max_tokens=4000,
             )
-        if provider == "groq":
-            from langchain_groq import ChatGroq
-            api_key = os.getenv("GROQ_API_KEY")
-            if not api_key:
-                raise ValueError("GROQ_API_KEY not set")
-            return ChatGroq(
-                model=model or "llama-3.3-70b-versatile",
-                api_key=api_key,
-                temperature=self.temperature,
-                max_tokens=4000,
-            )
-        elif provider == "github":
+        if provider == "github":
             api_key = os.getenv("GITHUB_TOKEN")
             if not api_key:
                 raise ValueError("GITHUB_TOKEN not set")
@@ -150,7 +154,13 @@ Generate a complete, executable Playwright JavaScript test script for the follow
     - `await page.setDefaultNavigationTimeout(30000)`
     - `await page.setDefaultTimeout(30000)`
     Always use 30s timeout for navigation and loading waits by default.
-7. Add appropriate loading waits with explicit timeout when relevant, e.g. `await page.waitForLoadState('load', {{ timeout: 30000 }})` or `await page.waitForLoadState('networkidle', {{ timeout: 30000 }})`
+7. DO NOT use `waitForLoadState('networkidle')`. Logged-in dashboards, trading apps, and any page with live data, WebSockets, polling, analytics, or chat widgets never reach network-idle and will time out. Playwright itself discourages it.
+    - For page.goto, `{{ waitUntil: 'domcontentloaded' }}` is enough — do not chain a networkidle wait after it.
+    - Prefer readiness-based waits tied to what the NEXT step actually needs:
+      * `await page.waitForSelector('<post-action element>', {{ timeout: 30000 }})`
+      * `await page.waitForURL(/pattern/, {{ timeout: 30000 }})` after clicks that trigger a redirect (e.g. login submit) — pair it with the click using `Promise.all`.
+    - Only fall back to `waitForLoadState('load', {{ timeout: 30000 }})` if no specific element/URL signal is available. Never `'networkidle'`.
+    - Don't stack a wait right before a step that navigates away anyway — it's dead weight.
 8. Handle potential popups, cookie banners, or overlays that may block interaction
 9. {'Navigate quickly, minimal waits (500ms max)' if vitesse == 'rapide' else 'Navigate carefully with longer waits (1000-2000ms)'}
 10. {'Use mobile viewport: await page.setViewportSize({{ width: 390, height: 844 }})' if device == 'mobile' else 'Use desktop viewport: await page.setViewportSize({{ width: 1280, height: 800 }})'}
@@ -166,7 +176,13 @@ await page.setViewportSize({{ width: 1280, height: 800 }});
 await page.setDefaultNavigationTimeout(30000);
 await page.setDefaultTimeout(30000);
 await page.goto('{url}', {{ waitUntil: 'domcontentloaded', timeout: 30000 }});
-await page.waitForLoadState('networkidle', {{ timeout: 30000 }});
+// Wait for a real readiness signal from the DOM, NOT networkidle:
+await page.waitForSelector('<selector that proves the page is interactive>', {{ timeout: 30000 }});
+// For form submits that redirect (e.g. login), pair the click with waitForURL:
+// await Promise.all([
+//   page.waitForURL(/dashboard|account|home/i, {{ timeout: 30000 }}),
+//   page.click('input[type="submit"]'),
+// ]);
 // ... rest of test ...
 executionLog.push('Test completed successfully');
 """
@@ -178,7 +194,20 @@ executionLog.push('Test completed successfully');
                 "Always use selectors that exist in the provided DOM. "
                 "At the top of every generated script, set Playwright defaults with "
                 "page.setDefaultNavigationTimeout(30000) and page.setDefaultTimeout(30000). "
-                "Use 30000ms timeout by default for page.goto and page.waitForLoadState calls. "
+                "Use 30000ms timeout by default for page.goto and any wait calls. "
+                "\n\n"
+                "CRITICAL — NEVER use `page.waitForLoadState('networkidle')`. It times out on any real app "
+                "with WebSockets, polling, live data, analytics, or chat widgets (most logged-in dashboards, "
+                "trading/SaaS/social apps). Playwright's own docs discourage it. "
+                "Instead, wait on signals that actually matter for the next step: "
+                "(1) `page.waitForSelector(<element the next step needs>, {{ timeout: 30000 }})`; "
+                "(2) `page.waitForURL(/pattern/, {{ timeout: 30000 }})` after clicks that trigger a redirect "
+                "(pair with the click via `Promise.all` so no race); "
+                "(3) as a last resort, `page.waitForLoadState('load', {{ timeout: 30000 }})` — but only when "
+                "no specific element or URL signal is available. "
+                "For `page.goto`, `{{ waitUntil: 'domcontentloaded' }}` is sufficient — do NOT chain a "
+                "networkidle wait after it. Do not insert a wait immediately before a step that navigates away. "
+                "\n\n"
                 "Return ONLY raw JavaScript — no markdown, no explanations."
             )),
             HumanMessage(content=prompt),
@@ -276,15 +305,35 @@ executionLog.push('Test completed successfully');
         self,
         test_script: str,
         browser_name: str = "chromium",
-        show_browser: bool = True,
+        show_browser: Optional[bool] = None,
         keep_browser_open_ms: int = 3000,
         slow_mo_ms: int = 100,
     ) -> Dict[str, Any]:
-        """Execute an existing Playwright script through custom MCP server."""
+        """
+        Execute an existing Playwright script through custom MCP server.
+
+        `show_browser` defaults to the `PLAYWRIGHT_SHOW_BROWSER` env var
+        (falsy => headless). Headful mode requires a reachable display server;
+        when enabled we explicitly forward DISPLAY/WAYLAND_DISPLAY/XDG_RUNTIME_DIR
+        to the Node subprocess so Chromium can find the compositor.
+        """
         start_time = time.time()
+        if show_browser is None:
+            show_browser = _DEFAULT_SHOW_BROWSER
+
+        subprocess_env: Optional[Dict[str, str]] = None
+        if show_browser:
+            # Inherit the backend's env and make sure the display vars survive.
+            subprocess_env = dict(os.environ)
+            for var in ("DISPLAY", "WAYLAND_DISPLAY", "XDG_RUNTIME_DIR", "XAUTHORITY"):
+                val = os.environ.get(var)
+                if val is not None:
+                    subprocess_env[var] = val
+
         server_params = StdioServerParameters(
             command="node",
             args=[str(CUSTOM_MCP_SERVER_PATH)],
+            env=subprocess_env,
         )
 
         try:
@@ -421,7 +470,7 @@ executionLog.push('Test completed successfully');
 async def run_playwright_test(
     url: str,
     persona: Dict[str, Any],
-    provider: str = "groq",
+    provider: str = "ollama",
     browser_name: str = "chromium",
 ) -> Dict[str, Any]:
     """Convenience wrapper."""

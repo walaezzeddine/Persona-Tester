@@ -79,17 +79,6 @@ class PersonaActionPlanner:
                 temperature=self.temperature,
                 max_tokens=2000,
             )
-        if provider == "groq":
-            from langchain_groq import ChatGroq
-            api_key = os.getenv("GROQ_API_KEY")
-            if not api_key:
-                raise ValueError("GROQ_API_KEY not set in .env")
-            return ChatGroq(
-                model=model or "llama-3.3-70b-versatile",
-                api_key=api_key,
-                temperature=self.temperature,
-                max_tokens=2000,
-            )
         if provider == "google":
             from langchain_google_genai import ChatGoogleGenerativeAI
             api_key = os.getenv("GOOGLE_API_KEY")

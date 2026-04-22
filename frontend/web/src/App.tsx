@@ -7,6 +7,7 @@ import { PersonaDetailModal } from './PersonaDetailModal'
 import { ScriptModal } from './ScriptModal'
 import { PlaywrightHistory } from './PlaywrightHistory'
 import { CheckActionsModal } from './CheckActionsModal'
+import type { ActionsLoadResult } from './CheckActionsModal'
 
 type Stats = {
   websites: number
@@ -109,24 +110,29 @@ function App() {
   const [selectedPersona, setSelectedPersona] = useState<Persona | null>(null)
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false)
 
-  // Playwright run state
+  // Playwright state
   const [runningScriptPersonaId, setRunningScriptPersonaId] = useState<string | null>(null)
   const [scriptResult, setScriptResult] = useState<PlaywrightRunResponse | null>(null)
   const [scriptModalOpen, setScriptModalOpen] = useState(false)
   const [scriptPersonaName, setScriptPersonaName] = useState('')
   const [scriptPersonaUrl, setScriptPersonaUrl] = useState('')
   const [pwRunMessage, setPwRunMessage] = useState('')
-  const [actionsMessage, setActionsMessage] = useState('')
+
+  // Actions + script generation workflow state
   const [actionsPersona, setActionsPersona] = useState<Persona | null>(null)
   const [actionsModalOpen, setActionsModalOpen] = useState(false)
+  // persona_ids for which a Playwright script has already been generated
+  const [personasWithScript, setPersonasWithScript] = useState<Set<string>>(new Set())
+  // currently-in-flight script generation — drives the "generating..." banner
+  const [generatingScriptForId, setGeneratingScriptForId] = useState<string | null>(null)
+  const [workflowMessage, setWorkflowMessage] = useState('')
+  const [workflowError, setWorkflowError] = useState('')
 
   const [url, setUrl] = useState('https://www.booking.com')
-  const [provider, setProvider] = useState('groq')
+  const [provider, setProvider] = useState('ollama')
   const [numPersonas, setNumPersonas] = useState(20)
   const [submitting, setSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
-  const [runningPersonaId, setRunningPersonaId] = useState<string | null>(null)
-  const [runMessage, setRunMessage] = useState('')
 
   async function fetchJson<T>(path: string): Promise<T> {
     const response = await fetch(`${API_BASE}${path}`)
@@ -138,16 +144,25 @@ function App() {
     setLoading(true)
     setError('')
     try {
-      const [statsData, websitesData, personasData, runsData] = await Promise.all([
+      const [statsData, websitesData, personasData, runsData, executionsData] = await Promise.all([
         fetchJson<Stats>('/stats'),
         fetchJson<Website[]>('/websites'),
         fetchJson<Persona[]>('/personas'),
         fetchJson<Run[]>('/runs'),
+        fetchJson<PlaywrightExecution[]>('/playwright/executions?limit=500'),
       ])
       setStats(statsData)
       setWebsites(websitesData)
       setPersonas(personasData)
       setRuns(runsData)
+      // Any persona that has at least one saved script is in "stage 2" in the UI.
+      const withScript = new Set<string>()
+      for (const exec of executionsData || []) {
+        if (exec && exec.persona_id && exec.generated_script) {
+          withScript.add(exec.persona_id)
+        }
+      }
+      setPersonasWithScript(withScript)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Unexpected error while loading data')
     } finally {
@@ -183,34 +198,119 @@ function App() {
     }
   }
 
-  async function handleRunTest(personaId: string) {
-    setRunningPersonaId(personaId)
-    setRunMessage('')
-    try {
-      const response = await fetch(`${API_BASE}/playwright/generate`, {
+  function handleGenerateActions(persona: Persona) {
+    setWorkflowError('')
+    setWorkflowMessage('')
+    setActionsPersona(persona)
+    setActionsModalOpen(true)
+  }
+
+  async function loadActionsFromPlanner(personaId: string): Promise<ActionsLoadResult> {
+    const response = await fetch(
+      `${API_BASE}/personas/${personaId}/generate-actions`,
+      {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          persona_id: personaId,
-          provider: 'groq',
-          browser_name: 'chromium',
-        }),
-      })
-      if (!response.ok) {
-        const payload = (await response.json()) as { detail?: string }
-        throw new Error(payload.detail || `Generate script failed (${response.status})`)
+        body: JSON.stringify({ provider: 'ollama' }),
       }
-      const payload = (await response.json()) as PlaywrightRunResponse
-      setRunMessage(
-        payload.status === 'error'
-          ? `Script generation failed: ${payload.error_message || 'Unknown error'}`
-          : `Script generated and saved (${payload.execution_id.slice(0, 8)}).`
-      )
+    )
+    if (!response.ok) {
+      const payload = (await response.json()) as { detail?: string }
+      throw new Error(payload.detail || `Action generation failed (${response.status})`)
+    }
+    const data = (await response.json()) as {
+      actions: string[]
+      rationale?: string
+    }
+    return {
+      actions: Array.isArray(data.actions) ? data.actions : [],
+      rationale: data.rationale || '',
+    }
+  }
+
+  function buildSubmitHandler(persona: Persona) {
+    // Capture the persona once via closure so the submit path is immune to
+    // any state changes that happen while the modal is open.
+    return async function submitForPersona(actions: string[]): Promise<void> {
+      const personaLabel = persona.nom || persona.name || 'persona'
+      console.log('[workflow] submitting actions for', persona.id, actions)
+
+      // Step 1 — persist accepted actions. Any failure here throws so the
+      // modal keeps the user's edits and displays the error in-place.
+      const saveResponse = await fetch(`${API_BASE}/personas/${persona.id}/actions`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ actions }),
+      })
+      if (!saveResponse.ok) {
+        const payload = await saveResponse.json().catch(() => ({}))
+        const msg = (payload as { detail?: string }).detail || `Failed to save actions (${saveResponse.status})`
+        console.error('[workflow] PUT /actions failed:', msg)
+        throw new Error(msg)
+      }
+      console.log('[workflow] PUT /actions OK')
+
+      // Step 2 — generate the Playwright script. Also awaited inside the
+      // submit path so the modal visibly shows "Submitting…" the whole time
+      // and the user sees an error here if the MCP-backed generation fails.
+      setGeneratingScriptForId(persona.id)
+      setWorkflowError('')
+      setWorkflowMessage(`Saved ${actions.length} actions. Generating Playwright test script for ${personaLabel}…`)
+
+      let scriptResponse: Response
+      try {
+        scriptResponse = await fetch(`${API_BASE}/playwright/generate`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            persona_id: persona.id,
+            provider: 'ollama',
+            browser_name: 'chromium',
+          }),
+        })
+      } catch (networkErr) {
+        setGeneratingScriptForId(null)
+        setWorkflowMessage('')
+        console.error('[workflow] /playwright/generate network error:', networkErr)
+        throw new Error(
+          networkErr instanceof Error
+            ? `Script generation request failed: ${networkErr.message}`
+            : 'Script generation request failed'
+        )
+      }
+
+      if (!scriptResponse.ok) {
+        setGeneratingScriptForId(null)
+        setWorkflowMessage('')
+        const payload = await scriptResponse.json().catch(() => ({}))
+        const msg = (payload as { detail?: string }).detail
+          || `Script generation failed (${scriptResponse.status})`
+        console.error('[workflow] /playwright/generate non-OK:', msg)
+        throw new Error(msg)
+      }
+
+      const payload = (await scriptResponse.json()) as PlaywrightRunResponse
+      console.log('[workflow] /playwright/generate OK:', payload.execution_id, payload.status)
+
+      setGeneratingScriptForId(null)
+
+      if (payload.status === 'error') {
+        setWorkflowMessage('')
+        const msg = `Script generation failed for ${personaLabel}: ${payload.error_message || 'unknown error'}`
+        setWorkflowError(msg)
+        throw new Error(msg)
+      }
+
+      // Success — flip the persona into "stage 2", close the modal, refresh.
+      setPersonasWithScript((prev) => {
+        const next = new Set(prev)
+        next.add(persona.id)
+        return next
+      })
+      setWorkflowMessage(`Test script generated and saved for ${personaLabel}.`)
+      setActionsModalOpen(false)
+      setActionsPersona(null)
       await loadDashboard()
-    } catch (err) {
-      setRunMessage(err instanceof Error ? err.message : 'Failed to generate script')
-    } finally {
-      setRunningPersonaId(null)
     }
   }
 
@@ -263,33 +363,7 @@ function App() {
     }
   }
 
-  function handleCheckActions(persona: Persona) {
-    setActionsMessage('')
-    setActionsPersona(persona)
-    setActionsModalOpen(true)
-  }
-
-  async function handleSaveActions(actions: string[]) {
-    if (!actionsPersona) return
-
-    const response = await fetch(`${API_BASE}/personas/${actionsPersona.id}/actions`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ actions }),
-    })
-
-    if (!response.ok) {
-      const payload = (await response.json()) as { detail?: string }
-      throw new Error(payload.detail || `Failed to save actions (${response.status})`)
-    }
-
-    setActionsMessage(`Saved ${actions.length} actions for ${actionsPersona.nom || actionsPersona.name || 'persona'}`)
-    setActionsModalOpen(false)
-    setActionsPersona(null)
-    await loadDashboard()
-  }
-
-  async function handleRunScript(persona: Persona) {
+  async function handleExecuteScript(persona: Persona) {
     setRunningScriptPersonaId(persona.id)
     setPwRunMessage('')
     setScriptPersonaName(persona.nom || persona.name || 'Unknown')
@@ -306,7 +380,7 @@ function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           execution_id: execution.id,
-          provider: 'groq',
+          provider: 'ollama',
           browser_name: 'chromium',
         }),
       })
@@ -403,7 +477,7 @@ function App() {
           <label>
             Provider
             <select value={provider} onChange={(e) => setProvider(e.target.value)}>
-              <option value="groq">Groq</option>
+              <option value="ollama">Ollama (local)</option>
               <option value="openai">OpenAI</option>
               <option value="github">GitHub Models</option>
               <option value="google">Google</option>
@@ -466,65 +540,62 @@ function App() {
                 <div className="persona-actions">
                   <small>{persona.website_domain}</small>
                   <div className="persona-btn-row">
-                    {/* Run Test button */}
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        handleRunTest(persona.id)
-                      }}
-                      disabled={runningPersonaId === persona.id || runningScriptPersonaId === persona.id}
-                    >
-                      {runningPersonaId === persona.id ? 'Running...' : 'Run test'}
-                    </button>
-
-                    <button
-                      type="button"
-                      className="check-actions-btn"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        handleCheckActions(persona)
-                      }}
-                      disabled={runningPersonaId === persona.id || runningScriptPersonaId === persona.id}
-                      title="Review and edit actions before script generation"
-                    >
-                      Check Actions
-                    </button>
-
-                    {/* View Script button */}
-                    <button
-                      type="button"
-                      className="run-script-btn"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        handleViewScript(persona)
-                      }}
-                      disabled={runningPersonaId === persona.id || runningScriptPersonaId === persona.id}
-                      title="View latest generated script"
-                    >
-                      View Script
-                    </button>
-
-                    {/* Run Script button */}
-                    <button
-                      type="button"
-                      className="run-script-btn"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        handleRunScript(persona)
-                      }}
-                      disabled={runningPersonaId === persona.id || runningScriptPersonaId === persona.id}
-                      title="Run latest saved script on Playwright MCP server"
-                    >
-                      {runningScriptPersonaId === persona.id ? 'Running…' : 'Run Script'}
-                    </button>
+                    {personasWithScript.has(persona.id) ? (
+                      <>
+                        <button
+                          type="button"
+                          className="run-script-btn"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleViewScript(persona)
+                          }}
+                          disabled={runningScriptPersonaId === persona.id}
+                          title="View the generated Playwright test script"
+                        >
+                          View Script
+                        </button>
+                        <button
+                          type="button"
+                          className="run-script-btn"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleExecuteScript(persona)
+                          }}
+                          disabled={runningScriptPersonaId === persona.id}
+                          title="Execute the saved script on the Playwright MCP server"
+                        >
+                          {runningScriptPersonaId === persona.id ? 'Executing…' : 'Execute Script'}
+                        </button>
+                      </>
+                    ) : (
+                      <button
+                        type="button"
+                        className="check-actions-btn"
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          handleGenerateActions(persona)
+                        }}
+                        disabled={generatingScriptForId === persona.id}
+                        title="Generate persona-specific actions, then auto-generate the test script"
+                      >
+                        {generatingScriptForId === persona.id ? 'Generating script…' : 'Generate Actions'}
+                      </button>
+                    )}
                   </div>
                 </div>
               </li>
             ))}
           </ul>
-          {runMessage && <p className="status">{runMessage}</p>}
-          {actionsMessage && <p className="status">{actionsMessage}</p>}
+          {generatingScriptForId && (
+            <p className="status">
+              <span className="ca-inline-spinner" aria-hidden="true" />
+              {workflowMessage || 'Generating Playwright test script…'}
+            </p>
+          )}
+          {!generatingScriptForId && workflowMessage && (
+            <p className="status">{workflowMessage}</p>
+          )}
+          {workflowError && <p className="status error">{workflowError}</p>}
           {pwRunMessage && (
             <p className={`status ${pwRunMessage.includes('✗') ? 'error' : ''}`}>
               {pwRunMessage}
@@ -648,11 +719,13 @@ function App() {
         <CheckActionsModal
           personaName={actionsPersona.nom || actionsPersona.name || 'Unknown'}
           initialActions={actionsPersona.actions_site || []}
+          onLoadActions={() => loadActionsFromPlanner(actionsPersona.id)}
+          submitLabel="Submit & Generate Script"
           onClose={() => {
             setActionsModalOpen(false)
             setActionsPersona(null)
           }}
-          onSave={handleSaveActions}
+          onSave={buildSubmitHandler(actionsPersona)}
         />
       )}
     </main>

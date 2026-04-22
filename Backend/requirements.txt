@@ -9,12 +9,12 @@ mcp>=1.0.0
 langchain-mcp-adapters>=0.1.0
 langgraph>=0.2.0
 Pillow>=10.0.0
-fastapi==0.104.0
-starlette==0.27.0
+fastapi>=0.115.0
+# starlette is resolved transitively by fastapi — don't pin independently, it
+# fights with mcp>=1.1.1 which requires starlette>=0.39 / anyio>=4.5.
 uvicorn>=0.24.0
 
 # Persona Generator - LLM Providers
-langchain-groq>=0.1.0
 langchain-google-genai>=0.0.1
 
 # Web scraping & content extraction

@@ -37,7 +37,7 @@ A sophisticated persona-based website testing framework that generates realistic
 ### Prerequisites
 - Python 3.10+
 - Node.js 18+
-- API keys for LLM providers (Groq, OpenAI, Google, GitHub)
+- [Ollama](https://ollama.com) running locally (primary LLM runtime) — optional fallback keys for OpenAI / Google / GitHub Models
 
 ### Setup
 
@@ -55,13 +55,22 @@ cd frontend/web
 npm install
 ```
 
-3. **Configure API Keys**
+3. **Configure environment**
 Create `.env` file with:
 ```env
-GROQ_API_KEY=your_key
+# Primary — local Ollama
+OLLAMA_BASE_URL=http://localhost:11434/v1
+OLLAMA_MODEL=qwen3.5:cloud
+
+# Optional fallbacks (only needed if you switch provider on a specific request)
 OPENAI_API_KEY=your_key
 GOOGLE_API_KEY=your_key
 GITHUB_TOKEN=your_token
+```
+Then start Ollama and pull the model:
+```bash
+ollama serve
+ollama pull qwen3.5:cloud
 ```
 
 ### Run
@@ -88,7 +97,7 @@ npm run dev
 4. **Personas Visualization** - View generated personas with descriptions and behaviors
 
 ### Personas Generation
-- LLM-powered (Groq, OpenAI, Google, GitHub Models)
+- LLM-powered (Ollama by default; OpenAI / Google / GitHub Models as fallbacks)
 - Realistic, behavior-driven personas
 - Demographic constraints applied
 - Same objective across all personas
