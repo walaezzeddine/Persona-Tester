@@ -134,6 +134,10 @@ class RunSavedPlaywrightScriptRequest(BaseModel):
     provider: str = "ollama"
 
 
+class UpdatePlaywrightScriptRequest(BaseModel):
+    generated_script: str
+
+
 class UpdatePersonaActionsRequest(BaseModel):
     actions: list[str] = []
 
@@ -1340,6 +1344,21 @@ def get_playwright_execution_detail(execution_id: str):
     execution = db.get_playwright_execution_by_id(execution_id)
     if not execution:
         raise HTTPException(status_code=404, detail="Execution not found")
+    return execution
+
+
+@app.put("/api/playwright/executions/{execution_id}/script")
+def update_playwright_script(execution_id: str, payload: UpdatePlaywrightScriptRequest):
+    """Replace the generated Playwright script of an existing execution."""
+    new_script = (payload.generated_script or "").strip()
+    if not new_script:
+        raise HTTPException(status_code=400, detail="generated_script cannot be empty")
+
+    updated = db.update_playwright_script(execution_id, new_script)
+    if not updated:
+        raise HTTPException(status_code=404, detail="Execution not found")
+
+    execution = db.get_playwright_execution_by_id(execution_id)
     return execution
 
 

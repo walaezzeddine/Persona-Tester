@@ -285,6 +285,28 @@ export function PlaywrightHistory({ onBack }: PlaywrightHistoryProps) {
           errorMessage={selectedExecution.error_message}
           screenshotBase64={selectedExecution.screenshot_base64}
           onClose={() => setModalOpen(false)}
+          onScriptUpdated={(newScript) => {
+            setSelectedExecution((prev) => (prev ? { ...prev, generated_script: newScript } : prev))
+            setExecutions((prev) =>
+              prev.map((ex) => (ex.id === selectedExecution.id ? { ...ex, generated_script: newScript } : ex))
+            )
+          }}
+          onRunResult={(result) => {
+            setSelectedExecution((prev) =>
+              prev
+                ? {
+                    ...prev,
+                    generated_script: result.generated_script,
+                    status: result.status,
+                    execution_log: result.execution_log,
+                    error_message: result.error_message,
+                    duration_ms: result.duration_ms,
+                    screenshot_base64: result.screenshot_base64,
+                  }
+                : prev
+            )
+            fetchExecutions()
+          }}
         />
       )}
     </div>

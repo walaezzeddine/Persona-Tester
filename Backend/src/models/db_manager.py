@@ -634,7 +634,20 @@ class DatabaseManager:
             "persona_name": row[15],
             "website_domain": row[16],
         }
-    
+
+    def update_playwright_script(self, execution_id: str, new_script: str) -> bool:
+        """Update the generated_script of an existing execution. Returns True if a row was updated."""
+        conn = self._connect()
+        cursor = conn.cursor()
+        cursor.execute(
+            "UPDATE playwright_test_executions SET generated_script = ? WHERE id = ?",
+            (new_script, execution_id),
+        )
+        conn.commit()
+        updated = cursor.rowcount > 0
+        conn.close()
+        return updated
+
     # =========================================================================
     # STATISTICS
     # =========================================================================

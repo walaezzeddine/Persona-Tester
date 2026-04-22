@@ -712,6 +712,23 @@ function App() {
           errorMessage={scriptResult.error_message}
           screenshotBase64={scriptResult.screenshot_base64}
           onClose={() => setScriptModalOpen(false)}
+          onScriptUpdated={(newScript) => {
+            setScriptResult((prev) => (prev ? { ...prev, generated_script: newScript } : prev))
+          }}
+          onRunResult={(result) => {
+            setScriptResult({
+              success: result.status === 'success',
+              execution_id: result.execution_id,
+              status: result.status,
+              generated_script: result.generated_script,
+              execution_log: result.execution_log,
+              error_message: result.error_message,
+              duration_ms: result.duration_ms,
+              has_screenshot: Boolean(result.screenshot_base64),
+              screenshot_base64: result.screenshot_base64,
+            })
+            loadDashboard()
+          }}
         />
       )}
 

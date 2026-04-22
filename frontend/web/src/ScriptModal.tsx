@@ -1,5 +1,17 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './ScriptModal.css'
+
+const API_BASE = 'http://localhost:5000/api'
+
+export interface ScriptRunResult {
+  execution_id: string
+  status: string
+  generated_script: string
+  execution_log: string[]
+  error_message: string | null
+  duration_ms: number
+  screenshot_base64: string | null
+}
 
 interface ScriptModalProps {
   executionId: string | null
@@ -13,6 +25,10 @@ interface ScriptModalProps {
   errorMessage?: string | null
   screenshotBase64?: string | null
   onClose: () => void
+  /** Called after a successful save so the parent can refresh its local state. */
+  onScriptUpdated?: (newScript: string) => void
+  /** Called after a save-and-run, with the fresh execution result. */
+  onRunResult?: (result: ScriptRunResult) => void
 }
 
 export function ScriptModal({
@@ -27,8 +43,18 @@ export function ScriptModal({
   errorMessage,
   screenshotBase64,
   onClose,
+  onScriptUpdated,
+  onRunResult,
 }: ScriptModalProps) {
   const backdropRef = useRef<HTMLDivElement>(null)
+  const [editedScript, setEditedScript] = useState(script)
+  const [saving, setSaving] = useState(false)
+  const [running, setRunning] = useState(false)
+  const [feedback, setFeedback] = useState<{ kind: 'info' | 'error'; text: string } | null>(null)
+
+  useEffect(() => {
+    setEditedScript(script)
+  }, [script, executionId])
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -38,13 +64,16 @@ export function ScriptModal({
     return () => document.removeEventListener('keydown', handleKey)
   }, [onClose])
 
+  const isDirty = editedScript !== script
+  const canEdit = Boolean(executionId)
+  const busy = saving || running
+
   const handleCopyScript = async () => {
     try {
-      await navigator.clipboard.writeText(script)
+      await navigator.clipboard.writeText(editedScript)
     } catch {
-      // fallback
       const el = document.createElement('textarea')
-      el.value = script
+      el.value = editedScript
       document.body.appendChild(el)
       el.select()
       document.execCommand('copy')
@@ -53,13 +82,84 @@ export function ScriptModal({
   }
 
   const handleDownload = () => {
-    const blob = new Blob([script], { type: 'text/javascript' })
-    const url = URL.createObjectURL(blob)
+    const blob = new Blob([editedScript], { type: 'text/javascript' })
+    const objectUrl = URL.createObjectURL(blob)
     const a = document.createElement('a')
-    a.href = url
+    a.href = objectUrl
     a.download = `playwright_test_${executionId?.slice(0, 8) ?? 'script'}.js`
     a.click()
-    URL.revokeObjectURL(url)
+    URL.revokeObjectURL(objectUrl)
+  }
+
+  const persistScript = async (): Promise<boolean> => {
+    if (!executionId) {
+      setFeedback({ kind: 'error', text: 'No execution to update' })
+      return false
+    }
+    if (!editedScript.trim()) {
+      setFeedback({ kind: 'error', text: 'Script cannot be empty' })
+      return false
+    }
+
+    setSaving(true)
+    setFeedback(null)
+    try {
+      const res = await fetch(`${API_BASE}/playwright/executions/${executionId}/script`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ generated_script: editedScript }),
+      })
+      if (!res.ok) {
+        const payload = (await res.json().catch(() => ({}))) as { detail?: string }
+        throw new Error(payload.detail || `Save failed (${res.status})`)
+      }
+      onScriptUpdated?.(editedScript)
+      return true
+    } catch (err) {
+      setFeedback({ kind: 'error', text: err instanceof Error ? err.message : 'Save failed' })
+      return false
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  const handleSave = async () => {
+    const ok = await persistScript()
+    if (ok) setFeedback({ kind: 'info', text: 'Script saved' })
+  }
+
+  const handleSaveAndRun = async () => {
+    if (!executionId) return
+    const saved = isDirty ? await persistScript() : true
+    if (!saved) return
+
+    setRunning(true)
+    setFeedback({ kind: 'info', text: 'Running updated script…' })
+    try {
+      const res = await fetch(`${API_BASE}/playwright/run-script`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          execution_id: executionId,
+          provider: 'ollama',
+          browser_name: browserName || 'chromium',
+        }),
+      })
+      if (!res.ok) {
+        const payload = (await res.json().catch(() => ({}))) as { detail?: string }
+        throw new Error(payload.detail || `Run failed (${res.status})`)
+      }
+      const result = (await res.json()) as ScriptRunResult
+      onRunResult?.(result)
+      setFeedback({
+        kind: result.status === 'success' ? 'info' : 'error',
+        text: `Run ${result.status === 'success' ? 'passed ✓' : 'failed ✗'} in ${(result.duration_ms / 1000).toFixed(1)}s`,
+      })
+    } catch (err) {
+      setFeedback({ kind: 'error', text: err instanceof Error ? err.message : 'Run failed' })
+    } finally {
+      setRunning(false)
+    }
   }
 
   return (
@@ -68,7 +168,7 @@ export function ScriptModal({
         className="script-modal-backdrop"
         ref={backdropRef}
         onClick={(e) => {
-          if (e.target === backdropRef.current) onClose()
+          if (e.target === backdropRef.current && !busy) onClose()
         }}
       />
       <div className="script-modal" role="dialog" aria-modal="true">
@@ -87,32 +187,59 @@ export function ScriptModal({
             <span className="script-modal-browser">{browserName}</span>
             <span className="script-modal-sep">·</span>
             <span className="script-modal-duration">{(durationMs / 1000).toFixed(1)}s</span>
+            {isDirty && <span className="script-dirty-dot" title="Unsaved changes">● unsaved</span>}
           </div>
           <div className="script-modal-actions">
-            <button className="script-action-btn" onClick={handleCopyScript} title="Copy to clipboard">
+            <button
+              className="script-action-btn script-action-primary"
+              onClick={handleSave}
+              disabled={!canEdit || !isDirty || busy}
+              title={!canEdit ? 'No execution to save to' : isDirty ? 'Save changes' : 'No changes to save'}
+            >
+              {saving ? 'Saving…' : 'Save'}
+            </button>
+            <button
+              className="script-action-btn script-action-primary"
+              onClick={handleSaveAndRun}
+              disabled={!canEdit || busy}
+              title="Save (if needed) then run this script"
+            >
+              {running ? 'Running…' : isDirty ? 'Save & Run' : 'Run'}
+            </button>
+            <button className="script-action-btn" onClick={handleCopyScript} title="Copy to clipboard" disabled={busy}>
               Copy
             </button>
-            <button className="script-action-btn" onClick={handleDownload} title="Download .js file">
+            <button className="script-action-btn" onClick={handleDownload} title="Download .js file" disabled={busy}>
               Download
             </button>
-            <button className="script-modal-close" onClick={onClose} title="Close">
+            <button className="script-modal-close" onClick={onClose} title="Close" disabled={busy}>
               ✕
             </button>
           </div>
         </div>
 
+        {feedback && (
+          <div className={`script-modal-feedback script-modal-feedback-${feedback.kind}`}>
+            {feedback.text}
+          </div>
+        )}
+
         <div className="script-modal-body">
-          {/* Left: Script */}
+          {/* Left: Editable script */}
           <div className="script-pane">
-            <div className="pane-label">Generated Script</div>
-            <pre className="script-code">
-              <code>{script}</code>
-            </pre>
+            <div className="pane-label">Generated Script {canEdit ? '(editable)' : ''}</div>
+            <textarea
+              className="script-code script-code-editor"
+              value={editedScript}
+              onChange={(e) => setEditedScript(e.target.value)}
+              spellCheck={false}
+              disabled={!canEdit || busy}
+              wrap="off"
+            />
           </div>
 
           {/* Right: Logs + Screenshot */}
           <div className="output-pane">
-            {/* Execution Logs */}
             <div className="pane-label">Execution Log</div>
             <div className="execution-log">
               {logs.length === 0 ? (
@@ -133,7 +260,6 @@ export function ScriptModal({
               )}
             </div>
 
-            {/* Screenshot */}
             {screenshotBase64 && (
               <>
                 <div className="pane-label" style={{ marginTop: '1.5rem' }}>
