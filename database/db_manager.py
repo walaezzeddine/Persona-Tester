@@ -344,7 +344,18 @@ class DatabaseManager:
                 **persona_json  # Merge all persona fields
             }
         return None
-    
+
+    def update_persona_json(self, persona_id: str, persona_dict: dict):
+        """Update the persona_json field for a persona."""
+        conn = self._connect()
+        cursor = conn.cursor()
+        cursor.execute(
+            "UPDATE personas SET persona_json=? WHERE id=?",
+            (json.dumps(persona_dict), persona_id),
+        )
+        conn.commit()
+        conn.close()
+
     def list_personas(self, website_id: str = None) -> List[Dict]:
         """List all personas, optionally filtered by website."""
         conn = self._connect()

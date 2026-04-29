@@ -202,11 +202,15 @@ Every action sequence below should guide your navigation.
     
     # IMPORTANT: Objective ALWAYS comes from PERSONA, not scenario
     objectif = user.get("objectif", "Browse the website")
-    
+
     # Get scenario info if provided (for context, not objective)
+    # Also extract strategy if present (for MCP ReAct mode)
+    strategy_text = ""
     if scenario:
         scenario_name = scenario.get("name", "unknown")
         scenario_desc = scenario.get("description", "")
+        # Extract strategy from scenario context (set by MCP ReAct mode)
+        strategy_text = scenario.get("strategy", "")
 
         # Build constraints string from scenario
         constraints = scenario.get("constraints", {})
@@ -250,6 +254,11 @@ Every action sequence below should guide your navigation.
         success_str = "✓ Objective achieved"
         abandon_str = "✗ Unable to proceed"
         key_actions_str = ""
+
+    # Add strategy section for MCP ReAct mode (Wall Street Survivor, Booking.com, etc.)
+    strategy_section = ""
+    if strategy_text:
+        strategy_section = f"\n\n## 🎯 NAVIGATION STRATEGY (FOLLOW THESE STEPS):\n{strategy_text}\n"
     
     prompt = f"""═══════════════════════════════════════════════════════════════
                         PERSONA SIMULATION SYSTEM
@@ -276,6 +285,11 @@ Your goal: {objectif}
 {f"Constraints:" if constraints_str else ""}
 {constraints_str}
 
+## SCENARIO PRIORITY RULE
+The generated scenario is the source of truth.
+Follow its key_actions in order unless the page state requires a visible recovery step.
+Site guidance and examples are secondary hints only; never replace scenario steps with hardcoded shortcuts.
+
 You must navigate the website step by step to achieve this objective.
 Think and act like {persona_name} would - a real human, not a bot.
 {human_behavior_section}
@@ -286,6 +300,7 @@ Think and act like {persona_name} would - a real human, not a bot.
 {abandon_str}
 
 {key_actions_str}
+{strategy_section}
 
 ## BEHAVIOR
 {vitesse}

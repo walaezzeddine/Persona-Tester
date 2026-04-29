@@ -1,0 +1,486 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - iframe [ref=e5]:
+      - insertion [ref=f246e3]:
+        - iframe [ref=f246e5]:
+          - generic [ref=f248e3]:
+            - strong [ref=f248e4]: googleads.g.doubleclick.net
+            - text: a mis fin à la connexion de manière inattendue.
+    - generic [ref=e6] [cursor=pointer]: X
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - text: 
+      - button "Select Language" [ref=e9] [cursor=pointer]:
+        - text: About
+        - generic [ref=e10]: 
+      - generic "Challenges" [ref=e11] [cursor=pointer]:
+        - text: Contests
+        - generic [ref=e12]: 
+    - generic [ref=e14]:
+      - generic "Username" [ref=e15]: walaezzedine
+      - link "Unread Messages" [ref=e16] [cursor=pointer]:
+        - /url: /forum/messages
+        - generic [ref=e17]: 
+        - generic "Number of Unread Messages" [ref=e18]: "1"
+      - combobox "Tournament Select" [ref=e20]:
+        - option "My Practice Portfolio" [selected]
+      - link "Logout" [ref=e21] [cursor=pointer]:
+        - /url: /logout
+  - navigation [ref=e22]:
+    - menubar [ref=e24]:
+      - menuitem "Logo" [ref=e25]:
+        - link "Logo" [ref=e26] [cursor=pointer]:
+          - /url: /home
+          - img "Logo" [ref=e27]
+    - menubar [ref=e29]:
+      - menuitem "Dashboard" [ref=e30]:
+        - generic [ref=e31] [cursor=pointer]: Dashboard 
+        - text: 
+      - menuitem "Stock Game" [ref=e32]:
+        - generic [ref=e33] [cursor=pointer]: Stock Game 
+      - menuitem "Investing Research" [ref=e34]:
+        - generic "Investing Research" [ref=e35] [cursor=pointer]: Investing Research 
+      - menuitem "Courses" [ref=e36]:
+        - generic [ref=e37] [cursor=pointer]: Courses 
+      - menuitem "Getting Started" [ref=e38]:
+        - generic [ref=e39] [cursor=pointer]: Getting Started 
+  - generic [ref=e40]:
+    - text:        
+    - iframe [ref=e46]:
+      - insertion [ref=f242e3]:
+        - iframe [ref=f242e5]:
+          
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e51]:
+          - heading "Open Positions" [level=3] [ref=e53]
+          - generic [ref=e56] [cursor=pointer]:
+            - img [ref=e57]
+            - text: Wealth Wizard
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - combobox "Select Security Type" [ref=e62]:
+              - option "Equities" [selected]
+              - option "Options"
+              - option "Crypto"
+            - list [ref=e64]:
+              - listitem [ref=e65]:
+                - generic [ref=e66] [cursor=pointer]:
+                  - generic [ref=e67]: 
+                  - text: Standard View
+              - listitem [ref=e68]:
+                - generic [ref=e69] [cursor=pointer]:
+                  - generic [ref=e70]: 
+                  - text: One Day Chart
+              - listitem [ref=e71]:
+                - generic [ref=e72] [cursor=pointer]:
+                  - generic [ref=e73]: 
+                  - text: 30 Day Chart
+              - listitem [ref=e74]:
+                - generic [ref=e75] [cursor=pointer]:
+                  - generic [ref=e76]: 
+                  - text: Year Chart
+              - listitem [ref=e77]:
+                - generic [ref=e78] [cursor=pointer]:
+                  - generic [ref=e79]: 
+                  - text: Export
+          - generic [ref=e80]:
+            - generic [ref=e81]:
+              - generic [ref=e82]:
+                - table [ref=e84]:
+                  - rowgroup [ref=e85]:
+                    - row "Symbol Chart and News Quantity Price paid Last Price Change Market Value Profit/Loss % Return" [ref=e86]:
+                      - columnheader "Symbol" [ref=e87]
+                      - columnheader "Chart and News" [ref=e88]
+                      - columnheader "Quantity" [ref=e89]
+                      - columnheader "Price paid" [ref=e90]
+                      - columnheader "Last Price" [ref=e91]
+                      - columnheader "Change" [ref=e92]
+                      - columnheader "Market Value" [ref=e93]
+                      - columnheader "Profit/Loss" [ref=e94]
+                      - columnheader "% Return" [ref=e95]
+                      - columnheader [ref=e96]
+                  - rowgroup [ref=e97]:
+                    - row "Show more info Show less info AAPL 41 $262.20 273.17 7.00 $11,199.97 449.86 4.18% Trade" [ref=e98]:
+                      - cell "Show more info Show less info AAPL" [ref=e99]:
+                        - link "Show more info Show less info" [ref=e100] [cursor=pointer]:
+                          - /url: "#"
+                          - generic [ref=e101]: 
+                          - generic [ref=e102]: Show more info
+                          - text: 
+                          - generic [ref=e103]: Show less info
+                        - link "AAPL" [ref=e104] [cursor=pointer]:
+                          - /url: "#"
+                          - generic [ref=e105]: AAPL
+                      - cell [ref=e106]:
+                        - link "News" [ref=e107] [cursor=pointer]:
+                          - /url: /quotes?symbol=AAPL&exchange=US&type=fullnewssummary
+                          - generic [ref=e108]: 
+                        - link "Charts" [ref=e109] [cursor=pointer]:
+                          - /url: /quotes?symbol=AAPL&exchange=US&type=interactivechart
+                          - generic [ref=e110]: 
+                      - cell "41" [ref=e111]
+                      - cell "$262.20" [ref=e112]
+                      - cell "273.17" [ref=e113]:
+                        - generic [ref=e114] [cursor=pointer]: "273.17"
+                      - cell "7.00" [ref=e115]
+                      - cell "$11,199.97" [ref=e116]:
+                        - generic [ref=e117]: $11,199.97
+                      - cell "449.86" [ref=e118]
+                      - cell "4.18%" [ref=e119]
+                      - cell "Trade" [ref=e120]:
+                        - link "Trade" [ref=e121] [cursor=pointer]:
+                          - /url: /trading/equities?symbol=AAPL&quantity=41&exchange=US
+                - text:      
+              - list "Pagination" [ref=e122]:
+                - text: « «
+                - listitem [ref=e123]: "1"
+                - listitem [ref=e124]: of
+                - listitem [ref=e125]: "1"
+                - text: » »
+              - generic [ref=e127]:
+                - generic [ref=e128]:
+                  - generic [ref=e129]: "Equities Market Value of Long:"
+                  - generic [ref=e130]: $11,199.97
+                - generic [ref=e131]:
+                  - generic [ref=e132]: "Equities Market Value of Short:"
+                  - generic [ref=e133]: $0.00
+                - generic [ref=e134]:
+                  - generic [ref=e135]: "Equities Profit/Loss:"
+                  - generic [ref=e136]: $449.86
+                - generic [ref=e137]:
+                  - generic [ref=e138]: "Total Market Value Long:"
+                  - generic [ref=e139]: $11,199.97
+                - generic [ref=e140]:
+                  - generic [ref=e141]: "Total Market Value Short:"
+                  - generic [ref=e142]: $0.00
+                - generic [ref=e143]:
+                  - generic [ref=e144]: "Total Profit/Loss:"
+                  - generic [ref=e145]: $449.86
+            - text: « « » »                         « « » »
+          - generic [ref=e146]:
+            - generic [ref=e148]:
+              - heading "Open Orders" [level=3] [ref=e150]
+              - link "View All Orders" [ref=e152] [cursor=pointer]:
+                - /url: /account/orderhistory
+                - strong [ref=e154]: View All Orders
+            - table [ref=e155]:
+              - rowgroup [ref=e156]:
+                - row "Order History Order Symbol Quantity Order Price Trade Price Type Currency Status Exp. Date" [ref=e157]:
+                  - columnheader "Order History" [ref=e158]
+                  - columnheader "Order" [ref=e159]
+                  - columnheader "Symbol" [ref=e160]
+                  - columnheader "Quantity" [ref=e161]
+                  - columnheader "Order Price" [ref=e162]
+                  - columnheader "Trade Price" [ref=e163]
+                  - columnheader "Type" [ref=e164]
+                  - columnheader "Currency" [ref=e165]
+                  - columnheader "Status" [ref=e166]
+                  - columnheader "Exp. Date" [ref=e167]
+              - rowgroup [ref=e168]:
+                - row "4/23/2026 7:15:56 AM Cancel Market - Buy AAPL 10 MKT OPEN EQUITIES USD OPEN" [ref=e169]:
+                  - cell "4/23/2026 7:15:56 AM Cancel" [ref=e170]:
+                    - text: 4/23/2026 7:15:56 AM
+                    - generic [ref=e171]: Cancel
+                  - cell "Market - Buy" [ref=e172]
+                  - cell "AAPL" [ref=e173]
+                  - cell "10" [ref=e174]
+                  - cell "MKT" [ref=e175]
+                  - cell "OPEN" [ref=e176]
+                  - cell "EQUITIES" [ref=e177]
+                  - cell "USD" [ref=e178]
+                  - cell "OPEN" [ref=e179]
+                  - cell [ref=e180]
+                - row "4/23/2026 7:18:34 AM Cancel Market - Buy AAPL 10 MKT OPEN EQUITIES USD OPEN" [ref=e181]:
+                  - cell "4/23/2026 7:18:34 AM Cancel" [ref=e182]:
+                    - text: 4/23/2026 7:18:34 AM
+                    - generic [ref=e183]: Cancel
+                  - cell "Market - Buy" [ref=e184]
+                  - cell "AAPL" [ref=e185]
+                  - cell "10" [ref=e186]
+                  - cell "MKT" [ref=e187]
+                  - cell "OPEN" [ref=e188]
+                  - cell "EQUITIES" [ref=e189]
+                  - cell "USD" [ref=e190]
+                  - cell "OPEN" [ref=e191]
+                  - cell [ref=e192]
+        - iframe [ref=e197]:
+          - insertion [ref=f250e3]:
+            - iframe [ref=f250e5]:
+              
+      - generic [ref=e199]:
+        - generic [ref=e201]:
+          - heading "Announcements" [level=3] [ref=e205]
+          - generic [ref=e207]:
+            - text: Join WallStreetSurvivor on Facebook for the latest updates, market insights, and contest news.
+            - link "Follow us on Facebook" [ref=e208] [cursor=pointer]:
+              - /url: https://www.facebook.com/WallStSurvivor
+        - generic [ref=e209]:
+          - list [ref=e212]:
+            - listitem [ref=e213]:
+              - generic [ref=e214] [cursor=pointer]: Asset Class
+            - listitem [ref=e215]:
+              - generic [ref=e216] [cursor=pointer]: Symbols
+            - listitem [ref=e217]:
+              - generic [ref=e218] [cursor=pointer]: Industry
+            - listitem [ref=e219]:
+              - generic [ref=e220] [cursor=pointer]: Market Cap
+          - generic "A chart." [ref=e225]:
+            - img "A chart." [ref=e226]:
+              - generic [ref=e232]: AAPL
+              - generic [ref=e236]: 100%
+            - generic "A tabular representation of the data in the chart." [ref=e237]:
+              - table [ref=e238]:
+                - rowgroup [ref=e239]:
+                  - row "holderId symbols-pie-chart" [ref=e240]:
+                    - columnheader "holderId" [ref=e241]
+                    - columnheader "symbols-pie-chart" [ref=e242]
+                - rowgroup [ref=e243]:
+                  - row "AAPL 100" [ref=e244]:
+                    - cell "AAPL" [ref=e245]
+                    - cell "100" [ref=e246]
+        - tablist [ref=e247]:
+          - blockquote [ref=e248]:
+            - link "Wall Street Survivor" [ref=e249] [cursor=pointer]:
+              - /url: https://www.facebook.com/WallStreetSurvivor/
+        - generic [ref=e250]:
+          - generic [ref=e252]:
+            - heading "My Watchlist" [level=3] [ref=e254]
+            - generic [ref=e257] [cursor=pointer]: +
+          - table [ref=e259]:
+            - rowgroup [ref=e260]:
+              - row "AAPL 273.17 7" [ref=e261]:
+                - cell [ref=e262]:
+                  - generic [ref=e264] [cursor=pointer]: 
+                - cell "AAPL" [ref=e265]:
+                  - link "AAPL" [ref=e266] [cursor=pointer]:
+                    - /url: /quotes/quotesv2?converted=1&symbol=AAPL
+                - cell "273.17" [ref=e267]
+                - cell "7" [ref=e268]
+        - generic [ref=e271]:
+          - heading "Market News" [level=3] [ref=e275]
+          - generic [ref=e276]:
+            - list [ref=e277]:
+              - listitem [ref=e278]:
+                - link "Stocks Sink in Broad AI Rout Sparked by China's DeepSeek" [ref=e279] [cursor=pointer]:
+                  - /url: https://www.wsj.com/articles/nikkei-may-rise-as-weak-yen-raises-earnings-hopes-776a8056?mod=rss_markets_main
+              - listitem [ref=e280]:
+                - link "Stocks Sink in Broad AI Rout Sparked by China's DeepSeek" [ref=e281] [cursor=pointer]:
+                  - /url: https://www.wsj.com/articles/nikkei-may-rise-as-weak-yen-raises-earnings-hopes-776a8056?mod=rss_markets_main
+              - listitem [ref=e282]:
+                - link "Comex Gold, Silver Settle Lower" [ref=e283] [cursor=pointer]:
+                  - /url: https://www.wsj.com/articles/gold-edges-lower-feds-rate-decision-in-focus-09dbfceb?mod=rss_markets_main
+              - listitem [ref=e284]:
+                - link "DeepSeek Won't Sink U.S. AI Titans" [ref=e285] [cursor=pointer]:
+                  - /url: https://www.wsj.com/articles/deepseek-us-ai-stocks-nvidia-broadcom-6cdfae81?mod=rss_markets_main
+              - listitem [ref=e286]:
+                - 'link "Financial Services Roundup: Market Talk" [ref=e287] [cursor=pointer]':
+                  - /url: https://www.wsj.com/articles/financial-services-roundup-market-talk-94f52cba?mod=rss_markets_main
+              - listitem [ref=e288]:
+                - link "Arabica Coffee Prices Hit Record on U.S., Colombia Tariff Spat" [ref=e289] [cursor=pointer]:
+                  - /url: https://www.wsj.com/articles/arabica-coffee-prices-hit-new-high-on-u-s-colombia-tariff-spat-582446fe?mod=rss_markets_main
+              - listitem [ref=e290]:
+                - link "Swiss franc, Japanese yen Rise as DeepSeek News Boosts Safe Havens" [ref=e291] [cursor=pointer]:
+                  - /url: https://www.wsj.com/articles/safe-haven-currencies-strengthen-amid-fears-over-global-tariffs-9964e17a?mod=rss_markets_main
+            - link "Read more..." [ref=e293] [cursor=pointer]:
+              - /url: http://syndication.thestreet.com/feed/476/outbound
+    - generic [ref=e296]:
+      - strong [ref=e297]: Notice
+      - paragraph [ref=e298]:
+        - text: This website uses cookies, for more information please visit our
+        - link "Privacy Policy" [ref=e299] [cursor=pointer]:
+          - /url: https://content.stocktrak.com/privacy-policy/
+          - strong [ref=e300]: Privacy Policy
+      - generic [ref=e301] [cursor=pointer]: Ok
+  - contentinfo [ref=e302]:
+    - generic [ref=e304]:
+      - complementary [ref=e306]:
+        - figure [ref=e307]:
+          - link "WallStreetSurvivor logo" [ref=e308] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e309]
+      - generic [ref=e310]:
+        - complementary [ref=e311]:
+          - heading "Our Platform" [level=3] [ref=e312]
+        - complementary [ref=e313]:
+          - list [ref=e314]:
+            - listitem [ref=e315]:
+              - link "Stock Market Simulator" [ref=e316] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e317]:
+              - link "Investing Courses for Beginners" [ref=e318] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/courses/
+            - listitem [ref=e319]:
+              - link "Best Stocks to Buy Now" [ref=e320] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e321]:
+              - link "How to Invest Videos" [ref=e322] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+            - listitem [ref=e323]:
+              - link "Free Online Investing Course" [ref=e324] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e325]:
+              - link "Financial Literacy Game for Students" [ref=e326] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e327]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e328] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e329]:
+              - link "Crypto Paper Trading" [ref=e330] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e331]:
+              - link "About WallStreetSurvivor" [ref=e332] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+      - generic [ref=e333]:
+        - complementary [ref=e334]:
+          - heading "Review Center" [level=3] [ref=e335]
+        - complementary [ref=e336]:
+          - list [ref=e337]:
+            - listitem [ref=e338]:
+              - link "Motley Fool Review" [ref=e339] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e340]:
+              - link "Seeking Alpha Review" [ref=e341] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e342]:
+              - link "Alpha Picks Review" [ref=e343] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e344]:
+              - link "Moby Stocks Review" [ref=e345] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e346]:
+              - link "Wealthsimple Review" [ref=e347] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/wealthsimple-review/
+            - listitem [ref=e348]:
+              - link "Is Robinhood Safe to Use?" [ref=e349] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e350]:
+              - link "Rule Breakers Review" [ref=e351] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e352]:
+              - link "Best Investment Newsletters" [ref=e353] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e354]:
+              - link "Best Investing Apps" [ref=e355] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e356]:
+              - link "Best Motley Fool Discount Code" [ref=e357] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e358]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e359] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e360]:
+              - link "Best Tipranks Discount Code" [ref=e361] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e362]:
+              - link "Is Coinbase Safe?" [ref=e363] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e364]:
+              - link "Free Crypto with Coinbase" [ref=e365] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e366]:
+              - link "Best Stock Picking Service" [ref=e367] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+      - generic [ref=e368]:
+        - complementary [ref=e369]:
+          - heading "Corporate Services" [level=3] [ref=e370]
+        - complementary [ref=e371]:
+          - list [ref=e372]:
+            - listitem [ref=e373]:
+              - link "White Label Stock Market Games" [ref=e374] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e375]:
+              - link "White Label Virtual Crypto Trading" [ref=e376] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e377]:
+              - link "Employee Financial Wellness" [ref=e378] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e379]:
+              - link "Sponsor a College or High School" [ref=e380] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e381]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e382] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e383]:
+          - heading "Our Company" [level=3] [ref=e384]
+        - complementary [ref=e385]:
+          - list [ref=e386]:
+            - listitem [ref=e387]:
+              - link "Contact Us" [ref=e388] [cursor=pointer]:
+                - /url: mailto:support@wallstreetsurvivor.com
+            - listitem [ref=e389]:
+              - link "About Us" [ref=e390] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/
+            - listitem [ref=e391]:
+              - link "Motley Fool Review" [ref=e392] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e393]:
+              - link "Privacy Policy" [ref=e394] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e395]:
+              - link "Terms and Conditions" [ref=e396] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e397]:
+              - link "Advertise with Us" [ref=e398] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e399]:
+        - complementary [ref=e400]:
+          - heading "Family of Sites" [level=3] [ref=e401]:
+            - strong [ref=e402]: Family of Sites
+        - complementary [ref=e403]:
+          - figure [ref=e404]:
+            - link "StockTrak logo" [ref=e405] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e406]
+        - complementary [ref=e407]:
+          - figure [ref=e408]:
+            - link "PersonalFinanceLab logo" [ref=e409] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e410]
+        - complementary [ref=e411]:
+          - figure [ref=e412]:
+            - link "WallStreetSurvivor logo" [ref=e413] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Practice stock trading site" [ref=e414]
+        - complementary [ref=e415]:
+          - figure [ref=e416]:
+            - link "HowTheMarketWorks logo" [ref=e417] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free stock market game for students" [ref=e418]
+        - complementary [ref=e419]:
+          - link "Global Virtual Stock Game" [ref=e420] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e421] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - generic "Site" [ref=e422]:
+      - generic [ref=e423]:
+        - generic [ref=e424]:
+          - complementary [ref=e425]:
+            - heading "Connect With Us" [level=2] [ref=e426]
+          - complementary:
+            - figure [ref=e427]:
+              - link "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e428] [cursor=pointer]:
+                - /url: https://www.instagram.com/wallstreetsurvivor/
+                - img "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e429]
+          - complementary:
+            - figure [ref=e430]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e431] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e432]
+          - complementary:
+            - figure [ref=e433]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e434] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e435]
+          - complementary:
+            - figure [ref=e436]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e437] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e438]
+        - generic [ref=e439]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2025 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.
+  - text:   
+  - generic [ref=e441]:
+    - img
+  - generic [ref=e445] [cursor=pointer]:
+    - text: 
+    - generic "We're Online!" [ref=e446]

@@ -47,6 +47,19 @@ except Exception as config_error:
     print(f"Warning: Could not import Config: {config_error}")
     Config = None
 
+
+def _run_coro_sync(coro):
+    """Run a coroutine safely whether an event loop is already running or not."""
+    try:
+        running_loop = asyncio.get_running_loop()
+    except RuntimeError:
+        return asyncio.run(coro)
+
+    import nest_asyncio
+
+    nest_asyncio.apply()
+    return running_loop.run_until_complete(coro)
+
 PlaywrightTestAgent = None
 PLAYWRIGHT_AGENT_AVAILABLE = False
 for _agent_path in [
@@ -708,7 +721,7 @@ def start_persona_run(payload: RunPersonaRequest):
     started = time.time()
     try:
         agent = PersonaAgent(user=persona_data, scenario=scenario, config=config, use_mcp=True)
-        result = asyncio.run(agent.run_with_mcp(start_url=target_url))
+        result = _run_coro_sync(agent.run_with_mcp(start_url=target_url))
 
         steps_detail = result.get("steps_detail", []) or []
         for item in steps_detail:
@@ -1116,25 +1129,18 @@ async def get_test_status(session_id: str):
 @app.post("/api/playwright/generate")
 async def generate_playwright_script(payload: RunPlaywrightTestRequest):
     """
-        Generation pipeline:
-      1. fetch_page_dom via custom MCP server
-      2. LLM generates Playwright script from DOM + persona context
-            3. Store generated script in DB with status='pending'
+    Generate and save scenario using ScenarioGenerator (without execution).
+    Stores the scenario JSON in playwright_test_executions and updates persona_json.
     """
-    if not PLAYWRIGHT_AGENT_AVAILABLE:
-        raise HTTPException(
-            status_code=503,
-            detail="PlaywrightTestAgent not available. Check mcp_servers/playwright_custom/agent.py"
-        )
+    from Backend.src.tools.scenario_generator import ScenarioGenerator
 
-    # Load persona from DB
+    # 1. Load persona from DB
     conn = db._connect()
     cursor = conn.cursor()
+
     cursor.execute(
         """
-        SELECT p.id, p.nom, p.objectif, p.device, p.vitesse,
-               p.patience_sec, p.type_persona, p.json_file_path,
-             p.website_id, w.url, w.type as website_type, p.persona_json
+        SELECT p.persona_json, p.website_id, w.url
         FROM personas p
         JOIN websites w ON p.website_id = w.id
         WHERE p.id = ?
@@ -1147,165 +1153,251 @@ async def generate_playwright_script(payload: RunPlaywrightTestRequest):
     if not row:
         raise HTTPException(status_code=404, detail="Persona not found")
 
-    website_id = row[8]
-    website_url = row[9]
-    json_file_path = row[7]
+    raw_persona_json = row[0]
+    website_id = row[1]
+    website_url = row[2]
 
-    persona_data = {
-        "id": row[0],
-        "nom": row[1],
-        "objectif": row[2],
-        "device": row[3],
-        "vitesse_navigation": row[4],
-        "patience_attente_sec": row[5],
-        "type_persona": row[6],
-        "website_type": row[10],
-    }
+    persona = json.loads(raw_persona_json) if raw_persona_json else {}
+    # Add website_url to persona for scenario generation
+    persona["website_url"] = website_url
+    persona["website_domain"] = website_url
 
-    if json_file_path and Path(json_file_path).exists():
-        try:
-            with open(json_file_path, "r", encoding="utf-8") as f:
-                loaded = json.load(f)
-                if isinstance(loaded, dict):
-                    persona_data.update(loaded)
-        except Exception:
-            pass
-
-    # DB persona_json has highest priority (includes user-edited actions_site).
-    raw_persona_json = row[11]
-    if raw_persona_json:
-        try:
-            parsed_db_json = json.loads(raw_persona_json)
-            if isinstance(parsed_db_json, dict):
-                persona_data.update(parsed_db_json)
-        except (json.JSONDecodeError, TypeError):
-            pass
-
-    target_url = payload.start_url or website_url
-
-    # Generate script only (no execution here)
+    # 2. Load website_analysis from DB (latest analysis for this website)
+    # EDGE CASE 3: Handle missing website_analysis gracefully
+    # Note: get_website() does NOT return analysis_json - analysis is in website_analyses table
+    website_analysis = {}
     try:
-        agent = PlaywrightTestAgent(provider=payload.provider)
-        result = await agent.generate_test_script(
-            url=target_url,
-            persona=persona_data,
+        conn2 = db._connect()
+        cursor2 = conn2.cursor()
+        cursor2.execute(
+            "SELECT raw_json FROM website_analyses WHERE website_id = ? ORDER BY analyzed_at DESC LIMIT 1",
+            (website_id,),
         )
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        analysis_row = cursor2.fetchone()
+        conn2.close()
 
-    # Store result in DB
+        if analysis_row and analysis_row[0]:
+            website_analysis = json.loads(analysis_row[0])
+        else:
+            website_analysis = {
+                "domain": persona.get("website_domain", ""),
+                "url": persona.get("website_url", ""),
+                "llm_context": "",
+            }
+    except Exception:
+        website_analysis = {
+            "domain": persona.get("website_domain", ""),
+            "url": persona.get("website_url", ""),
+            "llm_context": "",
+        }
+
+    # ScenarioGenerator handles empty website_analysis gracefully
+    # via the _fallback_scenario() method
+
+    # 3. Generate scenario using ScenarioGenerator
+    sg = ScenarioGenerator(
+        provider=payload.provider,
+        model=payload.model,
+    )
+    scenario = sg.generate(persona, website_analysis)
+
+    # 4. Save scenario into the persona record in DB
+    persona["scenario"] = scenario
+    db.update_persona_json(payload.persona_id, persona)
+
+    # 5. Save to playwright_test_executions table
+    target_url = payload.start_url or persona.get("website_url") or website_url
     exec_id = db.add_playwright_execution(
         persona_id=payload.persona_id,
         website_id=website_id,
         url=target_url,
-        generated_script=result.get("generated_script") or "",
-        status=result.get("status", "error"),
-        execution_log=result.get("execution_log", []),
-        dom_snapshot=result.get("dom_snapshot"),
+        generated_script=json.dumps(scenario),  # scenario JSON, not JS
         browser_name=payload.browser_name,
-        error_message=result.get("error_message"),
+        status="scenario_generated",
+        execution_log=[],
+        dom_snapshot=None,
+        error_message=None,
         screenshot_base64=None,
-        duration_ms=result.get("duration_ms", 0),
+        duration_ms=0,
     )
 
+    # 6. Return response
     return {
-        "success": result.get("status") != "error",
         "execution_id": exec_id,
-        "status": result.get("status", "pending"),
-        "generated_script": result.get("generated_script"),
-        "execution_log": result.get("execution_log", []),
-        "error_message": result.get("error_message"),
-        "duration_ms": result.get("duration_ms", 0),
-        "has_screenshot": False,
-        "screenshot_base64": None,
+        "scenario": scenario,
+        "status": "scenario_generated"
     }
 
 
 @app.post("/api/playwright/run-script")
 async def run_saved_playwright_script(payload: RunSavedPlaywrightScriptRequest):
-    """Execute an already generated script through the Playwright MCP server."""
-    if not PLAYWRIGHT_AGENT_AVAILABLE:
-        raise HTTPException(
-            status_code=503,
-            detail="PlaywrightTestAgent not available. Check mcp_servers/playwright_custom/agent.py"
-        )
+    """
+    Execute a scenario using PersonaAgent.run_with_mcp().
+    Loads the scenario from the execution record and runs the ReAct agent.
+    """
+    from Backend.src.utils.config import Config
+    from Backend.src.agents.persona_agent import PersonaAgent
+    from fastapi.responses import JSONResponse
 
+    # 1. Load execution record from DB
     execution = db.get_playwright_execution_by_id(payload.execution_id)
     if not execution:
-        raise HTTPException(status_code=404, detail="Execution not found")
-
-    script = execution.get("generated_script")
-    if not script:
-        raise HTTPException(status_code=400, detail="No generated script found for this execution")
-
-    try:
-        agent = PlaywrightTestAgent(provider=payload.provider)
-        run_result = await agent.execute_script(
-            test_script=script,
-            browser_name=payload.browser_name,
+        return JSONResponse(
+            status_code=404,
+            content={"error": f"Execution {payload.execution_id} not found"}
         )
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
 
-    # Normalize values before SQLite binding (sqlite cannot bind dict/list directly).
-    raw_error = run_result.get("error_message")
-    if isinstance(raw_error, (dict, list)):
-        error_message = json.dumps(raw_error, ensure_ascii=False)
-    elif raw_error is None:
-        error_message = None
-    else:
-        error_message = str(raw_error)
+    # EDGE CASE 5: Check for concurrent running executions
+    if execution.get("status") == "running":
+        return JSONResponse(
+            status_code=409,
+            content={
+                "error": "Already running",
+                "detail": "This execution is already in progress"
+            }
+        )
 
-    def _normalize_db_text(value):
-        if value is None:
-            return None
-        if isinstance(value, (dict, list, tuple)):
-            return json.dumps(value, ensure_ascii=False)
-        return str(value)
-
-    raw_screenshot = run_result.get("screenshot_base64")
-    if isinstance(raw_screenshot, dict):
-        raw_screenshot = raw_screenshot.get("data") or raw_screenshot.get("base64") or raw_screenshot
-    screenshot_base64 = _normalize_db_text(raw_screenshot)
-
-    try:
-        duration_ms = int(run_result.get("duration_ms", 0) or 0)
-    except (TypeError, ValueError):
-        duration_ms = 0
-
-    conn = db._connect()
-    cursor = conn.cursor()
-    cursor.execute(
-        """
-        UPDATE playwright_test_executions
-        SET status = ?, browser_name = ?, execution_log = ?, error_message = ?,
-            screenshot_base64 = ?, duration_ms = ?, completed_at = CURRENT_TIMESTAMP
-        WHERE id = ?
-        """,
-        (
-            run_result.get("status", "error"),
-            payload.browser_name,
-            json.dumps(run_result.get("execution_log", [])),
-            error_message,
-            screenshot_base64,
-            duration_ms,
-            payload.execution_id,
-        ),
+    # Mark as running before starting (EDGE CASE 5)
+    db.update_playwright_execution(
+        execution_id=payload.execution_id,
+        status="running",
+        execution_log="[]",
+        error_message=None,
     )
-    conn.commit()
-    conn.close()
 
-    return {
-        "success": run_result.get("status") == "success",
-        "execution_id": payload.execution_id,
-        "status": run_result.get("status"),
-        "generated_script": script,
-        "execution_log": run_result.get("execution_log", []),
-        "error_message": error_message,
-        "duration_ms": duration_ms,
-        "has_screenshot": bool(screenshot_base64),
-        "screenshot_base64": screenshot_base64,
-    }
+    # 2. Load persona from DB
+    persona_row = db.get_persona(execution["persona_id"])
+    if not persona_row:
+        return JSONResponse(
+            status_code=404,
+            content={"error": f"Persona {execution['persona_id']} not found"}
+        )
+
+    persona = json.loads(persona_row.get("persona_json", "{}")) if persona_row.get("persona_json") else {}
+    persona.update(persona_row)  # Merge with row data
+
+    # EDGE CASE 1: Handle missing credentials
+    credentials = persona.get("credentials", {})
+    if not credentials or not credentials.get("username"):
+        # Try to get credentials from the website record
+        website = db.get_website(execution.get("website_id"))
+        if website and website.get("default_credentials"):
+            try:
+                persona["credentials"] = json.loads(website["default_credentials"])
+                print(f"✅ Loaded default credentials from website")
+            except (json.JSONDecodeError, TypeError):
+                pass
+        # If still no credentials, continue anyway — run_with_mcp handles sites that don't need login
+
+    # 3. Get scenario — try in this order:
+    #    a. From persona["scenario"] if it exists
+    #    b. From execution["generated_script"] if it's valid JSON with "key_actions"
+    #    c. Fallback: build minimal scenario from persona
+    scenario = None
+
+    # Try persona["scenario"] first
+    if persona.get("scenario"):
+        scenario = persona["scenario"]
+
+    # Try execution["generated_script"] as JSON
+    if not scenario:
+        gen_script = execution.get("generated_script")
+        if gen_script:
+            try:
+                parsed = json.loads(gen_script)
+                if isinstance(parsed, dict) and "key_actions" in parsed:
+                    scenario = parsed
+            except (json.JSONDecodeError, TypeError):
+                pass
+
+    # Fallback: build minimal scenario
+    if not scenario:
+        scenario = {
+            "name": f"Test - {persona.get('objectif', 'Navigation')}",
+            "objectif": persona.get("objectif", "Complete the task"),
+            "description": persona.get("description", ""),
+            "key_actions": persona.get("actions_site", []),
+            "success_criteria": [],
+            "strict_done_validation": False,
+        }
+
+    # 4. Get start_url — EDGE CASE 4: Better priority order and protocol handling
+    start_url = (
+        execution.get("url")
+        or persona.get("website_url")
+        or persona.get("website_domain")
+    )
+
+    if not start_url:
+        return JSONResponse(
+            status_code=400,
+            content={
+                "error": "No URL found",
+                "detail": (
+                    "Persona has no website_url and execution "
+                    "has no url. Please re-run test configuration."
+                )
+            }
+        )
+
+    # Ensure URL has protocol
+    if start_url and not start_url.startswith("http"):
+        start_url = "https://" + start_url
+
+    # 5. Initialize Config and PersonaAgent
+    try:
+        config = Config()
+    except Exception as e:
+        print(f"Warning: Could not load config: {e}. Using defaults.")
+        config = Config()
+
+    # Override config with request parameters
+    config._config["llm"]["provider"] = payload.provider
+    if payload.model:
+        config._config["llm"]["model"] = payload.model
+
+    agent = PersonaAgent(
+        user=persona,
+        scenario=scenario,
+        config=config,
+        use_mcp=True,
+    )
+
+    # 6. Run ReAct loop — EDGE CASE 6: Wrap in try/except for crashes
+    try:
+        result = await agent.run_with_mcp(start_url=start_url)
+    except Exception as e:
+        error_msg = str(e)
+        print(f"❌ run_with_mcp crashed: {error_msg}")
+
+        # Save error to DB
+        db.update_playwright_execution(
+            execution_id=payload.execution_id,
+            status="error",
+            execution_log="[]",
+            error_message=error_msg,
+        )
+
+        return JSONResponse(
+            status_code=500,
+            content={
+                "status": "error",
+                "response": error_msg,
+                "steps": 0,
+                "steps_detail": [],
+            }
+        )
+
+    # 7. Update playwright_test_executions record with result
+    db.update_playwright_execution(
+        execution_id=payload.execution_id,
+        status=result.get("status", "error"),
+        execution_log=json.dumps(result.get("steps_detail", [])),
+        error_message=result.get("response") if result.get("status") == "error" else None,
+    )
+
+    # 8. Return result directly
+    return result
 
 
 @app.post("/api/playwright/run")

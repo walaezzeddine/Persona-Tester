@@ -1,0 +1,512 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - iframe [ref=e5]:
+      - insertion [ref=f208e3]:
+        - iframe [ref=f208e5]:
+          
+    - generic [ref=e6] [cursor=pointer]: X
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - text: 
+      - button "Select Language" [ref=e9] [cursor=pointer]:
+        - text: About
+        - generic [ref=e10]: 
+      - generic "Challenges" [ref=e11] [cursor=pointer]:
+        - text: Contests
+        - generic [ref=e12]: 
+    - generic [ref=e14]:
+      - generic "Username" [ref=e15]: walaezzedine
+      - link "Unread Messages" [ref=e16] [cursor=pointer]:
+        - /url: /forum/messages
+        - generic [ref=e17]: 
+        - generic "Number of Unread Messages" [ref=e18]: "1"
+      - combobox "Tournament Select" [ref=e20]:
+        - option "My Practice Portfolio" [selected]
+      - link "Logout" [ref=e21] [cursor=pointer]:
+        - /url: /logout
+  - navigation [ref=e22]:
+    - menubar [ref=e24]:
+      - menuitem "Logo" [ref=e25]:
+        - link "Logo" [ref=e26] [cursor=pointer]:
+          - /url: /home
+          - img "Logo" [ref=e27]
+    - menubar [ref=e29]:
+      - menuitem "Dashboard" [ref=e30]:
+        - generic [ref=e31] [cursor=pointer]: Dashboard 
+        - text: 
+      - menuitem "Stock Game" [ref=e32]:
+        - generic [ref=e33] [cursor=pointer]: Stock Game 
+      - menuitem "Investing Research" [ref=e34]:
+        - generic "Investing Research" [ref=e35] [cursor=pointer]: Investing Research 
+      - menuitem "Courses" [ref=e36]:
+        - generic [ref=e37] [cursor=pointer]: Courses 
+      - menuitem "Getting Started" [ref=e38]:
+        - generic [ref=e39] [cursor=pointer]: Getting Started 
+  - generic [ref=e40]:
+    - text:        
+    - iframe [ref=e46]:
+      - insertion [ref=f195e3]:
+        - iframe [ref=f195e5]:
+          
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - list:
+              - listitem: Markets
+              - listitem: Market Summary
+              - listitem: Market Movers
+              - listitem: Top Performing ETFs
+              - listitem: Futures Summary
+              - listitem: Economic Rates
+              - listitem: Currencies
+              - listitem: Industries
+              - listitem: Basic Research
+              - listitem: Detailed Quote
+              - listitem: Company Profile
+              - listitem: Company News
+              - listitem: Charts
+              - listitem: Analyst Ratings
+              - listitem: Price History
+              - listitem: Financial Statements
+              - listitem: Advanced Research
+              - listitem: Key Ratios
+              - listitem: Option Chain
+              - listitem: Share Performance
+              - listitem: Earnings
+              - listitem: SEC Filings
+              - listitem: Corporate Actions
+              - listitem: Trades
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - heading "Quotes" [level=3]
+          - generic [ref=e47]:
+            - generic [ref=e52]:
+              - generic [ref=e53]:
+                - generic [ref=e56]:
+                  - generic [ref=e57] [cursor=pointer]: 
+                  - textbox "Search for a symbol or company, typing will show categorized results in tabs below" [ref=e58]:
+                    - /placeholder: Search for a symbol or company
+                  - text: 
+                - text: 
+              - text:             
+            - generic [ref=e60]:
+              - text:         
+              - generic [ref=e62]:
+                - heading "Apple Inc.AAPL" [level=1] [ref=e64]: Apple Inc. (AAPL)
+                - generic "quote data for Apple Inc." [ref=e67]:
+                  - generic [ref=e68]:
+                    - generic [ref=e69]:
+                      - text: $273.68
+                      - generic [ref=e70]:
+                        - generic [ref=e71]: 
+                        - generic [ref=e72]: "0.51"
+                        - generic [ref=e73]: (0.19%)
+                    - generic [ref=e74]:
+                      - generic [ref=e75]:
+                        - generic [ref=e76]: "Bid:"
+                        - text: 273.68 x 200
+                      - generic [ref=e77]:
+                        - generic [ref=e78]: "Ask:"
+                        - text: 273.71 x 100
+                    - generic [ref=e79]:
+                      - generic [ref=e81]: April 23, 2026 9:59 AMET
+                      - generic [ref=e83]: "Volume: 4,689,780"
+                  - generic [ref=e84]:
+                    - generic [ref=e85]: USD
+                    - generic [ref=e86]: "|Nasdaq Global Select"
+                    - generic [ref=e87]: "|Delayed Price"
+                    - text: "|"
+              - generic [ref=e91]:
+                - heading "News and Media" [level=2] [ref=e92]
+                - generic [ref=e94]:
+                  - generic [ref=e96]:
+                    - generic [ref=e98]:
+                      - generic [ref=e99] [cursor=pointer]: 
+                      - textbox "From Date" [ref=e100]
+                    - generic [ref=e102]:
+                      - generic [ref=e103] [cursor=pointer]: 
+                      - textbox "To Date" [ref=e104]
+                  - generic [ref=e106]:
+                    - button "Show Result" [active] [ref=e107] [cursor=pointer]
+                    - button "Show Latest" [ref=e108] [cursor=pointer]
+                - generic [ref=e110]:
+                  - generic [ref=e111]:
+                    - heading "Thu Apr 23rd, 2026" [level=3] [ref=e112]
+                    - list [ref=e113]:
+                      - listitem [ref=e114]:
+                        - generic [ref=e115]:
+                          - generic [ref=e116]: SeekingAlpha
+                          - generic [ref=e117]: 2:38 AM
+                          - generic [ref=e118] [cursor=pointer]: TSM plans to open a chip packaging plant in Arizona by 2029 - report
+                          - generic [ref=e119]: "2026-04-23 02:38:16 ET More on Taiwan Semiconductor Manufacturing Company Taiwan Semiconductor: The AI Boom Is Broadening, And That Matters TSMC: The Market Is Pricing A Foundry Like A Cyclical. It Is Not One. TSMC: AI Supercycle Buys Don't Come Stronger Than This ..."
+                  - generic [ref=e120]:
+                    - heading "Wed Apr 22nd, 2026" [level=3] [ref=e121]
+                    - list [ref=e122]:
+                      - listitem [ref=e123]:
+                        - generic [ref=e124]:
+                          - generic [ref=e125]: SeekingAlpha
+                          - generic [ref=e126]: 5:16 PM
+                          - generic [ref=e127] [cursor=pointer]: The Oracle Of OMAH Wins Round One Vs. Berkshire Hathaway
+                          - generic [ref=e128]: 2026-04-22 17:16:37 ET The Solactive VistaShares Berkshire Select Index became operational in 2016 and includes 21 equities. The 21 are comprised of the 20 largest valuation holdings of Berkshire Hathaway Inc. ( BRK.B ), along with BRK.B itself.... Read the full articl...
+                      - listitem [ref=e129]:
+                        - generic [ref=e130]:
+                          - generic [ref=e131]: SeekingAlpha
+                          - generic [ref=e132]: 4:11 PM
+                          - generic [ref=e133] [cursor=pointer]: Texas Attorney General launches payola investigation into major music streaming services
+                          - generic [ref=e134]: "2026-04-22 16:11:13 ET More on Spotify, Apple, etc. Amazon: Beware Of Falling Over The Cliff Again (Downgrade) How Amazon Is Preparing For The Future Apple: The CEO Transition Is A Multiple Compression Catalyst Merck inks AI deal worth up to $1B with Google C..."
+                      - listitem [ref=e135]:
+                        - generic [ref=e136]:
+                          - generic [ref=e137]: SeekingAlpha
+                          - generic [ref=e138]: 4:05 PM
+                          - generic [ref=e139] [cursor=pointer]: TSMC debuts new A13, N2U chip manufacturing ?technology
+                          - generic [ref=e140]: "2026-04-22 16:05:07 ET More on Taiwan Semiconductor Manufacturing Company Taiwan Semiconductor: The AI Boom Is Broadening, And That Matters TSMC: The Market Is Pricing A Foundry Like A Cyclical. It Is Not One. TSMC: AI Supercycle Buys Don't Come Stronger Than This ..."
+                      - listitem [ref=e141]:
+                        - generic [ref=e142]:
+                          - generic [ref=e143]: SeekingAlpha
+                          - generic [ref=e144]: 12:59 PM
+                          - generic [ref=e145] [cursor=pointer]: "SA analyst upgrades/downgrades: AAPL, SPOT, MU, PYPL"
+                          - generic [ref=e146]: 2026-04-22 12:59:55 ET More on markets Retail Sales Spike, Here's What It Means For Markets 3 Market Risks Investors Won't See Coming A Less Friendly Fed Is Bad News For Markets Nasdaq touches new high as Trump extends ceasefire deadline with Iran EPS...
+                      - listitem [ref=e147]:
+                        - generic [ref=e148]:
+                          - generic [ref=e149]: SeekingAlpha
+                          - generic [ref=e150]: 12:19 PM
+                          - generic [ref=e151] [cursor=pointer]: "Amazon: Beware Of Falling Over The Cliff Again (Downgrade)"
+                          - generic [ref=e152]: "2026-04-22 12:19:20 ET Amazon: The Market Finally Realized The Folly Of Betting Against It Where is the caution that saw investors in Amazon.com, Inc. ( AMZN ) feeling anxious about the $200 billion in CapEx that kept the stock trading cautiously as we finished February?... ..."
+                      - listitem [ref=e153]:
+                        - generic [ref=e154]:
+                          - generic [ref=e155]: SeekingAlpha
+                          - generic [ref=e156]: 10:50 AM
+                          - generic [ref=e157] [cursor=pointer]: Citadel Securities spotlights Magnificent Seven trade ideas
+                          - generic [ref=e158]: "2026-04-22 10:50:10 ET More on markets Trump term 1 vs. 2: Different headlines, same S&P 500 performance ETFs extend their historic inflow streak to 82 months Hormuz disruption lingers: Markets price gradual reopening, not a quick fix Energy and AI driv..."
+                      - listitem [ref=e159]:
+                        - generic [ref=e160]:
+                          - generic [ref=e161]: SeekingAlpha
+                          - generic [ref=e162]: 9:34 AM
+                          - generic [ref=e163] [cursor=pointer]: Qorvo, Skyworks Solutions, Seagate upped at Barclays; Qualcomm downgraded
+                          - generic [ref=e164]: "2026-04-22 09:34:52 ET More on Qorvo, Qualcomm, Skyworks and Seagate Qualcomm: Rare Value In An Otherwise Inflated Sector Skyworks: What It'd Take For The Company To Recover Qualcomm's Biggest Shift Nobody Sees Qualcomm snaps nine-day winning streak S..."
+                      - listitem [ref=e165]:
+                        - generic [ref=e166]:
+                          - generic [ref=e167]: SeekingAlpha
+                          - generic [ref=e168]: 9:21 AM
+                          - generic [ref=e169] [cursor=pointer]: "Apple: The CEO Transition Is A Multiple Compression Catalyst"
+                          - generic [ref=e170]: "2026-04-22 09:21:23 ET Introduction Read the full article on Seeking Alpha For further details see: Apple: The CEO Transition Is A Multiple Compression Catalyst"
+                      - listitem [ref=e171]:
+                        - generic [ref=e172]:
+                          - generic [ref=e173]: SeekingAlpha
+                          - generic [ref=e174]: 3:44 AM
+                          - generic [ref=e175] [cursor=pointer]: "The earnings tightrope: Will Mag 7 bulls pivot to bottom fishing?"
+                          - generic [ref=e176]: "2026-04-22 03:44:31 ET Read the full article on Seeking Alpha For further details see: The earnings tightrope: Will Mag 7 bulls pivot to bottom fishing?"
+                      - listitem [ref=e177]:
+                        - generic [ref=e178]:
+                          - generic [ref=e179]: SeekingAlpha
+                          - generic [ref=e180]: 1:52 AM
+                          - generic [ref=e181] [cursor=pointer]: "Apple: I See An Alchain-Allen Theorem At Play (Upgrade)"
+                          - generic [ref=e182]: 2026-04-22 01:52:51 ET Thesis review The hardware and electronics market is facing a margin headwind that's being caused by the supply shortage of DRAM and NAND. This shortage is estimated to persist for the duration of 2026 and maybe last until 2027. This headwind has painted a...
+                  - generic [ref=e183]:
+                    - heading "Tue Apr 21st, 2026" [level=3] [ref=e184]
+                    - list [ref=e185]:
+                      - listitem [ref=e186]:
+                        - generic [ref=e187]:
+                          - generic [ref=e188]: Motley Fool
+                          - generic [ref=e189]: 3:23 PM
+                          - generic [ref=e190] [cursor=pointer]: Why Apple Stock Could Soar With John Ternus at the Helm
+                          - generic [ref=e191]: "2026-04-21 15:23:00 ET The recently announced changing of the guard at Apple (NASDAQ: AAPL) could be a pivotal moment for investors. With Tim Cook preparing to transition to the executive chairman role this September, John Ternus, the company's senior vice president of hardware engi..."
+                      - listitem [ref=e192]:
+                        - generic [ref=e193]:
+                          - generic [ref=e194]: Motley Fool
+                          - generic [ref=e195]: 2:39 PM
+                          - generic [ref=e196] [cursor=pointer]: S&P 500 and Nasdaq Take a Breather as Apple Says Goodbye to Tim Cook
+                          - generic [ref=e197]: 2026-04-21 14:39:08 ET The market started Tuesday in fine form with modest gains for the major indexes in the first couple of hours. But the optimism didn't last. As of 1:15 p.m. ET, the three leading indexes were down by at least 0.5% instead. These are still small moves, of course. No...
+                      - listitem [ref=e198]:
+                        - generic [ref=e199]:
+                          - generic [ref=e200]: SeekingAlpha
+                          - generic [ref=e201]: 1:21 PM
+                          - generic [ref=e202] [cursor=pointer]: Apple leadership shake-up puts top-heavy allocation ETFs into focus
+                          - generic [ref=e203]: "2026-04-21 13:21:26 ET More on markets ETFs extend their historic inflow streak to 82 months TS Lombard: Iran de-escalation could fuel a global market rally Hormuz disruption lingers: Markets price gradual reopening, not a quick fix Energy and AI drive posi..."
+                      - listitem [ref=e204]:
+                        - generic [ref=e205]:
+                          - generic [ref=e206]: SeekingAlpha
+                          - generic [ref=e207]: 1:20 PM
+                          - generic [ref=e208] [cursor=pointer]: Apple's New Leadership Preserves The Story
+                          - generic [ref=e209]: "2026-04-21 13:20:06 ET Read the full article on Seeking Alpha For further details see: Apple's New Leadership Preserves The Story"
+                      - listitem [ref=e210]:
+                        - generic [ref=e211]:
+                          - generic [ref=e212]: SeekingAlpha
+                          - generic [ref=e213]: 1:14 PM
+                          - generic [ref=e214] [cursor=pointer]: Apple praised by Needham analyst over CEO switch; firm pounds the table on Disney deal
+                          - generic [ref=e215]: "2026-04-21 13:14:30 ET More on Apple and Walt Disney Apple: Tim Cook Hands Over, But This Is Not A Great Reset Apple Enters New Leadership Era Apple: Next CEO Should Rent Out Siri, Not Rebuild It Apple options price a wide post-CEO-transition range Tr..."
+                      - listitem [ref=e216]:
+                        - generic [ref=e217]:
+                          - generic [ref=e218]: Motley Fool
+                          - generic [ref=e219]: 12:20 PM
+                          - generic [ref=e220] [cursor=pointer]: "Apple vs. Microsoft: What's the Better \"Magnificent Seven\" Stock to Buy in 2026?"
+                          - generic [ref=e221]: "2026-04-21 12:20:00 ET Two of the most iconic stocks in the \"Magnificent Seven\" are Microsoft (NASDAQ: MSFT) and Apple (NASDAQ: AAPL) . They have been rivals for decades, and both have large and profitable operations. Apple is the larger of the two today, with a market cap..."
+                      - listitem [ref=e222]:
+                        - generic [ref=e223]:
+                          - generic [ref=e224]: SeekingAlpha
+                          - generic [ref=e225]: 12:01 PM
+                          - generic [ref=e226] [cursor=pointer]: Trump says he'll remember companies that don't seek tariff refunds
+                          - generic [ref=e227]: 2026-04-21 12:01:37 ET President Donald Trump said on Tuesday that he will “remember” U.S. companies that do not seek refunds for the tariffs he unilaterally imposed, which the Supreme Court ruled were illegal in a 6-3 decision.... Read the full article on Seeking Alpha ...
+                      - listitem [ref=e228]:
+                        - generic [ref=e229]:
+                          - generic [ref=e230]: Motley Fool
+                          - generic [ref=e231]: 12:01 PM
+                          - generic [ref=e232] [cursor=pointer]: Meet the New CEO of Apple Who Will Try to Fill the Big Void Left by Tim Cook
+                          - generic [ref=e233]: "2026-04-21 12:01:07 ET The Tim Cook era at Apple (NASDAQ: AAPL) will soon come to an end. The consumer tech giant announced yesterday that Cook will continue as CEO through the summer before officially stepping down. Cook will become executive chairman of the company's board of ..."
+                      - listitem [ref=e234]:
+                        - generic [ref=e235]:
+                          - generic [ref=e236]: SeekingAlpha
+                          - generic [ref=e237]: 11:51 AM
+                          - generic [ref=e238] [cursor=pointer]: "Apple: Tim Cook Hands Over, But This Is Not A Great Reset"
+                          - generic [ref=e239]: 2026-04-21 11:51:19 ET Apple press release on the CEO change (Apple ) It will soon be time to bid goodbye to Tim Cook as Apple Inc.'s ( AAPL ) CEO. His successor, John Ternus, is set to assume the role in September. As the hardware enginee...
+                      - listitem [ref=e240]:
+                        - generic [ref=e241]:
+                          - generic [ref=e242]: SeekingAlpha
+                          - generic [ref=e243]: 11:42 AM
+                          - generic [ref=e244] [cursor=pointer]: Apple Enters New Leadership Era
+                          - generic [ref=e245]: "2026-04-21 11:42:50 ET ... Read the full article on Seeking Alpha For further details see: Apple Enters New Leadership Era"
+                      - listitem [ref=e246]:
+                        - generic [ref=e247]:
+                          - generic [ref=e248]: Motley Fool
+                          - generic [ref=e249]: 10:32 AM
+                          - generic [ref=e250] [cursor=pointer]: Should You Buy or Sell Apple Stock After Legendary CEO Tim Cook Steps Down?
+                          - generic [ref=e251]: "2026-04-21 10:32:20 ET Apple (NASDAQ: AAPL) had some big news to announce on April 20: CEO Tim Cook is stepping down. This is a big deal because Cook took over the CEO role in 2011, and Apple's performance during his leadership was nothing short of impressive. Cook assumed the CEO p..."
+                      - listitem [ref=e252]:
+                        - generic [ref=e253]:
+                          - generic [ref=e254]: SeekingAlpha
+                          - generic [ref=e255]: 9:30 AM
+                          - generic [ref=e256] [cursor=pointer]: Apple options price a wide post-CEO-transition range
+                          - generic [ref=e257]: "2026-04-21 09:30:40 ET More on Apple Apple: Next CEO Should Rent Out Siri, Not Rebuild It Apple: Tim Cook Stepping Down On A High Note (Rating Upgrade) Apple: Tim Cook Stepping Down As CEO Opens A New Chapter Trump praises Tim Cook's leadership, says he will ..."
+                      - listitem [ref=e258]:
+                        - generic [ref=e259]:
+                          - generic [ref=e260]: SeekingAlpha
+                          - generic [ref=e261]: 8:23 AM
+                          - generic [ref=e262] [cursor=pointer]: "The future of auto software: Could Rivian be the Android to Tesla's Apple status?"
+                          - generic [ref=e263]: "2026-04-21 08:23:48 ET More on Rivian Rivian: A Platform-Driven Growth Story (Rating Upgrade) Rivian: Thank You, Uber! Rivian: Why It's Finally Time To Buy (Rating Upgrade) Rivian Illinois factory damaged by tornado Rivian and Redwood Materials to rep..."
+                      - listitem [ref=e264]:
+                        - generic [ref=e265]:
+                          - generic [ref=e266]: SeekingAlpha
+                          - generic [ref=e267]: 8:01 AM
+                          - generic [ref=e268] [cursor=pointer]: "Apple: Next CEO Should Rent Out Siri, Not Rebuild It"
+                          - generic [ref=e269]: "2026-04-21 08:01:18 ET I am revisiting my bull case on Apple Inc. ( AAPL ) after the announcement that John Ternus will become CEO on September 1, 2026, with Tim Cook moving to executive chairman. ... Read the full article on Seeking Alpha For further details see: ..."
+                - generic [ref=e271]:
+                  - button "First"
+                  - button "Prev"
+                  - button "Last" [ref=e272] [cursor=pointer]
+                  - button "Next" [ref=e273] [cursor=pointer]
+                  - button "1" [ref=e274] [cursor=pointer]
+                  - button "2" [ref=e275] [cursor=pointer]
+                  - button "3" [ref=e276] [cursor=pointer]
+                  - button "4" [ref=e277] [cursor=pointer]
+                  - button "5" [ref=e278] [cursor=pointer]
+          - iframe [ref=e279]:
+            - insertion [ref=f196e3]:
+              - iframe [ref=f196e5]:
+                
+    - generic [ref=e282]:
+      - strong [ref=e283]: Notice
+      - paragraph [ref=e284]:
+        - text: This website uses cookies, for more information please visit our
+        - link "Privacy Policy" [ref=e285] [cursor=pointer]:
+          - /url: https://content.stocktrak.com/privacy-policy/
+          - strong [ref=e286]: Privacy Policy
+      - generic [ref=e287] [cursor=pointer]: Ok
+  - contentinfo [ref=e288]:
+    - generic [ref=e290]:
+      - complementary [ref=e292]:
+        - figure [ref=e293]:
+          - link "WallStreetSurvivor logo" [ref=e294] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e295]
+      - generic [ref=e296]:
+        - complementary [ref=e297]:
+          - heading "Our Platform" [level=3] [ref=e298]
+        - complementary [ref=e299]:
+          - list [ref=e300]:
+            - listitem [ref=e301]:
+              - link "Stock Market Simulator" [ref=e302] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e303]:
+              - link "Investing Courses for Beginners" [ref=e304] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/courses/
+            - listitem [ref=e305]:
+              - link "Best Stocks to Buy Now" [ref=e306] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e307]:
+              - link "How to Invest Videos" [ref=e308] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+            - listitem [ref=e309]:
+              - link "Free Online Investing Course" [ref=e310] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e311]:
+              - link "Financial Literacy Game for Students" [ref=e312] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e313]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e314] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e315]:
+              - link "Crypto Paper Trading" [ref=e316] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e317]:
+              - link "About WallStreetSurvivor" [ref=e318] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+      - generic [ref=e319]:
+        - complementary [ref=e320]:
+          - heading "Review Center" [level=3] [ref=e321]
+        - complementary [ref=e322]:
+          - list [ref=e323]:
+            - listitem [ref=e324]:
+              - link "Motley Fool Review" [ref=e325] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e326]:
+              - link "Seeking Alpha Review" [ref=e327] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e328]:
+              - link "Alpha Picks Review" [ref=e329] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e330]:
+              - link "Moby Stocks Review" [ref=e331] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e332]:
+              - link "Wealthsimple Review" [ref=e333] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/wealthsimple-review/
+            - listitem [ref=e334]:
+              - link "Is Robinhood Safe to Use?" [ref=e335] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e336]:
+              - link "Rule Breakers Review" [ref=e337] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e338]:
+              - link "Best Investment Newsletters" [ref=e339] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e340]:
+              - link "Best Investing Apps" [ref=e341] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e342]:
+              - link "Best Motley Fool Discount Code" [ref=e343] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e344]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e345] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e346]:
+              - link "Best Tipranks Discount Code" [ref=e347] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e348]:
+              - link "Is Coinbase Safe?" [ref=e349] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e350]:
+              - link "Free Crypto with Coinbase" [ref=e351] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e352]:
+              - link "Best Stock Picking Service" [ref=e353] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+      - generic [ref=e354]:
+        - complementary [ref=e355]:
+          - heading "Corporate Services" [level=3] [ref=e356]
+        - complementary [ref=e357]:
+          - list [ref=e358]:
+            - listitem [ref=e359]:
+              - link "White Label Stock Market Games" [ref=e360] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e361]:
+              - link "White Label Virtual Crypto Trading" [ref=e362] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e363]:
+              - link "Employee Financial Wellness" [ref=e364] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e365]:
+              - link "Sponsor a College or High School" [ref=e366] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e367]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e368] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e369]:
+          - heading "Our Company" [level=3] [ref=e370]
+        - complementary [ref=e371]:
+          - list [ref=e372]:
+            - listitem [ref=e373]:
+              - link "Contact Us" [ref=e374] [cursor=pointer]:
+                - /url: mailto:support@wallstreetsurvivor.com
+            - listitem [ref=e375]:
+              - link "About Us" [ref=e376] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/
+            - listitem [ref=e377]:
+              - link "Motley Fool Review" [ref=e378] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e379]:
+              - link "Privacy Policy" [ref=e380] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e381]:
+              - link "Terms and Conditions" [ref=e382] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e383]:
+              - link "Advertise with Us" [ref=e384] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e385]:
+        - complementary [ref=e386]:
+          - heading "Family of Sites" [level=3] [ref=e387]:
+            - strong [ref=e388]: Family of Sites
+        - complementary [ref=e389]:
+          - figure [ref=e390]:
+            - link "StockTrak logo" [ref=e391] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e392]
+        - complementary [ref=e393]:
+          - figure [ref=e394]:
+            - link "PersonalFinanceLab logo" [ref=e395] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e396]
+        - complementary [ref=e397]:
+          - figure [ref=e398]:
+            - link "WallStreetSurvivor logo" [ref=e399] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Practice stock trading site" [ref=e400]
+        - complementary [ref=e401]:
+          - figure [ref=e402]:
+            - link "HowTheMarketWorks logo" [ref=e403] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free stock market game for students" [ref=e404]
+        - complementary [ref=e405]:
+          - link "Global Virtual Stock Game" [ref=e406] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e407] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - generic "Site" [ref=e408]:
+      - generic [ref=e409]:
+        - generic [ref=e410]:
+          - complementary [ref=e411]:
+            - heading "Connect With Us" [level=2] [ref=e412]
+          - complementary:
+            - figure [ref=e413]:
+              - link "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e414] [cursor=pointer]:
+                - /url: https://www.instagram.com/wallstreetsurvivor/
+                - img "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e415]
+          - complementary:
+            - figure [ref=e416]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e417] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e418]
+          - complementary:
+            - figure [ref=e419]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e420] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e421]
+          - complementary:
+            - figure [ref=e422]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e423] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e424]
+        - generic [ref=e425]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2025 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.
+  - generic [ref=e427]:
+    - img
+  - generic [ref=e430] [cursor=pointer]:
+    - generic [ref=e431]:
+      - text: 
+      - generic "We're Online!" [ref=e432]
+    - text: 
+  - generic:
+    - generic:
+      - iframe

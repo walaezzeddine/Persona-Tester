@@ -229,6 +229,51 @@
   border: 1px solid rgba(255,255,255,0.06);
 }
 
+/* Scenario display */
+.scenario-display {
+  flex: 1;
+  overflow: auto;
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 16px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.scenario-section {
+  margin-bottom: 1.5rem;
+}
+
+.scenario-section:last-child {
+  margin-bottom: 0;
+}
+
+.scenario-steps {
+  margin: 8px 0 0 1.5rem;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.scenario-steps li {
+  margin-bottom: 6px;
+  padding-left: 6px;
+  color: #2d3748;
+}
+
+.scenario-criteria {
+  margin: 8px 0 0 1.5rem;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.scenario-criteria li {
+  margin-bottom: 6px;
+  padding-left: 6px;
+  color: #276749;
+  list-style-type: '✓ ';
+}
+
 .script-code::-webkit-scrollbar { width: 6px; height: 6px; }
 .script-code::-webkit-scrollbar-track { background: #161b22; }
 .script-code::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
@@ -308,6 +353,82 @@ textarea.script-code-editor:disabled {
 
 .log-text { color: #e6edf3; word-break: break-word; }
 .log-error .log-text { color: #f8a5a0; }
+
+.log-step-card {
+  background: #0f1623;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.log-step-card-error {
+  border-color: rgba(255, 100, 100, 0.45);
+  box-shadow: inset 0 0 0 1px rgba(255, 100, 100, 0.2);
+}
+
+.log-step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.log-step-number {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #9fb3c8;
+}
+
+.log-step-action {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #d3e8ff;
+  background: rgba(64, 130, 200, 0.2);
+  border: 1px solid rgba(120, 180, 240, 0.35);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.log-step-block {
+  margin-top: 8px;
+}
+
+.log-step-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #8ca1b6;
+  margin-bottom: 4px;
+}
+
+.log-step-label-error {
+  color: #ff9b9b;
+}
+
+.log-step-pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #dce6f2;
+  background: rgba(8, 14, 24, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  padding: 8px;
+  max-height: 210px;
+  overflow: auto;
+}
+
+.log-step-pre-error {
+  color: #ffd2d2;
+  border-color: rgba(255, 120, 120, 0.3);
+  background: rgba(70, 20, 20, 0.35);
+}
 
 /* Screenshot */
 .screenshot-container {

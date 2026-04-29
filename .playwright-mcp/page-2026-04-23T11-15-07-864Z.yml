@@ -1,0 +1,287 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - iframe [ref=e5]:
+      - insertion [ref=f484e3]:
+        - iframe [ref=f484e5]:
+          
+    - generic [ref=e6] [cursor=pointer]: X
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - text: 
+      - button "Select Language" [ref=e9] [cursor=pointer]:
+        - text: About
+        - generic [ref=e10]: 
+      - generic "Challenges" [ref=e11] [cursor=pointer]:
+        - text: Contests
+        - generic [ref=e12]: 
+    - generic [ref=e14]:
+      - generic "Username" [ref=e15]: walaezzedine
+      - link "Unread Messages" [ref=e16] [cursor=pointer]:
+        - /url: /forum/messages
+        - generic [ref=e17]: 
+        - generic "Number of Unread Messages" [ref=e18]: "1"
+      - combobox "Tournament Select" [ref=e20]:
+        - option "My Practice Portfolio" [selected]
+      - link "Logout" [ref=e21] [cursor=pointer]:
+        - /url: /logout
+  - navigation [ref=e22]:
+    - menubar [ref=e24]:
+      - menuitem "Logo" [ref=e25]:
+        - link "Logo" [ref=e26] [cursor=pointer]:
+          - /url: /home
+          - img "Logo" [ref=e27]
+    - menubar [ref=e29]:
+      - menuitem "Dashboard" [ref=e30]:
+        - generic [ref=e31] [cursor=pointer]: Dashboard 
+        - text: 
+      - menuitem "Stock Game" [ref=e32]:
+        - generic [ref=e33] [cursor=pointer]: Stock Game 
+      - menuitem "Investing Research" [ref=e34]:
+        - generic "Investing Research" [ref=e35] [cursor=pointer]: Investing Research 
+      - menuitem "Courses" [ref=e36]:
+        - generic [ref=e37] [cursor=pointer]: Courses 
+      - menuitem "Getting Started" [ref=e38]:
+        - generic [ref=e39] [cursor=pointer]: Getting Started 
+  - generic [ref=e40]:
+    - text:        
+    - iframe [ref=e46]:
+      - insertion [ref=f478e3]:
+        - iframe [ref=f478e5]:
+          
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - list:
+              - listitem: Markets
+              - listitem: Market Summary
+              - listitem: Market Movers
+              - listitem: Top Performing ETFs
+              - listitem: Futures Summary
+              - listitem: Economic Rates
+              - listitem: Currencies
+              - listitem: Industries
+              - listitem: Basic Research
+              - listitem: Detailed Quote
+              - listitem: Company Profile
+              - listitem: Company News
+              - listitem: Charts
+              - listitem: Analyst Ratings
+              - listitem: Price History
+              - listitem: Financial Statements
+              - listitem: Advanced Research
+              - listitem: Key Ratios
+              - listitem: Option Chain
+              - listitem: Share Performance
+              - listitem: Earnings
+              - listitem: SEC Filings
+              - listitem: Corporate Actions
+              - listitem: Trades
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - heading "Quotes" [level=3]
+          - iframe [ref=e47]:
+            - insertion [ref=f479e3]:
+              - iframe [ref=f479e5]:
+                
+    - generic [ref=e50]:
+      - strong [ref=e51]: Notice
+      - paragraph [ref=e52]:
+        - text: This website uses cookies, for more information please visit our
+        - link "Privacy Policy" [ref=e53] [cursor=pointer]:
+          - /url: https://content.stocktrak.com/privacy-policy/
+          - strong [ref=e54]: Privacy Policy
+      - generic [ref=e55] [cursor=pointer]: Ok
+  - contentinfo [ref=e56]:
+    - generic [ref=e58]:
+      - complementary [ref=e60]:
+        - figure [ref=e61]:
+          - link "WallStreetSurvivor logo" [ref=e62] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e63]
+      - generic [ref=e64]:
+        - complementary [ref=e65]:
+          - heading "Our Platform" [level=3] [ref=e66]
+        - complementary [ref=e67]:
+          - list [ref=e68]:
+            - listitem [ref=e69]:
+              - link "Stock Market Simulator" [ref=e70] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e71]:
+              - link "Investing Courses for Beginners" [ref=e72] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/courses/
+            - listitem [ref=e73]:
+              - link "Best Stocks to Buy Now" [ref=e74] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e75]:
+              - link "How to Invest Videos" [ref=e76] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+            - listitem [ref=e77]:
+              - link "Free Online Investing Course" [ref=e78] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e79]:
+              - link "Financial Literacy Game for Students" [ref=e80] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e81]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e82] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e83]:
+              - link "Crypto Paper Trading" [ref=e84] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e85]:
+              - link "About WallStreetSurvivor" [ref=e86] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+      - generic [ref=e87]:
+        - complementary [ref=e88]:
+          - heading "Review Center" [level=3] [ref=e89]
+        - complementary [ref=e90]:
+          - list [ref=e91]:
+            - listitem [ref=e92]:
+              - link "Motley Fool Review" [ref=e93] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e94]:
+              - link "Seeking Alpha Review" [ref=e95] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e96]:
+              - link "Alpha Picks Review" [ref=e97] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e98]:
+              - link "Moby Stocks Review" [ref=e99] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e100]:
+              - link "Wealthsimple Review" [ref=e101] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/wealthsimple-review/
+            - listitem [ref=e102]:
+              - link "Is Robinhood Safe to Use?" [ref=e103] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e104]:
+              - link "Rule Breakers Review" [ref=e105] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e106]:
+              - link "Best Investment Newsletters" [ref=e107] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e108]:
+              - link "Best Investing Apps" [ref=e109] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e110]:
+              - link "Best Motley Fool Discount Code" [ref=e111] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e112]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e113] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e114]:
+              - link "Best Tipranks Discount Code" [ref=e115] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e116]:
+              - link "Is Coinbase Safe?" [ref=e117] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e118]:
+              - link "Free Crypto with Coinbase" [ref=e119] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e120]:
+              - link "Best Stock Picking Service" [ref=e121] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+      - generic [ref=e122]:
+        - complementary [ref=e123]:
+          - heading "Corporate Services" [level=3] [ref=e124]
+        - complementary [ref=e125]:
+          - list [ref=e126]:
+            - listitem [ref=e127]:
+              - link "White Label Stock Market Games" [ref=e128] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e129]:
+              - link "White Label Virtual Crypto Trading" [ref=e130] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e131]:
+              - link "Employee Financial Wellness" [ref=e132] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e133]:
+              - link "Sponsor a College or High School" [ref=e134] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e135]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e136] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e137]:
+          - heading "Our Company" [level=3] [ref=e138]
+        - complementary [ref=e139]:
+          - list [ref=e140]:
+            - listitem [ref=e141]:
+              - link "Contact Us" [ref=e142] [cursor=pointer]:
+                - /url: mailto:support@wallstreetsurvivor.com
+            - listitem [ref=e143]:
+              - link "About Us" [ref=e144] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/
+            - listitem [ref=e145]:
+              - link "Motley Fool Review" [ref=e146] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e147]:
+              - link "Privacy Policy" [ref=e148] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e149]:
+              - link "Terms and Conditions" [ref=e150] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e151]:
+              - link "Advertise with Us" [ref=e152] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e153]:
+        - complementary [ref=e154]:
+          - heading "Family of Sites" [level=3] [ref=e155]:
+            - strong [ref=e156]: Family of Sites
+        - complementary [ref=e157]:
+          - figure [ref=e158]:
+            - link "StockTrak logo" [ref=e159] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e160]
+        - complementary [ref=e161]:
+          - figure [ref=e162]:
+            - link "PersonalFinanceLab logo" [ref=e163] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e164]
+        - complementary [ref=e165]:
+          - figure [ref=e166]:
+            - link "WallStreetSurvivor logo" [ref=e167] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Practice stock trading site" [ref=e168]
+        - complementary [ref=e169]:
+          - figure [ref=e170]:
+            - link "HowTheMarketWorks logo" [ref=e171] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free stock market game for students" [ref=e172]
+        - complementary [ref=e173]:
+          - link "Global Virtual Stock Game" [ref=e174] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e175] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - generic "Site" [ref=e176]:
+      - generic [ref=e177]:
+        - generic [ref=e178]:
+          - complementary [ref=e179]:
+            - heading "Connect With Us" [level=2] [ref=e180]
+          - complementary:
+            - figure [ref=e181]:
+              - link "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e182] [cursor=pointer]:
+                - /url: https://www.instagram.com/wallstreetsurvivor/
+                - img "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e183]
+          - complementary:
+            - figure [ref=e184]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e185] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e186]
+          - complementary:
+            - figure [ref=e187]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e188] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e189]
+          - complementary:
+            - figure [ref=e190]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e191] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e192]
+        - generic [ref=e193]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2025 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.
+  - generic [ref=e195]:
+    - img
+  - generic [ref=e199] [cursor=pointer]:
+    - text: 
+    - generic "We're Online!" [ref=e200]

@@ -3,20 +3,31 @@ import './ScriptModal.css'
 
 const API_BASE = 'http://localhost:5000/api'
 
+type Scenario = {
+  name: string
+  objectif: string
+  description: string
+  key_actions: string[]
+  success_criteria: string[]
+  strict_done_validation: boolean
+}
+
 export interface ScriptRunResult {
   execution_id: string
   status: string
   generated_script: string
-  execution_log: string[]
+  execution_log?: unknown[]
+  steps_detail?: unknown[]
   error_message: string | null
   duration_ms: number
   screenshot_base64: string | null
+  scenario?: Scenario
 }
 
 interface ScriptModalProps {
   executionId: string | null
   script: string
-  logs: string[]
+  logs: unknown[]
   status: string
   url: string
   personaName: string
@@ -29,6 +40,42 @@ interface ScriptModalProps {
   onScriptUpdated?: (newScript: string) => void
   /** Called after a save-and-run, with the fresh execution result. */
   onRunResult?: (result: ScriptRunResult) => void
+}
+
+type StructuredLog = {
+  step?: number
+  thought?: string
+  action?: string
+  input?: unknown
+  action_input?: unknown
+  result_preview?: string
+  error?: string | null
+  response?: string
+}
+
+function isStructuredLogEntry(value: unknown): value is StructuredLog {
+  return Boolean(value && typeof value === 'object' && (
+    'step' in (value as Record<string, unknown>)
+    || 'thought' in (value as Record<string, unknown>)
+    || 'action' in (value as Record<string, unknown>)
+    || 'result_preview' in (value as Record<string, unknown>)
+    || 'error' in (value as Record<string, unknown>)
+  ))
+}
+
+function toDisplayText(value: unknown): string {
+  if (typeof value === 'string') return value
+  if (value == null) return ''
+  try {
+    return JSON.stringify(value, null, 2)
+  } catch {
+    return String(value)
+  }
+}
+
+function trimBlock(text: string, max = 1600): string {
+  if (!text) return ''
+  return text.length > max ? `${text.slice(0, max)}\n...` : text
 }
 
 export function ScriptModal({
@@ -51,9 +98,25 @@ export function ScriptModal({
   const [saving, setSaving] = useState(false)
   const [running, setRunning] = useState(false)
   const [feedback, setFeedback] = useState<{ kind: 'info' | 'error'; text: string } | null>(null)
+  const [parsedScenario, setParsedScenario] = useState<Scenario | null>(null)
 
+  // Parse scenario from script if it's JSON with key_actions
   useEffect(() => {
     setEditedScript(script)
+    try {
+      if (script && script.trim().startsWith('{')) {
+        const parsed = JSON.parse(script) as Scenario
+        if (parsed && typeof parsed === 'object' && Array.isArray(parsed.key_actions)) {
+          setParsedScenario(parsed)
+        } else {
+          setParsedScenario(null)
+        }
+      } else {
+        setParsedScenario(null)
+      }
+    } catch {
+      setParsedScenario(null)
+    }
   }, [script, executionId])
 
   useEffect(() => {
@@ -67,6 +130,8 @@ export function ScriptModal({
   const isDirty = editedScript !== script
   const canEdit = Boolean(executionId)
   const busy = saving || running
+  const safeDurationMs = Number.isFinite(durationMs) ? durationMs : 0
+  const isSuccessful = status === 'success' || status === 'completed'
 
   const handleCopyScript = async () => {
     try {
@@ -151,9 +216,11 @@ export function ScriptModal({
       }
       const result = (await res.json()) as ScriptRunResult
       onRunResult?.(result)
+      const runDuration = Number.isFinite(result.duration_ms) ? result.duration_ms : 0
+      const runOk = result.status === 'success' || result.status === 'completed'
       setFeedback({
-        kind: result.status === 'success' ? 'info' : 'error',
-        text: `Run ${result.status === 'success' ? 'passed ✓' : 'failed ✗'} in ${(result.duration_ms / 1000).toFixed(1)}s`,
+        kind: runOk ? 'info' : 'error',
+        text: `Run ${runOk ? 'passed ✓' : 'failed ✗'} in ${(runDuration / 1000).toFixed(1)}s`,
       })
     } catch (err) {
       setFeedback({ kind: 'error', text: err instanceof Error ? err.message : 'Run failed' })
@@ -176,7 +243,7 @@ export function ScriptModal({
         <div className="script-modal-header">
           <div className="script-modal-meta">
             <span className={`script-status-badge script-status-${status}`}>
-              {status === 'success' ? '✓ Passed' : status === 'error' ? '✗ Failed' : status}
+              {isSuccessful ? '✓ Passed' : status === 'error' ? '✗ Failed' : status}
             </span>
             <span className="script-modal-persona">{personaName}</span>
             <span className="script-modal-sep">·</span>
@@ -186,7 +253,7 @@ export function ScriptModal({
             <span className="script-modal-sep">·</span>
             <span className="script-modal-browser">{browserName}</span>
             <span className="script-modal-sep">·</span>
-            <span className="script-modal-duration">{(durationMs / 1000).toFixed(1)}s</span>
+            <span className="script-modal-duration">{(safeDurationMs / 1000).toFixed(1)}s</span>
             {isDirty && <span className="script-dirty-dot" title="Unsaved changes">● unsaved</span>}
           </div>
           <div className="script-modal-actions">
@@ -225,17 +292,55 @@ export function ScriptModal({
         )}
 
         <div className="script-modal-body">
-          {/* Left: Editable script */}
+          {/* Left: Scenario display or editable script */}
           <div className="script-pane">
-            <div className="pane-label">Generated Script {canEdit ? '(editable)' : ''}</div>
-            <textarea
-              className="script-code script-code-editor"
-              value={editedScript}
-              onChange={(e) => setEditedScript(e.target.value)}
-              spellCheck={false}
-              disabled={!canEdit || busy}
-              wrap="off"
-            />
+            {parsedScenario ? (
+              <>
+                <div className="pane-label">🎯 Scenario: {parsedScenario.name}</div>
+                <div className="scenario-display">
+                  <div className="scenario-section">
+                    <strong>Steps:</strong>
+                    <ol className="scenario-steps">
+                      {parsedScenario.key_actions.map((step, i) => (
+                        <li key={i}>{step}</li>
+                      ))}
+                    </ol>
+                  </div>
+                  {parsedScenario.success_criteria && parsedScenario.success_criteria.length > 0 && (
+                    <div className="scenario-section">
+                      <strong>✓ Success when:</strong>
+                      <ul className="scenario-criteria">
+                        {parsedScenario.success_criteria.map((c, i) => (
+                          <li key={i}>{c}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+                {/* Hidden textarea for editing JSON if needed */}
+                <textarea
+                  className="script-code script-code-editor"
+                  value={editedScript}
+                  onChange={(e) => setEditedScript(e.target.value)}
+                  spellCheck={false}
+                  disabled={!canEdit || busy}
+                  wrap="off"
+                  style={{ display: 'none' }}
+                />
+              </>
+            ) : (
+              <>
+                <div className="pane-label">Generated Script {canEdit ? '(editable)' : ''}</div>
+                <textarea
+                  className="script-code script-code-editor"
+                  value={editedScript}
+                  onChange={(e) => setEditedScript(e.target.value)}
+                  spellCheck={false}
+                  disabled={!canEdit || busy}
+                  wrap="off"
+                />
+              </>
+            )}
           </div>
 
           {/* Right: Logs + Screenshot */}
@@ -245,12 +350,70 @@ export function ScriptModal({
               {logs.length === 0 ? (
                 <span className="log-empty">No log entries</span>
               ) : (
-                logs.map((line, i) => (
-                  <div key={i} className={`log-line ${line.toLowerCase().startsWith('error') ? 'log-error' : line.toLowerCase().startsWith('warning') ? 'log-warn' : ''}`}>
-                    <span className="log-index">{String(i + 1).padStart(2, '0')}</span>
-                    <span className="log-text">{line}</span>
-                  </div>
-                ))
+                logs.map((line, i) => {
+                  if (isStructuredLogEntry(line)) {
+                    const stepNo = Number.isFinite(line.step) ? line.step : i + 1
+                    const thought = trimBlock(toDisplayText(line.thought))
+                    const action = toDisplayText(line.action)
+                    const actionInput = toDisplayText(line.input ?? line.action_input)
+                    const resultPreview = trimBlock(toDisplayText(line.result_preview))
+                    const error = trimBlock(toDisplayText(line.error))
+                    const response = trimBlock(toDisplayText(line.response))
+
+                    return (
+                      <section key={i} className={`log-step-card ${error ? 'log-step-card-error' : ''}`}>
+                        <header className="log-step-header">
+                          <span className="log-step-number">STEP {stepNo}</span>
+                          {action && <span className="log-step-action">{action}</span>}
+                        </header>
+
+                        {thought && (
+                          <div className="log-step-block">
+                            <div className="log-step-label">THOUGHT</div>
+                            <pre className="log-step-pre">{thought}</pre>
+                          </div>
+                        )}
+
+                        {actionInput && actionInput !== '{}' && (
+                          <div className="log-step-block">
+                            <div className="log-step-label">ACTION_INPUT</div>
+                            <pre className="log-step-pre">{actionInput}</pre>
+                          </div>
+                        )}
+
+                        {error && (
+                          <div className="log-step-block">
+                            <div className="log-step-label log-step-label-error">ERROR</div>
+                            <pre className="log-step-pre log-step-pre-error">{error}</pre>
+                          </div>
+                        )}
+
+                        {response && (
+                          <div className="log-step-block">
+                            <div className="log-step-label">RESPONSE</div>
+                            <pre className="log-step-pre">{response}</pre>
+                          </div>
+                        )}
+
+                        {resultPreview && (
+                          <div className="log-step-block">
+                            <div className="log-step-label">TOOL RESULT</div>
+                            <pre className="log-step-pre">{resultPreview}</pre>
+                          </div>
+                        )}
+                      </section>
+                    )
+                  }
+
+                  const text = toDisplayText(line)
+                  const lower = text.toLowerCase()
+                  return (
+                    <div key={i} className={`log-line ${lower.startsWith('error') ? 'log-error' : lower.startsWith('warning') ? 'log-warn' : ''}`}>
+                      <span className="log-index">{String(i + 1).padStart(2, '0')}</span>
+                      <span className="log-text">{text}</span>
+                    </div>
+                  )
+                })
               )}
               {errorMessage && (
                 <div className="log-line log-error">

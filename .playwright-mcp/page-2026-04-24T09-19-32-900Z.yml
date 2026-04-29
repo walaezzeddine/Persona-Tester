@@ -1,0 +1,944 @@
+- generic [active] [ref=e1]:
+  - link "Accéder au contenu principal" [ref=e3] [cursor=pointer]:
+    - /url: "#content"
+    - generic [ref=e5]: Accéder au contenu principal
+  - banner [ref=e9]:
+    - navigation [ref=e11]:
+      - link "Booking.com" [ref=e15] [cursor=pointer]:
+        - /url: https://www.booking.com/index.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKl16nPBsACAdICJDQ2ODdkOGFkLTU3NDctNDVkOC1iZDdhLWViM2VjZTFjMWEzZtgCAeACAQ&sid=c8092e10dfe3f0506bbe2d72b2f3b2a2&aid=304142
+        - img [ref=e16]
+      - generic [ref=e18]:
+        - button "Tarifs en Dinar tunisien" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: TND
+        - 'button "Langue : Français" [ref=e23] [cursor=pointer]'
+        - link "Service Clients" [ref=e28] [cursor=pointer]:
+          - /url: https://secure.booking.com/help.fr.html?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKl16nPBsACAdICJDQ2ODdkOGFkLTU3NDctNDVkOC1iZDdhLWViM2VjZTFjMWEzZtgCAeACAQ&sid=c8092e10dfe3f0506bbe2d72b2f3b2a2&aid=304142&source=header&src=profile_contact_cs
+          - img [ref=e31]
+        - link "Ajouter mon établissement" [ref=e33] [cursor=pointer]:
+          - /url: https://join.booking.com/?label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKl16nPBsACAdICJDQ2ODdkOGFkLTU3NDctNDVkOC1iZDdhLWViM2VjZTFjMWEzZtgCAeACAQ&sid=c8092e10dfe3f0506bbe2d72b2f3b2a2&aid=304142&lang=fr&utm_medium=frontend&utm_source=topbar
+          - generic [ref=e34]: Ajouter mon établissement
+        - link "S’inscrire." [ref=e35] [cursor=pointer]:
+          - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=fr&aid=304142&bkng_action=book&prompt=signin&state=Ut4L5p4xcXYCNTWD7c2Gnt8p9I18lIsq1AflFMvL7f3etB2TGUnG5iy4dv-sCZk4VIrvDVhqa1ozL5bcRf0M_uHv4riPIJG1IoV6TdlmsBrbTRI3NSE7ka8vL6546-rcKKnpa3nh6isYTxNDdsADxGG3JIWHpXL0YbkaevUq5zP1iVx7cG8R1B2Ka3bRNwUor4BJ-bo9HgevU7vQevlFRMOMmlRejFcGtaWx3cAnbyAqRjVnNvLG0aYgzEPqx8UpSgktjJwc7nQQZim_PUrA4rq4yFuN4XSrvRY-p1TGsntLaby0Gj8PVvyduOx4rw2NB7cVs9NEy9iwZtm7OMnPGDvw8w6S073BHQNBD9VRZtU2Damq8RqR3JXCFvpG4n5z2I8P3W096hDXxZ2M5kwyB48U-1LvSsNa-sd9Y3_3lLqbgub8bjUDQ1LHAHnCbOUTfjXv9sL7VPEs13T_E91at1xGXSimO2XyJNSAQ36poYZiiWPRb0jT0CtUPFaziOR6uK8ILrb3BOLF0J9z2JxDYukwYkHjGZk3NYrLUU-fDeei5sVAz3IhWnefuX-YkUKGw6nNPvrmqQ7VBc8BnAiXrNGqXnghtFnRYkUoOOjkoGPxZifTtPsEpIeocwHYeABaBdWwHzX_QHK8_C4BgNSoZSDRMqf56Z9xNtOlZJCQH7tYKYpomWVHGwG3YxSAl97dnKSkBufbthr3xNeigb24ugJN-N5mBIWzMDVwDqWYWGyUPgSrNz-lFhgSH9t6YyaoafP4s4AeijDw8bQpEYNB9wDBTEw0eXtH7mnPI_bLDjz8GMrfQ-EXHDZSCsOcR8jugi5RGI8b2NKYOGOOfe5ya5-YjSqyoE10FghxJOTHFqUjI7RWD-pn3vxoB2a757t4v_TzbK4tcSfZUdsMCdKHBiognGhJnY95hzS3YFqzCB_Hq3_JWHfILdUooy2JcYBogzucQTm-jKnpOk_OAio1Oyn94UVWY531JpnZ89YQ0Ys0_oiKsEgWIM_DiP3_uq6R4X1TjYglzA0mUte7SzncD--2PBumZL9r8ku1DIA_u3u3SJIn4em1fltmuatS7tVGkRS1Rnf1-wPr-v_x2NQexkivW1OIe8rnmYyxi1D6cbowPOniLku1T2HnNsG8GVGpwL8wbvoD1VVgfhaTKvK8cjxCcs62zQp_CVkJU6pZFLjcMtjH7G38TtOh0z58-wLNSWm1nsQLfyy5-nZchssC75A0JGfT-jDgmPPVdKCSVgReLFc3hJXjklN-pWT9cYY21TLr7RMLiOuNYba1RRxvNtbBnFnTb5ZvYL3e1yYxLYZeBZcYCjQKcHH4IiVrx3urh5e59b7Mc2qq9jHes6rhWEx3PZezK_8Ri6k7xLIf0Tj7TBiDG0AQb4MkArMpoyp9iKLwoCWXv8JHuD4Hx7cI-Mno3c6OiLpV-y3YxG1tFgr6Q-0ns_9jkw5M_ChX3doRPexhYIu83swpZL31ZmZ3uUYmt5Ucgp0BpNLEH6iv0cCopUBeFsMluUgKnIZbp4Zc9vAE-nCqlE8pEX-bbwxoM2YxdYYr7qUqXSSV9rqoF9n5UMXXXajnMxUvKDJFv_3TyPaQtgB9-xjLrJbjOaDtxxV6d7UuKx1Yql70TGcggtpO_2Q2NQUIt97spofrjTxUv0XDpshEQexbXlY3s4r3cAastRuFunQWoAtTPZa6pC2-RDrAgeQ-KQK2VpTE4IWOEgfKsCsSU9nCTmsCUE9A8SHoZ7QLKFKCelDsP76ripz99wCWQUGcicVcNSIG30DA37aZMDfQe3iKDEUcalkxa5zTp-4JSTAsWQUAdwVrCAPXmBhDFi6jMuQNAX9PuxB_Vn9PO4JIjZPM-mIrwggjHY4CF0QrrxgOQevLrtkDOt2IAoRMz863vNOuEETMiYRcZwq_4-yPvbBK8NgHsnBX5n1AM7TCskkuAwAeE54qC80CRjZmPzpT_lJQ-hj-1OTRLpOgZHHN89iLExMvRJ9bbfI%3D*eyJpZCI6InRyYXZlbGxlcl9oZWFkZXIifQ%3D%3D
+          - generic [ref=e36]: S'inscrire
+        - link "Se connecter" [ref=e38] [cursor=pointer]:
+          - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=fr&aid=304142&bkng_action=book&prompt=signin&state=Ut4L5p4xcXYCNTWD7c2Gnt8p9I18lIsq1AflFMvL7f3etB2TGUnG5iy4dv-sCZk4VIrvDVhqa1ozL5bcRf0M_uHv4riPIJG1IoV6TdlmsBrbTRI3NSE7ka8vL6546-rcKKnpa3nh6isYTxNDdsADxGG3JIWHpXL0YbkaevUq5zP1iVx7cG8R1B2Ka3bRNwUor4BJ-bo9HgevU7vQevlFRMOMmlRejFcGtaWx3cAnbyAqRjVnNvLG0aYgzEPqx8UpSgktjJwc7nQQZim_PUrA4rq4yFuN4XSrvRY-p1TGsntLaby0Gj8PVvyduOx4rw2NB7cVs9NEy9iwZtm7OMnPGDvw8w6S073BHQNBD9VRZtU2Damq8RqR3JXCFvpG4n5z2I8P3W096hDXxZ2M5kwyB48U-1LvSsNa-sd9Y3_3lLqbgub8bjUDQ1LHAHnCbOUTfjXv9sL7VPEs13T_E91at1xGXSimO2XyJNSAQ36poYZiiWPRb0jT0CtUPFaziOR6uK8ILrb3BOLF0J9z2JxDYukwYkHjGZk3NYrLUU-fDeei5sVAz3IhWnefuX-YkUKGw6nNPvrmqQ7VBc8BnAiXrNGqXnghtFnRYkUoOOjkoGPxZifTtPsEpIeocwHYeABaBdWwHzX_QHK8_C4BgNSoZSDRMqf56Z9xNtOlZJCQH7tYKYpomWVHGwG3YxSAl97dnKSkBufbthr3xNeigb24ugJN-N5mBIWzMDVwDqWYWGyUPgSrNz-lFhgSH9t6YyaoafP4s4AeijDw8bQpEYNB9wDBTEw0eXtH7mnPI_bLDjz8GMrfQ-EXHDZSCsOcR8jugi5RGI8b2NKYOGOOfe5ya5-YjSqyoE10FghxJOTHFqUjI7RWD-pn3vxoB2a757t4v_TzbK4tcSfZUdsMCdKHBiognGhJnY95hzS3YFqzCB_Hq3_JWHfILdUooy2JcYBogzucQTm-jKnpOk_OAio1Oyn94UVWY531JpnZ89YQ0Ys0_oiKsEgWIM_DiP3_uq6R4X1TjYglzA0mUte7SzncD--2PBumZL9r8ku1DIA_u3u3SJIn4em1fltmuatS7tVGkRS1Rnf1-wPr-v_x2NQexkivW1OIe8rnmYyxi1D6cbowPOniLku1T2HnNsG8GVGpwL8wbvoD1VVgfhaTKvK8cjxCcs62zQp_CVkJU6pZFLjcMtjH7G38TtOh0z58-wLNSWm1nsQLfyy5-nZchssC75A0JGfT-jDgmPPVdKCSVgReLFc3hJXjklN-pWT9cYY21TLr7RMLiOuNYba1RRxvNtbBnFnTb5ZvYL3e1yYxLYZeBZcYCjQKcHH4IiVrx3urh5e59b7Mc2qq9jHes6rhWEx3PZezK_8Ri6k7xLIf0Tj7TBiDG0AQb4MkArMpoyp9iKLwoCWXv8JHuD4Hx7cI-Mno3c6OiLpV-y3YxG1tFgr6Q-0ns_9jkw5M_ChX3doRPexhYIu83swpZL31ZmZ3uUYmt5Ucgp0BpNLEH6iv0cCopUBeFsMluUgKnIZbp4Zc9vAE-nCqlE8pEX-bbwxoM2YxdYYr7qUqXSSV9rqoF9n5UMXXXajnMxUvKDJFv_3TyPaQtgB9-xjLrJbjOaDtxxV6d7UuKx1Yql70TGcggtpO_2Q2NQUIt97spofrjTxUv0XDpshEQexbXlY3s4r3cAastRuFunQWoAtTPZa6pC2-RDrAgeQ-KQK2VpTE4IWOEgfKsCsSU9nCTmsCUE9A8SHoZ7QLKFKCelDsP76ripz99wCWQUGcicVcNSIG30DA37aZMDfQe3iKDEUcalkxa5zTp-4JSTAsWQUAdwVrCAPXmBhDFi6jMuQNAX9PuxB_Vn9PO4JIjZPM-mIrwggjHY4CF0QrrxgOQevLrtkDOt2IAoRMz863vNOuEETMiYRcZwq_4-yPvbBK8NgHsnBX5n1AM7TCskkuAwAeE54qC80CRjZmPzpT_lJQ-hj-1OTRLpOgZHHN89iLExMvRJ9bbfI%3D*eyJpZCI6InRyYXZlbGxlcl9oZWFkZXIifQ%3D%3D
+          - generic [ref=e39]: Se connecter
+  - generic [ref=e42]:
+    - generic "Suivi étape par étape de l’avancement de la commande." [ref=e47]:
+      - list [ref=e48]:
+        - listitem [ref=e49]:
+          - generic [ref=e51]:
+            - img [ref=e53]
+            - generic [ref=e55]: "1"
+          - strong [ref=e56]: Votre selection
+        - listitem [ref=e58]:
+          - generic [ref=e59]: "2"
+          - strong [ref=e60]: Vos informations
+        - listitem [ref=e62]:
+          - generic [ref=e63]: "3"
+          - strong [ref=e64]: Finaliser la réservation
+    - generic [ref=e65]:
+      - complementary [ref=e66]:
+        - generic [ref=e67]:
+          - generic [ref=e76]:
+            - generic [ref=e77]:
+              - heading "SO/ Paris Hotel" [level=1] [ref=e79]
+              - generic [ref=e81]:
+                - img "5 étoiles sur 5." [ref=e85]:
+                  - generic [ref=e86]:
+                    - img [ref=e88]
+                    - img [ref=e91]
+                  - generic [ref=e93]:
+                    - img [ref=e95]
+                    - img [ref=e98]
+                  - generic [ref=e100]:
+                    - img [ref=e102]
+                    - img [ref=e105]
+                  - generic [ref=e107]:
+                    - img [ref=e109]
+                    - img [ref=e112]
+                  - generic [ref=e114]:
+                    - img [ref=e116]
+                    - img [ref=e119]
+                - img [ref=e124]
+            - generic [ref=e126]:
+              - generic [ref=e127]:
+                - button "10 rue Agrippa d Aubigne, 4e arr., 75004 Paris, France" [ref=e129] [cursor=pointer]:
+                  - generic [ref=e130]: 10 rue Agrippa d Aubigne, 4e arr., 75004 Paris, France
+                - generic [ref=e131]: Excellent emplacement — 9.1
+              - generic [ref=e133]:
+                - generic [ref=e134]: Avec une note de 9.0
+                - generic [ref=e135]: "9.0"
+                - generic [ref=e136]: fabuleux
+                - generic [ref=e137]:
+                  - generic [ref=e138]: Fabuleux
+                  - generic [ref=e139]: · 1 174 commentaires
+              - list [ref=e141]:
+                - listitem [ref=e142]:
+                  - generic [ref=e143]:
+                    - img [ref=e145]
+                    - generic [ref=e147]: Animaux domestiques admis
+                - listitem [ref=e148]:
+                  - generic [ref=e149]:
+                    - img [ref=e151]
+                    - generic [ref=e153]: Connexion Wi-Fi gratuite
+                - listitem [ref=e154]:
+                  - generic [ref=e155]:
+                    - img [ref=e157]
+                    - generic [ref=e159]: Parking
+                - listitem [ref=e160]:
+                  - generic [ref=e161]:
+                    - img [ref=e163]
+                    - generic [ref=e165]: Restaurant
+          - generic [ref=e168]:
+            - heading "Les détails de votre réservation" [level=2] [ref=e170]
+            - generic [ref=e171]:
+              - generic [ref=e173]:
+                - time [ref=e174]:
+                  - heading "Arrivée" [level=3] [ref=e175]
+                  - generic [ref=e176]: ven. 24 avr. 2026
+                  - generic [ref=e177]: À partir de 15:00
+                - separator [ref=e179]
+                - time [ref=e180]:
+                  - heading "Départ" [level=3] [ref=e181]
+                  - generic [ref=e182]: dim. 26 avr. 2026
+                  - generic [ref=e183]: Jusqu'à 12:00
+              - generic [ref=e185]:
+                - img [ref=e187]
+                - text: L’arrivée est prévue aujourd'hui !
+            - separator [ref=e190]
+            - generic [ref=e191]:
+              - generic [ref=e192]:
+                - generic [ref=e193]:
+                  - generic [ref=e194]: Vous avez sélectionné
+                  - generic [ref=e195]: 2 nuits, 1 chambre pour 2 adultes
+                - list [ref=e196]:
+                  - listitem [ref=e197]:
+                    - generic [ref=e198]: 1 x Chambre Collection - Vue sur Cour
+              - link "Modifier la sélection" [ref=e201] [cursor=pointer]:
+                - /url: https://www.booking.com/hotel/fr/so-paris.fr.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKl16nPBsACAdICJDQ2ODdkOGFkLTU3NDctNDVkOC1iZDdhLWViM2VjZTFjMWEzZtgCAeACAQ&sid=b44870f556da3433405ee280a4a624c1&checkin=2026-04-24&checkout=2026-04-26&srpvid=8f27417a2fbb018f&=&room1=A%2CA&group_adults=2&no_rooms=1&from_bs2_modify=1
+                - generic [ref=e202]: Modifier la sélection
+          - generic [ref=e205]:
+            - generic [ref=e206]:
+              - heading "Récapitulatif du montant" [level=2] [ref=e207]
+              - generic [ref=e208]:
+                - generic [ref=e210]:
+                  - generic [ref=e212]: Tarif initial
+                  - generic [ref=e214]: TND 4 097,912
+                - generic [ref=e216]:
+                  - generic [ref=e217]:
+                    - generic [ref=e218]: Offre de Dernière Minute
+                    - generic [ref=e219]: Vous bénéficiez d'un tarif réduit proposé par l'établissement.
+                  - generic [ref=e221]: "- TND 409,791"
+            - generic [ref=e222]:
+              - generic [ref=e224]: TND 4 098
+              - generic [ref=e225]:
+                - generic [ref=e227]: Montant
+                - generic [ref=e230]: TND 3 688,121
+              - generic [ref=e231]:
+                - generic [ref=e233]: "+ taxes et frais : TND 158,498"
+                - generic [ref=e235]: "Dans la devise de l'établissement: € 1 089"
+            - generic [ref=e236]:
+              - heading "Informations sur le tarif" [level=2] [ref=e237]
+              - generic [ref=e238]:
+                - generic [ref=e241]:
+                  - generic [ref=e245]: Taxes et frais de TND 158,498 non compris
+                  - generic [ref=e248]:
+                    - generic [ref=e250]: Taxe de séjour
+                    - generic [ref=e252]: TND 158,498
+                - generic [ref=e259]: Le montant est converti en TND pour vous indiquer le prix approximatif. Vous paierez en EUR. Le taux de change peut varier avant votre paiement.
+                - generic [ref=e266]: N'oubliez pas que l'émetteur de votre carte peut vous facturer des frais sur les paiements en devises étrangères.
+                - button "Masquer les détails" [ref=e268] [cursor=pointer]:
+                  - generic [ref=e269]: Masquer les détails
+          - generic [ref=e272]:
+            - heading "Combien me coûtera l'annulation ?" [level=2] [ref=e274]
+            - generic [ref=e279]:
+              - generic [ref=e281]: Si vous annulez, vous paierez
+              - generic [ref=e283]: TND 1 829 *
+          - status [ref=e284]:
+            - img [ref=e286]
+            - generic [ref=e288]:
+              - generic [ref=e289]: "Disponibilité limitée à vos dates :"
+              - generic [ref=e290]: 3 hôtels 5 étoiles similaires sont déjà indisponibles sur notre site
+      - main [ref=e291]:
+        - generic [ref=e294]:
+          - img [ref=e297]
+          - generic [ref=e299]:
+            - link "Connectez-vous" [ref=e300] [cursor=pointer]:
+              - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=fr&aid=304142&bkng_action=book&prompt=signin&state=Ut4L5p4xcXYCNTWD7c2Gnt8p9I18lIsq1AflFMvL7f3etB2TGUnG5iy4dv-sCZk4VIrvDVhqa1ozL5bcRf0M_uHv4riPIJG1IoV6TdlmsBrbTRI3NSE7ka8vL6546-rcKKnpa3nh6isYTxNDdsADxGG3JIWHpXL0YbkaevUq5zP1iVx7cG8R1B2Ka3bRNwUor4BJ-bo9HgevU7vQevlFRMOMmlRejFcGtaWx3cAnbyAqRjVnNvLG0aYgzEPqx8UpSgktjJwc7nQQZim_PUrA4rq4yFuN4XSrvRY-p1TGsntLaby0Gj8PVvyduOx4rw2NB7cVs9NEy9iwZtm7OMnPGDvw8w6S073BHQNBD9VRZtU2Damq8RqR3JXCFvpG4n5z2I8P3W096hDXxZ2M5kwyB48U-1LvSsNa-sd9Y3_3lLqbgub8bjUDQ1LHAHnCbOUTfjXv9sL7VPEs13T_E91at1xGXSimO2XyJNSAQ36poYZiiWPRb0jT0CtUPFaziOR6uK8ILrb3BOLF0J9z2JxDYukwYkHjGZk3NYrLUU-fDeei5sVAz3IhWnefuX-YkUKGw6nNPvrmqQ7VBc8BnAiXrNGqXnghtFnRYkUoOOjkoGPxZifTtPsEpIeocwHYeABaBdWwHzX_QHK8_C4BgNSoZSDRMqf56Z9xNtOlZJCQH7tYKYpomWVHGwG3YxSAl97dnKSkBufbthr3xNeigb24ugJN-N5mBIWzMDVwDqWYWGyUPgSrNz-lFhgSH9t6YyaoafP4s4AeijDw8bQpEYNB9wDBTEw0eXtH7mnPI_bLDjz8GMrfQ-EXHDZSCsOcR8jugi5RGI8b2NKYOGOOfe5ya5-YjSqyoE10FghxJOTHFqUjI7RWD-pn3vxoB2a757t4v_TzbK4tcSfZUdsMCdKHBiognGhJnY95hzS3YFqzCB_Hq3_JWHfILdUooy2JcYBogzucQTm-jKnpOk_OAio1Oyn94UVWY531JpnZ89YQ0Ys0_oiKsEgWIM_DiP3_uq6R4X1TjYglzA0mUte7SzncD--2PBumZL9r8ku1DIA_u3u3SJIn4em1fltmuatS7tVGkRS1Rnf1-wPr-v_x2NQexkivW1OIe8rnmYyxi1D6cbowPOniLku1T2HnNsG8GVGpwL8wbvoD1VVgfhaTKvK8cjxCcs62zQp_CVkJU6pZFLjcMtjH7G38TtOh0z58-wLNSWm1nsQLfyy5-nZchssC75A0JGfT-jDgmPPVdKCSVgReLFc3hJXjklN-pWT9cYY21TLr7RMLiOuNYba1RRxvNtbBnFnTb5ZvYL3e1yYxLYZeBZcYCjQKcHH4IiVrx3urh5e59b7Mc2qq9jHes6rhWEx3PZezK_8Ri6k7xLIf0Tj7TBiDG0AQb4MkArMpoyp9iKLwoCWXv8JHuD4Hx7cI-Mno3c6OiLpV-y3YxG1tFgr6Q-0ns_9jkw5M_ChX3doRPexhYIu83swpZL31ZmZ3uUYmt5Ucgp0BpNLEH6iv0cCopUBeFsMluUgKnIZbp4Zc9vAE-nCqlE8pEX-bbwxoM2YxdYYr7qUqXSSV9rqoF9n5UMXXXajnMxUvKDJFv_3TyPaQtgB9-xjLrJbjOaDtxxV6d7UuKx1Yql70TGcggtpO_2Q2NQUIt97spofrjTxUv0XDpshEQexbXlY3s4r3cAastRuFunQWoAtTPZa6pC2-RDrAgeQ-KQK2VpTE4IWOEgfKsCsSU9nCTmsCUE9A8SHoZ7QLKFKCelDsP76ripz99wCWQUGcicVcNSIG30DA37aZMDfQe3iKDEUcalkxa5zTp-4JSTAsWQUAdwVrCAPXmBhDFi6jMuQNAX9PuxB_Vn9PO4JIjZPM-mIrwggjHY4CF0QrrxgOQevLrtkDOt2IAoRMz863vNOuEETMiYRcZwq_4-yPvbBK8NgHsnBX5n1AM7TCskkuAwAeE54qC80CRjZmPzpT_lJQ-hj-1OTRLpOgZHHN89iLExMvRJ9bbfI%3D*eyJpZCI6ImJwX2lubGluZSJ9
+            - text: pour réserver en utilisant vos informations déjà enregistrées ou
+            - link "inscrivez-vous" [ref=e301] [cursor=pointer]:
+              - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=fr&aid=304142&bkng_action=book&prompt=signin&state=Ut4L5p4xcXYCNTWD7c2Gnt8p9I18lIsq1AflFMvL7f3etB2TGUnG5iy4dv-sCZk4VIrvDVhqa1ozL5bcRf0M_uHv4riPIJG1IoV6TdlmsBrbTRI3NSE7ka8vL6546-rcKKnpa3nh6isYTxNDdsADxGG3JIWHpXL0YbkaevUq5zP1iVx7cG8R1B2Ka3bRNwUor4BJ-bo9HgevU7vQevlFRMOMmlRejFcGtaWx3cAnbyAqRjVnNvLG0aYgzEPqx8UpSgktjJwc7nQQZim_PUrA4rq4yFuN4XSrvRY-p1TGsntLaby0Gj8PVvyduOx4rw2NB7cVs9NEy9iwZtm7OMnPGDvw8w6S073BHQNBD9VRZtU2Damq8RqR3JXCFvpG4n5z2I8P3W096hDXxZ2M5kwyB48U-1LvSsNa-sd9Y3_3lLqbgub8bjUDQ1LHAHnCbOUTfjXv9sL7VPEs13T_E91at1xGXSimO2XyJNSAQ36poYZiiWPRb0jT0CtUPFaziOR6uK8ILrb3BOLF0J9z2JxDYukwYkHjGZk3NYrLUU-fDeei5sVAz3IhWnefuX-YkUKGw6nNPvrmqQ7VBc8BnAiXrNGqXnghtFnRYkUoOOjkoGPxZifTtPsEpIeocwHYeABaBdWwHzX_QHK8_C4BgNSoZSDRMqf56Z9xNtOlZJCQH7tYKYpomWVHGwG3YxSAl97dnKSkBufbthr3xNeigb24ugJN-N5mBIWzMDVwDqWYWGyUPgSrNz-lFhgSH9t6YyaoafP4s4AeijDw8bQpEYNB9wDBTEw0eXtH7mnPI_bLDjz8GMrfQ-EXHDZSCsOcR8jugi5RGI8b2NKYOGOOfe5ya5-YjSqyoE10FghxJOTHFqUjI7RWD-pn3vxoB2a757t4v_TzbK4tcSfZUdsMCdKHBiognGhJnY95hzS3YFqzCB_Hq3_JWHfILdUooy2JcYBogzucQTm-jKnpOk_OAio1Oyn94UVWY531JpnZ89YQ0Ys0_oiKsEgWIM_DiP3_uq6R4X1TjYglzA0mUte7SzncD--2PBumZL9r8ku1DIA_u3u3SJIn4em1fltmuatS7tVGkRS1Rnf1-wPr-v_x2NQexkivW1OIe8rnmYyxi1D6cbowPOniLku1T2HnNsG8GVGpwL8wbvoD1VVgfhaTKvK8cjxCcs62zQp_CVkJU6pZFLjcMtjH7G38TtOh0z58-wLNSWm1nsQLfyy5-nZchssC75A0JGfT-jDgmPPVdKCSVgReLFc3hJXjklN-pWT9cYY21TLr7RMLiOuNYba1RRxvNtbBnFnTb5ZvYL3e1yYxLYZeBZcYCjQKcHH4IiVrx3urh5e59b7Mc2qq9jHes6rhWEx3PZezK_8Ri6k7xLIf0Tj7TBiDG0AQb4MkArMpoyp9iKLwoCWXv8JHuD4Hx7cI-Mno3c6OiLpV-y3YxG1tFgr6Q-0ns_9jkw5M_ChX3doRPexhYIu83swpZL31ZmZ3uUYmt5Ucgp0BpNLEH6iv0cCopUBeFsMluUgKnIZbp4Zc9vAE-nCqlE8pEX-bbwxoM2YxdYYr7qUqXSSV9rqoF9n5UMXXXajnMxUvKDJFv_3TyPaQtgB9-xjLrJbjOaDtxxV6d7UuKx1Yql70TGcggtpO_2Q2NQUIt97spofrjTxUv0XDpshEQexbXlY3s4r3cAastRuFunQWoAtTPZa6pC2-RDrAgeQ-KQK2VpTE4IWOEgfKsCsSU9nCTmsCUE9A8SHoZ7QLKFKCelDsP76ripz99wCWQUGcicVcNSIG30DA37aZMDfQe3iKDEUcalkxa5zTp-4JSTAsWQUAdwVrCAPXmBhDFi6jMuQNAX9PuxB_Vn9PO4JIjZPM-mIrwggjHY4CF0QrrxgOQevLrtkDOt2IAoRMz863vNOuEETMiYRcZwq_4-yPvbBK8NgHsnBX5n1AM7TCskkuAwAeE54qC80CRjZmPzpT_lJQ-hj-1OTRLpOgZHHN89iLExMvRJ9bbfI%3D*eyJpZCI6ImJwX2lubGluZSJ9
+            - text: pour gérer vos réservations où que vous soyez !
+        - generic [ref=e302]:
+          - generic [ref=e305]:
+            - heading "Saisissez vos coordonnées" [level=2] [ref=e307]
+            - generic [ref=e310]:
+              - img [ref=e313]
+              - generic [ref=e317]:
+                - text: Vous y êtes presque ! Complétez simplement les informations requises
+                - strong [ref=e318]: "*"
+                - text: .
+            - generic [ref=e320]:
+              - generic [ref=e322]:
+                - text: Prénom
+                - generic [ref=e325]: "*"
+              - textbox "Prénom *" [ref=e328]:
+                - /placeholder: ""
+            - generic [ref=e330]:
+              - generic [ref=e332]:
+                - text: Nom
+                - generic [ref=e335]: "*"
+              - textbox "Nom *" [ref=e338]:
+                - /placeholder: ""
+            - generic [ref=e340]:
+              - generic [ref=e342]:
+                - text: Adresse e-mail
+                - generic [ref=e345]: "*"
+              - textbox "Adresse e-mail *" [ref=e348]:
+                - /placeholder: ""
+              - alert [ref=e349]: L'e-mail de confirmation sera envoyé à cette adresse
+            - generic [ref=e351]:
+              - generic [ref=e353]:
+                - text: Pays/région
+                - generic [ref=e356]: "*"
+              - generic [ref=e357]:
+                - combobox "Pays/région *" [ref=e358] [cursor=pointer]:
+                  - option "Sélectionner un pays ou une région" [disabled]
+                  - option "Abkhazie,Géorgie"
+                  - option "Afghanistan"
+                  - option "Afrique du Sud"
+                  - option "Albanie"
+                  - option "Algérie"
+                  - option "Allemagne"
+                  - option "Andorre"
+                  - option "Angola"
+                  - option "Anguilla"
+                  - option "Antarctique"
+                  - option "Antigua-et-Barbuda"
+                  - option "Antilles néerlandaises"
+                  - option "Arabie Saoudite"
+                  - option "Argentine"
+                  - option "Arménie"
+                  - option "Aruba"
+                  - option "Australie"
+                  - option "Autriche"
+                  - option "Azerbaïdjan"
+                  - option "Bahamas"
+                  - option "Bahreïn"
+                  - option "Bangladesh"
+                  - option "Barbades"
+                  - option "Belgique"
+                  - option "Belize"
+                  - option "Bermudes"
+                  - option "Bhoutan"
+                  - option "Biélorussie"
+                  - option "Bolivie"
+                  - option "Bonaire, Saint-Eustache et Saba"
+                  - option "Bosnie-Herzégovine"
+                  - option "Botswana"
+                  - option "Brunei"
+                  - option "Brésil"
+                  - option "Bulgarie"
+                  - option "Burkina Faso"
+                  - option "Burundi"
+                  - option "Bénin"
+                  - option "Cambodge"
+                  - option "Cameroun"
+                  - option "Canada"
+                  - option "Cap Vert"
+                  - option "Chili"
+                  - option "Chine"
+                  - option "Chypre"
+                  - option "Chypre du Nord"
+                  - option "Colombie"
+                  - option "Comores"
+                  - option "Congo"
+                  - option "Corée du Sud"
+                  - option "Costa Rica"
+                  - option "Croatie"
+                  - option "Curaçao"
+                  - option "Côte-d'Ivoire"
+                  - option "Danemark"
+                  - option "Djibouti"
+                  - option "Dominique"
+                  - option "Espagne"
+                  - option "Estonie"
+                  - option "Eswatini"
+                  - option "Fidji"
+                  - option "Finlande"
+                  - option "France"
+                  - option "Gabon"
+                  - option "Gambie"
+                  - option "Ghana"
+                  - option "Gibraltar"
+                  - option "Groenland"
+                  - option "Grèce"
+                  - option "Guadeloupe"
+                  - option "Guam"
+                  - option "Guatemala"
+                  - option "Guernesey"
+                  - option "Guinée"
+                  - option "Guinée équatoriale"
+                  - option "Guinée-Bissau"
+                  - option "Guyana"
+                  - option "Guyane française"
+                  - option "Géorgie"
+                  - option "Géorgie du Sud et les Îles Sandwich du Sud"
+                  - option "Haïti"
+                  - option "Honduras"
+                  - option "Hong Kong"
+                  - option "Hongrie"
+                  - option "Inde"
+                  - option "Indonésie"
+                  - option "Irak"
+                  - option "Irlande"
+                  - option "Islande"
+                  - option "Israël"
+                  - option "Italie"
+                  - option "Jamaïque"
+                  - option "Japon"
+                  - option "Jersey"
+                  - option "Jordanie"
+                  - option "Kazakhstan"
+                  - option "Kenya"
+                  - option "Kirghizistan"
+                  - option "Kiribati"
+                  - option "Kosovo"
+                  - option "Koweït"
+                  - option "La Grenade"
+                  - option "La Réunion"
+                  - option "Laos"
+                  - option "Le Salvador"
+                  - option "Lesotho"
+                  - option "Lettonie"
+                  - option "Liban"
+                  - option "Liberia"
+                  - option "Libye"
+                  - option "Liechtenstein"
+                  - option "Lituanie"
+                  - option "Luxembourg"
+                  - option "Macao"
+                  - option "Macédoine du Nord"
+                  - option "Madagascar"
+                  - option "Malaisie"
+                  - option "Malawi"
+                  - option "Maldives"
+                  - option "Mali"
+                  - option "Malte"
+                  - option "Maroc"
+                  - option "Martinique"
+                  - option "Mauritanie"
+                  - option "Mayotte"
+                  - option "Mexique"
+                  - option "Micronésie"
+                  - option "Moldavie"
+                  - option "Monaco"
+                  - option "Mongolie"
+                  - option "Montserrat"
+                  - option "Monténégro"
+                  - option "Mozambique"
+                  - option "Myanmar"
+                  - option "Namibie"
+                  - option "Nauru"
+                  - option "Nicaragua"
+                  - option "Niger"
+                  - option "Nigeria"
+                  - option "Niue"
+                  - option "Norvège"
+                  - option "Nouvelle-Calédonie"
+                  - option "Nouvelle-Zélande"
+                  - option "Népal"
+                  - option "Oman"
+                  - option "Ouganda"
+                  - option "Ouzbékistan"
+                  - option "Pakistan"
+                  - option "Palaos"
+                  - option "Palestine"
+                  - option "Panama"
+                  - option "Papouasie-Nouvelle-Guinée"
+                  - option "Paraguay"
+                  - option "Pays-Bas"
+                  - option "Philippines"
+                  - option "Pologne"
+                  - option "Polynésie française"
+                  - option "Porto Rico"
+                  - option "Portugal"
+                  - option "Pérou"
+                  - option "Qatar"
+                  - option "Roumanie"
+                  - option "Royaume-Uni"
+                  - option "Russie"
+                  - option "Rwanda"
+                  - option "République Centrafricaine"
+                  - option "République dominicaine"
+                  - option "République démocratique du Congo"
+                  - option "République tchèque"
+                  - option "Sahara occidental"
+                  - option "Saint Kitts et Nevis"
+                  - option "Saint-Barthélemy"
+                  - option "Saint-Marin"
+                  - option "Saint-Martin (Antilles françaises)"
+                  - option "Saint-Pierre-et-Miquelon"
+                  - option "Saint-Vincent-et-les-Grenadines"
+                  - option "Sainte-Hélène"
+                  - option "Sainte-Lucie"
+                  - option "Samoa"
+                  - option "Samoa américaines"
+                  - option "Serbie"
+                  - option "Serbie et Monténégro"
+                  - option "Seychelles"
+                  - option "Sierra Leone"
+                  - option "Singapour"
+                  - option "Sint Maarten"
+                  - option "Slovaquie"
+                  - option "Slovénie"
+                  - option "Somalie"
+                  - option "Soudan"
+                  - option "Soudan du Sud"
+                  - option "Sri Lanka"
+                  - option "Suisse"
+                  - option "Suriname"
+                  - option "Suède"
+                  - option "Svalbard et Jan Mayen"
+                  - option "São Tomé e Príncipe"
+                  - option "Sénégal"
+                  - option "Tadjikistan"
+                  - option "Tanzanie"
+                  - option "Taïwan"
+                  - option "Tchad"
+                  - option "Terres Australes françaises"
+                  - option "Territoire britannique de l'océan Indien"
+                  - option "Thaïlande"
+                  - option "Timor oriental"
+                  - option "Togo"
+                  - option "Tonga"
+                  - option "Trinité et Tobago"
+                  - option "Tunisie" [selected]
+                  - option "Turkmenistan"
+                  - option "Turquie"
+                  - option "Tuvalu"
+                  - option "Ukraine"
+                  - option "Uruguay"
+                  - option "Vanuatu"
+                  - option "Vatican"
+                  - option "Vietnam"
+                  - option "Vénézuela"
+                  - option "Wallis-et-Futuna"
+                  - option "Yémen"
+                  - option "Zambie"
+                  - option "Zimbabwe"
+                  - option "Égypte"
+                  - option "Émirats arabes unis"
+                  - option "Équateur"
+                  - option "Érythrée"
+                  - option "États-Unis"
+                  - option "Éthiopie"
+                  - option "Île Bouvet"
+                  - option "Île Christmas"
+                  - option "Île Maurice"
+                  - option "Île Norfolk"
+                  - option "Île de Man"
+                  - option "Îles Caïmans"
+                  - option "Îles Cocos"
+                  - option "Îles Cook"
+                  - option "Îles Falkland (Malouines)"
+                  - option "Îles Féroé"
+                  - option "Îles Heard et McDonald"
+                  - option "Îles Mariannes du Nord"
+                  - option "Îles Marshall"
+                  - option "Îles Mineures Éloignées des États-Unis"
+                  - option "Îles Pitcairn"
+                  - option "Îles Salomon"
+                  - option "Îles Tokelau"
+                  - option "Îles Turques-et-Caïques"
+                  - option "Îles Vierges (Royaume-Uni)"
+                  - option "Îles Vierges (États-Unis)"
+                - generic:
+                  - generic:
+                    - img
+            - generic [ref=e360]:
+              - generic [ref=e362]:
+                - text: Numéro de téléphone
+                - generic [ref=e363]: "*"
+              - generic [ref=e365]:
+                - generic [ref=e367]:
+                  - combobox "Sélectionnez votre pays ou région." [ref=e368]:
+                    - option "Abkhazie,Géorgie +995"
+                    - option "Afghanistan +93"
+                    - option "Afrique du Sud +27"
+                    - option "Albanie +355"
+                    - option "Algérie +213"
+                    - option "Allemagne +49"
+                    - option "Andorre +376"
+                    - option "Angola +244"
+                    - option "Anguilla +1"
+                    - option "Antarctique +672"
+                    - option "Antigua-et-Barbuda +1"
+                    - option "Antilles néerlandaises +599"
+                    - option "Arabie Saoudite +966"
+                    - option "Argentine +54"
+                    - option "Arménie +374"
+                    - option "Aruba +297"
+                    - option "Australie +61"
+                    - option "Autriche +43"
+                    - option "Azerbaïdjan +994"
+                    - option "Bahamas +1"
+                    - option "Bahreïn +973"
+                    - option "Bangladesh +880"
+                    - option "Barbades +1"
+                    - option "Belgique +32"
+                    - option "Belize +501"
+                    - option "Bermudes +1"
+                    - option "Bhoutan +975"
+                    - option "Biélorussie +375"
+                    - option "Bolivie +591"
+                    - option "Bonaire, Saint-Eustache et Saba +599"
+                    - option "Bosnie-Herzégovine +387"
+                    - option "Botswana +267"
+                    - option "Brunei +673"
+                    - option "Brésil +55"
+                    - option "Bulgarie +359"
+                    - option "Burkina Faso +226"
+                    - option "Burundi +257"
+                    - option "Bénin +229"
+                    - option "Cambodge +855"
+                    - option "Cameroun +237"
+                    - option "Canada +1"
+                    - option "Cap Vert +238"
+                    - option "Chili +56"
+                    - option "Chine +86"
+                    - option "Chypre +357"
+                    - option "Chypre du Nord +357"
+                    - option "Colombie +57"
+                    - option "Comores +269"
+                    - option "Congo +242"
+                    - option "Corée du Nord +850"
+                    - option "Corée du Sud +82"
+                    - option "Costa Rica +506"
+                    - option "Croatie +385"
+                    - option "Curaçao +599"
+                    - option "Côte-d'Ivoire +225"
+                    - option "Danemark +45"
+                    - option "Djibouti +253"
+                    - option "Dominique +1"
+                    - option "Espagne +34"
+                    - option "Estonie +372"
+                    - option "Eswatini +268"
+                    - option "Fidji +679"
+                    - option "Finlande +358"
+                    - option "France +33"
+                    - option "Gabon +241"
+                    - option "Gambie +220"
+                    - option "Ghana +233"
+                    - option "Gibraltar +350"
+                    - option "Groenland +299"
+                    - option "Grèce +30"
+                    - option "Guadeloupe +590"
+                    - option "Guam +1"
+                    - option "Guatemala +502"
+                    - option "Guernesey +44"
+                    - option "Guinée +224"
+                    - option "Guinée équatoriale +240"
+                    - option "Guinée-Bissau +245"
+                    - option "Guyana +592"
+                    - option "Guyane française +594"
+                    - option "Géorgie +995"
+                    - option "Géorgie du Sud et les Îles Sandwich du Sud +500"
+                    - option "Haïti +509"
+                    - option "Honduras +504"
+                    - option "Hong Kong +852"
+                    - option "Hongrie +36"
+                    - option "Inde +91"
+                    - option "Indonésie +62"
+                    - option "Irak +964"
+                    - option "Iran +98"
+                    - option "Irlande +353"
+                    - option "Islande +354"
+                    - option "Israël +972"
+                    - option "Italie +39"
+                    - option "Jamaïque +1"
+                    - option "Japon +81"
+                    - option "Jersey +44"
+                    - option "Jordanie +962"
+                    - option "Kazakhstan +7"
+                    - option "Kenya +254"
+                    - option "Kirghizistan +996"
+                    - option "Kiribati +686"
+                    - option "Kosovo +383"
+                    - option "Koweït +965"
+                    - option "La Grenade +1"
+                    - option "La Réunion +262"
+                    - option "Laos +856"
+                    - option "Le Salvador +503"
+                    - option "Lesotho +266"
+                    - option "Lettonie +371"
+                    - option "Liban +961"
+                    - option "Liberia +231"
+                    - option "Libye +218"
+                    - option "Liechtenstein +423"
+                    - option "Lituanie +370"
+                    - option "Luxembourg +352"
+                    - option "Macao +853"
+                    - option "Macédoine du Nord +389"
+                    - option "Madagascar +261"
+                    - option "Malaisie +60"
+                    - option "Malawi +265"
+                    - option "Maldives +960"
+                    - option "Mali +223"
+                    - option "Malte +356"
+                    - option "Maroc +212"
+                    - option "Martinique +596"
+                    - option "Mauritanie +222"
+                    - option "Mayotte +269"
+                    - option "Mexique +52"
+                    - option "Micronésie +691"
+                    - option "Moldavie +373"
+                    - option "Monaco +377"
+                    - option "Mongolie +976"
+                    - option "Montserrat +1"
+                    - option "Monténégro +382"
+                    - option "Mozambique +258"
+                    - option "Myanmar +95"
+                    - option "Namibie +264"
+                    - option "Nauru +674"
+                    - option "Nicaragua +505"
+                    - option "Niger +227"
+                    - option "Nigeria +234"
+                    - option "Niue +683"
+                    - option "Norvège +47"
+                    - option "Nouvelle-Calédonie +687"
+                    - option "Nouvelle-Zélande +64"
+                    - option "Népal +977"
+                    - option "Oman +968"
+                    - option "Ouganda +256"
+                    - option "Ouzbékistan +998"
+                    - option "Pakistan +92"
+                    - option "Palaos +680"
+                    - option "Palestine +970"
+                    - option "Panama +507"
+                    - option "Papouasie-Nouvelle-Guinée +675"
+                    - option "Paraguay +595"
+                    - option "Pays-Bas +31"
+                    - option "Philippines +63"
+                    - option "Pologne +48"
+                    - option "Polynésie française +689"
+                    - option "Porto Rico +1"
+                    - option "Portugal +351"
+                    - option "Pérou +51"
+                    - option "Qatar +974"
+                    - option "Roumanie +40"
+                    - option "Royaume-Uni +44"
+                    - option "Russie +7"
+                    - option "Rwanda +250"
+                    - option "République Centrafricaine +236"
+                    - option "République dominicaine +1"
+                    - option "République démocratique du Congo +243"
+                    - option "République tchèque +420"
+                    - option "Sahara occidental +212"
+                    - option "Saint Kitts et Nevis +1"
+                    - option "Saint-Barthélemy +590"
+                    - option "Saint-Marin +378"
+                    - option "Saint-Martin (Antilles françaises) +590"
+                    - option "Saint-Pierre-et-Miquelon +508"
+                    - option "Saint-Vincent-et-les-Grenadines +1"
+                    - option "Sainte-Hélène +290"
+                    - option "Sainte-Lucie +1"
+                    - option "Samoa +685"
+                    - option "Samoa américaines +1"
+                    - option "Serbie +381"
+                    - option "Serbie et Monténégro"
+                    - option "Seychelles +248"
+                    - option "Sierra Leone +232"
+                    - option "Singapour +65"
+                    - option "Sint Maarten +1"
+                    - option "Slovaquie +421"
+                    - option "Slovénie +386"
+                    - option "Somalie +252"
+                    - option "Soudan +249"
+                    - option "Soudan du Sud +211"
+                    - option "Sri Lanka +94"
+                    - option "Suisse +41"
+                    - option "Suriname +597"
+                    - option "Suède +46"
+                    - option "Svalbard et Jan Mayen +378"
+                    - option "Syrie +963"
+                    - option "São Tomé e Príncipe +239"
+                    - option "Sénégal +221"
+                    - option "Tadjikistan +992"
+                    - option "Tanzanie +255"
+                    - option "Taïwan +886"
+                    - option "Tchad +235"
+                    - option "Terres Australes françaises +596"
+                    - option "Territoire britannique de l'océan Indien +246"
+                    - option "Thaïlande +66"
+                    - option "Timor oriental +670"
+                    - option "Togo +228"
+                    - option "Tonga +676"
+                    - option "Trinité et Tobago +1"
+                    - option "Tunisie +216" [selected]
+                    - option "Turkmenistan +993"
+                    - option "Turquie +90"
+                    - option "Tuvalu +688"
+                    - option "Ukraine +380"
+                    - option "Uruguay +598"
+                    - option "Vanuatu +678"
+                    - option "Vatican +379"
+                    - option "Vietnam +84"
+                    - option "Vénézuela +58"
+                    - option "Wallis-et-Futuna +681"
+                    - option "Yémen +967"
+                    - option "Zambie +260"
+                    - option "Zimbabwe +263"
+                    - option "Égypte +20"
+                    - option "Émirats arabes unis +971"
+                    - option "Équateur +593"
+                    - option "Érythrée +291"
+                    - option "États-Unis +1"
+                    - option "Éthiopie +251"
+                    - option "Île Bouvet +47"
+                    - option "Île Christmas +61"
+                    - option "Île Maurice +230"
+                    - option "Île Norfolk +672"
+                    - option "Île de Man +44"
+                    - option "Îles Caïmans +1"
+                    - option "Îles Cocos +61"
+                    - option "Îles Cook +682"
+                    - option "Îles Falkland (Malouines) +500"
+                    - option "Îles Féroé +298"
+                    - option "Îles Heard et McDonald +672"
+                    - option "Îles Mariannes du Nord +1"
+                    - option "Îles Marshall +692"
+                    - option "Îles Mineures Éloignées des États-Unis +1"
+                    - option "Îles Pitcairn +872"
+                    - option "Îles Salomon +677"
+                    - option "Îles Tokelau +690"
+                    - option "Îles Turques-et-Caïques +1"
+                    - option "Îles Vierges (Royaume-Uni) +1"
+                    - option "Îles Vierges (États-Unis) +1"
+                  - text: tn +216
+                  - img [ref=e369]
+                - textbox "Numéro de téléphone" [ref=e376]:
+                  - /placeholder: ""
+              - alert [ref=e377]: Pour vérifier votre réservation et pour que l’établissement vous contacte, si nécessaire
+            - generic [ref=e379]:
+              - checkbox "Oui, je souhaite recevoir une confirmation numérique gratuite (recommandé) Nous allons vous envoyer un lien de téléchargement de l'appli par SMS." [ref=e380]
+              - generic [ref=e381] [cursor=pointer]:
+                - img [ref=e384]
+                - generic [ref=e386]:
+                  - generic [ref=e387]: Oui, je souhaite recevoir une confirmation numérique gratuite (recommandé)
+                  - generic [ref=e388]: Nous allons vous envoyer un lien de téléchargement de l'appli par SMS.
+            - separator [ref=e390]
+            - group "Pour qui réservez-vous ? (facultatif)" [ref=e394]:
+              - generic [ref=e396]:
+                - text: Pour qui réservez-vous ?
+                - generic [ref=e399]: (facultatif)
+              - generic [ref=e400]:
+                - generic [ref=e401]:
+                  - radio "Je suis le client principal" [checked] [ref=e402]
+                  - generic [ref=e406] [cursor=pointer]: Je suis le client principal
+                - generic [ref=e407]:
+                  - radio "Je réserve pour un autre client" [ref=e408]
+                  - generic [ref=e412] [cursor=pointer]: Je réserve pour un autre client
+            - group "Vous voyagez pour le travail ? (facultatif)" [ref=e414]:
+              - generic [ref=e416]:
+                - text: Vous voyagez pour le travail ?
+                - generic [ref=e419]: (facultatif)
+              - generic [ref=e420]:
+                - generic [ref=e421]:
+                  - radio "Oui" [ref=e422]
+                  - generic [ref=e426] [cursor=pointer]: Oui
+                - generic [ref=e427]:
+                  - radio "Non" [ref=e428]
+                  - generic [ref=e432] [cursor=pointer]: Non
+          - generic [ref=e434]:
+            - heading "À savoir :" [level=2] [ref=e435]
+            - generic [ref=e436]:
+              - generic [ref=e437]:
+                - img [ref=e440]
+                - generic [ref=e442]: Aucun paiement n’est requis aujourd’hui. Vous paierez sur place.
+              - generic [ref=e443]:
+                - img [ref=e446]
+                - generic [ref=e448]: Profitez d’un départ à la mi-journée.
+          - generic [ref=e451]:
+            - generic [ref=e453]: Chambre Collection - Vue sur Cour
+            - generic [ref=e455]:
+              - generic [ref=e456]:
+                - generic [ref=e457]:
+                  - list [ref=e459]:
+                    - listitem
+                    - listitem [ref=e460]:
+                      - generic [ref=e462]:
+                        - img [ref=e465]
+                        - generic [ref=e470]: "Frais d'annulation : montant de la 1re nuit"
+                        - button [ref=e472] [cursor=pointer]:
+                          - img [ref=e475]
+                    - listitem [ref=e477]:
+                      - listitem [ref=e478]:
+                        - generic [ref=e479]:
+                          - img [ref=e481]
+                          - generic [ref=e484]:
+                            - generic [ref=e485]:
+                              - strong [ref=e486]: "Clients :"
+                              - text: 2 adultes
+                            - button [ref=e489] [cursor=pointer]:
+                              - img [ref=e491]
+                  - listitem [ref=e494]:
+                    - generic [ref=e495]:
+                      - img [ref=e497]
+                      - button "Modifier les informations sur le client principal" [ref=e502] [cursor=pointer]: Ajouter des informations sur le client principal
+                - generic [ref=e503]:
+                  - listitem [ref=e504]:
+                    - generic [ref=e505]:
+                      - img [ref=e507]
+                      - generic [ref=e511]: Hébergements d'une propreté irréprochable - 9.6
+                  - listitem [ref=e512]:
+                    - generic [ref=e513]:
+                      - img [ref=e515]
+                      - generic [ref=e519]: Non-fumeurs
+              - generic [ref=e520]:
+                - separator [ref=e521]
+                - group "Choisissez votre lit (sous réserve de disponibilité) :" [ref=e524]:
+                  - generic [ref=e528]:
+                    - strong [ref=e529]: Choisissez votre lit
+                    - text: "(sous réserve de disponibilité) :"
+                  - generic [ref=e530]:
+                    - generic [ref=e531]:
+                      - radio "1 très grand lit double" [ref=e532]
+                      - generic [ref=e538] [cursor=pointer]:
+                        - text: 1 très grand lit double
+                        - img [ref=e540]
+                    - generic [ref=e542]:
+                      - radio "2 lits simples" [ref=e543]
+                      - generic [ref=e549] [cursor=pointer]:
+                        - text: 2 lits simples
+                        - img [ref=e551]
+                        - img [ref=e554]
+          - generic [ref=e558]:
+            - heading "Options à ajouter à votre séjour" [level=2] [ref=e563]
+            - list "Options à ajouter à votre séjour" [ref=e564]:
+              - listitem [ref=e565]:
+                - generic [ref=e568]:
+                  - generic [ref=e569]:
+                    - generic [ref=e571]:
+                      - checkbox "Location de vélos pour les clients de Booking.com (sous réserve de disponibilité)" [ref=e572]
+                      - generic [ref=e573] [cursor=pointer]:
+                        - img [ref=e576]
+                        - generic [ref=e579]: Location de vélos pour les clients de Booking.com (sous réserve de disponibilité)
+                    - generic [ref=e583]: GRATUIT
+                  - generic [ref=e584]: Oui, nous souhaiterions utiliser des vélos GRATUITEMENT pendant notre séjour.
+              - listitem [ref=e585]:
+                - generic [ref=e587]:
+                  - generic [ref=e588]:
+                    - generic [ref=e591]:
+                      - checkbox "Je souhaite louer une voiture" [ref=e592]
+                      - generic [ref=e593] [cursor=pointer]:
+                        - img [ref=e596]
+                        - generic [ref=e599]: Je souhaite louer une voiture
+                    - generic [ref=e600]: Profitez pleinement de votre séjour et consultez des options de location de voitures sur votre confirmation de réservation.
+                  - img [ref=e603]
+              - listitem [ref=e605]:
+                - generic [ref=e607]:
+                  - generic [ref=e608]:
+                    - generic [ref=e611]:
+                      - checkbox "Vous souhaitez réserver un transfert ou une navette à l’avance ?" [ref=e612]
+                      - generic [ref=e613] [cursor=pointer]:
+                        - img [ref=e616]
+                        - generic [ref=e619]: Vous souhaitez réserver un transfert ou une navette à l’avance ?
+                    - generic [ref=e620]: Évitez les mauvaises surprises ! Faites le trajet entre l’aéroport et votre hébergement en toute tranquillité. Nous inclurons des propositions de transfert dans votre confirmation de réservation.
+                  - img [ref=e623]
+          - generic [ref=e627]:
+            - heading "Demandes spéciales" [level=2] [ref=e628]
+            - paragraph [ref=e629]: Les demandes spéciales ne peuvent pas être garanties mais l'établissement fera tout son possible pour les satisfaire. Vous pourrez toujours faire des demandes spéciales, même après avoir finalisé votre réservation !
+            - generic [ref=e630]:
+              - generic [ref=e632]:
+                - text: Veuillez écrire vos demandes en anglais ou en français.
+                - generic [ref=e633]: (facultatif)
+              - textbox "Veuillez écrire vos demandes en anglais ou en français. (facultatif)" [ref=e635]
+          - generic [ref=e638]:
+            - heading "Informations sur l'enregistrement" [level=2] [ref=e640]
+            - generic [ref=e641]:
+              - img [ref=e643]
+              - paragraph [ref=e646]: L'enregistrement sera ouvert pour votre hébergement à 15h00.
+            - generic [ref=e647]:
+              - img [ref=e649]
+              - paragraph [ref=e652]: Réception ouverte 24h/24 - Une aide à toute heure !
+            - generic [ref=e656]:
+              - generic [ref=e658]:
+                - paragraph [ref=e660]: Ajoutez votre heure d'arrivée prévue
+                - generic [ref=e663]: (facultatif)
+              - generic [ref=e664]:
+                - combobox "Ajoutez votre heure d'arrivée prévue (facultatif)" [ref=e665] [cursor=pointer]:
+                  - option "Veuillez sélectionner" [selected]
+                  - option "Je ne sais pas"
+                  - option "11h00 - 12h00"
+                  - option "12h00 - 13h00"
+                  - option "13h00 - 14h00"
+                  - option "14h00 - 15h00"
+                  - option "15h00 - 16h00"
+                  - option "16h00 - 17h00"
+                  - option "17h00 - 18h00"
+                  - option "18h00 - 19h00"
+                  - option "19h00 - 20h00"
+                  - option "20h00 - 21h00"
+                  - option "21h00 - 22h00"
+                  - option "22h00 - 23h00"
+                  - option "23h00 - 0h00"
+                  - option "0h00 - 1h00 (le jour suivant)"
+                  - option "1h00 - 2h00 (le jour suivant)"
+                - generic:
+                  - generic:
+                    - img
+              - alert [ref=e666]: L'heure indiquée se trouve dans le fuseau horaire de Paris
+          - generic [ref=e669]:
+            - generic [ref=e671]: Lits bébé et lits d'appoint
+            - list [ref=e673]:
+              - listitem [ref=e674]:
+                - generic [ref=e675]: Les demandes sont soumises à disponibilité
+              - listitem [ref=e676]:
+                - generic [ref=e677]: Les demandes doivent être confirmées par l'établissement
+              - listitem [ref=e678]:
+                - generic [ref=e679]: Les demandes peuvent engendrer des frais supplémentaires (sauf mention « Gratuit »)
+            - button "Lire les conditions relatives aux lits bébé et aux lits d'appoint" [ref=e681] [cursor=pointer]:
+              - generic [ref=e682]: Lire les conditions relatives aux lits bébé et aux lits d'appoint
+            - generic [ref=e684]: Ajouter à votre Chambre Collection - Vue sur Cour
+            - generic [ref=e687]:
+              - generic [ref=e688]:
+                - checkbox "Lit bébé Gratuit" [ref=e689]
+                - generic [ref=e690] [cursor=pointer]:
+                  - img [ref=e693]
+                  - generic [ref=e695]: Lit bébé
+                  - generic [ref=e698]: Gratuit
+              - option "0" [selected]
+              - option "1"
+              - option "2"
+              - option "3"
+          - generic [ref=e700]:
+            - button "Nous ajustons nos tarifs" [ref=e703] [cursor=pointer]:
+              - img [ref=e706]
+              - generic [ref=e708]: Nous ajustons nos tarifs
+            - 'button "Prochaine étape : dernières informations" [ref=e710] [cursor=pointer]':
+              - generic [ref=e711]: "Prochaine étape : dernières informations"
+              - img [ref=e713]
+          - button "Quelles sont les conditions de ma réservation ?" [ref=e718] [cursor=pointer]
+  - generic [ref=e722]:
+    - navigation [ref=e724]:
+      - list [ref=e725]:
+        - listitem [ref=e726]:
+          - link "À propos de Booking.com" [ref=e727] [cursor=pointer]:
+            - /url: http://www.booking.com/general.fr.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKl16nPBsACAdICJDQ2ODdkOGFkLTU3NDctNDVkOC1iZDdhLWViM2VjZTFjMWEzZtgCAeACAQ&sid=b44870f556da3433405ee280a4a624c1&srpvid=8f27417a2fbb018f&&tmpl=docs/about
+        - listitem [ref=e728]:
+          - text: "|"
+          - link "Aide du Service Clients" [ref=e729] [cursor=pointer]:
+            - /url: https://secure.booking.com/help.fr.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKl16nPBsACAdICJDQ2ODdkOGFkLTU3NDctNDVkOC1iZDdhLWViM2VjZTFjMWEzZtgCAeACAQ&sid=b44870f556da3433405ee280a4a624c1&srpvid=8f27417a2fbb018f&source=book_footer#/?source=book_footer
+        - listitem [ref=e730]:
+          - text: "|"
+          - link "Conditions de Service" [ref=e731] [cursor=pointer]:
+            - /url: http://www.booking.com/content/terms.fr.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKl16nPBsACAdICJDQ2ODdkOGFkLTU3NDctNDVkOC1iZDdhLWViM2VjZTFjMWEzZtgCAeACAQ&sid=b44870f556da3433405ee280a4a624c1&srpvid=8f27417a2fbb018f&
+        - listitem [ref=e732]:
+          - text: "|"
+          - link "Charte de confidentialité" [ref=e733] [cursor=pointer]:
+            - /url: http://www.booking.com/content/privacy.fr.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaOIBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKl16nPBsACAdICJDQ2ODdkOGFkLTU3NDctNDVkOC1iZDdhLWViM2VjZTFjMWEzZtgCAeACAQ&sid=b44870f556da3433405ee280a4a624c1&srpvid=8f27417a2fbb018f&
+    - generic [ref=e734]: Copyright © 1996–2026 Booking.com. Tous droits réservés.
+  - iframe [ref=e735]:
+    

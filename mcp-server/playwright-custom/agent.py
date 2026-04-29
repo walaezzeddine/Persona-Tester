@@ -37,11 +37,9 @@ def _env_truthy(name: str, default: bool = False) -> bool:
     return raw.strip().lower() in ("1", "true", "yes", "on")
 
 
-# Headless by default — backend runtimes typically don't have a display server,
-# and the MCP subprocess can't always inherit $DISPLAY reliably. Set
-# PLAYWRIGHT_SHOW_BROWSER=true to run headed (requires a working X/Wayland
-# server or xvfb).
-_DEFAULT_SHOW_BROWSER = _env_truthy("PLAYWRIGHT_SHOW_BROWSER", default=False)
+# Visible by default for script execution. Set PLAYWRIGHT_SHOW_BROWSER=false
+# only if you explicitly want a headless run.
+_DEFAULT_SHOW_BROWSER = _env_truthy("PLAYWRIGHT_SHOW_BROWSER", default=True)
 
 
 class PlaywrightTestAgent:
@@ -446,7 +444,11 @@ executionLog.push('Test completed successfully');
                 return result
 
             print(f"\n▶️  Step 3: Executing script in {browser_name}...")
-            executed = await self.execute_script(result["generated_script"], browser_name=browser_name)
+            executed = await self.execute_script(
+                result["generated_script"],
+                browser_name=browser_name,
+                show_browser=True,
+            )
             result["status"] = executed.get("status", "error")
             result["execution_log"] = executed.get("execution_log", [])
             result["screenshot_base64"] = executed.get("screenshot_base64")

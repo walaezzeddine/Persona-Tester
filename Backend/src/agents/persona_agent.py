@@ -479,7 +479,38 @@ Remember to respond in the exact format: Thought / Action / Target
             "When done, summarise what you did and the final outcome."
         )
 
-    def _compress_snapshot(self, raw: str, site_type: str = "other", max_chars: int = 8000, max_products: int = None) -> str:
+    def _strip_navbar_noise(self, raw: str) -> str:
+        """Remove repeated navbar elements that appear on every page."""
+        # Remove the tournament selector block.
+        raw = re.sub(
+            r'combobox "Tournament Select".*?(?=\n- |\Z)',
+            '',
+            raw,
+            flags=re.DOTALL,
+        )
+        # Remove unread messages noise.
+        raw = re.sub(
+            r'link "Unread Messages".*?generic "Number of Unread.*?\n',
+            '',
+            raw,
+            flags=re.DOTALL,
+        )
+        # Remove ad iframes.
+        raw = re.sub(
+            r'iframe \[ref=f\d+[^\]]*\].*?(?=\n- [a-z]|\Z)',
+            '',
+            raw,
+            flags=re.DOTALL,
+        )
+        # Remove googleadservices links.
+        raw = re.sub(
+            r'- /url: https://www\.googleadservices\.com.*?\n',
+            '',
+            raw,
+        )
+        return raw
+
+    def _compress_snapshot(self, raw: str, site_type: str = "other", max_chars: int = 12000, max_products: int = None) -> str:
         """Extract structured data from a Playwright MCP snapshot based on website type.
 
         For e-commerce: Finds product names, prices, and 'Add to cart' refs.
@@ -493,18 +524,29 @@ Remember to respond in the exact format: Thought / Action / Target
         if "\\n" in raw and ("'text':" in raw or "### " in raw):
             raw = raw.replace('\\n', '\n').replace("\\'", "'")
 
+        raw = self._strip_navbar_noise(raw)
+
         parts = []
 
         # ── Page header ────────────────────────────────────────
-        url_m = re.search(r'Page URL:\s*(.+)', raw)
-        title_m = re.search(r'Page Title:\s*(.+)', raw)
-        if url_m:
-            parts.append(f"URL: {url_m.group(1).strip()}")
-        if title_m:
-            parts.append(f"Title: {title_m.group(1).strip()}")
+        url_m = re.search(r'(?:Page URL|URL):\s*(.+)', raw)
+        title_m = re.search(r'(?:Page Title|Title):\s*(.+)', raw)
+        snapshot_url = url_m.group(1).strip() if url_m else ""
+        snapshot_title = title_m.group(1).strip() if title_m else ""
+        if snapshot_url:
+            parts.append(f"URL: {snapshot_url}")
+        if snapshot_title:
+            parts.append(f"Title: {snapshot_title}")
+
+        is_booking_snapshot = (
+            "booking.com" in snapshot_url.lower()
+            or "booking.com" in snapshot_title.lower()
+        )
 
         # ── Route based on site type ───────────────────────────
-        if site_type.lower() in ["e-commerce", "ecommerce", "shop"]:
+        if is_booking_snapshot:
+            parts.extend(self._extract_booking_data(raw))
+        elif site_type.lower() in ["e-commerce", "ecommerce", "shop"]:
             parts.extend(self._extract_ecommerce_data(raw, max_products))
         elif site_type.lower() in ["saas", "marketing", "software"]:
             parts.extend(self._extract_saas_marketing_data(raw))
@@ -785,10 +827,183 @@ Remember to respond in the exact format: Thought / Action / Target
 
         return parts
 
+    def _extract_booking_data(self, raw: str) -> list:
+        """Extract Booking.com-specific actionable elements while skipping sticky header noise."""
+        import re
+
+        parts = []
+        raw = self._strip_navbar_noise(raw)
+
+        # Sticky controls that dominate Booking snapshots but are rarely the target action.
+        skip_label_re = re.compile(
+            r"tarifs|langue|devise|adultes|enfant|chambre|date d'arriv|date de départ|effacer|accéder au contenu|connexion|s'inscrire|gérer vos voyages|voyages|enregistrements",
+            re.IGNORECASE,
+        )
+
+        promo_re = re.compile(
+            r"offres|deal|promotion|promo|économies|dernière minute|last minute|week-end|weekend|istanbul|turquie",
+            re.IGNORECASE,
+        )
+        search_input_re = re.compile(
+            r"où allez-vous|destination|where are you going|search|ville|city|lieu|place|date|check-in|check out|arrivée|départ",
+            re.IGNORECASE,
+        )
+        hotel_link_re = re.compile(
+            r"hotel|appartement|studio|auberge|hostel|résidence|suite|paris|zoku|istanbul",
+            re.IGNORECASE,
+        )
+        recent_search_re = re.compile(
+            r"\b(?:mon|ma|mes)?\s*recherche|\d+\s*personnes|ven\.|dim\.|lun\.|mar\.|mer\.|jeu\.|ven\.|sam\.|week-end|weekend",
+            re.IGNORECASE,
+        )
+        booking_cta_re = re.compile(
+            r"voir les disponibilit|je réserve|réserver|sélectionner|select room|availability|voir les chambres|choisir",
+            re.IGNORECASE,
+        )
+        calendar_day_re = re.compile(
+            r"\b(?:lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\b|\b(?:janvier|février|fevrier|mars|avril|mai|juin|juillet|août|aout|septembre|octobre|novembre|décembre|decembre)\b",
+            re.IGNORECASE,
+        )
+        date_flex_re = re.compile(
+            r"inclure les dates|flexible|plus ou moins|\d+\s*jour",
+            re.IGNORECASE,
+        )
+        sort_re = re.compile(
+            r"trier par|prix : plus bas|prix: plus bas|prix le plus bas|prix croissant|prix décroissant|lowest price|cheapest",
+            re.IGNORECASE,
+        )
+
+        links_found = re.findall(r'link\s+"([^"]+)"\s*\[ref=(e\d+)\]', raw)
+        buttons_found = re.findall(r'button\s+"([^"]*)".*?\[ref=(e\d+)\]', raw)
+        textboxes_found = re.findall(r'textbox\s+"([^"]*)".*?\[ref=(e\d+)\]', raw)
+        comboboxes_found = re.findall(r'combobox\s+"([^"]*)".*?\[ref=(e\d+)\]', raw)
+        searchboxes_found = re.findall(r'searchbox\s+"([^"]*)".*?\[ref=(e\d+)\]', raw)
+        generic_fields_found = re.findall(r'generic\s+"([^"]*)".*?\[ref=(e\d+)\]', raw)
+
+        promo_links = []
+        sort_controls = []
+        search_form = []
+        date_picker = []
+        date_flex_controls = []
+        hotel_links = []
+        ctas = []
+
+        for label, ref in textboxes_found + comboboxes_found + searchboxes_found + generic_fields_found:
+            s = (label or "").strip()
+            if not s:
+                continue
+            if search_input_re.search(s):
+                search_form.append(f'- search input "{s}" ref={ref}')
+
+        # Also surface the main search submit button on the homepage.
+        for label, ref in buttons_found:
+            s = (label or "").strip()
+            if not s:
+                continue
+            if date_flex_re.search(s):
+                date_flex_controls.append(f'- date flexibility "{s}" ref={ref}')
+                continue
+            if calendar_day_re.search(s):
+                date_picker.append(f'- calendar day "{s}" ref={ref}')
+                continue
+            if re.search(r"rechercher|search", s, re.IGNORECASE):
+                search_form.append(f'- search button "{s}" ref={ref}')
+
+        for label, ref in links_found:
+            s = (label or "").strip()
+            if not s or skip_label_re.search(s):
+                continue
+            if calendar_day_re.search(s):
+                date_picker.append(f'- calendar day "{s}" ref={ref}')
+                continue
+            if recent_search_re.search(s):
+                continue
+            if promo_re.search(s):
+                promo_links.append(f"- promo link \"{s}\" ref={ref}")
+                continue
+            if sort_re.search(s):
+                sort_controls.append(f"- sort link \"{s}\" ref={ref}")
+            if hotel_link_re.search(s):
+                hotel_links.append(f"- hotel link \"{s}\" ref={ref}")
+            if booking_cta_re.search(s):
+                ctas.append(f"- cta link \"{s}\" ref={ref}")
+
+        for label, ref in buttons_found:
+            s = (label or "").strip()
+            if not s or skip_label_re.search(s):
+                continue
+            if recent_search_re.search(s):
+                continue
+            if date_flex_re.search(s):
+                date_flex_controls.append(f'- date flexibility "{s}" ref={ref}')
+                continue
+            if calendar_day_re.search(s):
+                date_picker.append(f'- calendar day "{s}" ref={ref}')
+                continue
+            if promo_re.search(s):
+                promo_links.append(f"- promo button \"{s}\" ref={ref}")
+                continue
+            if sort_re.search(s):
+                sort_controls.append(f"- sort button \"{s}\" ref={ref}")
+            if booking_cta_re.search(s):
+                ctas.append(f"- cta button \"{s}\" ref={ref}")
+
+        # Promote the mobile deal-hunting path: Offers, promo cards, then hotels.
+        if promo_links:
+            unique_promos = list(dict.fromkeys(promo_links))
+            parts.append("PROMO DEALS:\n" + "\n".join(unique_promos[:10]))
+
+        if search_form:
+            unique_search = list(dict.fromkeys(search_form))
+            parts.append("SEARCH FORM:\n" + "\n".join(unique_search[:8]))
+
+        if date_picker:
+            unique_days = list(dict.fromkeys(date_picker))
+            parts.append("DATE PICKER (use these refs for check-in/check-out):\n" + "\n".join(unique_days[:20]))
+
+        if date_flex_controls:
+            unique_flex = list(dict.fromkeys(date_flex_controls))
+            parts.append("DATE FLEXIBILITY CONTROLS (NOT calendar days):\n" + "\n".join(unique_flex[:8]))
+
+        if sort_controls:
+            unique_sort = list(dict.fromkeys(sort_controls))
+            parts.append("SORT CONTROLS:\n" + "\n".join(unique_sort[:8]))
+
+        if hotel_links:
+            # Keep Istanbul / promo hotels first, recent-search cards later.
+            hotel_links = sorted(
+                list(dict.fromkeys(hotel_links)),
+                key=lambda line: (
+                    0 if re.search(r"istanbul|offres|promo|promotion", line, re.IGNORECASE) else 1,
+                    0 if re.search(r"paris ven\.|\d+ personnes|récent|recent", line, re.IGNORECASE) else 1,
+                ),
+            )
+            parts.append("HOTELS:\n" + "\n".join(hotel_links[:15]))
+
+        if ctas:
+            # Keep unique CTA lines and preserve order.
+            unique_ctas = list(dict.fromkeys(ctas))
+            parts.append("BOOKING CTAS:\n" + "\n".join(unique_ctas[:12]))
+
+        # As fallback, keep broader links but still filtered from sticky header controls.
+        if not hotel_links and not ctas and not promo_links:
+            fallback = []
+            for label, ref in links_found:
+                s = (label or "").strip()
+                if not s or skip_label_re.search(s):
+                    continue
+                fallback.append(f"- link \"{s}\" ref={ref}")
+            if fallback:
+                parts.append("LINKS:\n" + "\n".join(fallback[:20]))
+
+        return parts
+
     def _extract_generic_data(self, raw: str) -> list:
         """Generic fallback extraction for unknown site types."""
         import re
         parts = []
+
+        raw = self._strip_navbar_noise(raw)
 
         # ── FIRST: Detect cookie banner ────────────────────────
         # Look for cookie consent buttons that should be dismissed first
@@ -806,16 +1021,35 @@ Remember to respond in the exact format: Thought / Action / Target
         links = re.findall(r'link\s+"([^"]+)"\s*\[ref=(e\d+)\]', raw)
         textboxes = re.findall(r'textbox\s+"([^"]*)".*?\[ref=(e\d+)\]', raw)
 
-        if buttons:
-            btn_list = [f"- {label} ref={ref}" for label, ref in buttons[:5]]
+        # Drop common sticky header/navigation controls that appear on every page.
+        sticky_noise_re = re.compile(
+            r"tarifs|langue|devise|adultes|enfant|chambre|date d'arriv|date de départ|effacer|accéder au contenu|connexion|s'inscrire",
+            re.IGNORECASE,
+        )
+
+        filtered_buttons = [
+            (label, ref) for label, ref in buttons
+            if label and not sticky_noise_re.search(label)
+        ]
+        filtered_links = [
+            (label, ref) for label, ref in links
+            if label and not sticky_noise_re.search(label)
+        ]
+        filtered_textboxes = [
+            (label, ref) for label, ref in textboxes
+            if not sticky_noise_re.search(label or "")
+        ]
+
+        if filtered_buttons:
+            btn_list = [f"- {label} ref={ref}" for label, ref in filtered_buttons[:8]]
             parts.append("BUTTONS:\n" + "\n".join(btn_list))
 
-        if links:
-            link_list = [f"- {label} ref={ref}" for label, ref in links[:8]]
+        if filtered_links:
+            link_list = [f"- {label} ref={ref}" for label, ref in filtered_links[:15]]
             parts.append("LINKS:\n" + "\n".join(link_list))
 
-        if textboxes:
-            text_list = [f"- {label} ref={ref}" for label, ref in textboxes[:3]]
+        if filtered_textboxes:
+            text_list = [f"- {label} ref={ref}" for label, ref in filtered_textboxes[:5]]
             parts.append("INPUTS:\n" + "\n".join(text_list))
 
         return parts
@@ -882,12 +1116,42 @@ Remember to respond in the exact format: Thought / Action / Target
         session across all steps.
         """
         import re as _re
+        from datetime import date as _date, timedelta as _timedelta
+        from urllib.parse import parse_qsl as _parse_qsl, urlencode as _urlencode, urlparse as _urlparse, urlunparse as _urlunparse
         from mcp import ClientSession, StdioServerParameters
         from mcp.client.stdio import stdio_client
         from langchain_mcp_adapters.tools import load_mcp_tools
 
         # Extract site type for context-aware snapshot compression
         site_type = self.user.get("website_type", "other")
+
+        def _next_weekend_dates_iso() -> tuple[str, str]:
+            """Return next Saturday/Sunday ISO dates for Booking deterministic fallback."""
+            today = _date.today()
+            days_to_saturday = (5 - today.weekday()) % 7
+            checkin = today + _timedelta(days=days_to_saturday)
+            checkout = checkin + _timedelta(days=1)
+            return checkin.isoformat(), checkout.isoformat()
+
+        def _inject_booking_dates(url: str) -> str:
+            """Inject checkin/checkout into a Booking URL while preserving existing query params."""
+            if not url:
+                return ""
+            try:
+                parsed = _urlparse(url)
+                if "booking.com" not in (parsed.netloc or "").lower():
+                    return ""
+                query = dict(_parse_qsl(parsed.query, keep_blank_values=True))
+                checkin, checkout = _next_weekend_dates_iso()
+                query["checkin"] = checkin
+                query["checkout"] = checkout
+                query.setdefault("group_adults", "2")
+                query.setdefault("no_rooms", "1")
+                query.setdefault("group_children", "0")
+                new_query = _urlencode(query, doseq=True)
+                return _urlunparse(parsed._replace(query=new_query))
+            except Exception:
+                return ""
 
         # BROWSER USE INTEGRATION — START
         bu_browser, cdp_url = await self._launch_sandbox()
@@ -1019,6 +1283,8 @@ Remember to respond in the exact format: Thought / Action / Target
 
             # Define max_prod for snapshot compression
             max_prod = 3 if vitesse == "rapide" else None
+            # Give content-heavy sites a larger observation budget.
+            max_snapshot_chars = 16000 if (is_wallstreet or is_booking) else 12000
 
             if vitesse == "rapide":
                 # DEMOBLAZE SUPPORT — START
@@ -1039,27 +1305,156 @@ Remember to respond in the exact format: Thought / Action / Target
                     )
                 # WALL STREET SURVIVOR — START
                 elif is_wallstreet and wallstreet_username and wallstreet_password:
-                    strategy = (
-                        f"🔐 WALL STREET SURVIVOR LOGIN - AUTO-FILL WITH CREDENTIALS\n\n"
-                        f"USERNAME: {wallstreet_username}\n"
-                        f"PASSWORD: {wallstreet_password}\n\n"
-                        "CRITICAL INSTRUCTIONS - YOU MUST FOLLOW EXACTLY:\n\n"
-                        "Step 1: browser_navigate to https://www.wallstreetsurvivor.com/\n"
-                        "Step 2: browser_snapshot — capture the homepage\n"
-                        "Step 3: browser_click on the Login link\n"
-                        "Step 4: browser_snapshot — capture the login form\n"
-                        f"Step 5: browser_type username field with '{wallstreet_username}'\n"
-                        f"Step 6: browser_type password field with '{wallstreet_password}'\n"
-                        "Step 7: browser_click the 'Log me in' button\n"
-                        "Step 8: browser_snapshot — verify successful login and dashboard is visible\n"
-                        "Step 9: DONE — report that you successfully logged in\n\n"
-                        "RULES:\n"
-                        f"- Use EXACTLY these credentials: {wallstreet_username} / {wallstreet_password}\n"
-                        "- DO NOT generate or modify credentials\n"
-                        "- DO NOT try to register\n"
-                        "- DO NOT create a new account\n"
-                        "- ONLY login with the provided credentials\n"
-                        "- If login fails, retry the same credentials (do not change them)\n"
+                    # Check if already logged in by looking at the start_url
+                    is_already_logged_in = (
+                        "/account/" in (start_url or "").lower() or
+                        "/portfolio" in (start_url or "").lower() or
+                        "dashboard" in (start_url or "").lower()
+                    )
+
+                    if is_already_logged_in:
+                        # Skip login - user is already authenticated
+                        strategy = (
+                            f"✅ WALL STREET SURVIVOR - ALREADY LOGGED IN\n\n"
+                            f"Session active as: {wallstreet_username}\n\n"
+                            "CRITICAL INSTRUCTIONS - YOU MUST FOLLOW EXACTLY:\n\n"
+                            "### MODAL DISMISSAL (FIRST PRIORITY - DO THIS BEFORE ANYTHING ELSE):\n"
+                            "Wall Street Survivor shows modals that MUST be dismissed first:\n"
+                            "1. FIRST: browser_press_key {\"key\": \"Escape\"} - try this 2 times\n"
+                            "2. If Escape fails: browser_evaluate to click close button:\n"
+                            "   browser_evaluate {\"function\": \"() => {\n"
+                            "     const closeBtn = document.querySelector('.ui-dialog-titlebar-close, .close, .modal-close, [aria-label*=close], [aria-label*=dismiss]');\n"
+                            "     if(closeBtn) { closeBtn.click(); return 'clicked'; }\n"
+                            "     const overlay = document.querySelector('.ui-widget-overlay');\n"
+                            "     if(overlay) { overlay.click(); return 'overlay clicked'; }\n"
+                            "     return 'not found';\n"
+                            "   }\"}\n"
+                            "3. If still blocked: browser_navigate to bypass (continue anyway)\n"
+                            "4. DO NOT waste steps clicking random refs - use Escape or evaluate!\n\n"
+                            "### MAIN TASK (after modal dismissed):\n"
+                            "Step 1: browser_snapshot — verify Dashboard page is clear\n"
+                            "Step 2: Navigate to Quotes page: browser_navigate to /quotes/quotesv2\n"
+                            "Step 3: Use browser_evaluate to search for NVDA (see SEARCH RULES)\n"
+                            "Step 4: Click NVDA result, then click Buy button\n"
+                            "Step 5: Submit Market Order for 10 shares\n\n"
+                            "RULES:\n"
+                            "- You are already logged in - DO NOT try to login again\n"
+                            "- If modal persists after 2 Escape attempts, NAVIGATE AROUND IT\n"
+                            "- Never waste >3 steps on modal dismissal - move on!\n"
+                        )
+                    else:
+                        # Need to login first
+                        strategy = (
+                            f"🔐 WALL STREET SURVIVOR LOGIN - AUTO-FILL WITH CREDENTIALS\n\n"
+                            f"USERNAME: {wallstreet_username}\n"
+                            f"PASSWORD: {wallstreet_password}\n\n"
+                            "CRITICAL INSTRUCTIONS - YOU MUST FOLLOW EXACTLY:\n\n"
+                            "Step 1: browser_navigate to https://www.wallstreetsurvivor.com/\n"
+                            "Step 2: browser_snapshot — capture the homepage\n"
+                            "Step 3: browser_click on the Login link\n"
+                            "Step 4: browser_snapshot — capture the login form\n"
+                            f"Step 5: browser_type username field with '{wallstreet_username}'\n"
+                            f"Step 6: browser_type password field with '{wallstreet_password}'\n"
+                            "Step 7: browser_click the 'Log me in' button\n"
+                            "Step 8: browser_snapshot — verify successful login and dashboard is visible\n"
+                            "Step 9: DONE — report that you successfully logged in\n\n"
+                            "RULES:\n"
+                            f"- Use EXACTLY these credentials: {wallstreet_username} / {wallstreet_password}\n"
+                            "- DO NOT generate or modify credentials\n"
+                            "- DO NOT try to register\n"
+                            "- DO NOT create a new account\n"
+                            "- ONLY login with the provided credentials\n"
+                            "- If login fails, retry the same credentials (do not change them)\n"
+                        )
+
+                    strategy += (
+                        "\n\nCRITICAL — SEARCH FIELD RULES FOR WALL STREET SURVIVOR:\n"
+                        "The stock search field uses React autocomplete.\n"
+                        "browser_type with fill() does NOT trigger the dropdown.\n"
+                        "You MUST use browser_evaluate to type character by character:\n\n"
+                        "CORRECT way to search for NVDA:\n"
+                        "ACTION: browser_evaluate\n"
+                        "ACTION_INPUT: {\"function\": \"() => {\n"
+                        "  const inputs = document.querySelectorAll('input');\n"
+                        "  for (const input of inputs) {\n"
+                        "    const ph = input.placeholder || '';\n"
+                        "    if (ph.includes('AAPL') || ph.includes('symbol') || ph.includes('Search')) {\n"
+                        "      input.focus();\n"
+                        "      input.value = '';\n"
+                        "      ['N','V','D','A'].forEach(char => {\n"
+                        "        input.dispatchEvent(new KeyboardEvent('keydown', {key: char, bubbles: true}));\n"
+                        "        input.value += char;\n"
+                        "        input.dispatchEvent(new KeyboardEvent('keyup', {key: char, bubbles: true}));\n"
+                        "        input.dispatchEvent(new Event('input', {bubbles: true}));\n"
+                        "      });\n"
+                        "      return 'typed NVDA into: ' + ph;\n"
+                        "    }\n"
+                        "  }\n"
+                        "  return 'search field not found';\n"
+                        "}\"}\n\n"
+                        "After typing, wait 1500ms then snapshot to see dropdown:\n"
+                        "ACTION: browser_wait_for\n"
+                        "ACTION_INPUT: {\"time\": 1500}\n\n"
+                        "Then snapshot and click the NVDA (NVIDIA Corp) result from the dropdown.\n"
+                        "NEVER use browser_type for the search field on this site.\n"
+                    )
+                    strategy += (
+                        "\nBUY FLOW — after finding NVDA stock page:\n"
+                        "1. Look for a 'Trade', 'Buy', or 'Buy/Sell' button on the quotes page\n"
+                        "2. The URL pattern for NVDA quotes is:\n"
+                        "   /quotes/quotes?type=fullnewssummary&symbol=NVDA\n"
+                        "3. On the quotes page, look for a green Buy button or Trade section\n"
+                        "4. Select Market Order (default) - do NOT use Limit Order\n"
+                        "5. Enter quantity (default 10 shares) and submit\n"
+                        "6. DO NOT click 'Stock Market Simulator' — that goes to homepage\n"
+                        "7. Stay on app.wallstreetsurvivor.com, never navigate to www.wallstreetsurvivor.com\n"
+                        "8. After buying, verify the stock appears in your portfolio\n"
+                    )
+
+                    # Add popup/modal handling instructions
+                    strategy += (
+                        "\n\n⚠️  POPUP/MODAL HANDLING — CRITICAL:\n"
+                        "Wall Street Survivor shows popups that MUST be dismissed:\n"
+                        "1. If you see a modal with 'Create Class' or 'class access barrier':\n"
+                        "   → Click 'Create Class' button immediately\n"
+                        "   → Enter any random class name (e.g., 'TestClass123')\n"
+                        "   → Submit and continue\n"
+                        "2. If you see 'Welcome' or tour modals:\n"
+                        "   → Click X or 'Skip' to dismiss quickly\n"
+                        "3. If you see cookie/privacy banners:\n"
+                        "   → Click 'Accept' or X to dismiss\n"
+                        "4. After ANY browser_click or browser_navigate, check for new modals\n"
+                        "5. Use browser_snapshot after each action to see if popups appeared\n"
+                        "6. Priority: Close popups BEFORE continuing with main task\n"
+                        "\n\n📷 SNAPSHOT LIMITATION - IMPORTANT:\n"
+                        "The MCP snapshot often shows Google Ads iframe content instead of the real page.\n"
+                        "If you see 'iframe', 'googleadservices', or 'Activez votre compte' in snapshot:\n"
+                        "→ DO NOT trust the snapshot refs - they are from the ad iframe!\n"
+                        "→ Use browser_evaluate to interact with the main page directly\n"
+                        "→ Search field selector: .qmod-symbollookup\n"
+                    )
+
+                    # Add step-by-step scenario guidance
+                    strategy += (
+                        "\n\n📋 SCENARIO STEPS — FOLLOW IN ORDER:\n"
+                        "Step 1: ✅ Login (already done - you're on dashboard)\n"
+                        "Step 2: Wait 5 seconds, then dismiss any overlay/tap screen\n"
+                        "Step 3: If 'Class Access Barrier' modal appears:\n"
+                        "        → Click 'Create Class' button\n"
+                        "        → Type random name like 'MyClass123'\n"
+                        "        → Click Submit/Create\n"
+                        "Step 4: Navigate to Portfolio section\n"
+                        "        → Look for 'Portfolio' link in bottom nav or menu\n"
+                        "        → URL should be /account/portfolio or /account/accountbalances\n"
+                        "Step 5: Find and click Search icon/button\n"
+                        "        → Navigate to Quotes page if not already there\n"
+                        "Step 6: Search for NVDA using browser_evaluate (see SEARCH RULES above)\n"
+                        "Step 7: Click first 'NVIDIA Corp' result from dropdown\n"
+                        "Step 8: On stock page, click green 'Buy' button immediately\n"
+                        "Step 9: Keep Market Order selected (default)\n"
+                        "Step 10: Enter 10 shares, submit order\n"
+                        "Step 11: DONE when NVDA appears in holdings\n\n"
+                        "REMEMBER: You are IMPULSIF — act fast, skip verification!\n"
                     )
                 # WALL STREET SURVIVOR — END
                 # BOOKING.COM — START
@@ -1077,6 +1472,8 @@ Remember to respond in the exact format: Thought / Action / Target
                     actions_text = "\n".join([f"   • {a}" for a in persona_actions]) if persona_actions else "   • Navigation rapide"
                     comportements_text = "\n".join([f"   • {c}" for c in persona_comportements]) if persona_comportements else ""
                     douleurs_text = ", ".join(persona_douleurs) if persona_douleurs else "Lenteur"
+
+                    booking_steps = "\n".join([f"- {step}" for step in persona_actions]) if persona_actions else "- Tap the fastest visible deal and continue"
                     
                     strategy = (
                         f"PERSONA PROFILE ({persona_id} - {persona_nom}):\n"
@@ -1088,24 +1485,30 @@ Remember to respond in the exact format: Thought / Action / Target
                         f"  Douleurs à éviter: {douleurs_text}\n\n"
                         f"COMPORTEMENTS ATTENDUS:\n{actions_text}\n"
                         f"{comportements_text}\n\n"
-                        "STRATEGY — Navigation rapide sur Booking.com:\n"
+                        "STRATEGY — Mobile deal-hunting sur Booking.com:\n"
                         "Step 1: browser_navigate to https://www.booking.com\n"
-                        "Step 2: browser_snapshot — dismiss any popup if present\n"
-                        "Step 3: Use browser_evaluate to type destination (field is hidden):\n"
-                        "        {\"function\": \"() => { const input = document.querySelector('input[placeholder*=\\\"allez-vous\\\"]') || document.querySelector('input[name=\\\"ss\\\"]'); if(!input) return 'not found'; input.click(); input.focus(); input.value='Paris'; input.dispatchEvent(new Event('input', {bubbles: true})); return 'Paris typed';}\"}\n"
-                        "Step 4: browser_wait_for time 2000 for suggestions\n"
-                        "Step 5: browser_snapshot to see Paris suggestions\n"
-                        "Step 6: Click first Paris suggestion\n"
-                        "Step 7: Click Search button\n"
-                        "Step 8: browser_snapshot to see hotel results\n"
-                        f"Step 9: {'Click FIRST visible hotel immediately — no comparison' if vitesse == 'rapide' else 'Compare prices, find cheapest hotel'}\n"
-                        "Step 10: DONE — report hotel name and price\n\n"
+                        "Step 2: browser_snapshot — look for bottom-nav 'Offres', promo cards, and any Istanbul deal card first\n"
+                        "Step 3: tap 'Offres' if visible; otherwise tap the Istanbul promotional card immediately\n"
+                        "Step 4: accept the default weekend dates in the picker without changing them\n"
+                        "Step 5: tap the blue search button\n"
+                        "Step 6: wait exactly five seconds for results, then refresh once\n"
+                        "Step 7: browser_snapshot to see results after refresh\n"
+                        "Step 8: tap 'Prix : plus bas' if present\n"
+                        "Step 9: choose the first visible hotel with a green discount badge\n"
+                        "Step 10: tap 'Voir les chambres'\n"
+                        "Step 11: tap 'Réserver' without reading the full cancellation policy\n"
+                        "Step 12: DONE — report the confirmation screen and payment method\n\n"
                         "RULES (based on persona):\n"
                         f"- You are {persona_nom}, behave according to your profile\n"
                         f"- {'Act FAST, no hesitation, click first options' if vitesse == 'rapide' else 'Take time to compare, verify details'}\n"
                         f"- {'Skip filters and comparisons' if sensibilite == 'faible' else 'Use filters to find best price'}\n"
                         f"- If page takes more than {patience_sec}s, {'abandon and move on' if tolerance == 'haute' else 'wait patiently'}\n"
-                        "- Destination field is HIDDEN — MUST use browser_evaluate\n"
+                        "- Never prefer recent-search cards over promo / deal cards on the homepage\n"
+                        "- On the homepage, 'Offres' and Istanbul promo cards outrank Paris recent-search cards\n"
+                        "- If a search dropdown or autocomplete suggestion appears, keep it visible: type normally, wait 1-2 seconds, then click the visible suggestion\n"
+                        "- Never set search inputs with browser_evaluate when a visible dropdown is expected\n"
+                        "- If search is needed, use the destination field only after checking for promo cards\n"
+                        f"- Persona step guidance: {booking_steps}\n"
                     )
                 # BOOKING.COM — END
                 # PARABANK — START (IMPULSIF - BILL PAY)
@@ -1245,6 +1648,13 @@ Remember to respond in the exact format: Thought / Action / Target
                     persona_motivation = self.user.get("motivation_principale", "")
                     persona_douleurs = self.user.get("douleurs", [])
                     persona_exploration = self.user.get("exploration_fonctionnalites", [])
+                    scenario_name = str((self.scenario or {}).get("name", "")).lower()
+                    scenario_desc = str((self.scenario or {}).get("description", "")).lower()
+                    booking_target_city = "Istanbul" if (
+                        "istanbul" in scenario_name
+                        or "istanbul" in scenario_desc
+                        or "istanbul" in persona_objectif.lower()
+                    ) else "Paris"
                     
                     # Format actions and behaviors for prompt
                     actions_text = "\n".join([f"   • {a}" for a in persona_actions]) if persona_actions else "   • Recherche approfondie"
@@ -1265,27 +1675,39 @@ Remember to respond in the exact format: Thought / Action / Target
                         f"EXPLORATION:\n{exploration_text}\n\n"
                         "STRATEGY — Navigation prudente sur Booking.com:\n"
                         "Step 1: browser_navigate to https://www.booking.com\n"
-                        "Step 2: browser_snapshot — dismiss any popup, observe the page\n"
-                        "Step 3: Use browser_evaluate to type destination (field is hidden):\n"
-                        "        {\"function\": \"() => { const input = document.querySelector('input[placeholder*=\\\"allez-vous\\\"]') || document.querySelector('input[name=\\\"ss\\\"]'); if(!input) return 'not found'; input.click(); input.focus(); input.value='Paris'; input.dispatchEvent(new Event('input', {bubbles: true})); return 'Paris typed';}\"}\n"
-                        "Step 4: browser_wait_for time 2000 for suggestions\n"
-                        "Step 5: browser_snapshot to see Paris suggestions\n"
-                        "Step 6: Click Paris suggestion carefully\n"
-                        "Step 7: browser_snapshot to see dates section\n"
-                        "Step 8: Select appropriate dates if needed\n"
-                        "Step 9: Click Search button\n"
-                        "Step 10: browser_snapshot to see ALL hotel results\n"
-                        f"Step 11: {'Compare ALL prices, read reviews, find the BEST value' if sensibilite == 'haute' else 'Look for family-friendly options' if 'famil' in persona_id.lower() else 'Evaluate options carefully'}\n"
-                        "Step 12: Click on the best hotel based on your criteria\n"
-                        "Step 13: browser_snapshot to verify hotel details\n"
-                        "Step 14: DONE — report hotel name, price, and why you chose it\n\n"
+                        "Step 2: browser_snapshot — dismiss any popup and observe the homepage\n"
+                        "Step 3: browser_snapshot — locate SEARCH FORM and use the destination input ref, not a promo card or the search button\n"
+                        f"Step 4: browser_click the destination field, then browser_type {booking_target_city}\n"
+                        "Step 5: browser_wait_for 1-2 seconds so the autocomplete dropdown appears on screen\n"
+                        "Step 6: browser_snapshot to read the visible suggestions, then browser_click the matching city suggestion\n"
+                        "Step 7: browser_click the date field, open the calendar, and select the weekend dates by clicking the visible day cells\n"
+                        "Step 8: browser_snapshot to confirm city and dates are selected before searching\n"
+                        "Step 9: Only now click the blue Search button\n"
+                        "Step 10: Wait exactly five seconds for results, then refresh once if needed\n"
+                        "Step 11: browser_snapshot to see ALL hotel results\n"
+                        "Step 12: browser_click the sort dropdown, then browser_snapshot the opened menu before choosing an option\n"
+                        "Step 13: browser_click the visible sort option labeled 'Prix : plus bas'\n"
+                        "Step 14: browser_snapshot to verify the results are sorted by cheapest first\n"
+                        f"Step 15: {'Compare ALL prices, read reviews, find the BEST value' if sensibilite == 'haute' else 'Look for family-friendly options' if 'famil' in persona_id.lower() else 'Evaluate options carefully'}\n"
+                        "Step 16: Click on the best hotel based on your criteria\n"
+                        "Step 17: browser_snapshot to verify hotel details and room options\n"
+                        "Step 18: DONE — report hotel name, price, and why you chose it\n\n"
                         "RULES (based on persona):\n"
                         f"- You are {persona_nom}, behave according to your profile\n"
                         f"- {'Compare ALL prices before deciding' if sensibilite == 'haute' else 'Focus on quality and features, not just price'}\n"
                         f"- {'Use filters to narrow down options' if persona_exploration else 'Browse available options'}\n"
                         f"- {'Verify details twice before any action' if tolerance == 'faible' else 'Proceed with confidence'}\n"
                         f"- Take your time, you have {patience_sec}s patience\n"
-                        "- Destination field is HIDDEN — MUST use browser_evaluate\n"
+                        "- Ignore recent-search cards and promo shortcut cards on the homepage; use the SEARCH FORM instead\n"
+                        "- Do NOT use browser_evaluate to set destination/date/sort values when a visible control exists\n"
+                        "- Do NOT use browser_type as a direct fill on Booking search fields; type visible characters one by one if needed\n"
+                        "- Always keep the autocomplete dropdown visible and click the visible suggestion before continuing\n"
+                        "- Select dates visibly in the calendar picker; do not hardcode the final URL\n"
+                        "- NEVER click header/help/login/account links while filling search form steps\n"
+                        "- If a click opens Help Center or Sign-in by mistake: immediately return to the previous Booking search page\n"
+                        "- Never click the Search button before the destination dropdown has been opened and a city suggestion has been selected\n"
+                        "- For sorting, open the dropdown first and only then click the visible 'Prix : plus bas' option\n"
+                        "- Never guess a sort ref from hotel links; use the sort control visible in the snapshot\n"
                     )
                 # BOOKING.COM — END
                 # PARABANK — START (PRUDENT - TRANSFER FUNDS)
@@ -1520,22 +1942,13 @@ Remember to respond in the exact format: Thought / Action / Target
             if is_booking:
                 site_rules = (
                     "4. BOOKING.COM RULES (CRITICAL):\n"
-                    "- The destination input field is HIDDEN in accessibility snapshot\n"
-                    "- You MUST use browser_evaluate to interact with it directly\n"
-                    "- DESTINATION FIELD SOLUTION:\n"
-                    "  ACTION: browser_evaluate\n"
-                    "  ACTION_INPUT: {'function': \"() => {\n"
-                    "    const input = document.querySelector('input[placeholder*=\\\"allez-vous\\\"]');\n"
-                    "    if(!input) return 'not found';\n"
-                    "    input.click(); input.focus(); input.value='Paris';\n"
-                    "    input.dispatchEvent(new Event('input', {bubbles: true}));\n"
-                    "    return 'Paris typed';}\"\n"
-                    "- After typing in destination, WAIT 2000ms then take snapshot\n"
-                    "- Look for Paris suggestion in snapshot refs\n"
-                    "- Click the correct Paris suggestion ref\n"
-                    "- Then proceed with dates and search normally\n"
-                    "- Do NOT attempt to use browser_type on destination field\n"
-                    "- Do NOT look for destination textbox in snapshot — it won't be there\n"
+                    "- Use ONLY visible interactions for form actions: browser_click, browser_type, browser_press_key, browser_snapshot.\n"
+                    "- For destination: click the visible 'Où allez-vous ?' combobox ref, type destination, wait briefly, snapshot, then click visible suggestion ref.\n"
+                    "- For date picker: click visible date field/button refs and then visible calendar day refs.\n"
+                    "- NEVER use browser_evaluate to select dates, open date picker, fill destination, or click booking controls.\n"
+                    "- browser_evaluate is allowed ONLY for scrolling on Booking: {\"function\": \"() => window.scrollBy(0, 3000)\"}.\n"
+                    "- If a popup/modal blocks interaction, dismiss it (close button or Escape), then continue with visible refs.\n"
+                    "- If a click opens Help/Login pages, return to search/results and continue with search form + calendar refs only.\n"
                     "- NEVER attempt actual booking or payment\n"
                 )
             elif is_demoblaze:
@@ -1638,6 +2051,10 @@ Remember to respond in the exact format: Thought / Action / Target
                         success_criteria_text += f"✓ {criterion}\n"
                     success_criteria_text += "\n"
 
+            # Inject strategy into scenario for build_system_prompt compatibility
+            if self.scenario:
+                self.scenario["strategy"] = strategy
+
             system_msg = SystemMessage(content=(
                 f"You are a web automation agent.\n\n"
                 f"{scenario_desc_text}"
@@ -1655,6 +2072,8 @@ Remember to respond in the exact format: Thought / Action / Target
                 "5. Output ONLY ONE action per response.\n"
                 "6. For scrolling use: browser_evaluate {\"function\": \"() => window.scrollBy(0, 3000)\"}\n"
                 "7. browser_evaluate ONLY accepts {\"function\": \"...\"} - no other parameters.\n\n"
+                f"## SITE-SPECIFIC RULES:\n{site_rules}\n\n"
+                f"## NAVIGATION STRATEGY (FOLLOW THESE STEPS):\n{strategy}\n\n"
                 "## RESPONSE FORMAT (CRITICAL - use this EXACTLY):\n"
                 "THOUGHT: <your reasoning>\n"
                 "ACTION: <tool_name>\n"
@@ -1714,12 +2133,21 @@ Remember to respond in the exact format: Thought / Action / Target
 
             # Track compressed snapshot content to detect unchanged pages after scroll
             _last_compressed = ""
+            _booking_last_good_url = start_url if is_booking else ""
+            _booking_wrong_route_hits = 0
+            _booking_destination_reclicks = 0
+            _booking_flex_dates_clicks = 0
 
             step = 0
             while step < max_steps:
                 print(f"\n{'=' * 80}")
                 print(f"STEP {step + 1}/{max_steps}")
                 print("=" * 80)
+
+                # Per-step control flags used by Booking guards and recovery.
+                _skip_tool_execution = False
+                _precomputed_result_str = None
+                _precomputed_result_for_llm = None
 
                 # ── Anti-loop: detect repeated identical actions ──
                 if len(steps_detail) >= 3:
@@ -1762,6 +2190,30 @@ Remember to respond in the exact format: Thought / Action / Target
                         )
                         print("⚠️ Anti-wait_for nudge injected")
                         messages.append(HumanMessage(content=nudge))
+
+                # Detect click/snapshot loops on the same ref (common with overlay blocks)
+                if len(steps_detail) >= 4:
+                    last4 = steps_detail[-4:]
+                    actions4 = [s.get("action") for s in last4]
+                    if actions4 == ["browser_click", "browser_snapshot", "browser_click", "browser_snapshot"]:
+                        click_inputs = [last4[0].get("input") or {}, last4[2].get("input") or {}]
+                        click_refs = []
+                        for ci in click_inputs:
+                            if isinstance(ci, dict):
+                                click_refs.append(str(ci.get("ref", "")))
+                            else:
+                                click_refs.append("")
+
+                        same_ref_loop = click_refs[0] and click_refs[0] == click_refs[1]
+                        if same_ref_loop:
+                            nudge = (
+                                "WARNING: You are looping on the same click ref with no progress. "
+                                "Do NOT click this ref again immediately. "
+                                "First dismiss overlays (Escape / close button), then choose an alternative visible ref "
+                                "or a different navigation path from the latest snapshot."
+                            )
+                            print("⚠️ Anti-click-loop nudge injected")
+                            messages.append(HumanMessage(content=nudge))
 
                 # ── Call LLM (with retry on rate-limit) ────────
                 import asyncio as _asyncio
@@ -1962,7 +2414,12 @@ Remember to respond in the exact format: Thought / Action / Target
                         try:
                             snap_result = await session.call_tool("browser_snapshot", {})
                             snap_str = str(snap_result)
-                            compressed = self._compress_snapshot(snap_str, site_type=site_type, max_products=max_prod)
+                            compressed = self._compress_snapshot(
+                                snap_str,
+                                site_type=site_type,
+                                max_chars=max_snapshot_chars,
+                                max_products=max_prod,
+                            )
                             observation_text = f"OBSERVATION (auto browser_snapshot):\n{compressed}\n\nNext?"
                             # Disable vision after invalid responses to avoid model confusion
                             messages.append(HumanMessage(content=observation_text))
@@ -2008,83 +2465,354 @@ Remember to respond in the exact format: Thought / Action / Target
                             invalid_format_streak += 1
                             continue
 
+                        # Booking hard rule: browser_evaluate is scroll-only.
+                        eval_fn = str(action_input.get("function") or "")
+                        if is_booking and ("scrollBy" not in eval_fn and "scrollTo" not in eval_fn):
+                            error_msg = (
+                                "BOOKING SAFETY: browser_evaluate is scroll-only in Booking runs. "
+                                "Use visible interactions with refs for destination/date selection.\n"
+                                "Allowed: browser_evaluate {\"function\": \"() => window.scrollBy(0, 3000)\"}\n"
+                                "Not allowed: JS date clicks, DOM queries, direct form manipulation."
+                            )
+                            print(f"⚠️ {error_msg}")
+                            messages.append(HumanMessage(content=error_msg))
+                            invalid_format_streak += 1
+                            continue
+
                 # ── Execute MCP tool ───────────────────────────
                 # Normalize common schema mismatches from model outputs.
+                if action_name in ("browser_click", "browser_type") and isinstance(action_input, dict):
+                    if "target" not in action_input and "ref" in action_input:
+                        action_input["target"] = action_input["ref"]
+                    if "target" not in action_input and "selector" in action_input:
+                        action_input["target"] = action_input["selector"]
+
                 if action_name == "browser_type" and isinstance(action_input, dict):
                     if "text" not in action_input and "value" in action_input:
                         action_input["text"] = action_input.pop("value")
+
+                # Normalize browser_wait_for parameters and units to avoid runaway waits.
+                if action_name == "browser_wait_for" and isinstance(action_input, dict):
+                    if "time" not in action_input and "timeout" in action_input:
+                        action_input["time"] = action_input.pop("timeout")
+
+                    # Fallback when model omits required keys.
+                    if not any(k in action_input for k in ("time", "text", "textGone")):
+                        action_input["time"] = min(max(int(patience_sec or 2), 1), 10)
+
+                    if "time" in action_input:
+                        try:
+                            t = int(float(action_input.get("time") or 0))
+                        except Exception:
+                            t = 0
+
+                        # If model provides milliseconds (e.g. 5000), convert to seconds.
+                        if t > 120:
+                            t = max(1, int(round(t / 1000.0)))
+
+                        # Hard cap to avoid wasting the entire run in waiting.
+                        t = max(1, min(t, 15))
+                        action_input["time"] = t
+
+                    # Some guard paths (e.g., Booking visible typing) precompute an
+                    # observation and should skip the normal tool execution branch.
+                    _skip_tool_execution = False
+                    _precomputed_result_str = None
+                    _precomputed_result_for_llm = None
+
+                # Booking-specific typing guard: browser_type fills directly in Playwright,
+                # so replace it with visible key presses and then snapshot the dropdown.
+                if is_booking and action_name == "browser_type" and isinstance(action_input, dict):
+                    typed_text = str(action_input.get("text") or action_input.get("value") or "")
+                    target_ref = str(action_input.get("ref") or "").strip()
+
+                    if target_ref and "browser_click" in tools_dict:
+                        try:
+                            await tools_dict["browser_click"].ainvoke({"ref": target_ref, "target": target_ref})
+                        except Exception as e:
+                            print(f"⚠ Booking pre-click before typing failed: {e}")
+
+                    if typed_text and "browser_press_key" in tools_dict:
+                        print(f"⌨️ Booking visible typing guard: typing '{typed_text}' char-by-char")
+
+                        # Always clear existing value first to avoid "ParisParis..."
+                        # when the model retries the same typing action.
+                        try:
+                            await tools_dict["browser_press_key"].ainvoke({"key": "Control+a"})
+                            await tools_dict["browser_press_key"].ainvoke({"key": "Delete"})
+                        except Exception as e:
+                            print(f"⚠ Booking pre-clear before typing failed: {e}")
+
+                        for char in typed_text:
+                            key = "Space" if char == " " else char
+                            try:
+                                await tools_dict["browser_press_key"].ainvoke({"key": key})
+                            except Exception as e:
+                                msg = (
+                                    f"BOOKING SAFETY: failed while typing '{typed_text}' char-by-char. "
+                                    "Use browser_click on the field, then browser_press_key to type characters visibly."
+                                )
+                                print(f"⚠️ {msg} ({e})")
+                                messages.append(HumanMessage(content=msg))
+                                steps_detail.append({
+                                    "step": step + 1,
+                                    "action": action_name,
+                                    "error": msg,
+                                    "input": action_input,
+                                })
+                                invalid_format_streak += 1
+                                continue
+
+                        # Take a fresh snapshot so the autocomplete list is visible to the LLM.
+                        try:
+                            snap_result = await session.call_tool("browser_snapshot", {})
+                            snap_str = str(snap_result)
+                            _precomputed_result_for_llm = self._compress_snapshot(
+                                snap_str,
+                                site_type=site_type,
+                                max_chars=max_snapshot_chars,
+                                max_products=max_prod,
+                            )
+                            _precomputed_result_str = snap_str
+                            _last_compressed = _precomputed_result_for_llm
+                            print("✓ Booking visible typing completed; snapshot refreshed for dropdown selection")
+                            # Skip default browser_type fill path, but continue the loop
+                            # normally so observation is fed back and step increments.
+                            _skip_tool_execution = True
+                            action_name = "browser_type_visible"
+                            action_input = {"text": typed_text, "ref": target_ref}
+                        except Exception as e:
+                            print(f"⚠ Booking post-type snapshot failed: {e}")
+
+                # Booking-specific safety: do not allow browser_evaluate to mutate
+                # destination/date/sort fields directly when a visible control exists.
+                if is_booking and action_name == "browser_evaluate" and isinstance(action_input, dict):
+                    function_text = str(action_input.get("function") or "")
+                    direct_mutation_patterns = [
+                        r"\.value\s*=",
+                        r"setAttribute\s*\(\s*['\"]value['\"]",
+                        r"selectedIndex\s*=",
+                        r"dispatchEvent\s*\(",
+                        r"location\.reload\s*\(",
+                    ]
+                    if any(_re.search(pattern, function_text, flags=_re.IGNORECASE) for pattern in direct_mutation_patterns):
+                        msg = (
+                            "BOOKING SAFETY: browser_evaluate cannot be used to set destination/date/sort values directly. "
+                            "Use browser_click to open the field, browser_type to enter text, browser_wait_for for the dropdown, "
+                            "browser_snapshot to see refs, then browser_click the visible suggestion or calendar cell."
+                        )
+                        print(f"⚠️ {msg}")
+                        messages.append(HumanMessage(content=msg))
+                        steps_detail.append({
+                            "step": step + 1,
+                            "action": action_name,
+                            "error": msg,
+                            "input": action_input,
+                        })
+                        invalid_format_streak += 1
+                        continue
+
                 print(f"🎬 Executing: {action_name}({action_input})")
                 objective_reached = False
                 try:
-                    tool_result = await tools_dict[action_name].ainvoke(action_input)
-
-                    # Extract text content properly (avoid repr escaping)
-                    result_str = None
-                    if isinstance(tool_result, list):
-                        text_parts = []
-                        for item in tool_result:
-                            if isinstance(item, dict) and 'text' in item:
-                                text_parts.append(item['text'])
-                            elif hasattr(item, 'text'):
-                                text_parts.append(item.text)
-                            else:
-                                text_parts.append(str(item))
-                        result_str = '\n'.join(text_parts)
-                    elif hasattr(tool_result, 'text'):
-                        result_str = tool_result.text
-                    elif isinstance(tool_result, str):
-                        result_str = tool_result
+                    if _skip_tool_execution:
+                        result_str = _precomputed_result_str or ""
+                        result_for_llm = _precomputed_result_for_llm or ""
                     else:
-                        result_str = str(tool_result)
+                        tool_result = await tools_dict[action_name].ainvoke(action_input)
 
-                    # If result_str still looks like repr of MCP content list,
-                    # extract the text payload
-                    if result_str.startswith("[{") or result_str.startswith("[Content"):
-                        try:
-                            import ast
-                            parsed = ast.literal_eval(result_str)
-                            if isinstance(parsed, list):
-                                texts = [
-                                    it['text'] for it in parsed
-                                    if isinstance(it, dict) and 'text' in it
-                                ]
-                                if texts:
-                                    result_str = '\n'.join(texts)
-                        except Exception:
-                            # Regex fallback: extract text between 'text': '...'
-                            text_m = _re.search(
-                                r"'text':\s*'((?:[^'\\]|\\.)*)'", result_str)
-                            if text_m and len(text_m.group(1)) > 50:
-                                result_str = text_m.group(1).replace(
-                                    '\\n', '\n').replace("\\'", "'")
+                        # Extract text content properly (avoid repr escaping)
+                        result_str = None
+                        if isinstance(tool_result, list):
+                            text_parts = []
+                            for item in tool_result:
+                                if isinstance(item, dict) and 'text' in item:
+                                    text_parts.append(item['text'])
+                                elif hasattr(item, 'text'):
+                                    text_parts.append(item.text)
+                                else:
+                                    text_parts.append(str(item))
+                            result_str = '\n'.join(text_parts)
+                        elif hasattr(tool_result, 'text'):
+                            result_str = tool_result.text
+                        elif isinstance(tool_result, str):
+                            result_str = tool_result
+                        else:
+                            result_str = str(tool_result)
 
-                    # Compress snapshots to keep only actionable content
-                    if action_name in ("browser_navigate", "browser_snapshot"):
-                        result_for_llm = self._compress_snapshot(result_str, site_type=site_type, max_products=max_prod)
-                    else:
-                        result_for_llm = result_str[:1500]
-                        if len(result_str) > 1500:
-                            result_for_llm += "\n... (truncated)"
+                        # If result_str still looks like repr of MCP content list,
+                        # extract the text payload
+                        if result_str.startswith("[{") or result_str.startswith("[Content"):
+                            try:
+                                import ast
+                                parsed = ast.literal_eval(result_str)
+                                if isinstance(parsed, list):
+                                    texts = [
+                                        it['text'] for it in parsed
+                                        if isinstance(it, dict) and 'text' in it
+                                    ]
+                                    if texts:
+                                        result_str = '\n'.join(texts)
+                            except Exception:
+                                # Regex fallback: extract text between 'text': '...'
+                                text_m = _re.search(
+                                    r"'text':\s*'((?:[^'\\]|\\.)*)'", result_str)
+                                if text_m and len(text_m.group(1)) > 50:
+                                    result_str = text_m.group(1).replace(
+                                        '\\n', '\n').replace("\\'", "'")
+
+                        # Compress snapshots to keep only actionable content
+                        if action_name in ("browser_navigate", "browser_snapshot"):
+                            result_for_llm = self._compress_snapshot(
+                                result_str,
+                                site_type=site_type,
+                                max_chars=max_snapshot_chars,
+                                max_products=max_prod,
+                            )
+                        else:
+                            result_for_llm = result_str[:1500]
+                            if len(result_str) > 1500:
+                                result_for_llm += "\n... (truncated)"
+
+                    # ── BOOKING ROUTE GUARD & LOOP RECOVERY ────────────────────────────
+                    if is_booking:
+                        _url_match = _re.search(r"Page URL:\s*(\S+)", result_str)
+                        _curr_url = _url_match.group(1) if _url_match else ""
+                        _curr_url_l = _curr_url.lower()
+
+                        # Track stable Booking pages that represent real progress.
+                        if _curr_url and "booking.com" in _curr_url_l and all(
+                            bad not in _curr_url_l for bad in (
+                                "secure.booking.com/help",
+                                "account.booking.com/sign-in",
+                            )
+                        ):
+                            _booking_last_good_url = _curr_url
+
+                        _wrong_route = (
+                            "secure.booking.com/help" in _curr_url_l
+                            or "account.booking.com/sign-in" in _curr_url_l
+                        )
+
+                        if action_name == "browser_click" and _wrong_route and "browser_navigate" in tools_dict:
+                            _booking_wrong_route_hits += 1
+                            _recovery_url = _booking_last_good_url or "https://www.booking.com"
+                            print(f"⚠ Booking wrong-route click detected, recovering to {_recovery_url}")
+                            try:
+                                await tools_dict["browser_navigate"].ainvoke({"url": _recovery_url})
+                                recover_snap = await session.call_tool("browser_snapshot", {})
+                                recover_text = str(recover_snap)
+                                result_str = recover_text
+                                result_for_llm = self._compress_snapshot(
+                                    recover_text,
+                                    site_type=site_type,
+                                    max_chars=max_snapshot_chars,
+                                    max_products=max_prod,
+                                )
+                                result_for_llm += (
+                                    "\n\nBOOKING RECOVERY: previous click opened Help/Login path. "
+                                    "Do NOT use header refs. Continue only with SEARCH FORM and calendar refs."
+                                )
+                            except Exception as e:
+                                print(f"⚠ Booking wrong-route recovery failed: {e}")
+
+                        # Detect loops: destination combobox repeatedly clicked on results page.
+                        _dest_combo_clicked = (
+                            action_name == "browser_click"
+                            and "getbyrole('combobox', { name: 'où allez-vous ?' }).click()" in result_str.lower()
+                            and "searchresults" in _curr_url_l
+                        )
+                        if _dest_combo_clicked:
+                            _booking_destination_reclicks += 1
+                        elif action_name == "browser_click":
+                            _booking_destination_reclicks = 0
+
+                        if _booking_destination_reclicks >= 2:
+                            result_for_llm += (
+                                "\n\nBOOKING LOOP WARNING: You are re-clicking destination on results page. "
+                                "Next action must target date/calendar refs, not 'Où allez-vous ?'."
+                            )
+
+                        _clicked_flex_dates = (
+                            action_name == "browser_click"
+                            and "inclure les dates" in result_str.lower()
+                        )
+                        if _clicked_flex_dates:
+                            _booking_flex_dates_clicks += 1
+                        elif action_name == "browser_click":
+                            _booking_flex_dates_clicks = 0
+
+                        if _booking_flex_dates_clicks >= 2:
+                            result_for_llm += (
+                                "\n\nBOOKING DATE WARNING: You are clicking date-flexibility controls, not calendar day cells. "
+                                "Next action must use a ref from DATE PICKER for check-in/check-out days."
+                            )
+
+                        _missing_dates_in_url = (
+                            "searchresults" in _curr_url_l
+                            and ("checkin=" not in _curr_url_l or "checkout=" not in _curr_url_l)
+                        )
+                        _date_selection_stuck = (
+                            _booking_flex_dates_clicks >= 2 or _booking_destination_reclicks >= 3
+                        )
+                        if _missing_dates_in_url and _date_selection_stuck and "browser_navigate" in tools_dict:
+                            _recovery_src = _curr_url or _booking_last_good_url
+                            _dated_url = _inject_booking_dates(_recovery_src)
+                            if _dated_url:
+                                print(f"⚠ Booking date-selection stuck, recovering via dated URL: {_dated_url}")
+                                try:
+                                    await tools_dict["browser_navigate"].ainvoke({"url": _dated_url})
+                                    recover_snap = await session.call_tool("browser_snapshot", {})
+                                    recover_text = str(recover_snap)
+                                    result_str = recover_text
+                                    result_for_llm = self._compress_snapshot(
+                                        recover_text,
+                                        site_type=site_type,
+                                        max_chars=max_snapshot_chars,
+                                        max_products=max_prod,
+                                    )
+                                    result_for_llm += (
+                                        "\n\nBOOKING DATE RECOVERY: weekend dates were injected in URL after repeated date-selection drift. "
+                                        "Continue with filters, open two hotels in separate tabs, and review cancellation policy."
+                                    )
+                                    _booking_flex_dates_clicks = 0
+                                    _booking_destination_reclicks = 0
+                                except Exception as e:
+                                    print(f"⚠ Booking dated URL recovery failed: {e}")
 
                     # ── AUTO-FILL LOGIN FORMS ────────────────────────────
                     # Detect login forms and auto-fill with credentials
                     if is_wallstreet and wallstreet_username and wallstreet_password:
                         if action_name in ("browser_navigate", "browser_snapshot", "browser_click"):
+                            # Check if already logged in (dashboard/portfolio visible)
+                            is_logged_in = (
+                                "dashboard" in result_str.lower() or
+                                "portfolio" in result_str.lower() or
+                                "logout" in result_str.lower() or
+                                "account" in (start_url or "").lower()
+                            )
+
+                            if is_logged_in:
+                                print("✅ Already logged in to Wall Street Survivor - skipping login")
+                                print(f"   Session active for: {wallstreet_username}")
                             # Check if this is a login page
-                            if ("login" in result_str.lower() and 
-                                ("username" in result_str.lower() or "password" in result_str.lower())):
+                            elif ("login" in result_str.lower() and
+                                  ("username" in result_str.lower() or "password" in result_str.lower() or
+                                   "email" in result_str.lower() or "sign in" in result_str.lower())):
                                 print("🔐 Login form detected! Auto-filling credentials...")
                                 print(f"   Username: {wallstreet_username}")
                                 print(f"   Password: {wallstreet_password}")
-                                
+
                                 try:
                                     # Use browser_evaluate with JavaScript to fill form fields directly
                                     fill_script = f"""
                                     () => {{
                                         let filled = 0;
-                                        
-                                        // Find and fill username field
-                                        let usernameInput = document.querySelector('input[name="username"]') || 
+
+                                        // Find and fill username/email field
+                                        let usernameInput = document.querySelector('input[name="username"]') ||
+                                                           document.querySelector('input[name="email"]') ||
+                                                           document.querySelector('input[type="email"]') ||
                                                            document.querySelector('input[type="text"]') ||
                                                            document.querySelector('input[name*="user"]');
                                         if (usernameInput) {{
@@ -2094,7 +2822,7 @@ Remember to respond in the exact format: Thought / Action / Target
                                             usernameInput.dispatchEvent(new Event('change', {{ bubbles: true }}));
                                             filled++;
                                         }}
-                                        
+
                                         // Find and fill password field
                                         let passwordInput = document.querySelector('input[type="password"]') ||
                                                            document.querySelector('input[name*="pass"]');
@@ -2105,11 +2833,11 @@ Remember to respond in the exact format: Thought / Action / Target
                                             passwordInput.dispatchEvent(new Event('change', {{ bubbles: true }}));
                                             filled++;
                                         }}
-                                        
+
                                         return {{ filled: filled, username: usernameInput?.value || 'not found', password: passwordInput?.value ? '***' : 'not found' }};
                                     }}
                                     """
-                                    
+
                                     fill_result = await tools_dict["browser_evaluate"].ainvoke({
                                         "function": fill_script
                                     })
@@ -2118,12 +2846,133 @@ Remember to respond in the exact format: Thought / Action / Target
                                     # Take snapshot to confirm
                                     snapshot_result = await tools_dict["browser_snapshot"].ainvoke({})
                                     result_str = str(snapshot_result)
-                                    result_for_llm = self._compress_snapshot(result_str, site_type=site_type, max_products=max_prod)
+                                    result_for_llm = self._compress_snapshot(
+                                        result_str,
+                                        site_type=site_type,
+                                        max_chars=max_snapshot_chars,
+                                        max_products=max_prod,
+                                    )
                                     print(f"✓ Login form auto-filled successfully!")
                                     result_for_llm += f"\n\n✓ CREDENTIALS AUTO-FILLED:\n   Username: {wallstreet_username}\n   Password: ***\n\nNow click 'Log me in' button to complete login."
                                     
                                 except Exception as e:
                                     print(f"⚠ Auto-fill failed: {e}")
+
+                    # ── WALL STREET SURVIVOR: AUTO-DETECT SEARCH FIELD ────────────────────────────
+                    # When on Quotes page, help the agent find and use the stock search field
+                    if is_wallstreet and action_name == "browser_snapshot":
+                        # Check if we're on the Quotes page (where search happens)
+                        is_quotes_page = (
+                            "/quotes/" in (start_url or "").lower() or
+                            "quotes" in result_str.lower()
+                        )
+
+                        # Detect if snapshot is showing iframe content (Google Ads) instead of main page
+                        is_iframe_content = (
+                            "iframe" in result_str.lower() and
+                            ("googleadservices" in result_str.lower() or "pagead" in result_str.lower() or
+                             "activez votre compte" in result_str.lower())
+                        )
+
+                        if is_iframe_content:
+                            print("⚠️  Snapshot showing iframe (ads) - using browser_evaluate instead")
+                            result_for_llm += (
+                                "\n\n⚠️  SNAPSHOT ISSUE: The snapshot is showing Google Ads iframe content.\n"
+                                "The main page elements are NOT visible in the snapshot.\n\n"
+                                "SOLUTION: Use browser_evaluate to interact with the main page directly:\n\n"
+                                "To find and click the search field:\n"
+                                "ACTION: browser_evaluate\n"
+                                "ACTION_INPUT: {\"function\": \"() => {\n"
+                                "  const searchInput = document.querySelector('.qmod-symbollookup, input[placeholder*=\\'Search\\'], input[placeholder*=\\'symbol\\']');\n"
+                                "  if(searchInput) { searchInput.click(); searchInput.focus(); return 'search field focused'; }\n"
+                                "  return 'search field not found';\n"
+                                "}\"}\n\n"
+                                "To type NVDA character by character (triggers autocomplete):\n"
+                                "ACTION: browser_evaluate\n"
+                                "ACTION_INPUT: {\"function\": \"() => {\n"
+                                "  const searchInput = document.querySelector('.qmod-symbollookup');\n"
+                                "  if(!searchInput) return 'not found';\n"
+                                "  searchInput.value = '';\n"
+                                "  ['N','V','D','A'].forEach(c => {\n"
+                                "    searchInput.dispatchEvent(new KeyboardEvent('keydown', {key: c, bubbles: true}));\n"
+                                "    searchInput.value += c;\n"
+                                "    searchInput.dispatchEvent(new KeyboardEvent('keyup', {key: c, bubbles: true}));\n"
+                                "    searchInput.dispatchEvent(new Event('input', {bubbles: true}));\n"
+                                "  });\n"
+                                "  return 'NVDA typed';\n"
+                                "}\"}\n\n"
+                                "After typing, wait 1500ms then snapshot to see dropdown results.\n"
+                                "DO NOT rely on snapshot refs for the search field - use browser_evaluate!\n"
+                            )
+
+                        if is_quotes_page and not is_iframe_content:
+                            # Detect if search field is visible but not yet used
+                            has_search_field = (
+                                "search for a symbol" in result_str.lower() or
+                                "search for a stock" in result_str.lower() or
+                                "symbol" in result_str.lower()
+                            )
+
+                            if has_search_field:
+                                print("🔍 Wall Street Survivor search field detected on Quotes page")
+                                print("   ℹ️  Reminding agent to use visible typing and dropdown selection")
+                                result_for_llm += (
+                                    "\n\n⚠️  IMPORTANT: To search for a stock symbol on the Quotes page:\n"
+                                    "1) Click the visible search field\n"
+                                    "2) Type the symbol visibly using keyboard input\n"
+                                    "3) Wait for the autocomplete dropdown to appear\n"
+                                    "4) Take a snapshot to capture the visible suggestions\n"
+                                    "5) Click the matching result from the dropdown\n"
+                                    "Do NOT use browser_evaluate to inject the symbol value directly.\n"
+                                )
+
+                    # ── WALL STREET SURVIVOR: AUTO-DETECT POPUPS/MODALS ────────────────────────────
+                    # Detect and handle common popups that block interaction
+                    if is_wallstreet and action_name in ("browser_snapshot", "browser_navigate", "browser_click"):
+                        # Check for "Class Access Barrier" modal
+                        has_class_modal = (
+                            "class" in result_str.lower() and
+                            ("barrier" in result_str.lower() or "access" in result_str.lower() or "create" in result_str.lower())
+                        )
+
+                        # Check for tour/welcome modal (jQuery UI dialog)
+                        has_tour_modal = (
+                            "tour" in result_str.lower() or "welcome" in result_str.lower() or
+                            "ui-dialog" in result_str.lower() or "overlay" in result_str.lower()
+                        )
+
+                        # Check for sticky footer or ad overlays
+                        has_sticky_footer = "stick" in result_str.lower() or "aym" in result_str.lower()
+
+                        if has_class_modal:
+                            print("🚨 Wall Street Survivor 'Class Access Barrier' modal detected!")
+                            result_for_llm += (
+                                "\n\n⚠️  ACTION REQUIRED: Class Access Barrier modal detected!\n"
+                                "IMMEDIATE STEPS:\n"
+                                "1. browser_snapshot to find the 'Create Class' button ref\n"
+                                "2. browser_click on 'Create Class' button\n"
+                                "3. If a form appears, browser_type a random class name (e.g., 'TestClass123')\n"
+                                "4. browser_click the Submit/Create button\n"
+                                "5. After modal closes, continue with the main scenario\n"
+                            )
+
+                        if has_tour_modal or has_sticky_footer:
+                            print("⚠️  Modal/overlay detected - dismissing with Escape or evaluate")
+                            # Provide specific instructions for modal dismissal
+                            result_for_llm += (
+                                "\n\n⚠️  MODAL/OVERLAY DETECTED - TRY THESE IN ORDER (MAX 3 STEPS TOTAL):\n"
+                                "1. FIRST: browser_press_key {\"key\": \"Escape\"}\n"
+                                "2. If still blocked: browser_evaluate {\"function\": \"() => {\n"
+                                "     const closeBtn = document.querySelector('.ui-dialog-titlebar-close, .close, [aria-label*=close]');\n"
+                                "     if(closeBtn) { closeBtn.click(); return 'done'; }\n"
+                                "     document.querySelector('.ui-widget-overlay')?.click();\n"
+                                "     return 'overlay';\n"
+                                "   }\"}\n"
+                                "3. If STILL blocked after 2 attempts: IGNORE and proceed to main task!\n"
+                                "   → Navigate directly: browser_navigate {\"url\": \"https://app.wallstreetsurvivor.com/quotes/quotesv2\"}\n"
+                                "   → The modal will be gone on the new page\n"
+                                "⛔ DO NOT waste >3 steps on modal - NAVIGATE AWAY if stuck!\n"
+                            )
 
                     # ── Parasitic cookie tab detection ────────────────────────────
                     # Close cookiebot.com or similar parasite tabs that open after clicks
@@ -2136,6 +2985,27 @@ Remember to respond in the exact format: Thought / Action / Target
                                     print("✓ Cookie tab closed")
                             except Exception as e:
                                 print(f"⚠ Failed to close cookie tab: {e}")
+
+                        # Booking frequently opens hotel cards in a new tab; switch automatically.
+                        if is_booking and "browser_tabs" in tools_dict:
+                            try:
+                                tabs_result = await tools_dict["browser_tabs"].ainvoke({"action": "list"})
+                                tabs_text = str(tabs_result)
+                                tab_indexes = [int(m) for m in _re.findall(r'\b(\d+):\s*(?:\(current\))?', tabs_text)]
+                                if tab_indexes:
+                                    target_idx = max(tab_indexes)
+                                    switched = False
+                                    for action in ("select", "switch"):
+                                        try:
+                                            await tools_dict["browser_tabs"].ainvoke({"action": action, "index": target_idx})
+                                            switched = True
+                                            break
+                                        except Exception:
+                                            continue
+                                    if switched and target_idx > 0:
+                                        print(f"✓ Switched to newly opened tab {target_idx}")
+                            except Exception as e:
+                                print(f"⚠ Booking tab auto-switch skipped: {e}")
 
                     # ── Detect unchanged snapshots after scroll ────────────────────────────
                     if action_name in ("browser_evaluate", "browser_snapshot"):
@@ -2162,7 +3032,12 @@ Remember to respond in the exact format: Thought / Action / Target
                                     # Take snapshot after closing dropdown
                                     snap_after_close = await session.call_tool("browser_snapshot", {})
                                     snap_str_after = str(snap_after_close)
-                                    result_for_llm = self._compress_snapshot(snap_str_after, site_type=site_type, max_products=max_prod)
+                                    result_for_llm = self._compress_snapshot(
+                                        snap_str_after,
+                                        site_type=site_type,
+                                        max_chars=max_snapshot_chars,
+                                        max_products=max_prod,
+                                    )
                                     # Detect unchanged snapshots after dropdown close
                                     if result_for_llm == _last_compressed:
                                         result_for_llm += "\nPage unchanged after scroll. Stop scrolling, use visible refs above."
@@ -2171,6 +3046,31 @@ Remember to respond in the exact format: Thought / Action / Target
                                     print("✓ Escape pressed and snapshot refreshed")
                             except Exception as e:
                                 print(f"⚠ Auto-close dropdown failed: {e}")
+
+                    # Booking fallback: when search click keeps user on homepage, trigger form submit directly.
+                    if is_booking and action_name == "browser_click":
+                        try:
+                            _url_match = _re.search(r"Page URL:\s*(\S+)", result_str)
+                            _curr_url = _url_match.group(1) if _url_match else ""
+                            _looks_like_home = "booking.com/index" in _curr_url.lower()
+                            _search_click = "rechercher" in result_str.lower() or "searchbox-submit" in result_str.lower()
+                            if _looks_like_home and _search_click and "browser_evaluate" in tools_dict:
+                                submit_res = await tools_dict["browser_evaluate"].ainvoke({
+                                    "function": "() => { const btn = document.querySelector('button[type=\"submit\"], button[data-testid*=\"searchbox-submit\"]'); if (btn) { btn.click(); return 'forced search submit'; } return 'search submit button not found'; }"
+                                })
+                                print(f"✓ Booking forced submit: {submit_res}")
+                                await asyncio.sleep(2)
+                                snap_after_submit = await session.call_tool("browser_snapshot", {})
+                                snap_submit_text = str(snap_after_submit)
+                                result_for_llm = self._compress_snapshot(
+                                    snap_submit_text,
+                                    site_type=site_type,
+                                    max_chars=max_snapshot_chars,
+                                    max_products=max_prod,
+                                )
+                                _last_compressed = result_for_llm
+                        except Exception as e:
+                            print(f"⚠ Booking submit fallback failed: {e}")
 
                     # After a scroll action, wait 2s then auto-take a snapshot
                     # so the LLM sees updated products without a separate step.
@@ -2183,7 +3083,12 @@ Remember to respond in the exact format: Thought / Action / Target
                         print("📸 Auto-snapshot after scroll...")
                         snap_result = await session.call_tool("browser_snapshot", {})
                         snap_str = str(snap_result)
-                        compressed = self._compress_snapshot(snap_str, site_type=site_type, max_products=max_prod)
+                        compressed = self._compress_snapshot(
+                            snap_str,
+                            site_type=site_type,
+                            max_chars=max_snapshot_chars,
+                            max_products=max_prod,
+                        )
                         # Detect unchanged snapshots after scroll
                         if compressed == _last_compressed:
                             compressed += "\nPage unchanged after scroll. Stop scrolling, use visible refs above."
@@ -2288,12 +3193,49 @@ Remember to respond in the exact format: Thought / Action / Target
                         except Exception:
                             pass
 
-                        result_for_llm = (
-                            f"TOOL ERROR: Click blocked by overlay.\n"
-                            f"Auto-recovery attempted: {'success' if recovered else 'failed'}.\n"
-                            "If a modal/dialog is open, close it first (Escape or close button), then retry the previous action.\n"
-                            "Use browser_snapshot to refresh refs before retrying."
-                        )
+                        # If recovery succeeded, retry the same click once automatically.
+                        retried = False
+                        if recovered and action_name == "browser_click":
+                            try:
+                                retry_result = await tools_dict[action_name].ainvoke(action_input)
+                                retried = True
+
+                                retry_str = None
+                                if isinstance(retry_result, list):
+                                    text_parts = []
+                                    for item in retry_result:
+                                        if isinstance(item, dict) and 'text' in item:
+                                            text_parts.append(item['text'])
+                                        elif hasattr(item, 'text'):
+                                            text_parts.append(item.text)
+                                        else:
+                                            text_parts.append(str(item))
+                                    retry_str = '\n'.join(text_parts)
+                                elif hasattr(retry_result, 'text'):
+                                    retry_str = retry_result.text
+                                elif isinstance(retry_result, str):
+                                    retry_str = retry_result
+                                else:
+                                    retry_str = str(retry_result)
+
+                                result_str = retry_str
+                                result_for_llm = retry_str[:1500]
+                                if len(retry_str) > 1500:
+                                    result_for_llm += "\n... (truncated)"
+                                print("✅ Click succeeded after overlay auto-recovery retry")
+                            except Exception as retry_err:
+                                result_for_llm = (
+                                    f"TOOL ERROR: Click blocked by overlay and retry failed: {retry_err}\n"
+                                    "Close overlay (Escape/close), take browser_snapshot, then choose a non-blocked ref."
+                                )
+
+                        if not retried:
+                            result_for_llm = (
+                                f"TOOL ERROR: Click blocked by overlay.\n"
+                                f"Auto-recovery attempted: {'success' if recovered else 'failed'}.\n"
+                                "If a modal/dialog is open, close it first (Escape or close button), then retry the previous action.\n"
+                                "Use browser_snapshot to refresh refs before retrying."
+                            )
                     else:
                         result_for_llm = (
                             f"TOOL ERROR: {e}\n"

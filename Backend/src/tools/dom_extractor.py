@@ -321,24 +321,69 @@ async def _extract_modal(page) -> str:
     except:
         pass
 
-    # 2) Check for a currently-visible modal
+    # 2) Check for a currently-visible modal or overlay
     try:
         modal_text = await page.evaluate("""
             () => {
+                const isVisible = (el) => {
+                    if (!el) return false;
+                    const style = window.getComputedStyle(el);
+                    const rect = el.getBoundingClientRect();
+                    return style && style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0' && rect.width > 0 && rect.height > 0;
+                };
+
                 // automationexercise.com specific: #cartModal
                 const cartModal = document.querySelector('#cartModal');
-                if (cartModal) {
-                    const style = window.getComputedStyle(cartModal);
-                    if (style.display !== 'none' && cartModal.classList.contains('show') || cartModal.style.display === 'block') {
-                        const body = cartModal.querySelector('.modal-body') || cartModal;
-                        return body.innerText.trim();
-                    }
-                }
-                // Generic Bootstrap modal
-                const modal = document.querySelector('.modal.show, .modal.in, .modal[style*="display: block"]');
-                if (modal) {
-                    const body = modal.querySelector('.modal-body') || modal;
+                if (cartModal && isVisible(cartModal)) {
+                    const body = cartModal.querySelector('.modal-body') || cartModal;
                     return body.innerText.trim();
+                }
+
+                const selectors = [
+                    '.modal.show', '.modal.in', '.modal[style*="display: block"]',
+                    '[role="dialog"]', '[role="alertdialog"]', '[aria-modal="true"]',
+                    '.popup', '.popup.show', '.dialog', '.dialog.show', '.overlay', '.drawer', '.sheet',
+                    '[class*="modal"]', '[class*="dialog"]', '[class*="popup"]', '[class*="overlay"]', '[class*="backdrop"]'
+                ];
+
+                const visibleCandidates = [];
+                for (const selector of selectors) {
+                    document.querySelectorAll(selector).forEach(el => {
+                        if (isVisible(el)) visibleCandidates.push(el);
+                    });
+                }
+
+                if (!visibleCandidates.length) {
+                    const fixedLayers = Array.from(document.querySelectorAll('body *')).filter(el => {
+                        if (!isVisible(el)) return false;
+                        const style = window.getComputedStyle(el);
+                        const position = style.position;
+                        const zIndex = parseInt(style.zIndex || '0', 10);
+                        const text = (el.innerText || '').trim();
+                        return text && (position === 'fixed' || position === 'sticky' || zIndex >= 1000);
+                    });
+                    visibleCandidates.push(...fixedLayers.slice(0, 5));
+                }
+
+                const modal = visibleCandidates.sort((a, b) => {
+                    const aRect = a.getBoundingClientRect();
+                    const bRect = b.getBoundingClientRect();
+                    const aArea = aRect.width * aRect.height;
+                    const bArea = bRect.width * bRect.height;
+                    return bArea - aArea;
+                })[0];
+
+                if (modal) {
+                    const body = modal.querySelector('.modal-body, .modal-content, [role="document"]') || modal;
+                    const text = (body.innerText || body.textContent || '').trim();
+                    if (text) {
+                        return text;
+                    }
+                    const closeLabel = modal.querySelector('button[aria-label*="close" i], [data-dismiss="modal"], .close, [class*="close"]');
+                    if (closeLabel) {
+                        return 'Popup overlay visible with close control';
+                    }
+                    return 'Popup overlay visible';
                 }
                 return '';
             }

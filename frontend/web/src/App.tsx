@@ -72,11 +72,20 @@ type PlaywrightRunResponse = {
   execution_id: string
   status: string
   generated_script: string
-  execution_log: string[]
+  execution_log?: unknown[]
+  steps_detail?: unknown[]
   error_message: string | null
-  duration_ms: number
+  duration_ms?: number
   has_screenshot: boolean
   screenshot_base64: string | null
+  scenario?: {
+    name: string
+    objectif: string
+    description: string
+    key_actions: string[]
+    success_criteria: string[]
+    strict_done_validation: boolean
+  }
 }
 
 type PlaywrightExecution = {
@@ -86,13 +95,35 @@ type PlaywrightExecution = {
   generated_script: string
   browser_name: string
   status: string
-  execution_log: string[]
+  execution_log: unknown[]
   error_message: string | null
   screenshot_base64: string | null
   duration_ms: number
 }
 
 const API_BASE = 'http://localhost:5000/api'
+
+function extractApiErrorMessage(payload: unknown, fallback: string): string {
+  if (!payload || typeof payload !== 'object') {
+    return fallback
+  }
+
+  const detail = (payload as { detail?: unknown }).detail
+  if (typeof detail === 'string' && detail.trim()) {
+    return detail
+  }
+
+  if (detail && typeof detail === 'object') {
+    const info = detail as { error?: string; persona_id?: string; hint?: string }
+    if (info.error === 'persona_not_found') {
+      const personaLabel = info.persona_id ? ` (${info.persona_id})` : ''
+      const hint = info.hint ? ` ${info.hint}` : ''
+      return `Persona not found${personaLabel}.${hint}`.trim()
+    }
+  }
+
+  return fallback
+}
 
 // View type: 'dashboard' | 'playwright-history'
 type View = 'dashboard' | 'playwright-history'
@@ -121,6 +152,7 @@ function App() {
   // Actions + script generation workflow state
   const [actionsPersona, setActionsPersona] = useState<Persona | null>(null)
   const [actionsModalOpen, setActionsModalOpen] = useState(false)
+  const [actionsModalMode, setActionsModalMode] = useState<'generate' | 'check'>('generate')
   // persona_ids for which a Playwright script has already been generated
   const [personasWithScript, setPersonasWithScript] = useState<Set<string>>(new Set())
   // currently-in-flight script generation — drives the "generating..." banner
@@ -201,6 +233,15 @@ function App() {
   function handleGenerateActions(persona: Persona) {
     setWorkflowError('')
     setWorkflowMessage('')
+    setActionsModalMode('generate')
+    setActionsPersona(persona)
+    setActionsModalOpen(true)
+  }
+
+  function handleCheckActions(persona: Persona) {
+    setWorkflowError('')
+    setWorkflowMessage('')
+    setActionsModalMode('check')
     setActionsPersona(persona)
     setActionsModalOpen(true)
   }
@@ -283,8 +324,10 @@ function App() {
         setGeneratingScriptForId(null)
         setWorkflowMessage('')
         const payload = await scriptResponse.json().catch(() => ({}))
-        const msg = (payload as { detail?: string }).detail
-          || `Script generation failed (${scriptResponse.status})`
+        const msg = extractApiErrorMessage(
+          payload,
+          `Script generation failed (${scriptResponse.status})`
+        )
         console.error('[workflow] /playwright/generate non-OK:', msg)
         throw new Error(msg)
       }
@@ -301,13 +344,35 @@ function App() {
         throw new Error(msg)
       }
 
+      // Display scenario in readable format if available
+      if (payload.scenario) {
+        const scenarioName = payload.scenario.name || 'Test Scenario'
+        const steps = payload.scenario.key_actions || []
+        const criteria = payload.scenario.success_criteria || []
+
+        let scenarioDisplay = `🎯 Scenario: ${scenarioName}\n\n`
+        scenarioDisplay += 'Steps:\n'
+        steps.forEach((step, i) => {
+          scenarioDisplay += `${i + 1}. ${step}\n`
+        })
+        if (criteria.length > 0) {
+          scenarioDisplay += '\n✓ Success when:\n'
+          criteria.forEach((c) => {
+            scenarioDisplay += `- ${c}\n`
+          })
+        }
+        console.log('[workflow] Scenario preview:', scenarioDisplay)
+      }
+
       // Success — flip the persona into "stage 2", close the modal, refresh.
       setPersonasWithScript((prev) => {
         const next = new Set(prev)
         next.add(persona.id)
         return next
       })
-      setWorkflowMessage(`Test script generated and saved for ${personaLabel}.`)
+
+      setWorkflowMessage(`Actions saved and scenario updated for ${personaLabel}. Click Execute Scenario when ready.`)
+
       setActionsModalOpen(false)
       setActionsPersona(null)
       await loadDashboard()
@@ -351,7 +416,7 @@ function App() {
         execution_id: execution.id,
         status: execution.status,
         generated_script: execution.generated_script,
-        execution_log: execution.execution_log || [],
+        execution_log: Array.isArray(execution.execution_log) ? execution.execution_log : [],
         error_message: execution.error_message,
         duration_ms: execution.duration_ms || 0,
         has_screenshot: Boolean(execution.screenshot_base64),
@@ -365,14 +430,68 @@ function App() {
 
   async function handleExecuteScript(persona: Persona) {
     setRunningScriptPersonaId(persona.id)
-    setPwRunMessage('')
+    setPwRunMessage('Running... Step 0 completed')
     setScriptPersonaName(persona.nom || persona.name || 'Unknown')
     setScriptPersonaUrl(persona.website_domain ? `https://${persona.website_domain}` : '')
 
     try {
-      const execution = await getLatestExecutionForPersona(persona.id)
+      // EDGE CASE 7: Check for existing execution first
+      let execution = await getLatestExecutionForPersona(persona.id)
+
+      // If no execution exists, auto-trigger generation first
       if (!execution) {
-        throw new Error('No script available. Click Run test first to generate and save a script.')
+        setPwRunMessage('No scenario found. Generating...')
+
+        // First save actions if not already saved
+        const actionsToSave = persona.actions_site || []
+        if (actionsToSave.length === 0) {
+          // Generate actions first
+          const actionsResponse = await fetch(`${API_BASE}/personas/${persona.id}/generate-actions`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ provider: 'ollama' }),
+          })
+          if (!actionsResponse.ok) {
+            throw new Error('Action generation failed')
+          }
+          const actionsData = (await actionsResponse.json()) as { actions: string[] }
+          if (actionsData.actions && actionsData.actions.length > 0) {
+            // Save the actions
+            await fetch(`${API_BASE}/personas/${persona.id}/actions`, {
+              method: 'PUT',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ actions: actionsData.actions }),
+            })
+          }
+        }
+
+        // Generate the scenario
+        const genResponse = await fetch(`${API_BASE}/playwright/generate`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            persona_id: persona.id,
+            provider: 'ollama',
+            browser_name: 'chromium',
+          }),
+        })
+        if (!genResponse.ok) {
+          const payload = await genResponse.json().catch(() => ({}))
+          throw new Error(extractApiErrorMessage(payload, 'Scenario generation failed'))
+        }
+        const genResult = (await genResponse.json()) as PlaywrightRunResponse
+
+        if (!genResult.execution_id) {
+          throw new Error('Scenario generation returned no execution_id')
+        }
+
+        // Fetch the execution record to confirm it exists
+        execution = await getLatestExecutionForPersona(persona.id)
+        if (!execution) {
+          throw new Error('Execution not found after generation')
+        }
+
+        setPwRunMessage('Scenario generated. Now executing...')
       }
 
       const response = await fetch(`${API_BASE}/playwright/run-script`, {
@@ -384,14 +503,52 @@ function App() {
           browser_name: 'chromium',
         }),
       })
-      if (!response.ok) {
-        const payload = (await response.json()) as { detail?: string }
-        throw new Error(payload.detail || `Script run failed (${response.status})`)
+      let runResponse = response
+      if (!runResponse.ok && runResponse.status === 409) {
+        setPwRunMessage('Execution appears locked. Retrying once...')
+        runResponse = await fetch(`${API_BASE}/playwright/run-script`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            execution_id: execution.id,
+            provider: 'ollama',
+            browser_name: 'chromium',
+            force: true,
+          }),
+        })
       }
-      const result = (await response.json()) as PlaywrightRunResponse
-      setScriptResult(result)
+      if (!runResponse.ok) {
+        const payload = (await runResponse.json()) as { detail?: string }
+        throw new Error(payload.detail || `Script run failed (${runResponse.status})`)
+      }
+      const result = (await runResponse.json()) as PlaywrightRunResponse
+      const rawRunLog = Array.isArray(result.execution_log)
+        ? result.execution_log
+        : (Array.isArray(result.steps_detail) ? result.steps_detail : [])
+      const safeDurationMs = Number.isFinite(result.duration_ms) ? (result.duration_ms as number) : 0
+
+      setScriptResult({
+        ...result,
+        generated_script: result.generated_script || execution.generated_script || '',
+        execution_log: rawRunLog,
+        duration_ms: safeDurationMs,
+      })
       setScriptModalOpen(true)
-      setPwRunMessage(`Script ${result.status === 'success' ? 'passed ✓' : 'failed ✗'} in ${(result.duration_ms / 1000).toFixed(1)}s`)
+
+      // Show final status based on result
+      let finalMessage = ''
+      if (result.status === 'completed' || result.status === 'success') {
+        const stepsDetail = rawRunLog
+        const stepCount = Array.isArray(stepsDetail) ? stepsDetail.length : 0
+        finalMessage = `✅ Completed in ${stepCount} steps`
+      } else if (result.status === 'max_steps_reached') {
+        finalMessage = '⚠️ Max steps reached'
+      } else if (result.status === 'error') {
+        finalMessage = `❌ Error: ${result.error_message || 'unknown error'}`
+      } else {
+        finalMessage = `Script ${result.status === 'success' ? 'passed ✓' : 'failed ✗'} in ${(safeDurationMs / 1000).toFixed(1)}s`
+      }
+      setPwRunMessage(finalMessage)
       await loadDashboard()
     } catch (err) {
       setPwRunMessage(err instanceof Error ? err.message : 'Failed to run script')
@@ -550,9 +707,9 @@ function App() {
                             handleViewScript(persona)
                           }}
                           disabled={runningScriptPersonaId === persona.id}
-                          title="View the generated Playwright test script"
+                          title="View the generated scenario"
                         >
-                          View Script
+                          View Scenario
                         </button>
                         <button
                           type="button"
@@ -562,24 +719,50 @@ function App() {
                             handleExecuteScript(persona)
                           }}
                           disabled={runningScriptPersonaId === persona.id}
-                          title="Execute the saved script on the Playwright MCP server"
+                          title="Execute the saved scenario on the Playwright MCP server"
                         >
-                          {runningScriptPersonaId === persona.id ? 'Executing…' : 'Execute Script'}
+                          {runningScriptPersonaId === persona.id ? 'Executing…' : 'Execute Scenario'}
+                        </button>
+                        <button
+                          type="button"
+                          className="check-actions-btn"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleCheckActions(persona)
+                          }}
+                          disabled={runningScriptPersonaId === persona.id || generatingScriptForId === persona.id}
+                          title="Review and edit generated actions, then run scenario"
+                        >
+                          Check Actions
                         </button>
                       </>
                     ) : (
-                      <button
-                        type="button"
-                        className="check-actions-btn"
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          handleGenerateActions(persona)
-                        }}
-                        disabled={generatingScriptForId === persona.id}
-                        title="Generate persona-specific actions, then auto-generate the test script"
-                      >
-                        {generatingScriptForId === persona.id ? 'Generating script…' : 'Generate Actions'}
-                      </button>
+                      <>
+                        <button
+                          type="button"
+                          className="check-actions-btn"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleGenerateActions(persona)
+                          }}
+                          disabled={generatingScriptForId === persona.id}
+                          title="Generate persona-specific actions, then auto-generate the scenario"
+                        >
+                          {generatingScriptForId === persona.id ? 'Generating scenario…' : 'Generate Actions'}
+                        </button>
+                        <button
+                          type="button"
+                          className="run-script-btn"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleCheckActions(persona)
+                          }}
+                          disabled={generatingScriptForId === persona.id || runningScriptPersonaId === persona.id}
+                          title="Review/edit current actions and run scenario"
+                        >
+                          Check Actions
+                        </button>
+                      </>
                     )}
                   </div>
                 </div>
@@ -589,7 +772,7 @@ function App() {
           {generatingScriptForId && (
             <p className="status">
               <span className="ca-inline-spinner" aria-hidden="true" />
-              {workflowMessage || 'Generating Playwright test script…'}
+              {workflowMessage || 'Generating scenario…'}
             </p>
           )}
           {!generatingScriptForId && workflowMessage && (
@@ -703,12 +886,12 @@ function App() {
         <ScriptModal
           executionId={scriptResult.execution_id}
           script={scriptResult.generated_script || '// No script generated'}
-          logs={scriptResult.execution_log}
+          logs={scriptResult.execution_log || []}
           status={scriptResult.status}
           url={scriptPersonaUrl}
           personaName={scriptPersonaName}
           browserName="chromium"
-          durationMs={scriptResult.duration_ms}
+          durationMs={scriptResult.duration_ms ?? 0}
           errorMessage={scriptResult.error_message}
           screenshotBase64={scriptResult.screenshot_base64}
           onClose={() => setScriptModalOpen(false)}
@@ -717,13 +900,15 @@ function App() {
           }}
           onRunResult={(result) => {
             setScriptResult({
-              success: result.status === 'success',
+              success: result.status === 'success' || result.status === 'completed',
               execution_id: result.execution_id,
               status: result.status,
               generated_script: result.generated_script,
-              execution_log: result.execution_log,
+              execution_log: Array.isArray(result.execution_log)
+                ? result.execution_log
+                : (Array.isArray(result.steps_detail) ? result.steps_detail : []),
               error_message: result.error_message,
-              duration_ms: result.duration_ms,
+              duration_ms: Number.isFinite(result.duration_ms) ? (result.duration_ms as number) : 0,
               has_screenshot: Boolean(result.screenshot_base64),
               screenshot_base64: result.screenshot_base64,
             })
@@ -736,8 +921,16 @@ function App() {
         <CheckActionsModal
           personaName={actionsPersona.nom || actionsPersona.name || 'Unknown'}
           initialActions={actionsPersona.actions_site || []}
-          onLoadActions={() => loadActionsFromPlanner(actionsPersona.id)}
-          submitLabel="Submit & Generate Script"
+          onLoadActions={
+            actionsModalMode === 'generate'
+              ? () => loadActionsFromPlanner(actionsPersona.id)
+              : undefined
+          }
+          submitLabel={
+            actionsModalMode === 'check'
+              ? 'Save Actions'
+              : 'Submit & Generate Scenario'
+          }
           onClose={() => {
             setActionsModalOpen(false)
             setActionsPersona(null)

@@ -344,6 +344,17 @@ class DatabaseManager:
                 **persona_json  # Merge all persona fields
             }
         return None
+
+    def update_persona_json(self, persona_id: str, persona_dict: dict):
+        """Update the persona_json field for a persona."""
+        conn = self._connect()
+        cursor = conn.cursor()
+        cursor.execute(
+            "UPDATE personas SET persona_json=? WHERE id=?",
+            (json.dumps(persona_dict), persona_id),
+        )
+        conn.commit()
+        conn.close()
     
     def list_personas(self, website_id: str = None) -> List[Dict]:
         """List all personas, optionally filtered by website."""
@@ -647,6 +658,24 @@ class DatabaseManager:
         updated = cursor.rowcount > 0
         conn.close()
         return updated
+
+    def update_playwright_execution(self, execution_id: str, status: str,
+                                     execution_log: str, error_message: str = None):
+        """Update the status, execution_log, and error_message of an execution."""
+        conn = self._connect()
+        cursor = conn.cursor()
+        cursor.execute(
+            """UPDATE playwright_test_executions
+               SET status=?, execution_log=?, error_message=?,
+                   completed_at=CASE
+                     WHEN ? = 'running' THEN NULL
+                     ELSE datetime('now')
+                   END
+               WHERE id=?""",
+            (status, execution_log, error_message, status, execution_id),
+        )
+        conn.commit()
+        conn.close()
 
     # =========================================================================
     # STATISTICS

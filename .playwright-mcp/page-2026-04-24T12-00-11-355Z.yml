@@ -1,0 +1,570 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - iframe [ref=e5]:
+      - insertion [ref=f187e3]:
+        - iframe [ref=f187e5]:
+          
+    - generic [ref=e6] [cursor=pointer]: X
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - text: 
+      - button "Select Language" [ref=e9] [cursor=pointer]:
+        - text: About
+        - generic [ref=e10]: 
+      - generic "Challenges" [ref=e11] [cursor=pointer]:
+        - text: Contests
+        - generic [ref=e12]: 
+    - generic [ref=e14]:
+      - generic "Username" [ref=e15]: walaezzedine
+      - link "Unread Messages" [ref=e16] [cursor=pointer]:
+        - /url: /forum/messages
+        - generic [ref=e17]: 
+        - generic "Number of Unread Messages" [ref=e18]: "1"
+      - combobox "Tournament Select" [ref=e20]:
+        - option "My Practice Portfolio" [selected]
+      - link "Logout" [ref=e21] [cursor=pointer]:
+        - /url: /logout
+  - navigation [ref=e22]:
+    - menubar [ref=e24]:
+      - menuitem "Logo" [ref=e25]:
+        - link "Logo" [ref=e26] [cursor=pointer]:
+          - /url: /home
+          - img "Logo" [ref=e27]
+    - menubar [ref=e29]:
+      - menuitem "Dashboard" [ref=e30]:
+        - generic [ref=e31] [cursor=pointer]: Dashboard 
+        - text: 
+      - menuitem "Stock Game" [ref=e32]:
+        - generic [ref=e33] [cursor=pointer]: Stock Game 
+      - menuitem "Investing Research" [ref=e34]:
+        - generic "Investing Research" [ref=e35] [cursor=pointer]: Investing Research 
+      - menuitem "Courses" [ref=e36]:
+        - generic [ref=e37] [cursor=pointer]: Courses 
+      - menuitem "Getting Started" [ref=e38]:
+        - generic [ref=e39] [cursor=pointer]: Getting Started 
+  - generic [ref=e40]:
+    - text:        
+    - iframe [ref=e46]:
+      - generic [active] [ref=f186e1]:
+        - generic [ref=f186e3]:
+          - link [ref=f186e4] [cursor=pointer]:
+            - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CiJmASFvrabPSHYCF2fcP-YqukAn2wtqfhgHJqNDm6RXShofXpwIQASCvieAVYJUGoAHD4PS8AsgBCakCO_AMhRLlOj7gAgCoAwHIAwqqBL0CT9AEoFMcjVfwxiZ7rhSIQXaUazKYtHAfVVYSq2NmE-htyN8imIH5wYtt-Kefpwcw3B4zOKZwWYVy9n_ZFfFZYL7A76nZWtG01TBWCMWkNjxfbdkx-CejIKP8_h86wiCSJwpwjQePy8IzM_C4rSTcWrXBbk7MkkZl4MHLntDcoE28o1s3eJ44_EVQWBvo-LySVIcaEEhjFrCzryrhiWURDBgA3nFhFd_eeEWdlm8b_ygjxSlfnFta4YL36rTwBmsxghdPpVklFJJsT7EsDJEfMWRwsmvOaBwotybEOAJkhAiXOus-1Xzs71R26kqFjtK3IDoBa3_LSpJs6I6ZTwjjiNb1bCdEfpYu8WHn4w-B7UOo6oJxbaDn4w9PPOVdEQF551MtBgeMwMqkfl2tzGj6O9HF11aEtbq4uIg_7sfABJTW69yJA-AEAYgFiIv9vyOgBi6AB6Wfi8MBqAenzLECqAfi2LECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAea4bECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcA0gguCIBhEAEYHTIIioKAgICAgAg6DYBAgMCAgICAiIACqANIvf3BOliI5viMuIaUA_IIG2FkeC1zdWJzeW4tOTQ5NzA2MzI4OTcwMzIxNLEJAs5craxozU-ACgOYCwHICwGADAGiDAOQAQGqDQJUTsgNAeINEwj_wvmMuIaUAxWAQvYIHXmFC5LqDRMI1rD6jLiGlAMVgEL2CB15hQuS8A0CiA7___________8BuBPkA9gTDNAVAZgWAcoWAgoA-BYBgBcBshcQGAEqCjU2NzM4NDQwMjBQBroXAjgBqhgXCQAAAADgyO1AEgo1NjczODQ0MDIwGAGyGAkSAsBPGC4iAQDQGAHoGAHCGQIIAQ&ae=1&gclid=EAIaIQobChMIs5b7jLiGlAMVgEL2CB15hQuSEAEYASAAEgKGJfD_BwE&num=1&cid=CAQS9AEABaugfeL7EaoCnuMVYxa8s-PU-PB0_D3S9pjLLKlx61mGVGV8zKcuxSviFBJ_YkgWS2euPTNR6B1G1OsAzsxUApqaLnyzIyhg24m793Yfqyz3nm4qSKmA1r9MBWEHd8Z21K-ALVRTFTNnJOSZE1RdQa4VIZegMFAHcC2nWGOG71xki5A91ZqMq5_cPGNuY-hNrvifnRutgOTc8H7YccBN_m9TNy93kgJWA_ttJy3xH27MrVV7qlC6xxV8Rx1q3Zb8SADpWMxptdi5i64xd_Blu_3VikvCkwPy6FCV6qiwnbtDnw6dZwxQRHfHKIQ0x1yMwyobGAE&sig=AOD64_2nHqhKxxbJULTFZPtx1go-JAoIcw&client=ca-pub-1909231293858425&rf=4&nb=9&adurl=https://theshopyohjiyamamoto.com/collections/71%3Ffilter.v.price.gte%3D0%26filter.v.price.lte%3D4910%26filter.v.availability%3D1%26filter.p.m.attr.mainBrand%3Dgid%253A%252F%252Fshopify%252FMetaobject%252F275470909614%26sort_by%3Dmanual%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3DSEARCH%26gad_source%3D5%26gad_campaignid%3D9529410952%26gclid%3DEAIaIQobChMIs5b7jLiGlAMVgEL2CB15hQuSEAEYASAAEgKGJfD_BwE
+            - img [ref=f186e5]
+          - generic [ref=f186e6]:
+            - link "Yohji Yamamoto Femme" [ref=f186e9] [cursor=pointer]:
+              - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CiJmASFvrabPSHYCF2fcP-YqukAn2wtqfhgHJqNDm6RXShofXpwIQASCvieAVYJUGoAHD4PS8AsgBCakCO_AMhRLlOj7gAgCoAwHIAwqqBL0CT9AEoFMcjVfwxiZ7rhSIQXaUazKYtHAfVVYSq2NmE-htyN8imIH5wYtt-Kefpwcw3B4zOKZwWYVy9n_ZFfFZYL7A76nZWtG01TBWCMWkNjxfbdkx-CejIKP8_h86wiCSJwpwjQePy8IzM_C4rSTcWrXBbk7MkkZl4MHLntDcoE28o1s3eJ44_EVQWBvo-LySVIcaEEhjFrCzryrhiWURDBgA3nFhFd_eeEWdlm8b_ygjxSlfnFta4YL36rTwBmsxghdPpVklFJJsT7EsDJEfMWRwsmvOaBwotybEOAJkhAiXOus-1Xzs71R26kqFjtK3IDoBa3_LSpJs6I6ZTwjjiNb1bCdEfpYu8WHn4w-B7UOo6oJxbaDn4w9PPOVdEQF551MtBgeMwMqkfl2tzGj6O9HF11aEtbq4uIg_7sfABJTW69yJA-AEAYgFiIv9vyOgBi6AB6Wfi8MBqAenzLECqAfi2LECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAea4bECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcA0gguCIBhEAEYHTIIioKAgICAgAg6DYBAgMCAgICAiIACqANIvf3BOliI5viMuIaUA_IIG2FkeC1zdWJzeW4tOTQ5NzA2MzI4OTcwMzIxNLEJAs5craxozU-ACgOYCwHICwGADAGiDAOQAQGqDQJUTsgNAeINEwj_wvmMuIaUAxWAQvYIHXmFC5LqDRMI1rD6jLiGlAMVgEL2CB15hQuS8A0CiA7___________8BuBPkA9gTDNAVAZgWAcoWAgoA-BYBgBcBshcQGAEqCjU2NzM4NDQwMjBQBroXAjgBqhgXCQAAAADgyO1AEgo1NjczODQ0MDIwGAGyGAkSAsBPGC4iAQDQGAHoGAHCGQIIAQ&ae=1&gclid=EAIaIQobChMIs5b7jLiGlAMVgEL2CB15hQuSEAEYASAAEgKGJfD_BwE&num=1&cid=CAQS9AEABaugfeL7EaoCnuMVYxa8s-PU-PB0_D3S9pjLLKlx61mGVGV8zKcuxSviFBJ_YkgWS2euPTNR6B1G1OsAzsxUApqaLnyzIyhg24m793Yfqyz3nm4qSKmA1r9MBWEHd8Z21K-ALVRTFTNnJOSZE1RdQa4VIZegMFAHcC2nWGOG71xki5A91ZqMq5_cPGNuY-hNrvifnRutgOTc8H7YccBN_m9TNy93kgJWA_ttJy3xH27MrVV7qlC6xxV8Rx1q3Zb8SADpWMxptdi5i64xd_Blu_3VikvCkwPy6FCV6qiwnbtDnw6dZwxQRHfHKIQ0x1yMwyobGAE&sig=AOD64_2nHqhKxxbJULTFZPtx1go-JAoIcw&client=ca-pub-1909231293858425&rf=4&nb=0&adurl=https://theshopyohjiyamamoto.com/collections/71%3Ffilter.v.price.gte%3D0%26filter.v.price.lte%3D4910%26filter.v.availability%3D1%26filter.p.m.attr.mainBrand%3Dgid%253A%252F%252Fshopify%252FMetaobject%252F275470909614%26sort_by%3Dmanual%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3DSEARCH%26gad_source%3D5%26gad_campaignid%3D9529410952%26gclid%3DEAIaIQobChMIs5b7jLiGlAMVgEL2CB15hQuSEAEYASAAEgKGJfD_BwE
+            - link "theshopyohjiyamamoto.com" [ref=f186e11] [cursor=pointer]:
+              - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CiJmASFvrabPSHYCF2fcP-YqukAn2wtqfhgHJqNDm6RXShofXpwIQASCvieAVYJUGoAHD4PS8AsgBCakCO_AMhRLlOj7gAgCoAwHIAwqqBL0CT9AEoFMcjVfwxiZ7rhSIQXaUazKYtHAfVVYSq2NmE-htyN8imIH5wYtt-Kefpwcw3B4zOKZwWYVy9n_ZFfFZYL7A76nZWtG01TBWCMWkNjxfbdkx-CejIKP8_h86wiCSJwpwjQePy8IzM_C4rSTcWrXBbk7MkkZl4MHLntDcoE28o1s3eJ44_EVQWBvo-LySVIcaEEhjFrCzryrhiWURDBgA3nFhFd_eeEWdlm8b_ygjxSlfnFta4YL36rTwBmsxghdPpVklFJJsT7EsDJEfMWRwsmvOaBwotybEOAJkhAiXOus-1Xzs71R26kqFjtK3IDoBa3_LSpJs6I6ZTwjjiNb1bCdEfpYu8WHn4w-B7UOo6oJxbaDn4w9PPOVdEQF551MtBgeMwMqkfl2tzGj6O9HF11aEtbq4uIg_7sfABJTW69yJA-AEAYgFiIv9vyOgBi6AB6Wfi8MBqAenzLECqAfi2LECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAea4bECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcA0gguCIBhEAEYHTIIioKAgICAgAg6DYBAgMCAgICAiIACqANIvf3BOliI5viMuIaUA_IIG2FkeC1zdWJzeW4tOTQ5NzA2MzI4OTcwMzIxNLEJAs5craxozU-ACgOYCwHICwGADAGiDAOQAQGqDQJUTsgNAeINEwj_wvmMuIaUAxWAQvYIHXmFC5LqDRMI1rD6jLiGlAMVgEL2CB15hQuS8A0CiA7___________8BuBPkA9gTDNAVAZgWAcoWAgoA-BYBgBcBshcQGAEqCjU2NzM4NDQwMjBQBroXAjgBqhgXCQAAAADgyO1AEgo1NjczODQ0MDIwGAGyGAkSAsBPGC4iAQDQGAHoGAHCGQIIAQ&ae=1&gclid=EAIaIQobChMIs5b7jLiGlAMVgEL2CB15hQuSEAEYASAAEgKGJfD_BwE&num=1&cid=CAQS9AEABaugfeL7EaoCnuMVYxa8s-PU-PB0_D3S9pjLLKlx61mGVGV8zKcuxSviFBJ_YkgWS2euPTNR6B1G1OsAzsxUApqaLnyzIyhg24m793Yfqyz3nm4qSKmA1r9MBWEHd8Z21K-ALVRTFTNnJOSZE1RdQa4VIZegMFAHcC2nWGOG71xki5A91ZqMq5_cPGNuY-hNrvifnRutgOTc8H7YccBN_m9TNy93kgJWA_ttJy3xH27MrVV7qlC6xxV8Rx1q3Zb8SADpWMxptdi5i64xd_Blu_3VikvCkwPy6FCV6qiwnbtDnw6dZwxQRHfHKIQ0x1yMwyobGAE&sig=AOD64_2nHqhKxxbJULTFZPtx1go-JAoIcw&client=ca-pub-1909231293858425&rf=4&nb=1&adurl=https://theshopyohjiyamamoto.com/collections/71%3Ffilter.v.price.gte%3D0%26filter.v.price.lte%3D4910%26filter.v.availability%3D1%26filter.p.m.attr.mainBrand%3Dgid%253A%252F%252Fshopify%252FMetaobject%252F275470909614%26sort_by%3Dmanual%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3DSEARCH%26gad_source%3D5%26gad_campaignid%3D9529410952%26gclid%3DEAIaIQobChMIs5b7jLiGlAMVgEL2CB15hQuSEAEYASAAEgKGJfD_BwE
+          - link "Find the latest collection of clothing and accessories. Online Exclusive Items Available." [ref=f186e14] [cursor=pointer]:
+            - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CiJmASFvrabPSHYCF2fcP-YqukAn2wtqfhgHJqNDm6RXShofXpwIQASCvieAVYJUGoAHD4PS8AsgBCakCO_AMhRLlOj7gAgCoAwHIAwqqBL0CT9AEoFMcjVfwxiZ7rhSIQXaUazKYtHAfVVYSq2NmE-htyN8imIH5wYtt-Kefpwcw3B4zOKZwWYVy9n_ZFfFZYL7A76nZWtG01TBWCMWkNjxfbdkx-CejIKP8_h86wiCSJwpwjQePy8IzM_C4rSTcWrXBbk7MkkZl4MHLntDcoE28o1s3eJ44_EVQWBvo-LySVIcaEEhjFrCzryrhiWURDBgA3nFhFd_eeEWdlm8b_ygjxSlfnFta4YL36rTwBmsxghdPpVklFJJsT7EsDJEfMWRwsmvOaBwotybEOAJkhAiXOus-1Xzs71R26kqFjtK3IDoBa3_LSpJs6I6ZTwjjiNb1bCdEfpYu8WHn4w-B7UOo6oJxbaDn4w9PPOVdEQF551MtBgeMwMqkfl2tzGj6O9HF11aEtbq4uIg_7sfABJTW69yJA-AEAYgFiIv9vyOgBi6AB6Wfi8MBqAenzLECqAfi2LECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAea4bECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcA0gguCIBhEAEYHTIIioKAgICAgAg6DYBAgMCAgICAiIACqANIvf3BOliI5viMuIaUA_IIG2FkeC1zdWJzeW4tOTQ5NzA2MzI4OTcwMzIxNLEJAs5craxozU-ACgOYCwHICwGADAGiDAOQAQGqDQJUTsgNAeINEwj_wvmMuIaUAxWAQvYIHXmFC5LqDRMI1rD6jLiGlAMVgEL2CB15hQuS8A0CiA7___________8BuBPkA9gTDNAVAZgWAcoWAgoA-BYBgBcBshcQGAEqCjU2NzM4NDQwMjBQBroXAjgBqhgXCQAAAADgyO1AEgo1NjczODQ0MDIwGAGyGAkSAsBPGC4iAQDQGAHoGAHCGQIIAQ&ae=1&gclid=EAIaIQobChMIs5b7jLiGlAMVgEL2CB15hQuSEAEYASAAEgKGJfD_BwE&num=1&cid=CAQS9AEABaugfeL7EaoCnuMVYxa8s-PU-PB0_D3S9pjLLKlx61mGVGV8zKcuxSviFBJ_YkgWS2euPTNR6B1G1OsAzsxUApqaLnyzIyhg24m793Yfqyz3nm4qSKmA1r9MBWEHd8Z21K-ALVRTFTNnJOSZE1RdQa4VIZegMFAHcC2nWGOG71xki5A91ZqMq5_cPGNuY-hNrvifnRutgOTc8H7YccBN_m9TNy93kgJWA_ttJy3xH27MrVV7qlC6xxV8Rx1q3Zb8SADpWMxptdi5i64xd_Blu_3VikvCkwPy6FCV6qiwnbtDnw6dZwxQRHfHKIQ0x1yMwyobGAE&sig=AOD64_2nHqhKxxbJULTFZPtx1go-JAoIcw&client=ca-pub-1909231293858425&rf=4&nb=7&adurl=https://theshopyohjiyamamoto.com/collections/71%3Ffilter.v.price.gte%3D0%26filter.v.price.lte%3D4910%26filter.v.availability%3D1%26filter.p.m.attr.mainBrand%3Dgid%253A%252F%252Fshopify%252FMetaobject%252F275470909614%26sort_by%3Dmanual%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3DSEARCH%26gad_source%3D5%26gad_campaignid%3D9529410952%26gclid%3DEAIaIQobChMIs5b7jLiGlAMVgEL2CB15hQuSEAEYASAAEgKGJfD_BwE
+            - text: Find the latest collection of
+            - text: clothing and accessories. Online
+            - text: Exclusive Items Available.
+          - link "Open" [ref=f186e16] [cursor=pointer]:
+            - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CiJmASFvrabPSHYCF2fcP-YqukAn2wtqfhgHJqNDm6RXShofXpwIQASCvieAVYJUGoAHD4PS8AsgBCakCO_AMhRLlOj7gAgCoAwHIAwqqBL0CT9AEoFMcjVfwxiZ7rhSIQXaUazKYtHAfVVYSq2NmE-htyN8imIH5wYtt-Kefpwcw3B4zOKZwWYVy9n_ZFfFZYL7A76nZWtG01TBWCMWkNjxfbdkx-CejIKP8_h86wiCSJwpwjQePy8IzM_C4rSTcWrXBbk7MkkZl4MHLntDcoE28o1s3eJ44_EVQWBvo-LySVIcaEEhjFrCzryrhiWURDBgA3nFhFd_eeEWdlm8b_ygjxSlfnFta4YL36rTwBmsxghdPpVklFJJsT7EsDJEfMWRwsmvOaBwotybEOAJkhAiXOus-1Xzs71R26kqFjtK3IDoBa3_LSpJs6I6ZTwjjiNb1bCdEfpYu8WHn4w-B7UOo6oJxbaDn4w9PPOVdEQF551MtBgeMwMqkfl2tzGj6O9HF11aEtbq4uIg_7sfABJTW69yJA-AEAYgFiIv9vyOgBi6AB6Wfi8MBqAenzLECqAfi2LECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAea4bECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcA0gguCIBhEAEYHTIIioKAgICAgAg6DYBAgMCAgICAiIACqANIvf3BOliI5viMuIaUA_IIG2FkeC1zdWJzeW4tOTQ5NzA2MzI4OTcwMzIxNLEJAs5craxozU-ACgOYCwHICwGADAGiDAOQAQGqDQJUTsgNAeINEwj_wvmMuIaUAxWAQvYIHXmFC5LqDRMI1rD6jLiGlAMVgEL2CB15hQuS8A0CiA7___________8BuBPkA9gTDNAVAZgWAcoWAgoA-BYBgBcBshcQGAEqCjU2NzM4NDQwMjBQBroXAjgBqhgXCQAAAADgyO1AEgo1NjczODQ0MDIwGAGyGAkSAsBPGC4iAQDQGAHoGAHCGQIIAQ&ae=1&gclid=EAIaIQobChMIs5b7jLiGlAMVgEL2CB15hQuSEAEYASAAEgKGJfD_BwE&num=1&cid=CAQS9AEABaugfeL7EaoCnuMVYxa8s-PU-PB0_D3S9pjLLKlx61mGVGV8zKcuxSviFBJ_YkgWS2euPTNR6B1G1OsAzsxUApqaLnyzIyhg24m793Yfqyz3nm4qSKmA1r9MBWEHd8Z21K-ALVRTFTNnJOSZE1RdQa4VIZegMFAHcC2nWGOG71xki5A91ZqMq5_cPGNuY-hNrvifnRutgOTc8H7YccBN_m9TNy93kgJWA_ttJy3xH27MrVV7qlC6xxV8Rx1q3Zb8SADpWMxptdi5i64xd_Blu_3VikvCkwPy6FCV6qiwnbtDnw6dZwxQRHfHKIQ0x1yMwyobGAE&sig=AOD64_2nHqhKxxbJULTFZPtx1go-JAoIcw&client=ca-pub-1909231293858425&rf=4&nb=8&adurl=https://theshopyohjiyamamoto.com/collections/71%3Ffilter.v.price.gte%3D0%26filter.v.price.lte%3D4910%26filter.v.availability%3D1%26filter.p.m.attr.mainBrand%3Dgid%253A%252F%252Fshopify%252FMetaobject%252F275470909614%26sort_by%3Dmanual%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3DSEARCH%26gad_source%3D5%26gad_campaignid%3D9529410952%26gclid%3DEAIaIQobChMIs5b7jLiGlAMVgEL2CB15hQuSEAEYASAAEgKGJfD_BwE
+            - generic [ref=f186e18]: Open
+        - generic [ref=f186e20]:
+          - link [ref=f186e22] [cursor=pointer]:
+            - /url: https://adssettings.google.com/whythisad?source=display&reasons=AXhJPLILLyNWDY4cCVjCM7yqFPKXWruZklfnazub8i_dNocGDc_yWONxMp9p5c3YyOR18XROb6Typ_5--oINFZGP56A0T9_OsjpYo5JmnVDwJ5gFDIQShs7IHrvCnyiz93KUfhVKJHyhZU1-IyO8_lC862rt__9d0rwQllu8ddiLHZ4DimkY1Xj8d91XjOwzByWJDMlFdmsnIvtJjVaS-NOk42Rxz989wWh-MTNWwAFgUsowm_EWrMZKPRXn0t_eRf0aKVRDdPA5v72MpAv_1PyijcmP6lkBW8iEhkWpP8bMHdGPFtXs3g7iG3tz89sUpy_vjMzKG4a3td8c2AGKNvgNO8Fp0iowyyXI0s08tij1boh3VfBfaMDdMCWwpye-vDbV5KNyB2F4Fi5rfwq343W994Ns_ORReUW4dnOW0yjROZ_OFil0V0bY95CqBPeZt8uIQzuKwAyfsEdThqkX6RLaeOZZ-AtxBQrpRYI5qh33odXgg7vpdxwOA_SwCDFIbA4s6dQbaYU25CVbY1oMzQMnaN6GD08yfrgVQ5wYsgL86BPT8K_i4i-svkPWqN3PpDhz4TFxFAbINDtK_-7d1oBw_un6eqsvJPk4kMDV6ZpmFNg7YqGDkHo1RwC_-cG6vXw45UQZgJwLYRe_jf-ykCuAAF3i-Sz5PkMgQ-TOkampPn1ErvjltWf5h2mAbDDfGye7sR4K5vIEHV_pIUfMvVbYTKH6h1e9FcmtWqwdYOmjckLdkUib7Xfp_KV2GvBoZkBw8dpMZJSV3yedTQP4YsCF0Q6hk8ovdRYKIQUvUFNoZ3qXpkPI7aFaMVIa57hEqYVmZHIvcL4zP1Q8S1OGRGUhiq_rhGVdNVOqvlNnevp9SmIcxzPEQAAQ0K7PTuxFbgEf50VN1m1yAcvaH9TqMiClPyH6qkvRAclr5Cl2Np6op0AvIyC31GfDNJT4sA372RVAs9LUSKStGXYMZmBXZ2aybEACRv1o4pGiWaVnvAyhwd7LsfJGwyQJR5-OV2dCcXSQKd5j6lNyh0dWDaTdo06WWxuAb78IYYIMJIFu4yAtpol3DHCf3ZgYNx7R3mwclTY_U9pqhjR7irgUhETnGpSyqBqfyr2QffynqSsB4saH3ucWQk5CbdzBdyGY3_h2Lr9PvEZkBQJJn_vQfoSi_1EGnAvRAGHuTRJqqkBzAUFPy3yBL0TwJtIVV6BNkxcSh692AVYcv_5ia0-rHsHzG0IfsZdHd8-shVZk-xeVc8oLVqoU4jD1ATIhFsWAvGWdF-gdJ8103l3kifirhH6XYPlVQ652ts2NiZwlo6KkMqrG99KYUdDjUSuHn-ioUDv4ee0_imkLAuvWijlWq0E6WUQLOKLloZAJNcUDaTylbgcj13HmbxWmt_NDoXs6DyF5wz1975vaV4v2ny0V9A11jjWDOdXo_JMCsCIm7rDJXDIl_z-Q9I_GC86XQZLhew4XmCKlDrxPbns8rwY92H5eV90ojSYTa70-0acvHm17TeWpwNS3QzvONAfVUf9vESLS0iWjn6Q61Nz8-rjb4pktB3LoBE-KqM0yRx6TPjMENNtrRzYmx6Dr1eBr6K2orTTcIq3GT9aj9e5jW95oIE7L7mcyq_aN7EJJREcDSyWGazYP7gjeD6KdRLUjtCu58S4-frVMbYD2V2tnjGAI0w1_tYLwWXw1we9z7esxscv4tvCCFkwW2lCTovW94ojtiXqZZGPKR0hSNmLFU-txFA42BbSWCZHC3zGr0nT8GuSyfryvMAQBuHcECdKqRi8nOMruoTqxa8aWZL-RPJmpJpx9SihtitrfyIu2BrCnypni2fHEE2s5v_-KJkUgA7jJOX2rBWFoGutOPGEBHZOnQt1mOFJg49qWOdqQ0LYSan2lacVPUv0tZoqDWGK3NytBpXKLkisypCFhWZsxeOsz_WdI-7ZFZ3KGG80KV8u9lyQOUm9-skr387pUZtVSsN1bKqYdKYHiweHApI5_cXmhI-hZk10No2GaEsl6BlXti1Gd12Xxd_Aob6mRAUFUCXICMJGu8zry_HhA7cBf88gYyMgQ8lHk-wouinzXPd-EFeArWe-v84l0mqfpSlg_wen3s5_WM2gsG0mWbqc2uk_yHRM2qU98Yk8OBpcGmOc6aVLxrUUdmMxBFFkZD21TOW-ZNhE5fxjRdxn53s6aooN2bTSYVpYeeRVz9KhdJyIfwXodo-tfCFM3srSQHIyUw-rGWKKwvsD8UWoBXE1lE-xDkqrT-nfT0zVUKuHznxwo3L-mfkYUsvlHXseCRzjQ1MqQLCHjnyq8rlOWxm57L_PvFyy5DdHhNTOBulDXL2z9GeUU8CpgsxI-SQlzci5aFOJwOvLMq7fW2-YHz2wYOIlnQE6eEgeEYDQVLCHS49OFBFh7n77eQNzXSfexZRqOahFVhbZtuHKlUD1yPq_5cKPt2K9neZDfdM-JUPe_y1ROpxMFyY5XmRtI8CFdUmkckrDcHYHYAowNoojrcr8MOmtLQMN0-DjwmfaEvWE_OnFhsSOrRI1h1TE-UtvdLA9gTiCuc2LmEeRP7ZThi-3Rm2NFZUVll8TZJjsv24U6V9unFfOuMIGlPQIswQJsqa89YH1EntxaRW5nFzJtd0o-GnAeELbQT1VGS8-0I3rvLxYTAQD_-Q20JSZCmsZsVMQ4XJpCSTXXuy49_QVl1nTBwL_ng8OYd4nok-vtMJPXMBr8gSzJMOaQZLWOk0ovVigshYuxx3e2SPgeKr48M5wFzNhK1NPG8TkD_u28-B5Ri4qmDSOQ5TucOGneE8RaTUyMlazVYtc48vCVa3kSQtap1kkGpDIgowTD&opi=122715837
+            - img [ref=f186e24]
+          - link [ref=f186e26] [cursor=pointer]:
+            - /url: https://adssettings.google.com/whythisad?source=display&reasons=AXhJPLILLyNWDY4cCVjCM7yqFPKXWruZklfnazub8i_dNocGDc_yWONxMp9p5c3YyOR18XROb6Typ_5--oINFZGP56A0T9_OsjpYo5JmnVDwJ5gFDIQShs7IHrvCnyiz93KUfhVKJHyhZU1-IyO8_lC862rt__9d0rwQllu8ddiLHZ4DimkY1Xj8d91XjOwzByWJDMlFdmsnIvtJjVaS-NOk42Rxz989wWh-MTNWwAFgUsowm_EWrMZKPRXn0t_eRf0aKVRDdPA5v72MpAv_1PyijcmP6lkBW8iEhkWpP8bMHdGPFtXs3g7iG3tz89sUpy_vjMzKG4a3td8c2AGKNvgNO8Fp0iowyyXI0s08tij1boh3VfBfaMDdMCWwpye-vDbV5KNyB2F4Fi5rfwq343W994Ns_ORReUW4dnOW0yjROZ_OFil0V0bY95CqBPeZt8uIQzuKwAyfsEdThqkX6RLaeOZZ-AtxBQrpRYI5qh33odXgg7vpdxwOA_SwCDFIbA4s6dQbaYU25CVbY1oMzQMnaN6GD08yfrgVQ5wYsgL86BPT8K_i4i-svkPWqN3PpDhz4TFxFAbINDtK_-7d1oBw_un6eqsvJPk4kMDV6ZpmFNg7YqGDkHo1RwC_-cG6vXw45UQZgJwLYRe_jf-ykCuAAF3i-Sz5PkMgQ-TOkampPn1ErvjltWf5h2mAbDDfGye7sR4K5vIEHV_pIUfMvVbYTKH6h1e9FcmtWqwdYOmjckLdkUib7Xfp_KV2GvBoZkBw8dpMZJSV3yedTQP4YsCF0Q6hk8ovdRYKIQUvUFNoZ3qXpkPI7aFaMVIa57hEqYVmZHIvcL4zP1Q8S1OGRGUhiq_rhGVdNVOqvlNnevp9SmIcxzPEQAAQ0K7PTuxFbgEf50VN1m1yAcvaH9TqMiClPyH6qkvRAclr5Cl2Np6op0AvIyC31GfDNJT4sA372RVAs9LUSKStGXYMZmBXZ2aybEACRv1o4pGiWaVnvAyhwd7LsfJGwyQJR5-OV2dCcXSQKd5j6lNyh0dWDaTdo06WWxuAb78IYYIMJIFu4yAtpol3DHCf3ZgYNx7R3mwclTY_U9pqhjR7irgUhETnGpSyqBqfyr2QffynqSsB4saH3ucWQk5CbdzBdyGY3_h2Lr9PvEZkBQJJn_vQfoSi_1EGnAvRAGHuTRJqqkBzAUFPy3yBL0TwJtIVV6BNkxcSh692AVYcv_5ia0-rHsHzG0IfsZdHd8-shVZk-xeVc8oLVqoU4jD1ATIhFsWAvGWdF-gdJ8103l3kifirhH6XYPlVQ652ts2NiZwlo6KkMqrG99KYUdDjUSuHn-ioUDv4ee0_imkLAuvWijlWq0E6WUQLOKLloZAJNcUDaTylbgcj13HmbxWmt_NDoXs6DyF5wz1975vaV4v2ny0V9A11jjWDOdXo_JMCsCIm7rDJXDIl_z-Q9I_GC86XQZLhew4XmCKlDrxPbns8rwY92H5eV90ojSYTa70-0acvHm17TeWpwNS3QzvONAfVUf9vESLS0iWjn6Q61Nz8-rjb4pktB3LoBE-KqM0yRx6TPjMENNtrRzYmx6Dr1eBr6K2orTTcIq3GT9aj9e5jW95oIE7L7mcyq_aN7EJJREcDSyWGazYP7gjeD6KdRLUjtCu58S4-frVMbYD2V2tnjGAI0w1_tYLwWXw1we9z7esxscv4tvCCFkwW2lCTovW94ojtiXqZZGPKR0hSNmLFU-txFA42BbSWCZHC3zGr0nT8GuSyfryvMAQBuHcECdKqRi8nOMruoTqxa8aWZL-RPJmpJpx9SihtitrfyIu2BrCnypni2fHEE2s5v_-KJkUgA7jJOX2rBWFoGutOPGEBHZOnQt1mOFJg49qWOdqQ0LYSan2lacVPUv0tZoqDWGK3NytBpXKLkisypCFhWZsxeOsz_WdI-7ZFZ3KGG80KV8u9lyQOUm9-skr387pUZtVSsN1bKqYdKYHiweHApI5_cXmhI-hZk10No2GaEsl6BlXti1Gd12Xxd_Aob6mRAUFUCXICMJGu8zry_HhA7cBf88gYyMgQ8lHk-wouinzXPd-EFeArWe-v84l0mqfpSlg_wen3s5_WM2gsG0mWbqc2uk_yHRM2qU98Yk8OBpcGmOc6aVLxrUUdmMxBFFkZD21TOW-ZNhE5fxjRdxn53s6aooN2bTSYVpYeeRVz9KhdJyIfwXodo-tfCFM3srSQHIyUw-rGWKKwvsD8UWoBXE1lE-xDkqrT-nfT0zVUKuHznxwo3L-mfkYUsvlHXseCRzjQ1MqQLCHjnyq8rlOWxm57L_PvFyy5DdHhNTOBulDXL2z9GeUU8CpgsxI-SQlzci5aFOJwOvLMq7fW2-YHz2wYOIlnQE6eEgeEYDQVLCHS49OFBFh7n77eQNzXSfexZRqOahFVhbZtuHKlUD1yPq_5cKPt2K9neZDfdM-JUPe_y1ROpxMFyY5XmRtI8CFdUmkckrDcHYHYAowNoojrcr8MOmtLQMN0-DjwmfaEvWE_OnFhsSOrRI1h1TE-UtvdLA9gTiCuc2LmEeRP7ZThi-3Rm2NFZUVll8TZJjsv24U6V9unFfOuMIGlPQIswQJsqa89YH1EntxaRW5nFzJtd0o-GnAeELbQT1VGS8-0I3rvLxYTAQD_-Q20JSZCmsZsVMQ4XJpCSTXXuy49_QVl1nTBwL_ng8OYd4nok-vtMJPXMBr8gSzJMOaQZLWOk0ovVigshYuxx3e2SPgeKr48M5wFzNhK1NPG8TkD_u28-B5Ri4qmDSOQ5TucOGneE8RaTUyMlazVYtc48vCVa3kSQtap1kkGpDIgowTD&opi=122715837
+            - img [ref=f186e28]
+        - img [ref=f186e31] [cursor=pointer]
+        - generic [ref=f186e42]:
+          - img [ref=f186e45]
+          - generic [ref=f186e48]:
+            - text: Ads by
+            - img [ref=f186e49]
+          - generic [ref=f186e52]:
+            - generic [ref=f186e55] [cursor=pointer]: Stop seeing this ad
+            - link [ref=f186e57] [cursor=pointer]:
+              - /url: https://adssettings.google.com/whythisad?source=display&reasons=AXhJPLILLyNWDY4cCVjCM7yqFPKXWruZklfnazub8i_dNocGDc_yWONxMp9p5c3YyOR18XROb6Typ_5--oINFZGP56A0T9_OsjpYo5JmnVDwJ5gFDIQShs7IHrvCnyiz93KUfhVKJHyhZU1-IyO8_lC862rt__9d0rwQllu8ddiLHZ4DimkY1Xj8d91XjOwzByWJDMlFdmsnIvtJjVaS-NOk42Rxz989wWh-MTNWwAFgUsowm_EWrMZKPRXn0t_eRf0aKVRDdPA5v72MpAv_1PyijcmP6lkBW8iEhkWpP8bMHdGPFtXs3g7iG3tz89sUpy_vjMzKG4a3td8c2AGKNvgNO8Fp0iowyyXI0s08tij1boh3VfBfaMDdMCWwpye-vDbV5KNyB2F4Fi5rfwq343W994Ns_ORReUW4dnOW0yjROZ_OFil0V0bY95CqBPeZt8uIQzuKwAyfsEdThqkX6RLaeOZZ-AtxBQrpRYI5qh33odXgg7vpdxwOA_SwCDFIbA4s6dQbaYU25CVbY1oMzQMnaN6GD08yfrgVQ5wYsgL86BPT8K_i4i-svkPWqN3PpDhz4TFxFAbINDtK_-7d1oBw_un6eqsvJPk4kMDV6ZpmFNg7YqGDkHo1RwC_-cG6vXw45UQZgJwLYRe_jf-ykCuAAF3i-Sz5PkMgQ-TOkampPn1ErvjltWf5h2mAbDDfGye7sR4K5vIEHV_pIUfMvVbYTKH6h1e9FcmtWqwdYOmjckLdkUib7Xfp_KV2GvBoZkBw8dpMZJSV3yedTQP4YsCF0Q6hk8ovdRYKIQUvUFNoZ3qXpkPI7aFaMVIa57hEqYVmZHIvcL4zP1Q8S1OGRGUhiq_rhGVdNVOqvlNnevp9SmIcxzPEQAAQ0K7PTuxFbgEf50VN1m1yAcvaH9TqMiClPyH6qkvRAclr5Cl2Np6op0AvIyC31GfDNJT4sA372RVAs9LUSKStGXYMZmBXZ2aybEACRv1o4pGiWaVnvAyhwd7LsfJGwyQJR5-OV2dCcXSQKd5j6lNyh0dWDaTdo06WWxuAb78IYYIMJIFu4yAtpol3DHCf3ZgYNx7R3mwclTY_U9pqhjR7irgUhETnGpSyqBqfyr2QffynqSsB4saH3ucWQk5CbdzBdyGY3_h2Lr9PvEZkBQJJn_vQfoSi_1EGnAvRAGHuTRJqqkBzAUFPy3yBL0TwJtIVV6BNkxcSh692AVYcv_5ia0-rHsHzG0IfsZdHd8-shVZk-xeVc8oLVqoU4jD1ATIhFsWAvGWdF-gdJ8103l3kifirhH6XYPlVQ652ts2NiZwlo6KkMqrG99KYUdDjUSuHn-ioUDv4ee0_imkLAuvWijlWq0E6WUQLOKLloZAJNcUDaTylbgcj13HmbxWmt_NDoXs6DyF5wz1975vaV4v2ny0V9A11jjWDOdXo_JMCsCIm7rDJXDIl_z-Q9I_GC86XQZLhew4XmCKlDrxPbns8rwY92H5eV90ojSYTa70-0acvHm17TeWpwNS3QzvONAfVUf9vESLS0iWjn6Q61Nz8-rjb4pktB3LoBE-KqM0yRx6TPjMENNtrRzYmx6Dr1eBr6K2orTTcIq3GT9aj9e5jW95oIE7L7mcyq_aN7EJJREcDSyWGazYP7gjeD6KdRLUjtCu58S4-frVMbYD2V2tnjGAI0w1_tYLwWXw1we9z7esxscv4tvCCFkwW2lCTovW94ojtiXqZZGPKR0hSNmLFU-txFA42BbSWCZHC3zGr0nT8GuSyfryvMAQBuHcECdKqRi8nOMruoTqxa8aWZL-RPJmpJpx9SihtitrfyIu2BrCnypni2fHEE2s5v_-KJkUgA7jJOX2rBWFoGutOPGEBHZOnQt1mOFJg49qWOdqQ0LYSan2lacVPUv0tZoqDWGK3NytBpXKLkisypCFhWZsxeOsz_WdI-7ZFZ3KGG80KV8u9lyQOUm9-skr387pUZtVSsN1bKqYdKYHiweHApI5_cXmhI-hZk10No2GaEsl6BlXti1Gd12Xxd_Aob6mRAUFUCXICMJGu8zry_HhA7cBf88gYyMgQ8lHk-wouinzXPd-EFeArWe-v84l0mqfpSlg_wen3s5_WM2gsG0mWbqc2uk_yHRM2qU98Yk8OBpcGmOc6aVLxrUUdmMxBFFkZD21TOW-ZNhE5fxjRdxn53s6aooN2bTSYVpYeeRVz9KhdJyIfwXodo-tfCFM3srSQHIyUw-rGWKKwvsD8UWoBXE1lE-xDkqrT-nfT0zVUKuHznxwo3L-mfkYUsvlHXseCRzjQ1MqQLCHjnyq8rlOWxm57L_PvFyy5DdHhNTOBulDXL2z9GeUU8CpgsxI-SQlzci5aFOJwOvLMq7fW2-YHz2wYOIlnQE6eEgeEYDQVLCHS49OFBFh7n77eQNzXSfexZRqOahFVhbZtuHKlUD1yPq_5cKPt2K9neZDfdM-JUPe_y1ROpxMFyY5XmRtI8CFdUmkckrDcHYHYAowNoojrcr8MOmtLQMN0-DjwmfaEvWE_OnFhsSOrRI1h1TE-UtvdLA9gTiCuc2LmEeRP7ZThi-3Rm2NFZUVll8TZJjsv24U6V9unFfOuMIGlPQIswQJsqa89YH1EntxaRW5nFzJtd0o-GnAeELbQT1VGS8-0I3rvLxYTAQD_-Q20JSZCmsZsVMQ4XJpCSTXXuy49_QVl1nTBwL_ng8OYd4nok-vtMJPXMBr8gSzJMOaQZLWOk0ovVigshYuxx3e2SPgeKr48M5wFzNhK1NPG8TkD_u28-B5Ri4qmDSOQ5TucOGneE8RaTUyMlazVYtc48vCVa3kSQtap1kkGpDIgowTD&opi=122715837
+              - generic [ref=f186e58]:
+                - text: Why this ad?
+                - img [ref=f186e59]
+        - generic [ref=f186e61]:
+          - generic [ref=f186e64] [cursor=pointer]: Ad covered content
+          - generic [ref=f186e67] [cursor=pointer]: Not interested in this ad
+          - generic [ref=f186e70] [cursor=pointer]: Ad was inappropriate
+          - generic [ref=f186e73] [cursor=pointer]: Seen this ad multiple times
+        - generic [ref=f186e79]: We'll try not to show that ad again
+        - generic [ref=f186e85]:
+          - text: Ad closed by
+          - img [ref=f186e86]
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - heading "Account Balances" [level=3] [ref=e53]
+        - tablist [ref=e55]:
+          - tab "My Account Balances" [selected] [ref=e56] [cursor=pointer]
+          - tab "Session Rules" [ref=e57] [cursor=pointer]
+        - generic [ref=e58]:
+          - tabpanel "My Account Balances" [ref=e59]:
+            - generic [ref=e60]:
+              - generic [ref=e61]:
+                - table [ref=e62]:
+                  - rowgroup [ref=e63]:
+                    - row "Summary" [ref=e64]:
+                      - columnheader "Summary" [ref=e65]
+                  - rowgroup [ref=e66]:
+                    - row "Total Portfolio Value $100,354.52" [ref=e67]:
+                      - cell "Total Portfolio Value" [ref=e68]
+                      - cell "$100,354.52" [ref=e69]
+                    - row "Cash Balance Your cash holdings available for trading. $83,675.29" [ref=e70]:
+                      - cell "Cash Balance Your cash holdings available for trading." [ref=e71]:
+                        - text: Cash Balance
+                        - generic [ref=e72]: 
+                        - generic [ref=e73]: Your cash holdings available for trading.
+                      - cell "$83,675.29" [ref=e74]
+                    - row "Loan Balance Amount of outstanding loans from trading on margin. You are charged daily interest on this amount. $0.00" [ref=e75]:
+                      - cell "Loan Balance Amount of outstanding loans from trading on margin. You are charged daily interest on this amount." [ref=e76]:
+                        - text: Loan Balance
+                        - generic [ref=e77]: 
+                        - generic [ref=e78]: Amount of outstanding loans from trading on margin. You are charged daily interest on this amount.
+                      - cell "$0.00" [ref=e79]
+                    - row "Restricted Funds Restricted funds are being held for open / unfilled orders. $0.00" [ref=e80]:
+                      - cell "Restricted Funds Restricted funds are being held for open / unfilled orders." [ref=e81]:
+                        - text: Restricted Funds
+                        - generic [ref=e82]: 
+                        - generic [ref=e83]: Restricted funds are being held for open / unfilled orders.
+                      - cell "$0.00" [ref=e84]
+                    - row "Total Market Value of All Positions The total market value of all the holdings in your portfolio. $16,679.23" [ref=e85]:
+                      - cell "Total Market Value of All Positions The total market value of all the holdings in your portfolio." [ref=e86]:
+                        - text: Total Market Value of All Positions
+                        - generic [ref=e87]: 
+                        - generic [ref=e88]: The total market value of all the holdings in your portfolio.
+                      - cell "$16,679.23" [ref=e89]
+                    - row "Total Trades Made How many orders you have placed that have executed. 21" [ref=e90]:
+                      - cell "Total Trades Made How many orders you have placed that have executed." [ref=e91]:
+                        - text: Total Trades Made
+                        - generic [ref=e92]: 
+                        - generic [ref=e93]: How many orders you have placed that have executed.
+                      - cell "21" [ref=e94]
+                    - row "Total Trades Remaining How many more trades you are allowed to place, based on your session rules. 2479" [ref=e95]:
+                      - cell "Total Trades Remaining How many more trades you are allowed to place, based on your session rules." [ref=e96]:
+                        - text: Total Trades Remaining
+                        - generic [ref=e97]: 
+                        - generic [ref=e98]: How many more trades you are allowed to place, based on your session rules.
+                      - cell "2479" [ref=e99]
+                - table [ref=e100]:
+                  - rowgroup [ref=e101]:
+                    - row "Returns" [ref=e102]:
+                      - columnheader "Returns" [ref=e103]
+                  - rowgroup [ref=e104]:
+                    - row "My Portfolio % Return This is the total gain or loss % of your portfolio. 0.35%" [ref=e105]:
+                      - cell "My Portfolio % Return This is the total gain or loss % of your portfolio." [ref=e106]:
+                        - text: My Portfolio % Return
+                        - generic [ref=e107]: 
+                        - generic [ref=e108]: This is the total gain or loss % of your portfolio.
+                      - cell "0.35%" [ref=e109]
+                    - row "Benchmark Return SP500 This is the return of a benchmark index over the same time as your portfolio has been active. -84.34%" [ref=e110]:
+                      - cell "Benchmark Return SP500 This is the return of a benchmark index over the same time as your portfolio has been active." [ref=e111]:
+                        - text: Benchmark Return SP500
+                        - generic [ref=e112]: 
+                        - generic [ref=e113]: This is the return of a benchmark index over the same time as your portfolio has been active.
+                      - cell "-84.34%" [ref=e114]
+                    - row "Your Excess Returns This is how your portfolio has performed relative to the benchmark index. 84.69%" [ref=e115]:
+                      - cell "Your Excess Returns This is how your portfolio has performed relative to the benchmark index." [ref=e116]:
+                        - text: Your Excess Returns
+                        - generic [ref=e117]: 
+                        - generic [ref=e118]: This is how your portfolio has performed relative to the benchmark index.
+                      - cell "84.69%" [ref=e119]
+              - generic [ref=e120]:
+                - table [ref=e121]:
+                  - rowgroup [ref=e122]:
+                    - row "Cash and Buying Power" [ref=e123]:
+                      - columnheader "Cash and Buying Power" [ref=e124]
+                  - rowgroup [ref=e125]:
+                    - row "Cash Balance Your cash holdings available for trading. $83,675.29" [ref=e126]:
+                      - cell "Cash Balance Your cash holdings available for trading." [ref=e127]:
+                        - text: Cash Balance
+                        - generic [ref=e128]: 
+                        - generic [ref=e129]: Your cash holdings available for trading.
+                      - cell "$83,675.29" [ref=e130]
+                    - row "Buying Power This is your available buying power, accounting for any potential loan amounts and margin requirements (if applicable). $184,029.81" [ref=e131]:
+                      - cell "Buying Power This is your available buying power, accounting for any potential loan amounts and margin requirements (if applicable)." [ref=e132]:
+                        - text: Buying Power
+                        - generic [ref=e133]: 
+                        - generic [ref=e134]: This is your available buying power, accounting for any potential loan amounts and margin requirements (if applicable).
+                      - cell "$184,029.81" [ref=e135]
+                    - row "Short Sale Proceeds If you short-sell a security, the cash received is held here separately from your trading cash balance. $0.00" [ref=e136]:
+                      - cell "Short Sale Proceeds If you short-sell a security, the cash received is held here separately from your trading cash balance." [ref=e137]:
+                        - text: Short Sale Proceeds
+                        - generic [ref=e138]: 
+                        - generic [ref=e139]: If you short-sell a security, the cash received is held here separately from your trading cash balance.
+                      - cell "$0.00" [ref=e140]
+                    - row "Interest Charged on Loan When trading on margin, you are charged interest on outstanding loan amounts each day. This is the total you have been charged so far. $0.00" [ref=e141]:
+                      - cell "Interest Charged on Loan When trading on margin, you are charged interest on outstanding loan amounts each day. This is the total you have been charged so far." [ref=e142]:
+                        - text: Interest Charged on Loan
+                        - generic [ref=e143]: 
+                        - generic [ref=e144]: When trading on margin, you are charged interest on outstanding loan amounts each day. This is the total you have been charged so far.
+                      - cell "$0.00" [ref=e145]
+                    - row "Margin Requirements $0.00" [ref=e146]:
+                      - cell "Margin Requirements" [ref=e147]
+                      - cell "$0.00" [ref=e148]
+                    - row "Total Commissions Paid This is the total amount you have been charged in commissions for all trades. $0.00" [ref=e149]:
+                      - cell "Total Commissions Paid This is the total amount you have been charged in commissions for all trades." [ref=e150]:
+                        - text: Total Commissions Paid
+                        - generic [ref=e151]: 
+                        - generic [ref=e152]: This is the total amount you have been charged in commissions for all trades.
+                      - cell "$0.00" [ref=e153]
+                    - row "Total Dividends Received This is the total cash dividends you have received from your holdings. $0.00" [ref=e154]:
+                      - cell "Total Dividends Received This is the total cash dividends you have received from your holdings." [ref=e155]:
+                        - text: Total Dividends Received
+                        - generic [ref=e156]: 
+                        - generic [ref=e157]: This is the total cash dividends you have received from your holdings.
+                      - cell "$0.00" [ref=e158]
+                    - row "Bonus Cash Cash that has been added to your account as rewards for completing assignments, or manually added or removed by your session administrator. $0.00" [ref=e159]:
+                      - cell "Bonus Cash Cash that has been added to your account as rewards for completing assignments, or manually added or removed by your session administrator." [ref=e160]:
+                        - text: Bonus Cash
+                        - generic [ref=e161]: 
+                        - generic [ref=e162]: Cash that has been added to your account as rewards for completing assignments, or manually added or removed by your session administrator.
+                      - cell "$0.00" [ref=e163]
+                - table [ref=e164]:
+                  - rowgroup [ref=e165]:
+                    - row "Market Value" [ref=e166]:
+                      - columnheader "Market Value" [ref=e167]
+                  - rowgroup [ref=e168]:
+                    - row "Market Value of Long Positions The total value of all shares you own across all security types. $16,679.23" [ref=e169]:
+                      - cell "Market Value of Long Positions The total value of all shares you own across all security types." [ref=e170]:
+                        - text: Market Value of Long Positions
+                        - generic [ref=e171]: 
+                        - generic [ref=e172]: The total value of all shares you own across all security types.
+                      - cell "$16,679.23" [ref=e173]
+                    - row "Market Value of Short Positions The total value of all of your short positions across all security types. $0.00" [ref=e174]:
+                      - cell "Market Value of Short Positions The total value of all of your short positions across all security types." [ref=e175]:
+                        - text: Market Value of Short Positions
+                        - generic [ref=e176]: 
+                        - generic [ref=e177]: The total value of all of your short positions across all security types.
+                      - cell "$0.00" [ref=e178]
+                    - row "Total Market Value of All Positions $16,679.23" [ref=e179]:
+                      - cell "Total Market Value of All Positions" [ref=e180]
+                      - cell "$16,679.23" [ref=e181]
+          - text:                         
+        - generic [ref=e184]:
+          - heading "Portfolio Value Chart" [level=3] [ref=e186]
+          - generic [ref=e188]:
+            - combobox "Select Month" [ref=e189]:
+              - option "1 month" [selected]
+              - option "3 month"
+            - combobox "Select ETF" [ref=e190]:
+              - option "S&P 500 ETF" [selected]
+              - option "Dow Jones ETF"
+              - option "Nasdaq ETF"
+              - option "Canada ETF"
+              - option "Europe ETF"
+              - option "MSCI EAFE Index ETF"
+              - option "Gold ETF"
+              - option "Oil ETF"
+              - option "Silver ETF"
+              - option "Natural Gas ETF"
+              - option "Japan ETF"
+              - option "Emerging Markets ETF"
+          - generic [ref=e192]:
+            - generic [ref=e193] [cursor=pointer]: View Historical Portfolio Values
+            - generic [ref=e194] [cursor=pointer]: Export
+        - generic "A chart." [ref=e200]:
+          - img "A chart." [ref=e201]:
+            - generic [ref=e203]:
+              - generic [ref=e208]: SPY %
+              - generic [ref=e212]: Portfolio %
+            - generic [ref=e233]:
+              - generic [ref=e234]:
+                - generic [ref=e235]: 13 Apr
+                - generic [ref=e236]: "2026"
+              - generic [ref=e237]:
+                - generic [ref=e238]: 14 Apr
+                - generic [ref=e239]: "2026"
+              - generic [ref=e240]:
+                - generic [ref=e241]: 15 Apr
+                - generic [ref=e242]: "2026"
+              - generic [ref=e243]:
+                - generic [ref=e244]: 16 Apr
+                - generic [ref=e245]: "2026"
+              - generic [ref=e246]:
+                - generic [ref=e247]: 17 Apr
+                - generic [ref=e248]: "2026"
+              - generic [ref=e249]:
+                - generic [ref=e250]: 18 Apr
+                - generic [ref=e251]: "2026"
+              - generic [ref=e252]:
+                - generic [ref=e253]: 19 Apr
+                - generic [ref=e254]: "2026"
+              - generic [ref=e255]:
+                - generic [ref=e256]: 20 Apr
+                - generic [ref=e257]: "2026"
+              - generic [ref=e258]:
+                - generic [ref=e259]: 21 Apr
+                - generic [ref=e260]: "2026"
+              - generic [ref=e261]:
+                - generic [ref=e262]: 22 Apr
+                - generic [ref=e263]: "2026"
+              - generic [ref=e264]:
+                - generic [ref=e265]: 23 Apr
+                - generic [ref=e266]: "2026"
+              - generic [ref=e268]: "-1"
+              - generic [ref=e270]: "0"
+              - generic [ref=e272]: "1"
+              - generic [ref=e274]: "2"
+              - generic [ref=e276]: "3"
+              - generic [ref=e278]: "4"
+          - generic "A tabular representation of the data in the chart." [ref=e279]:
+            - table [ref=e280]:
+              - rowgroup [ref=e281]:
+                - row "MM/YY SPY % Portfolio %" [ref=e282]:
+                  - columnheader "MM/YY" [ref=e283]
+                  - columnheader "SPY %" [ref=e284]
+                  - columnheader "Portfolio %" [ref=e285]
+              - rowgroup [ref=e286]:
+                - row "13 Apr 2026 -0.97 0" [ref=e287]:
+                  - cell "13 Apr 2026" [ref=e288]
+                  - cell "-0.97" [ref=e289]
+                  - cell "0" [ref=e290]
+                - row "14 Apr 2026 0 -0.03" [ref=e291]:
+                  - cell "14 Apr 2026" [ref=e292]
+                  - cell "0" [ref=e293]
+                  - cell "-0.03" [ref=e294]
+                - row "15 Apr 2026 1.22 0.2" [ref=e295]:
+                  - cell "15 Apr 2026" [ref=e296]
+                  - cell "1.22" [ref=e297]
+                  - cell "0.2" [ref=e298]
+                - row "16 Apr 2026 2.02 -0.02" [ref=e299]:
+                  - cell "16 Apr 2026" [ref=e300]
+                  - cell "2.02" [ref=e301]
+                  - cell "-0.02" [ref=e302]
+                - row "17 Apr 2026 2.27 0.26" [ref=e303]:
+                  - cell "17 Apr 2026" [ref=e304]
+                  - cell "2.27" [ref=e305]
+                  - cell "0.26" [ref=e306]
+                - row "18 Apr 2026 2.27 0.26" [ref=e307]:
+                  - cell "18 Apr 2026" [ref=e308]
+                  - cell "2.27" [ref=e309]
+                  - cell "0.26" [ref=e310]
+                - row "19 Apr 2026 2.27 0.26" [ref=e311]:
+                  - cell "19 Apr 2026" [ref=e312]
+                  - cell "2.27" [ref=e313]
+                  - cell "0.26" [ref=e314]
+                - row "20 Apr 2026 3.5 0.37" [ref=e315]:
+                  - cell "20 Apr 2026" [ref=e316]
+                  - cell "3.5" [ref=e317]
+                  - cell "0.37" [ref=e318]
+                - row "21 Apr 2026 3.3 0.09" [ref=e319]:
+                  - cell "21 Apr 2026" [ref=e320]
+                  - cell "3.3" [ref=e321]
+                  - cell "0.09" [ref=e322]
+                - row "22 Apr 2026 2.62 0.38" [ref=e323]:
+                  - cell "22 Apr 2026" [ref=e324]
+                  - cell "2.62" [ref=e325]
+                  - cell "0.38" [ref=e326]
+                - row "23 Apr 2026 3.66 0.35" [ref=e327]:
+                  - cell "23 Apr 2026" [ref=e328]
+                  - cell "3.66" [ref=e329]
+                  - cell "0.35" [ref=e330]
+      - generic [ref=e332]:
+        - generic [ref=e334]:
+          - heading "Announcements" [level=3] [ref=e338]
+          - generic [ref=e340]:
+            - text: Join WallStreetSurvivor on Facebook for the latest updates, market insights, and contest news.
+            - link "Follow us on Facebook" [ref=e341] [cursor=pointer]:
+              - /url: https://www.facebook.com/WallStSurvivor
+        - tablist
+    - generic [ref=e345]:
+      - strong [ref=e346]: Notice
+      - paragraph [ref=e347]:
+        - text: This website uses cookies, for more information please visit our
+        - link "Privacy Policy" [ref=e348] [cursor=pointer]:
+          - /url: https://content.stocktrak.com/privacy-policy/
+          - strong [ref=e349]: Privacy Policy
+      - generic [ref=e350] [cursor=pointer]: Ok
+  - contentinfo [ref=e351]:
+    - generic [ref=e353]:
+      - complementary [ref=e355]:
+        - figure [ref=e356]:
+          - link "WallStreetSurvivor logo" [ref=e357] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/
+            - img "WallStreetSurvivor W" [ref=e358]
+      - generic [ref=e359]:
+        - complementary [ref=e360]:
+          - heading "Our Platform" [level=3] [ref=e361]
+        - complementary [ref=e362]:
+          - list [ref=e363]:
+            - listitem [ref=e364]:
+              - link "Stock Market Simulator" [ref=e365] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/
+            - listitem [ref=e366]:
+              - link "Investing Courses for Beginners" [ref=e367] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/courses/
+            - listitem [ref=e368]:
+              - link "Best Stocks to Buy Now" [ref=e369] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-stocks-buy-now/
+            - listitem [ref=e370]:
+              - link "How to Invest Videos" [ref=e371] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor?
+            - listitem [ref=e372]:
+              - link "Free Online Investing Course" [ref=e373] [cursor=pointer]:
+                - /url: https://investing101.net
+            - listitem [ref=e374]:
+              - link "Financial Literacy Game for Students" [ref=e375] [cursor=pointer]:
+                - /url: https://www.personalfinancelab.com
+            - listitem [ref=e376]:
+              - link "Getting Started on WallStreetSurvivor" [ref=e377] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/getting-started-with-wss/
+            - listitem [ref=e378]:
+              - link "Crypto Paper Trading" [ref=e379] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/crypto-paper-trading/
+            - listitem [ref=e380]:
+              - link "About WallStreetSurvivor" [ref=e381] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/about/
+      - generic [ref=e382]:
+        - complementary [ref=e383]:
+          - heading "Review Center" [level=3] [ref=e384]
+        - complementary [ref=e385]:
+          - list [ref=e386]:
+            - listitem [ref=e387]:
+              - link "Motley Fool Review" [ref=e388] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e389]:
+              - link "Seeking Alpha Review" [ref=e390] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/seeking-alpha-review/
+            - listitem [ref=e391]:
+              - link "Alpha Picks Review" [ref=e392] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/alpha-picks-review/
+            - listitem [ref=e393]:
+              - link "Moby Stocks Review" [ref=e394] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/moby-review/
+            - listitem [ref=e395]:
+              - link "Wealthsimple Review" [ref=e396] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/wealthsimple-review/
+            - listitem [ref=e397]:
+              - link "Is Robinhood Safe to Use?" [ref=e398] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-robinhood-safe/
+            - listitem [ref=e399]:
+              - link "Rule Breakers Review" [ref=e400] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-rule-breakers-review/
+            - listitem [ref=e401]:
+              - link "Best Investment Newsletters" [ref=e402] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investment-newsletters/
+            - listitem [ref=e403]:
+              - link "Best Investing Apps" [ref=e404] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-investing-apps/
+            - listitem [ref=e405]:
+              - link "Best Motley Fool Discount Code" [ref=e406] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-stock-advisor-discount/
+            - listitem [ref=e407]:
+              - link "Best Motley Fool Epic Discount Code" [ref=e408] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-motley-fool-epic-discounts-promo-codes/
+            - listitem [ref=e409]:
+              - link "Best Tipranks Discount Code" [ref=e410] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/best-tipranks-discounts-promo-codes/
+            - listitem [ref=e411]:
+              - link "Is Coinbase Safe?" [ref=e412] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/is-coinbase-safe/
+            - listitem [ref=e413]:
+              - link "Free Crypto with Coinbase" [ref=e414] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/how-to-get-free-crypto-on-coinbase/
+            - listitem [ref=e415]:
+              - link "Best Stock Picking Service" [ref=e416] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-vs-moby/
+      - generic [ref=e417]:
+        - complementary [ref=e418]:
+          - heading "Corporate Services" [level=3] [ref=e419]
+        - complementary [ref=e420]:
+          - list [ref=e421]:
+            - listitem [ref=e422]:
+              - link "White Label Stock Market Games" [ref=e423] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e424]:
+              - link "White Label Virtual Crypto Trading" [ref=e425] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/white-label-trading-platform/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e426]:
+              - link "Employee Financial Wellness" [ref=e427] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/employee-financial-wellness/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e428]:
+              - link "Sponsor a College or High School" [ref=e429] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/corporate-sponsorship/?utm_source=WSS&utm_medium=blog&utm_campaign=footer
+            - listitem [ref=e430]:
+              - 'link "CRA for Banks: Sponsor a School" [ref=e431] [cursor=pointer]':
+                - /url: https://www.personalfinancelab.com/sponsor-school/
+        - complementary [ref=e432]:
+          - heading "Our Company" [level=3] [ref=e433]
+        - complementary [ref=e434]:
+          - list [ref=e435]:
+            - listitem [ref=e436]:
+              - link "Contact Us" [ref=e437] [cursor=pointer]:
+                - /url: mailto:support@wallstreetsurvivor.com
+            - listitem [ref=e438]:
+              - link "About Us" [ref=e439] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/
+            - listitem [ref=e440]:
+              - link "Motley Fool Review" [ref=e441] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/motley-fool-review/
+            - listitem [ref=e442]:
+              - link "Privacy Policy" [ref=e443] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/privacy-policy/
+            - listitem [ref=e444]:
+              - link "Terms and Conditions" [ref=e445] [cursor=pointer]:
+                - /url: https://www.wallstreetsurvivor.com/terms-and-conditions/
+            - listitem [ref=e446]:
+              - link "Advertise with Us" [ref=e447] [cursor=pointer]:
+                - /url: https://content.stocktrak.com/advertise-with-us/
+      - generic [ref=e448]:
+        - complementary [ref=e449]:
+          - heading "Family of Sites" [level=3] [ref=e450]:
+            - strong [ref=e451]: Family of Sites
+        - complementary [ref=e452]:
+          - figure [ref=e453]:
+            - link "StockTrak logo" [ref=e454] [cursor=pointer]:
+              - /url: https://www.stocktrak.com/
+              - img "Stock market simulation for colleges" [ref=e455]
+        - complementary [ref=e456]:
+          - figure [ref=e457]:
+            - link "PersonalFinanceLab logo" [ref=e458] [cursor=pointer]:
+              - /url: https://www.personalfinancelab.com
+              - img "Stock and budget game" [ref=e459]
+        - complementary [ref=e460]:
+          - figure [ref=e461]:
+            - link "WallStreetSurvivor logo" [ref=e462] [cursor=pointer]:
+              - /url: https://www.wallstreetsurvivor.com/
+              - img "Practice stock trading site" [ref=e463]
+        - complementary [ref=e464]:
+          - figure [ref=e465]:
+            - link "HowTheMarketWorks logo" [ref=e466] [cursor=pointer]:
+              - /url: https://www.howthemarketworks.com/
+              - img "Free stock market game for students" [ref=e467]
+        - complementary [ref=e468]:
+          - link "Global Virtual Stock Game" [ref=e469] [cursor=pointer]:
+            - /url: https://www.virtual-stock-exchange.com/
+          - link "Free Investing Course" [ref=e470] [cursor=pointer]:
+            - /url: https://www.investing101.net/
+    - generic "Site" [ref=e471]:
+      - generic [ref=e472]:
+        - generic [ref=e473]:
+          - complementary [ref=e474]:
+            - heading "Connect With Us" [level=2] [ref=e475]
+          - complementary:
+            - figure [ref=e476]:
+              - link "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e477] [cursor=pointer]:
+                - /url: https://www.instagram.com/wallstreetsurvivor/
+                - img "Click to subscribe to WallStreetSurvivor's Instagram account" [ref=e478]
+          - complementary:
+            - figure [ref=e479]:
+              - link "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e480] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/wallstsurvivor
+                - img "Click to subscribe to WallStreetSurvivor's YouTube channel" [ref=e481]
+          - complementary:
+            - figure [ref=e482]:
+              - link "Click to follow WallStreetSurvivor on facebook" [ref=e483] [cursor=pointer]:
+                - /url: https://www.facebook.com/WallStreetSurvivor
+                - img "Click to follow WallStreetSurvivor on facebook" [ref=e484]
+          - complementary:
+            - figure [ref=e485]:
+              - link "Click to follow WallStreetSurvivor on X" [ref=e486] [cursor=pointer]:
+                - /url: https://x.com/wallstsurvivor
+                - img "Click to follow WallStreetSurvivor on X" [ref=e487]
+        - generic [ref=e488]: WallStreetSurvivor.com® is a property of Stock-Trak Inc. Copyright 2008-2025 Stock-Trak Inc. WallStreetSurvivor®, HowtheMarketWorks® and Stock-Trak® are registered trademarks of Stock-Trak Inc. All Rights Reserved. Stock-Trak Inc. is the leading provider of educational budgeting and stock market simulations for the K12, university, and corporate education markets. All information is provided on an “as-is” basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data is delayed by at least 15 minutes and is provided by XIGNITE and QuoteMedia. Neither Stock-Trak Inc. nor any of its independent data providers are liable for incomplete information, delays, or any action taken in reliance on information contained herein. By accessing this site, you agree not to redistribute the information found within and you agree to the Privacy Policy and Terms and Conditions. Stock-Trak Inc.’s education simulations are used by the world’s top universities and corporations.
+  - text: 
+  - generic [ref=e490]:
+    - img
+  - generic [ref=e494] [cursor=pointer]:
+    - text: 
+    - generic "We're Online!" [ref=e495]

@@ -11,7 +11,7 @@ interface PlaywrightExecution {
   generated_script: string
   browser_name: string
   status: string
-  execution_log: string[]
+  execution_log: unknown[]
   error_message: string | null
   screenshot_base64: string | null
   duration_ms: number
@@ -23,6 +23,37 @@ interface PlaywrightExecution {
 }
 
 const API_BASE = 'http://localhost:5000/api'
+
+function normalizeExecutionLog(input: unknown): string[] {
+  if (!Array.isArray(input)) return []
+
+  return input.map((entry, idx) => {
+    if (typeof entry === 'string') return entry
+
+    if (entry && typeof entry === 'object') {
+      const item = entry as Record<string, unknown>
+      const step = typeof item.step === 'number' ? `Step ${item.step}` : `Step ${idx + 1}`
+      const action = typeof item.action === 'string' ? item.action : ''
+      const status = typeof item.status === 'string' ? item.status : ''
+      const response = typeof item.response === 'string' ? item.response : ''
+      const error = typeof item.error === 'string' ? item.error : ''
+      const parts = [step, action, status].filter(Boolean)
+      const summary = parts.join(' - ')
+
+      if (error) return `${summary} | Error: ${error}`.trim()
+      if (response) return `${summary} | ${response}`.trim()
+      if (summary) return summary
+
+      try {
+        return JSON.stringify(item)
+      } catch {
+        return String(entry)
+      }
+    }
+
+    return String(entry)
+  })
+}
 
 function StatusBadge({ status }: { status: string }) {
   return (
@@ -247,7 +278,7 @@ export function PlaywrightHistory({ onBack }: PlaywrightHistoryProps) {
                           {ex.execution_log.length === 0 ? (
                             <span className="pw-log-empty">No log entries</span>
                           ) : (
-                            ex.execution_log.map((line, i) => (
+                            normalizeExecutionLog(ex.execution_log).map((line, i) => (
                               <div key={i} className={`pw-log-line ${line.toLowerCase().startsWith('error') ? 'pw-log-error' : ''}`}>
                                 <span className="pw-log-num">{i + 1}</span>
                                 {line}
@@ -298,7 +329,7 @@ export function PlaywrightHistory({ onBack }: PlaywrightHistoryProps) {
                     ...prev,
                     generated_script: result.generated_script,
                     status: result.status,
-                    execution_log: result.execution_log,
+                    execution_log: normalizeExecutionLog(result.execution_log || result.steps_detail || []),
                     error_message: result.error_message,
                     duration_ms: result.duration_ms,
                     screenshot_base64: result.screenshot_base64,

@@ -30,8 +30,8 @@ print("=" * 50)
 
 try:
     # Import app from Backend API structure
-    from api.routes import app
-    print("✓ App imported from api.routes (Backend)")
+    from src.api.routes import app
+    print("✓ App imported from src.api.routes (Backend)")
 
     import uvicorn
     print("📊 Running on http://0.0.0.0:5000")

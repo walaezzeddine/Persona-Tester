@@ -8,9 +8,11 @@ import sys
 import time
 import json
 import asyncio
+import re
 import importlib.util
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Any
 from dotenv import load_dotenv
 
 from fastapi import FastAPI, HTTPException
@@ -35,6 +37,19 @@ try:
 except Exception as config_error:
     print(f"Warning: Could not import Config: {config_error}")
     Config = None
+
+
+def _run_coro_sync(coro):
+    """Run a coroutine safely whether an event loop is already running or not."""
+    try:
+        running_loop = asyncio.get_running_loop()
+    except RuntimeError:
+        return asyncio.run(coro)
+
+    import nest_asyncio
+
+    nest_asyncio.apply()
+    return running_loop.run_until_complete(coro)
 
 
 app = FastAPI(
@@ -124,6 +139,7 @@ class RunSavedPlaywrightScriptRequest(BaseModel):
     browser_name: str = "chromium"
     provider: str = "ollama"
     model: str | None = None
+    force: bool = False
 
 
 class UpdatePlaywrightScriptRequest(BaseModel):
@@ -139,6 +155,77 @@ class GenerateActionsRequest(BaseModel):
     provider: str = "ollama"
     model: str | None = None
     temperature: float = 0.5
+
+
+_NOISY_BROWSER_ACTIONS = {"browser_navigate", "browser_click"}
+_RUNNING_STALE_TIMEOUT_SECONDS = 900
+
+
+def _extract_action_from_thought(thought: str) -> str:
+    """Best-effort action extraction from THOUGHT text when action field is missing."""
+    if not isinstance(thought, str) or not thought:
+        return ""
+    match = re.search(r"ACTION\s*:\s*([a-zA-Z0-9_]+)", thought, flags=re.IGNORECASE)
+    return match.group(1) if match else ""
+
+
+def _normalize_execution_log_entry(entry: Any, index: int) -> dict:
+    """Normalize raw execution log entries to a stable API shape."""
+    if isinstance(entry, str):
+        return {
+            "index": index,
+            "step": index + 1,
+            "action": "",
+            "status": "",
+            "response": entry,
+            "error": None,
+            "result_preview": "",
+            "thought": "",
+            "raw": entry,
+        }
+
+    if isinstance(entry, dict):
+        step_val = entry.get("step", index + 1)
+        action = str(entry.get("action") or "").strip()
+        thought = str(entry.get("thought") or "")
+        if not action:
+            action = _extract_action_from_thought(thought)
+
+        return {
+            "index": index,
+            "step": step_val,
+            "action": action,
+            "status": str(entry.get("status") or ""),
+            "response": str(entry.get("response") or ""),
+            "error": entry.get("error"),
+            "result_preview": str(entry.get("result_preview") or ""),
+            "thought": thought,
+            "raw": entry,
+        }
+
+    return {
+        "index": index,
+        "step": index + 1,
+        "action": "",
+        "status": "",
+        "response": str(entry),
+        "error": None,
+        "result_preview": "",
+        "thought": "",
+        "raw": entry,
+    }
+
+
+def _parse_db_timestamp(value: Any) -> Optional[datetime]:
+    """Parse SQLite timestamp (UTC) into timezone-aware datetime."""
+    if not value:
+        return None
+    if not isinstance(value, str):
+        return None
+    try:
+        return datetime.strptime(value, "%Y-%m-%d %H:%M:%S").replace(tzinfo=timezone.utc)
+    except ValueError:
+        return None
 
 
 @app.get("/api/stats")
@@ -473,7 +560,12 @@ def toggle_persona(persona_id: str):
     conn.close()
 
     if not row:
-        raise HTTPException(status_code=404, detail="Persona not found")
+        diagnostics = {
+            "error": "persona_not_found",
+            "persona_id": payload.persona_id,
+            "hint": "Refresh personas from /api/personas and retry with an existing persona id",
+        }
+        raise HTTPException(status_code=404, detail=diagnostics)
 
     return {"is_active": bool(row[0])}
 
@@ -790,7 +882,14 @@ def start_persona_run(payload: RunPersonaRequest):
     conn.close()
 
     if not row:
-        raise HTTPException(status_code=404, detail="Persona not found")
+        raise HTTPException(
+            status_code=404,
+            detail={
+                "error": "persona_not_found",
+                "persona_id": payload.persona_id,
+                "hint": "Refresh personas from /api/personas and retry with an existing persona id",
+            },
+        )
 
     persona_id = row[0]
     json_file_path = row[7]
@@ -849,7 +948,7 @@ def start_persona_run(payload: RunPersonaRequest):
     started = time.time()
     try:
         agent = PersonaAgent(user=persona_data, scenario=scenario, config=config, use_mcp=True)
-        result = asyncio.run(agent.run_with_mcp(start_url=target_url))
+        result = _run_coro_sync(agent.run_with_mcp(start_url=target_url))
 
         steps_detail = result.get("steps_detail", []) or []
         for item in steps_detail:
@@ -1193,6 +1292,34 @@ async def submit_test_configuration(config: TestConfigurationRequest):
 
         print(f"📊 All {generated_count} personas saved to database")
 
+        # Step 4: Auto-generate scenario for each persona
+        print(f"\n🎯 Generating scenarios for {generated_count} personas...")
+        from ..tools.scenario_generator import ScenarioGenerator
+
+        sg = ScenarioGenerator(
+            provider="ollama",
+            model=ollama_model,
+        )
+
+        scenarios_generated = 0
+        for persona in personas:
+            try:
+                persona_data = json.loads(persona.get("persona_json", "{}")) if persona.get("persona_json") else {}
+                # Merge with persona dict for completeness
+                persona_data.update(persona)
+
+                scenario = sg.generate(persona_data, website_analysis)
+                persona_data["scenario"] = scenario
+                db.update_persona_json(persona["id"], persona_data)
+                scenarios_generated += 1
+                print(f"✅ Scenario generated for {persona_data.get('nom')}")
+            except Exception as e:
+                print(f"⚠️ Scenario generation failed for persona {persona.get('nom', 'unknown')}: {e}")
+                # Non-blocking — persona is still saved without scenario
+
+        if scenarios_generated > 0:
+            print(f"📊 {scenarios_generated}/{generated_count} scenarios generated successfully")
+
         # Return success with summary
         return {
             "success": True,
@@ -1353,135 +1480,325 @@ def _load_persona_for_playwright(persona_id: str):
 @app.post("/api/playwright/generate")
 async def generate_playwright_script(payload: RunPlaywrightTestRequest):
     """
-    Generate and save Playwright script (without execution).
+    Generate and save scenario using ScenarioGenerator (without execution).
+    Stores the scenario JSON in playwright_test_executions and updates persona_json.
     """
-    if not PLAYWRIGHT_AGENT_AVAILABLE:
-        raise HTTPException(status_code=503, detail="PlaywrightTestAgent not available")
+    from ..tools.scenario_generator import ScenarioGenerator
 
-    persona_data, website_id, website_url = _load_persona_for_playwright(payload.persona_id)
-    if not persona_data:
-        raise HTTPException(status_code=404, detail="Persona not found")
+    # 1. Load persona from DB
+    conn = db._connect()
+    cursor = conn.cursor()
 
-    target_url = payload.start_url or website_url
+    cursor.execute(
+        """
+        SELECT p.persona_json, p.website_id, w.url
+        FROM personas p
+        JOIN websites w ON p.website_id = w.id
+        WHERE p.id = ?
+        """,
+        (payload.persona_id,),
+    )
+    row = cursor.fetchone()
+    conn.close()
 
-    try:
-        agent = PlaywrightTestAgent(provider=payload.provider, model=payload.model)
-        result = await agent.generate_test_script(
-            url=target_url,
-            persona=persona_data,
+    if not row:
+        raise HTTPException(
+            status_code=404,
+            detail={
+                "error": "persona_not_found",
+                "persona_id": payload.persona_id,
+                "hint": "Refresh personas from /api/personas and retry with an existing persona id",
+            },
         )
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
 
-    exec_id = db.add_playwright_execution(
+    raw_persona_json = row[0]
+    website_id = row[1]
+    website_url = row[2]
+
+    persona = json.loads(raw_persona_json) if raw_persona_json else {}
+    # Add website_url to persona for scenario generation
+    persona["website_url"] = website_url
+    persona["website_domain"] = website_url
+
+    # 2. Load website_analysis from DB (latest analysis for this website)
+    # EDGE CASE 3: Handle missing website_analysis gracefully
+    # Note: get_website() does NOT return analysis_json - analysis is in website_analyses table
+    website_analysis = {}
+    try:
+        conn2 = db._connect()
+        cursor2 = conn2.cursor()
+        cursor2.execute(
+            "SELECT raw_json FROM website_analyses WHERE website_id = ? ORDER BY analyzed_at DESC LIMIT 1",
+            (website_id,),
+        )
+        analysis_row = cursor2.fetchone()
+        conn2.close()
+
+        if analysis_row and analysis_row[0]:
+            website_analysis = json.loads(analysis_row[0])
+        else:
+            website_analysis = {
+                "domain": persona.get("website_domain", ""),
+                "url": persona.get("website_url", ""),
+                "llm_context": "",
+            }
+    except Exception:
+        website_analysis = {
+            "domain": persona.get("website_domain", ""),
+            "url": persona.get("website_url", ""),
+            "llm_context": "",
+        }
+
+    # ScenarioGenerator handles empty website_analysis gracefully
+    # via the _fallback_scenario() method
+
+    # 3. Generate scenario using ScenarioGenerator
+    sg = ScenarioGenerator(
+        provider=payload.provider,
+        model=payload.model,
+    )
+    scenario = sg.generate(persona, website_analysis)
+
+    # 4. Save scenario into the persona record in DB
+    persona["scenario"] = scenario
+    db.update_persona_json(payload.persona_id, persona)
+
+    # 5. Save to playwright_test_executions table
+    target_url = payload.start_url or persona.get("website_url") or website_url
+    execution_id = db.add_playwright_execution(
         persona_id=payload.persona_id,
         website_id=website_id,
         url=target_url,
-        generated_script=result.get("generated_script") or "",
-        status=result.get("status", "pending"),
-        execution_log=result.get("execution_log", []),
-        dom_snapshot=result.get("dom_snapshot"),
+        generated_script=json.dumps(scenario),  # scenario JSON, not JS
         browser_name=payload.browser_name,
-        error_message=result.get("error_message"),
+        status="scenario_generated",
+        execution_log=[],
+        dom_snapshot=None,
+        error_message=None,
         screenshot_base64=None,
-        duration_ms=result.get("duration_ms", 0),
+        duration_ms=0,
     )
 
+    # 6. Return response
     return {
-        "success": result.get("status") != "error",
-        "execution_id": exec_id,
-        "status": result.get("status", "pending"),
-        "generated_script": result.get("generated_script"),
-        "execution_log": result.get("execution_log", []),
-        "error_message": result.get("error_message"),
-        "duration_ms": result.get("duration_ms", 0),
-        "has_screenshot": False,
-        "screenshot_base64": None,
+        "execution_id": execution_id,
+        "scenario": scenario,
+        "status": "scenario_generated"
     }
 
 
 @app.post("/api/playwright/run-script")
 async def run_saved_playwright_script(payload: RunSavedPlaywrightScriptRequest):
-    """Execute an already generated script through the Playwright MCP server."""
-    if not PLAYWRIGHT_AGENT_AVAILABLE:
-        raise HTTPException(status_code=503, detail="PlaywrightTestAgent not available")
+    """
+    Execute a scenario using PersonaAgent.run_with_mcp().
+    Loads the scenario from the execution record and runs the ReAct agent.
+    """
+    from ..utils.config import Config
+    from ..agents.persona_agent import PersonaAgent
+    from fastapi.responses import JSONResponse
 
+    # 1. Load execution record from DB
     execution = db.get_playwright_execution_by_id(payload.execution_id)
     if not execution:
-        raise HTTPException(status_code=404, detail="Execution not found")
-
-    script = execution.get("generated_script")
-    if not script:
-        raise HTTPException(status_code=400, detail="No generated script found for this execution")
-
-    try:
-        agent = PlaywrightTestAgent(provider=payload.provider, model=payload.model)
-        run_result = await agent.execute_script(
-            test_script=script,
-            browser_name=payload.browser_name,
+        return JSONResponse(
+            status_code=404,
+            content={"error": f"Execution {payload.execution_id} not found"}
         )
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
 
-    # Normalize values before SQLite binding (sqlite cannot bind dict/list directly).
-    raw_error = run_result.get("error_message")
-    if isinstance(raw_error, (dict, list)):
-        error_message = json.dumps(raw_error, ensure_ascii=False)
-    elif raw_error is None:
-        error_message = None
-    else:
-        error_message = str(raw_error)
+    # EDGE CASE 5: Check for concurrent running executions
+    if execution.get("status") == "running":
+        now_utc = datetime.now(timezone.utc)
+        started_at = _parse_db_timestamp(execution.get("completed_at")) or _parse_db_timestamp(execution.get("created_at"))
 
-    def _normalize_db_text(value):
-        if value is None:
-            return None
-        if isinstance(value, (dict, list, tuple)):
-            return json.dumps(value, ensure_ascii=False)
-        return str(value)
+        if payload.force:
+            print(f"⚠️ Force-unlocking running execution: {payload.execution_id}")
+            db.update_playwright_execution(
+                execution_id=payload.execution_id,
+                status="error",
+                execution_log=json.dumps(execution.get("execution_log") or []),
+                error_message="Force-unlocked previous running state before retry",
+            )
+            execution = db.get_playwright_execution_by_id(payload.execution_id)
 
-    raw_screenshot = run_result.get("screenshot_base64")
-    if isinstance(raw_screenshot, dict):
-        raw_screenshot = raw_screenshot.get("data") or raw_screenshot.get("base64") or raw_screenshot
-    screenshot_base64 = _normalize_db_text(raw_screenshot)
+        # Recover stale locks (e.g. crashed request that never wrote terminal status).
+        elif started_at and (now_utc - started_at).total_seconds() > _RUNNING_STALE_TIMEOUT_SECONDS:
+            print(f"⚠️ Recovering stale running execution: {payload.execution_id}")
+            db.update_playwright_execution(
+                execution_id=payload.execution_id,
+                status="error",
+                execution_log=json.dumps(execution.get("execution_log") or []),
+                error_message=(
+                    f"Recovered stale 'running' state after {_RUNNING_STALE_TIMEOUT_SECONDS}s timeout"
+                ),
+            )
+            execution = db.get_playwright_execution_by_id(payload.execution_id)
+        else:
+            running_for_seconds = int((now_utc - started_at).total_seconds()) if started_at else None
+            detail = "This execution is already in progress"
+            if running_for_seconds is not None:
+                detail = f"This execution is already in progress (running_for_seconds={running_for_seconds})"
 
-    try:
-        duration_ms = int(run_result.get("duration_ms", 0) or 0)
-    except (TypeError, ValueError):
-        duration_ms = 0
+            return JSONResponse(
+                status_code=409,
+                content={
+                    "error": "Already running",
+                    "detail": detail,
+                    "execution_id": payload.execution_id,
+                    "running_for_seconds": running_for_seconds,
+                }
+            )
 
-    conn = db._connect()
-    cursor = conn.cursor()
-    cursor.execute(
-        """
-        UPDATE playwright_test_executions
-        SET status = ?, browser_name = ?, execution_log = ?, error_message = ?,
-            screenshot_base64 = ?, duration_ms = ?, completed_at = CURRENT_TIMESTAMP
-        WHERE id = ?
-        """,
-        (
-            run_result.get("status", "error"),
-            payload.browser_name,
-            json.dumps(run_result.get("execution_log", [])),
-            error_message,
-            screenshot_base64,
-            duration_ms,
-            payload.execution_id,
-        ),
+    # If stale recovery failed to reload row, abort safely.
+    if not execution:
+        return JSONResponse(
+            status_code=404,
+            content={
+                "error": f"Execution {payload.execution_id} not found after stale recovery"
+            }
+        )
+
+    # Mark as running before starting (EDGE CASE 5)
+    db.update_playwright_execution(
+        execution_id=payload.execution_id,
+        status="running",
+        execution_log="[]",
+        error_message=None,
     )
-    conn.commit()
-    conn.close()
 
-    return {
-        "success": run_result.get("status") == "success",
-        "execution_id": payload.execution_id,
-        "status": run_result.get("status"),
-        "generated_script": script,
-        "execution_log": run_result.get("execution_log", []),
-        "error_message": error_message,
-        "duration_ms": duration_ms,
-        "has_screenshot": bool(screenshot_base64),
-        "screenshot_base64": screenshot_base64,
-    }
+    # 2. Load persona from DB
+    persona_row = db.get_persona(execution["persona_id"])
+    if not persona_row:
+        return JSONResponse(
+            status_code=404,
+            content={"error": f"Persona {execution['persona_id']} not found"}
+        )
+
+    persona = json.loads(persona_row.get("persona_json", "{}")) if persona_row.get("persona_json") else {}
+    persona.update(persona_row)  # Merge with row data
+
+    # EDGE CASE 1: Handle missing credentials
+    credentials = persona.get("credentials", {})
+    if not credentials or not credentials.get("username"):
+        # Try to get credentials from the website record
+        website = db.get_website(execution.get("website_id"))
+        if website and website.get("default_credentials"):
+            try:
+                persona["credentials"] = json.loads(website["default_credentials"])
+                print(f"✅ Loaded default credentials from website")
+            except (json.JSONDecodeError, TypeError):
+                pass
+        # If still no credentials, continue anyway — run_with_mcp handles sites that don't need login
+
+    # 3. Get scenario — try in this order:
+    #    a. From persona["scenario"] if it exists
+    #    b. From execution["generated_script"] if it's valid JSON with "key_actions"
+    #    c. Fallback: build minimal scenario from persona
+    scenario = None
+
+    # Try persona["scenario"] first
+    if persona.get("scenario"):
+        scenario = persona["scenario"]
+
+    # Try execution["generated_script"] as JSON
+    if not scenario:
+        gen_script = execution.get("generated_script")
+        if gen_script:
+            try:
+                parsed = json.loads(gen_script)
+                if isinstance(parsed, dict) and "key_actions" in parsed:
+                    scenario = parsed
+            except (json.JSONDecodeError, TypeError):
+                pass
+
+    # Fallback: build minimal scenario
+    if not scenario:
+        scenario = {
+            "name": f"Test - {persona.get('objectif', 'Navigation')}",
+            "objectif": persona.get("objectif", "Complete the task"),
+            "description": persona.get("description", ""),
+            "key_actions": persona.get("actions_site", []),
+            "success_criteria": [],
+            "strict_done_validation": False,
+        }
+
+    # 4. Get start_url — EDGE CASE 4: Better priority order and protocol handling
+    start_url = (
+        execution.get("url")
+        or persona.get("website_url")
+        or persona.get("website_domain")
+    )
+
+    if not start_url:
+        return JSONResponse(
+            status_code=400,
+            content={
+                "error": "No URL found",
+                "detail": (
+                    "Persona has no website_url and execution "
+                    "has no url. Please re-run test configuration."
+                )
+            }
+        )
+
+    # Ensure URL has protocol
+    if start_url and not start_url.startswith("http"):
+        start_url = "https://" + start_url
+
+    # 5. Initialize Config and PersonaAgent
+    config_path = Path(__file__).resolve().parents[2] / "config" / "config.yaml"
+    try:
+        config = Config(str(config_path))
+    except Exception as e:
+        print(f"Warning: Could not load config: {e}. Using defaults.")
+        config = Config()
+
+    # Override config with request parameters
+    config._config["llm"]["provider"] = payload.provider
+    if payload.model:
+        config._config["llm"]["model"] = payload.model
+
+    agent = PersonaAgent(
+        user=persona,
+        scenario=scenario,
+        config=config,
+        use_mcp=True,
+    )
+
+    # 6. Run ReAct loop — EDGE CASE 6: Wrap in try/except for crashes
+    try:
+        result = await agent.run_with_mcp(start_url=start_url)
+    except Exception as e:
+        error_msg = str(e)
+        print(f"❌ run_with_mcp crashed: {error_msg}")
+
+        # Save error to DB
+        db.update_playwright_execution(
+            execution_id=payload.execution_id,
+            status="error",
+            execution_log="[]",
+            error_message=error_msg,
+        )
+
+        return JSONResponse(
+            status_code=500,
+            content={
+                "status": "error",
+                "response": error_msg,
+                "steps": 0,
+                "steps_detail": [],
+            }
+        )
+
+    # 7. Update playwright_test_executions record with result
+    db.update_playwright_execution(
+        execution_id=payload.execution_id,
+        status=result.get("status", "error"),
+        execution_log=json.dumps(result.get("steps_detail", [])),
+        error_message=result.get("response") if result.get("status") == "error" else None,
+    )
+
+    # 8. Return result directly
+    return result
 
 
 @app.get("/api/playwright/executions")
@@ -1506,6 +1823,53 @@ def get_playwright_execution_detail(execution_id: str):
     if not execution:
         raise HTTPException(status_code=404, detail="Execution not found")
     return execution
+
+
+@app.get("/api/playwright/executions/{execution_id}/logs")
+def get_playwright_execution_logs(
+    execution_id: str,
+    include_browser_actions: bool = False,
+    include_thought: bool = False,
+):
+    """
+    Get normalized logs for one execution.
+
+    By default, noisy browser actions (browser_navigate/browser_click) are filtered out.
+    Use include_browser_actions=true to get full raw action flow.
+    """
+    execution = db.get_playwright_execution_by_id(execution_id)
+    if not execution:
+        raise HTTPException(status_code=404, detail="Execution not found")
+
+    raw_logs = execution.get("execution_log") or []
+    if not isinstance(raw_logs, list):
+        raw_logs = []
+
+    normalized_logs = []
+    for i, entry in enumerate(raw_logs):
+        item = _normalize_execution_log_entry(entry, i)
+        action = (item.get("action") or "").strip().lower()
+
+        if not include_browser_actions and action in _NOISY_BROWSER_ACTIONS:
+            continue
+
+        if not include_thought:
+            item.pop("thought", None)
+
+        normalized_logs.append(item)
+
+    return {
+        "execution_id": execution_id,
+        "status": execution.get("status"),
+        "total_logs": len(raw_logs),
+        "returned_logs": len(normalized_logs),
+        "filters": {
+            "include_browser_actions": include_browser_actions,
+            "include_thought": include_thought,
+            "excluded_actions": [] if include_browser_actions else sorted(_NOISY_BROWSER_ACTIONS),
+        },
+        "logs": normalized_logs,
+    }
 
 
 @app.put("/api/playwright/executions/{execution_id}/script")

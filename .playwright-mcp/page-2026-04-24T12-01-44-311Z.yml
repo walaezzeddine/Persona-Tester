@@ -1,0 +1,85 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - list [ref=e6]:
+        - listitem [ref=e7]:
+          - generic [ref=e9]:
+            - text: My Practice Portfolio
+            - img "Change Tournament" [ref=e11]
+          - list [ref=e12]:
+            - listitem [ref=e13]:
+              - link "Join New Contest" [ref=e14] [cursor=pointer]:
+                - /url: /contests/find
+      - list [ref=e15]:
+        - listitem [ref=e16]: walaezzedine
+        - listitem [ref=e17]:
+          - link "Logout" [ref=e18] [cursor=pointer]:
+            - /url: /logout
+    - generic [ref=e20]:
+      - link "Logo" [ref=e21] [cursor=pointer]:
+        - /url: /account/dashboardv2
+        - img "Logo" [ref=e22]
+      - img "We recommend users with a screen reader refresh their reader's buffer after each page loads to ensure full content is readable" [ref=e26]
+  - list [ref=e29]:
+    - listitem [ref=e30]:
+      - link "Dashboard" [ref=e31] [cursor=pointer]:
+        - /url: /account/dashboardv2
+      - list [ref=e32]:
+        - listitem [ref=e33]:
+          - link "Edit Profile" [ref=e34] [cursor=pointer]:
+            - /url: /account/editprofile
+        - listitem [ref=e35]:
+          - link "Change Password" [ref=e36] [cursor=pointer]:
+            - /url: /changepassword
+    - listitem [ref=e37]:
+      - link "Quotes" [ref=e38] [cursor=pointer]:
+        - /url: /quotes/quotesv2
+    - listitem [ref=e39]:
+      - link "About" [ref=e40] [cursor=pointer]:
+        - /url: /content/about
+      - list [ref=e41]:
+        - listitem [ref=e42]:
+          - link "About Us" [ref=e43] [cursor=pointer]:
+            - /url: https://www.wallstreetsurvivor.com/about
+        - listitem [ref=e44]:
+          - link "FAQ" [ref=e45] [cursor=pointer]:
+            - /url: /faq
+        - listitem [ref=e46]:
+          - link "Terms and Conditions" [ref=e47] [cursor=pointer]:
+            - /url: /termsandconditions
+        - listitem [ref=e48]:
+          - link "Privacy Policy" [ref=e49] [cursor=pointer]:
+            - /url: /privacy
+        - listitem [ref=e50]:
+          - link "Site Map" [ref=e51] [cursor=pointer]:
+            - /url: /sitemap
+        - listitem [ref=e52]:
+          - link "Contact Us" [ref=e53] [cursor=pointer]:
+            - /url: /contactus
+    - listitem [ref=e54]
+  - heading "portfolio" [level=2] [ref=e56]
+  - generic [ref=e57]:
+    - generic:
+      - generic:
+        - generic:
+          - list:
+            - listitem [ref=e58]:
+              - link "Terms" [ref=e59] [cursor=pointer]:
+                - /url: /termsandconditions
+            - listitem [ref=e60]:
+              - link "Privacy Policy" [ref=e61] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e62]:
+              - link "FAQ/Help" [ref=e63] [cursor=pointer]:
+                - /url: /faq
+            - listitem [ref=e64]:
+              - link "Contact Us" [ref=e65] [cursor=pointer]:
+                - /url: /contactus
+            - listitem [ref=e66]:
+              - link "Site Map" [ref=e67] [cursor=pointer]:
+                - /url: /sitemap
+    - generic [ref=e70]:
+      - text: All information is provided on an "as-is" basis for informational purposes only, and is not intended for actual trading purposes or market advice. Quote data may be delayed at least 15 minutes. Quotes provided by Xignite and QuoteMedia. Neither Stock-Trak nor any of its independent data providers or partners, are liable for incomplete information, delays, or any actions taken in reliance upon information contained herein. By accessing this site, you agree not to redistribute the information found within. This site is a product of
+      - link "Stock-Trak" [ref=e71] [cursor=pointer]:
+        - /url: http://www.stocktrak.com
+      - text: ", a provider of web-based financial simulations for information and education."

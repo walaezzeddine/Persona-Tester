@@ -148,10 +148,16 @@ class WebsiteAnalyzer:
         if enable_scraping:
             if CRAWL4AI_AVAILABLE:
                 try:
-                    site_brief, pages_crawled = asyncio.run(self._crawl_with_crawl4ai(url))
+                    # Use nest_asyncio-safe runner: works inside FastAPI's event loop.
+                    import nest_asyncio
+
+                    nest_asyncio.apply()
+                    loop = asyncio.get_event_loop()
+                    site_brief, pages_crawled = loop.run_until_complete(
+                        self._crawl_with_crawl4ai(url)
+                    )
                     crawl_engine = "crawl4ai" if site_brief else "crawl4ai-empty"
                 except RuntimeError as e:
-                    # Happens if we're already inside a running event loop; fall through.
                     print(f"⚠️  crawl4ai run failed ({e}); falling back to legacy scraper")
                     crawl_engine = "fallback"
                 except Exception as e:

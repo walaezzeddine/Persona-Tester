@@ -23,6 +23,8 @@ beautifulsoup4>=4.12.0
 
 # LLM-friendly crawling (primary WebsiteAnalyzer backend)
 crawl4ai>=0.4.0
+nest_asyncio>=1.6.0
 
 # Web search — optional fallback enrichment when crawl is blocked
 ddgs>=6.0
+browser-use>=0.1.0

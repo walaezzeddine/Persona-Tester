@@ -366,9 +366,39 @@ Remember to respond in the exact format: Thought / Action / Target
                     action_name = tool_name
                     break
 
+        # Accept visible-interaction aliases emitted by older prompts.
+        alias_map = {
+            "browser_type_visible": "browser_type",
+            "browser_click_visible": "browser_click",
+            "browser_fill_form_visible": "browser_fill_form",
+        }
+        if action_name in alias_map:
+            action_name = alias_map[action_name]
+
         # Auto-correct browser_select_option: convert "value" key to "values" array
         if action_name == "browser_select_option" and "value" in action_input:
             action_input["values"] = [action_input.pop("value")]
+
+        # Normalize the common ref/selector schema to the tool schema expected by Playwright wrappers.
+        if action_name in ("browser_click", "browser_type", "browser_hover", "browser_drag") and isinstance(action_input, dict):
+            if "target" not in action_input:
+                if "ref" in action_input:
+                    action_input["target"] = action_input["ref"]
+                elif "selector" in action_input:
+                    action_input["target"] = action_input["selector"]
+
+        if action_name == "browser_fill_form" and isinstance(action_input, dict) and "fields" not in action_input:
+            single_field_value = action_input.get("value", action_input.get("text", ""))
+            if single_field_value:
+                field_ref = str(action_input.get("ref") or action_input.get("target") or action_input.get("selector") or "")
+                action_input["fields"] = [
+                    {
+                        "ref": field_ref,
+                        "type": "textbox",
+                        "name": field_ref or "field",
+                        "value": single_field_value,
+                    }
+                ]
 
         return action_name, action_input
     
@@ -1295,26 +1325,27 @@ Remember to respond in the exact format: Thought / Action / Target
                         "STRATEGY — Navigation prudente sur Booking.com:\n"
                         "Step 1: browser_navigate to https://www.booking.com\n"
                         "Step 2: browser_snapshot — dismiss any popup, observe the page\n"
-                        "Step 3: Use browser_evaluate to type destination (field is hidden):\n"
-                        "        {\"function\": \"() => { const input = document.querySelector('input[placeholder*=\\\"allez-vous\\\"]') || document.querySelector('input[name=\\\"ss\\\"]'); if(!input) return 'not found'; input.click(); input.focus(); input.value='Paris'; input.dispatchEvent(new Event('input', {bubbles: true})); return 'Paris typed';}\"}\n"
-                        "Step 4: browser_wait_for time 2000 for suggestions\n"
-                        "Step 5: browser_snapshot to see Paris suggestions\n"
-                        "Step 6: Click Paris suggestion carefully\n"
-                        "Step 7: browser_snapshot to see dates section\n"
-                        "Step 8: Select appropriate dates if needed\n"
-                        "Step 9: Click Search button\n"
+                        "Step 3: Click the visible destination combobox 'Où allez-vous ?'\n"
+                        "Step 4: Type the city name visibly (use on-screen keyboard or browser_type)\n"
+                        "Step 5: Wait for the autocomplete dropdown, then browser_snapshot\n"
+                        "Step 6: Press Enter to confirm the first matching city suggestion if refs are unstable\n"
+                        "Step 7: browser_snapshot to see the results page and date section\n"
+                        "Step 8: Choose the weekend dates using visible calendar day cells or the 'This Weekend' chip if present\n"
+                        "Step 9: Click Search only after dates are confirmed\n"
                         "Step 10: browser_snapshot to see ALL hotel results\n"
                         f"Step 11: {'Compare ALL prices, read reviews, find the BEST value' if sensibilite == 'haute' else 'Look for family-friendly options' if 'famil' in persona_id.lower() else 'Evaluate options carefully'}\n"
-                        "Step 12: Click on the best hotel based on your criteria\n"
-                        "Step 13: browser_snapshot to verify hotel details\n"
-                        "Step 14: DONE — report hotel name, price, and why you chose it\n\n"
+                        "Step 12: Open the best hotel in a new tab for comparison\n"
+                        "Step 13: Open a second hotel in another tab\n"
+                        "Step 14: Check cancellation policy and room amenities before reservation\n"
+                        "Step 15: DONE — report hotel name, price, and why you chose it\n\n"
                         "RULES (based on persona):\n"
                         f"- You are {persona_nom}, behave according to your profile\n"
                         f"- {'Compare ALL prices before deciding' if sensibilite == 'haute' else 'Focus on quality and features, not just price'}\n"
                         f"- {'Use filters to narrow down options' if persona_exploration else 'Browse available options'}\n"
                         f"- {'Verify details twice before any action' if tolerance == 'faible' else 'Proceed with confidence'}\n"
                         f"- Take your time, you have {patience_sec}s patience\n"
-                        "- Destination field is HIDDEN — MUST use browser_evaluate\n"
+                        "- Prefer visible interactions; if refs are unstable, confirm the city with Enter after typing\n"
+                        "- Never use browser_evaluate to fill destination/date/sort fields on Booking\n"
                     )
                 # BOOKING.COM — END
                 # PARABANK — START (PRUDENT - TRANSFER FUNDS)
@@ -2676,7 +2707,7 @@ Remember to respond in the exact format: Thought / Action / Target
                                 snap_text,
                             )
                             if close_btn and "browser_click" in tools_dict:
-                                await tools_dict["browser_click"].ainvoke({"ref": close_btn.group(1)})
+                                await tools_dict["browser_click"].ainvoke({"target": close_btn.group(1), "ref": close_btn.group(1)})
                                 recovered = True
                         except Exception:
                             pass
